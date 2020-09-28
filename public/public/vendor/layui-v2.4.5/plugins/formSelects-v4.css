@@ -152,7 +152,7 @@ div[xm-select-skin='danger'] dd .xm-cz:hover{color: #FF5722;}
 div[xm-select-search-type="1"] .xm-select-tips.xm-dl-input{display: block;}
 div[xm-select-search-type="1"] .xm-select .xm-select-input{display: none !important;}
 
-/* 阿里巴巴矢量图标库 */
+/* 阿里巴巴矢量圖标库 */
 @font-face {font-family: "xm-iconfont";
   src: url('//at.alicdn.com/t/font_792691_qxv28s6g1l9.eot?t=1534240067831'); /* IE9*/
   src: url('//at.alicdn.com/t/font_792691_qxv28s6g1l9.eot?t=1534240067831#iefix') format('embedded-opentype'), /* IE6-IE8 */

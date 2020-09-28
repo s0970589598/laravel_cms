@@ -428,7 +428,7 @@ UE.parse.register("table", function(utils) {
     tables = root.getElementsByTagName("table");
   if (tables.length) {
     var selector = this.selector;
-    //追加默认的表格样式
+    //追加默認的表格样式
     utils.cssRule(
       "table",
       selector +
@@ -629,7 +629,7 @@ UE.parse.register("table", function(utils) {
     }
     //更新表格
     function updateTable(table) {
-      //给第一行设置firstRow的样式名称,在排序图标的样式上使用到
+      //给第一行设置firstRow的样式名称,在排序圖标的样式上使用到
       if (!utils.hasClass(table.rows[0], "firstRow")) {
         for (var i = 1; i < table.rows.length; i++) {
           utils.removeClass(table.rows[i], "firstRow");
@@ -669,7 +669,7 @@ UE.parse.register("charts", function(utils) {
   }
 
   /**
-     * 提取数据
+     * 提取數據
      */
   function extractChartData(rootNode) {
     var data = [],
@@ -689,7 +689,7 @@ UE.parse.register("charts", function(utils) {
       metaConfig = {},
       data = [];
 
-    //提取table数据
+    //提取table數據
     for (var i = 0, row; (row = tableNode.rows[i]); i++) {
       var rowData = [];
 
@@ -760,7 +760,7 @@ UE.parse.register("charts", function(utils) {
     }
   }
 
-  //加载图表差异化配置文件
+  //加载圖表差异化配置文件
   function loadTypeConfig() {
     utils.loadFile(
       document,
@@ -776,7 +776,7 @@ UE.parse.register("charts", function(utils) {
     );
   }
 
-  //渲染图表
+  //渲染圖表
   function render() {
     var config = null,
       chartConfig = null,
@@ -794,10 +794,10 @@ UE.parse.register("charts", function(utils) {
   }
 
   /**
-     * 渲染图表
-     * @param container 图表容器节点对象
-     * @param typeConfig 图表類型配置
-     * @param config 图表通用配置
+     * 渲染圖表
+     * @param container 圖表容器节点对象
+     * @param typeConfig 圖表類型配置
+     * @param config 圖表通用配置
      * */
   function renderChart(container, typeConfig, config) {
     $(container).highcharts(
@@ -850,7 +850,7 @@ UE.parse.register("charts", function(utils) {
   }
 
   /**
-     * 创建图表的容器
+     * 创建圖表的容器
      * 新创建的容器会替换掉对应的table对象
      * */
   function createContainer(tableNode) {
@@ -862,16 +862,16 @@ UE.parse.register("charts", function(utils) {
     return container;
   }
 
-  //根据config解析出正确的类别和图表数据信息
+  //根据config解析出正确的类别和圖表數據信息
   function analysisConfig(config) {
     var series = [],
-      //数据类别
+      //數據类别
       categories = [],
       result = [],
       data = config.data,
       meta = config.meta;
 
-    //数据对齐方式為相反的方式， 需要反转数据
+    //數據对齐方式為相反的方式， 需要反转數據
     if (meta.dataFormat != "1") {
       for (var i = 0, len = data.length; i < len; i++) {
         for (var j = 0, jlen = data[i].length; j < jlen; j++) {
@@ -888,7 +888,7 @@ UE.parse.register("charts", function(utils) {
 
     result = {};
 
-    //普通图表
+    //普通圖表
     if (meta.chartType != typeConfig.length - 1) {
       categories = data[0].slice(1);
 
@@ -913,7 +913,7 @@ UE.parse.register("charts", function(utils) {
         curData.push([data[0][i], data[1][i] | 0]);
       }
 
-      //饼图
+      //饼圖
       series[0] = {
         type: "pie",
         name: meta.tip,
@@ -942,7 +942,7 @@ UE.parse.register("background", function(utils) {
     }
   }
 
-  //追加默认的表格样式
+  //追加默認的表格样式
   styles &&
     utils.cssRule(
       "ueditor_background",

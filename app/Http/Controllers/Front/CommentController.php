@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 class CommentController extends BaseController
 {
     /**
-     * 发布一条評論
+     * 發佈一条評論
      *
      * @param Request $request
      * @param int $entityId 模型ID
@@ -73,7 +73,7 @@ class CommentController extends BaseController
                 // 清除缓存
                 Cache::forget('comment_replay:' . $rid);
 
-                // 回复数+1
+                // 回复數+1
                 CommentRepository::addReplyCount($rid);
             }
             return [
@@ -125,7 +125,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 获取指定用户对評論的操作数据
+     * 获取指定用户对評論的操作數據
      *
      * @param Request $request
      */
@@ -135,7 +135,7 @@ class CommentController extends BaseController
         if (!preg_match('%^[1-9]\d*(,[1-9]\d*)*%', $commentIds)) {
             return [
                 'code' => 1,
-                'msg' => '参数错误'
+                'msg' => '参數错误'
             ];
         }
 

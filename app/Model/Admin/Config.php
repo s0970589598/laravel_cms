@@ -25,7 +25,7 @@ class Config extends Model
     const TYPE_JSON = 2;
 
     public static $types = [
-        self::TYPE_NUM => '数值',
+        self::TYPE_NUM => '數值',
         self::TYPE_STR => '字符串',
         self::TYPE_JSON => 'JSON',
     ];

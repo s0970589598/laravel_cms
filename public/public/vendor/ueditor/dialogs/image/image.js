@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/在线图片/搜索图片
+ * 上传圖片对话框逻辑代码,包括tab: 远程圖片/上传圖片/在线圖片/搜索圖片
  */
 
 (function () {
@@ -113,7 +113,7 @@
 
     /* 初始化对其方式的点击事件 */
     function initAlign(){
-        /* 点击align图标 */
+        /* 点击align圖标 */
         domUtils.on($G("alignIcon"), 'click', function(e){
             var target = e.target || e.srcElement;
             if(target.className && target.className.indexOf('-align') != -1) {
@@ -142,7 +142,7 @@
     }
 
 
-    /* 在线图片 */
+    /* 在线圖片 */
     function RemoteImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -217,7 +217,7 @@
             }
         },
         setImage: function(img){
-            /* 不是正常的图片 */
+            /* 不是正常的圖片 */
             if (!img.tagName || img.tagName.toLowerCase() != 'img' && !img.getAttribute("src") || !img.src) return;
 
             var wordImgFlag = img.getAttribute("word_img"),
@@ -227,7 +227,7 @@
             /* 防止onchange事件循环调用 */
             if (src !== $G("url").value) $G("url").value = src;
             if(src) {
-                /* 设置表单内容 */
+                /* 设置表單内容 */
                 $G("width").value = img.width || '';
                 $G("height").value = img.height || '';
                 $G("border").value = img.getAttribute("border") || '0';
@@ -289,7 +289,7 @@
 
 
 
-    /* 上传图片 */
+    /* 上传圖片 */
     function UploadImage(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
@@ -308,7 +308,7 @@
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // 图片容器
+            // 圖片容器
                 $queue = $wrap.find('.filelist'),
             // 状态栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
@@ -324,13 +324,13 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度条
                 $progress = $statusBar.find('.progress').hide(),
-            // 添加的文件数量
+            // 添加的文件數量
                 fileCount = 0,
             // 添加的文件总大小
                 fileSize = 0,
             // 优化retina, 在retina下这个值是2
                 ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
+            // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
@@ -376,13 +376,13 @@
                 server: actionUrl,
                 fileVal: editor.getOpt('imageFieldName'),
                 duplicate: true,
-                fileSingleSizeLimit: imageMaxSize,    // 默认 2 M
+                fileSingleSizeLimit: imageMaxSize,    // 默認 2 M
                 compress: editor.getOpt('imageCompressEnable') ? {
                     width: imageCompressBorder,
                     height: imageCompressBorder,
-                    // 图片质量，只有type為`image/jpeg`的时候才有效。
+                    // 圖片质量，只有type為`image/jpeg`的时候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置為false.
+                    // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,
@@ -689,7 +689,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 添加额外的GET参数 */
+                        /* 添加额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -702,7 +702,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象添加POST参数
+                //这里可以通过data对象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -788,7 +788,7 @@
     };
 
 
-    /* 在线图片 */
+    /* 在线圖片 */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -810,18 +810,18 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取数据 */
+        /* 初始化滚动事件,滚动到地步自動拉取數據 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取图片 */
+            /* 滚动拉取圖片 */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
                     _this.getImageData();
                 }
             });
-            /* 选中图片 */
+            /* 选中圖片 */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode;
@@ -835,16 +835,16 @@
                 }
             });
         },
-        /* 初始化第一次的数据 */
+        /* 初始化第一次的數據 */
         initData: function () {
 
-            /* 拉取数据需要使用的值 */
+            /* 拉取數據需要使用的值 */
             this.state = 0;
             this.listSize = editor.getOpt('imageManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* 第一次拉取数据 */
+            /* 第一次拉取數據 */
             this.getImageData();
         },
         /* 重設界面 */
@@ -852,7 +852,7 @@
             this.initContainer();
             this.initData();
         },
-        /* 向后台拉取图片列表数据 */
+        /* 向后台拉取圖片列表數據 */
         getImageData: function () {
             var _this = this;
 
@@ -895,7 +895,7 @@
                 });
             }
         },
-        /* 添加图片到列表界面上 */
+        /* 添加圖片到列表界面上 */
         pushData: function (list) {
             var i, item, img, icon, _this = this,
                 urlPrefix = editor.getOpt('imageManagerUrlPrefix');
@@ -921,7 +921,7 @@
                 }
             }
         },
-        /* 改变图片大小 */
+        /* 改变圖片大小 */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;
@@ -967,7 +967,7 @@
         }
     };
 
-    /*搜索图片 */
+    /*搜索圖片 */
     function SearchImage() {
         this.init();
     }
@@ -1006,7 +1006,7 @@
                 }
             });
 
-            /* 选中图片 */
+            /* 选中圖片 */
             domUtils.on($G('searchList'), 'click', function(e){
                 var target = e.target || e.srcElement,
                     li = target.parentNode.parentNode;
@@ -1038,7 +1038,7 @@
             }
             return strOut;
         },
-        /* 改变图片大小 */
+        /* 改变圖片大小 */
         scale: function (img, w, h) {
             var ow = img.width,
                 oh = img.height;
@@ -1084,7 +1084,7 @@
                 }
             });
         },
-        /* 添加图片到列表界面上 */
+        /* 添加圖片到列表界面上 */
         setList: function (list) {
             var i, item, p, img, link, _this = this,
                 listUl = $G('searchListUl');

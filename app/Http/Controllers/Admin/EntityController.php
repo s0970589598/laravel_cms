@@ -41,7 +41,7 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-模型列表数据接口
+     * 模型管理-模型列表數據接口
      *
      * @param Request $request
      * @return array
@@ -85,7 +85,7 @@ class EntityController extends Controller
         } catch (CreateTableException $e) {
             return [
                 'code' => 2,
-                'msg' => '新增失败：创建資料庫表失败，数据表已存在或其它原因',
+                'msg' => '新增失败：创建資料庫表失败，數據表已存在或其它原因',
                 'redirect' => false
             ];
         } catch (QueryException $e) {
@@ -98,14 +98,14 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-编辑模型
+     * 模型管理-編輯模型
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑模型', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯模型', 'url' => ''];
 
         $model = EntityRepository::find($id);
         return view('admin.entity.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -126,14 +126,14 @@ class EntityController extends Controller
             EntityRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模型已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模型已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -170,7 +170,7 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-复制模型
+     * 模型管理-複製模型
      *
      * @param Request $request
      * @param integer $id
@@ -191,7 +191,7 @@ class EntityController extends Controller
             EntityRepository::copy($tableName, $id);
             return [
                 'code' => 0,
-                'msg' => '复制成功',
+                'msg' => '複製成功',
                 'reload' => true
             ];
         } catch (\RuntimeException $e) {
@@ -203,7 +203,7 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-添加默认選單
+     * 模型管理-添加默認選單
      *
      * @param integer $id
      * @return array

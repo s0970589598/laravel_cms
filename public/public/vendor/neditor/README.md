@@ -4,16 +4,16 @@
 <a href="https://travis-ci.org/notadd/neditor" title="Build Status"><img src="https://img.shields.io/travis/notadd/neditor/master.svg?style=flat-square"></a>
 </p>
 
-## 新版发布
+## 新版發佈
 
-2.1 发布，此次版本移除了后端相关代码，纯 ajax 送出，请配置 `neditor.config.js` `neditor.service.js`，支持各种后端或者云存储。
+2.1 發佈，此次版本移除了編輯相关代码，纯 ajax 送出，请配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者云存储。
 
 ## 捐赠
 
 该项目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此项目的发展。
 
 
-## 第一步：下载编辑器
+## 第一步：下载編輯器
 
 **方式一：完整安装包 （推荐）**
 
@@ -33,9 +33,9 @@ npm run build
 
 ### 第二步：在浏览器打开 index.html ###
 
-进入到目录 `dist` , 使用浏览器打开文件 `index.html` 。
+进入到目入 `dist` , 使用浏览器打开文件 `index.html` 。
 
-如果看到了下面这样的编辑器，恭喜你，初次部署成功！
+如果看到了下面这样的編輯器，恭喜你，初次部署成功！
 
 ![部署成功](https://www.notadd.com/src/neditor-demo.webp)
 
@@ -48,15 +48,15 @@ npm run build
 ## 技术支持
 
 该项目基于 MIT 协议开源，任何组织/企业以及个人都可以免费使用（保留版权）。    
-如果您需要额外商业技术支持或者定制编辑器，请联系 QQ：1256985886
+如果您需要额外商业技术支持或者定制編輯器，请联系 QQ：1256985886
 
 
 
 其他版本待添加
 
-### 自定义的参数
+### 自定义的参數
 
-编辑器有很多可自定义的参数项，在实例化的时候可以传入给编辑器：
+編輯器有很多可自定义的参數项，在实例化的时候可以传入给編輯器：
 
 ```javascript
 var ue = UE.getEditor('container', {
@@ -64,20 +64,20 @@ var ue = UE.getEditor('container', {
 });
 ```
 
-配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项说明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项说明.md)、[后端配置项说明](http://fex.baidu.com/ueditor/#server-config)
+配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项说明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项说明.md)、[編輯配置项说明](http://fex.baidu.com/ueditor/#server-config)
 
-### 编辑器图片、视频、涂鸦、附件上传service
+### 編輯器圖片、视频、涂鸦、附件上传service
 
-编辑器上传逻辑单独在 `neditor.service.js` 文件配置，具体的配置方法见注释
+編輯器上传逻辑单独在 `neditor.service.js` 文件配置，具体的配置方法见注释
 
-### 设置和读取编辑器的内容
+### 设置和读取編輯器的内容
 
-通 getContent 和 setContent 方法可以设置和读取编辑器的内容
+通 getContent 和 setContent 方法可以设置和读取編輯器的内容
 
 ```javascript
 var ue = UE.getContent();
 ue.ready(function(){
-    //设置编辑器的内容
+    //设置編輯器的内容
     ue.setContent('hello');
     //获取html内容，返回: <p>hello</p>
     var html = ue.getContent();
@@ -136,12 +136,12 @@ QQ 群： 321735506
 
 ### 2.2
 
-- [ ] word 内图片自动上传
-- [x] 粘贴图片转為本地图片（图片本地化）
+- [ ] word 内圖片自動上传
+- [x] 粘贴圖片转為本地圖片（圖片本地化）
 
 ### 2.3
 
-- [ ] 上传文件/图片无需后端
+- [ ] 上传文件/圖片无需編輯
 
 ### 3.0
 
@@ -162,7 +162,7 @@ https://github.com/notadd/notadd
 
 **UCloud 云服务器限时优惠 — Notadd 项目用户福利**
 
-[【基础型】1核2G 1M带宽 50GB SSD数据盘 低至250元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )    
+[【基础型】1核2G 1M带宽 50GB SSD數據盘 低至250元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )    
 
-[【标准型】2核4G 1M带宽 50GB SSD数据盘 低至550元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )
+[【标准型】2核4G 1M带宽 50GB SSD數據盘 低至550元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )
 

@@ -37,7 +37,7 @@ class CommentController extends Controller
     }
 
     /**
-     * 評論管理-評論列表数据接口
+     * 評論管理-評論列表數據接口
      *
      * @param Request $request
      * @return array
@@ -53,14 +53,14 @@ class CommentController extends Controller
     }
 
     /**
-     * 評論管理-编辑評論
+     * 評論管理-編輯評論
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑評論', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯評論', 'url' => ''];
 
         $model = CommentRepository::find($id);
         return view('admin.comment.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -80,13 +80,13 @@ class CommentController extends Controller
             CommentRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前評論已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前評論已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -117,7 +117,7 @@ class CommentController extends Controller
 
             DB::transaction(function () use ($id, $comment) {
                 CommentRepository::delete($id);
-                // 回复数-1
+                // 回复數-1
                 CommentRepository::decrementReplyCount($comment->rid);
                 // 清除缓存
                 Cache::forget('comment_replay:' . $comment->rid);

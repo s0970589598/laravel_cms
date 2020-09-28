@@ -36,7 +36,7 @@ class UserController extends Controller
     }
 
     /**
-     * 會員管理-會員列表数据接口
+     * 會員管理-會員列表數據接口
      *
      * @param Request $request
      * @return array
@@ -88,14 +88,14 @@ class UserController extends Controller
     }
 
     /**
-     * 會員管理-编辑會員
+     * 會員管理-編輯會員
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑會員', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯會員', 'url' => ''];
 
         $model = UserRepository::find($id);
         return view('admin.user.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -118,13 +118,13 @@ class UserController extends Controller
             UserRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前會員已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前會員已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

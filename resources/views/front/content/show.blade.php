@@ -60,7 +60,7 @@
                         <span>{{ \Auth::guard('member')->user()->name }}</span>
                         <a class="inline-block text-grey-dark no-underline hover:text-black hover:text-underline py-2 px-4" href="{{ route('member::logout') }}">退出</a>
                     @else
-                    <a class="inline-block text-grey-dark no-underline hover:text-black hover:text-underline py-2 px-4" href="{{ route('member::login.show') }}">登录</a>
+                    <a class="inline-block text-grey-dark no-underline hover:text-black hover:text-underline py-2 px-4" href="{{ route('member::login.show') }}">登入</a>
                     @endauth
                 </li>
             </ul>
@@ -76,7 +76,7 @@
         <!--Title-->
         <div class="font-sans">
                         <h1 class="font-sans break-normal text-black pt-6 pb-2 text-3xl md:text-4xl">{{ $content->title }}</h1>
-				<p class="text-sm md:text-base font-normal text-grey-dark">发布于：{{ $content->created_at }} 最后更新：{{ $content->updated_at }}</p>
+				<p class="text-sm md:text-base font-normal text-grey-dark">發佈于：{{ $content->created_at }} 最后更新：{{ $content->updated_at }}</p>
         </div>
         <div class="mt-6">
             <!--Post Content-->
@@ -349,7 +349,7 @@
             </span> \
             <a href="#" class="text-header-time"> \
                 <span data-toggle="tooltip" data-placement="top" title="' + listData[i].created_at + '" \
-                        <span>发布于 </span> \
+                        <span>發佈于 </span> \
                         <span>' + getDateDiff(getDateTimeStamp(listData[i].created_at)) + '</span> \
                 </span> \
             </a> \
@@ -409,7 +409,7 @@
                 emojify.run(document.getElementById('comments'));
 
                 @auth('member')
-                // 获取登录用户对評論的操作数据
+                // 获取登入用户对評論的操作數據
                 commentAction();
                 @endauth
 
@@ -481,7 +481,7 @@
                             that.parents('div.taptap-comments').html(loadReplyComments(d.data, rid, uid));
 
                             @auth('member')
-                            // 获取登录用户对評論的操作数据
+                            // 获取登入用户对評論的操作數據
                             commentAction();
                             @endauth
                         }
@@ -504,7 +504,7 @@
                 data: {comment_ids: commentIdsStr},
                 success: function (d) {
                     if (d.code !== 0) {
-                        layer.msg('获取評論操作数据失败', {icon: 2});
+                        layer.msg('获取評論操作數據失败', {icon: 2});
                         return;
                     }
                     for (var i = d.data.length - 1; i >= 0; i--) {

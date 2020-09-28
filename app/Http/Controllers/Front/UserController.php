@@ -34,7 +34,7 @@ class UserController extends BaseController
     }
 
     /**
-     * 用户登录頁面
+     * 用户登入頁面
      *
      * @return \Illuminate\View\View
      */
@@ -49,7 +49,7 @@ class UserController extends BaseController
     }
 
     /**
-     * 用户登录
+     * 用户登入
      *
      * @param LoginRequest $request
      * @throws \Exception
@@ -76,7 +76,7 @@ class UserController extends BaseController
         }
 
         if ($this->attemptLogin($request)) {
-            // 如果存在三方登录关联，则关联之
+            // 如果存在三方登入关联，则关联之
             $this->associateAuth($user);
 
             return $this->sendLoginResponse($request);
@@ -91,7 +91,7 @@ class UserController extends BaseController
     }
 
     /**
-     * 退出登录
+     * 退出登入
      *
      * @param Request $request
      */
@@ -141,7 +141,7 @@ class UserController extends BaseController
 
         return [
             'code' => 0,
-            'msg' => '注册成功',
+            'msg' => '註冊成功',
             'redirect' => true
         ];
     }
@@ -202,11 +202,11 @@ class UserController extends BaseController
                 return redirect()->intended('/');
             }
 
-            // 重定向到登录注册頁面，关联本站用户
+            // 重定向到登入註冊頁面，关联本站用户
             session([self::AUTH_SESSION => $user]);
             return redirect(route('member::login.show'));
         } catch (AuthorizeFailedException $e) {
-            return redirect(route('member::login.show'))->withErrors('授权失败');
+            return redirect(route('member::login.show'))->withErrors('授權失败');
         } catch (InvalidStateException $e) {
             return redirect(route('member::login.show'))->withErrors('invalid state');
         }

@@ -37,13 +37,13 @@ class SensitiveWordController extends Controller
         SensitiveWord::$listField = [
             'verb' => '动词',
             'noun' => '名词',
-            'exclusive' => '专有词',
+            'exclusive' => '專有词',
         ];
         return view('admin.SensitiveWord.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 敏感詞列表数据接口
+     * 敏感詞列表數據接口
      *
      * @param Request $request
      * @return array
@@ -63,7 +63,7 @@ class SensitiveWordController extends Controller
         SensitiveWord::$searchField = [
             'verb' => '动词',
             'noun' => '名词',
-            'exclusive' => '专有词',
+            'exclusive' => '專有词',
         ];
     }
 
@@ -80,7 +80,7 @@ class SensitiveWordController extends Controller
         if (count($data) > 1) {
             return [
             'code' => 4,
-                'msg' => '专有词、动词、名词不可同时填写，任选一个填写即可',
+                'msg' => '專有词、动词、名词不可同时填写，任选一个填写即可',
                 'redirect' => false
             ];
         }
@@ -141,14 +141,14 @@ class SensitiveWordController extends Controller
     }
 
     /**
-     * 敏感詞管理-编辑敏感詞
+     * 敏感詞管理-編輯敏感詞
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑敏感詞', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯敏感詞', 'url' => ''];
 
         $model = SensitiveWordRepository::find($id);
         return view('admin.SensitiveWord.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -173,13 +173,13 @@ class SensitiveWordController extends Controller
             $this->flushCache();
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

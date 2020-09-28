@@ -10,7 +10,7 @@ use App\Model\Admin\Config as SiteConfig;
  * 直接从資料庫获取系统后台配置
  *
  * @param string $key key
- * @param mixed $default key不存在时的默认值
+ * @param mixed $default key不存在时的默認值
  * @return mixed key对应的value
  */
 function getConfig($key, $default = null)
@@ -146,14 +146,14 @@ function mapTypeToVerbOfSensitiveWords()
  * 敏感詞检查
  *
  * @param string $text 待检查文本
- * @param string $type 名词、动词的检测方法。默认為 join 。join：名词和动词相连组合在一起视為违规 all：名词和动词只要同时出现即為违规
- * @param mixed $mode 检查模式。仅 $type 為 all 时有效。默认名词、动词、专用词都检查，显示可指定為 noun verb exclusive
+ * @param string $type 名词、动词的检测方法。默認為 join 。join：名词和动词相连组合在一起视為违规 all：名词和动词只要同时出现即為违规
+ * @param mixed $mode 检查模式。仅 $type 為 all 时有效。默認名词、动词、專用词都检查，显示可指定為 noun verb exclusive
  * @return array
  */
 function checkSensitiveWords(string $text, $type = 'join', $mode = null)
 {
     if (!is_null($mode) && !in_array($mode, ['noun', 'verb', 'exclusive'])) {
-        throw new \InvalidArgumentException('mode参数无效，只能為null值、noun、exclusive');
+        throw new \InvalidArgumentException('mode参數无效，只能為null值、noun、exclusive');
     }
 
     if ($type === 'join') {

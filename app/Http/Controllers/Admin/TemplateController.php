@@ -35,7 +35,7 @@ class TemplateController extends Controller
     }
 
     /**
-     * 模板管理-模板列表数据接口
+     * 模板管理-模板列表數據接口
      *
      * @param Request $request
      * @return array
@@ -86,14 +86,14 @@ class TemplateController extends Controller
     }
 
     /**
-     * 模板管理-编辑模板
+     * 模板管理-編輯模板
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑模板', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯模板', 'url' => ''];
 
         $model = TemplateRepository::find($id);
         return view('admin.template.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -113,13 +113,13 @@ class TemplateController extends Controller
             TemplateRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模板已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模板已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

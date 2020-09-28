@@ -32,7 +32,7 @@
 @endsection
 
 <script type="text/html" id="action">
-    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑管理員"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="<% d.editUrl %>" class="layui-table-link" title="編輯管理員"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="<% d.roleUrl %>" class="layui-table-link" style="margin-left: 10px" title="分配角色"><i class="layui-icon layui-icon-auz"></i></a>
 </script>
 

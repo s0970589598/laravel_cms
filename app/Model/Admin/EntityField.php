@@ -30,8 +30,8 @@ class EntityField extends Model
         'entityName' => '模型',
         'name' => '字段名称',
         'type' => '字段類型',
-        'form_name' => '表单名称',
-        'form_type' => ['title' => '表单類型', 'sort' => true],
+        'form_name' => '表單名称',
+        'form_type' => ['title' => '表單類型', 'sort' => true],
         'is_show_inline' => [
             'title' => '行内展示', 'sort' => true, 'templet' => '#isShowInlineTemplet', 'event' => 'showInlineEvent'
         ],

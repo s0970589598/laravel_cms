@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class NEditorController extends Controller
 {
     /**
-     * 基础功能-图片上传
+     * 基础功能-圖片上传
      *
      * @param Request $request
      * @param string $type

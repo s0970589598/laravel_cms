@@ -94,7 +94,7 @@ class EntityFieldControllerTest extends TestCase
 
     public function testEntityContentCanBeCreatedAndEditedAndListedAndDeleted()
     {
-        // 字段可编辑
+        // 字段可編輯
         $this->createEntityField(true, true);
         $data = [
             'title' => '测试標題',
@@ -130,7 +130,7 @@ class EntityFieldControllerTest extends TestCase
 
     public function testEntityContentCanNotBeEditedWhenFieldIsNotEditable()
     {
-        // 字段不可编辑
+        // 字段不可編輯
         $this->createEntityField(true, false);
         $data = [
             'title' => '测试標題'
@@ -185,7 +185,7 @@ class EntityFieldControllerTest extends TestCase
         $response = $this->actingAs($this->user, 'admin')
             ->get(route('admin::content.create', ['entity' => $this->entity->id]));
         $response->assertSee('<option value="1"  selected >女</option>');
-        $response->assertSee('value="默认標題"');
+        $response->assertSee('value="默認標題"');
 
         $data = [
             'title' => '测试標題',
@@ -206,7 +206,7 @@ class EntityFieldControllerTest extends TestCase
         $response = $this->actingAs($this->user, 'admin')
             ->get(route('admin::content.create', ['entity' => $this->entity->id]));
         $response->assertSee('<option value="1"  selected >推荐1</option>');
-        $response->assertSee('value="默认標題"');
+        $response->assertSee('value="默認標題"');
 
         $data = [
             'title' => '测试標題',
@@ -249,7 +249,7 @@ class EntityFieldControllerTest extends TestCase
             'comment' => '',
             'default_value' => '',
             'is_edit' => $is_edit === true ? EntityField::EDIT_ENABLE : EntityField::EDIT_DISABLE,
-            'form_default_value' => '默认標題',
+            'form_default_value' => '默認標題',
             'is_show' => EntityField::SHOW_ENABLE,
         ];
         if ($modifyDB) {

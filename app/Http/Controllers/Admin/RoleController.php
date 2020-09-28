@@ -39,7 +39,7 @@ class RoleController extends Controller
     }
 
     /**
-     * 角色管理-角色列表数据接口
+     * 角色管理-角色列表數據接口
      *
      * @param Request $request
      * @return array
@@ -92,14 +92,14 @@ class RoleController extends Controller
     }
 
     /**
-     * 角色管理-编辑角色
+     * 角色管理-編輯角色
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑角色', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯角色', 'url' => ''];
 
         $model = RoleRepository::find($id);
         return view('admin.role.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -119,27 +119,27 @@ class RoleController extends Controller
             RoleRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前角色已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前角色已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 角色管理-分配权限
+     * 角色管理-分配權限
      *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function permission($id)
     {
-        $this->breadcrumb[] = ['title' => '分配权限', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '分配權限', 'url' => ''];
         $role = RoleRepository::find($id);
         return view('admin.role.permission', [
             'id' => $id,
@@ -150,7 +150,7 @@ class RoleController extends Controller
     }
 
     /**
-     * 角色管理-更新权限
+     * 角色管理-更新權限
      *
      * @param Request $request
      * @param $id

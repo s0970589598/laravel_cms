@@ -14,7 +14,7 @@
         _require = function( deps, callback ) {
             var args, len, i;
 
-            // 如果deps不是数组，则直接返回指定module
+            // 如果deps不是數组，则直接返回指定module
             if ( typeof deps === 'string' ) {
                 return getModule( deps );
             } else {
@@ -169,7 +169,7 @@
      * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个变量中访问到。
      *
      * As you know, Web Uploader的每个文件都是用过[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
-     * 默认module id该文件的路径，而此路径将会转化成名字空间存放在WebUploader中。如：
+     * 默認module id该文件的路径，而此路径将会转化成名字空间存放在WebUploader中。如：
      *
      * * module `base`：WebUploader.Base
      * * module `file`: WebUploader.File
@@ -342,7 +342,7 @@
                     };
                 }
     
-                // 复制静态方法
+                // 複製静态方法
                 $.extend( true, child, Super, staticProtos || {} );
     
                 /* jshint camelcase: false */
@@ -359,7 +359,7 @@
             },
     
             /**
-             * 一个不做任何事情的方法。可以用来赋值给默认的callback.
+             * 一个不做任何事情的方法。可以用来赋值给默認的callback.
              * @method noop
              */
             noop: noop,
@@ -383,7 +383,7 @@
             bindFn: bindFn,
     
             /**
-             * 引用Console.log如果存在的话，否则引用一个[空函数loop](#WebUploader:Base.log)。
+             * 引用Console.log如果存在的话，否则引用一个[空函數loop](#WebUploader:Base.log)。
              * @grammar Base.log( args... ) => undefined
              * @method log
              */
@@ -413,8 +413,8 @@
             })(),
     
             /**
-             * 被[uncurrythis](http://www.2ality.com/2011/11/uncurrying-this.html)的数组slice方法。
-             * 将用来将非数组对象转化成数组对象。
+             * 被[uncurrythis](http://www.2ality.com/2011/11/uncurrying-this.html)的數组slice方法。
+             * 将用来将非數组对象转化成數组对象。
              * @grammar Base.slice( target, start[, end] ) => Array
              * @method slice
              * @example
@@ -455,8 +455,8 @@
              * @grammar Base.formatSize( size, pointLength ) => String
              * @grammar Base.formatSize( size, pointLength, units ) => String
              * @param {Number} size 文件大小
-             * @param {Number} [pointLength=2] 精确到的小数点数。
-             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 单位数组。从字节，到千字节，一直往上指定。如果单位数组里面只指定了到了K(千字节)，同时文件大小大于M, 此方法的输出将还是显示成多少K.
+             * @param {Number} [pointLength=2] 精确到的小數点數。
+             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 单位數组。从字节，到千字节，一直往上指定。如果单位數组里面只指定了到了K(千字节)，同时文件大小大于M, 此方法的输出将还是显示成多少K.
              * @example
              * console.log( Base.formatSize( 100 ) );    // => 100B
              * console.log( Base.formatSize( 1024 ) );    // => 1.00K
@@ -532,7 +532,7 @@
             /**
              * 绑定事件。
              *
-             * `callback`方法在執行时，arguments将会来源于trigger的时候携带的参数。如
+             * `callback`方法在執行时，arguments将会来源于trigger的时候携带的参數。如
              * ```javascript
              * var obj = {};
              *
@@ -550,7 +550,7 @@
              * 切会影响到`trigger`方法的返回值，為`false`。
              *
              * `on`还可以用来添加一个特殊事件`all`, 这样所有的事件触发都会响应到。同时此类`callback`中的arguments有一个不同处，
-             * 就是第一个参数為`type`，记录当前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`執行完后触发。
+             * 就是第一个参數為`type`，记入当前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`執行完后触发。
              * ```javascript
              * obj.on( 'all', function( type, arg1, arg2 ) {
              *     console.log( type, arg1, arg2 ); // => 'testa', 'arg1', 'arg2'
@@ -591,7 +591,7 @@
             },
     
             /**
-             * 绑定事件，且当handler執行完后，自动解除绑定。
+             * 绑定事件，且当handler執行完后，自動解除绑定。
              * @method once
              * @grammar once( name, callback[, context] ) => self
              * @param  {String}   name     事件名
@@ -656,7 +656,7 @@
              * @method trigger
              * @grammar trigger( name[, args...] ) => self
              * @param  {String}   type     事件名
-             * @param  {*} [...] 任意参数
+             * @param  {*} [...] 任意参數
              * @return {Boolean} 如果handler中return false了，则返回false, 否则返回true
              */
             trigger: function( type ) {
@@ -774,12 +774,12 @@
              * @grammar option( key, val ) => self
              * @example
              *
-             * // 初始状态图片上传前不会压缩
+             * // 初始状态圖片上传前不会压缩
              * var uploader = new WebUploader.Uploader({
              *     resize: null;
              * });
              *
-             * // 修改后图片上传前，尝试将图片压缩到1600 * 1600
+             * // 修改后圖片上传前，尝试将圖片压缩到1600 * 1600
              * uploader.options( 'resize', {
              *     width: 1600,
              *     height: 1600
@@ -805,11 +805,11 @@
     
             /**
              * 获取文件统计信息。返回一个包含一下信息的对象。
-             * * `successNum` 上传成功的文件数
-             * * `uploadFailNum` 上传失败的文件数
-             * * `cancelNum` 被删除的文件数
-             * * `invalidNum` 无效的文件数
-             * * `queueNum` 还在队列中的文件数
+             * * `successNum` 上传成功的文件數
+             * * `uploadFailNum` 上传失败的文件數
+             * * `cancelNum` 被删除的文件數
+             * * `invalidNum` 无效的文件數
+             * * `queueNum` 还在队列中的文件數
              * @method getStats
              * @grammar getStats() => Object
              */
@@ -837,7 +837,7 @@
                         type.substring( 1 );
     
                 if (
-                        // 调用通过on方法注册的handler.
+                        // 调用通过on方法註冊的handler.
                         Mediator.trigger.apply( this, arguments ) === false ||
     
                         // 调用opts.onEvent
@@ -1039,7 +1039,7 @@
     
             this.uid = Base.guid('client_');
     
-            // 允许runtime没有初始化之前，注册一些方法在初始化后執行。
+            // 允许runtime没有初始化之前，註冊一些方法在初始化后執行。
             this.runtimeReady = function( cb ) {
                 return deferred.done( cb );
             };
@@ -1315,8 +1315,8 @@
     
         /**
          * 添加组件
-         * @param  {object} widgetProto 组件原型，构造函数通过constructor属性定义
-         * @param  {object} responseMap API名称与函数实现的映射
+         * @param  {object} widgetProto 组件原型，构造函數通过constructor属性定义
+         * @param  {object} responseMap API名称与函數实现的映射
          * @example
          *     Uploader.register( {
          *         init: function( options ) {},
@@ -1457,7 +1457,7 @@
         var $ = Base.$;
     
         /**
-         * @property {Selector} [paste=undefined]  指定监听paste事件的容器，如果不指定，不启用此功能。此功能為通过粘贴来添加截屏的图片。建议设置為`document.body`.
+         * @property {Selector} [paste=undefined]  指定监听paste事件的容器，如果不指定，不启用此功能。此功能為通过粘贴来添加截屏的圖片。建议设置為`document.body`.
          * @namespace options
          * @for Uploader
          */
@@ -1636,7 +1636,7 @@
                             files = me.exec('getFiles');
                             me.trigger( 'select', $.map( files, function( file ) {
                                 newFile = new File( me.getRuid(), file );
-                                // 记录来源。
+                                // 记入来源。
                                 newFile._refer = opts.container;
 
                                 // 原始file对象
@@ -1781,7 +1781,7 @@
              * @for Uploader
              * @grammar addButton( pick ) => Promise
              * @description
-             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参数跟[options.pick](#WebUploader:Uploader:options)一致。
+             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参數跟[options.pick](#WebUploader:Uploader:options)一致。
              * @example
              * uploader.addButton({
              *     id: '#btnContainer',
@@ -1856,10 +1856,10 @@
             });
         }
     
-        // 默认选项。
+        // 默認选项。
         Image.options = {
     
-            // 默认的图片处理质量
+            // 默認的圖片处理质量
             quality: 90,
     
             // 是否裁剪
@@ -1929,7 +1929,7 @@
         return Image;
     });
     /**
-     * @fileOverview 图片操作, 负责预览图片和上传前压缩图片
+     * @fileOverview 圖片操作, 负责预览圖片和上传前压缩圖片
      */
     define('widgets/image',[
         'base',
@@ -1971,19 +1971,19 @@
              * @property {Object} [thumb]
              * @namespace options
              * @for Uploader
-             * @description 配置生成缩略图的选项。
+             * @description 配置生成缩略圖的选项。
              *
-             * 默认為：
+             * 默認為：
              *
              * ```javascript
              * {
              *     width: 110,
              *     height: 110,
              *
-             *     // 图片质量，只有type為`image/jpeg`的时候才有效。
+             *     // 圖片质量，只有type為`image/jpeg`的时候才有效。
              *     quality: 70,
              *
-             *     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置為false.
+             *     // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
              *     allowMagnify: true,
              *
              *     // 是否允许裁剪。
@@ -1992,7 +1992,7 @@
              *     // 是否保留头部meta信息。
              *     preserveHeaders: false,
              *
-             *     // 為空的话则保留原有图片格式。
+             *     // 為空的话则保留原有圖片格式。
              *     // 否则强制转换成指定的類型。
              *     type: 'image/jpeg'
              * }
@@ -2006,9 +2006,9 @@
                 crop: true,
                 preserveHeaders: false,
     
-                // 為空的话则保留原有图片格式。
+                // 為空的话则保留原有圖片格式。
                 // 否则强制转换成指定的類型。
-                // IE 8下面 base64 大小不能超过 32K 否则预览失败，而非 jpeg 编码的图片很可
+                // IE 8下面 base64 大小不能超过 32K 否则预览失败，而非 jpeg 编码的圖片很可
                 // 能会超过 32k, 所以这里设置成预览的时候都是 image/jpeg
                 type: 'image/jpeg'
             },
@@ -2017,19 +2017,19 @@
              * @property {Object} [compress]
              * @namespace options
              * @for Uploader
-             * @description 配置压缩的图片的选项。如果此选项為`false`, 则图片在上传前不进行压缩。
+             * @description 配置压缩的圖片的选项。如果此选项為`false`, 则圖片在上传前不进行压缩。
              *
-             * 默认為：
+             * 默認為：
              *
              * ```javascript
              * {
              *     width: 1600,
              *     height: 1600,
              *
-             *     // 图片质量，只有type為`image/jpeg`的时候才有效。
+             *     // 圖片质量，只有type為`image/jpeg`的时候才有效。
              *     quality: 90,
              *
-             *     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置為false.
+             *     // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
              *     allowMagnify: false,
              *
              *     // 是否允许裁剪。
@@ -2057,15 +2057,15 @@
     
     
             /**
-             * 生成缩略图，此过程為异步，所以需要传入`callback`。
-             * 通常情况在图片加入队里后调用此方法来生成预览图以增强交互效果。
+             * 生成缩略圖，此过程為异步，所以需要传入`callback`。
+             * 通常情况在圖片加入队里后调用此方法来生成预览圖以增强交互效果。
              *
-             * `callback`中可以接收到两个参数。
-             * * 第一个為error，如果生成缩略图有错误，此error将為真。
-             * * 第二个為ret, 缩略图的Data URL值。
+             * `callback`中可以接收到两个参數。
+             * * 第一个為error，如果生成缩略圖有错误，此error将為真。
+             * * 第二个為ret, 缩略圖的Data URL值。
              *
              * **注意**
-             * Date URL在IE6/7中不支持，所以不用调用此方法了，直接显示一张暂不支持预览图片好了。
+             * Date URL在IE6/7中不支持，所以不用调用此方法了，直接显示一张暂不支持预览圖片好了。
              *
              *
              * @method makeThumb
@@ -2092,7 +2092,7 @@
     
                 file = this.request( 'get-file', file );
     
-                // 只预览图片格式。
+                // 只预览圖片格式。
                 if ( !file.type.match( /^image/ ) ) {
                     cb( true );
                     return;
@@ -2141,7 +2141,7 @@
     
                 file = this.request( 'get-file', file );
     
-                // 只预览图片格式。
+                // 只预览圖片格式。
                 if ( !opts || !~'image/jpeg,image/jpg'.indexOf( file.type ) ||
                         file.size < compressSize ||
                         file._compressed ) {
@@ -2167,8 +2167,8 @@
                 image.once( 'complete', function() {
                     var blob, size;
     
-                    // 移动端 UC / qq 浏览器的无图模式下
-                    // ctx.getImageData 处理大图的时候会报 Exception
+                    // 移动端 UC / qq 浏览器的无圖模式下
+                    // ctx.getImageData 处理大圖的时候会报 Exception
                     // INDEX_SIZE_ERR: DOM Exception 1
                     try {
                         blob = image.getAsBlob( opts.type );
@@ -2188,7 +2188,7 @@
                         file._compressed = true;
                         deferred.resolve();
                     } catch ( e ) {
-                        // 出错了直接继续，让其上传原始图片
+                        // 出错了直接继续，让其上传原始圖片
                         deferred.resolve();
                     }
                 });
@@ -2222,7 +2222,7 @@
         /**
          * 文件类
          * @class File
-         * @constructor 构造函数
+         * @constructor 构造函數
          * @grammar new File( source ) => File
          * @param {Lib.File} source [lib.File](#Lib.File)实例, 此source对象是带有Runtime信息的。
          */
@@ -2365,7 +2365,7 @@
          * * `complete` 上传完成。
          * * `error` 上传出错，可重试
          * * `interrupt` 上传中断，可续传。
-         * * `invalid` 文件不合格，不能重试上传。会自动从队列中移除。
+         * * `invalid` 文件不合格，不能重试上传。会自動从队列中移除。
          * * `cancelled` 文件被移除。
          * @property {Object} Status
          * @namespace File
@@ -2406,13 +2406,13 @@
         function Queue() {
     
             /**
-             * 统计文件数。
-             * * `numOfQueue` 队列中的文件数。
-             * * `numOfSuccess` 上传成功的文件数
-             * * `numOfCancel` 被移除的文件数
-             * * `numOfProgress` 正在上传中的文件数
-             * * `numOfUploadFailed` 上传错误的文件数。
-             * * `numOfInvalid` 无效的文件数。
+             * 统计文件數。
+             * * `numOfQueue` 队列中的文件數。
+             * * `numOfSuccess` 上传成功的文件數
+             * * `numOfCancel` 被移除的文件數
+             * * `numOfProgress` 正在上传中的文件數
+             * * `numOfUploadFailed` 上传错误的文件數。
+             * * `numOfInvalid` 无效的文件數。
              * @property {Object} stats
              */
             this.stats = {
@@ -2750,7 +2750,7 @@
     
             /**
              * @event filesQueued
-             * @param {File} files 数组，内容為原始File(lib/File）对象。
+             * @param {File} files 數组，内容為原始File(lib/File）对象。
              * @description 当一批文件添加进队列以后触发。
              * @for  Uploader
              */
@@ -2759,7 +2759,7 @@
              * @method addFiles
              * @grammar addFiles( file ) => undefined
              * @grammar addFiles( [file1, file2 ...] ) => undefined
-             * @param {Array of File or File} [files] Files 对象 数组
+             * @param {Array of File or File} [files] Files 对象 數组
              * @description 添加文件到队列
              * @for  Uploader
              */
@@ -2818,7 +2818,7 @@
              * @method getFiles
              * @grammar getFiles() => Array
              * @grammar getFiles( status1, status2, status... ) => Array
-             * @description 返回指定状态的文件集合，不传参数将返回所有状态的文件。
+             * @description 返回指定状态的文件集合，不传参數将返回所有状态的文件。
              * @for  Uploader
              * @example
              * console.log( uploader.getFiles() );    // => all files
@@ -3085,7 +3085,7 @@
             isPromise = Base.isPromise,
             Status = WUFile.Status;
     
-        // 添加默认配置项
+        // 添加默認配置项
         $.extend( Uploader.options, {
     
     
@@ -3094,7 +3094,7 @@
              * @namespace options
              * @for Uploader
              * @description 是否允许在文件传输时提前把下一个文件准备好。
-             * 对于一个文件的准备工作比较耗时，比如图片压缩，md5序列化。
+             * 对于一个文件的准备工作比较耗时，比如圖片压缩，md5序列化。
              * 如果能提前在当前文件传输期处理，可以节省总体耗时。
              */
             prepareNextFile: false,
@@ -3111,7 +3111,7 @@
              * @property {Boolean} [chunkSize=5242880]
              * @namespace options
              * @for Uploader
-             * @description 如果要分片，分多大一片？ 默认大小為5M.
+             * @description 如果要分片，分多大一片？ 默認大小為5M.
              */
             chunkSize: 5 * 1024 * 1024,
     
@@ -3119,7 +3119,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自动重传多少次？
+             * @description 如果某个分片由于网络问题出错，允许自動重传多少次？
              */
             chunkRetry: 2,
     
@@ -3127,7 +3127,7 @@
              * @property {Boolean} [threads=3]
              * @namespace options
              * @for Uploader
-             * @description 上传并发数。允许同时最大上传进程数。
+             * @description 上传并发數。允许同时最大上传进程數。
              */
             threads: 3,
     
@@ -3136,7 +3136,7 @@
              * @property {Object} [formData]
              * @namespace options
              * @for Uploader
-             * @description 文件上传请求的参数表，每次发送都会发送此对象中的参数。
+             * @description 文件上传请求的参數表，每次发送都会发送此对象中的参數。
              */
             formData: null
     
@@ -3159,7 +3159,7 @@
              * @namespace options
              * @for Uploader
              * @description 是否已二进制的流的方式发送文件，这样整个上传内容`php://input`都為文件内容，
-             * 其他参数在$_GET数组中。
+             * 其他参數在$_GET數组中。
              */
         });
     
@@ -3215,7 +3215,7 @@
     
                 this.runing = false;
     
-                // 记录当前正在传的数据，跟threads相关
+                // 记入当前正在传的數據，跟threads相关
                 this.pool = [];
     
                 // 缓存即将上传的文件。
@@ -3286,7 +3286,7 @@
              */
     
             /**
-             * 暂停上传。第一个参数為是否中断上传当前正在上传的文件。
+             * 暂停上传。第一个参數為是否中断上传当前正在上传的文件。
              * @grammar stop() => undefined
              * @grammar stop( true ) => undefined
              * @method stop
@@ -3532,15 +3532,15 @@
             /**
              * @event uploadBeforeSend
              * @param {Object} object
-             * @param {Object} data 默认的上传参数，可以扩展此对象来控制上传参数。
-             * @description 当某个文件的分块在发送前触发，主要用来询问是否要添加附带参数，大文件在开起分片上传的前提下此事件可能会触发多次。
+             * @param {Object} data 默認的上传参數，可以扩展此对象来控制上传参數。
+             * @description 当某个文件的分块在发送前触发，主要用来询问是否要添加附带参數，大文件在开起分片上传的前提下此事件可能会触发多次。
              * @for  Uploader
              */
     
             /**
              * @event uploadAccept
              * @param {Object} object
-             * @param {Object} ret 服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析。
+             * @param {Object} ret 服务端的返回數據，json格式，如果服务端不是json格式，从ret._raw中取數據，自行解析。
              * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值為`false`, 则此文件将派送`server`類型的`uploadError`事件。
              * @for  Uploader
              */
@@ -3565,7 +3565,7 @@
             /**
              * @event uploadSuccess
              * @param {File} file File对象
-             * @param {Object} response 服务端返回的数据
+             * @param {Object} response 服务端返回的數據
              * @description 当文件上传成功时触发。
              * @for  Uploader
              */
@@ -3641,7 +3641,7 @@
                 tr.on( 'error', function( type, flag ) {
                     block.retried = block.retried || 0;
     
-                    // 自动重试
+                    // 自動重试
                     if ( block.chunks > 1 && ~'http,abort'.indexOf( type ) &&
                             block.retried < opts.chunkRetry ) {
     
@@ -3679,7 +3679,7 @@
                     }
                 });
     
-                // 配置默认的上传字段。
+                // 配置默認的上传字段。
                 data = $.extend( data, {
                     id: file.id,
                     name: file.name,
@@ -3694,7 +3694,7 @@
                 });
     
                 // 在发送之间可以添加字段什么的。。。
-                // 如果默认的字段不够使用，可以通过监听此事件来扩展
+                // 如果默認的字段不够使用，可以通过监听此事件来扩展
                 owner.trigger( 'uploadBeforeSend', block, data, headers );
     
                 // 开始发送。
@@ -3749,7 +3749,7 @@
          * @param {String} type 错误類型。
          * @description 当validate不通过时，会以派送错误事件的形式通知调用者。通过`upload.on('error', handler)`可以捕获到此类错误，目前有以下错误会在特定的情况下派送错来。
          *
-         * * `Q_EXCEED_NUM_LIMIT` 在设置了`fileNumLimit`且尝试给`uploader`添加的文件数量超出这个值时派送。
+         * * `Q_EXCEED_NUM_LIMIT` 在设置了`fileNumLimit`且尝试给`uploader`添加的文件數量超出这个值时派送。
          * * `Q_EXCEED_SIZE_LIMIT` 在设置了`Q_EXCEED_SIZE_LIMIT`且尝试给`uploader`添加的文件总大小超出这个值时派送。
          * @for  Uploader
          */
@@ -3782,7 +3782,7 @@
          * @property {int} [fileNumLimit=undefined]
          * @namespace options
          * @for Uploader
-         * @description 验证文件总数量, 超出则不允许加入队列。
+         * @description 验证文件总數量, 超出则不允许加入队列。
          */
         api.addValidator( 'fileNumLimit', function() {
             var uploader = this,
@@ -4031,14 +4031,14 @@
     
         });
     
-        // 注册Components
+        // 註冊Components
         Html5Runtime.register = function( name, component ) {
             var klass = components[ name ] = Base.inherits( CompBase, component );
             return klass;
         };
     
-        // 注册html5运行时。
-        // 只有在支持的前提下注册。
+        // 註冊html5运行时。
+        // 只有在支持的前提下註冊。
         if ( window.Blob && window.FileReader && window.DataView ) {
             Runtime.addRuntime( type, Html5Runtime );
         }
@@ -4936,7 +4936,7 @@
             dirOffset = EXIF.parseExifTags( dataView, tiffOffset,
                     tiffOffset + dirOffset, littleEndian, data );
     
-            // 尝试读取缩略图
+            // 尝试读取缩略圖
             // if ( dirOffset ) {
             //     thumbnailData = {exif: {}};
             //     dirOffset = EXIF.parseExifTags(
@@ -5732,7 +5732,7 @@
                 return origin.apply( null, arguments );
             }
     
-            // 检测是否canvas支持jpeg导出，根据数据格式来判断。
+            // 检测是否canvas支持jpeg导出，根据數據格式来判断。
             // JPEG 前两位分别是：255, 216
             if ( type === 'image/jpeg' && typeof supportJpeg === 'undefined' ) {
                 fragement = origin.apply( null, arguments );
@@ -6543,7 +6543,7 @@
         });
     });
     /**
-     * @fileOverview 图片压缩
+     * @fileOverview 圖片压缩
      */
     define('runtime/flash/image',[
         'runtime/flash/runtime'

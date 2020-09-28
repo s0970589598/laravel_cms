@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传图片对话框逻辑代码,包括tab: 远程图片/上传图片/在线图片/搜索图片
+ * 上传圖片对话框逻辑代码,包括tab: 远程圖片/上传圖片/在线圖片/搜索圖片
  */
 
 (function () {
@@ -102,7 +102,7 @@
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // 图片容器
+            // 圖片容器
                 $queue = $wrap.find('.filelist'),
             // 状态栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
@@ -118,13 +118,13 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度条
                 $progress = $statusBar.find('.progress').hide(),
-            // 添加的文件数量
+            // 添加的文件數量
                 fileCount = 0,
             // 添加的文件总大小
                 fileSize = 0,
             // 优化retina, 在retina下这个值是2
                 ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
+            // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
@@ -471,7 +471,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 添加额外的GET参数 */
+                        /* 添加额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -484,7 +484,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象添加POST参数
+                //这里可以通过data对象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -587,18 +587,18 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自动拉取数据 */
+        /* 初始化滚动事件,滚动到地步自動拉取數據 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取图片 */
+            /* 滚动拉取圖片 */
             domUtils.on($G('fileList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
                     _this.getFileData();
                 }
             });
-            /* 选中图片 */
+            /* 选中圖片 */
             domUtils.on(this.list, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode;
@@ -612,19 +612,19 @@
                 }
             });
         },
-        /* 初始化第一次的数据 */
+        /* 初始化第一次的數據 */
         initData: function () {
 
-            /* 拉取数据需要使用的值 */
+            /* 拉取數據需要使用的值 */
             this.state = 0;
             this.listSize = editor.getOpt('fileManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* 第一次拉取数据 */
+            /* 第一次拉取數據 */
             this.getFileData();
         },
-        /* 向后台拉取图片列表数据 */
+        /* 向后台拉取圖片列表數據 */
         getFileData: function () {
             var _this = this;
 
@@ -664,7 +664,7 @@
                 });
             }
         },
-        /* 添加图片到列表界面上 */
+        /* 添加圖片到列表界面上 */
         pushData: function (list) {
             var i, item, img, filetype, preview, icon, _this = this,
                 urlPrefix = editor.getOpt('fileManagerUrlPrefix');
@@ -707,7 +707,7 @@
                 }
             }
         },
-        /* 改变图片大小 */
+        /* 改变圖片大小 */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;

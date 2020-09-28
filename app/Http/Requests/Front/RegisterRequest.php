@@ -64,7 +64,7 @@ class RegisterRequest extends FormRequest
             'phone.regex' => '手機號碼格式有误',
             'phone.unique' => '手機號碼已存在',
             'password.required' => '密码不能為空',
-            'password.regex' => '密码6到18位，不能為纯数字或纯字母',
+            'password.regex' => '密码6到18位，不能為纯數字或纯字母',
             'repeat_password.same' => '两次输出密码不一致',
         ];
     }

@@ -32,7 +32,7 @@ class LogController extends Controller
     }
 
     /**
-     * Log管理-Log列表数据接口
+     * Log管理-Log列表數據接口
      *
      * @param Request $request
      * @return array
@@ -49,14 +49,14 @@ class LogController extends Controller
     }
 
     /**
-     * 编辑Log
+     * 編輯Log
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑Log', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯Log', 'url' => ''];
 
         $model = LogRepository::find($id);
         return view('admin.log.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);

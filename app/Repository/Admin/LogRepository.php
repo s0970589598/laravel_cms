@@ -21,7 +21,7 @@ class LogRepository
             ->orderBy('id', 'desc')
             ->paginate($perPage);
         $data->transform(function ($item) {
-            // 因列表展示用的layui table组件未进行xss处理，故在后端进行xss处理
+            // 因列表展示用的layui table组件未进行xss处理，故在編輯进行xss处理
             xssFilter($item);
             return $item;
         });

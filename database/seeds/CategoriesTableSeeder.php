@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => '默认分類',
+            'name' => '默認分類',
             'model_id' => 2,
         ]);
 

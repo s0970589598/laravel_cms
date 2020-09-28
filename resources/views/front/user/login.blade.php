@@ -15,7 +15,7 @@
 <div class="container h-full flex justify-center items-center">
     <div class="layui-tab w-1/3" >
         @if(session()->has(\App\Http\Controllers\Front\UserController::AUTH_SESSION))
-            <span style="margin-bottom: 20px;" class="text-purple-light block">登录或注册进行帐号关联</span>
+            <span style="margin-bottom: 20px;" class="text-purple-light block">登入或註冊进行帐号关联</span>
         @endif
             <span style="margin-bottom: 20px;" class="text-red-light block">
             @foreach($errors->all() as $message)
@@ -23,8 +23,8 @@
             @endforeach
             </span>
         <ul class="layui-tab-title">
-            <li @if($type === 'login') class="layui-this" @endif>登录</li>
-            <li @if($type === 'register') class="layui-this" @endif>注册</li>
+            <li @if($type === 'login') class="layui-this" @endif>登入</li>
+            <li @if($type === 'register') class="layui-this" @endif>註冊</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item @if($type === 'login') layui-show @endif">
@@ -53,7 +53,7 @@
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
                             <button class="shadow bg-purple-dark hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" id="submit-login">
-                                登录
+                                登入
                             </button>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="md:w-1/3"></div>
                         <div class="md:w-2/3">
                             <button class="shadow bg-purple-dark hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" id="submit-register">
-                                注册
+                                註冊
                             </button>
                         </div>
                     </div>

@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => '用户名或密码错误',
-    'throttle' => '登录尝试次数过多，请在 :seconds 秒后重试',
+    'throttle' => '登入尝试次數过多，请在 :seconds 秒后重试',
 
 ];

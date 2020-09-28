@@ -9,9 +9,9 @@
             <form class="layui-form" action="@if(isset($id)){{ route('admin::SensitiveWord.update', ['id' => $id]) }}@else{{ route('admin::SensitiveWord.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">专有词</label>
+                    <label class="layui-form-label">專有词</label>
                     <div class="layui-input-block">
-                        <input type="text" name="exclusive" autocomplete="off" class="layui-input" value="{{ $model->exclusive ?? ''  }}" placeholder="一般情况只需添加自定义的专有词即可，名词、动词可以不用管">
+                        <input type="text" name="exclusive" autocomplete="off" class="layui-input" value="{{ $model->exclusive ?? ''  }}" placeholder="一般情况只需添加自定义的專有词即可，名词、动词可以不用管">
                     </div>
                 </div>
                 <div class="layui-form-item">

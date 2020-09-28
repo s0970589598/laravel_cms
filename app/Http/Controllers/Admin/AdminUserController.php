@@ -39,7 +39,7 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理員管理-管理員列表数据
+     * 管理員管理-管理員列表數據
      *
      * @param Request $request
      * @return array
@@ -90,13 +90,13 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理員管理-编辑管理員
+     * 管理員管理-編輯管理員
      *
      * @param int $id
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑管理員', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯管理員', 'url' => ''];
 
         $user = AdminUserRepository::find($id);
         return view('admin.adminUser.add', ['id' => $id, 'user' => $user, 'breadcrumb' => $this->breadcrumb]);
@@ -123,13 +123,13 @@ class AdminUserController extends Controller
             AdminUserRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前用户已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前用户已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

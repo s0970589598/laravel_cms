@@ -37,7 +37,7 @@ class TagController extends Controller
     }
 
     /**
-     * 標簽管理-標簽列表数据接口
+     * 標簽管理-標簽列表數據接口
      *
      * @param Request $request
      * @return array
@@ -87,14 +87,14 @@ class TagController extends Controller
     }
 
     /**
-     * 標簽管理-编辑標簽
+     * 標簽管理-編輯標簽
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑標簽', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯標簽', 'url' => ''];
 
         $model = TagRepository::find($id);
         return view('admin.tag.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -114,13 +114,13 @@ class TagController extends Controller
             TagRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前標簽已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前標簽已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

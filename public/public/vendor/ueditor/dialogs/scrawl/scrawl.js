@@ -29,8 +29,8 @@ var scrawl = function (options) {
             me._addColorBarListener();//添加颜色选择处理
             me._addBrushBarListener();//添加画笔大小处理
             me._addEraserBarListener();//添加橡皮大小处理
-            me._addAddImgListener();//添加增添背景图片处理
-            me._addRemoveImgListenter();//删除背景图片处理
+            me._addAddImgListener();//添加增添背景圖片处理
+            me._addRemoveImgListenter();//删除背景圖片处理
             me._addScalePicListenter();//添加缩放处理
             me._addClearSelectionListenter();//添加清楚选中状态处理
 
@@ -572,7 +572,7 @@ function ue_callback(url, state) {
         picBorard = $G("J_picBoard"),
         img = doc.createElement("img");
 
-    //图片缩放
+    //圖片缩放
     function scale(img, max, oWidth, oHeight) {
         var width = 0, height = 0, percent, ow = img.width || oWidth, oh = img.height || oHeight;
         if (ow > max || oh > max) {

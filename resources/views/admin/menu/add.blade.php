@@ -20,7 +20,7 @@
                         <div class="layui-input-inline">
                             <input type="checkbox" name="is_lock_name" lay-skin="switch" lay-text="锁定|不锁定" value="1" @if(isset($model) && $model->is_lock_name == App\Model\Admin\Menu::LOCK_NAME) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">锁定名称则選單自动更新时不会更新当前選單的名称和分组等信息</div>
+                        <div class="layui-form-mid layui-word-aux">锁定名称则選單自動更新时不会更新当前選單的名称和分组等信息</div>
                     </div>
                 </div>
                     <div class="layui-form-item">
@@ -41,11 +41,11 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">路由参数</label>
+                        <label class="layui-form-label">路由参數</label>
                         <div class="layui-input-inline">
                             <input type="text" name="route_params" autocomplete="off" class="layui-input" value="{{ $model->route_params ?? ''  }}">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">用于精确控制同一路由下不同路由参数值的访问权限。填写格式：参数名称:参数值</div>
+                        <div class="layui-form-mid layui-word-aux">用于精确控制同一路由下不同路由参數值的访问權限。填写格式：参數名称:参數值</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">URL</label>

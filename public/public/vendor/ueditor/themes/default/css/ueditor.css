@@ -131,7 +131,7 @@ div.edui-box {
 .edui-default .edui-toolbar .edui-combox {
     margin: 1px;
 }
-/*UI工具栏、编辑区域、底部*/
+/*UI工具栏、編輯区域、底部*/
 .edui-default .edui-editor {
     border: 1px solid #d4d4d4;
     background-color: white;
@@ -1017,7 +1017,7 @@ div.edui-box {
     background-color: white;
 }
 
-/* 解决嵌套导致的图标问题 */
+/* 解决嵌套导致的圖标问题 */
 .edui-default .edui-for-insertorderedlist .edui-popup-body .edui-icon,
 .edui-default .edui-for-lineheight .edui-popup-body .edui-icon,
 .edui-default .edui-for-rowspacingtop .edui-popup-body .edui-icon,
@@ -1666,7 +1666,7 @@ div.edui-box {
     background: white;
     opacity: .8;
 }
-/*自动排版弹出選單*/
+/*自動排版弹出選單*/
 .edui-default .edui-autotypesetpicker .edui-autotypesetpicker-body {
     font-size: 12px;
     margin-bottom: 3px;
@@ -1687,7 +1687,7 @@ div.edui-box {
     margin: 3px 3px 3px 4px;
     *margin: 1px 0 0 0;
 }
-/*自动排版弹出選單*/
+/*自動排版弹出選單*/
 .edui-default .edui-cellalignpicker .edui-cellalignpicker-body {
     width: 70px;
     font-size: 12px;

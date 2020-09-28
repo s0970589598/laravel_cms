@@ -39,7 +39,7 @@ class ConfigController extends Controller
     }
 
     /**
-     * 配置管理-配置列表数据接口
+     * 配置管理-配置列表數據接口
      *
      * @param Request $request
      * @return array
@@ -94,14 +94,14 @@ class ConfigController extends Controller
     }
 
     /**
-     * 配置管理-编辑配置
+     * 配置管理-編輯配置
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑配置', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯配置', 'url' => ''];
 
         $model = ConfigRepository::find($id);
         return view('admin.config.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -122,13 +122,13 @@ class ConfigController extends Controller
             Cache::forget(config('light.cache_key.config'));
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前配置已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前配置已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

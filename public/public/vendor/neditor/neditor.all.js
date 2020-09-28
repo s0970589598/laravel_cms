@@ -292,14 +292,14 @@ var ie = browser.ie,
 
 // core/utils.js
 /**
- * 工具函数包
+ * 工具函數包
  * @file
  * @module UE.utils
  * @since 1.2.6.1
  */
 
 /**
- * UEditor封装使用的静态工具函数
+ * UEditor封装使用的静态工具函數
  * @module UE.utils
  * @unfile
  */
@@ -309,7 +309,7 @@ var utils = (UE.utils = {
      * 用给定的迭代器遍历对象
      * @method each
      * @param { Object } obj 需要遍历的对象
-     * @param { Function } iterator 迭代器， 该方法接受两个参数， 第一个参数是当前所处理的value， 第二个参数是当前遍历对象的key
+     * @param { Function } iterator 迭代器， 该方法接受两个参數， 第一个参數是当前所处理的value， 第二个参數是当前遍历对象的key
      * @example
      * ```javascript
      * var demoObj = {
@@ -327,10 +327,10 @@ var utils = (UE.utils = {
      */
 
   /**
-     * 用给定的迭代器遍历数组或类数组对象
+     * 用给定的迭代器遍历數组或类數组对象
      * @method each
-     * @param { Array } array 需要遍历的数组或者类数组
-     * @param { Function } iterator 迭代器， 该方法接受两个参数， 第一个参数是当前所处理的value， 第二个参数是当前遍历对象的key
+     * @param { Array } array 需要遍历的數组或者类數组
+     * @param { Function } iterator 迭代器， 该方法接受两个参數， 第一个参數是当前所处理的value， 第二个参數是当前遍历对象的key
      * @example
      * ```javascript
      * var divs = document.getElmentByTagNames( "div" );
@@ -385,7 +385,7 @@ var utils = (UE.utils = {
   /**
      * 将source对象中的属性扩展到target对象上
      * @method extend
-     * @remind 该方法将强制把source对象上的属性复制到target对象上
+     * @remind 该方法将强制把source对象上的属性複製到target对象上
      * @see UE.utils.extend(Object,Object,Boolean)
      * @param { Object } target 目标对象， 新的属性将附加到该对象上
      * @param { Object } source 源对象， 该对象的属性会被附加到target对象上
@@ -437,10 +437,10 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 将给定的多个对象的属性复制到目标对象target上
+     * 将给定的多个对象的属性複製到目标对象target上
      * @method extend2
-     * @remind 该方法将强制把源对象上的属性复制到target对象上
-     * @remind 该方法支持两个及以上的参数， 从第二个参数开始， 其属性都会被复制到第一个参数上。 如果遇到同名的属性，
+     * @remind 该方法将强制把源对象上的属性複製到target对象上
+     * @remind 该方法支持两个及以上的参數， 从第二个参數开始， 其属性都会被複製到第一个参數上。 如果遇到同名的属性，
      *          将会覆盖掉之前的值。
      * @param { Object } target 目标对象， 新的属性将附加到该对象上
      * @param { Object... } source 源对象， 支持多个对象， 该对象的属性会被附加到target对象上
@@ -511,11 +511,11 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 用指定的context对象作為函数fn的上下文
+     * 用指定的context对象作為函數fn的上下文
      * @method bind
-     * @param { Function } fn 需要绑定上下文的函数对象
-     * @param { Object } content 函数fn新的上下文对象
-     * @return { Function } 一个新的函数， 该函数作為原始函数fn的代理， 将完成fn的上下文调换工作。
+     * @param { Function } fn 需要绑定上下文的函數对象
+     * @param { Object } content 函數fn新的上下文对象
+     * @return { Function } 一个新的函數， 该函數作為原始函數fn的代理， 将完成fn的上下文调换工作。
      * @example
      * ```javascript
      *
@@ -543,13 +543,13 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 创建延迟指定時間后執行的函数fn
+     * 创建延迟指定時間后執行的函數fn
      * @method defer
-     * @param { Function } fn 需要延迟執行的函数对象
+     * @param { Function } fn 需要延迟執行的函數对象
      * @param { int } delay 延迟的時間， 单位是毫秒
-     * @warning 该方法的時間控制是不精确的，仅仅只能保证函数的執行是在给定的時間之后，
+     * @warning 该方法的時間控制是不精确的，仅仅只能保证函數的執行是在给定的時間之后，
      *           而不能保证刚好到达延迟時間时執行。
-     * @return { Function } 目标函数fn的代理函数， 只有執行该函数才能起到延时效果
+     * @return { Function } 目标函數fn的代理函數， 只有執行该函數才能起到延时效果
      * @example
      * ```javascript
      * var start = 0;
@@ -567,16 +567,16 @@ var utils = (UE.utils = {
      */
 
   /**
-     * 创建延迟指定時間后執行的函数fn, 如果在延迟時間内再次執行该方法， 将会根据指定的exclusion的值，
-     * 决定是否取消前一次函数的執行， 如果exclusion的值為true， 则取消執行，反之，将继续執行前一个方法。
+     * 创建延迟指定時間后執行的函數fn, 如果在延迟時間内再次執行该方法， 将会根据指定的exclusion的值，
+     * 决定是否取消前一次函數的執行， 如果exclusion的值為true， 则取消執行，反之，将继续執行前一个方法。
      * @method defer
-     * @param { Function } fn 需要延迟執行的函数对象
+     * @param { Function } fn 需要延迟執行的函數对象
      * @param { int } delay 延迟的時間， 单位是毫秒
-     * @param { Boolean } exclusion 如果在延迟時間内再次執行该函数，该值将决定是否取消執行前一次函数的執行，
-     *                     值為true表示取消執行， 反之则将在執行前一次函数之后才執行本次函数调用。
-     * @warning 该方法的時間控制是不精确的，仅仅只能保证函数的執行是在给定的時間之后，
+     * @param { Boolean } exclusion 如果在延迟時間内再次執行该函數，该值将决定是否取消執行前一次函數的執行，
+     *                     值為true表示取消執行， 反之则将在執行前一次函數之后才執行本次函數调用。
+     * @warning 该方法的時間控制是不精确的，仅仅只能保证函數的執行是在给定的時間之后，
      *           而不能保证刚好到达延迟時間时執行。
-     * @return { Function } 目标函数fn的代理函数， 只有執行该函数才能起到延时效果
+     * @return { Function } 目标函數fn的代理函數， 只有執行该函數才能起到延时效果
      * @example
      * ```javascript
      *
@@ -602,12 +602,12 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 获取元素item在数组array中首次出现的位置, 如果未找到item， 则返回-1
+     * 获取元素item在數组array中首次出现的位置, 如果未找到item， 则返回-1
      * @method indexOf
      * @remind 该方法的匹配过程使用的是恒等“===”
-     * @param { Array } array 需要查找的数组对象
-     * @param { * } item 需要在目标数组中查找的值
-     * @return { int } 返回item在目标数组array中首次出现的位置， 如果在数组中未找到item， 则返回-1
+     * @param { Array } array 需要查找的數组对象
+     * @param { * } item 需要在目标數组中查找的值
+     * @return { int } 返回item在目标數组array中首次出现的位置， 如果在數组中未找到item， 则返回-1
      * @example
      * ```javascript
      * var item = 1,
@@ -619,13 +619,13 @@ var utils = (UE.utils = {
      */
 
   /**
-     * 获取元素item数组array中首次出现的位置, 如果未找到item， 则返回-1。通过start的值可以指定搜索的起始位置。
+     * 获取元素item數组array中首次出现的位置, 如果未找到item， 则返回-1。通过start的值可以指定搜索的起始位置。
      * @method indexOf
      * @remind 该方法的匹配过程使用的是恒等“===”
-     * @param { Array } array 需要查找的数组对象
-     * @param { * } item 需要在目标数组中查找的值
+     * @param { Array } array 需要查找的數组对象
+     * @param { * } item 需要在目标數组中查找的值
      * @param { int } start 搜索的起始位置
-     * @return { int } 返回item在目标数组array中的start位置之后首次出现的位置， 如果在数组中未找到item， 则返回-1
+     * @return { int } 返回item在目标數组array中的start位置之后首次出现的位置， 如果在數组中未找到item， 则返回-1
      * @example
      * ```javascript
      * var item = 1,
@@ -648,9 +648,9 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 移除数组array中所有的元素item
+     * 移除數组array中所有的元素item
      * @method removeItem
-     * @param { Array } array 要移除元素的目标数组
+     * @param { Array } array 要移除元素的目标數组
      * @param { * } item 将要被移除的元素
      * @remind 该方法的匹配过程使用的是恒等“===”
      * @example
@@ -698,10 +698,10 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 将字符串str以','分隔成数组后，将该数组转换成哈希对象， 其生成的hash对象的key為数组中的元素， value為1
+     * 将字符串str以','分隔成數组后，将该數组转换成哈希对象， 其生成的hash对象的key為數组中的元素， value為1
      * @method listToMap
      * @warning 该方法在生成的hash对象中，会為每一个key同时生成一个另一个全大写的key。
-     * @param { String } str 该字符串将被以','分割為数组， 然后进行转化
+     * @param { String } str 该字符串将被以','分割為數组， 然后进行转化
      * @return { Object } 转化之后的hash对象
      * @example
      * ```javascript
@@ -713,10 +713,10 @@ var utils = (UE.utils = {
      */
 
   /**
-     * 将字符串数组转换成哈希对象， 其生成的hash对象的key為数组中的元素， value為1
+     * 将字符串數组转换成哈希对象， 其生成的hash对象的key為數组中的元素， value為1
      * @method listToMap
      * @warning 该方法在生成的hash对象中，会為每一个key同时生成一个另一个全大写的key。
-     * @param { Array } arr 字符串数组
+     * @param { Array } arr 字符串數组
      * @return { Object } 转化之后的hash对象
      * @example
      * ```javascript
@@ -857,7 +857,7 @@ var utils = (UE.utils = {
      */
 
   /**
-     * 动态加载文件到doc中，加载成功后執行的回调函数fn
+     * 动态加载文件到doc中，加载成功后執行的回调函數fn
      * @method loadFile
      * @param { DomDocument } document 需要加载资源文件的文档对象
      * @param { Object } options 加载资源文件的属性集合， 该集合支持的值是script標簽和style標簽支持的所有属性。
@@ -954,7 +954,7 @@ var utils = (UE.utils = {
      * 判断obj对象是否為空
      * @method isEmptyObject
      * @param { * } obj 需要判断的对象
-     * @remind 如果判断的对象是NULL， 将直接返回true， 如果是数组且為空， 返回true， 如果是字符串， 且字符串為空，
+     * @remind 如果判断的对象是NULL， 将直接返回true， 如果是數组且為空， 返回true， 如果是字符串， 且字符串為空，
      *          返回true， 如果是普通对象， 且该对象没有任何实例属性， 返回true
      * @return { Boolean } 对象是否為空
      * @example
@@ -1145,10 +1145,10 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 在dom树ready之后執行给定的回调函数
+     * 在dom树ready之后執行给定的回调函數
      * @method domReady
-     * @remind 如果在執行该方法的时候， dom树已经ready， 那么回调函数将立刻執行
-     * @param { Function } fn dom树ready之后的回调函数
+     * @remind 如果在執行该方法的时候， dom树已经ready， 那么回调函數将立刻執行
+     * @param { Function } fn dom树ready之后的回调函數
      * @example
      * ```javascript
      *
@@ -1324,9 +1324,9 @@ var utils = (UE.utils = {
   serializeParam: function(json) {
     var strArr = [];
     for (var i in json) {
-      //忽略默认的几个参数
+      //忽略默認的几个参數
       if (i == "method" || i == "timeout" || i == "async") continue;
-      //传递过来的对象和函数不在送出之列
+      //传递过来的对象和函數不在送出之列
       if (
         !(
           (typeof json[i]).toLowerCase() == "function" ||
@@ -1335,7 +1335,7 @@ var utils = (UE.utils = {
       ) {
         strArr.push(encodeURIComponent(i) + "=" + encodeURIComponent(json[i]));
       } else if (utils.isArray(json[i])) {
-        //支持传数组内容
+        //支持传數组内容
         for (var j = 0; j < json[i].length; j++) {
           strArr.push(
             encodeURIComponent(i) + "[]=" + encodeURIComponent(json[i][j])
@@ -1529,10 +1529,10 @@ var utils = (UE.utils = {
  */
 
 /**
- * 判断给定的对象是否是数组
+ * 判断给定的对象是否是數组
  * @method isArray
  * @param { * } object 需要判断的对象
- * @return { Boolean } 给定的对象是否是数组
+ * @return { Boolean } 给定的对象是否是數组
  */
 
 /**
@@ -1607,11 +1607,11 @@ var EventBase = (UE.EventBase = function() {});
 
 EventBase.prototype = {
   /**
-     * 注册事件监听器
+     * 註冊事件监听器
      * @method addListener
      * @param { String } types 监听的事件名称，同时监听多个事件使用空格分隔
-     * @param { Function } fn 监听的事件被触发时，会執行该回调函数
-     * @waining 事件被触发时，监听的函数假如返回的值恒等于true，回调函数的队列中后面的函数将不執行
+     * @param { Function } fn 监听的事件被触发时，会執行该回调函數
+     * @waining 事件被触发时，监听的函數假如返回的值恒等于true，回调函數的队列中后面的函數将不執行
      * @example
      * ```javascript
      * editor.addListener('selectionchange',function(){
@@ -1623,7 +1623,7 @@ EventBase.prototype = {
      *         }else{
      *             //do something
      *         }
-     *         console.log(this.getContent) // this是注册的事件的编辑器实例
+     *         console.log(this.getContent) // this是註冊的事件的編輯器实例
      * })
      * ```
      * @see UE.EventBase:fireEvent(String)
@@ -1648,7 +1648,7 @@ EventBase.prototype = {
      * 移除事件监听器
      * @method removeListener
      * @param { String } types 移除的事件名称，同时移除多个事件使用空格分隔
-     * @param { Function } fn 移除监听事件的函数引用
+     * @param { Function } fn 移除监听事件的函數引用
      * @example
      * ```javascript
      * //changeCallback為方法体
@@ -1667,7 +1667,7 @@ EventBase.prototype = {
      * @method fireEvent
      * @param { String } types 触发的事件名称，同时触发多个事件使用空格分隔
      * @remind 该方法会触发addListener
-     * @return { * } 返回触发事件的队列中，最后執行的回调函数的返回值
+     * @return { * } 返回触发事件的队列中，最后執行的回调函數的返回值
      * @example
      * ```javascript
      * editor.fireEvent("selectionchange");
@@ -1678,8 +1678,8 @@ EventBase.prototype = {
      * 触发事件
      * @method fireEvent
      * @param { String } types 触发的事件名称，同时触发多个事件使用空格分隔
-     * @param { *... } options 可选参数，可以传入一个或多个参数，会传给事件触发的回调函数
-     * @return { * } 返回触发事件的队列中，最后執行的回调函数的返回值
+     * @param { *... } options 可选参數，可以传入一个或多个参數，会传给事件触发的回调函數
+     * @return { * } 返回触发事件的队列中，最后執行的回调函數的返回值
      * @example
      * ```javascript
      *
@@ -1731,8 +1731,8 @@ EventBase.prototype = {
  * @public
  * @param { Object } obj  查询监听器的对象
  * @param { String } type 事件類型
- * @param { Boolean } force  為true且当前所有type類型的侦听器不存在时，创建一个空监听器数组
- * @return { Array } 监听器数组
+ * @param { Boolean } force  為true且当前所有type類型的侦听器不存在时，创建一个空监听器數组
+ * @return { Array } 监听器數组
  */
 function getListener(obj, type, force) {
   var allListeners;
@@ -2376,7 +2376,7 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 检测节点node在父节点中的索引位置， 根据给定的mergeTextNode参数决定是否要合并多个连续的文本节点為一个节点
+     * 检测节点node在父节点中的索引位置， 根据给定的mergeTextNode参數决定是否要合并多个连续的文本节点為一个节点
      * @method getNodeIndex
      * @param { Node } node 需要检测的节点对象
      * @param { Boolean } mergeTextNode 是否合并多个连续的文本节点為一个节点
@@ -2444,7 +2444,7 @@ var domUtils = (dom.domUtils = {
      * @param { Node } node 需要查找的节点
      * @param { Function } filterFn 自定义的过滤方法。
      * @warning 查找的终点是到body节点為止
-     * @remind 自定义的过滤方法filterFn接受一个Node对象作為参数， 该对象代表当前執行检测的祖先节点。 如果该
+     * @remind 自定义的过滤方法filterFn接受一个Node对象作為参數， 该对象代表当前執行检测的祖先节点。 如果该
      *          节点满足过滤条件， 则要求返回true， 这时将直接返回该节点作為findParent()的结果， 否则， 请返回false。
      * @return { Node | Null } 如果找到符合过滤条件的节点， 就返回该节点， 否则返回NULL
      * @example
@@ -2469,10 +2469,10 @@ var domUtils = (dom.domUtils = {
      * @param { Function } filterFn 自定义的过滤方法。
      * @param { Boolean } includeSelf 查找过程是否包含自身
      * @warning 查找的终点是到body节点為止
-     * @remind 自定义的过滤方法filterFn接受一个Node对象作為参数， 该对象代表当前執行检测的祖先节点。 如果该
+     * @remind 自定义的过滤方法filterFn接受一个Node对象作為参數， 该对象代表当前執行检测的祖先节点。 如果该
      *          节点满足过滤条件， 则要求返回true， 这时将直接返回该节点作為findParent()的结果， 否则， 请返回false。
-     * @remind 如果includeSelf為true， 则过滤器第一次執行时的参数会是节点本身。
-     *          反之， 过滤器第一次執行时的参数将是该节点的父节点。
+     * @remind 如果includeSelf為true， 则过滤器第一次執行时的参數会是节点本身。
+     *          反之， 过滤器第一次執行时的参數将是该节点的父节点。
      * @return { Node | Null } 如果找到符合过滤条件的节点， 就返回该节点， 否则返回NULL
      * @example
      * ```html
@@ -2513,7 +2513,7 @@ var domUtils = (dom.domUtils = {
      * 查找node的节点名為tagName的第一个祖先节点， 查找的起点是node节点的父节点。
      * @method findParentByTagName
      * @param { Node } node 需要查找的节点对象
-     * @param { Array } tagNames 需要查找的父节点的名称数组
+     * @param { Array } tagNames 需要查找的父节点的名称數组
      * @warning 查找的终点是到body节点為止
      * @return { Node | NULL } 如果找到符合条件的节点， 则返回该节点， 否则返回NULL
      * @example
@@ -2529,7 +2529,7 @@ var domUtils = (dom.domUtils = {
      * 否则， 起点是node的父节点。
      * @method findParentByTagName
      * @param { Node } node 需要查找的节点对象
-     * @param { Array } tagNames 需要查找的父节点的名称数组
+     * @param { Array } tagNames 需要查找的父节点的名称數组
      * @param { Boolean } includeSelf 查找过程是否包含node节点自身
      * @warning 查找的终点是到body节点為止
      * @return { Node | NULL } 如果找到符合条件的节点， 则返回该节点， 否则返回NULL
@@ -2555,11 +2555,11 @@ var domUtils = (dom.domUtils = {
      * 查找节点node的祖先节点集合， 查找的起点是给定节点的父节点，结果集中不包含给定的节点。
      * @method findParents
      * @param { Node } node 需要查找的节点对象
-     * @return { Array } 给定节点的祖先节点数组
-     * @grammar UE.dom.domUtils.findParents(node)  => Array  //返回一个祖先节点数组集合，不包含自身
-     * @grammar UE.dom.domUtils.findParents(node,includeSelf)  => Array  //返回一个祖先节点数组集合，includeSelf指定是否包含自身
-     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn)  => Array  //返回一个祖先节点数组集合，filterFn指定过滤条件，返回true的node将被选取
-     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn,closerFirst)  => Array  //返回一个祖先节点数组集合，closerFirst為true的话，node的直接父亲节点是数组的第0个
+     * @return { Array } 给定节点的祖先节点數组
+     * @grammar UE.dom.domUtils.findParents(node)  => Array  //返回一个祖先节点數组集合，不包含自身
+     * @grammar UE.dom.domUtils.findParents(node,includeSelf)  => Array  //返回一个祖先节点數组集合，includeSelf指定是否包含自身
+     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn)  => Array  //返回一个祖先节点數组集合，filterFn指定过滤条件，返回true的node将被选取
+     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn,closerFirst)  => Array  //返回一个祖先节点數组集合，closerFirst為true的话，node的直接父亲节点是數组的第0个
      */
 
   /**
@@ -2568,7 +2568,7 @@ var domUtils = (dom.domUtils = {
      * @method findParents
      * @param { Node } node 需要查找的节点对象
      * @param { Boolean } includeSelf 查找的结果中是否允许包含当前查找的节点对象
-     * @return { Array } 给定节点的祖先节点数组
+     * @return { Array } 给定节点的祖先节点數组
      */
   findParents: function(node, includeSelf, filterFn, closerFirst) {
     var parents = includeSelf && ((filterFn && filterFn(node)) || !filterFn)
@@ -2929,7 +2929,7 @@ var domUtils = (dom.domUtils = {
     return { x: x, y: y };
   },
   /**
-     * 為元素element绑定原生DOM事件，type為事件類型，handler為处理函数
+     * 為元素element绑定原生DOM事件，type為事件類型，handler為处理函數
      * @method on
      * @param { Node } element 需要绑定事件的节点对象
      * @param { String } type 绑定的事件類型
@@ -2943,10 +2943,10 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 為元素element绑定原生DOM事件，type為事件類型，handler為处理函数
+     * 為元素element绑定原生DOM事件，type為事件類型，handler為处理函數
      * @method on
      * @param { Node } element 需要绑定事件的节点对象
-     * @param { Array } type 绑定的事件類型数组
+     * @param { Array } type 绑定的事件類型數组
      * @param { Function } handler 事件处理器
      * @example
      * ```javascript
@@ -3005,7 +3005,7 @@ var domUtils = (dom.domUtils = {
      * 解除DOM事件绑定
      * @method un
      * @param { Node } element 需要解除事件绑定的节点对象
-     * @param { Array } type 需要接触绑定的事件類型数组
+     * @param { Array } type 需要接触绑定的事件類型數组
      * @param { Function } handler 对应的事件处理器
      * @example
      * ```javascript
@@ -3639,7 +3639,7 @@ var domUtils = (dom.domUtils = {
      * 删除节点node上的指定属性名称的属性
      * @method  removeAttributes
      * @param { Node } node 需要删除属性的节点对象
-     * @param { Array } attrNames 需要删除的属性名数组
+     * @param { Array } attrNames 需要删除的属性名數组
      * @example
      * ```html
      * <div id="wrap">
@@ -3839,7 +3839,7 @@ var domUtils = (dom.domUtils = {
      * 删除元素element指定的className
      * @method removeClasses
      * @param { Element } ele 需要删除class的元素节点
-     * @param { Array } classNames 需要删除的className数组
+     * @param { Array } classNames 需要删除的className數组
      * @example
      * ```html
      * <span id="test" class="test1 test2 test3">xxx</span>
@@ -3895,7 +3895,7 @@ var domUtils = (dom.domUtils = {
      * 给元素element添加className
      * @method addClass
      * @param { Node } ele 需要增加className的元素
-     * @param { Array } classNames 需要添加的className的数组
+     * @param { Array } classNames 需要添加的className的數组
      * @remind 相同的类名不会被重复添加
      * @example
      * ```html
@@ -3948,7 +3948,7 @@ var domUtils = (dom.domUtils = {
      * 判断元素element是否包含给定的样式类名className
      * @method hasClass
      * @param { Node } ele 需要检测的元素
-     * @param { Array } classNames 需要检测的className数组
+     * @param { Array } classNames 需要检测的className數组
      * @return { Boolean } 元素是否包含所有给定的className
      * @example
      * ```html
@@ -3979,9 +3979,9 @@ var domUtils = (dom.domUtils = {
   },
 
   /**
-     * 阻止事件默认行為
+     * 阻止事件默認行為
      * @method preventDefault
-     * @param { Event } evt 需要阻止默认行為的事件对象
+     * @param { Event } evt 需要阻止默認行為的事件对象
      * @example
      * ```javascript
      * UE.dom.domUtils.preventDefault( evt );
@@ -4139,10 +4139,10 @@ var domUtils = (dom.domUtils = {
     node.removeAttribute("_moz_dirty");
   },
   /**
-     * 获取子节点的数量
+     * 获取子节点的數量
      * @method getChildCount
      * @param { Element } node 需要检测的元素
-     * @return { Number } 给定的node元素的子节点数量
+     * @return { Number } 给定的node元素的子节点數量
      * @example
      * ```html
      * <div id="test">
@@ -4159,11 +4159,11 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 根据给定的过滤规则， 获取符合条件的子节点的数量
+     * 根据给定的过滤规则， 获取符合条件的子节点的數量
      * @method getChildCount
      * @param { Element } node 需要检测的元素
      * @param { Function } fn 过滤器， 要求对符合条件的子节点返回true， 反之则要求返回false
-     * @return { Number } 符合过滤条件的node元素的子节点数量
+     * @return { Number } 符合过滤条件的node元素的子节点數量
      * @example
      * ```html
      * <div id="test">
@@ -4497,7 +4497,7 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 把节点src的所有子节点移动到另一个节点tag上去, 可以通过dir参数控制附加的行為是“追加”还是“插入顶部”
+     * 把节点src的所有子节点移动到另一个节点tag上去, 可以通过dir参數控制附加的行為是“追加”还是“插入顶部”
      * @method moveChild
      * @param { Node } src 源节点， 该节点下的所有子节点将被移除
      * @param { Node } tag 目标节点， 从源节点移除的子节点将被附加到该节点下
@@ -4569,7 +4569,7 @@ var domUtils = (dom.domUtils = {
      * @method isCustomeNode
      * @private
      * @param { Node } node 需要检测的节点
-     * @remind 辅助节点是指编辑器要完成工作临时添加的节点， 在输出的时候将会从编辑器内移除， 不会影响最终的结果。
+     * @remind 辅助节点是指編輯器要完成工作临时添加的节点， 在输出的时候将会从編輯器内移除， 不会影响最终的结果。
      * @return { Boolean } 给定的节点是否是一个辅助节点
      */
   isCustomeNode: function(node) {
@@ -4602,9 +4602,9 @@ var domUtils = (dom.domUtils = {
   },
 
   /**
-     * 给定一个节点数组，在通过指定的过滤器过滤后， 获取其中满足过滤条件的第一个节点
+     * 给定一个节点數组，在通过指定的过滤器过滤后， 获取其中满足过滤条件的第一个节点
      * @method filterNodeList
-     * @param { Array } nodeList 需要过滤的节点数组
+     * @param { Array } nodeList 需要过滤的节点數组
      * @param { Function } fn 过滤器， 对符合条件的节点， 執行结果返回true， 反之则返回false
      * @return { Node | NULL } 如果找到符合过滤条件的节点， 则返回该节点， 否则返回NULL
      * @example
@@ -4620,9 +4620,9 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 给定一个节点数组nodeList和一组標簽名tagNames， 获取其中能够匹配標簽名的节点集合中的第一个节点
+     * 给定一个节点數组nodeList和一组標簽名tagNames， 获取其中能够匹配標簽名的节点集合中的第一个节点
      * @method filterNodeList
-     * @param { Array } nodeList 需要过滤的节点数组
+     * @param { Array } nodeList 需要过滤的节点數组
      * @param { String } tagNames 需要匹配的標簽名， 多个標簽名之间用空格分割
      * @return { Node | NULL } 如果找到標簽名匹配的节点， 则返回该节点， 否则返回NULL
      * @example
@@ -4636,14 +4636,14 @@ var domUtils = (dom.domUtils = {
      */
 
   /**
-     * 给定一个节点数组，在通过指定的过滤器过滤后， 如果参数forAll為true， 则会返回所有满足过滤
+     * 给定一个节点數组，在通过指定的过滤器过滤后， 如果参數forAll為true， 则会返回所有满足过滤
      * 条件的节点集合， 否则， 返回满足条件的节点集合中的第一个节点
      * @method filterNodeList
-     * @param { Array } nodeList 需要过滤的节点数组
+     * @param { Array } nodeList 需要过滤的节点數组
      * @param { Function } fn 过滤器， 对符合条件的节点， 執行结果返回true， 反之则返回false
-     * @param { Boolean } forAll 是否返回整个节点数组, 如果该参数為false， 则返回节点集合中的第一个节点
-     * @return { Array | Node | NULL } 如果找到符合过滤条件的节点， 则根据参数forAll的值决定返回满足
-     *                                      过滤条件的节点数组或第一个节点， 否则返回NULL
+     * @param { Boolean } forAll 是否返回整个节点數组, 如果该参數為false， 则返回节点集合中的第一个节点
+     * @return { Array | Node | NULL } 如果找到符合过滤条件的节点， 则根据参數forAll的值决定返回满足
+     *                                      过滤条件的节点數组或第一个节点， 否则返回NULL
      * @example
      * ```javascript
      * var divNodes = document.getElementsByTagName("div");
@@ -5304,7 +5304,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 设置Range的开始位置到node节点内的最后一个节点之后
          * @method setStartAtLast
-         * @remind 选区的开始容器将变成给定的节点， 且偏移量為该节点的子节点数
+         * @remind 选区的开始容器将变成给定的节点， 且偏移量為该节点的子节点數
          * @remind 如果给定的节点是元素节点， 则该节点必须是允许包含子节点的元素。
          * @param { Node } node 目标节点
          * @see UE.dom.Range:setStartAtFirst(Node)
@@ -5334,7 +5334,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 设置Range的结束位置到node节点内的最后一个节点之后
          * @method  setEndAtLast
          * @param { Node } node 目标节点
-         * @remind 选区的结束容器将变成给定的节点， 且偏移量為该节点的子节点数量
+         * @remind 选区的结束容器将变成给定的节点， 且偏移量為该节点的子节点數量
          * @remind node必须是一个元素节点， 且必须是允许包含子节点的元素。
          * @see UE.dom.Range:setStartAtFirst(Node)
          * @return { UE.dom.Range } 当前range对象
@@ -5377,7 +5377,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 选中给定节点内部的所有节点
          * @method  selectNodeContents
          * @remind 此时， 选区的开始容器和结束容器都是该节点， 其startOffset為0，
-         *          而endOffset是该节点的子节点数。
+         *          而endOffset是该节点的子节点數。
          * @param { Node } node 目标节点， 当前range将包含该节点内的所有节点
          * @return { UE.dom.Range } 当前range对象， 此时range仅包含给定节点的所有子节点
          * @example
@@ -5436,7 +5436,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 闭合当前选区，根据给定的toStart参数项决定是向当前选区开始处闭合还是向结束处闭合，
+         * 闭合当前选区，根据给定的toStart参數项决定是向当前选区开始处闭合还是向结束处闭合，
          * 如果toStart的值為true，则向开始位置闭合， 反之，向结束位置闭合。
          * @method  collapse
          * @param { Boolean } toStart 是否向选区开始处闭合
@@ -5567,7 +5567,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参数 includeSelf 决定获取到
+         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
          * 的公共祖先节点是否可以是当前选区的startContainer或endContainer节点， 如果 includeSelf
          * 的取值為true， 则返回的节点可以是自身的容器节点， 否则， 则不能是容器节点
          * @method  getCommonAncestor
@@ -5585,7 +5585,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *
          *         var node = range.getCommonAncestor( false );
          *
-         *         //这里的公共祖先节点是B而不是I， 是因為参数限制了获取到的节点不能是容器节点
+         *         //这里的公共祖先节点是B而不是I， 是因為参數限制了获取到的节点不能是容器节点
          *         //output: B
          *         console.log( node.tagName );
          *
@@ -5596,10 +5596,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参数 includeSelf 决定获取到
+         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
          * 的公共祖先节点是否可以是当前选区的startContainer或endContainer节点， 如果 includeSelf
          * 的取值為true， 则返回的节点可以是自身的容器节点， 否则， 则不能是容器节点； 同时可以根据
-         * ignoreTextNode 参数的取值决定是否忽略類型為文本节点的祖先节点。
+         * ignoreTextNode 参數的取值决定是否忽略類型為文本节点的祖先节点。
          * @method  getCommonAncestor
          * @param { Boolean } includeSelf 是否允许获取到的公共祖先节点是当前range对象的容器节点
          * @param { Boolean } ignoreTextNode 获取祖先节点的过程中是否忽略類型為文本节点的祖先节点
@@ -5664,7 +5664,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
     /**
          * 调整当前Range的开始和结束边界容器，如果是容器节点是文本节点,就调整到包含该文本节点的父节点上，
-         * 可以根据 ignoreEnd 参数的值决定是否调整对结束边界的调整
+         * 可以根据 ignoreEnd 参數的值决定是否调整对结束边界的调整
          * @method trimBoundary
          * @param { Boolean } ignoreEnd 是否忽略对结束边界的调整
          * @return { UE.dom.Range } 当前range对象
@@ -5735,10 +5735,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 如果选区在文本的边界上，就扩展选区到文本的父节点上, 如果当前选区是闭合的， 则根据参数项
+         * 如果选区在文本的边界上，就扩展选区到文本的父节点上, 如果当前选区是闭合的， 则根据参數项
          * ignoreCollapsed 的值决定是否執行该调整
          * @method txtToElmBoundary
-         * @param { Boolean } ignoreCollapsed 是否忽略选区的闭合状态， 如果该参数取值為true， 则
+         * @param { Boolean } ignoreCollapsed 是否忽略选区的闭合状态， 如果该参數取值為true， 则
          *                      不论选区是否闭合， 都会執行该操作， 反之， 则不会对闭合的选区執行该操作
          * @return { UE.dom.Range } 当前range对象
          */
@@ -5811,7 +5811,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 闭合选区，可以根据参数toEnd的值控制选区是向前闭合还是向后闭合， 并且定位光标到闭合后的位置。
+         * 闭合选区，可以根据参數toEnd的值控制选区是向前闭合还是向后闭合， 并且定位光标到闭合后的位置。
          * @method  setCursor
          * @param { Boolean } toEnd 是否向后闭合， 如果為true， 则闭合选区时， 将向结束容器方向闭合，
          *                      反之，则向开始容器方向闭合
@@ -5823,13 +5823,13 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 创建当前range的一个书签，记录下当前range的位置，方便当dom树改变时，还能找回原来的选区位置
+         * 创建当前range的一个书签，记入下当前range的位置，方便当dom树改变时，还能找回原来的选区位置
          * @method createBookmark
          * @param { Boolean } serialize 控制返回的标记位置是对当前位置的引用还是ID，如果该值為true，则
          *                              返回标记位置的ID， 反之则返回标记位置节点的引用
-         * @return { Object } 返回一个书签记录键值对， 其包含的key有： start => 开始标记的ID或者引用，
+         * @return { Object } 返回一个书签记入键值对， 其包含的key有： start => 开始标记的ID或者引用，
          *                          end => 结束标记的ID或引用， id => 当前标记的類型， 如果為true，则表示
-         *                          返回的记录的類型為ID， 反之则為引用
+         *                          返回的记入的類型為ID， 反之则為引用
          */
     createBookmark: function(serialize, same) {
       var endNode,
@@ -5887,7 +5887,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 调整range的边界，使其"放大"到最近的父节点，根据参数 toBlock 的取值， 可以
+         * 调整range的边界，使其"放大"到最近的父节点，根据参數 toBlock 的取值， 可以
          * 要求扩大之后的父节点是block节点
          * @method  enlarge
          * @param { Boolean } toBlock 是否要求扩大之后的父节点必须是block节点
@@ -6160,7 +6160,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 移除当前选区内指定的一组inline標簽，但保留其中的内容
          * @method removeInlineStyle
-         * @param { Array } tagNameArr 需要移除的標簽名的数组
+         * @param { Array } tagNameArr 需要移除的標簽名的數组
          * @return { UE.dom.Range } 当前的range对象
          * @see UE.dom.Range:removeInlineStyle(String)
          */
@@ -6324,8 +6324,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
           var win = domUtils.getWindow(this.document),
             sel = win.getSelection(),
             txtNode;
-          //FF下关闭自动长高时滚动条在关闭dialog时会跳
-          //ff下如果不body.focus将不能定位闭合光标到编辑器内
+          //FF下关闭自動长高时滚动条在关闭dialog时会跳
+          //ff下如果不body.focus将不能定位闭合光标到編輯器内
           browser.gecko ? this.document.body.focus() : win.focus();
           if (sel) {
             sel.removeAllRanges();
@@ -6410,7 +6410,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 滚动到距离当前range开始位置 offset 的位置处
          * @method scrollToView
          * @param { Window } win 当前range对象所属的window对象
-         * @param { Number } offset 距离range开始位置处的偏移量， 如果為正数， 则向下偏移， 反之， 则向上偏移
+         * @param { Number } offset 距离range开始位置处的偏移量， 如果為正數， 则向下偏移， 反之， 则向上偏移
          * @return { UE.dom.Range } 当前Range对象
          */
     scrollToView: function(win, offset) {
@@ -6613,10 +6613,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 遍历range内的节点。每当遍历一个节点时， 都会執行参数项 doFn 指定的函数， 该函数的接受当前遍历的节点
-         * 作為其参数。
+         * 遍历range内的节点。每当遍历一个节点时， 都会執行参數项 doFn 指定的函數， 该函數的接受当前遍历的节点
+         * 作為其参數。
          * @method traversal
-         * @param { Function }  doFn 对每个遍历的节点要執行的方法， 该方法接受当前遍历的节点作為其参数
+         * @param { Function }  doFn 对每个遍历的节点要執行的方法， 该方法接受当前遍历的节点作為其参數
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
@@ -6651,13 +6651,13 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
     /**
          * 遍历range内的节点。
-         * 每当遍历一个节点时， 都会執行参数项 doFn 指定的函数， 该函数的接受当前遍历的节点
-         * 作為其参数。
-         * 可以通过参数项 filterFn 来指定一个过滤器， 只有符合该过滤器过滤规则的节点才会触
-         * 发doFn函数的執行
+         * 每当遍历一个节点时， 都会執行参數项 doFn 指定的函數， 该函數的接受当前遍历的节点
+         * 作為其参數。
+         * 可以通过参數项 filterFn 来指定一个过滤器， 只有符合该过滤器过滤规则的节点才会触
+         * 发doFn函數的執行
          * @method traversal
-         * @param { Function } doFn 对每个遍历的节点要執行的方法， 该方法接受当前遍历的节点作為其参数
-         * @param { Function } filterFn 过滤器， 该函数接受当前遍历的节点作為参数， 如果该节点满足过滤
+         * @param { Function } doFn 对每个遍历的节点要執行的方法， 该方法接受当前遍历的节点作為其参數
+         * @param { Function } filterFn 过滤器， 该函數接受当前遍历的节点作為参數， 如果该节点满足过滤
          *                      规则， 请返回true， 该节点会触发doFn， 否则， 请返回false， 则该节点不
          *                      会触发doFn。
          * @return { UE.dom.Range } 当前range对象
@@ -6954,7 +6954,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 编辑器是否得到了选区
+         * 編輯器是否得到了选区
          * @method isFocus
          */
     isFocus: function() {
@@ -7134,7 +7134,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
 // core/Editor.js
 /**
- * 编辑器主类，包含编辑器提供的大部分公用接口
+ * 編輯器主类，包含編輯器提供的大部分公用接口
  * @file
  * @module UE
  * @class Editor
@@ -7148,7 +7148,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
  */
 
 /**
- * UEditor的核心类，為用户提供与编辑器交互的接口。
+ * UEditor的核心类，為用户提供与編輯器交互的接口。
  * @unfile
  * @module UE
  * @class Editor
@@ -7159,10 +7159,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     _selectionChangeTimer;
 
   /**
-     * 获取编辑器的html内容，赋值到编辑器所在表单的textarea文本域里面
+     * 获取編輯器的html内容，赋值到編輯器所在表單的textarea文本域里面
      * @private
      * @method setValue
-     * @param { UE.Editor } editor 编辑器事例
+     * @param { UE.Editor } editor 編輯器事例
      */
   function setValue(form, editor) {
     var textarea;
@@ -7220,7 +7220,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
   }
 
   /**
-     * 编辑器准备就绪后会触发该事件
+     * 編輯器准备就绪后会触发该事件
      * @module UE
      * @class Editor
      * @event ready
@@ -7229,7 +7229,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
      * @example
      * ```javascript
      * editor.addListener( 'ready', function( editor ) {
-     *     editor.execCommand( 'focus' ); //编辑器家在完成后，让编辑器拿到焦点
+     *     editor.execCommand( 'focus' ); //編輯器家在完成后，让編輯器拿到焦点
      * } );
      * ```
      */
@@ -7314,7 +7314,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
      * @see UE.Editor:setContent(String)
      */
   /**
-     * 每当编辑器内部选区发生改变时，将触发该事件
+     * 每当編輯器内部选区发生改变时，将触发该事件
      * @event selectionchange
      * @warning 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理
      * @example
@@ -7324,30 +7324,30 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
      * }
      */
   /**
-     * 在所有selectionchange的监听函数執行之前，会触发该事件
+     * 在所有selectionchange的监听函數執行之前，会触发该事件
      * @module UE
      * @class Editor
      * @event beforeSelectionChange
      * @see UE.Editor:selectionchange
      */
   /**
-     * 在所有selectionchange的监听函数執行完之后，会触发该事件
+     * 在所有selectionchange的监听函數執行完之后，会触发该事件
      * @module UE
      * @class Editor
      * @event afterSelectionChange
      * @see UE.Editor:selectionchange
      */
   /**
-     * 编辑器内容发生改变时会触发该事件
+     * 編輯器内容发生改变时会触发该事件
      * @module UE
      * @class Editor
      * @event contentChange
      */
 
   /**
-     * 以默认参数构建一个编辑器实例
+     * 以默認参數构建一个編輯器实例
      * @constructor
-     * @remind 通过 改构造方法实例化的编辑器,不带ui层.需要render到一个容器,编辑器实例才能正常渲染到頁面
+     * @remind 通过 改构造方法实例化的編輯器,不带ui层.需要render到一个容器,編輯器实例才能正常渲染到頁面
      * @example
      * ```javascript
      * var editor = new UE.Editor();
@@ -7357,10 +7357,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
      */
 
   /**
-     * 以给定的参数集合创建一个编辑器实例，对于未指定的参数，将应用默认参数。
+     * 以给定的参數集合创建一个編輯器实例，对于未指定的参數，将应用默認参數。
      * @constructor
-     * @remind 通过 改构造方法实例化的编辑器,不带ui层.需要render到一个容器,编辑器实例才能正常渲染到頁面
-     * @param { Object } setting 创建编辑器的参数
+     * @remind 通过 改构造方法实例化的編輯器,不带ui层.需要render到一个容器,編輯器实例才能正常渲染到頁面
+     * @param { Object } setting 创建編輯器的参數
      * @example
      * ```javascript
      * var editor = new UE.Editor();
@@ -7377,14 +7377,14 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     me.shortcutkeys = {};
     me.inputRules = [];
     me.outputRules = [];
-    //设置默认的常用属性
+    //设置默認的常用属性
     me.setOpt(Editor.defaultOptions(me));
 
     /* 尝试异步加载后台配置 */
     //me.loadServerConfig();
 
     if (!utils.isEmptyObject(UE.I18N)) {
-      //修改默认的语言類型
+      //修改默認的语言類型
       me.options.lang = checkCurLang(UE.I18N);
       UE.plugin.load(me);
       langReadied(me);
@@ -7416,11 +7416,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       this.commands[name] = obj;
     },
     /**
-         * 编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
+         * 編輯器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
          * @method ready
-         * @param { Function } fn 编辑器ready之后所執行的回调, 如果在注册事件之前编辑器已经ready，将会
+         * @param { Function } fn 編輯器ready之后所執行的回调, 如果在註冊事件之前編輯器已经ready，将会
          * 立即触发该回调。
-         * @remind 需要等待编辑器加载完成后才能執行的代码,可以使用该方法传入
+         * @remind 需要等待編輯器加载完成后才能執行的代码,可以使用该方法传入
          * @example
          * ```javascript
          * editor.ready( function( editor ) {
@@ -7438,7 +7438,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
        * 该方法用于设置placeholder
        * @method setPlaceholder
-       * @param { String } placeholder 编辑器的placeholder文案
+       * @param { String } placeholder 編輯器的placeholder文案
        * @example
        * ```javascript
        * editor.setPlaceholder('请输入内容');
@@ -7468,28 +7468,28 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       }(),
 
     /**
-         * 该方法是提供给插件里面使用，设置配置项默认值
+         * 该方法是提供给插件里面使用，设置配置项默認值
          * @method setOpt
-         * @warning 三处设置配置项的优先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
-         * @warning 该方法仅供编辑器插件内部和编辑器初始化时调用，其他地方不能调用。
-         * @param { String } key 编辑器的可接受的选项名称
+         * @warning 三处设置配置项的优先级: 实例化时传入参數 > setOpt()设置 > config文件里设置
+         * @warning 该方法仅供編輯器插件内部和編輯器初始化时调用，其他地方不能调用。
+         * @param { String } key 編輯器的可接受的选项名称
          * @param { * } val  该选项可接受的值
          * @example
          * ```javascript
-         * editor.setOpt( 'initContent', '欢迎使用编辑器' );
+         * editor.setOpt( 'initContent', '欢迎使用編輯器' );
          * ```
          */
 
     /**
-         * 该方法是提供给插件里面使用，以{key:value}集合的方式设置插件内用到的配置项默认值
+         * 该方法是提供给插件里面使用，以{key:value}集合的方式设置插件内用到的配置项默認值
          * @method setOpt
-         * @warning 三处设置配置项的优先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
-         * @warning 该方法仅供编辑器插件内部和编辑器初始化时调用，其他地方不能调用。
+         * @warning 三处设置配置项的优先级: 实例化时传入参數 > setOpt()设置 > config文件里设置
+         * @warning 该方法仅供編輯器插件内部和編輯器初始化时调用，其他地方不能调用。
          * @param { Object } options 将要设置的选项的键值对对象
          * @example
          * ```javascript
          * editor.setOpt( {
-         *     'initContent': '欢迎使用编辑器'
+         *     'initContent': '欢迎使用編輯器'
          * } );
          * ```
          */
@@ -7506,7 +7506,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       return this.options[key];
     },
     /**
-         * 销毁编辑器实例，使用textarea代替
+         * 销毁編輯器实例，使用textarea代替
          * @method destroy
          * @example
          * ```javascript
@@ -7542,7 +7542,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 渲染编辑器的DOM到指定容器
+         * 渲染編輯器的DOM到指定容器
          * @method render
          * @param { String } containerId 指定一个容器ID
          * @remind 執行该方法,会触发ready事件
@@ -7550,7 +7550,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 渲染编辑器的DOM到指定容器
+         * 渲染編輯器的DOM到指定容器
          * @method render
          * @param { Element } containerDom 直接指定容器对象
          * @remind 執行该方法,会触发ready事件
@@ -7601,7 +7601,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
           "<style type='text/css'>" +
           //设置四周的留边
           ".view{padding:0;word-wrap:break-word;cursor:text;height:90%;}\n" +
-          //设置默认字体和字号
+          //设置默認字体和字号
           //font-family不能呢随便改，在safari下fillchar会有解析问题
           "body{margin:8px;font-family:sans-serif;font-size:16px;}" +
           //设置placeholder
@@ -7657,7 +7657,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
           if (/%$/.test(options.initialFrameWidth)) {
             options.minFrameWidth = options.initialFrameWidth =
               container.offsetWidth;
-            //如果这里给定宽度，会导致ie在拖动窗口大小时，编辑区域不随着变化
+            //如果这里给定宽度，会导致ie在拖动窗口大小时，編輯区域不随着变化
             //                        container.style.width = options.initialFrameWidth + 'px';
           }
           if (/%$/.test(options.initialFrameHeight)) {
@@ -7670,10 +7670,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 编辑器初始化
+         * 編輯器初始化
          * @method _setup
          * @private
-         * @param { Element } doc 编辑器Iframe中的文档对象
+         * @param { Element } doc 編輯器Iframe中的文档对象
          */
     _setup: function(doc) {
       var me = this,
@@ -7728,7 +7728,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
         } else this.setContent(options.initialContent, false, true);
       }
 
-      //编辑器不能為空内容
+      //編輯器不能為空内容
 
       if (domUtils.isEmptyNode(me.body)) {
         me.body.innerHTML = "<p>" + (browser.ie ? "" : "<br/>") + "</p>";
@@ -7737,7 +7737,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       if (options.focus) {
         setTimeout(function() {
           me.focus(me.options.focusInEnd);
-          //如果自动清除开着，就不需要做selectionchange;
+          //如果自動清除开着，就不需要做selectionchange;
           !me.options.autoClearinitialContent && me._selectionChange();
         }, 0);
       }
@@ -7798,9 +7798,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 同步数据到编辑器所在的form
-         * 从编辑器的容器节点向上查找form元素，若找到，就同步编辑内容到找到的form里，為送出数据做准备，主要用于是手动送出的情况
-         * 后台取得数据的键值，使用你容器上的name属性，如果没有就使用参数里的textarea项
+         * 同步數據到編輯器所在的form
+         * 从編輯器的容器节点向上查找form元素，若找到，就同步編輯内容到找到的form里，為送出數據做准备，主要用于是手动送出的情况
+         * 后台取得數據的键值，使用你容器上的name属性，如果没有就使用参數里的textarea项
          * @method sync
          * @example
          * ```javascript
@@ -7810,10 +7810,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 根据传入的formId，在頁面上查找要同步数据的表单，若找到，就同步编辑内容到找到的form里，為送出数据做准备
-         * 后台取得数据的键值，该键值默认使用给定的编辑器容器的name属性，如果没有name属性则使用参数项里给定的“textarea”项
+         * 根据传入的formId，在頁面上查找要同步數據的表單，若找到，就同步編輯内容到找到的form里，為送出數據做准备
+         * 后台取得數據的键值，该键值默認使用给定的編輯器容器的name属性，如果没有name属性则使用参數项里给定的“textarea”项
          * @method sync
-         * @param { String } formID 指定一个要同步数据的form的id,编辑器的数据会同步到你指定form下
+         * @param { String } formID 指定一个要同步數據的form的id,編輯器的數據会同步到你指定form下
          */
     sync: function(formId) {
       var me = this,
@@ -7830,10 +7830,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 设置编辑器高度
+         * 设置編輯器高度
          * @method setHeight
          * @remind 当配置项autoHeightEnabled為真时,该方法无效
-         * @param { Number } number 设置的高度值，纯数值，不带单位
+         * @param { Number } number 设置的高度值，纯數值，不带单位
          * @example
          * ```javascript
          * editor.setHeight(number);
@@ -7850,7 +7850,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 為编辑器的编辑命令提供快捷键
+         * 為編輯器的編輯命令提供快捷键
          * 这个接口是為插件扩展提供的接口,主要是為新添加的插件，如果需要添加快捷键，所提供的接口
          * @method addshortcutkey
          * @param { Object } keyset 命令名和快捷键键值对对象，多个按钮的快捷键用“＋”分隔
@@ -7883,7 +7883,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 对编辑器设置keydown事件监听，绑定快捷键和命令，当快捷键组合触发成功，会响应对应的命令
+         * 对編輯器设置keydown事件监听，绑定快捷键和命令，当快捷键组合触发成功，会响应对应的命令
          * @method _bindshortcutKeys
          * @private
          */
@@ -7919,30 +7919,30 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取编辑器的内容
+         * 获取編輯器的内容
          * @method getContent
-         * @warning 该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容
-         * @return { String } 编辑器的内容字符串, 如果编辑器的内容為空，或者是空的標簽内容（如:”&lt;p&gt;&lt;br/&gt;&lt;/p&gt;“）， 则返回空字符串
+         * @warning 该方法获取到的是经过編輯器内置的过滤规则进行过滤后得到的内容
+         * @return { String } 編輯器的内容字符串, 如果編輯器的内容為空，或者是空的標簽内容（如:”&lt;p&gt;&lt;br/&gt;&lt;/p&gt;“）， 则返回空字符串
          * @example
          * ```javascript
-         * //编辑器html内容:<p>1<strong>2<em>34</em>5</strong>6</p>
+         * //編輯器html内容:<p>1<strong>2<em>34</em>5</strong>6</p>
          * var content = editor.getContent(); //返回值:<p>1<strong>2<em>34</em>5</strong>6</p>
          * ```
          */
 
     /**
-         * 获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则
+         * 获取編輯器的内容。 可以通过参數定义編輯器内置的判空规则
          * @method getContent
          * @param { Function } fn 自定的判空规则， 要求该方法返回一个boolean類型的值，
-         *                      代表当前编辑器的内容是否空，
-         *                      如果返回true， 则该方法将直接返回空字符串；如果返回false，则编辑器将返回
+         *                      代表当前編輯器的内容是否空，
+         *                      如果返回true， 则该方法将直接返回空字符串；如果返回false，则編輯器将返回
          *                      经过内置过滤规则处理后的内容。
          * @remind 该方法在处理包含有初始化内容的时候能起到很好的作用。
-         * @warning 该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容
-         * @return { String } 编辑器的内容字符串
+         * @warning 该方法获取到的是经过編輯器内置的过滤规则进行过滤后得到的内容
+         * @return { String } 編輯器的内容字符串
          * @example
          * ```javascript
-         * // editor 是一个编辑器的实例
+         * // editor 是一个編輯器的实例
          * var content = editor.getContent( function ( editor ) {
          *      return editor.body.innerHTML === '欢迎使用UEditor'; //返回空字符串
          * } );
@@ -7967,7 +7967,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 取得完整的html代码，可以直接显示成完整的html文档
          * @method getAllHtml
-         * @return { String } 编辑器的内容html文档字符串
+         * @return { String } 編輯器的内容html文档字符串
          * @eaxmple
          * ```javascript
          * editor.getAllHtml(); //返回格式大致是: <html><head>...</head><body>...</body></html>
@@ -8009,12 +8009,12 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 得到编辑器的纯文本内容，但会保留段落格式
+         * 得到編輯器的纯文本内容，但会保留段落格式
          * @method getPlainTxt
-         * @return { String } 编辑器带段落格式的纯文本内容字符串
+         * @return { String } 編輯器带段落格式的纯文本内容字符串
          * @example
          * ```javascript
-         * //编辑器html内容:<p><strong>1</strong></p><p><strong>2</strong></p>
+         * //編輯器html内容:<p><strong>1</strong></p><p><strong>2</strong></p>
          * console.log(editor.getPlainTxt()); //输出:"1\n2\n
          * ```
          */
@@ -8036,12 +8036,12 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取编辑器中的纯文本内容,没有段落格式
+         * 获取編輯器中的纯文本内容,没有段落格式
          * @method getContentTxt
-         * @return { String } 编辑器不带段落格式的纯文本内容字符串
+         * @return { String } 編輯器不带段落格式的纯文本内容字符串
          * @example
          * ```javascript
-         * //编辑器html内容:<p><strong>1</strong></p><p><strong>2</strong></p>
+         * //編輯器html内容:<p><strong>1</strong></p><p><strong>2</strong></p>
          * console.log(editor.getPlainTxt()); //输出:"12
          * ```
          */
@@ -8054,9 +8054,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 设置编辑器的内容，可修改编辑器当前的html内容
+         * 设置編輯器的内容，可修改編輯器当前的html内容
          * @method setContent
-         * @warning 通过该方法插入的内容，是经过编辑器内置的过滤规则进行过滤后得到的内容
+         * @warning 通过该方法插入的内容，是经过編輯器内置的过滤规则进行过滤后得到的内容
          * @warning 该方法会触发selectionchange事件
          * @param { String } html 要插入的html内容
          * @example
@@ -8066,15 +8066,15 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 设置编辑器的内容，可修改编辑器当前的html内容
+         * 设置編輯器的内容，可修改編輯器当前的html内容
          * @method setContent
-         * @warning 通过该方法插入的内容，是经过编辑器内置的过滤规则进行过滤后得到的内容
+         * @warning 通过该方法插入的内容，是经过編輯器内置的过滤规则进行过滤后得到的内容
          * @warning 该方法会触发selectionchange事件
          * @param { String } html 要插入的html内容
          * @param { Boolean } isAppendTo 若传入true，不清空原来的内容，在最后插入内容，否则，清空内容再插入
          * @example
          * ```javascript
-         * //假设设置前的编辑器内容是 <p>old text</p>
+         * //假设设置前的編輯器内容是 <p>old text</p>
          * editor.setContent('<p>new text</p>', true); //插入的结果是<p>old text</p><p>new text</p>
          * ```
          */
@@ -8152,7 +8152,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 让编辑器获得焦点，默认focus到编辑器头部
+         * 让編輯器获得焦点，默認focus到編輯器头部
          * @method focus
          * @example
          * ```javascript
@@ -8161,9 +8161,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 让编辑器获得焦点，toEnd确定focus位置
+         * 让編輯器获得焦点，toEnd确定focus位置
          * @method focus
-         * @param { Boolean } toEnd 默认focus到编辑器头部，toEnd為true时focus到内容尾部
+         * @param { Boolean } toEnd 默認focus到編輯器头部，toEnd為true时focus到内容尾部
          * @example
          * ```javascript
          * editor.focus(true)
@@ -8246,7 +8246,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       );
       domUtils.on(win, ["focus", "blur"], me._proxyDomEvent);
       domUtils.on(me.body, "drop", function(e) {
-        //阻止ff下默认的弹出新頁面打开图片
+        //阻止ff下默認的弹出新頁面打开圖片
         if (browser.gecko && e.stopPropagation) {
           e.stopPropagation();
         }
@@ -8336,7 +8336,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
         }
         if (me.selection._cachedRange && me.selection._cachedStartElement) {
           me.fireEvent("beforeselectionchange");
-          // 第二个参数causeByUi為true代表由用户交互造成的selectionchange.
+          // 第二个参數causeByUi為true代表由用户交互造成的selectionchange.
           me.fireEvent("selectionchange", !!evt);
           me.fireEvent("afterselectionchange");
           me.selection.clear();
@@ -8345,12 +8345,12 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 執行编辑命令
+         * 執行編輯命令
          * @method _callCmdFn
          * @private
-         * @param { String } fnName 函数名称
-         * @param { * } args 传给命令函数的参数
-         * @return { * } 返回命令函数运行的返回值
+         * @param { String } fnName 函數名称
+         * @param { * } args 传给命令函數的参數
+         * @return { * } 返回命令函數运行的返回值
          */
     _callCmdFn: function(fnName, args) {
       var cmdName = args[0].toLowerCase(),
@@ -8358,7 +8358,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
         cmdFn;
       cmd = this.commands[cmdName] || UE.commands[cmdName];
       cmdFn = cmd && cmd[fnName];
-      //没有querycommandstate或者没有command的都默认返回0
+      //没有querycommandstate或者没有command的都默認返回0
       if ((!cmd || !cmdFn) && fnName == "queryCommandState") {
         return 0;
       } else if (cmdFn) {
@@ -8367,11 +8367,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 執行编辑命令cmdName，完成富文本编辑效果
+         * 執行編輯命令cmdName，完成副文本編輯效果
          * @method execCommand
          * @param { String } cmdName 需要執行的命令
          * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
-         * @return { * } 返回命令函数运行的返回值
+         * @return { * } 返回命令函數运行的返回值
          * @example
          * ```javascript
          * editor.execCommand(cmdName);
@@ -8418,7 +8418,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 根据传入的command命令，查选编辑器当前的选区，返回命令的状态
+         * 根据传入的command命令，查选編輯器当前的选区，返回命令的状态
          * @method  queryCommandState
          * @param { String } cmdName 需要查询的命令名称
          * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
@@ -8434,7 +8434,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 根据传入的command命令，查选编辑器当前的选区，根据命令返回相关的值
+         * 根据传入的command命令，查选編輯器当前的选区，根据命令返回相关的值
          * @method queryCommandValue
          * @param { String } cmdName 需要查询的命令名称
          * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
@@ -8448,9 +8448,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 检查编辑区域中是否有内容
+         * 检查編輯区域中是否有内容
          * @method  hasContents
-         * @remind 默认有文本内容，或者有以下节点都不认為是空
+         * @remind 默認有文本内容，或者有以下节点都不认為是空
          * table,ul,ol,dl,iframe,area,base,col,hr,img,embed,input,link,meta,param
          * @return { Boolean } 检查有内容返回true，否则返回false
          * @example
@@ -8460,10 +8460,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 检查编辑区域中是否有内容，若包含参数tags中的节点類型，直接返回true
+         * 检查編輯区域中是否有内容，若包含参數tags中的节点類型，直接返回true
          * @method  hasContents
-         * @param { Array } tags 传入数组判断时用到的节点類型
-         * @return { Boolean } 若文档中包含tags数组里对应的tag，返回true，否则返回false
+         * @param { Array } tags 传入數组判断时用到的节点類型
+         * @return { Boolean } 若文档中包含tags數组里对应的tag，返回true，否则返回false
          * @example
          * ```javascript
          * editor.hasContents(['span']);
@@ -8494,9 +8494,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 重設编辑器，可用来做多个tab使用同一个编辑器实例
+         * 重設編輯器，可用来做多个tab使用同一个編輯器实例
          * @method  reset
-         * @remind 此方法会清空编辑器内容，清空回退列表，会触发reset事件
+         * @remind 此方法会清空編輯器内容，清空回退列表，会触发reset事件
          * @example
          * ```javascript
          * editor.reset()
@@ -8507,7 +8507,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 设置当前编辑区域可以编辑
+         * 设置当前編輯区域可以編輯
          * @method setEnabled
          * @example
          * ```javascript
@@ -8543,11 +8543,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       return this.setEnabled();
     },
 
-    /** 设置当前编辑区域不可编辑
+    /** 设置当前編輯区域不可編輯
          * @method setDisabled
          */
 
-    /** 设置当前编辑区域不可编辑,except中的命令除外
+    /** 设置当前編輯区域不可編輯,except中的命令除外
          * @method setDisabled
          * @param { String } except 例外命令的字符串
          * @remind 即使设置了disable，此处配置的例外命令仍然可以執行
@@ -8557,13 +8557,13 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * ```
          */
 
-    /** 设置当前编辑区域不可编辑,except中的命令除外
+    /** 设置当前編輯区域不可編輯,except中的命令除外
          * @method setDisabled
-         * @param { Array } except 例外命令的字符串数组，数组中的命令仍然可以執行
+         * @param { Array } except 例外命令的字符串數组，數组中的命令仍然可以執行
          * @remind 即使设置了disable，此处配置的例外命令仍然可以執行
          * @example
          * ```javascript
-         * editor.setDisabled(['bold','insertimage']); //禁用工具栏中除加粗和插入图片之外的所有功能
+         * editor.setDisabled(['bold','insertimage']); //禁用工具栏中除加粗和插入圖片之外的所有功能
          * ```
          */
     setDisabled: function(except) {
@@ -8596,7 +8596,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 设置默认内容
+         * 设置默認内容
          * @method _setDefaultContent
          * @private
          * @param  { String } cont 要存入的内容
@@ -8623,7 +8623,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     })(),
 
     /**
-         * 显示编辑器
+         * 显示編輯器
          * @method setShow
          * @example
          * ```javascript
@@ -8652,7 +8652,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       return this.setShow();
     },
     /**
-         * 隐藏编辑器
+         * 隐藏編輯器
          * @method setHide
          * @example
          * ```javascript
@@ -8673,7 +8673,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 根据指定的路径，获取对应的语言资源
          * @method getLang
-         * @param { String } path 路径根据的是lang目录下的语言文件的路径结构
+         * @param { String } path 路径根据的是lang目入下的语言文件的路径结构
          * @return { Object | String } 根据路径返回语言资源的Json格式对象或者语言字符串
          * @example
          * ```javascript
@@ -8694,23 +8694,23 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 计算编辑器html内容字符串的长度
+         * 计算編輯器html内容字符串的长度
          * @method  getContentLength
          * @return { Number } 返回计算的长度
          * @example
          * ```javascript
-         * //编辑器html内容<p><strong>132</strong></p>
+         * //編輯器html内容<p><strong>132</strong></p>
          * editor.getContentLength() //返回27
          * ```
          */
     /**
-         * 计算编辑器当前纯文本内容的长度
+         * 计算編輯器当前纯文本内容的长度
          * @method  getContentLength
          * @param { Boolean } ingoneHtml 传入true时，只按照纯文本来计算
          * @return { Number } 返回计算的长度，内容中有hr/img/iframe標簽，长度加1
          * @example
          * ```javascript
-         * //编辑器html内容<p><strong>132</strong></p>
+         * //編輯器html内容<p><strong>132</strong></p>
          * editor.getContentLength() //返回3
          * ```
          */
@@ -8727,7 +8727,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 注册输入过滤规则
+         * 註冊输入过滤规则
          * @method  addInputRule
          * @param { Function } rule 要添加的过滤规则
          * @example
@@ -8744,10 +8744,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 執行注册的过滤规则
+         * 執行註冊的过滤规则
          * @method  filterInputRule
          * @param { UE.uNode } root 要过滤的uNode节点
-         * @remind 執行editor.setContent方法和執行'inserthtml'命令后，会运行该过滤函数
+         * @remind 執行editor.setContent方法和執行'inserthtml'命令后，会运行该过滤函數
          * @example
          * ```javascript
          * editor.filterInputRule(editor.body);
@@ -8761,7 +8761,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 注册输出过滤规则
+         * 註冊输出过滤规则
          * @method  addOutputRule
          * @param { Function } rule 要添加的过滤规则
          * @example
@@ -8778,9 +8778,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 根据输出过滤规则，过滤编辑器内容
+         * 根据输出过滤规则，过滤編輯器内容
          * @method  filterOutputRule
-         * @remind 執行editor.getContent方法的时候，会先运行该过滤函数
+         * @remind 執行editor.getContent方法的时候，会先运行该过滤函數
          * @param { UE.uNode } root 要过滤的uNode节点
          * @example
          * ```javascript
@@ -8797,7 +8797,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 根据action名称获取请求的路径
          * @method  getActionUrl
-         * @remind 假如没有设置serverUrl,会根据imageUrl设置默认的controller路径
+         * @remind 假如没有设置serverUrl,会根据imageUrl设置默認的controller路径
          * @param { String } action action名称
          * @example
          * ```javascript
@@ -8839,7 +8839,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
 
 // core/Editor.defaultoptions.js
-//维护编辑器一下默认的不在插件中的配置项
+//维护編輯器一下默認的不在插件中的配置项
 UE.Editor.defaultOptions = function(editor) {
   var _url = editor.options.UEDITOR_HOME_URL;
   return {
@@ -8972,13 +8972,13 @@ UE.ajax = (function() {
   var creatAjaxRequest = new Function("return new " + fnStr);
 
   /**
-     * 将json参数转化成适合ajax送出的参数列表
+     * 将json参數转化成适合ajax送出的参數列表
      * @param json
      */
   function json2str(json) {
     var strArr = [];
     for (var i in json) {
-      //忽略默认的几个参数
+      //忽略默認的几个参數
       if (
         i == "method" ||
         i == "timeout" ||
@@ -8989,7 +8989,7 @@ UE.ajax = (function() {
         continue;
       //忽略控制
       if (json[i] == undefined || json[i] == null) continue;
-      //传递过来的对象和函数不在送出之列
+      //传递过来的对象和函數不在送出之列
       if (
         !(
           (typeof json[i]).toLowerCase() == "function" ||
@@ -8998,7 +8998,7 @@ UE.ajax = (function() {
       ) {
         strArr.push(encodeURIComponent(i) + "=" + encodeURIComponent(json[i]));
       } else if (utils.isArray(json[i])) {
-        //支持传数组内容
+        //支持传數组内容
         for (var j = 0; j < json[i].length; j++) {
           strArr.push(
             encodeURIComponent(i) + "[]=" + encodeURIComponent(json[i][j])
@@ -9013,7 +9013,7 @@ UE.ajax = (function() {
     var xhr = creatAjaxRequest(),
       //是否超时
       timeIsOut = false,
-      //默认参数
+      //默認参數
       defaultAjaxOptions = {
         method: "POST",
         timeout: 5000,
@@ -9033,7 +9033,7 @@ UE.ajax = (function() {
       : defaultAjaxOptions;
 
     var submitStr = json2str(ajaxOpts); // { name:"Jim",city:"Beijing" } --> "name=Jim&city=Beijing"
-    //如果用户直接通过data参数传递json对象过来，则也要将此json对象转化為字符串
+    //如果用户直接通过data参數传递json对象过来，则也要将此json对象转化為字符串
     if (!utils.isEmptyObject(ajaxOpts.data)) {
       submitStr += (submitStr ? "&" : "") + json2str(ajaxOpts.data);
     }
@@ -9104,7 +9104,7 @@ UE.ajax = (function() {
     }
 
     var queryStr = json2str(opts); // { name:"Jim",city:"Beijing" } --> "name=Jim&city=Beijing"
-    //如果用户直接通过data参数传递json对象过来，则也要将此json对象转化為字符串
+    //如果用户直接通过data参數传递json对象过来，则也要将此json对象转化為字符串
     if (!utils.isEmptyObject(opts.data)) {
       queryStr += (queryStr ? "&" : "") + json2str(opts.data);
     }
@@ -9153,7 +9153,7 @@ UE.ajax = (function() {
 
   return {
     /**
-         * 根据给定的参数项，向指定的url发起一个ajax请求。 ajax请求完成后，会根据请求结果调用相应回调： 如果请求
+         * 根据给定的参數项，向指定的url发起一个ajax请求。 ajax请求完成后，会根据请求结果调用相应回调： 如果请求
          * 成功， 则调用onsuccess回调， 失败则调用 onerror 回调
          * @method request
          * @param { URLString } url ajax请求的url地址
@@ -9163,21 +9163,21 @@ UE.ajax = (function() {
          * //向sayhello.php发起一个异步的Ajax GET请求, 请求超时時間為10s， 请求完成后執行相应的回调。
          * UE.ajax.requeset( 'sayhello.php', {
          *
-         *     //请求方法。可选值： 'GET', 'POST'，默认值是'POST'
+         *     //请求方法。可选值： 'GET', 'POST'，默認值是'POST'
          *     method: 'GET',
          *
-         *     //超时時間。 默认為5000， 单位是ms
+         *     //超时時間。 默認為5000， 单位是ms
          *     timeout: 10000,
          *
          *     //是否是异步请求。 true為异步请求， false為同步请求
          *     async: true,
          *
-         *     //请求携带的数据。如果请求為GET请求， data会经过stringify后附加到请求url之后。
+         *     //请求携带的數據。如果请求為GET请求， data会经过stringify后附加到请求url之后。
          *     data: {
          *         name: 'neditor'
          *     },
          *
-         *     //请求成功后的回调， 该回调接受当前的XMLHttpRequest对象作為参数。
+         *     //请求成功后的回调， 该回调接受当前的XMLHttpRequest对象作為参數。
          *     onsuccess: function ( xhr ) {
          *         console.log( xhr.responseText );
          *     },
@@ -9192,10 +9192,10 @@ UE.ajax = (function() {
          */
 
     /**
-         * 根据给定的参数项发起一个ajax请求， 参数项里必须包含一个url地址。 ajax请求完成后，会根据请求结果调用相应回调： 如果请求
+         * 根据给定的参數项发起一个ajax请求， 参數项里必须包含一个url地址。 ajax请求完成后，会根据请求结果调用相应回调： 如果请求
          * 成功， 则调用onsuccess回调， 失败则调用 onerror 回调。
          * @method request
-         * @warning 如果在参数项里未提供一个key為“url”的地址值，则该请求将直接退出。
+         * @warning 如果在参數项里未提供一个key為“url”的地址值，则该请求将直接退出。
          * @param { Object } ajaxOptions ajax请求选项的键值对，支持的选项如下：
          * @example
          * ```javascript
@@ -9257,7 +9257,7 @@ var filterWord = (UE.filterWord = (function() {
       str
     );
   }
-  //去掉小数
+  //去掉小數
   function transUnit(v) {
     v = v.replace(/[\d.]+\w+/g, function(m) {
       return utils.transUnitToPx(m);
@@ -9270,14 +9270,14 @@ var filterWord = (UE.filterWord = (function() {
       str
         .replace(/[\t\r\n]+/g, " ")
         .replace(/<!--[\s\S]*?-->/gi, "")
-        //转换图片
+        //转换圖片
         .replace(/<v:shape [^>]*>[\s\S]*?.<\/v:shape>/gi, function(str) {
           //opera能自己解析出image所这里直接返回空
           if (browser.opera) {
             return "";
           }
           try {
-            //有可能是bitmap占為图，无用，直接过滤掉，主要体现在粘贴excel表格中
+            //有可能是bitmap占為圖，无用，直接过滤掉，主要体现在粘贴excel表格中
             if (/Bitmap/i.test(str)) {
               return "";
             }
@@ -9458,7 +9458,7 @@ var filterWord = (UE.filterWord = (function() {
 
 // core/node.js
 /**
- * 编辑器模拟的节点类
+ * 編輯器模拟的节点类
  * @file
  * @module UE
  * @class uNode
@@ -9473,7 +9473,7 @@ var filterWord = (UE.filterWord = (function() {
 
 ;(function() {
   /**
-     * 编辑器模拟的节点类
+     * 編輯器模拟的节点类
      * @unfile
      * @module UE
      * @class uNode
@@ -9902,7 +9902,7 @@ var filterWord = (UE.filterWord = (function() {
     /**
          * 用新的节点替换当前节点
          * @method replaceChild
-         * @param { UE.uNode } target 要替换成该节点参数
+         * @param { UE.uNode } target 要替换成该节点参數
          * @param { UE.uNode } source 要被替换掉的节点
          * @return { UE.uNode } 返回替换之后的节点对象
          * @example
@@ -9963,7 +9963,7 @@ var filterWord = (UE.filterWord = (function() {
          * 在传入节点的前面插入一个节点
          * @method insertBefore
          * @param { UE.uNode } target 要插入的节点
-         * @param { UE.uNode } source 在该参数节点前面插入
+         * @param { UE.uNode } source 在该参數节点前面插入
          * @return { UE.uNode } 返回刚插入的子节点
          * @example
          * ```javascript
@@ -9989,7 +9989,7 @@ var filterWord = (UE.filterWord = (function() {
          * 在传入节点的后面插入一个节点
          * @method insertAfter
          * @param { UE.uNode } target 要插入的节点
-         * @param { UE.uNode } source 在该参数节点后面插入
+         * @param { UE.uNode } source 在该参數节点后面插入
          * @return { UE.uNode } 返回刚插入的子节点
          * @example
          * ```javascript
@@ -10015,7 +10015,7 @@ var filterWord = (UE.filterWord = (function() {
          * 从当前节点的子节点列表中，移除节点
          * @method removeChild
          * @param { UE.uNode } node 要移除的节点引用
-         * @param { Boolean } keepChildren 是否保留移除节点的子节点，若传入true，自动把移除节点的子节点插入到移除的位置
+         * @param { Boolean } keepChildren 是否保留移除节点的子节点，若传入true，自動把移除节点的子节点插入到移除的位置
          * @return { * } 返回刚移除的子节点
          * @example
          * ```javascript
@@ -10093,7 +10093,7 @@ var filterWord = (UE.filterWord = (function() {
     /**
          * 获取当前节点在父节点下的位置索引
          * @method getIndex
-         * @return { Number } 返回索引数值，如果没有父节点，返回-1
+         * @return { Number } 返回索引數值，如果没有父节点，返回-1
          * @example
          * ```javascript
          * node.getIndex();
@@ -10211,9 +10211,9 @@ var filterWord = (UE.filterWord = (function() {
     },
 
     /**
-         * 传入一个函数，递归遍历当前节点下的所有节点
+         * 传入一个函數，递归遍历当前节点下的所有节点
          * @method traversal
-         * @param { Function } fn 遍历到节点的时，传入节点作為参数，运行此函数
+         * @param { Function } fn 遍历到节点的时，传入节点作為参數，运行此函數
          * @example
          * ```javascript
          * traversal(node, function(){
@@ -10259,7 +10259,7 @@ var filterWord = (UE.filterWord = (function() {
 
 var htmlparser = (UE.htmlparser = function(htmlstr, ignoreBlank) {
   //todo 原来的方式  [^"'<>\/] 有\/就不能配对上 <TD vAlign=top background=../AAA.JPG> 这样的標簽了
-  //先去掉了，加上的原因忘了，这里先记录
+  //先去掉了，加上的原因忘了，这里先记入
   //var re_tag = /<(?:(?:\/([^>]+)>)|(?:!--([\S|\s]*?)-->)|(?:([^\s\/<>]+)\s*((?:(?:"[^"]*")|(?:'[^']*')|[^"'<>])*)\/?>))/g,
   //以上的正则表达式无法匹配:<div style="text-align:center;font-family:" font-size:14px;"=""><img src="http://hs-album.oss.aliyuncs.com/static/27/78/35/image/20161206/20161206174331_41105.gif" alt="" /><br /></div>
   //修改為如下正则表达式:
@@ -10867,7 +10867,7 @@ var LocalStorage = (UE.LocalStorage = (function() {
 
 // plugins/defaultfilter.js
 ///import core
-///plugin 编辑器默认的过滤转换机制
+///plugin 編輯器默認的过滤转换机制
 
 UE.plugins["defaultfilter"] = function() {
   var me = this;
@@ -10876,8 +10876,8 @@ UE.plugins["defaultfilter"] = function() {
     disabledTableInTable: true,
     rgb2Hex: true
   });
-  //默认的过滤处理
-  //进入编辑器的内容处理
+  //默認的过滤处理
+  //进入編輯器的内容处理
   me.addInputRule(function(root) {
     var allowDivTransToP = this.options.allowDivTransToP;
     var val;
@@ -10890,7 +10890,7 @@ UE.plugins["defaultfilter"] = function() {
       }
       return false;
     }
-    //进行默认的处理
+    //进行默認的处理
     root.traversal(function(node) {
       if (node.type == "element") {
         if (
@@ -10926,7 +10926,7 @@ UE.plugins["defaultfilter"] = function() {
             }
             break;
           case "img":
-            //todo base64暂时去掉，后边做远程图片上传后，干掉这个
+            //todo base64暂时去掉，后边做远程圖片上传后，干掉这个
             if ((val = node.getAttr("src"))) {
               if (/^data:/.test(val)) {
                 node.parentNode.removeChild(node);
@@ -11061,7 +11061,7 @@ UE.plugins["defaultfilter"] = function() {
     });
   });
 
-  //从编辑器出去的内容处理
+  //从編輯器出去的内容处理
   me.addOutputRule(function(root) {
     var val;
     root.traversal(function(node) {
@@ -11194,7 +11194,7 @@ UE.commands["inserthtml"] = {
       if (me.options.filterRules) {
         UE.filterNode(root, me.options.filterRules);
       }
-      //執行默认的处理
+      //執行默認的处理
       me.filterInputRule(root);
       html = root.toHtml();
     }
@@ -11271,7 +11271,7 @@ UE.commands["inserthtml"] = {
         range.collapsed && range.collapse(true);
       }
     }
-    //列表单独处理
+    //列表單独处理
     var li = domUtils.findParentByTagName(range.startContainer, "li", true);
     if (li) {
       var next, last;
@@ -11425,13 +11425,13 @@ UE.commands["inserthtml"] = {
 
 // plugins/autotypeset.js
 /**
- * 自动排版
+ * 自動排版
  * @file
  * @since 1.2.6.1
  */
 
 /**
- * 对当前编辑器的内容執行自动排版， 排版的行為根据config配置文件里的“autotypeset”选项进行控制。
+ * 对当前編輯器的内容執行自動排版， 排版的行為根据config配置文件里的“autotypeset”选项进行控制。
  * @command autotypeset
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -11448,10 +11448,10 @@ UE.plugins["autotypeset"] = function() {
       removeClass: true, //去掉冗余的class
       removeEmptyline: false, //去掉空行
       textAlign: "left", //段落的排版方式，可以是 left,right,center,justify 去掉这个属性表示不執行排版
-      imageBlockLine: "center", //图片的浮动方式，独占一行剧中,左右浮动，默认: center,left,right,none 去掉这个属性表示不執行排版
+      imageBlockLine: "center", //圖片的浮动方式，独占一行剧中,左右浮动，默認: center,left,right,none 去掉这个属性表示不執行排版
       pasteFilter: false, //根据规则过滤没事粘贴进来的内容
-      clearFontSize: false, //去掉所有的内嵌字号，使用编辑器默认的字号
-      clearFontFamily: false, //去掉所有的内嵌字体，使用编辑器默认的字体
+      clearFontSize: false, //去掉所有的内嵌字号，使用編輯器默認的字号
+      clearFontFamily: false, //去掉所有的内嵌字体，使用編輯器默認的字体
       removeEmptyNode: false, // 去掉空节点
       //可以去掉的標簽
       removeTagNames: utils.extend({ div: 1 }, dtd.$removeEmpty),
@@ -11788,7 +11788,7 @@ UE.plugins["autotypeset"] = function() {
  */
 
 /**
- * 送出表单
+ * 送出表單
  * @command autosubmit
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -11957,19 +11957,19 @@ UE.plugin.register("background", function() {
 
 // plugins/image.js
 /**
- * 图片插入、排版插件
+ * 圖片插入、排版插件
  * @file
  * @since 1.2.6.1
  */
 
 /**
- * 图片对齐方式
+ * 圖片对齐方式
  * @command imagefloat
  * @method execCommand
  * @remind 值center為独占一行居中
  * @param { String } cmd 命令字符串
  * @param { String } align 对齐方式，可传left、right、none、center
- * @remaind center表示图片独占一行
+ * @remaind center表示圖片独占一行
  * @example
  * ```javascript
  * editor.execCommand( 'imagefloat', 'center' );
@@ -11977,11 +11977,11 @@ UE.plugin.register("background", function() {
  */
 
 /**
- * 如果选区所在位置是图片区域
+ * 如果选区所在位置是圖片区域
  * @command imagefloat
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
- * @return { String } 返回图片对齐方式
+ * @return { String } 返回圖片对齐方式
  * @example
  * ```javascript
  * editor.queryCommandValue( 'imagefloat' );
@@ -12136,13 +12136,13 @@ UE.commands["imagefloat"] = {
 };
 
 /**
- * 插入图片
+ * 插入圖片
  * @command insertimage
  * @method execCommand
  * @param { String } cmd 命令字符串
- * @param { Object } opt 属性键值对，这些属性都将被复制到当前插入图片
- * @remind 该命令第二个参数可接受一个图片配置项对象的数组，可以插入多张图片，
- * 此时数组的每一个元素都是一个Object類型的图片属性集合。
+ * @param { Object } opt 属性键值对，这些属性都将被複製到当前插入圖片
+ * @remind 该命令第二个参數可接受一个圖片配置项对象的數组，可以插入多张圖片，
+ * 此时數组的每一个元素都是一个Object類型的圖片属性集合。
  * @example
  * ```javascript
  * editor.execCommand( 'insertimage', {
@@ -13082,7 +13082,7 @@ UE.plugins["link"] = function() {
       opt.href && (opt.href = utils.unhtml(opt.href, /[<">]/g));
       opt.textValue && (opt.textValue = utils.unhtml(opt.textValue, /[<">]/g));
       doLink((range = this.selection.getRange()), opt, this);
-      //闭合都不加占位符，如果加了会在a后边多个占位符节点，导致a是图片背景组成的列表，出现空白问题
+      //闭合都不加占位符，如果加了会在a后边多个占位符节点，导致a是圖片背景组成的列表，出现空白问题
       range.collapse().select(true);
     },
     queryCommandValue: function() {
@@ -13771,7 +13771,7 @@ UE.plugins["selectall"] = function() {
         range = me.selection.getRange();
       range.selectNodeContents(body);
       if (domUtils.isEmptyBlock(body)) {
-        //opera不能自动合并到元素的里边，要手动处理一下
+        //opera不能自動合并到元素的里边，要手动处理一下
         if (browser.opera && body.firstChild && body.firstChild.nodeType == 1) {
           range.setStartAtFirst(body.firstChild);
         }
@@ -14259,7 +14259,7 @@ UE.plugins["horizontal"] = function() {
  */
 
 /**
- * 插入時間，默认格式：12:59:59
+ * 插入時間，默認格式：12:59:59
  * @command time
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -14270,7 +14270,7 @@ UE.plugins["horizontal"] = function() {
  */
 
 /**
- * 插入日期，默认格式：2013-08-30
+ * 插入日期，默認格式：2013-08-30
  * @command date
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -14380,7 +14380,7 @@ UE.plugins["lineheight"] = function() {
      * @command lineheight
      * @method execCommand
      * @param { String } cmdName 命令字符串
-     * @param { String } value 传入的行高值， 该值是当前字体的倍数， 例如： 1.5, 1.75
+     * @param { String } value 传入的行高值， 该值是当前字体的倍數， 例如： 1.5, 1.75
      * @example
      * ```javascript
      * editor.execCommand( 'lineheight', 1.5);
@@ -15050,7 +15050,7 @@ UE.plugins["insertcode"] = function() {
  * @param { String } cmd 命令字符串
  * @example
  * ```javascript
- * //editor 是编辑器实例
+ * //editor 是編輯器实例
  * editor.execCommand('cleardoc');
  * ```
  */
@@ -15136,7 +15136,7 @@ UE.plugin.register("anchor", function () {
              * @param { String } name 锚点名称字符串
              * @example
              * ```javascript
-             * //editor 是编辑器实例
+             * //editor 是編輯器实例
              * editor.execCommand('anchor', 'anchor1');
              * ```
              */
@@ -15170,9 +15170,9 @@ UE.plugin.register("anchor", function () {
 
 // plugins/wordcount.js
 ///import core
-///commands 字数统计
+///commands 字數统计
 ///commandsName  WordCount,wordCount
-///commandsTitle  字数统计
+///commandsTitle  字數统计
 /*
  * Created by JetBrains WebStorm.
  * User: taoqili
@@ -15284,8 +15284,8 @@ UE.plugins["pagebreak"] = function() {
      * @method execCommand
      * @param { String } cmd 命令字符串
      * @remind 在表格中插入分頁符会把表格切分成两部分
-     * @remind 获取编辑器内的数据时， 编辑器会把分頁符转换成“_ueditor_page_break_tag_”字符串，
-     *          以便于送出数据到服务器端后处理分頁。
+     * @remind 获取編輯器内的數據时， 編輯器会把分頁符转换成“_ueditor_page_break_tag_”字符串，
+     *          以便于送出數據到服务器端后处理分頁。
      * @example
      * ```javascript
      * editor.execCommand( 'pagebreak'); //插入一个hr標簽，带有样式类名pagebreak
@@ -15394,9 +15394,9 @@ UE.plugins["pagebreak"] = function() {
 
 // plugins/wordimage.js
 ///import core
-///commands 本地图片引导上传
+///commands 本地圖片引导上传
 ///commandsName  WordImage
-///commandsTitle  本地图片引导上传
+///commandsTitle  本地圖片引导上传
 ///commandsDialog  dialogs\wordimage
 
 UE.plugin.register("wordimage", function() {
@@ -15698,7 +15698,7 @@ UE.plugins["undo"] = function() {
       }
       this.list = this.list.slice(0, this.index + 1);
       this.list.push(currentScene);
-      //如果大于最大数量了，就把最前的剔除
+      //如果大于最大數量了，就把最前的剔除
       if (this.list.length > maxUndoCount) {
         this.list.shift();
       }
@@ -15769,7 +15769,7 @@ UE.plugins["undo"] = function() {
   },
     keycont = 0,
     lastKeyCode;
-  //输入法状态下不计算字符数
+  //输入法状态下不计算字符數
   var inputType = false;
   me.addListener("ready", function() {
     domUtils.on(this.body, "compositionstart", function() {
@@ -15870,7 +15870,7 @@ UE.plugin.register("copy", function() {
 
     var client = (me.zeroclipboard = new ZeroClipboard());
 
-    // 复制内容
+    // 複製内容
     client.on("copy", function(e) {
       var client = e.client,
         rng = me.selection.getRange(),
@@ -16108,13 +16108,13 @@ UE.plugins["paste"] = function() {
 
       //过滤word粘贴过来的冗余属性
       html = UE.filterWord(html);
-      //取消了忽略空白的第二个参数，粘贴过来的有些是有空白的，会被套上相关的標簽
+      //取消了忽略空白的第二个参數，粘贴过来的有些是有空白的，会被套上相关的標簽
       var root = UE.htmlparser(html);
       //如果给了过滤规则就先进行过滤
       if (me.options.filterRules) {
         UE.filterNode(root, me.options.filterRules);
       }
-      //執行默认的处理
+      //執行默認的处理
       me.filterInputRule(root);
       //针对chrome的处理
       if (browser.webkit) {
@@ -16130,7 +16130,7 @@ UE.plugins["paste"] = function() {
       }
       html = { html: root.toHtml() };
       me.fireEvent("beforepaste", html, root);
-      //抢了默认的粘贴，那后边的内容就不執行了，比如表格粘贴
+      //抢了默認的粘贴，那后边的内容就不執行了，比如表格粘贴
       if (!html.html) {
         return;
       }
@@ -16690,7 +16690,7 @@ UE.plugins["list"] = function() {
         }
       });
     });
-  //进入编辑器的li要套p標簽
+  //进入編輯器的li要套p標簽
   me.addInputRule(function(root) {
     utils.each(root.getNodesByTagName("li"), function(li) {
       var tmpP = UE.uNode.createElement("p");
@@ -17329,7 +17329,7 @@ UE.plugins["list"] = function() {
   me.addListener("tabkeydown", function() {
     var range = me.selection.getRange();
 
-    //控制级数
+    //控制级數
     function checkLevel(li) {
       if (me.options.maxListLevel != -1) {
         var level = li.parentNode,
@@ -17508,7 +17508,7 @@ UE.plugins["list"] = function() {
      * ```
      */
   /**
-     * 查询当前是否有word文档粘贴进来的图片
+     * 查询当前是否有word文档粘贴进来的圖片
      * @command insertunorderedlist
      * @method insertunorderedlist
      * @param { String } command 命令字符串
@@ -17847,7 +17847,7 @@ UE.plugins["list"] = function() {
 
 // plugins/source.js
 /**
- * 源码编辑插件
+ * 源码編輯插件
  * @file
  * @since 1.2.6.1
  */
@@ -17974,7 +17974,7 @@ UE.plugins["list"] = function() {
     var oldGetContent, bakAddress;
 
     /**
-         * 切换源码模式和编辑模式
+         * 切换源码模式和編輯模式
          * @command source
          * @method execCommand
          * @param { String } cmd 命令字符串
@@ -17985,11 +17985,11 @@ UE.plugins["list"] = function() {
          */
 
     /**
-         * 查询当前编辑区域的状态是源码模式还是可视化模式
+         * 查询当前編輯区域的状态是源码模式还是可视化模式
          * @command source
          * @method queryCommandState
          * @param { String } cmd 命令字符串
-         * @return { int } 如果当前是源码编辑模式，返回1，否则返回0
+         * @return { int } 如果当前是源码編輯模式，返回1，否则返回0
          * @example
          * ```javascript
          * editor.queryCommandState( 'source' );
@@ -18058,7 +18058,7 @@ UE.plugins["list"] = function() {
             });
           });
 
-          //重設getContent，源码模式下取值也能是最新的数据
+          //重設getContent，源码模式下取值也能是最新的數據
           oldGetContent = me.getContent;
           me.getContent = function() {
             return (
@@ -18589,7 +18589,7 @@ UE.plugins["keystrokes"] = function() {
       }
     }
 
-    /* 修复在编辑区域快捷键 (Mac:meta+alt+I; Win:ctrl+shift+I) 打不开 chrome 控制台的问题 */
+    /* 修复在編輯区域快捷键 (Mac:meta+alt+I; Win:ctrl+shift+I) 打不开 chrome 控制台的问题 */
     browser.chrome &&
       me.on("keydown", function(type, e) {
         var keyCode = e.keyCode || e.which;
@@ -18668,10 +18668,10 @@ UE.plugins["keystrokes"] = function() {
 
 // plugins/fiximgclick.js
 ///import core
-///commands 修复chrome下图片不能点击的问题，出现八个角可改变大小
+///commands 修复chrome下圖片不能点击的问题，出现八个角可改变大小
 ///commandsName  FixImgClick
-///commandsTitle  修复chrome下图片不能点击的问题，出现八个角可改变大小
-//修复chrome下图片不能点击的问题，出现八个角可改变大小
+///commandsTitle  修复chrome下圖片不能点击的问题，出现八个角可改变大小
+//修复chrome下圖片不能点击的问题，出现八个角可改变大小
 
 UE.plugins["fiximgclick"] = (function() {
   var elementUpdated = false;
@@ -19052,11 +19052,11 @@ UE.plugins["fiximgclick"] = (function() {
 
 // plugins/autolink.js
 ///import core
-///commands 為非ie浏览器自动添加a標簽
+///commands 為非ie浏览器自動添加a標簽
 ///commandsName  AutoLink
-///commandsTitle  自动增加链接
+///commandsTitle  自動增加链接
 /**
- * @description 為非ie浏览器自动添加a標簽
+ * @description 為非ie浏览器自動添加a標簽
  * @author zhanyi
  */
 
@@ -19273,11 +19273,11 @@ UE.plugin.register(
 
 // plugins/autoheight.js
 ///import core
-///commands 当输入内容超过编辑器高度时，编辑器自动增高
+///commands 当输入内容超过編輯器高度时，編輯器自動增高
 ///commandsName  AutoHeight,autoHeightEnabled
-///commandsTitle  自动增高
+///commandsTitle  自動增高
 /**
- * @description 自动伸展
+ * @description 自動伸展
  * @author zhanyi
  */
 UE.plugins["autoheight"] = function() {
@@ -19406,7 +19406,7 @@ UE.plugins["autoheight"] = function() {
 ///commandsTitle  悬浮工具栏
 /**
  *  modified by chengchao01
- *  注意： 引入此功能后，在IE6下会将body的背景图片覆盖掉！
+ *  注意： 引入此功能后，在IE6下会将body的背景圖片覆盖掉！
  */
 UE.plugins["autofloat"] = function() {
   var me = this,
@@ -19515,7 +19515,7 @@ UE.plugins["autofloat"] = function() {
 
   me.addListener("ready", function() {
     if (checkHasUI(me)) {
-      //加载了ui组件，但在new时，没有加载ui，导致编辑器实例上没有ui类，所以这里做判断
+      //加载了ui组件，但在new时，没有加载ui，导致編輯器实例上没有ui类，所以这里做判断
       if (!me.ui) {
         return;
       }
@@ -19701,8 +19701,8 @@ UE.plugins["video"] = function() {
      *      height: 100
      * };
      *
-     * //editor 是编辑器实例
-     * //向编辑器插入单个视频
+     * //editor 是編輯器实例
+     * //向編輯器插入单个视频
      * editor.execCommand( 'insertvideo', videoAttr );
      * ```
      */
@@ -19712,7 +19712,7 @@ UE.plugins["video"] = function() {
      * @command insertvideo
      * @method execCommand
      * @param { String } cmd 命令字符串
-     * @param { Array } videoArr 需要插入的视频的数组， 其中的每一个元素都是一个键值对对象， 描述了一个视频的所有属性
+     * @param { Array } videoArr 需要插入的视频的數组， 其中的每一个元素都是一个键值对对象， 描述了一个视频的所有属性
      * @example
      * ```javascript
      *
@@ -19731,8 +19731,8 @@ UE.plugins["video"] = function() {
      *      height: 100
      * }
      *
-     * //editor 是编辑器实例
-     * //该方法将会向编辑器内插入两个视频
+     * //editor 是編輯器实例
+     * //该方法将会向編輯器内插入两个视频
      * editor.execCommand( 'insertvideo', [ videoAttr1, videoAttr2 ] );
      * ```
      */
@@ -19746,7 +19746,7 @@ UE.plugins["video"] = function() {
      * @example
      * ```javascript
      *
-     * //editor 是编辑器实例
+     * //editor 是編輯器实例
      * editor.queryCommandState( 'insertvideo' );
      * ```
      */
@@ -19859,7 +19859,7 @@ UE.plugins["video"] = function() {
   /**
      * 获取单元格或者单元格组的“对齐”状态。 如果当前的检测对象是一个单元格组， 只有在满足所有单元格的 水平和竖直 对齐属性都相同的
      * 条件时才会返回其状态值，否则将返回null； 如果当前只检测了一个单元格， 则直接返回当前单元格的对齐状态；
-     * @param table cell or table cells , 支持单个单元格dom对象 或者 单元格dom对象数组
+     * @param table cell or table cells , 支持单个单元格dom对象 或者 单元格dom对象數组
      * @return { align: 'left' || 'right' || 'center', valign: 'top' || 'middle' || 'bottom' } 或者 null
      */
   UETable.getTableCellAlignState = function(cells) {
@@ -20024,7 +20024,7 @@ UE.plugins["video"] = function() {
       return maxLen;
     },
     /**
-         * 获取当前表格的最大列数
+         * 获取当前表格的最大列數
          */
     getMaxCols: function() {
       var rows = this.table.rows,
@@ -20233,7 +20233,7 @@ UE.plugins["video"] = function() {
           (cell = cells[cellIndex]);
           cellIndex++
         ) {
-          //修正整行被rowSpan时导致的行数计算错误
+          //修正整行被rowSpan时导致的行數计算错误
           if (cell.rowSpan > rowsNum) {
             cell.rowSpan = rowsNum;
           }
@@ -20299,7 +20299,7 @@ UE.plugins["video"] = function() {
           endColIndex: endInfo.colIndex + endInfo.colSpan - 1
         };
       }
-      //给第一行设置firstRow的样式名称,在排序图标的样式上使用到
+      //给第一行设置firstRow的样式名称,在排序圖标的样式上使用到
       if (!domUtils.hasClass(this.table.rows[0], "firstRow")) {
         domUtils.addClass(this.table.rows[0], "firstRow");
         for (var i = 1; i < this.table.rows.length; i++) {
@@ -20529,7 +20529,7 @@ UE.plugins["video"] = function() {
         : rows == this.rowsNum || rows == this.rowsNum - 1;
     },
     /**
-         * 获取视觉上的前置单元格，默认是左边，top传入时
+         * 获取视觉上的前置单元格，默認是左边，top传入时
          * @param cell
          * @param top
          */
@@ -20794,7 +20794,7 @@ UE.plugins["video"] = function() {
       var row = this.table.rows[rowIndex],
         infoRow = this.indexTable[rowIndex],
         colsNum = this.colsNum,
-        count = 0; //处理计数
+        count = 0; //处理计數
       for (var colIndex = 0; colIndex < colsNum; ) {
         var cellInfo = infoRow[colIndex],
           cell = this.getCell(cellInfo.rowIndex, cellInfo.cellIndex);
@@ -22228,7 +22228,7 @@ UE.plugins["table"] = function() {
     cellBorderWidth = 5,
     //鼠标偏移距离
     offsetOfTableCell = 10,
-    //记录在有限時間内的点击状态， 共有3个取值， 0, 1, 2。 0代表未初始化， 1代表单击了1次，2代表2次
+    //记入在有限時間内的点击状态， 共有3个取值， 0, 1, 2。 0代表未初始化， 1代表單击了1次，2代表2次
     singleClickState = 0,
     userActionStatus = null,
     //双击允许的時間范围
@@ -22329,7 +22329,7 @@ UE.plugins["table"] = function() {
       //选中的td上的样式
       ".selectTdClass{background-color:#edf5fa !important}" +
         "table.noBorderTable td,table.noBorderTable th,table.noBorderTable caption{border:1px dashed #ddd !important}" +
-        //插入的表格的默认样式
+        //插入的表格的默認样式
         "table{margin-bottom:10px;border-collapse:collapse;display:table;}" +
         "td,th{padding: 5px 10px;border: 1px solid #DDD;}" +
         "caption{border:1px dashed #DDD;border-bottom:0;padding:3px;text-align:center;}" +
@@ -22341,7 +22341,7 @@ UE.plugins["table"] = function() {
     );
 
     var tableCopyList, isFullCol, isFullRow;
-    //注册del/backspace事件
+    //註冊del/backspace事件
     me.addListener("keydown", function(cmd, evt) {
       var me = this;
       var keyCode = evt.keyCode || evt.which;
@@ -22945,7 +22945,7 @@ UE.plugins["table"] = function() {
     me.addListener("getAllHtml", function() {
       removeSelectedClass(me.document.getElementsByTagName("td"));
     });
-    //修正全屏状态下插入的表格宽度在非全屏状态下撑开编辑器的情况
+    //修正全屏状态下插入的表格宽度在非全屏状态下撑开編輯器的情况
     me.addListener("fullscreenchanged", function(type, fullscreen) {
       if (!fullscreen) {
         var ratio = this.body.offsetWidth / document.body.offsetWidth,
@@ -23914,7 +23914,7 @@ UE.plugins["table"] = function() {
 
     temp = null;
 
-    //记录想关的单元格
+    //记入想关的单元格
     var borderCells = [];
 
     utils.each(rows, function(tabRow) {
@@ -24894,7 +24894,7 @@ UE.plugins["contextmenu"] = function() {
               }
             }
             contextItems.push({
-              //todo 修正成自动获取方式
+              //todo 修正成自動获取方式
               label: getLabel(),
               className: "edui-for-" + item.icon,
               subMenu: {
@@ -24959,7 +24959,7 @@ UE.plugins["contextmenu"] = function() {
     }
   });
 
-  // 添加复制的flash按钮
+  // 添加複製的flash按钮
   me.addListener("aftershowcontextmenu", function(type, menu) {
     if (me.zeroclipboard) {
       var items = menu.items;
@@ -25065,7 +25065,7 @@ UE.plugins["basestyle"] = function() {
      * @method execCommand
      * @example
      * ```javascript
-     * //editor是编辑器实例
+     * //editor是編輯器实例
      * //对当前选中的文本内容執行加粗操作
      * //第一次執行， 文本内容加粗
      * editor.execCommand( 'bold' );
@@ -25083,7 +25083,7 @@ UE.plugins["basestyle"] = function() {
      * @remind 对已倾斜的文本内容執行该命令， 将取消倾斜
      * @example
      * ```javascript
-     * //editor是编辑器实例
+     * //editor是編輯器实例
      * //对当前选中的文本内容執行斜体操作
      * //第一次操作， 文本内容将变成斜体
      * editor.execCommand( 'italic' );
@@ -25101,7 +25101,7 @@ UE.plugins["basestyle"] = function() {
      * @param { String } cmd 命令字符串
      * @example
      * ```javascript
-     * //editor是编辑器实例
+     * //editor是編輯器实例
      * //对当前选中的文本内容執行下标操作
      * //第一次操作， 文本内容将变成下标文本
      * editor.execCommand( 'subscript' );
@@ -25119,7 +25119,7 @@ UE.plugins["basestyle"] = function() {
      * @param { String } cmd 命令字符串
      * @example
      * ```javascript
-     * //editor是编辑器实例
+     * //editor是編輯器实例
      * //对当前选中的文本内容執行上标操作
      * //第一次操作， 文本内容将变成上标文本
      * editor.execCommand( 'superscript' );
@@ -25260,11 +25260,11 @@ UE.plugins["elementpath"] = function() {
  * 格式刷
  * @command formatmatch
  * @method execCommand
- * @remind 该操作不能复制段落格式
+ * @remind 该操作不能複製段落格式
  * @param { String } cmd 命令字符串
  * @example
  * ```javascript
- * //editor是编辑器实例
+ * //editor是編輯器实例
  * //获取格式刷
  * editor.execCommand( 'formatmatch' );
  * ```
@@ -25803,17 +25803,17 @@ UE.plugins["customstyle"] = function() {
 
 // plugins/catchremoteimage.js
 ///import core
-///commands 远程图片抓取
+///commands 远程圖片抓取
 ///commandsName  catchRemoteImage,catchremoteimageenable
-///commandsTitle  远程图片抓取
+///commandsTitle  远程圖片抓取
 /**
- * 远程图片抓取,当开启本插件时所有不符合本地域名的图片都将被抓取成為本地服务器上的图片
+ * 远程圖片抓取,当开启本插件时所有不符合本地域名的圖片都将被抓取成為本地服务器上的圖片
  */
 UE.plugins["catchremoteimage"] = function() {
   var me = this,
     ajax = UE.ajax;
 
-  /* 设置默认值 */
+  /* 设置默認值 */
   if (me.options.catchRemoteImageEnable === false) return;
   me.setOpt({
     catchRemoteImageEnable: false
@@ -25862,7 +25862,7 @@ UE.plugins["catchremoteimage"] = function() {
           })
         }
       } else {
-        // 获取背景图片url
+        // 获取背景圖片url
         var backgroundImageurl = ci.style.cssText.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
         if (/^(https?|ftp):/i.test(backgroundImageurl) && !test(backgroundImageurl, catcherLocalDomain)) {
           remoteImages.push(backgroundImageurl);
@@ -25899,7 +25899,7 @@ UE.plugins["catchremoteimage"] = function() {
           var catchFailList = [];
           /* 抓取成功统计 */
           var catchSuccessList = [];
-          /* 抓取失败时显示的图片 */
+          /* 抓取失败时显示的圖片 */
           var failIMG = me.options.themePath + me.options.theme + '/images/img-cracked.png';
 
           for (i = 0; ci = imgs[i++];) {
@@ -25918,7 +25918,7 @@ UE.plugins["catchremoteimage"] = function() {
                 catchSuccessList.push(ci);
                 break;
               } else if (oldSrc == cj.source && cj.state == "FAIL") {
-                // 替换成统一的失败图片
+                // 替换成统一的失败圖片
                 domUtils.removeClasses( ci, "loadingclass" );
                 domUtils.setAttributes(ci, {
                     "src": failIMG,
@@ -25948,7 +25948,7 @@ UE.plugins["catchremoteimage"] = function() {
             }
 
           }
-          // 监听事件添加成功抓取和抓取失败的dom列表参数
+          // 监听事件添加成功抓取和抓取失败的dom列表参數
           me.fireEvent('catchremotesuccess',catchSuccessList,catchFailList);
         },
         //回调失败，本次请求超时
@@ -25970,7 +25970,7 @@ UE.plugins["catchremoteimage"] = function() {
         opt = {
           method: "POST",
           dataType: isJsonp ? "jsonp" : "",
-          timeout: 60000, //单位：毫秒，回调请求超时设置。目标用户如果网速不是很快的话此处建议设置一个较大的数值
+          timeout: 60000, //单位：毫秒，回调请求超时设置。目标用户如果网速不是很快的话此处建议设置一个较大的數值
           onsuccess: callbacks["success"],
           onerror: callbacks["error"]
         };
@@ -26104,7 +26104,7 @@ UE.plugin.register("snapscreen", function() {
  * @param { String } cmd 命令字符串
  * @example
  * ```javascript
- * //editor是编辑器实例
+ * //editor是編輯器实例
  * editor.execCommand( 'insertparagraph' );
  * ```
  */
@@ -26149,17 +26149,17 @@ UE.commands["insertparagraph"] = {
  * @method execCommand
  * @remind 需要百度APPKey
  * @remind 百度应用主頁： <a href="http://app.baidu.com/" target="_blank">http://app.baidu.com/</a>
- * @param { Object } appOptions 应用所需的参数项， 支持的key有： title=>应用標題， width=>应用容器宽度，
+ * @param { Object } appOptions 应用所需的参數项， 支持的key有： title=>应用標題， width=>应用容器宽度，
  * height=>应用容器高度，logo=>应用logo，url=>应用地址
  * @example
  * ```javascript
- * //editor是编辑器实例
- * //在编辑器里插入一个“植物大战僵尸”的APP
+ * //editor是編輯器实例
+ * //在編輯器里插入一个“植物大战僵尸”的APP
  * editor.execCommand( 'webapp' , {
  *     title: '植物大战僵尸',
  *     width: 560,
  *     height: 465,
- *     logo: '应用展示的图片',
+ *     logo: '应用展示的圖片',
  *     url: '百度应用的地址'
  * } );
  * ```
@@ -26294,17 +26294,17 @@ UE.plugin.register("webapp", function() {
              * @method execCommand
              * @remind 需要百度APPKey
              * @remind 百度应用主頁： <a href="http://app.baidu.com/" target="_blank">http://app.baidu.com/</a>
-             * @param { Object } appOptions 应用所需的参数项， 支持的key有： title=>应用標題， width=>应用容器宽度，
+             * @param { Object } appOptions 应用所需的参數项， 支持的key有： title=>应用標題， width=>应用容器宽度，
              * height=>应用容器高度，logo=>应用logo，url=>应用地址
              * @example
              * ```javascript
-             * //editor是编辑器实例
-             * //在编辑器里插入一个“植物大战僵尸”的APP
+             * //editor是編輯器实例
+             * //在編輯器里插入一个“植物大战僵尸”的APP
              * editor.execCommand( 'webapp' , {
              *     title: '植物大战僵尸',
              *     width: 560,
              *     height: 465,
-             *     logo: '应用展示的图片',
+             *     logo: '应用展示的圖片',
              *     url: '百度应用的地址'
              * } );
              * ```
@@ -26460,12 +26460,12 @@ UE.plugin.register("music", function() {
              * 插入音乐
              * @command music
              * @method execCommand
-             * @param { Object } musicOptions 插入音乐的参数项， 支持的key有： url=>音乐地址；
+             * @param { Object } musicOptions 插入音乐的参數项， 支持的key有： url=>音乐地址；
              * width=>音乐容器宽度；height=>音乐容器高度；align=>音乐文件的对齐方式， 可选值有: left, center, right, none
              * @example
              * ```javascript
-             * //editor是编辑器实例
-             * //在编辑器里插入一个“植物大战僵尸”的APP
+             * //editor是編輯器实例
+             * //在編輯器里插入一个“植物大战僵尸”的APP
              * editor.execCommand( 'music' , {
              *     width: 400,
              *     height: 95,
@@ -26501,15 +26501,15 @@ UE.plugin.register("music", function() {
 // plugins/autoupload.js
 /**
  * @description
- * 1.拖放文件到编辑区域，自动上传并插入到选区
- * 2.插入粘贴板的图片，自动上传并插入到选区
+ * 1.拖放文件到編輯区域，自動上传并插入到选区
+ * 2.插入粘贴板的圖片，自動上传并插入到选区
  * @author Jinqn
  * @date 2013-10-14
  */
 UE.plugin.register("autoupload", function() {
   function sendAndInsertFile(file, editor) {
     var me = editor;
-    //模拟数据
+    //模拟數據
     var fieldName,
       urlPrefix,
       maxSize,
@@ -26581,7 +26581,7 @@ UE.plugin.register("autoupload", function() {
 
     /* 插入loading的占位符 */
     me.execCommand("inserthtml", loadingHtml);
-    /* 判断后端配置是否没有加载成功 */
+    /* 判断編輯配置是否没有加载成功 */
     if (!me.getOpt(filetype + "ActionName")) {
       errorHandler(me.getLang("autoupload.errorLoadConfig"));
       return;
@@ -26660,11 +26660,11 @@ UE.plugin.register("autoupload", function() {
     },
     bindEvents: {
       defaultOptions: {
-        //默认间隔時間
+        //默認间隔時間
         enableDragUpload: true,
         enablePasteUpload: true
       },
-      //插入粘贴板的图片，拖放插入图片
+      //插入粘贴板的圖片，拖放插入圖片
       ready: function(e) {
         var me = this;
         if (window.FormData && window.FileReader) {
@@ -26693,7 +26693,7 @@ UE.plugin.register("autoupload", function() {
           }
           if (me.getOpt("enableDragUpload") !== false) {
             domUtils.on(me.body, "drop", handler);
-            //取消拖放图片时出现的文字光标位置提示
+            //取消拖放圖片时出现的文字光标位置提示
             domUtils.on(me.body, "dragover", function(e) {
               if (e.dataTransfer.types[0] == "Files") {
                 e.preventDefault();
@@ -26776,7 +26776,7 @@ UE.plugin.register("autosave", function() {
 
   return {
     defaultOptions: {
-      //默认间隔時間
+      //默認间隔時間
       saveInterval: 500,
       enableAutoSave: true
     },
@@ -26791,7 +26791,7 @@ UE.plugin.register("autosave", function() {
           key = (me.container.parentNode.id || "ue-common") + _suffix;
         }
 
-        //頁面地址+编辑器ID 保持唯一
+        //頁面地址+編輯器ID 保持唯一
         saveKey =
           (location.protocol + location.host + location.pathname).replace(
             /[.:\/]/g,
@@ -26895,9 +26895,9 @@ UE.plugin.register("charts", function() {
           config.yTitle = data.yTitle || "";
           config.suffix = data.suffix || "";
           config.tip = data.tip || "";
-          //数据对齐方式
+          //數據对齐方式
           config.dataFormat = data.tableDataFormat || "";
-          //图表類型
+          //圖表類型
           config.chartType = data.chartType || 0;
 
           for (var key in config) {
@@ -26941,12 +26941,12 @@ UE.plugin.register("charts", function() {
     var firstRows = null,
       cellCount = 0;
 
-    //行数不够
+    //行數不够
     if (table.rows.length < 2) {
       return false;
     }
 
-    //列数不够
+    //列數不够
     if (table.rows[0].cells.length < 2) {
       return false;
     }
@@ -26962,7 +26962,7 @@ UE.plugin.register("charts", function() {
     }
 
     for (var i = 1, row; (row = table.rows[i]); i++) {
-      //每行单元格数不匹配， 返回false
+      //每行单元格數不匹配， 返回false
       if (row.cells.length != cellCount) {
         return false;
       }
@@ -26979,7 +26979,7 @@ UE.plugin.register("charts", function() {
           .replace(new RegExp(UE.dom.domUtils.fillChar, "g"), "")
           .replace(/^\s+|\s+$/g, "");
 
-        //必须是数字
+        //必须是數字
         if (!/^\d*\.?\d+$/.test(value)) {
           return false;
         }
@@ -26993,12 +26993,12 @@ UE.plugin.register("charts", function() {
 
 // plugins/section.js
 /**
- * 目录大纲支持插件
+ * 目入大纲支持插件
  * @file
  * @since 1.3.0
  */
 UE.plugin.register("section", function() {
-  /* 目录节点对象 */
+  /* 目入节点对象 */
   function Section(option) {
     this.tag = "";
     (this.level = -1), (this.dom = null);
@@ -27438,7 +27438,7 @@ UE.plugin.register("simpleupload", function() {
           }
         }
 
-        /* 判断后端配置是否没有加载成功 */
+        /* 判断編輯配置是否没有加载成功 */
         if (!me.getOpt("imageActionName")) {
           errorHandler(me.getLang("autoupload.errorLoadConfig"));
           return;
@@ -27528,7 +27528,7 @@ UE.plugin.register("simpleupload", function() {
 
 // plugins/serverparam.js
 /**
- * 服务器送出的额外参数列表设置插件
+ * 服务器送出的额外参數列表设置插件
  * @file
  * @since 1.2.6.1
  */
@@ -27539,7 +27539,7 @@ UE.plugin.register("serverparam", function() {
   return {
     commands: {
       /**
-             * 修改服务器送出的额外参数列表,清除所有项
+             * 修改服务器送出的额外参數列表,清除所有项
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
@@ -27550,7 +27550,7 @@ UE.plugin.register("serverparam", function() {
              * ```
              */
       /**
-             * 修改服务器送出的额外参数列表,删除指定项
+             * 修改服务器送出的额外参數列表,删除指定项
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
@@ -27561,7 +27561,7 @@ UE.plugin.register("serverparam", function() {
              * ```
              */
       /**
-             * 修改服务器送出的额外参数列表,使用键值添加项
+             * 修改服务器送出的额外参數列表,使用键值添加项
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
@@ -27574,7 +27574,7 @@ UE.plugin.register("serverparam", function() {
              * ```
              */
       /**
-             * 修改服务器送出的额外参数列表,传入键值对对象添加多项
+             * 修改服务器送出的额外参數列表,传入键值对对象添加多项
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
@@ -27586,11 +27586,11 @@ UE.plugin.register("serverparam", function() {
              * ```
              */
       /**
-             * 修改服务器送出的额外参数列表,使用自定义函数添加多项
+             * 修改服务器送出的额外参數列表,使用自定义函數添加多项
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
-             * @param { Function } key 自定义获取参数的函数
+             * @param { Function } key 自定义获取参數的函數
              * @example
              * ```javascript
              * editor.execCommand('serverparam', function(editor){
@@ -27601,7 +27601,7 @@ UE.plugin.register("serverparam", function() {
              */
 
       /**
-             * 获取服务器送出的额外参数列表
+             * 获取服务器送出的额外参數列表
              * @command serverparam
              * @method queryCommandValue
              * @param { String } cmd 命令字符串
@@ -27613,7 +27613,7 @@ UE.plugin.register("serverparam", function() {
       serverparam: {
         execCommand: function(cmd, key, value) {
           if (key === undefined || key === null) {
-            //不传参数,清空列表
+            //不传参數,清空列表
             serverParam = {};
           } else if (utils.isString(key)) {
             //传入键值
@@ -27626,7 +27626,7 @@ UE.plugin.register("serverparam", function() {
             //传入对象,覆盖列表项
             utils.extend(serverParam, key, false);
           } else if (utils.isFunction(key)) {
-            //传入函数,添加列表项
+            //传入函數,添加列表项
             utils.extend(serverParam, key(), false);
           }
         },
@@ -27873,7 +27873,7 @@ UE.ui = baidu.editor.ui = {};
     },
     getClientRect: function(element) {
       var bcr;
-      //trace  IE6下在控制编辑器显隐时可能会报错，catch一下
+      //trace  IE6下在控制編輯器显隐时可能会报错，catch一下
       try {
         bcr = element.getBoundingClientRect();
       } catch (e) {
@@ -29382,7 +29382,7 @@ UE.ui = baidu.editor.ui = {};
     initAutoTypeSetButton: function() {
       var me = this;
       this.popup = new Popup({
-        //传入配置参数
+        //传入配置参數
         content: new AutoTypeSetPicker({ editor: me.editor }),
         editor: me.editor,
         hide: function() {
@@ -29411,7 +29411,7 @@ UE.ui = baidu.editor.ui = {};
           var target = e.target || e.srcElement,
             editorId = me.editor.uid;
           if (target && target.tagName == "INPUT") {
-            // 点击图片浮动的checkbox,去除对应的radio
+            // 点击圖片浮动的checkbox,去除对应的radio
             if (
               target.name == "imageBlockLine" ||
               target.name == "textAlign" ||
@@ -29473,7 +29473,7 @@ UE.ui = baidu.editor.ui = {};
     UIBase = baidu.editor.ui.UIBase;
 
   /**
-     * 该参数将新增一个参数： selected， 参数類型為一个Object， 形如{ 'align': 'center', 'valign': 'top' }， 表示单元格的初始
+     * 该参數将新增一个参數： selected， 参數類型為一个Object， 形如{ 'align': 'center', 'valign': 'top' }， 表示单元格的初始
      * 对齐状态為： 竖直居上，水平居中; 其中 align的取值為：'center', 'left', 'right'; valign的取值為: 'top', 'middle', 'bottom'
      * @update 2013/4/2 hancong03@baidu.com
      */
@@ -29483,7 +29483,7 @@ UE.ui = baidu.editor.ui = {};
     this.initCellAlignPicker();
   });
   CellAlignPicker.prototype = {
-    //初始化选中状态， 该方法将根据传递进来的参数获取到应该选中的对齐方式图标的索引
+    //初始化选中状态， 该方法将根据传递进来的参數获取到应该选中的对齐方式圖标的索引
     initSelected: function() {
       var status = {
         valign: {
@@ -29742,7 +29742,7 @@ UE.ui = baidu.editor.ui = {};
       return menuSeparator;
     },
     createItem: function(item) {
-      //新增一个参数menu, 该参数存储了menuItem所对应的menu引用
+      //新增一个参數menu, 该参數存储了menuItem所对应的menu引用
       item.menu = this;
       return new MenuItem(item);
     },
@@ -29813,7 +29813,7 @@ UE.ui = baidu.editor.ui = {};
   utils.inherits(Menu, Popup);
 
   /**
-     * @update 2013/04/03 hancong03 新增一个参数menu, 该参数存储了menuItem所对应的menu引用
+     * @update 2013/04/03 hancong03 新增一个参數menu, 该参數存储了menuItem所对应的menu引用
      * @type {Function}
      */
   var MenuItem = (baidu.editor.ui.MenuItem = function(options) {
@@ -30110,7 +30110,7 @@ UE.ui = baidu.editor.ui = {};
             onclose: function(t, ok) {
               return ok ? this.onok() : this.oncancel();
             },
-            //是否控制dialog中的scroll事件， 默认為不阻止
+            //是否控制dialog中的scroll事件， 默認為不阻止
             holdScroll: false
           },
           options
@@ -30456,7 +30456,7 @@ UE.ui = baidu.editor.ui = {};
       if (this._hidden) {
         this.getDom().style.display = "";
 
-        //要高过编辑器的zindxe
+        //要高过編輯器的zindxe
         this.editor.container.style.zIndex &&
           (this.getDom().style.zIndex =
             this.editor.container.style.zIndex * 1 + 10);
@@ -30976,9 +30976,9 @@ UE.ui = baidu.editor.ui = {};
 !function(o){var h,p='<svg><symbol id="edui-for-close" viewBox="0 0 1024 1024"><path d="M960 153.6L870.4 64 512 422.4 153.6 64 64 153.6 422.4 512 64 870.4 153.6 960 512 601.6l358.4 358.4 89.6-89.6L601.6 512 960 153.6z" fill="#666666" ></path></symbol><symbol id="edui-for-searchreplace" viewBox="0 0 1024 1024"><path d="M437.771654 578.9811h82.93098L299.553354 0H219.181972L0.080371 578.9811h80.883302L136.762912 419.774095h241.626065zM160.823135 354.248383l87.026337-241.114145A222.173119 222.173119 0 0 0 256.040186 72.692587a274.388921 274.388921 0 0 0 9.214553 40.441651l90.097855 241.114145h-194.529459z m825.214441 403.904587a146.920933 146.920933 0 0 0-94.705131-44.537008 145.897094 145.897094 0 0 0 74.740266-51.191963 138.730219 138.730219 0 0 0 27.13174-84.466738 117.741515 117.741515 0 0 0-45.560847-96.75281 189.922182 189.922182 0 0 0-122.348791-36.346294h-170.469237V1023.839257h175.076513a204.767851 204.767851 0 0 0 137.70638-46.072766 153.575889 153.575889 0 0 0 53.751561-121.324952 136.170621 136.170621 0 0 0-35.322454-98.288569z m-255.959814-250.840618h74.740266q109.550801 0 109.5508 81.907141a91.121694 91.121694 0 0 1-30.715178 73.204506 126.956068 126.956068 0 0 1-84.978658 26.619821h-68.59723V507.312352z m180.707629 421.821774a136.682541 136.682541 0 0 1-90.609775 27.13174h-90.097854v-204.767851h77.299864q135.146782 0 135.146782 99.824327a93.681292 93.681292 0 0 1-31.739017 78.323704zM460.808037 801.666138a176.100352 176.100352 0 0 1-85.490578-40.95357 178.148031 178.148031 0 0 1-38.905892-219.613521L282.148087 511.919629A241.114145 241.114145 0 0 0 460.808037 866.679931v42.489329l112.110399-77.811783L460.808037 753.033774v51.191963z" fill="#666666" ></path></symbol><symbol id="edui-for-italic" viewBox="0 0 1024 1024"><path d="M384 64v64h128L384 896H256v64h384v-64H512l128-768h128V64z" fill="#666666" ></path></symbol><symbol id="edui-for-insertcaption" viewBox="0 0 1024 1024"><path d="M568.25 62v393.75h393.75V62z m337.5 225h-112.5v112.5h-56.25V287h-112.5V230.75h112.5V118.25h56.25v112.5h112.5z" fill="#1C7C59" ></path><path d="M938.375 455.75H62v506.25h900V455.75zM114.875 905.75v-225H343.25v225z m423.5625 0H399.5v-225h225v225z m370.6875 0H680.75v-225h228.375zM455.75 62H62v56.25h168.75v337.5h56.25V118.25h168.75V62z" fill="#666666" ></path></symbol><symbol id="edui-for-insertparagraph" viewBox="0 0 1024 1024"><path d="M997.12 0H0v576h1024V0zM60.16 512V256H320v256z m481.92 0H384V256h256v256z m421.76 0H704V256h259.84zM448 576H0v64h192v384h64v-384h192V576z" fill="#666666" ></path></symbol><symbol id="edui-for-inserttitlecol" viewBox="0 0 1024 1024"><path d="M64 960v-128H0v192h192v-64H64zM448 1024h576V0H448z m512-320v256h-192v-256z m-256 0v256H512v-256z m256-320v256h-192V384z m-256 0v256H512V384z m256-320v256h-192V64z m-256 0v256H512V64zM64 512h128V448H0v192h64V512zM384 512v128h64V448H256v64h128zM384 960H256v64h192v-192H384v128z" fill="#666666" ></path><path d="M64 960v-128H0v192h192v-64H64zM448 1024h576V0H448z m512-320v256h-192v-256z m-256 0v256H512v-256z m256-320v256h-192V384z m-256 0v256H512V384z m256-320v256h-192V64z m-256 0v256H512V64zM64 512h128V448H0v192h64V512zM384 512v128h64V448H256v64h128zM384 960H256v64h192v-192H384v128z" fill="#666666" ></path><path d="M0 448h448V0H0z m256-384v128h128v64H256v128H192V256H64V192h128V64z" fill="#1C7C59" ></path></symbol><symbol id="edui-for-insertimage" viewBox="0 0 1024 1024"><path d="M350.08 535.04l128 192 263.68-430.08 156.16 256V576h64V117.12a53.12 53.12 0 0 0-55.04-53.12H53.12a53.12 53.12 0 0 0-53.12 53.12v727.04a51.84 51.84 0 0 0 51.84 51.84H640v-64H154.88z m-53.12-350.72a119.04 119.04 0 1 1-118.4 118.4 119.04 119.04 0 0 1 118.4-118.4z" fill="#666666" ></path><path d="M1024 704h-192V512h-64v192H576v64h192v192h64v-192h192v-64z" fill="#666666" ></path></symbol><symbol id="edui-for-previousstep" viewBox="0 0 1024 1024"><path d="M483.84 896a53.76 53.76 0 0 1-24.96-6.4h-3.84L87.04 556.8A55.04 55.04 0 0 1 64 517.76a56.96 56.96 0 0 1 22.4-48.64l371.2-328.32a46.08 46.08 0 0 1 30.72-12.8 40.96 40.96 0 0 1 35.84 21.12 60.16 60.16 0 0 1 7.04 28.16v192h29.44a400 400 0 0 1 97.28 12.16 363.52 363.52 0 0 1 120.32 54.4A384 384 0 0 1 889.6 556.8 602.88 602.88 0 0 1 960 768a60.16 60.16 0 0 1-10.24 53.12 39.68 39.68 0 0 1-29.44 13.44 55.04 55.04 0 0 1-42.24-26.24 229.12 229.12 0 0 0-64-68.48 314.24 314.24 0 0 0-89.6-47.36 437.76 437.76 0 0 0-141.44-21.76h-48.64V832a68.48 68.48 0 0 1-12.8 51.2 43.52 43.52 0 0 1-37.76 12.8zM145.28 512l312.96 281.6v-148.48a64 64 0 0 1 68.48-48h53.12a507.52 507.52 0 0 1 167.68 26.88 384 384 0 0 1 110.72 60.16l9.6 7.68a354.56 354.56 0 0 0-128-197.76 312.32 312.32 0 0 0-176-53.12 240 240 0 0 0-33.92 0h-12.8a56.96 56.96 0 0 1-49.28-24.96 55.04 55.04 0 0 1-8.96-26.24V234.88z" fill="#666666" ></path></symbol><symbol id="edui-for-nextstep" viewBox="0 0 1024 1024"><path d="M506.88 880.64a68.48 68.48 0 0 1-12.8-51.2v-160h-48.64a437.76 437.76 0 0 0-141.44 21.76 314.24 314.24 0 0 0-89.6 47.36 229.12 229.12 0 0 0-64 68.48 55.04 55.04 0 0 1-42.24 26.24 39.68 39.68 0 0 1-29.44-13.44A60.16 60.16 0 0 1 64 768a602.88 602.88 0 0 1 70.4-211.2 384 384 0 0 1 111.36-124.16 363.52 363.52 0 0 1 120.32-54.4 400 400 0 0 1 97.28-12.16h29.44v-192a60.16 60.16 0 0 1 7.04-28.16 40.96 40.96 0 0 1 35.84-17.92 46.08 46.08 0 0 1 30.72 12.8l370.56 328.32a56.96 56.96 0 0 1 22.4 48.64 55.04 55.04 0 0 1-22.4 39.68l-368 330.24h-3.84a53.76 53.76 0 0 1-24.96 6.4 43.52 43.52 0 0 1-33.28-13.44z m58.24-645.76v154.24a55.04 55.04 0 0 1-8.96 26.24 56.96 56.96 0 0 1-49.28 24.96h-9.6a240 240 0 0 0-33.92 0 312.32 312.32 0 0 0-176 53.12 354.56 354.56 0 0 0-128 197.76l9.6-7.68a384 384 0 0 1 110.72-60.16 507.52 507.52 0 0 1 163.84-28.16h53.12a64 64 0 0 1 68.48 48v150.4l313.6-281.6z" fill="#666666" ></path></symbol><symbol id="edui-for-scaleboard" viewBox="0 0 1024 1024"><path d="M374.935252 651.624033a35.190169 35.190169 0 0 0-26.872492-11.516783H39.029096a40.308739 40.308739 0 0 0-39.029096 39.668918V704.089375a41.588381 41.588381 0 0 0 43.507845 37.749454h163.154419L19.834459 932.505561a53.105164 53.105164 0 0 0 0 74.859087 51.825521 51.825521 0 0 0 73.579443 0l186.827805-188.107448v165.073883a37.749454 37.749454 0 0 0 37.109633 39.029096h26.872492a36.469811 36.469811 0 0 0 39.668918-33.910526v-309.673485a36.469811 36.469811 0 0 0-8.957498-26.872493zM383.89275 325.955016V34.196526A35.82999 35.82999 0 0 0 343.584011 0.286h-28.152135a37.109632 37.109632 0 0 0-37.109632 39.029096v166.353525L94.053724 21.400101a51.1857 51.1857 0 0 0-72.939623 0 52.465342 52.465342 0 0 0 0 73.579444l184.26852 184.26852H43.507845A42.228202 42.228202 0 0 0 0 320.196625v26.872493A40.308739 40.308739 0 0 0 38.389275 384.17875h310.313306a35.190169 35.190169 0 0 0 26.232671-10.876961A35.82999 35.82999 0 0 0 383.89275 345.789475v-19.194637zM648.778747 372.661968a35.190169 35.190169 0 0 0 26.872493 10.876961H984.684904a40.308739 40.308739 0 0 0 39.029096-39.029096V320.196625a41.588381 41.588381 0 0 0-43.507845-37.749454h-163.154419l186.827805-187.467626a53.105164 53.105164 0 0 0 0-74.859086 51.825521 51.825521 0 0 0-73.579444 0L743.472292 205.0288V39.954918a37.749454 37.749454 0 0 0-36.469811-39.668918h-26.872492a36.469811 36.469811 0 0 0-40.308739 34.550348v309.673485a36.469811 36.469811 0 0 0 8.957497 26.872492zM639.82125 698.330984v291.118669a35.82999 35.82999 0 0 0 38.389275 33.910526h28.152135a37.109632 37.109632 0 0 0 37.109632-39.029096v-166.353525l185.548163 184.26852a51.1857 51.1857 0 0 0 72.939622 0 52.465342 52.465342 0 0 0 0-73.579444l-183.628698-183.628699h161.874776A42.228202 42.228202 0 0 0 1023.714 704.089375v-26.872492a40.308739 40.308739 0 0 0-38.389275-39.029097h-309.673485a35.190169 35.190169 0 0 0-26.232671 10.876962 35.82999 35.82999 0 0 0-8.957498 26.872492v19.194638z" fill="#666666" ></path></symbol><symbol id="edui-for-brush" viewBox="0 0 1024 1024"><path d="M986.878764 284.789854L739.847564 35.198746a122.875623 122.875623 0 0 0-172.153867 0L92.830614 511.981761a87.676877 87.676877 0 0 0-32.638837 56.317993L0.03392 915.807374a119.675737 119.675737 0 0 0 28.158997 79.99715 94.076649 94.076649 0 0 0 69.757515 28.158997h14.079498l344.307734-63.99772a86.396922 86.396922 0 0 0 55.678017-30.078928l474.863083-475.50306a115.195896 115.195896 0 0 0 0-169.593959zM448.017961 868.449062l-348.787575 63.99772 60.797834-348.147598 347.50762-351.347483 288.629718 287.349763z m474.863083-479.982901l-63.997721 70.397492-291.189626-286.709786 63.99772-63.99772a34.558769 34.558769 0 0 1 41.598518 0l246.391223 249.591108a35.838723 35.838723 0 0 1 9.599658 18.559339c1.919932 2.559909-3.199886 7.679726-7.679727 12.159567z" fill="#666666" ></path></symbol><symbol id="edui-for-background" viewBox="0 0 1024 1024"><path d="M988.16 448H419.84a35.84 35.84 0 0 0-35.84 35.84v504.32a35.84 35.84 0 0 0 35.84 35.84h568.96a35.84 35.84 0 0 0 35.84-35.84V483.84a35.84 35.84 0 0 0-36.48-35.84z m-323.84 164.48a80 80 0 1 1-80-81.92 81.28 81.28 0 0 1 80 81.92zM929.28 960H461.44l131.2-205.44 85.12 133.12 177.28-298.24L960 768v163.2a30.72 30.72 0 0 1-30.72 28.8z" fill="#666666" ></path><path d="M320 832H224a32 32 0 0 0 0 64H320zM320 640H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h640a64 64 0 0 1 64 64v256h64V64a64 64 0 0 0-64-64H64a64 64 0 0 0-64 64v576a64 64 0 0 0 64 64h256z" fill="#666666" ></path></symbol><symbol id="edui-for-strikethrough" viewBox="0 0 1024 1024"><path d="M994.56 672a128 128 0 0 1-98.56 48.64c-74.24 0-122.88-57.6-128-150.4h236.8v-52.48H768c7.68-92.8 58.24-150.4 132.48-150.4a115.84 115.84 0 0 1 87.04 40.96l28.8-35.2A156.8 156.8 0 0 0 896 320c-100.48 0-176.64 74.24-186.88 197.76H608.64a96.64 96.64 0 0 0 44.16-83.84c0-76.16-59.52-105.6-146.56-105.6h-128v192H267.52l-64-192h-58.88l-64 192H22.4v52.48H64l-64 192h54.4l41.6-136.32h155.52l40.32 131.84h56.96l-64-192h95.36v192h135.68c95.36 0 161.28-41.6 161.28-128a103.04 103.04 0 0 0-19.84-64h52.48C719.36 694.4 794.24 768 896 768a163.84 163.84 0 0 0 128-64zM433.92 371.2h64c64 0 100.48 18.56 100.48 69.76S570.24 512 497.28 512h-64z m-261.76 0c14.08 49.92 26.88 96.64 42.88 145.28H128c17.28-47.36 31.36-93.44 44.16-144z m64 212.48h-128l4.48-14.72h120.96z m384 47.36c0 58.24-42.88 85.12-115.84 85.12h-70.4V570.24H588.8a64 64 0 0 1 35.2 61.44z" fill="#666666" ></path></symbol><symbol id="edui-for-spechars" viewBox="0 0 1024 1024"><path d="M954.24 1024l-158.72-160A434.56 434.56 0 0 1 512 965.76a421.12 421.12 0 0 1-283.52-101.76L69.76 1024 0 951.68l160.64-155.52A477.44 477.44 0 0 1 64 512a426.88 426.88 0 0 1 96.64-282.24L0 72.32 69.76 0l158.72 160A464 464 0 0 1 512 60.16a432 432 0 0 1 281.6 99.84L954.24 0 1024 72.32l-161.92 157.44A430.08 430.08 0 0 1 960 512a448 448 0 0 1-99.2 283.52L1024 951.68zM512 160a337.28 337.28 0 0 0-250.24 103.68A342.4 342.4 0 0 0 160.64 512a343.04 343.04 0 0 0 104.96 249.6 339.84 339.84 0 0 0 492.16 0A344.32 344.32 0 0 0 862.08 512a332.8 332.8 0 0 0-105.6-250.24A339.84 339.84 0 0 0 512 160z" fill="#666666" ></path></symbol><symbol id="edui-for-clearboard" viewBox="0 0 1024 1024"><path d="M704 128V0H320v128H0v64h64v832h896V192h64V128zM384 64h256v64H384zM320 960H128V384h192z m320 0H384V384h256z m256 0h-192V384h192z m0-640H128V192h768z" fill="#666666" ></path></symbol><symbol id="edui-for-bold" viewBox="0 0 1024 1024"><path d="M876.8 710.4c-6.4-51.2-25.6-102.4-57.6-140.8-32-38.4-83.2-70.4-128-76.8 44.8-12.8 76.8-38.4 102.4-76.8 32-38.4 38.4-83.2 38.4-134.4 0-57.6-25.6-121.6-70.4-166.4C710.4 76.8 640 64 576 64H192v896h384c76.8 6.4 140.8-12.8 211.2-51.2 57.6-44.8 96-121.6 89.6-198.4zM288 153.6h262.4c44.8 0 96 6.4 134.4 38.4 32 25.6 51.2 57.6 44.8 96 0 44.8-12.8 83.2-44.8 115.2-38.4 32-89.6 44.8-134.4 38.4H288V153.6zM768 704c0 51.2-25.6 102.4-70.4 134.4-44.8 25.6-89.6 38.4-140.8 38.4H288V544h275.2c51.2 0 102.4 6.4 147.2 38.4 44.8 25.6 64 76.8 57.6 121.6z" fill="#666666" ></path></symbol><symbol id="edui-for-fullscreen" viewBox="0 0 1024 1024"><path d="M960 0H64a64 64 0 0 0-64 64v704a64 64 0 0 0 64 64h320v128H288a32 32 0 0 0 0 64h448a32 32 0 0 0 0-64H640v-128h320a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64zM576 960H448v-128h128z m384-256a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64z" fill="#666666" ></path></symbol><symbol id="edui-for-formatmatch" viewBox="0 0 1024 1024"><path d="M128 448v448l108.8-300.8L396.8 896H896V448zM128 256h768v64H128zM384 128h256v128H384z" fill="#666666" ></path></symbol><symbol id="edui-for-underline" viewBox="0 0 1024 1024"><path d="M192 896h640v64H192zM704 64v384c0 102.4-83.2 192-192 192-102.4 0-192-83.2-192-192V64H192v384c0 179.2 147.2 320 320 320s320-147.2 320-320V64h-128z" fill="#666666" ></path></symbol><symbol id="edui-for-removeformat" viewBox="0 0 1024 1024"><path d="M682.88 64L0 768l170.88 192h398.08L1024 448zM528 832h-288L192 775.04l192-227.2 192 227.84z" fill="#666666" ></path></symbol><symbol id="edui-for-blockquote" viewBox="0 0 1024 1024"><path d="M401.92 894.272v-292.48H248.064c-7.36-187.392 65.92-344.96 219.648-472.448L401.856 61.888C218.88 189.44 127.36 384.384 127.36 646.72v247.552h274.56z m428.16 0v-292.48h-153.728c-7.36-187.392 65.92-344.96 219.648-472.448L830.08 61.888c-182.976 127.616-274.432 322.496-274.432 584.832v247.552h274.496z" fill="#666666" ></path></symbol><symbol id="edui-for-anchor" viewBox="0 0 1024 1024"><path d="M722.56 668.16l76.8 72.32A438.4 438.4 0 0 1 576 837.76V436.48a192 192 0 1 0-128 0v400a448 448 0 0 1-231.68-90.88l82.56-77.44L0 625.28l45.44 280.96L124.8 832a618.88 618.88 0 0 0 384 128 597.12 597.12 0 0 0 384-133.12l87.04 81.92 44.16-283.52zM384 256a128 128 0 1 1 128 128 128 128 0 0 1-128-128z" fill="#666666" ></path></symbol><symbol id="edui-for-help" viewBox="0 0 1024 1024"><path d="M512 0a512 512 0 1 0 512 512 512 512 0 0 0-512-512z m0 960a448 448 0 1 1 448-448 448 448 0 0 1-448 448z" fill="#666666" ></path><path d="M512 640H448v-27.52a151.68 151.68 0 0 1 75.52-117.76q64-47.36 64-90.24a64 64 0 0 0-64-57.6q-76.8 0-95.36 87.68L320 414.08A192 192 0 0 1 536.96 256q153.6 7.68 167.04 135.68a156.16 156.16 0 0 1-90.24 140.8A544 544 0 0 0 512 620.16zM448 704h128v128H448z" fill="#666666" ></path></symbol><symbol id="edui-for-horizontal" viewBox="0 0 1024 1024"><path d="M0 448h1024v128H0z" fill="#666666" ></path></symbol><symbol id="edui-for-simpleupload" viewBox="0 0 1024 1024"><path d="M128 832l160-320L448 832H128zM514.56 832l254.72-512L1024 832H514.56z" fill="#666666" ></path><path d="M960 64H64a64 64 0 0 0-64 64v768a64 64 0 0 0 64 64h896a64 64 0 0 0 64-64V128a64 64 0 0 0-64-64z m0 768a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V192a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64z" fill="#666666" ></path></symbol><symbol id="edui-for-indent" viewBox="0 0 1024 1024"><path d="M896 416L768 320v384l128-96L1024 512zM32 128h960c19.2 0 32-12.8 32-32s-12.8-32-32-32H32c-19.2 0-32 12.8-32 32s12.8 32 32 32zM32 960h960c19.2 0 32-12.8 32-32s-12.8-32-32-32H32c-19.2 0-32 12.8-32 32s12.8 32 32 32zM64 448h512c32 0 64-25.6 64-64 0-32-25.6-64-64-64H64c-38.4 0-64 25.6-64 64s25.6 64 64 64zM64 704h512c32 0 64-25.6 64-64 0-32-25.6-64-64-64H64c-32 0-64 25.6-64 64s25.6 64 64 64z" fill="#666666" ></path></symbol><symbol id="edui-for-justifycenter" viewBox="0 0 1024 1024"><path d="M992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM800 256h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM800 640h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 832H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM800 1024h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path><path d="M992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM800 640h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-justifyleft" viewBox="0 0 1024 1024"><path d="M992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM608 256h-576C12.8 256 0 243.2 0 224S12.8 192 32 192h576c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 832H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM608 1024h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path><path d="M992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM608 640h-576c-19.2 0-32-12.8-32-32S12.8 576 32 576h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-justifyjustify" viewBox="0 0 1024 1024"><path d="M992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 256H32C12.8 256 0 243.2 0 224S12.8 192 32 192h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 832H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 1024H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path><path d="M992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 640H32c-19.2 0-32-12.8-32-32S12.8 576 32 576h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-justifyright" viewBox="0 0 1024 1024"><path d="M992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 256h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 832H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 1024h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path><path d="M992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 640h-576c-19.2 0-32-12.8-32-32s12.8-32 32-32h576c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-link" viewBox="0 0 1024 1024"><path d="M759.04 768v-124.16a132.48 132.48 0 1 0 0-264.96H608.64A135.04 135.04 0 0 0 472.32 512h-128a261.12 261.12 0 0 1 264.32-256h150.4A261.12 261.12 0 0 1 1024 512a261.12 261.12 0 0 1-264.96 256z" fill="#666666" ></path><path d="M415.36 768H264.96A261.12 261.12 0 0 1 0 512a261.12 261.12 0 0 1 264.96-256v124.16a132.48 132.48 0 1 0 0 264.96h150.4A135.04 135.04 0 0 0 552.32 512h128a261.12 261.12 0 0 1-264.96 256z" fill="#666666" ></path></symbol><symbol id="edui-for-cleardoc" viewBox="0 0 1024 1024"><path d="M895.909541 256.060626h-191.95477V56.427664A63.984924 63.984924 0 0 0 639.969847 0.120932H137.688197A69.743567 69.743567 0 0 0 64.105535 64.105855v895.78893a69.743567 69.743567 0 0 0 73.582662 63.984923h748.623606A69.743567 69.743567 0 0 0 959.894465 959.894785V313.007208A63.984924 63.984924 0 0 0 895.909541 256.060626z m0 695.516119a8.31804 8.31804 0 0 1-8.31804 8.31804H137.688197a9.597739 9.597739 0 0 1-9.597738-9.597739V72.423895A8.31804 8.31804 0 0 1 136.408499 64.105855h491.404213a11.517286 11.517286 0 0 1 12.157135 10.877437v191.954771A60.145828 60.145828 0 0 0 703.954771 320.045549h180.437484a11.517286 11.517286 0 0 1 12.157136 10.877437v620.653759z" fill="#666666" ></path></symbol><symbol id="edui-for-drafts" viewBox="0 0 1024 1024"><path d="M832 320V160a32 32 0 0 0-32-32H576V64a64 64 0 0 0-64-64H384a64 64 0 0 0-64 64v64H96a32 32 0 0 0-32 32v640a32 32 0 0 0 32 32H384v192h448l192-192V320zM384 64h128v64H384zM192 192h512v64H192z m640 741.76V832h101.76zM960 768h-192v192H448V384h512z" fill="#666666" ></path></symbol><symbol id="edui-for-subscript" viewBox="0 0 1024 1024"><path d="M716.8 819.2v-29.696c0-99.328 160.256-135.68 160.256-179.2 0-16.896-10.752-27.136-32.768-27.136a116.736 116.736 0 0 0-74.24 35.84l-47.104-51.2A170.496 170.496 0 0 1 852.992 512c76.288 0 119.808 40.448 119.808 93.184 0 74.752-95.232 94.72-142.848 141.312H972.8V819.2zM72.192 720.384l494.592-494.592a56.832 56.832 0 0 1 78.848-8.704l7.68 7.68a56.832 56.832 0 0 1-8.704 78.848l-494.592 494.592a56.832 56.832 0 0 1-78.848 8.704l-7.68-7.68a56.832 56.832 0 0 1 8.704-78.848z" fill="#666666" ></path><path d="M566.784 798.208L72.192 303.616a56.832 56.832 0 0 1-8.704-78.848l7.68-7.68a56.832 56.832 0 0 1 78.848 8.704l494.592 494.592a56.832 56.832 0 0 1 8.704 78.848l-7.68 7.68a56.832 56.832 0 0 1-78.848-8.704z" fill="#666666" ></path></symbol><symbol id="edui-for-unlink" viewBox="0 0 1024 1024"><path d="M539.416837 448.012238V320.036713A95.341766 95.341766 0 0 0 639.877623 233.653234v-19.196329A95.341766 95.341766 0 0 0 539.416837 128.073426H228.436312A95.341766 95.341766 0 0 0 127.975525 214.456905v18.556451A95.341766 95.341766 0 0 0 228.436312 320.036713v127.975525A222.037535 222.037535 0 0 1 0 233.653234v-19.196329A222.037535 222.037535 0 0 1 228.436312 0.097901h310.980525A222.037535 222.037535 0 0 1 767.853148 214.456905v18.556451A222.037535 222.037535 0 0 1 539.416837 448.012238zM795.367886 1023.902099H484.387361A222.037535 222.037535 0 0 1 255.951049 809.543095v-18.556451A222.037535 222.037535 0 0 1 484.387361 575.987762v127.975525A95.341766 95.341766 0 0 0 383.926574 790.346766v18.556451A95.341766 95.341766 0 0 0 484.387361 895.926574h311.620403A95.341766 95.341766 0 0 0 895.828673 809.543095v-18.556451A95.341766 95.341766 0 0 0 795.367886 703.963287V575.987762A222.037535 222.037535 0 0 1 1023.804197 790.346766v18.556451A222.037535 222.037535 0 0 1 795.367886 1023.902099z" fill="#666666" ></path></symbol><symbol id="edui-for-superscript" viewBox="0 0 1024 1024"><path d="M716.8 512v-29.696c0-99.328 160.256-135.68 160.256-179.2 0-16.896-10.752-27.136-32.768-27.136a116.736 116.736 0 0 0-74.24 35.84l-47.104-51.2A170.496 170.496 0 0 1 852.992 204.8C929.28 204.8 972.8 245.248 972.8 297.984c0 74.752-95.232 94.72-142.848 141.312H972.8V512zM72.192 720.384l494.592-494.592a56.832 56.832 0 0 1 78.848-8.704l7.68 7.68a56.832 56.832 0 0 1-8.704 78.848l-494.592 494.592a56.832 56.832 0 0 1-78.848 8.704l-7.68-7.68a56.832 56.832 0 0 1 8.704-78.848z" fill="#666666" ></path><path d="M566.784 798.208L72.192 303.616a56.832 56.832 0 0 1-8.704-78.848l7.68-7.68a56.832 56.832 0 0 1 78.848 8.704l494.592 494.592a56.832 56.832 0 0 1 8.704 78.848l-7.68 7.68a56.832 56.832 0 0 1-78.848-8.704z" fill="#666666" ></path></symbol><symbol id="edui-for-forecolor" viewBox="0 0 1024 1024"><path d="M588.8 64H428.8L192 768h108.8l57.6-166.4h275.2l57.6 166.4H832L588.8 64zM390.4 499.2l102.4-313.6 102.4 313.6H390.4zM192 896h640v64H192z" fill="#666666" ></path></symbol><symbol id="edui-for-backcolor" viewBox="0 0 1024 1024"><path d="M910.593777 663.461622s-105.39199 190.467451-105.39199 246.972795a105.39199 105.39199 0 1 0 210.149088 0c0.634892-59.04491-104.757098-246.972795-104.757098-246.972795zM412.838838 100.947749L388.712961 126.978301 266.813792 0 169.675392 100.312858l121.899168 126.978301L0.15936 526.325057 412.838838 952.337256 825.518316 526.325057z m-274.27313 425.377308l275.542913-283.796502 274.908021 283.796502z" fill="#666666" ></path></symbol><symbol id="edui-for-touppercase" viewBox="0 0 1024 1024"><path d="M295.68 128L0 896h113.28l74.24-192h328.96l71.04 192H704L408.32 128z m-53.12 448l92.16-250.88A245.76 245.76 0 0 0 353.28 256a225.92 225.92 0 0 0 16 69.12L461.44 576zM996.48 812.16v-115.84Q998.4 576 865.28 576t-152.32 92.16l67.84 17.92q8.32-55.68 82.56-51.84t64 53.76a224.64 224.64 0 0 1-97.28 19.84q-122.88 12.16-128 101.76T820.48 896a139.52 139.52 0 0 0 114.56-44.16 48.64 48.64 0 0 0 19.2 37.76H1024a102.4 102.4 0 0 1-27.52-77.44zM926.72 768q-6.4 64-95.36 71.68-56.96 0-55.04-32t67.84-44.16a149.76 149.76 0 0 0 82.56-23.68zM949.76 384H1024c-15.36-106.88-232.32-128-311.04-128V128L512 288 712.32 448V327.04a488.96 488.96 0 0 1 237.44 56.96z" fill="#666666" ></path></symbol><symbol id="edui-for-tolowercase" viewBox="0 0 1024 1024"><path d="M295.68 128L0 896h113.28l74.24-192h328.96l71.04 192H704L408.32 128z m-53.12 448l92.16-250.88A245.76 245.76 0 0 0 353.28 256a225.92 225.92 0 0 0 16 69.12L461.44 576zM996.48 812.16v-115.84Q998.4 576 865.28 576t-152.32 92.16l67.84 17.92q8.32-55.68 82.56-51.84t64 53.76a224.64 224.64 0 0 1-97.28 19.84q-122.88 12.16-128 101.76T820.48 896a139.52 139.52 0 0 0 114.56-44.16 48.64 48.64 0 0 0 19.2 37.76H1024a102.4 102.4 0 0 1-27.52-77.44zM926.72 768q-6.4 64-95.36 71.68-56.96 0-55.04-32t67.84-44.16a149.76 149.76 0 0 0 82.56-23.68zM586.24 384H512c15.36-106.88 232.32-128 311.04-128V128L1024 288 823.04 448V327.04a488.96 488.96 0 0 0-236.8 56.96z" fill="#666666" ></path></symbol><symbol id="edui-for-insertvideo" viewBox="0 0 1024 1024"><path d="M384 768l256-256-256-256v512z" fill="#666666" ></path><path d="M960 64H64a64 64 0 0 0-64 64v768a64 64 0 0 0 64 64h896a64 64 0 0 0 64-64V128a64 64 0 0 0-64-64z m0 832H64V128h896z" fill="#666666" ></path></symbol><symbol id="edui-for-emotion" viewBox="0 0 1024 1024"><path d="M512 0a512 512 0 1 0 512 512 512 512 0 0 0-512-512z m0 960a448 448 0 1 1 448-448 448 448 0 0 1-448 448z" fill="#666666" ></path><path d="M320 384m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#666666" ></path><path d="M704 384m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#666666" ></path><path d="M512 832a256 256 0 0 0 256-256H256a256 256 0 0 0 256 256z" fill="#666666" ></path></symbol><symbol id="edui-for-pasteplain" viewBox="0 0 1024 1024"><path d="M640 256V128H576V64a64 64 0 0 0-64-64H320a64 64 0 0 0-64 64v64H192v128zM320 64h192v64H320z" fill="#666666" ></path><path d="M832 384V160a33.28 33.28 0 0 0-33.92-32H704v64h64v64h-64v64H128V128H33.92a33.28 33.28 0 0 0-33.92 32V896h384v128h640V384z m-384 576V448h512v512z" fill="#666666" ></path><path d="M576 576h320v64H576zM704 640h64v256h-64zM704 192h64v128h-64z" fill="#666666" ></path></symbol><symbol id="edui-for-preview" viewBox="0 0 1024 1024"><path d="M895.909541 256.060626h-191.95477V56.427664A63.984924 63.984924 0 0 0 639.969847 0.120932H137.688197A69.743567 69.743567 0 0 0 64.105535 64.105855v895.78893a69.743567 69.743567 0 0 0 73.582662 63.984923h748.623606A69.743567 69.743567 0 0 0 959.894465 959.894785V313.007208A63.984924 63.984924 0 0 0 895.909541 256.060626z m0 695.516119a8.31804 8.31804 0 0 1-8.31804 8.31804H137.688197a9.597739 9.597739 0 0 1-9.597738-9.597739V72.423895A8.31804 8.31804 0 0 1 136.408499 64.105855h491.404213a11.517286 11.517286 0 0 1 12.157135 10.877437v191.954771A60.145828 60.145828 0 0 0 703.954771 320.045549h180.437484a11.517286 11.517286 0 0 1 12.157136 10.877437v620.653759z" fill="#666666" ></path><path d="M767.939694 850.480566l-173.399143-172.759294a225.86678 225.86678 0 1 0-45.429295 45.429296l173.399142 172.759293zM256.060306 543.992782A159.962309 159.962309 0 1 1 416.022615 703.955091 159.962309 159.962309 0 0 1 256.060306 543.992782z" fill="#666666" ></path></symbol><symbol id="edui-for-print" viewBox="0 0 1024 1024"><path d="M320.00576 448h384v64H320.00576zM320.00576 576h384v64H320.00576z" fill="#666666" ></path><path d="M988.80576 179.2H832.00576V0H192.00576v179.2H35.20576a35.2 35.2 0 0 0-35.2 35.84v443.52h192V704l256 256h384v-301.44h192V346.88a36.48 36.48 0 0 0 0-3.84v-128a35.2 35.2 0 0 0-35.2-35.84zM256.00576 64h512v115.2H256.00576z m640 512h-56.96V455.68H768.00576V896H471.04576v-199.04H256.00576V455.68H187.52576V576H128.00576V384h768z m32-274.56a32.64 32.64 0 1 1 32-32.64 32 32 0 0 1-32 32.64z" fill="#666666" ></path></symbol><symbol id="edui-for-selectall" viewBox="0 0 1024 1024"><path d="M184.32 113.92L298.24 0h-40.32L144 113.92h40.32zM113.92 144L0 257.92v40.32l113.92-113.92v-40.32zM144 0L0 144v40.32L184.32 0h-40.32zM30.72 0L0 30.72v40.32L71.04 0H30.72zM527.36 113.92L641.28 0h-40.32L487.68 113.92h39.68zM113.92 487.68L0 600.96v40.32l113.92-113.92v-39.68zM113.92 373.76L0 487.68v39.68l113.92-113.28v-40.32zM414.08 113.92L527.36 0h-39.68L373.76 113.92h40.32zM300.16 113.92L414.08 0h-40.32L259.84 113.92h40.32zM113.92 259.84L0 373.76v40.32l113.92-113.92v-40.32zM113.92 835.2L0 948.48v40.32l113.92-113.28v-40.32zM875.52 113.92L988.8 0h-40.32l-113.28 113.92h40.32zM113.92 721.28L0 835.2v40.32l113.92-113.92v-40.32zM761.6 113.92L875.52 0h-40.32l-113.92 113.92h40.32zM113.92 607.36L0 721.28v40.32l113.92-113.92v-40.32zM647.68 113.92L761.6 0h-40.32L607.36 113.92h40.32zM910.08 419.2L1024 305.28v-40.32l-113.92 113.92v40.32zM378.88 910.08L264.96 1024h40.32l113.92-113.92h-40.32zM910.08 305.28L1024 192v-40.32l-113.92 113.28v40.32zM264.96 910.08L151.68 1024H192l113.28-113.92h-40.32zM151.68 910.08L37.76 1024h40.32L192 910.08h-40.32zM910.08 151.68V192L1024 78.08V37.76l-113.92 113.92zM910.08 759.04L1024 645.12v-40.32l-113.92 113.92v40.32zM718.72 910.08L604.8 1024h40.32l113.92-113.92h-40.32zM910.08 645.12L1024 531.2v-40.32l-113.92 113.92v40.32zM604.8 910.08L490.88 1024h40.32l113.92-113.92h-40.32zM490.88 910.08L376.96 1024h40.32l113.92-113.92h-40.32zM910.08 531.2L1024 417.28v-40.32l-113.92 113.92v40.32zM988.16 1024l35.84-35.84v-40.32L947.84 1024h40.32zM874.24 1024L1024 874.24v-40.32L833.92 1024h40.32zM833.92 910.08L720.64 1024h39.68l113.92-113.92h-40.32zM910.08 874.24L1024 760.32v-39.68l-113.92 113.28v40.32zM256 630.4Q263.04 768 442.24 768a223.36 223.36 0 0 0 183.04-70.4 77.44 77.44 0 0 0 30.72 60.8H768a163.84 163.84 0 0 1-44.16-124.8V448Q727.04 256 512 256T269.44 403.2l108.8 28.8q13.44-89.6 133.76-83.2 112-6.4 101.76 86.4a359.68 359.68 0 0 1-156.16 32Q259.2 486.4 256 630.4zM611.84 518.4v44.8q-10.24 105.6-152.32 115.2-91.52 0-88.32-51.2-6.4-60.8 108.8-70.4a240 240 0 0 0 131.84-38.4z" fill="#666666" ></path></symbol><symbol id="edui-for-mergecells" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m320 960H64v-256h256z m0-320H64V384h256z m0-320H64V64h256z m64-256h256v256H384z m576 896H384V384h576z m0-640h-256V64h256z" fill="#666666" ></path></symbol><symbol id="edui-for-deletecol" viewBox="0 0 1024 1024"><path d="M1024 307.84V0h-256v576h256zM832 256V64h128v192z m0 256V320h128v192zM448 307.84V0H0v576h448zM64 256V64h128v192z m192 0V64h128v192zM64 512V320h128v192z m192 0V320h128v192zM640 704V635.52L570.24 704H640zM593.28 708.48z" fill="#666666" ></path><path d="M640 512v136.32l64-34.56V256H512v352l64 32V512zM576 448V320h64v128z" fill="#666666" ></path><path d="M734.72 1024l96.64-92.8L704 808.96l128-122.88-96-92.16-32 19.84V768H512V608l-32-14.08L384 686.08l128 122.88-127.36 122.24L480.64 1024l127.36-122.24L734.72 1024z" fill="#666666" ></path><path d="M512 704h76.8L512 629.76V704z" fill="#666666" ></path></symbol><symbol id="edui-for-deleterow" viewBox="0 0 1024 1024"><path d="M307.84 0H0v256h576V0zM256 192H64V64h192z m256 0H320V64h192zM307.84 576H0v448h576V576zM256 960H64v-128h192z m0-192H64v-128h192z m256 192H320v-128h192z m0-192H320v-128h192zM716.8 360.32h-68.48l68.48 70.4v-70.4zM708.48 430.72zM520.96 344.96h128l-34.56-35.84H256v219.52h352l32-35.84H520.96zM448 448H316.16V384H448z" fill="#666666" ></path><path d="M1024 288.64l-92.8-96L808.96 320l-122.88-128-92.16 96 19.84 21.12h137.6V528.64H608l-14.08 15.36 92.16 96 122.88-128 122.24 127.36L1024 542.72 901.76 416 1024 288.64z" fill="#666666" ></path><path d="M716.8 492.8V416l-74.24 76.8h74.24z" fill="#666666" ></path></symbol><symbol id="edui-for-attachment" viewBox="0 0 1024 1024"><path d="M972.16 372.48l-520.32 512a222.72 222.72 0 0 1-312.32 0A216.32 216.32 0 0 1 138.88 576l468.48-460.8a148.48 148.48 0 0 1 208 0 144.64 144.64 0 0 1 0 206.08l-467.84 463.36a74.24 74.24 0 0 1-104.32 0 72.32 72.32 0 0 1 0-103.04l416.64-411.52-51.84-51.2L192 630.4a144.64 144.64 0 0 0 0 206.08 148.48 148.48 0 0 0 208 0l468.48-463.36a216.96 216.96 0 0 0 0-308.48A222.72 222.72 0 0 0 555.52 64L64 552.96a291.2 291.2 0 0 0 26.24 384 296.96 296.96 0 0 0 385.28 23.04L1024 424.32l-51.84-51.2z" fill="#666666" ></path></symbol><symbol id="edui-for-music" viewBox="0 0 1024 1024"><path d="M991.140186 0.88755h-7.673343a36.448381 36.448381 0 0 0-15.986133 0L219.969177 135.810504a31.972264 31.972264 0 0 0-28.135593 30.693374 30.053928 30.053928 0 0 0 0 3.197226v616.425251A127.889056 127.889056 0 0 0 127.889056 768.221888a127.889056 127.889056 0 1 0 127.889056 127.889056V384.554719a36.448381 36.448381 0 0 0 17.904468 0L959.167922 260.502334v457.203376a127.889056 127.889056 0 0 0-63.944528-17.904468A127.889056 127.889056 0 1 0 1023.11245 832.166416V32.859814a31.972264 31.972264 0 0 0-31.972264-31.972264z" fill="#666666" ></path></symbol><symbol id="edui-for-gmap" viewBox="0 0 1024 1024"><path d="M543.36 572.16h128v144.64a170.24 170.24 0 0 1-103.68 30.08c-135.68 0-208-89.6-208-236.8s83.84-233.6 206.08-233.6a183.04 183.04 0 0 1 138.24 55.68l56.32-64A270.72 270.72 0 0 0 562.56 192 298.24 298.24 0 0 0 256 512c0 202.24 128 320 304 320A306.56 306.56 0 0 0 768 759.68V492.16H543.36z" fill="#1C7C59" ></path><path d="M896 0H128a64 64 0 0 0-64 64v896a64 64 0 0 0 64 64h768a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64z m0 896a64 64 0 0 1-64 64H192a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h640a64 64 0 0 1 64 64z" fill="#1C7C59" ></path></symbol><symbol id="edui-for-insertframe" viewBox="0 0 1024 1024"><path d="M448 384a256 256 0 1 0 256 256 256 256 0 0 0-256-256z m195.84 170.88a213.76 213.76 0 0 1 0 170.88H547.2a504.32 504.32 0 0 0 0-170.88zM384 640a527.36 527.36 0 0 1 6.4-85.12h115.2A527.36 527.36 0 0 1 512 640a527.36 527.36 0 0 1-6.4 85.12H390.4A527.36 527.36 0 0 1 384 640z m234.88-128H537.6a218.88 218.88 0 0 0-39.68-79.36A213.76 213.76 0 0 1 618.88 512zM448 448c19.2 0 35.84 24.96 48 64h-96c12.16-39.04 28.8-64 48-64z m-49.92-15.36A218.88 218.88 0 0 0 358.4 512H277.12a213.76 213.76 0 0 1 120.96-79.36zM252.16 554.88h96a504.32 504.32 0 0 0 0 170.88h-96a213.76 213.76 0 0 1 0-170.88zM277.12 768H358.4a218.88 218.88 0 0 0 39.68 79.36A213.76 213.76 0 0 1 277.12 768zM448 832c-19.2 0-35.84-24.96-48-64h96c-12.16 39.04-28.8 64-48 64z m49.92 15.36A218.88 218.88 0 0 0 537.6 768h81.28a213.76 213.76 0 0 1-120.96 79.36z" fill="#666666" ></path><path d="M597.76 0H64v1024h896V330.24zM896 355.84V960H128V64h448v256h320z" fill="#666666" ></path></symbol><symbol id="edui-for-pdfformat" viewBox="0 0 1024 1024"><path d="M597.76 0H64v1024h896V330.24zM896 960H128V64h448v291.2h320z" fill="#EF4848" ></path><path d="M213.76 615.68H166.4v133.12h49.28c58.24 0 85.76-21.76 85.76-69.76s-30.72-63.36-87.68-63.36zM486.4 622.08h-32.64v268.8h32.64c77.44 0 119.04-45.44 119.04-135.68S564.48 622.08 486.4 622.08z" fill="#EF4848" ></path><path d="M64 448v576h874.24V448z m175.36 352.64h-54.4v136.96H128V576h109.44c82.56 0 138.24 27.52 138.24 108.8S320 800.64 239.36 800.64z m256 136.96H396.8V576h93.44a159.36 159.36 0 0 1 174.72 179.2 160.64 160.64 0 0 1-171.52 182.4z m411.52-313.6h-158.72v110.72h133.76v48h-133.76v155.52h-56.96V576h214.4z" fill="#EF4848" ></path></symbol><symbol id="edui-for-word" viewBox="0 0 1024 1024"><path d="M718.08 545.92c-12.16 60.16-21.12 117.76-32 177.28h-3.84c-12.8-58.88-23.68-117.12-36.48-177.28L567.68 208H461.44L384 545.92c-12.8 58.88-23.68 117.76-35.84 177.28H345.6c-9.6-58.88-18.56-117.12-29.44-177.28L243.2 208H128L275.84 832h131.84l64-307.2c14.08-58.88 23.68-117.12 34.56-181.76H512c12.16 64 21.76 121.6 34.56 180.48L618.24 832h136.96L896 208h-106.88z" fill="#4972AD" ></path><path d="M960 0H64a64 64 0 0 0-64 64v896a64 64 0 0 0 64 64h896a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64z m0 896a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64z" fill="#4972AD" ></path></symbol><symbol id="edui-for-excel" viewBox="0 0 1024 1024"><path d="M960 0H64a64 64 0 0 0-64 64v896a64 64 0 0 0 64 64h896a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64z m0 896a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64z" fill="#60BF6B" ></path><path d="M816.64 128h-155.52L586.24 282.88c-19.2 41.6-40.32 85.12-59.52 128h-5.12c-23.04-43.52-46.72-86.4-67.2-128L369.28 128H208.64L422.4 495.36 192 896h156.16l82.56-161.92c21.76-47.36 44.16-93.44 64-136.96h6.4c25.6 43.52 50.56 90.88 73.6 136.96l96 161.92H832L602.88 512z" fill="#60BF6B" ></path></symbol><symbol id="edui-for-time" viewBox="0 0 1024 1024"><path d="M839.710352 230.607611l21.719276-21.719277 43.438553 43.438553 54.298191-53.659389-127.760449-127.760449-54.936993 54.298191 43.438552 43.438553-21.719276 21.719276A477.82408 477.82408 0 0 0 556.720957 74.739863a76.656269 76.656269 0 0 0-152.673737 0 472.713662 472.713662 0 0 0-87.515907 23.635683l51.104179 79.211478a383.281347 383.281347 0 0 1 112.429196-17.24766 383.281347 383.281347 0 1 1-383.281348 383.281347 383.281347 383.281347 0 0 1 47.271366-184.613849L64.843228 304.708671a472.07486 472.07486 0 0 0-63.880225 240.189645 479.101684 479.101684 0 0 0 958.203369 0 473.352464 473.352464 0 0 0-119.45602-314.290705z" fill="#666666" ></path><path d="M480.064688 255.520898a46.632564 46.632564 0 0 0-46.632564 45.993762v182.05864a76.017467 76.017467 0 0 0 0 122.650031v63.880225a46.632564 46.632564 0 0 0 92.626325 0v-63.880225a76.017467 76.017467 0 0 0 0-122.650031V298.959451A46.632564 46.632564 0 0 0 480.064688 255.520898zM252.651088 0L143.415904 251.049283l274.684966 5.110418-50.465378-77.933874-51.104179-79.850281-63.880225-98.375546z" fill="#666666" ></path></symbol><symbol id="edui-for-snapscreen" viewBox="0 0 1024 1024"><path d="M665.6 392.96L460.8 548.48 256 314.88V704h512V548.48l-102.4-155.52z" fill="#666666" ></path><path d="M1024 832h-128V128H192V0H128v128H0v64h128v704h704v128h64v-128h128zM192 832V192h640v640z" fill="#666666" ></path></symbol><symbol id="edui-for-wordimage" viewBox="0 0 1024 1024"><path d="M988.16 448H419.84a35.84 35.84 0 0 0-35.84 35.84v504.32a35.84 35.84 0 0 0 35.84 35.84h568.96a35.84 35.84 0 0 0 35.84-35.84V483.84a35.84 35.84 0 0 0-36.48-35.84z m-323.84 164.48a80 80 0 1 1-80-81.92 81.28 81.28 0 0 1 80 81.92zM929.28 960H461.44l131.2-205.44 85.12 133.12 177.28-298.24L960 768v163.2a30.72 30.72 0 0 1-30.72 28.8z" fill="#666666" ></path><path d="M960 0H64a64 64 0 0 0-64 64v896a64 64 0 0 0 64 64h256v-64H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64v256h64V64a64 64 0 0 0-64-64z" fill="#4972AD" ></path><path d="M320 554.24L241.28 192H122.88l151.68 640H320V565.76zM858.88 384l43.52-192h-116.48l-40.32 192h113.28zM501.76 384c0-26.88 4.48-40.32 7.04-64H512c0 23.68 7.68 64 7.68 64h97.28l-44.8-192H456.32l-42.88 192z" fill="#4972AD" ></path></symbol><symbol id="edui-for-edittd" viewBox="0 0 1024 1024"><path d="M768 768m-192 0a192 192 0 1 0 384 0 192 192 0 1 0-384 0Z" fill="#666666" ></path><path d="M448 768a320 320 0 0 1 448-293.12V128H128v768h346.88A320 320 0 0 1 448 768z" fill="#666666" ></path><path d="M0 0v1024h576a320 320 0 0 1-64-64H64V64h896v448a320 320 0 0 1 64 64V0z" fill="#666666" ></path></symbol><symbol id="edui-for-lineheight" viewBox="0 0 1024 1024"><path d="M380.8 768H0l190.72 254.72L380.8 768z" fill="#666666" ></path><path d="M512 768l512 0 0 64-512 0 0-64Z" fill="#666666" ></path><path d="M512 576l512 0 0 64-512 0 0-64Z" fill="#666666" ></path><path d="M512 384l512 0 0 64-512 0 0-64Z" fill="#666666" ></path><path d="M512 192l512 0 0 64-512 0 0-64Z" fill="#666666" ></path><path d="M2.56 256h380.8L193.28 1.28 2.56 256z" fill="#666666" ></path></symbol><symbol id="edui-for-rowspacingbottom" viewBox="0 0 1024 1024"><path d="M704 768H320l192 256zM672 640H32c-19.2 0-32-12.8-32-32S12.8 576 32 576h640c19.2 0 32 12.8 32 32s-12.8 32-32 32zM864 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h832c19.2 0 32 12.8 32 32s-12.8 32-32 32zM480 256h-448C12.8 256 0 243.2 0 224S12.8 192 32 192h448c19.2 0 32 12.8 32 32s-12.8 32-32 32zM992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-rowspacingtop" viewBox="0 0 1024 1024"><path d="M320 256h384L512 0zM352 384h640c19.2 0 32 12.8 32 32s-12.8 32-32 32h-640c-19.2 0-32-12.8-32-32s12.8-32 32-32zM160 576h832c19.2 0 32 12.8 32 32s-12.8 32-32 32h-832c-19.2 0-32-12.8-32-32s12.8-32 32-32zM544 768h448c19.2 0 32 12.8 32 32s-12.8 32-32 32h-448c-19.2 0-32-12.8-32-32s12.8-32 32-32zM32 960h960c19.2 0 32 12.8 32 32s-12.8 32-32 32H32c-19.2 0-32-12.8-32-32s12.8-32 32-32z" fill="#666666" ></path></symbol><symbol id="edui-for-scrawl" viewBox="0 0 1024 1024"><path d="M1018.28352 277.12a20.48 20.48 0 0 0-15.36-6.4 68.48 68.48 0 0 0-40.96 23.68l-390.4 389.12a1234.56 1234.56 0 0 0-69.12 105.6l-8.32 14.08 14.08-8.96c3.84 0 90.24-56.96 104.96-71.04l390.4-389.12c16.64-14.08 29.44-41.6 14.72-56.96z m-243.84 120.96a56.96 56.96 0 1 1-56.96-58.88 58.24 58.24 0 0 1 56.96 58.88zM173.48352 603.52a58.88 58.88 0 1 1 56.96-58.88 58.24 58.24 0 0 1-56.96 58.88zM256.68352 398.08a56.96 56.96 0 1 1 56.96 58.88 58.24 58.24 0 0 1-56.96-58.88z m202.88-58.88a56.96 56.96 0 1 1 56.96 58.88 58.24 58.24 0 0 1-56.96-58.88z m442.88 199.04a415.36 415.36 0 0 1-402.56 352.64 335.36 335.36 0 0 1-122.88-23.68c-38.4-16-55.68-34.56-59.52-46.72s-3.84-13.44-5.12-20.48a250.24 250.24 0 0 0-23.04-64 81.28 81.28 0 0 0-72.96-43.52 114.56 114.56 0 0 0-26.24 0 187.52 187.52 0 0 1-42.24 5.12c-28.8 0-77.44-7.68-78.72-60.16-8.32-266.88 206.08-412.16 421.76-437.76a419.2 419.2 0 0 1 48.64 0 500.48 500.48 0 0 1 174.72 30.72c10.88 4.48 16.64 7.04 44.8 21.12a260.48 260.48 0 0 1 73.6 53.76l34.56-64a314.88 314.88 0 0 0-76.8-55.68c-28.8-14.08-36.48-17.92-49.92-23.68A570.24 570.24 0 0 0 539.56352 128a485.12 485.12 0 0 0-56.32 0 592 592 0 0 0-339.2 151.68A462.08 462.08 0 0 0 0.68352 640a122.88 122.88 0 0 0 46.72 97.28 159.36 159.36 0 0 0 99.84 30.72 256 256 0 0 0 57.6-7.04h10.88c13.44 0 19.2 11.52 30.72 57.6 0 7.68 3.84 15.36 5.76 23.04a154.88 154.88 0 0 0 99.2 91.52A403.84 403.84 0 0 0 499.88352 960a460.16 460.16 0 0 0 177.92-35.2A471.04 471.04 0 0 0 821.80352 832a496 496 0 0 0 100.48-135.04 476.8 476.8 0 0 0 48.64-158.72V519.04z" fill="#666666" ></path></symbol><symbol id="edui-for-redo" viewBox="0 0 1024 1024"><path d="M900.608 474.112c-51.2-51.2-260.608-261.632-291.84-292.352a68.096 68.096 0 0 0-91.648 3.072 73.216 73.216 0 0 0-14.336 76.288c12.288 18.432 187.904 199.68 187.904 199.68H169.984A61.952 61.952 0 0 0 102.4 525.312a71.168 71.168 0 0 0 68.096 67.584h517.632l-173.056 172.032a68.096 68.096 0 0 0 0 93.184 65.536 65.536 0 0 0 90.624 7.168c25.088-23.04 256-252.928 297.984-296.448s-3.072-94.72-3.072-94.72z" fill="#666666" ></path></symbol><symbol id="edui-for-undo" viewBox="0 0 1024 1024"><path d="M128.512 476.16c51.2-51.2 260.608-261.632 291.84-292.352a68.096 68.096 0 0 1 91.648 3.072 73.216 73.216 0 0 1 13.824 76.288C512 281.6 338.432 460.8 338.432 460.8h520.192a61.952 61.952 0 0 1 65.536 66.56 71.168 71.168 0 0 1-68.096 67.584H338.432L512 768a68.096 68.096 0 0 1 0 93.184 65.536 65.536 0 0 1-90.624 7.168c-25.088-23.04-256-252.928-297.984-296.448s5.12-95.744 5.12-95.744z" fill="#666666" ></path></symbol><symbol id="edui-for-inserttitle" viewBox="0 0 1024 1024"><path d="M512 516.096v-153.6H460.8v102.4H358.4v51.2H204.8v-51.2H102.4v-102.4H51.2v614.4h921.6v-460.8z m-173.056 409.6h-240.64V757.76h238.592z m0-219.136h-240.64v-139.264h238.592z m297.472 219.136H388.096V757.76h246.272z m0-219.136H388.096v-139.264h246.272z m283.136 219.136h-233.984V757.76h231.936z m0-219.136h-233.984v-139.264h231.936z" fill="#666666" ></path><path d="M512 465.408v51.2h460.8V51.2h-460.8v307.2z m51.2-204.8h153.6v-153.6h51.2v153.6h153.6v51.2h-153.6v153.6h-51.2v-153.6h-153.6z" fill="#1C7C59" ></path><path d="M99.328 108.032h102.4v-51.2h-153.6v153.6h51.2v-102.4zM512.512 104.96v-51.2h-153.6v51.2h102.4v102.4h51.2v-102.4z" fill="#666666" ></path></symbol><symbol id="edui-for-insertparagraphtrue" viewBox="0 0 1024 1024"><path d="M997.12 448H0v576h1024V448zM60.16 960v-256H320v256z m481.92 0H384v-256h256v256z m421.76 0H704v-256h259.84zM448 0H0v64h192v384h64V64h192V0z" fill="#666666" ></path></symbol><symbol id="edui-for-aligntable" viewBox="0 0 1024 1024"><path d="M992 64H32C12.8 64 0 51.2 0 32S12.8 0 32 0h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z m0 192H32C12.8 256 0 243.2 0 224S12.8 192 32 192h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z m0 192H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z m0 384H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z m0 192H32c-19.2 0-32-12.8-32-32s12.8-32 32-32h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path><path d="M992 448H32C12.8 448 0 435.2 0 416S12.8 384 32 384h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z m0 192H32c-19.2 0-32-12.8-32-32S12.8 576 32 576h960c19.2 0 32 12.8 32 32s-12.8 32-32 32z" fill="#666666" ></path></symbol><symbol id="edui-for-table" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m320 960H64v-256h256z m0-320H64V384h256z m320 320H384v-256h256z m0-320H384V384h256z m320 320h-256v-256h256z m0-320h-256V384h256z m0-320H64V64h896z" fill="#666666" ></path></symbol><symbol id="edui-for-tablealignment-left" viewBox="0 0 1024 1024"><path d="M51.2 102.4l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 256l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 409.6l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 563.2l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 716.8l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 870.4l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path></symbol><symbol id="edui-for-tablealignment-center" viewBox="0 0 1024 1024"><path d="M51.2 102.4l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 409.6l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 716.8l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 256l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 563.2l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 870.4l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 102.4l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 409.6l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 716.8l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path></symbol><symbol id="edui-for-tablealignment-right" viewBox="0 0 1024 1024"><path d="M51.2 102.4l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M358.4 256l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 409.6l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M358.4 563.2l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path><path d="M51.2 716.8l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M358.4 870.4l614.4 0 0 51.2-614.4 0 0-51.2Z" fill="#666666" ></path></symbol><symbol id="edui-for-paste" viewBox="0 0 1024 1024"><path d="M832 320V160a32 32 0 0 0-32-32H576V64a64 64 0 0 0-64-64H384a64 64 0 0 0-64 64v64H96a32 32 0 0 0-32 32v640a32 32 0 0 0 32 32H384v192h448l192-192V320zM384 64h128v64H384zM192 192h512v64H192z m640 741.76V832h101.76zM960 768h-192v192H448V384h512z" fill="#666666" ></path></symbol><symbol id="edui-for-map" viewBox="0 0 1024 1024"><path d="M375.424 331.824c-2.432 6.96-7.856 24.704-3.152 40.208 9.232 34.672 39.424 36.24 39.424 36.24h43.264V302.368h-46.4c-20.864 6.24-30.944 22.432-33.136 29.456z m129.072 119.072H397.008c-46.448-9.28-64.896-40.992-67.28-46.368-2.288-5.456-15.504-30.944-8.464-74.256 20.032-64.976 77.28-69.616 77.28-69.616h57.248v-70.368l48.704 0.8v259.808z m200.272-0.768H581.04c-47.92-12.368-50.176-46.496-50.176-46.496V266.816L581.04 266v123.024c3.008 13.024 19.376 15.44 19.376 15.44h50.912V266.768h53.456v183.36h-0.016z" fill="" ></path><path d="M512 1021.45c-11.203 0-21.563-6-27.172-15.688L208.375 527.726c-30.803-53.1-47.11-113.662-47.11-175.084 0-193.047 157.35-350.094 350.75-350.094 193.391 0 350.72 157.047 350.72 350.094 0 61.421-16.298 121.975-47.126 175.115l-276.437 478.007c-5.61 9.687-15.953 15.687-27.172 15.687z m0.016-956.138c-158.788 0-287.985 128.907-287.985 287.329 0 50.375 13.375 100.037 38.663 143.615l249.303 431.1 249.297-431.062c25.297-43.616 38.656-93.281 38.656-143.656 0-158.42-129.172-287.325-287.934-287.325z" fill="" ></path></symbol><symbol id="edui-for-directionalityrtl" viewBox="0 0 1024 1024"><path d="M960 833.92l-384-320 384-320.64v640.64zM64 192V128h448v64H320v640h192v64H64v-64h192V192H64z" fill="#666666" ></path></symbol><symbol id="edui-for-imagecenter" viewBox="0 0 1024 1024"><path d="M0 0h1024v64H0z" fill="#666666" ></path><path d="M128 192l768 0 0 448-768 0 0-448Z" fill="#66BBBF" ></path><path d="M0 768h1024v64H0zM0 960h1024v64H0z" fill="#666666" ></path></symbol><symbol id="edui-for-imagenone" viewBox="0 0 1024 1024"><path d="M52.736 107.008l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M52.736 260.608l409.6 0 0 512-409.6 0 0-512Z" fill="#66BBBF" ></path><path d="M564.736 721.408l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path><path d="M54.784 875.008l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M564.736 567.808l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path></symbol><symbol id="edui-for-fontborder" viewBox="0 0 1024 1024"><path d="M345.6 832l44.8-153.6h224l44.8 153.6H768L576 192H448L256 832h89.6z m153.6-531.2l83.2 288H416l83.2-288z" fill="#666666" ></path><path d="M896 64H64v896h896V64h-64z m0 832H128V128h768v768z" fill="#666666" ></path></symbol><symbol id="edui-for-edittable" viewBox="0 0 1024 1024"><path d="M993.92 848.64L849.92 704a240 240 0 0 0-320-300.8L512 410.24v2.56a12.16 12.16 0 0 0 0 17.28l134.4 134.4-81.92 80.64L432.64 512a14.08 14.08 0 0 0-23.68 5.12l-4.48 10.24a240 240 0 0 0 300.8 320l144 144a102.4 102.4 0 0 0 72.96 30.08 103.04 103.04 0 0 0 72.96-175.36zM960 960a56.96 56.96 0 0 1-40.32 16.64 56.96 56.96 0 0 1-40.32-16.64l-165.12-165.12-14.08 6.4a192 192 0 0 1-265.6-220.8L555.52 704a14.08 14.08 0 0 0 17.28 0l128-128a14.08 14.08 0 0 0 0-18.56L580.48 434.56A192 192 0 0 1 802.56 704l-6.4 14.08L960 880.64A56.96 56.96 0 0 1 960 960z" fill="#666666" ></path><path d="M832 0H0v832h320V320h512zM256 768H64V576h192z m0-256H64V320h192z m0-256H64V64h192z m256 0H320V64h192z m64 0V64h192v192z" fill="#666666" ></path></symbol><symbol id="edui-for-imageleft" viewBox="0 0 1024 1024"><path d="M50.688 101.376l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M50.688 254.976l409.6 0 0 512-409.6 0 0-512Z" fill="#66BBBF" ></path><path d="M562.688 715.776l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path><path d="M52.736 869.376l921.6 0 0 51.2-921.6 0 0-51.2Z" fill="#666666" ></path><path d="M562.688 562.176l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path><path d="M562.688 408.576l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path><path d="M562.688 254.976l409.6 0 0 51.2-409.6 0 0-51.2Z" fill="#666666" ></path></symbol><symbol id="edui-for-imageright" viewBox="0 0 1024 1024"><path d="M0 0h1024v64H0z" fill="#666666" ></path><path d="M512 192l512 0 0 640-512 0 0-640Z" fill="#66BBBF" ></path><path d="M0 768h448v64H0zM0 960h1024v64H0zM0 576h448v64H0zM0 384h448v64H0zM0 192h448v64H0z" fill="#666666" ></path></symbol><symbol id="edui-for-insertcol" viewBox="0 0 1024 1024"><path d="M256 256L0 512l256 256V256zM1024 1024V0H384v1024zM768 64h192v256h-192z m0 320h192v256h-192z m0 320h192v256h-192zM448 64h192v256H448z m0 320h192v256H448z m0 320h192v256H448z" fill="#666666" ></path></symbol><symbol id="edui-for-insertcolnext" viewBox="0 0 1024 1024"><path d="M768 768l256-256-256-256v512zM0 0v1024h640V0z m256 960H64v-256h192z m0-320H64V384h192z m0-320H64V64h192z m320 640H384v-256h192z m0-320H384V384h192z m0-320H384V64h192z" fill="#666666" ></path></symbol><symbol id="edui-for-insertorderedlist" viewBox="0 0 1024 1024"><path d="M319.955606 63.991121l703.902334 0 0 127.982243-703.902334 0 0-127.982243Z" fill="#666666" ></path><path d="M319.955606 447.937849l703.902334 0 0 127.982242-703.902334 0 0-127.982242Z" fill="#666666" ></path><path d="M319.955606 831.884576l703.902334 0 0 127.982242-703.902334 0 0-127.982242Z" fill="#666666" ></path><path d="M191.973364 0v255.964485H63.991121V0zM0 639.911212v-30.715738C0 505.529858 159.977803 467.775096 159.977803 422.3414c0-17.917514-10.878491-28.156093-33.275383-28.156093a114.544107 114.544107 0 0 0-74.229701 37.11485l-46.713518-54.392453a167.656738 167.656738 0 0 1 127.982242-56.952098C212.450522 319.955606 255.964485 362.189746 255.964485 417.22211c0 78.069168-95.346771 98.546327-142.7002 147.179579H255.964485V639.911212zM127.982242 1023.85794a165.737004 165.737004 0 0 1-127.982242-52.47272l48.633252-49.273163a106.865172 106.865172 0 0 0 69.750322 30.075827c28.156093 0 41.594229-14.078047 41.594229-33.275383 0-17.277603-12.158313-26.23636-36.474939-26.23636h-24.316626v-52.472719h24.956537c23.036804 0 36.474939-6.399112 36.474939-26.876271 0-19.837248-12.798224-31.355649-38.394672-31.35565a85.748102 85.748102 0 0 0-63.991122 31.35565l-47.993341-48.633252a158.058069 158.058069 0 0 1 127.982243-55.032365C211.1707 703.902334 255.964485 745.496562 255.964485 792.210081v5.11929a63.991121 63.991121 0 0 1-67.830589 63.991121c50.552986 7.039023 70.390233 33.275383 70.390234 67.190677v3.839467C255.964485 985.463267 204.131677 1023.85794 127.982242 1023.85794z" fill="#666666" ></path></symbol><symbol id="edui-for-insertparagraphbeforetable" viewBox="0 0 1024 1024"><path d="M256 384v640h768V384z m256 576H320V448h192z m448 0H576v-128h384z m0-192H576v-128h384z m0-192H576V448h384z" fill="#666666" ></path><path d="M384 576h64v256H384zM0 0v64h128v384h64V64h128V0H0z" fill="#666666" ></path></symbol><symbol id="edui-for-insertrow" viewBox="0 0 1024 1024"><path d="M768 256L512 0 256 256h512zM0 1024h1024V384H0z m960-256v192h-256v-192z m-320 0v192H384v-192z m-320 0v192H64v-192z m640-320v192h-256V448z m-320 0v192H384V448zM320 448v192H64V448z" fill="#666666" ></path></symbol><symbol id="edui-for-insertrownext" viewBox="0 0 1024 1024"><path d="M256 768l256 256 256-256H256zM1024 0H0v640h1024zM64 256V64h256v192z m320 0V64h256v192z m320 0V64h256v192zM64 576V384h256v192z m320 0V384h256v192z m320 0V384h256v192z" fill="#666666" ></path></symbol><symbol id="edui-for-insertunorderedlist" viewBox="0 0 1024 1024"><path d="M960 192H256c-38.4 0-64-25.6-64-64s25.6-64 64-64h704c38.4 0 64 25.6 64 64s-25.6 64-64 64zM64 192c-38.4 0-64-25.6-64-64s25.6-64 64-64 64 25.6 64 64-25.6 64-64 64zM960 576H256c-38.4 0-64-25.6-64-64s25.6-64 64-64h704c38.4 0 64 25.6 64 64s-25.6 64-64 64zM64 576c-38.4 0-64-25.6-64-64s25.6-64 64-64 64 25.6 64 64-25.6 64-64 64zM960 960H256c-38.4 0-64-25.6-64-64s25.6-64 64-64h704c38.4 0 64 25.6 64 64s-25.6 64-64 64zM64 960c-38.4 0-64-25.6-64-64s25.6-64 64-64 64 25.6 64 64-25.6 64-64 64z" fill="#666666" ></path></symbol><symbol id="edui-for-mergeright" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m384 64h256v256H384z m0 384h320V384l192 128-192 128V576H384z m-64 512H64v-256h256z m0-320H64V384h256z m0-320H64V64h256z m320 640H384v-256h256z m320 0h-256v-256h256z m0-640h-256V64h256z" fill="#666666" ></path></symbol><symbol id="edui-for-mergedown" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m320 960H64v-256h256z m0-320H64V384h256z m0-320H64V64h256z m192 576l-128-192h64V384h128v320h64z m128-576H384V64h256z m320 640h-256v-256h256z m0-320h-256V384h256z m0-320h-256V64h256z" fill="#666666" ></path></symbol><symbol id="edui-for-inserttable" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m320 960H64v-256h256z m0-320H64V384h256z m320 320H384v-256h256z m0-320H384V384h256z m320 320h-256v-256h256z m0-320h-256V384h256z m0-320H64V64h896z" fill="#666666" ></path></symbol><symbol id="edui-for-pagebreak" viewBox="0 0 1024 1024"><path d="M384 960h512v64H384zM0 320v384l256-192-256-192zM320 128h576v64H320zM384 832h256v64H384z" fill="#666666" ></path><path d="M192 704v320h64v-256h704v256h64v-320H192zM1022.72 0H960v256H256V0H192v320h832V0h-1.28z" fill="#666666" ></path></symbol><symbol id="edui-for-source" viewBox="0 0 1024 1024"><path d="M170.88 512H56.96V384H0v320h56.96V576h113.92v128h56.96V384h-56.96v128zM284.16 448h56.96v256h56.96V448h56.96V384H284.16v64zM738.56 385.28l-84.48 250.24L569.6 384l-2.56 1.28H512v316.8h56.96V561.92l47.36 140.8h72.96l2.56 1.28 48-140.8v139.52h56.32V385.92h-55.04l-2.56-0.64zM910.08 640V384h-56.96v320H1024v-64h-113.92z" fill="#666666" ></path></symbol><symbol id="edui-for-splittorows" viewBox="0 0 1024 1024"><path d="M0 0h1024v64H0z" fill="#666666" ></path><path d="M960 0v320h-128V0h-64v320H256V0H192v320H64V0H0v1024h1024V0z m-192 384v256H256V384zM64 384h128v256H64z m0 576v-256h128v256z m192 0v-256h512v256z m704 0h-128v-256h128z m0-320h-128V384h128z" fill="#666666" ></path></symbol><symbol id="edui-for-splittocols" viewBox="0 0 1024 1024"><path d="M1024 0H0v1024h1024z m-64 384v256h-128V384z m0-320v256h-128V64zM64 320V64h128v256z m0 320V384h128v256z m0 320v-256h128v256z m192 0V64h128v896z m192 0V64h128v896z m192 0V64h128v896z m192 0v-256h128v256z" fill="#666666" ></path></symbol><symbol id="edui-for-splittocells" viewBox="0 0 1024 1024"><path d="M0 0v1024h1024V0z m320 960H64V384h256z m320 0H384v-256h256z m0-320H384V384h256z m320 320h-256v-256h256z m0-320h-256V384h256z m0-320H384V64h576z" fill="#666666" ></path></symbol><symbol id="edui-for-arrow" viewBox="0 0 1024 1024"><path d="M513.024 665.6l204.8-204.8h-409.6l204.8 204.8z" fill="" ></path></symbol><symbol id="edui-for-aligntd" viewBox="0 0 1024 1024"><path d="M256.061265 767.939055l511.87747 0 0 63.984683-511.87747 0 0-63.984683Z" fill="#666666" ></path><path d="M256.061265 575.985004l511.87747 0 0 63.984683-511.87747 0 0-63.984683Z" fill="#666666" ></path><path d="M256.061265 384.030953l511.87747 0 0 63.984683-511.87747 0 0-63.984683Z" fill="#666666" ></path><path d="M256.061265 192.076902l511.87747 0 0 63.984683-511.87747 0 0-63.984683Z" fill="#666666" ></path><path d="M863.91576 1023.877789h-703.83152A91.498098 91.498098 0 0 1 64.107214 938.77816V85.22248A91.498098 91.498098 0 0 1 160.08424 0.122851h703.83152A91.498098 91.498098 0 0 1 959.892786 85.22248v853.55568A91.498098 91.498098 0 0 1 863.91576 1023.877789zM160.08424 64.107534a30.072801 30.072801 0 0 0-31.992342 28.153261v839.47905a30.072801 30.072801 0 0 0 31.992342 28.153261h703.83152a30.072801 30.072801 0 0 0 31.992342-28.153261V92.260795a30.072801 30.072801 0 0 0-31.992342-28.153261z" fill="#666666" ></path></symbol><symbol id="edui-for-autotypeset" viewBox="0 0 1024 1024"><path d="M192 192l384 0 0 320-384 0 0-320Z" fill="#66BBBF" ></path><path d="M640 192l192 0 0 64-192 0 0-64Z" fill="#666666" ></path><path d="M640 384l192 0 0 64-192 0 0-64Z" fill="#666666" ></path><path d="M192 576l640 0 0 64-640 0 0-64Z" fill="#666666" ></path><path d="M192 768l640 0 0 64-640 0 0-64Z" fill="#666666" ></path><path d="M960 0H64a64 64 0 0 0-64 64v896a64 64 0 0 0 64 64h896a64 64 0 0 0 64-64V64a64 64 0 0 0-64-64z m0 896a64 64 0 0 1-64 64H128a64 64 0 0 1-64-64V128a64 64 0 0 1 64-64h768a64 64 0 0 1 64 64z" fill="#666666" ></path></symbol><symbol id="edui-for-charts" viewBox="0 0 1024 1024"><path d="M0 64v896h1024V64z m960 832H64V128h896z" fill="#666666" ></path><path d="M704 256h128v512h-128zM448 576h128v192H448zM192 384h128v384H192z" fill="#666666" ></path></symbol><symbol id="edui-for-closeerror" viewBox="0 0 1024 1024"><path d="M512 0a512 512 0 1 0 512 512 512 512 0 0 0-512-512z m284.16 670.08l-128 128L512 640l-158.08 156.16-128-128L384 512 227.84 353.92l128-128L512 384l158.08-158.08 128 128L640 512z" fill="#EF4848" ></path></symbol><symbol id="edui-for-copy" viewBox="0 0 1024 1024"><path d="M256.060306 384.030473l511.879388 0 0 63.984923-511.879388 0 0-63.984923Z" fill="#666666" ></path><path d="M256.060306 575.985243l511.879388 0 0 63.984924-511.879388 0 0-63.984924Z" fill="#666666" ></path><path d="M256.060306 767.940014l511.879388 0 0 63.984924-511.879388 0 0-63.984924Z" fill="#666666" ></path><path d="M256.060306 192.075702l255.939694 0 0 63.984924-255.939694 0 0-63.984924Z" fill="#666666" ></path><path d="M895.909541 256.060626h-191.95477V56.427664A63.984924 63.984924 0 0 0 639.969847 0.120932H137.688197A69.743567 69.743567 0 0 0 64.105535 64.105855v895.78893a69.743567 69.743567 0 0 0 73.582662 63.984923h748.623606A69.743567 69.743567 0 0 0 959.894465 959.894785V313.007208A63.984924 63.984924 0 0 0 895.909541 256.060626z m0 695.516119a8.31804 8.31804 0 0 1-8.31804 8.31804H137.688197a9.597739 9.597739 0 0 1-9.597738-9.597739V72.423895A8.31804 8.31804 0 0 1 136.408499 64.105855h491.404213a11.517286 11.517286 0 0 1 12.157135 10.877437v191.954771A60.145828 60.145828 0 0 0 703.954771 320.045549h180.437484a11.517286 11.517286 0 0 1 12.157136 10.877437v620.653759z" fill="#666666" ></path></symbol><symbol id="edui-for-date" viewBox="0 0 1024 1024"><path d="M896 128v64h64v704H64V192h64V128H0v832h1024V128h-128z" fill="#666666" ></path><path d="M832 64h-192v255.36L832 320V64z" fill="#EF4848" ></path><path d="M576 704h256v64H576zM576 512h256v64H576zM448 128h128v64H448zM192 704h256v64H192zM192 512h256v64H192z" fill="#666666" ></path><path d="M384 64H192v256l192-0.64V64z" fill="#EF4848" ></path></symbol><symbol id="edui-for-deletetable" viewBox="0 0 1024 1024"><path d="M576 0v448h448V0z m427.52 337.28l-90.24 90.24-113.28-113.28-113.28 113.28-90.24-90.24 113.28-113.28-113.28-113.28L686.72 20.48l113.28 113.28L913.28 20.48l90.88 90.88-113.92 112.64z" fill="#EF4848" ></path><path d="M960 640h-256V448h-64v192H384V384h192V320H64V64h512V0H0v1024h1024V448h-64zM320 960H64v-256h256z m0-320H64V384h256z m320 320H384v-256h256z m320 0h-256v-256h256z" fill="#666666" ></path></symbol><symbol id="edui-for-directionalityltr" viewBox="0 0 1024 1024"><path d="M64 832l384-320-384-320v640zM960 192V128H512v64h192v640H512v64h448v-64h-192V192h192z" fill="#666666" ></path></symbol><symbol id="edui-for-arrowright" viewBox="0 0 1024 1024"><path d="M615.424 512l-204.8-204.8v409.6l204.8-204.8z" fill="" ></path></symbol><symbol id="edui-for-tableleft" viewBox="0 0 1024 1024"><path d="M960 64v896H64V64h896m64-64H0v1024h1024V0z" fill="" ></path><path d="M192 192h640v64H192zM192 384h640v64H192zM192 576h256v64H192z" fill="" ></path></symbol><symbol id="edui-for-tableright" viewBox="0 0 1024 1024"><path d="M960 64v896H64V64h896m64-64H0v1024h1024V0z" fill="" ></path><path d="M188.8 191.36h640v64h-640zM188.8 383.36h640v64h-640zM576 575.36h256v64H576z" fill="" ></path></symbol><symbol id="edui-for-tablecenter" viewBox="0 0 1024 1024"><path d="M960 64v896H64V64h896m64-64H0v1024h1024V0z" fill="" ></path><path d="M188.8 192.64h640v64h-640zM188.8 384.64h640v64h-640zM383.36 576.64h256v64h-256z" fill="" ></path></symbol><symbol id="edui-for-videoleft" viewBox="0 0 1024 1024"><path d="M96 96l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 192l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 800l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 896l399.36 0 0 32-399.36 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 704l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 608l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 512l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 416l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 320l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M256 480m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#3FBEE0" ></path><path d="M640 320H128a32 32 0 0 0-32 32v352a32 32 0 0 0 32 32h512a32 32 0 0 0 32-32V352a32 32 0 0 0-32-32z m0 251.52L544 448l-162.24 208.64L304 563.2 186.56 704H160a32 32 0 0 1-32-32v-288a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" fill="#3FBEE0" ></path><path d="M992 32v960H32V32h960m0-32H32a32 32 0 0 0-32 32v960a32 32 0 0 0 32 32h960a32 32 0 0 0 32-32V32a32 32 0 0 0-32-32z" fill="#3FBEE0" ></path></symbol><symbol id="edui-for-videocenter" viewBox="0 0 1024 1024"><path d="M96 96l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 192l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 800l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 896l399.36 0 0 32-399.36 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 704l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 608l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 512l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 416l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 320l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M832 608l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M832 704l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M832 512l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M832 416l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M832 320l96 0 0 32-96 0 0-32Z" fill="#3FBEE0" ></path><path d="M384 480m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#3FBEE0" ></path><path d="M768 320H256a32 32 0 0 0-32 32v352a32 32 0 0 0 32 32h512a32 32 0 0 0 32-32V352a32 32 0 0 0-32-32z m0 251.52L672 448l-162.24 208.64-77.76-93.44L314.56 704H288a32 32 0 0 1-32-32v-288a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" fill="#3FBEE0" ></path><path d="M992 32v960H32V32h960m0-32H32a32 32 0 0 0-32 32v960a32 32 0 0 0 32 32h960a32 32 0 0 0 32-32V32a32 32 0 0 0-32-32z" fill="#3FBEE0" ></path></symbol><symbol id="edui-for-videonone" viewBox="0 0 1024 1024"><path d="M96 96l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 192l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 800l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 896l399.36 0 0 32-399.36 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 704l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M704 608l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M256 480m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#3FBEE0" ></path><path d="M640 320H128a32 32 0 0 0-32 32v352a32 32 0 0 0 32 32h512a32 32 0 0 0 32-32V352a32 32 0 0 0-32-32z m0 251.52L544 448l-162.24 208.64L304 563.2 186.56 704H160a32 32 0 0 1-32-32v-288a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" fill="#3FBEE0" ></path><path d="M992 32v960H32V32h960m0-32H32a32 32 0 0 0-32 32v960a32 32 0 0 0 32 32h960a32 32 0 0 0 32-32V32a32 32 0 0 0-32-32z" fill="#3FBEE0" ></path></symbol><symbol id="edui-for-videoright" viewBox="0 0 1024 1024"><path d="M96 96l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 192l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 800l832 0 0 32-832 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 896l399.36 0 0 32-399.36 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 704l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 608l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 512l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 416l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M96 320l224 0 0 32-224 0 0-32Z" fill="#3FBEE0" ></path><path d="M512 480m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#3FBEE0" ></path><path d="M896 320H384a32 32 0 0 0-32 32v352a32 32 0 0 0 32 32h512a32 32 0 0 0 32-32V352a32 32 0 0 0-32-32z m0 251.52L800 448l-162.24 208.64-77.76-93.44-117.44 140.8H416a32 32 0 0 1-32-32v-288a32 32 0 0 1 32-32h448a32 32 0 0 1 32 32z" fill="#3FBEE0" ></path><path d="M992 32v960H32V32h960m0-32H32a32 32 0 0 0-32 32v960a32 32 0 0 0 32 32h960a32 32 0 0 0 32-32V32a32 32 0 0 0-32-32z" fill="#3FBEE0" ></path></symbol><symbol id="edui-for-template" viewBox="0 0 1024 1024"><path d="M0 64v896h1024V64z m960 832H64V128h896z" fill="#666666" ></path><path d="M192 256h320v192H192zM640 256h192v512h-192zM192 576h320v192H192z" fill="#666666" ></path></symbol><symbol id="edui-for-addfile" viewBox="0 0 1024 1024"><path d="M1024 480H544V0h-64v480H0v64h480v480h64V544h480v-64z" fill="#E5E5E5" ></path></symbol><symbol id="edui-for-selected" viewBox="0 0 1024 1024"><path d="M914.24 617.28a32 32 0 0 0-45.12 0l-221.44 221.12-112.96-112.96a32 32 0 1 0-45.12 45.12l135.68 135.68a32 32 0 0 0 45.44 0l243.52-243.52a32 32 0 0 0 0-45.44z" fill="#FFFFFF" ></path><path d="M0 1024h1024V0z m914.24-361.28L672 906.24a32 32 0 0 1-45.44 0l-135.68-135.68a32 32 0 1 1 45.12-45.12l112.96 112.96 221.12-221.12a32 32 0 1 1 45.12 45.12z" fill="#1094FA" ></path></symbol><symbol id="edui-for-pickarea" viewBox="0 0 1024 1024"><path d="M977.454545 93.090909h-46.545454v791.272727a46.545455 46.545455 0 0 1-46.545455 46.545455H93.090909v46.545454a46.545455 46.545455 0 0 0 46.545455 46.545455h837.818181a46.545455 46.545455 0 0 0 46.545455-46.545455V139.636364a46.545455 46.545455 0 0 0-46.545455-46.545455z" fill="#E5E5E5" ></path><path d="M46.545455 46.545455l837.818181 0 0 837.818181-837.818181 0 0-837.818181Z" fill="#FFFFFF" ></path><path d="M884.363636 0H46.545455a46.545455 46.545455 0 0 0-46.545455 46.545455v837.818181a46.545455 46.545455 0 0 0 46.545455 46.545455h837.818181a46.545455 46.545455 0 0 0 46.545455-46.545455V46.545455a46.545455 46.545455 0 0 0-46.545455-46.545455z m0 837.818182a46.545455 46.545455 0 0 1-46.545454 46.545454H93.090909a46.545455 46.545455 0 0 1-46.545454-46.545454V93.090909a46.545455 46.545455 0 0 1 46.545454-46.545454h744.727273a46.545455 46.545455 0 0 1 46.545454 46.545454z" fill="#CCCCCC" ></path></symbol><symbol id="edui-for-overlay" viewBox="0 0 1024 1024"><path d="M977.454545 93.090909h-46.545454v791.272727a46.545455 46.545455 0 0 1-46.545455 46.545455H93.090909v46.545454a46.545455 46.545455 0 0 0 46.545455 46.545455h837.818181a46.545455 46.545455 0 0 0 46.545455-46.545455V139.636364a46.545455 46.545455 0 0 0-46.545455-46.545455z" fill="#E3F6FF" ></path><path d="M46.545455 46.545455l837.818181 0 0 837.818181-837.818181 0 0-837.818181Z" fill="#E3F6FF" ></path><path d="M884.363636 0H46.545455a46.545455 46.545455 0 0 0-46.545455 46.545455v837.818181a46.545455 46.545455 0 0 0 46.545455 46.545455h837.818181a46.545455 46.545455 0 0 0 46.545455-46.545455V46.545455a46.545455 46.545455 0 0 0-46.545455-46.545455z m0 837.818182a46.545455 46.545455 0 0 1-46.545454 46.545454H93.090909a46.545455 46.545455 0 0 1-46.545454-46.545454V93.090909a46.545455 46.545455 0 0 1 46.545454-46.545454h744.727273a46.545455 46.545455 0 0 1 46.545454 46.545454z" fill="#45A7EF" ></path></symbol><symbol id="edui-for-preitem" viewBox="0 0 1462 1024"><path d="M0 0v1024h1462.857143V0z m1433.6 994.742857H29.257143V29.257143h1404.342857z" fill="#CCCCCC" ></path><path d="M175.542857 131.657143h497.371429v58.514286H175.542857zM175.542857 512h438.857143v29.257143H175.542857zM175.542857 394.971429h906.971429v29.257142H175.542857zM175.542857 277.942857h234.057143v29.257143H175.542857zM175.542857 629.028571h1111.771429v29.257143H175.542857zM175.542857 746.057143h292.571429v29.257143H175.542857zM175.542857 863.085714h760.685714v29.257143H175.542857z" fill="#666666" ></path></symbol><symbol id="edui-for-preitem1" viewBox="0 0 1462 1024"><path d="M0 0v1024h1462.857143V0z m1433.6 994.742857H29.257143V29.257143h1404.342857z" fill="#CCCCCC" ></path><path d="M117.028571 175.542857h351.085715v29.257143H117.028571z" fill="#666666" ></path></symbol><symbol id="edui-for-preitem2" viewBox="0 0 1462 1024"><path d="M0 0v1024h1462.857143V0z m1433.6 994.742857H29.257143V29.257143h1404.342857z" fill="#CCCCCC" ></path><path d="M175.542857 117.028571h497.371429v58.514286H175.542857zM848.457143 555.885714h438.857143v29.257143H848.457143zM848.457143 438.857143h438.857143v29.257143H848.457143zM848.457143 321.828571h438.857143v29.257143H848.457143zM175.542857 672.914286h1111.771429v29.257143H175.542857zM175.542857 789.942857h702.171429v29.257143H175.542857zM175.542857 906.971429h702.171429v29.257142H175.542857zM731.428571 351.085714v204.8H204.8V351.085714h526.628571m29.257143-29.257143H175.542857v263.314286h585.142857V321.828571zM1258.057143 789.942857v117.028572H994.742857v-117.028572h263.314286m29.257143-29.257143H965.485714v175.542857h321.828572V760.685714z" fill="#666666" ></path></symbol><symbol id="edui-for-preitem3" viewBox="0 0 1462 1024"><path d="M0 0v1024h1462.857143V0z m1433.6 994.742857H29.257143V29.257143h1404.342857z" fill="#CCCCCC" ></path><path d="M482.742857 175.542857h497.371429v58.514286H482.742857zM643.657143 292.571429h175.542857v29.257142H643.657143zM175.542857 468.114286h1111.771429v29.257143H175.542857zM175.542857 585.142857h1111.771429v29.257143H175.542857zM175.542857 702.171429h1111.771429v29.257142H175.542857zM175.542857 819.2h1111.771429v29.257143H175.542857z" fill="#666666" ></path></symbol><symbol id="edui-for-preitem4" viewBox="0 0 1462 1024"><path d="M1258.057143 263.314286v204.8H204.8V263.314286h1053.257143m29.257143-29.257143H175.542857v263.314286h1111.771429V234.057143z" fill="#666666" ></path><path d="M0 0v1024h1462.857143V0z m1433.6 994.742857H29.257143V29.257143h1404.342857z" fill="#CCCCCC" ></path><path d="M175.542857 117.028571h497.371429v58.514286H175.542857zM175.542857 555.885714h351.085714v29.257143H175.542857zM175.542857 672.914286h1111.771429v29.257143H175.542857zM175.542857 789.942857h702.171429v29.257143H175.542857zM175.542857 906.971429h1111.771429v29.257142H175.542857z" fill="#666666" ></path></symbol></svg>',l=(h=document.getElementsByTagName("script"))[h.length-1].getAttribute("data-injectcss");if(l&&!o.__iconfont__svg__cssinject__){o.__iconfont__svg__cssinject__=!0;try{document.write("<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>")}catch(h){console&&console.log(h)}}!function(h){if(document.addEventListener)if(~["complete","loaded","interactive"].indexOf(document.readyState))setTimeout(h,0);else{var l=function(){document.removeEventListener("DOMContentLoaded",l,!1),h()};document.addEventListener("DOMContentLoaded",l,!1)}else document.attachEvent&&(a=h,t=o.document,i=!1,v=function(){i||(i=!0,a())},(p=function(){try{t.documentElement.doScroll("left")}catch(h){return void setTimeout(p,50)}v()})(),t.onreadystatechange=function(){"complete"==t.readyState&&(t.onreadystatechange=null,v())});var a,t,i,v,p}(function(){var h,l,a,t,i,v;(h=document.createElement("div")).innerHTML=p,p=null,(l=h.getElementsByTagName("svg")[0])&&(l.setAttribute("aria-hidden","true"),l.style.position="absolute",l.style.width=0,l.style.height=0,l.style.overflow="hidden",a=l,(t=document.body).firstChild?(i=a,(v=t.firstChild).parentNode.insertBefore(i,v)):t.appendChild(a))})}(window);
 
 // adapter/editorui.js
-//ui跟编辑器的适配層
+//ui跟編輯器的适配層
 //那个按钮弹出是dialog，是下拉筐等都是在这个js中配置
-//自己写的ui也要在这里配置，放到baidu.editor.ui下边，当编辑器实例化的时候会根据neditor.config中的toolbars找到相应的进行实例化
+//自己写的ui也要在这里配置，放到baidu.editor.ui下边，当編輯器实例化的时候会根据neditor.config中的toolbars找到相应的进行实例化
 ;(function() {
   var utils = baidu.editor.utils;
   var editorui = baidu.editor.ui;
@@ -31133,7 +31133,7 @@ UE.ui = baidu.editor.ui = {};
     return ui;
   };
 
-  //排版，图片排版，文字方向
+  //排版，圖片排版，文字方向
   var typeset = {
     justify: ["left", "right", "center", "justify"],
     imagefloat: ["none", "left", "center", "right"],
@@ -32015,7 +32015,7 @@ UE.ui = baidu.editor.ui = {};
         domUtils.on(editor.window, "scroll", function(evt) {
           baidu.editor.ui.Popup.postHide(evt);
         });
-        //提供编辑器实时宽高(全屏时宽高不变化)
+        //提供編輯器实时宽高(全屏时宽高不变化)
         editor.ui._actualFrameWidth = editor.options.initialFrameWidth;
 
         UE.browser.ie &&
@@ -32529,7 +32529,7 @@ UE.ui = baidu.editor.ui = {};
 
           this._bakEditorContaninerWidth = editor.iframe.parentNode.offsetWidth;
           if (this._bakAutoHeight) {
-            //当全屏时不能執行自动长高
+            //当全屏时不能執行自動长高
             editor.autoHeightEnabled = false;
             this.editor.disableAutoHeight();
           }
@@ -32889,7 +32889,7 @@ UE.ui = baidu.editor.ui = {};
           domUtils.addClass(holder, "edui-" + editor.options.theme);
           editor.ui.render(holder);
           var opt = editor.options;
-          //给实例添加一个编辑器的容器引用
+          //给实例添加一个編輯器的容器引用
           editor.container = editor.ui.getDom();
           var parents = domUtils.findParents(holder, true);
           var displays = [];
@@ -32914,7 +32914,7 @@ UE.ui = baidu.editor.ui = {};
           for (var i = 0, ci; (ci = parents[i]); i++) {
             ci.style.display = displays[i];
           }
-          //编辑器最外容器设置了高度，会导致，编辑器不占位
+          //編輯器最外容器设置了高度，会导致，編輯器不占位
           //todo 先去掉，没有找到原因
           if (holder.style.height) {
             holder.style.height = "";
@@ -32941,12 +32941,12 @@ UE.ui = baidu.editor.ui = {};
      * @name getEditor
      * @since 1.2.4+
      * @grammar UE.getEditor(id,[opt])  =>  Editor实例
-     * @desc 提供一个全局的方法得到编辑器实例
+     * @desc 提供一个全局的方法得到編輯器实例
      *
-     * * ''id''  放置编辑器的容器id, 如果容器下的编辑器已经存在，就直接返回
-     * * ''opt'' 编辑器的可选参数
+     * * ''id''  放置編輯器的容器id, 如果容器下的編輯器已经存在，就直接返回
+     * * ''opt'' 編輯器的可选参數
      * @example
-     *  UE.getEditor('containerId',{onready:function(){//创建一个编辑器实例
+     *  UE.getEditor('containerId',{onready:function(){//创建一个編輯器实例
      *      this.setContent('hello')
      *  }});
      *  UE.getEditor('containerId'); //返回刚创建的实例

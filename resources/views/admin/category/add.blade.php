@@ -36,7 +36,7 @@
                                     <option value="{{ $v->id }}" @if(isset($model) && $model->model_id == $v->id) selected @endif>{{ $v->name }}</option>
                                 @endforeach
                             </select>
-                            <div class="layui-form-mid light-danger">修改分類关联的模型可能会破坏数据一致性，请谨慎操作</div>
+                            <div class="layui-form-mid light-danger">修改分類关联的模型可能会破坏數據一致性，请谨慎操作</div>
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">关键字</label>
+                        <label class="layui-form-label">關鍵字</label>
                         <div class="layui-input-block">
                             <input type="text" name="keywords" autocomplete="off" class="layui-input" value="{{ $model->keywords ?? ''  }}" placeholder="keywords">
                         </div>

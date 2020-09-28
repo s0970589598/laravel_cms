@@ -100,7 +100,7 @@ class ContentRepository
             if (is_array($item)) {
                 return implode(',', $item);
             } elseif ($item === '' || preg_match('/^\d+(,\d+)*/', $item)) {
-                // select多选類型表单，数据類型為 unsignedInteger 的求和保存，查询时可以利用 AND 运算查找对应值
+                // select多选類型表單，數據類型為 unsignedInteger 的求和保存，查询时可以利用 AND 运算查找对应值
                 $fieldType = EntityField::where('entity_id', $entity->id)
                     ->where('form_type', 'selectMulti')
                     ->where('name', $key)->value('type');

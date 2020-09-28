@@ -47,7 +47,7 @@ class EntityFieldController extends Controller
     }
 
     /**
-     * 模型字段管理-模型字段列表数据接口
+     * 模型字段管理-模型字段列表數據接口
      *
      * @param Request $request
      * @return array
@@ -109,16 +109,16 @@ class EntityFieldController extends Controller
                     'msg' => '新增失败：无效字段類型',
                 ];
             }
-            // 一个模型只能有一个 inputTags 表单類型
+            // 一个模型只能有一个 inputTags 表單類型
             if (EntityFieldRepository::formTypeBeUnique($data['form_type'])
                 && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
                 return [
                     'code' => 4,
-                    'msg' => '新增失败：一个模型只能有一个標簽输入框表单類型',
+                    'msg' => '新增失败：一个模型只能有一个標簽输入框表單類型',
                 ];
             }
 
-            // inputTags類型表单不需要添加資料庫字段
+            // inputTags類型表單不需要添加資料庫字段
             if (in_array($data['form_type'], ['inputTags'], true)) {
                 $modifyDB = false;
             }
@@ -170,14 +170,14 @@ class EntityFieldController extends Controller
     }
 
     /**
-     * 模型字段管理-编辑模型字段
+     * 模型字段管理-編輯模型字段
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑模型字段', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯模型字段', 'url' => ''];
 
         $model = EntityFieldRepository::find($id);
         $entity = Entity::query()->pluck('name', 'id')->all();
@@ -203,11 +203,11 @@ class EntityFieldController extends Controller
         $data['is_edit'] = $data['is_edit'] ?? EntityField::EDIT_DISABLE;
         $data['is_required'] = $data['is_required'] ?? EntityField::REQUIRED_DISABLE;
         $data['is_show_inline'] = $data['is_show_inline'] ?? EntityField::SHOW_NOT_INLINE;
-        // 一个模型只能有一个 inputTags 表单類型
+        // 一个模型只能有一个 inputTags 表單類型
         if (EntityFieldRepository::formTypeBeUnique($data['form_type']) && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
             return [
                 'code' => 4,
-                'msg' => '编辑失败：一个模型只能有一个標簽输入框表单類型',
+                'msg' => '編輯失败：一个模型只能有一个標簽输入框表單類型',
             ];
         }
         try {
@@ -215,14 +215,14 @@ class EntityFieldController extends Controller
             EntityFieldRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模型字段已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前模型字段已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -288,7 +288,7 @@ class EntityFieldController extends Controller
         } catch (ModelNotFoundException $e) {
             return [
                 'code' => 2,
-                'msg' => '保存失败：记录不存在',
+                'msg' => '保存失败：记入不存在',
                 'redirect' => false
             ];
         }

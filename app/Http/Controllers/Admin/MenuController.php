@@ -43,7 +43,7 @@ class MenuController extends Controller
     }
 
     /**
-     * 選單管理-選單列表数据
+     * 選單管理-選單列表數據
      *
      * @param Request $request
      * @return array
@@ -104,13 +104,13 @@ class MenuController extends Controller
     }
 
     /**
-     * 選單管理-编辑選單
+     * 選單管理-編輯選單
      *
      * @param int $id
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑選單', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯選單', 'url' => ''];
 
         $model = MenuRepository::find($id);
         return view('admin.menu.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -138,13 +138,13 @@ class MenuController extends Controller
             event(new MenuUpdated());
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前選單已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前選單已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -176,7 +176,7 @@ class MenuController extends Controller
     }
 
     /**
-     * 選單管理-自动更新選單
+     * 選單管理-自動更新選單
      *
      * @return array
      * @throws \ReflectionException
@@ -261,7 +261,7 @@ class MenuController extends Controller
         }
         return [
             'code' => 0,
-            'msg' => "更新成功。新增選單数：{$addNum}，更新選單数：{$updateNum}。",
+            'msg' => "更新成功。新增選單數：{$addNum}，更新選單數：{$updateNum}。",
             'redirect' => true
         ];
     }
@@ -276,7 +276,7 @@ class MenuController extends Controller
         if (!is_array($ids)) {
             return [
                 'code' => 1,
-                'msg' => '参数错误'
+                'msg' => '参數错误'
             ];
         }
         $ids = array_map(function ($item) {

@@ -34,7 +34,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::menu.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::menu.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增選單</a><a href=\'javascript:;\' style=\'margin-left:15px\' id=\'discovery\'><i class=\'layui-icon layui-icon-refresh\'></i>自动更新選單</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::menu.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::menu.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增選單</a><a href=\'javascript:;\' style=\'margin-left:15px\' id=\'discovery\'><i class=\'layui-icon layui-icon-refresh\'></i>自動更新選單</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{width:50, type:'checkbox'}"></th>
@@ -68,7 +68,7 @@
                             </select>
                         </div>
                         <div class="layui-input-inline">
-                            <input type="text" name="params" value="" placeholder="操作相关参数" class="layui-input">
+                            <input type="text" name="params" value="" placeholder="操作相关参數" class="layui-input">
                         </div>
                         <div class="layui-inline">
                             <button class="layui-btn layuiadmin-btn-list" lay-filter="form-batch" id="batchBtn" lay-submit>
@@ -86,7 +86,7 @@
     <a href="?pid=<% d.id %>" class="layui-table-link"><% d.name %></a>
 </script>
 <script type="text/html" id="action">
-    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 <script type="text/html" id="statusTemplet">
@@ -207,7 +207,7 @@
                 ids = [];
 
             if (checkStatus.data.length === 0) {
-                layer.msg('未选中待操作的行数据');
+                layer.msg('未选中待操作的行數據');
                 return false;
             }
             checkStatus.data.forEach(function (item) {

@@ -174,9 +174,9 @@ class EntityRepository
         $menus = [
             '更新内容' => 'admin::content.update',
             '保存内容' => 'admin::content.save',
-            '内容列表数据接口' => 'admin::content.list',
+            '内容列表數據接口' => 'admin::content.list',
             '内容列表' => 'admin::content.index',
-            '编辑内容' => 'admin::content.edit',
+            '編輯内容' => 'admin::content.edit',
             '删除内容' => 'admin::content.delete',
             '新增内容' => 'admin::content.create',
             '内容批量操作' => 'admin::content.batch',

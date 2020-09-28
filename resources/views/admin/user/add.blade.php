@@ -20,7 +20,7 @@
                         <div class="layui-input-inline">
                             <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">密码6到18位，不能為纯数字或纯字母</div>
+                        <div class="layui-form-mid layui-word-aux">密码6到18位，不能為纯數字或纯字母</div>
                     </div>
                     @endif
                     <div class="layui-form-item">

@@ -35,7 +35,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * 分類管理-分類列表数据接口
+     * 分類管理-分類列表數據接口
      *
      * @param Request $request
      * @return array
@@ -95,14 +95,14 @@ class CategoryController extends Controller
     }
 
     /**
-     * 分類管理-编辑分類
+     * 分類管理-編輯分類
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑分類', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯分類', 'url' => ''];
 
         $model = CategoryRepository::find($id);
         return view('admin.category.add', [
@@ -128,13 +128,13 @@ class CategoryController extends Controller
             CategoryRepository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分類已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分類已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

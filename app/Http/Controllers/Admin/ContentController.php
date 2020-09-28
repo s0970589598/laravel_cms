@@ -70,7 +70,7 @@ class ContentController extends Controller
     }
 
     /**
-     * 内容管理-内容列表数据接口
+     * 内容管理-内容列表數據接口
      *
      * @param Request $request
      * @param integer $entity
@@ -168,14 +168,14 @@ class ContentController extends Controller
     }
 
     /**
-     * 内容管理-编辑内容
+     * 内容管理-編輯内容
      *
      * @param int $id
      * @return View
      */
     public function edit($entity, $id)
     {
-        $this->breadcrumb[] = ['title' => "编辑{$this->entity->name}内容", 'url' => ''];
+        $this->breadcrumb[] = ['title' => "編輯{$this->entity->name}内容", 'url' => ''];
         $view = $this->getAddOrEditViewPath();
         $model = ContentRepository::find($id);
 
@@ -235,7 +235,7 @@ class ContentController extends Controller
 
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => route('admin::content.index', ['entity' => $entity])
             ];
         } catch (QueryException $e) {
@@ -243,7 +243,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前内容已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前内容已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -288,7 +288,7 @@ class ContentController extends Controller
         if (!is_array($ids)) {
             return [
                 'code' => 1,
-                'msg' => '参数错误'
+                'msg' => '参數错误'
             ];
         }
         $ids = array_map(function ($item) {

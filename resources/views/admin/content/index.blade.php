@@ -68,7 +68,7 @@
     </div>
 @endsection
 <script type="text/html" id="action">
-    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
     <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>
     @foreach(App\Model\Admin\Content::$actionField as $k => $v)
@@ -125,7 +125,7 @@
                 ids = [];
 
             if (checkStatus.data.length === 0) {
-                layer.msg('未选中待操作的行数据');
+                layer.msg('未选中待操作的行數據');
                 return false;
             }
             checkStatus.data.forEach(function (item) {

@@ -228,7 +228,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
-                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="请使用 Markdown 编写。图片上传直接拖拽图片至此即可~" ></textarea>
+                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="请使用 Markdown 编写。圖片上传直接拖拽圖片至此即可~" ></textarea>
                                     </div></div>
                                 <script>
                                     var simplemde_{{ $field->name }} = new SimpleMDE({
@@ -245,12 +245,12 @@
                                     });
                                     simplemde_{{ $field->name }}.value(`{!! $model->{$field->name} ?? $field->form_default_value !!}`);
                                     var inlineAttachmentConfig = {
-                                        uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//后端上传图片地址
+                                        uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上传圖片地址
                                         uploadFieldName: 'file',          //上传的文件名
-                                        jsonFieldName: 'url',              //返回结果中图片地址对应的字段名称
-                                        progressText: '![图片上传中...]()',    //上传过程中用户看到的文案
-                                        errorText: '图片上传失败',
-                                        urlText:'![图片描述]({filename})',    //上传成功后插入编辑器中的文案，{filename} 会被替换成图片地址
+                                        jsonFieldName: 'url',              //返回结果中圖片地址对应的字段名称
+                                        progressText: '![圖片上传中...]()',    //上传过程中用户看到的文案
+                                        errorText: '圖片上传失败',
+                                        urlText:'![圖片描述]({filename})',    //上传成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
                                     };
                                     inlineAttachment.editors.codemirror4.attach(simplemde_{{ $field->name }}.codemirror, inlineAttachmentConfig);
                                 </script>
@@ -279,8 +279,8 @@
                                     <script name="{{ $field->name }}" id="editor-{{ $field->name }}" type="text/plain" style="height:600px;">{!! $model->{$field->name} ?? $field->form_default_value !!}</script>
                                     </div></div>
                                 <script>
-                                    //实例化编辑器
-                                    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                                    //实例化編輯器
+                                    //建议使用工厂方法getEditor创建和引用編輯器实例，如果在某个闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相关的实例
                                     var ue_{{ $field->name }} = UE.getEditor('editor-{{ $field->name }}', {autoFloatEnabled:false});
                                     ue_{{ $field->name }}.ready(function(){
                                         ue_{{ $field->name }}.focus();
@@ -303,7 +303,7 @@
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn" id="file-upload-{{ $field->name }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled style="background-color: gray" @endif>
-                                            <i class="layui-icon">&#xe67c;</i>上传图片
+                                            <i class="layui-icon">&#xe67c;</i>上传圖片
                                         </button>
                                         <script type="text/javascript">
                                             addLoadEvent(function () {
@@ -336,7 +336,7 @@
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn" id="file-upload-{{ $field->name }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled style="background-color: gray" @endif>
-                                            <i class="layui-icon">&#xe67c;</i>上传图片
+                                            <i class="layui-icon">&#xe67c;</i>上传圖片
                                         </button>
                                         <script type="text/javascript">
 
@@ -357,7 +357,7 @@
                                                                 obj.val(obj.val() + ',' + res.url);
                                                             }
 
-                                                            var html = '<div style="float:left"><img data-action="zoom" style="max-width: 200px;height: auto;" src="' + res.url + '" class="preview-image-{{ $field->name }}"><i title="移除图片" class="layui-icon remove-image" style="font-size:20px;color:red;cursor:pointer;">&#xe640;</i>';
+                                                            var html = '<div style="float:left"><img data-action="zoom" style="max-width: 200px;height: auto;" src="' + res.url + '" class="preview-image-{{ $field->name }}"><i title="移除圖片" class="layui-icon remove-image" style="font-size:20px;color:red;cursor:pointer;">&#xe640;</i>';
                                                             $('#preview-image-{{ $field->name }}').append(html);
 
                                                             $('i.remove-image').unbind('click').on('click', function () {
@@ -382,7 +382,7 @@
                                             @if(isset($model))
                                                     @foreach(explode(',', $model->{$field->name}) as $v)
                                                         @if($v)
-                                                            <div style="float:left"><img data-action="zoom" style="max-width: 200px;height: auto;" src="{{ $v }}" class="preview-image-{{ $field->name }}"><i title="移除图片" class="layui-icon remove-image" style="font-size:20px;color:red;cursor:pointer;">&#xe640;</i></div>
+                                                            <div style="float:left"><img data-action="zoom" style="max-width: 200px;height: auto;" src="{{ $v }}" class="preview-image-{{ $field->name }}"><i title="移除圖片" class="layui-icon remove-image" style="font-size:20px;color:red;cursor:pointer;">&#xe640;</i></div>
                                                         @endif
                                                     @endforeach
                                             @endif

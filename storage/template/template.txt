@@ -2,7 +2,7 @@
  * 替换变量说明
  *
  * $model               模型名称                user
- * $model_plural        模型名称复数              users
+ * $model_plural        模型名称复數              users
  * $model_uc_first      模型名称首字母大写       User
  * $model_chinese_name  模型中文名               用户
  */
@@ -60,7 +60,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
     </div>
 @endsection
 <script type="text/html" id="action">
-    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 
@@ -323,7 +323,7 @@ class {{-$model_uc_first-}}Controller extends Controller
     }
 
     /**
-     * {{-$model_chinese_name-}}列表数据接口
+     * {{-$model_chinese_name-}}列表數據接口
      *
      * @param Request $request
      * @return array
@@ -373,14 +373,14 @@ class {{-$model_uc_first-}}Controller extends Controller
     }
 
     /**
-     * {{-$model_chinese_name-}}管理-编辑{{-$model_chinese_name-}}
+     * {{-$model_chinese_name-}}管理-編輯{{-$model_chinese_name-}}
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑{{-$model_chinese_name-}}', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯{{-$model_chinese_name-}}', 'url' => ''];
 
         $model = {{-$model_uc_first-}}Repository::find($id);
         return view('admin.{{-$model-}}.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
@@ -400,13 +400,13 @@ class {{-$model_uc_first-}}Controller extends Controller
             {{-$model_uc_first-}}Repository::update($id, $data);
             return [
                 'code' => 0,
-                'msg' => '编辑成功',
+                'msg' => '編輯成功',
                 'redirect' => true
             ];
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前{{-$model_chinese_name-}}已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前{{-$model_chinese_name-}}已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

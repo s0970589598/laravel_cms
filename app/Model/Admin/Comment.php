@@ -12,7 +12,7 @@ class Comment extends Model
         'entityName' => ['title' => '模型', 'width' => 100],
         'userName' => ['title' => '用户名', 'width' => 100],
         'content' => ['title' => '内容', 'width' => 400],
-        'reply_count' => ['title' => '回复数', 'width' => 80, 'sort' => true],
+        'reply_count' => ['title' => '回复數', 'width' => 80, 'sort' => true],
         'like' => ['title' => '喜欢', 'width' => 80, 'sort' => true],
         'dislike' => ['title' => '不喜欢', 'width' => 80, 'sort' => true],
     ];

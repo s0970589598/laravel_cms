@@ -1,6 +1,6 @@
 <?php
 return [
-    // 超级管理員。不受权限控制
+    // 超级管理員。不受權限控制
     'superAdmin' => [1],
 
     // 各类缓存KEY
@@ -63,13 +63,13 @@ return [
         'uuid',
     ],
 
-    // 表单類型
+    // 表單類型
     'form_type' => [
         'input' => '短文本（input）',
-        'inputAutoComplete' => '短文本（input，自动完成）',
+        'inputAutoComplete' => '短文本（input，自動完成）',
         'textArea' => '长文本（textarea）',
-        'richText' => '富文本',
-        'markdown' => '富文本（markdown）',
+        'richText' => '副文本',
+        'markdown' => '副文本（markdown）',
         'password' => '密码字符',
         'option' => '单选框',
         'checkbox' => '复选框',
@@ -78,12 +78,12 @@ return [
         'selectMulti' => '下拉选择（多选）',
         'selectMultiSearch' => '下拉选择（多选，远程搜索）',
         'inputTags' => '標簽输入框',
-        'upload' => '图片上传（单图）',
-        'uploadMulti' => '图片上传（多图）',
+        'upload' => '圖片上传（单圖）',
+        'uploadMulti' => '圖片上传（多圖）',
         'datetime' => '日期時間',
         'date' => '日期',
-        'reference_category' => '引用分類数据',
-        'reference_admin_user' => '引用管理員数据'
+        'reference_category' => '引用分類數據',
+        'reference_admin_user' => '引用管理員數據'
     ],
 
     // NEditor相关
@@ -91,7 +91,7 @@ return [
         'disk' => 'admin_img',
         'upload' => [
             'imageMaxSize' => 8 * 1024 * 1024, /* 上传大小限制，单位B */
-            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上传图片格式显示 */
+            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上传圖片格式显示 */
         ]
     ],
     'image_upload' => [
@@ -99,7 +99,7 @@ return [
         'class' => '', // 自定义 driver 需要填写对应包括命名空间的完整类名，该类需要实现 App\Contracts\ImageUpload 接口
     ],
 
-    // 三方登录
+    // 三方登入
     'auth_login' => [
         'weibo' => [
             'client_id' => env('WEIBO_CLIENT_ID', ''),

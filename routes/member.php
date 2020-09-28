@@ -13,13 +13,13 @@ Route::group(
         'as' => 'member::',
     ],
     function () {
-        // 用户登录、注册
+        // 用户登入、註冊
         Route::get('/login', 'UserController@showLogin')->name('login.show');
         Route::post('/login', 'UserController@login')->name('login');
         Route::get('/register', 'UserController@showRegistrationForm')->name('register.show');
         Route::post('/register', 'UserController@register')->name('register');
 
-        // 三方登录
+        // 三方登入
         Route::get('/weibo/callback', 'UserController@weiboCallback')->name('weibo.callback');
         Route::get('/weibo/auth', 'UserController@weiboAuth')->name('weibo.auth');
         Route::get('/qq/callback', 'UserController@qqCallback')->name('qq.callback');

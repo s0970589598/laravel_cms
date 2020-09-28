@@ -14,7 +14,7 @@ class AddFormDefaultValueToEntityFieldsTable extends Migration
     public function up()
     {
         Schema::table('entity_fields', function (Blueprint $table) {
-            $table->string('form_default_value')->default('')->comment('字段表单默认值');
+            $table->string('form_default_value')->default('')->comment('字段表單默認值');
         });
     }
 

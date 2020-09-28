@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //编辑视频时初始化相关信息
+        //編輯视频时初始化相关信息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 将单个视频信息插入编辑器中
+     * 将单个视频信息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -129,7 +129,7 @@
     }
 
     /**
-     * 将元素id下的所有代表视频的图片插入编辑器中
+     * 将元素id下的所有代表视频的圖片插入編輯器中
      * @param id
      */
     function insertSearch(id){
@@ -184,7 +184,7 @@
     }
 
     /**
-      * 检测传入的所有input框中输入的长宽是否是正数
+      * 检测传入的所有input框中输入的长宽是否是正數
       * @param nodes input框集合，
       */
      function checkNum( nodes ) {
@@ -201,7 +201,7 @@
      }
 
     /**
-     * 数字判断
+     * 數字判断
      * @param value
      */
     function isNumber( value ) {
@@ -209,7 +209,7 @@
     }
 
     /**
-      * 创建图片浮动选择按钮
+      * 创建圖片浮动选择按钮
       * @param ids
       */
      function createAlignButton( ids ) {
@@ -333,7 +333,7 @@
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // 图片容器
+            // 圖片容器
                 $queue = $wrap.find('.filelist'),
             // 状态栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
@@ -349,13 +349,13 @@
                 $placeHolder = $wrap.find('.placeholder'),
             // 总体进度条
                 $progress = $statusBar.find('.progress').hide(),
-            // 添加的文件数量
+            // 添加的文件數量
                 fileCount = 0,
             // 添加的文件总大小
                 fileSize = 0,
             // 优化retina, 在retina下这个值是2
                 ratio = window.devicePixelRatio || 1,
-            // 缩略图大小
+            // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
@@ -702,7 +702,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 添加额外的GET参数 */
+                        /* 添加额外的GET参數 */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
                             url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
@@ -715,7 +715,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象添加POST参数
+                //这里可以通过data对象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
