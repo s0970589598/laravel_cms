@@ -301,7 +301,7 @@
              * @grammar Base.inherits( super, protos, statics ) => child
              * @param  {Class} super 父类
              * @param  {Object | Function} [protos] 子类或者对象。如果对象中包含constructor，子类将是用此属性值。
-             * @param  {Function} [protos.constructor] 子类构造器，不指定的话将创建个临时的直接执行父类构造器的方法。
+             * @param  {Function} [protos.constructor] 子类构造器，不指定的话将创建个临时的直接執行父类构造器的方法。
              * @param  {Object} [statics] 静态属性或方法。
              * @return {Class} 返回子类。
              * @example
@@ -318,7 +318,7 @@
              *     }
              * });
              *
-             * // 因為没有指定构造器，父类的构造器将会执行。
+             * // 因為没有指定构造器，父类的构造器将会執行。
              * var instance = new Manager();    // => Super
              *
              * // 继承子父类的方法
@@ -365,7 +365,7 @@
             noop: noop,
     
             /**
-             * 返回一个新的方法，此方法将已指定的`context`来执行。
+             * 返回一个新的方法，此方法将已指定的`context`来執行。
              * @grammar Base.bindFn( fn, context ) => Function
              * @method bindFn
              * @example
@@ -532,7 +532,7 @@
             /**
              * 绑定事件。
              *
-             * `callback`方法在执行时，arguments将会来源于trigger的时候携带的参数。如
+             * `callback`方法在執行时，arguments将会来源于trigger的时候携带的参数。如
              * ```javascript
              * var obj = {};
              *
@@ -546,11 +546,11 @@
              * obj.trigger( 'testa', 'arg1', 'arg2' );
              * ```
              *
-             * 如果`callback`中，某一个方法`return false`了，则后续的其他`callback`都不会被执行到。
+             * 如果`callback`中，某一个方法`return false`了，则后续的其他`callback`都不会被執行到。
              * 切会影响到`trigger`方法的返回值，為`false`。
              *
              * `on`还可以用来添加一个特殊事件`all`, 这样所有的事件触发都会响应到。同时此类`callback`中的arguments有一个不同处，
-             * 就是第一个参数為`type`，记录当前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`执行完后触发。
+             * 就是第一个参数為`type`，记录当前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`執行完后触发。
              * ```javascript
              * obj.on( 'all', function( type, arg1, arg2 ) {
              *     console.log( type, arg1, arg2 ); // => 'testa', 'arg1', 'arg2'
@@ -591,7 +591,7 @@
             },
     
             /**
-             * 绑定事件，且当handler执行完后，自动解除绑定。
+             * 绑定事件，且当handler執行完后，自动解除绑定。
              * @method once
              * @grammar once( name, callback[, context] ) => self
              * @param  {String}   name     事件名
@@ -953,7 +953,7 @@
     
         /**
          * 添加Runtime实现。
-         * @param {String} type    类型
+         * @param {String} type    類型
          * @param {Runtime} factory 具体Runtime实现。
          */
         Runtime.addRuntime = function( type, factory ) {
@@ -1016,7 +1016,7 @@
                     }
     
                     for ( i in obj ) {
-                        // 有些类型不能重用，比如filepicker.
+                        // 有些類型不能重用，比如filepicker.
                         if ( standalone && obj[ i ].__standalone ) {
                             continue;
                         }
@@ -1039,7 +1039,7 @@
     
             this.uid = Base.guid('client_');
     
-            // 允许runtime没有初始化之前，注册一些方法在初始化后执行。
+            // 允许runtime没有初始化之前，注册一些方法在初始化后執行。
             this.runtimeReady = function( cb ) {
                 return deferred.done( cb );
             };
@@ -1296,7 +1296,7 @@
                     key = promise.pipe ? 'pipe' : 'then';
     
                     // 很重要不能删除。删除了会死循环。
-                    // 保证执行顺序。让callback总是在下一个tick中执行。
+                    // 保证執行顺序。让callback总是在下一个tick中執行。
                     return promise[ key ](function() {
                                 var deferred = Base.Deferred(),
                                     args = arguments;
@@ -1366,7 +1366,7 @@
         /**
          * @event dndAccept
          * @param {DataTransferItemList} items DataTransferItem
-         * @description 阻止此事件可以拒绝某些类型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证。
+         * @description 阻止此事件可以拒绝某些類型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证。
          * @for  Uploader
          */
         return Uploader.register({
@@ -1548,7 +1548,7 @@
             this.name = file.name || ('untitled' + uid++);
             ext = rExt.exec( file.name ) ? RegExp.$1.toLowerCase() : '';
     
-            // todo 支持其他类型文件的转换。
+            // todo 支持其他類型文件的转换。
     
             // 如果有mimetype, 但是文件名里面没有找出后缀规律
             if ( !ext && this.type ) {
@@ -1735,7 +1735,7 @@
              * @property {Arroy} [accept=null]
              * @namespace options
              * @for Uploader
-             * @description 指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。
+             * @description 指定接受哪些類型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。
              *
              * * `title` {String} 文字描述
              * * `extensions` {String} 允许的文件后缀，不带点，多个用逗号分割。
@@ -1993,7 +1993,7 @@
              *     preserveHeaders: false,
              *
              *     // 為空的话则保留原有图片格式。
-             *     // 否则强制转换成指定的类型。
+             *     // 否则强制转换成指定的類型。
              *     type: 'image/jpeg'
              * }
              * ```
@@ -2007,7 +2007,7 @@
                 preserveHeaders: false,
     
                 // 為空的话则保留原有图片格式。
-                // 否则强制转换成指定的类型。
+                // 否则强制转换成指定的類型。
                 // IE 8下面 base64 大小不能超过 32K 否则预览失败，而非 jpeg 编码的图片很可
                 // 能会超过 32k, 所以这里设置成预览的时候都是 image/jpeg
                 type: 'image/jpeg'
@@ -2244,7 +2244,7 @@
             this.size = source.size || 0;
     
             /**
-             * 文件MIMETYPE类型，与文件类型的对应关系请参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
+             * 文件MIMETYPE類型，与文件類型的对应关系请参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
              * @property type
              * @type {string}
              * @default 'application'
@@ -2255,7 +2255,7 @@
              * 文件最后修改日期
              * @property lastModifiedDate
              * @type {int}
-             * @default 当前时间戳
+             * @default 当前時間戳
              */
             this.lastModifiedDate = source.lastModifiedDate || (new Date() * 1);
     
@@ -2322,7 +2322,7 @@
              * 获取文件状态
              * @return {File.Status}
              * @example
-                     文件状态具体包括以下几种类型：
+                     文件状态具体包括以下几种類型：
                      {
                          // 初始化
                         INITED:     0,
@@ -2358,7 +2358,7 @@
         Mediator.installTo( WUFile.prototype );
     
         /**
-         * 文件状态值，具体包括以下几种类型：
+         * 文件状态值，具体包括以下几种類型：
          * * `inited` 初始状态
          * * `queued` 已经进入队列, 等待上传
          * * `progress` 上传中
@@ -2508,7 +2508,7 @@
             },
     
             /**
-             * 获取指定类型的文件列表, 列表中每一个成员為[File](#WebUploader:File)对象。
+             * 获取指定類型的文件列表, 列表中每一个成员為[File](#WebUploader:File)对象。
              * @grammar getFiles( [status1[, status2 ...]] ) => Array
              * @method getFiles
              * @param {String} [status] [文件状态值](#WebUploader:File:File.Status)
@@ -2662,7 +2662,7 @@
                 me.stats = me.queue.stats;
     
                 // 如果当前不是html5运行时，那就算了。
-                // 不执行后续操作
+                // 不執行后续操作
                 if ( this.request('predict-runtime-type') !== 'html5' ) {
                     return;
                 }
@@ -2729,12 +2729,12 @@
                 wuFile = me._wrapFile( file );
                 wuFile.raw = rawFile;
     
-                // 不过类型判断允许不允许，先派送 `beforeFileQueued`
+                // 不过類型判断允许不允许，先派送 `beforeFileQueued`
                 if ( !me.owner.trigger( 'beforeFileQueued', wuFile ) ) {
                     return;
                 }
     
-                // 类型不匹配，则派送错误事件，并返回。
+                // 類型不匹配，则派送错误事件，并返回。
                 if ( !me.acceptFile( wuFile ) ) {
                     me.owner.trigger( 'error', 'Q_TYPE_DENIED', wuFile );
                     return;
@@ -3359,7 +3359,7 @@
                     opts = me.options,
                     fn, val;
     
-                // 上一个promise还没有结束，则等待完成后再执行。
+                // 上一个promise还没有结束，则等待完成后再執行。
                 if ( me._promise ) {
                     return me._promise.always( me.__tick );
                 }
@@ -3371,7 +3371,7 @@
                     fn = function( val ) {
                         me._promise = null;
     
-                        // 有可能是reject过来的，所以要检测val的类型。
+                        // 有可能是reject过来的，所以要检测val的類型。
                         val && val.file && me._startSend( val );
                         Base.nextTick( me.__tick );
                     };
@@ -3541,7 +3541,7 @@
              * @event uploadAccept
              * @param {Object} object
              * @param {Object} ret 服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析。
-             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值為`false`, 则此文件将派送`server`类型的`uploadError`事件。
+             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值為`false`, 则此文件将派送`server`類型的`uploadError`事件。
              * @for  Uploader
              */
     
@@ -3601,7 +3601,7 @@
                     var totalPercent = 0,
                         uploaded = 0;
     
-                    // 可能没有abort掉，progress还是执行进来了。
+                    // 可能没有abort掉，progress还是執行进来了。
                     // if ( !file.blocks ) {
                     //     return;
                     // }
@@ -3746,7 +3746,7 @@
     
         /**
          * @event error
-         * @param {String} type 错误类型。
+         * @param {String} type 错误類型。
          * @description 当validate不通过时，会以派送错误事件的形式通知调用者。通过`upload.on('error', handler)`可以捕获到此类错误，目前有以下错误会在特定的情况下派送错来。
          *
          * * `Q_EXCEED_NUM_LIMIT` 在设置了`fileNumLimit`且尝试给`uploader`添加的文件数量超出这个值时派送。
@@ -3897,7 +3897,7 @@
          * @property {int} [duplicate=undefined]
          * @namespace options
          * @for Uploader
-         * @description 去重， 根据文件名字、文件大小和最后修改时间来生成hash Key.
+         * @description 去重， 根据文件名字、文件大小和最后修改時間来生成hash Key.
          */
         api.addValidator( 'duplicate', function() {
             var uploader = this,
@@ -4021,7 +4021,7 @@
         Base.inherits( Runtime, {
             constructor: Html5Runtime,
     
-            // 不需要连接其他程序，直接执行callback
+            // 不需要连接其他程序，直接執行callback
             init: function() {
                 var me = this;
                 setTimeout(function() {

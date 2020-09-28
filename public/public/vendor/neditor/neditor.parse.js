@@ -498,7 +498,7 @@ UE.parse.register("table", function(utils) {
       }
     });
 
-    //按照标签名查找父节点
+    //按照標簽名查找父节点
     function findParentByTagName(target, tagNames) {
       var i,
         current = target;
@@ -796,7 +796,7 @@ UE.parse.register("charts", function(utils) {
   /**
      * 渲染图表
      * @param container 图表容器节点对象
-     * @param typeConfig 图表类型配置
+     * @param typeConfig 图表類型配置
      * @param config 图表通用配置
      * */
   function renderChart(container, typeConfig, config) {

@@ -16,10 +16,10 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级分类</label>
+                        <label class="layui-form-label">上级分類</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="pid" lay-verify="required">
-                                <option value="0">顶级分类</option>
+                                <option value="0">顶级分類</option>
                                 @foreach(App\Repository\Admin\CategoryRepository::tree($model->model_id ?? null) as $v)
                                     @include('admin.menu', $v)
                                 @endforeach
@@ -36,7 +36,7 @@
                                     <option value="{{ $v->id }}" @if(isset($model) && $model->model_id == $v->id) selected @endif>{{ $v->name }}</option>
                                 @endforeach
                             </select>
-                            <div class="layui-form-mid light-danger">修改分类关联的模型可能会破坏数据一致性，请谨慎操作</div>
+                            <div class="layui-form-mid light-danger">修改分類关联的模型可能会破坏数据一致性，请谨慎操作</div>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">标题</label>
+                        <label class="layui-form-label">標題</label>
                         <div class="layui-input-block">
                             <input type="text" name="title" autocomplete="off" class="layui-input" value="{{ $model->title ?? ''  }}" placeholder="title">
                         </div>

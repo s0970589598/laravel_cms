@@ -11,19 +11,19 @@ UE.I18N['zh-cn'] = {
         'italic':'斜体', 'underline':'下划线', 'strikethrough':'删除线', 'subscript':'下标','fontborder':'字符边框',
         'superscript':'上标', 'formatmatch':'格式刷', 'source':'源代码', 'blockquote':'引用',
         'pasteplain':'纯文本粘贴模式', 'selectall':'全选', 'print':'打印', 'preview':'预览',
-        'horizontal':'分隔线', 'removeformat':'清除格式', 'time':'时间', 'date':'日期',
+        'horizontal':'分隔线', 'removeformat':'清除格式', 'time':'時間', 'date':'日期',
         'unlink':'取消链接', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合并单元格', 'mergedown':'下合并单元格',
         'deleterow':'删除行', 'deletecol':'删除列', 'splittorows':'拆分成行',
-        'splittocols':'拆分成列', 'splittocells':'完全拆分单元格','deletecaption':'删除表格标题','inserttitle':'插入标题',
+        'splittocols':'拆分成列', 'splittocells':'完全拆分单元格','deletecaption':'删除表格標題','inserttitle':'插入標題',
         'mergecells':'合并多个单元格', 'deletetable':'删除表格', 'cleardoc':'清空文档','insertparagraphbeforetable':"表格前插入行",'insertcode':'代码语言',
         'fontfamily':'字体', 'fontsize':'字号', 'paragraph':'段落格式', 'simpleupload':'单图上传', 'insertimage':'多图上传','edittable':'表格属性','edittd':'单元格属性', 'link':'超链接',
         'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查询替换', 'map':'Baidu地图', 'gmap':'Google地图',
         'insertvideo':'视频', 'help':'帮助', 'justifyleft':'居左对齐', 'justifyright':'居右对齐', 'justifycenter':'居中对齐',
         'justifyjustify':'两端对齐', 'forecolor':'字体颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
         'insertunorderedlist':'无序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
-        'rowspacingtop':'段前距', 'rowspacingbottom':'段后距',  'pagebreak':'分页', 'insertframe':'插入Iframe', 'imagenone':'默认',
+        'rowspacingtop':'段前距', 'rowspacingbottom':'段后距',  'pagebreak':'分頁', 'insertframe':'插入Iframe', 'imagenone':'默认',
         'imageleft':'左浮动', 'imageright':'右浮动', 'attachment':'附件', 'imagecenter':'居中', 'wordimage':'图片转存',
-        'lineheight':'行间距','edittip' :'编辑提示','customstyle':'自定义标题', 'autotypeset':'自动排版',
+        'lineheight':'行间距','edittip' :'编辑提示','customstyle':'自定义標題', 'autotypeset':'自动排版',
         'webapp':'百度应用','touppercase':'字母大写', 'tolowercase':'字母小写','background':'背景','template':'模板','scrawl':'涂鸦',
         'music':'音乐','inserttable':'插入表格','drafts': '从草稿箱加载', 'charts': '图表'
     },
@@ -47,7 +47,7 @@ UE.I18N['zh-cn'] = {
         'dash' :'— 破折号',
         'dot':' 。 小圆圈'
     },
-    'paragraph':{'p':'段落', 'h1':'标题 1', 'h2':'标题 2', 'h3':'标题 3', 'h4':'标题 4', 'h5':'标题 5', 'h6':'标题 6'},
+    'paragraph':{'p':'段落', 'h1':'標題 1', 'h2':'標題 2', 'h3':'標題 3', 'h4':'標題 4', 'h5':'標題 5', 'h6':'標題 6'},
     'fontfamily':{
         'songti':'宋体',
         'kaiti':'楷体',
@@ -62,8 +62,8 @@ UE.I18N['zh-cn'] = {
         'timesNewRoman':'times new roman'
     },
     'customstyle':{
-        'tc':'标题居中',
-        'tl':'标题居左',
+        'tc':'標題居中',
+        'tl':'標題居左',
         'im':'强调',
         'hi':'明显强调'
     },
@@ -160,10 +160,10 @@ UE.I18N['zh-cn'] = {
         'insertcolnext':'右插入列',
         'insertcaption':'插入表格名称',
         'deletecaption':'删除表格名称',
-        'inserttitle':'插入表格标题行',
-        'deletetitle':'删除表格标题行',
-        'inserttitlecol':'插入表格标题列',
-        'deletetitlecol':'删除表格标题列',
+        'inserttitle':'插入表格標題行',
+        'deletetitle':'删除表格標題行',
+        'inserttitlecol':'插入表格標題列',
+        'deletetitlecol':'删除表格標題列',
         'averageDiseRow':'平均分布各行',
         'averageDisCol':'平均分布各列',
         'mergeright':"向右合并",
@@ -216,7 +216,7 @@ UE.I18N['zh-cn'] = {
     'more':'更多',
     'pasteOpt':'粘贴选项',
     'pasteSourceFormat':"保留源格式",
-    'tagFormat':'只保留标签',
+    'tagFormat':'只保留標簽',
     'pasteTextFormat':'只保留文本',
     'autoTypeSet':{
         'mergeLine':"合并空行",
@@ -229,7 +229,7 @@ UE.I18N['zh-cn'] = {
         'removeFontFamily':"清除字体",
         'removeHtml':"清除冗余HTML代码",
         'pasteFilter':"粘贴过滤",
-        'run':"执行",
+        'run':"執行",
         'symbol':'符号转换',
         'bdc2sb':'全角转半角',
         'tobdc':'半角转全角'
@@ -270,7 +270,7 @@ UE.I18N['zh-cn'] = {
             'lang_imgLoading':"　图片加载中……",
             'lang_start_upload':"开始上传",
             'lock':{'title':"锁定宽高比例"}, //属性
-            'searchType':{'title':"图片类型", 'options':["新闻", "壁纸", "表情", "头像"]}, //select的option
+            'searchType':{'title':"图片類型", 'options':["新闻", "壁纸", "表情", "头像"]}, //select的option
             'searchTxt':{'value':"请输入搜索关键词"},
             'searchBtn':{'value':"百度一下"},
             'searchReset':{'value':"清空搜索"},
@@ -390,7 +390,7 @@ UE.I18N['zh-cn'] = {
         'delFailFile':'移除失败文件',
         'fileSizeLimit':'文件大小超出限制！',
         'emptyFile':'空文件无法上传！',
-        'fileTypeError':'文件类型不允许！',
+        'fileTypeError':'文件類型不允许！',
         'unknownError':'未知错误！',
         'fileUploading':'上传中，请等待……',
         'cancelUpload':'取消上传',
@@ -427,7 +427,7 @@ UE.I18N['zh-cn'] = {
         'errorServerUpload':'服务器返回出错'
     },
     'webapp':{
-        'tip1':"本功能由百度APP提供，如看到此页面，请各位站长首先申请百度APPKey!",
+        'tip1':"本功能由百度APP提供，如看到此頁面，请各位站长首先申请百度APPKey!",
         'tip2':"申请完成之后请至ueditor.config.js中配置获得的appkey! ",
         'applyFor':"点此申请",
         'anthorApi':"百度API"
@@ -485,18 +485,18 @@ UE.I18N['zh-cn'] = {
             'lang_data_align': '数据对齐方式',
             'lang_chart_align_same': '数据源与图表X轴Y轴一致',
             'lang_chart_align_reverse': '数据源与图表X轴Y轴相反',
-            'lang_chart_title': '图表标题',
-            'lang_chart_main_title': '主标题：',
-            'lang_chart_sub_title': '子标题：',
-            'lang_chart_x_title': 'X轴标题：',
-            'lang_chart_y_title': 'Y轴标题：',
+            'lang_chart_title': '图表標題',
+            'lang_chart_main_title': '主標題：',
+            'lang_chart_sub_title': '子標題：',
+            'lang_chart_x_title': 'X轴標題：',
+            'lang_chart_y_title': 'Y轴標題：',
             'lang_chart_tip': '提示文字',
             'lang_cahrt_tip_prefix': '提示文字前缀：',
             'lang_cahrt_tip_description': '仅饼图有效， 当鼠标移动到饼图中相应的块上时，提示框内的文字的前缀',
             'lang_chart_data_unit': '数据单位',
             'lang_chart_data_unit_title': '单位：',
             'lang_chart_data_unit_description': '显示在每个数据点上的数据的单位， 比如： 温度的单位 ℃',
-            'lang_chart_type': '图表类型：',
+            'lang_chart_type': '图表類型：',
             'lang_prev_btn': '上一个',
             'lang_next_btn': '下一个'
         }
@@ -531,7 +531,7 @@ UE.I18N['zh-cn'] = {
             'lang_Txt_copy':'复制选中内容',
             'lang_Txt_cut':'剪切选中内容',
             'lang_Txt_Paste':'粘贴',
-            'lang_Txt_undo':'重新执行上次操作',
+            'lang_Txt_undo':'重新執行上次操作',
             'lang_Txt_redo':'撤销上一次操作',
             'lang_Txt_italic':'给选中字设置為斜体',
             'lang_Txt_underline':'给选中字加下划线',
@@ -556,7 +556,7 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_input_text':'文本内容：',
             'lang_input_url':'链接地址：',
-            'lang_input_title':'标题：',
+            'lang_input_title':'標題：',
             'lang_input_target':'是否在新窗口打开：'
         },
         'validLink':'只支持选中一个链接时生效',
@@ -619,18 +619,18 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_tableStyle':'表格样式',
             'lang_insertCaption':'添加表格名称行',
-            'lang_insertTitle':'添加表格标题行',
-            'lang_insertTitleCol':'添加表格标题列',
+            'lang_insertTitle':'添加表格標題行',
+            'lang_insertTitleCol':'添加表格標題列',
             'lang_orderbycontent':"使表格内容可排序",
             'lang_tableSize':'自动调整表格尺寸',
             'lang_autoSizeContent':'按表格文字自适应',
-            'lang_autoSizePage':'按页面宽度自适应',
+            'lang_autoSizePage':'按頁面宽度自适应',
             'lang_example':'示例',
             'lang_borderStyle':'表格边框',
             'lang_color':'颜色:'
         },
         captionName:'表格名称',
-        titleName:'标题',
+        titleName:'標題',
         cellsName:'内容',
         errorMsg:'有合并单元格，不可排序'
     },

@@ -41,8 +41,8 @@
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Content::$listField])
-                    <th lay-data="{field:'created_at'}">添加时间</th>
-                    <th lay-data="{field:'updated_at'}">更新时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>
@@ -50,7 +50,7 @@
             <div>
                 <form class="layui-form" method="post" action="{{ route('admin::content.batch', ['entity' => $entity]) }}">
                     <div class="layui-inline">
-                        <label class="layui-form-label">操作类型</label>
+                        <label class="layui-form-label">操作類型</label>
                         <div class="layui-input-inline">
                             <select name="type" lay-filter="action-type">
                                 <option value="delete">删除</option>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="layui-inline">
                             <button class="layui-btn layuiadmin-btn-list" lay-filter="form-batch" id="batchBtn" lay-submit>
-                                执行批量操作
+                                執行批量操作
                             </button>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link" title="编辑"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
-    <a href="<% d.commentListUrl %>" class="layui-table-link" title="评论列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>
+    <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>
     @foreach(App\Model\Admin\Content::$actionField as $k => $v)
     <a href="<% d.{{$k}} %>" class="layui-table-link" title="{{ $v['description'] }}" style="margin-left: 5px">{{ $v['title'] }}</a>
     @endforeach
@@ -118,7 +118,7 @@
         var form = layui.form,
             table = layui.table;
         form.on('submit(form-batch)', function(data){
-            if(!confirm('确定执行批量操作？')){
+            if(!confirm('确定執行批量操作？')){
                 return false;
             }
             var checkStatus = table.checkStatus('test'),

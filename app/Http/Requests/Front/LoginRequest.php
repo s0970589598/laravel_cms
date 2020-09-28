@@ -47,8 +47,8 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'phone.required' => '手机号不能為空',
-            'phone.regex' => '手机号格式有误',
+            'phone.required' => '手機號碼不能為空',
+            'phone.regex' => '手機號碼格式有误',
             'password.required' => '密码不能為空',
         ];
     }

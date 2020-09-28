@@ -1,22 +1,22 @@
 <?php
 return [
-    // 超级管理员。不受权限控制
+    // 超级管理員。不受权限控制
     'superAdmin' => [1],
 
     // 各类缓存KEY
     'cache_key' => [
         'config' => 'config'
     ],
-    // 加载数据库自定义配置
+    // 加载資料庫自定义配置
     'light_config' => false,
 
-    // 系统日志保留时间。单位：天
+    // 系统Log保留時間。单位：天
     'log_reserve_days' => 180,
 
-    // 异步写入系统日志
+    // 异步写入系统Log
     'log_async_write' => false,
 
-    // 数据库表字段类型 参考：https://laravel.com/docs/5.5/migrations#columns
+    // 資料庫表字段類型 参考：https://laravel.com/docs/5.5/migrations#columns
     'db_table_field_type' => [
         'string',
         'char',
@@ -63,7 +63,7 @@ return [
         'uuid',
     ],
 
-    // 表单类型
+    // 表单類型
     'form_type' => [
         'input' => '短文本（input）',
         'inputAutoComplete' => '短文本（input，自动完成）',
@@ -77,13 +77,13 @@ return [
         'selectSingleSearch' => '下拉选择（远程搜索）',
         'selectMulti' => '下拉选择（多选）',
         'selectMultiSearch' => '下拉选择（多选，远程搜索）',
-        'inputTags' => '标签输入框',
+        'inputTags' => '標簽输入框',
         'upload' => '图片上传（单图）',
         'uploadMulti' => '图片上传（多图）',
-        'datetime' => '日期时间',
+        'datetime' => '日期時間',
         'date' => '日期',
-        'reference_category' => '引用分类数据',
-        'reference_admin_user' => '引用管理员数据'
+        'reference_category' => '引用分類数据',
+        'reference_admin_user' => '引用管理員数据'
     ],
 
     // NEditor相关

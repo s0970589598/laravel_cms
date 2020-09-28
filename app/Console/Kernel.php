@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // 系统日志清理
+        // 系统Log清理
         $schedule->command('light:clearSystemLog')->dailyAt('00:00');
     }
 

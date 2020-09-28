@@ -12,7 +12,7 @@ use App\Model\Admin\EntityField;
 use App\Repository\Searchable;
 
 /**
- * 使用当前类时必须先调用 setTable 方法设置所要操作的数据库表
+ * 使用当前类时必须先调用 setTable 方法设置所要操作的資料庫表
  * @package App\Repository\Admin
  */
 class ContentRepository
@@ -100,7 +100,7 @@ class ContentRepository
             if (is_array($item)) {
                 return implode(',', $item);
             } elseif ($item === '' || preg_match('/^\d+(,\d+)*/', $item)) {
-                // select多选类型表单，数据类型為 unsignedInteger 的求和保存，查询时可以利用 AND 运算查找对应值
+                // select多选類型表单，数据類型為 unsignedInteger 的求和保存，查询时可以利用 AND 运算查找对应值
                 $fieldType = EntityField::where('entity_id', $entity->id)
                     ->where('form_type', 'selectMulti')
                     ->where('name', $key)->value('type');

@@ -7,7 +7,7 @@ use App\Model\Admin\SensitiveWord;
 use App\Model\Admin\Config as SiteConfig;
 
 /**
- * 直接从数据库获取系统后台配置
+ * 直接从資料庫获取系统后台配置
  *
  * @param string $key key
  * @param mixed $default key不存在时的默认值
@@ -143,7 +143,7 @@ function mapTypeToVerbOfSensitiveWords()
 }
 
 /**
- * 敏感词检查
+ * 敏感詞检查
  *
  * @param string $text 待检查文本
  * @param string $type 名词、动词的检测方法。默认為 join 。join：名词和动词相连组合在一起视為违规 all：名词和动词只要同时出现即為违规

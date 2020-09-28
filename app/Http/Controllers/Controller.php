@@ -25,11 +25,11 @@ class Controller extends BaseController
         }
 
         // 面包屑导航
-        $this->breadcrumb[] = ['title' => '首页', 'url' => route('admin::index')];
+        $this->breadcrumb[] = ['title' => '首頁', 'url' => route('admin::index')];
         View::share('breadcrumb', $this->breadcrumb);
 
 
-        // 菜单
+        // 選單
         $route = request()->route();
         if (is_null($route)) {
             return;

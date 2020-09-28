@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">类型</label>
+                        <label class="layui-form-label">類型</label>
                         <div class="layui-input-block">
                             <select name="type" lay-verify="required">
                                 @foreach(App\Model\Admin\Config::$types as $k => $v)

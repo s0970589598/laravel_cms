@@ -3,7 +3,7 @@
  * */
 
 
-//不同类型的配置
+//不同類型的配置
 var typeConfig = [
     {
         chart: {

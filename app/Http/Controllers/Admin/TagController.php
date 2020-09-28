@@ -23,21 +23,21 @@ class TagController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '标签列表', 'url' => route('admin::tag.index')];
+        $this->breadcrumb[] = ['title' => '標簽列表', 'url' => route('admin::tag.index')];
     }
 
     /**
-     * 标签管理-标签列表
+     * 標簽管理-標簽列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '标签列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '標簽列表', 'url' => ''];
         return view('admin.tag.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 标签管理-标签列表数据接口
+     * 標簽管理-標簽列表数据接口
      *
      * @param Request $request
      * @return array
@@ -53,17 +53,17 @@ class TagController extends Controller
     }
 
     /**
-     * 标签管理-新增标签
+     * 標簽管理-新增標簽
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增标签', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增標簽', 'url' => ''];
         return view('admin.tag.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 标签管理-保存标签
+     * 標簽管理-保存標簽
      *
      * @param TagRequest $request
      * @return array
@@ -80,28 +80,28 @@ class TagController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前标签已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前標簽已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 标签管理-编辑标签
+     * 標簽管理-编辑標簽
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑标签', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑標簽', 'url' => ''];
 
         $model = TagRepository::find($id);
         return view('admin.tag.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 标签管理-更新标签
+     * 標簽管理-更新標簽
      *
      * @param TagRequest $request
      * @param int $id
@@ -120,14 +120,14 @@ class TagController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前标签已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前標簽已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 标签管理-删除标签
+     * 標簽管理-删除標簽
      *
      * @param int $id
      * @return array

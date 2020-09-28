@@ -20,7 +20,7 @@
         initUpload();
     };
 
-    /* 初始化tab标签 */
+    /* 初始化tab標簽 */
     function initTabs(){
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -68,7 +68,7 @@
     }
 
     /**
-     * 监听确认和取消两个按钮事件，用户执行插入或者清空正在播放的视频实例操作
+     * 监听确认和取消两个按钮事件，用户執行插入或者清空正在播放的视频实例操作
      */
     function addOkListener(){
         dialog.onok = function(){
@@ -308,7 +308,7 @@
         }
     }
 
-    /*初始化上传标签*/
+    /*初始化上传標簽*/
     function initUpload(){
         uploadFile = new UploadFile('queueList');
     }
@@ -408,7 +408,7 @@
 
             setState('pedding');
 
-            // 当有文件添加进来时执行，负责view的创建
+            // 当有文件添加进来时執行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +

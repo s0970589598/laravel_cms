@@ -158,7 +158,7 @@ $G("repalceAllBtn").onclick = function () {
         $G('replace-msg').innerHTML = lang.countMsg.replace("{#count}", num);
     }
 };
-//执行
+//執行
 var frCommond = function (obj) {
     return editor.execCommand("searchreplace", obj);
 };

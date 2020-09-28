@@ -16,7 +16,7 @@ class Config extends Model
         'group' => '分组',
         'name' => '名称',
         'key' => '标志符',
-        'type' => '类型',
+        'type' => '類型',
         'value' => '值',
     ];
 

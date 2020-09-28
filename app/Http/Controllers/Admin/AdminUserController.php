@@ -25,21 +25,21 @@ class AdminUserController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '管理员管理', 'url' => route('admin::adminUser.index')];
+        $this->breadcrumb[] = ['title' => '管理員管理', 'url' => route('admin::adminUser.index')];
     }
 
     /**
-     * 管理员管理-管理员列表
+     * 管理員管理-管理員列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '管理员列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '管理員列表', 'url' => ''];
         return view('admin.adminUser.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 管理员管理-管理员列表数据
+     * 管理員管理-管理員列表数据
      *
      * @param Request $request
      * @return array
@@ -55,17 +55,17 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理员管理-新增管理员
+     * 管理員管理-新增管理員
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增管理员', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增管理員', 'url' => ''];
         return view('admin.adminUser.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 管理员管理-保存管理员
+     * 管理員管理-保存管理員
      *
      * @param AdminUserRequest $request
      * @return array
@@ -90,20 +90,20 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理员管理-编辑管理员
+     * 管理員管理-编辑管理員
      *
      * @param int $id
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑管理员', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑管理員', 'url' => ''];
 
         $user = AdminUserRepository::find($id);
         return view('admin.adminUser.add', ['id' => $id, 'user' => $user, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 管理员管理-更新管理员
+     * 管理員管理-更新管理員
      *
      * @param AdminUserRequest $request
      * @param int $id
@@ -136,7 +136,7 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理员管理-分配角色
+     * 管理員管理-分配角色
      *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -156,7 +156,7 @@ class AdminUserController extends Controller
     }
 
     /**
-     * 管理员管理-更新用户角色
+     * 管理員管理-更新用户角色
      *
      * @param Request $request
      * @param $id

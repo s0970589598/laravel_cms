@@ -20,14 +20,14 @@
                         <div class="layui-input-inline">
                             <input type="checkbox" name="is_lock_name" lay-skin="switch" lay-text="锁定|不锁定" value="1" @if(isset($model) && $model->is_lock_name == App\Model\Admin\Menu::LOCK_NAME) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">锁定名称则菜单自动更新时不会更新当前菜单的名称和分组等信息</div>
+                        <div class="layui-form-mid layui-word-aux">锁定名称则選單自动更新时不会更新当前選單的名称和分组等信息</div>
                     </div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级菜单</label>
+                        <label class="layui-form-label">上级選單</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="pid" lay-verify="required">
-                                <option value="0">顶级菜单</option>
+                                <option value="0">顶级選單</option>
                                 @foreach(App\Repository\Admin\MenuRepository::getTree() as $v)
                                     @include('admin.menu', $v)
                                 @endforeach

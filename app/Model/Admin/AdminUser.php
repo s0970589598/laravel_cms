@@ -35,7 +35,7 @@ class AdminUser extends Authenticatable
         ],
         'created_at' => [
             'showType' => 'datetime',
-            'title' => '创建时间'
+            'title' => '创建時間'
         ]
     ];
 

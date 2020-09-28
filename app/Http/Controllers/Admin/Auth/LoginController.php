@@ -43,7 +43,7 @@ class LoginController extends Controller
     }
 
     /**
-     * 基础功能-用户登录页面
+     * 基础功能-用户登录頁面
      */
     public function showLogin()
     {
@@ -111,7 +111,7 @@ class LoginController extends Controller
     {
         return [
             'code' => 0,
-            'msg' => '登陆成功',
+            'msg' => '登入成功',
             'redirect' => true
         ];
     }

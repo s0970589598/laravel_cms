@@ -20,7 +20,7 @@ class Entity extends Model
 
     public static $listField = [
         'name' => '名称',
-        'table_name' => '数据库表名',
+        'table_name' => '資料庫表名',
         'description' => '描述',
     ];
 

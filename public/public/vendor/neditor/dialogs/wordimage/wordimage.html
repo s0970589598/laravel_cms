@@ -55,7 +55,7 @@
             //创建Flash相关的参数集合
             var flashOptions = {
                 container:"flashContainer",                                                    //flash容器id
-                url:urlWidthParams,                                           // 上传处理页面的url地址
+                url:urlWidthParams,                                           // 上传处理頁面的url地址
                 ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自定义参数列表
                 fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //上传文件格式限制
                 flashUrl:'imageUploader.swf',                                                  //上传用的flash组件地址
@@ -73,7 +73,7 @@
                 compressSide: 0,                 //等比压缩的基准，0為按照最长边，1為按照宽度，2為按照高度
                 compressLength: optImageCompressBorder        //能接受的最大边长，超过该值Flash会自动等比压缩
             };
-            //回调函数集合，支持传递函数名的字符串、函数句柄以及函数本身三种类型
+            //回调函数集合，支持传递函数名的字符串、函数句柄以及函数本身三种類型
             var callbacks={
                 selectFileCallback: function(selectFiles){                // 选择文件的回调
                     selectedImageCount += selectFiles.length;

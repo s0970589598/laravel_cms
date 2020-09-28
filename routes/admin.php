@@ -29,7 +29,7 @@ Route::group(
 
             Route::match(['get', 'post'], '/ueditor/serve', 'UEditorController@serve')->name('ueditor.serve');
 
-            // 管理员用户管理
+            // 管理員用户管理
             Route::get('/admin_users', 'AdminUserController@index')->name('adminUser.index');
             Route::get('/admin_users/list', 'AdminUserController@list')->name('adminUser.list');
             Route::get('/admin_users/create', 'AdminUserController@create')->name('adminUser.create');
@@ -40,7 +40,7 @@ Route::group(
             Route::get('/admin_users/{id}/role', 'AdminUserController@role')->name('adminUser.role.edit');
             Route::put('/admin_user/{id}/role', 'AdminUserController@updateRole')->name('adminUser.role.update');
 
-            // 菜单管理
+            // 選單管理
             Route::get('/menus', 'MenuController@index')->name('menu.index');
             Route::get('/menus/list', 'MenuController@list')->name('menu.list');
             Route::get('/menus/create', 'MenuController@create')->name('menu.create');
@@ -70,7 +70,7 @@ Route::group(
             Route::get('/configs/{id}/edit', 'ConfigController@edit')->name('config.edit');
             Route::put('/configs/{id}', 'ConfigController@update')->name('config.update');
 
-            // 日志
+            // Log
             Route::get('/logs', 'LogController@index')->name('log.index');
             Route::get('/logs/list', 'LogController@list')->name('log.list');
             Route::get('/logs/create', 'LogController@create')->name('log.create');

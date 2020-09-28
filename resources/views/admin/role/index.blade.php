@@ -32,8 +32,8 @@
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     <th lay-data="{field:'name'}">名称</th>
-                    <th lay-data="{field:'created_at'}">添加时间</th>
-                    <th lay-data="{field:'updated_at'}">更新时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>

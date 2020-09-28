@@ -22,13 +22,13 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::SensitiveWord.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::SensitiveWord.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增敏感词</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::SensitiveWord.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::SensitiveWord.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增敏感詞</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\SensitiveWord::$listField])
-                    <th lay-data="{field:'created_at'}">添加时间</th>
-                    <th lay-data="{field:'updated_at'}">更新时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>

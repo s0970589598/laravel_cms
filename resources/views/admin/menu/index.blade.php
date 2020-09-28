@@ -34,20 +34,20 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::menu.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::menu.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增菜单</a><a href=\'javascript:;\' style=\'margin-left:15px\' id=\'discovery\'><i class=\'layui-icon layui-icon-refresh\'></i>自动更新菜单</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::menu.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::menu.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增選單</a><a href=\'javascript:;\' style=\'margin-left:15px\' id=\'discovery\'><i class=\'layui-icon layui-icon-refresh\'></i>自动更新選單</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     <th lay-data="{templet:'#menuName'}">名称</th>
                     <th lay-data="{field: 'group'}">分组</th>
-                    <th lay-data="{field:'parentName'}">上级菜单</th>
+                    <th lay-data="{field:'parentName'}">上级選單</th>
                     <th lay-data="{field:'route'}">路由</th>
                     <th lay-data="{field:'url'}">URL</th>
                     <th lay-data="{field:'order', sort: true, edit: true}">排序</th>
                     <th lay-data="{field:'status', sort: true, templet: '#statusTemplet', event: 'statusEvent'}">显示</th>
-                    <th lay-data="{field:'created_at'}">添加时间</th>
-                    <th lay-data="{field:'updated_at'}">更新时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:100, templet:'#action'}">操作</th>
                 </tr>
                 </thead>
@@ -55,13 +55,13 @@
             <div>
                 <form class="layui-form" method="post" action="{{ route('admin::menu.batch') }}">
                     <div class="layui-inline">
-                        <label class="layui-form-label">操作类型</label>
+                        <label class="layui-form-label">操作類型</label>
                         <div class="layui-input-inline">
                             <select name="type" lay-filter="action-type">
                                 <option value="disable">禁用</option>
                                 <option value="enable">启用</option>
                                 <option value="lock_name">锁定名称</option>
-                                <option value="parent">设置父级菜单</option>
+                                <option value="parent">设置父级選單</option>
                                 <option value="order">设置排序</option>
                                 <option value="group">设置分组</option>
                                 <option value="delete">删除</option>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="layui-inline">
                             <button class="layui-btn layuiadmin-btn-list" lay-filter="form-batch" id="batchBtn" lay-submit>
-                                执行批量操作
+                                執行批量操作
                             </button>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
         var form = layui.form,
             table = layui.table;
         form.on('submit(form-batch)', function(data){
-            if(!confirm('确定执行批量操作？')){
+            if(!confirm('确定執行批量操作？')){
                 return false;
             }
             var checkStatus = table.checkStatus('test'),
@@ -242,7 +242,7 @@
 
         form.on('select(action-type)', function(data){
             if (data.value === 'parent') {
-                $('input[name=params]').attr('placeholder', '请填写父级菜单的ID');
+                $('input[name=params]').attr('placeholder', '请填写父级選單的ID');
             } else if (data.value === 'order') {
                 $('input[name=params]').attr('placeholder', '请填写排序值');
             } else if (data.value === 'group') {

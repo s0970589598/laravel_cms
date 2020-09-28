@@ -11,11 +11,11 @@
 
 (function () {
     /**
-     * 编辑器资源文件根路径。它所表示的含义是：以编辑器实例化页面為当前路径，指向编辑器资源文件（即dialog等文件夹）的路径。
+     * 编辑器资源文件根路径。它所表示的含义是：以编辑器实例化頁面為当前路径，指向编辑器资源文件（即dialog等文件夹）的路径。
      * 鉴于很多同学在使用编辑器的时候出现的种种路径问题，此处强烈建议大家使用"相对于网站根目录的相对路径"进行配置。
      * "相对于网站根目录的相对路径"也就是以斜杠开头的形如"/myProject/neditor/"这样的路径。
-     * 如果站点中有多个不在同一层级的页面需要实例化编辑器，且引用了同一UEditor的时候，此处的URL可能不适用于每个页面的编辑器。
-     * 因此，UEditor提供了针对不同页面的编辑器可单独配置的根路径，具体来说，在需要实例化编辑器的页面最顶部写上如下代码即可。当然，需要令此处的URL等于对应的配置。
+     * 如果站点中有多个不在同一层级的頁面需要实例化编辑器，且引用了同一UEditor的时候，此处的URL可能不适用于每个頁面的编辑器。
+     * 因此，UEditor提供了针对不同頁面的编辑器可单独配置的根路径，具体来说，在需要实例化编辑器的頁面最顶部写上如下代码即可。当然，需要令此处的URL等于对应的配置。
      * window.UEDITOR_HOME_URL = "/xxxx/xxxx/";
      */
     var URL = window.UEDITOR_HOME_URL || getUEBasePath();
@@ -43,7 +43,7 @@
 
          /* 抓取远程图片配置 */
         catcherLocalDomain : ["127.0.0.1", "localhost", "img.baidu.com"],
-        catcherActionName : "catchimage", /* 执行抓取远程图片的action名称 */
+        catcherActionName : "catchimage", /* 執行抓取远程图片的action名称 */
         catcherFieldName : "file", /* 送出的图片列表表单名称 */
         catcherPathFormat : "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
         catcherUrlPrefix : "", /* 图片访问路径前缀 */
@@ -173,10 +173,10 @@
             ,
         zIndex: 1100 //编辑器层级的基数,默认是900
 
-            //针对getAllHtml方法，会在对应的head标签中增加该编码设置。
+            //针对getAllHtml方法，会在对应的head標簽中增加该编码设置。
             //,charset:"utf-8"
 
-            //若实例化编辑器的页面手动修改的domain，此处需要设置為true
+            //若实例化编辑器的頁面手动修改的domain，此处需要设置為true
             //,customDomain:false
 
             //常用配置项目
@@ -190,7 +190,7 @@
 
             //,focus:false //初始化时，是否让编辑器获得焦点true或false
 
-            //如果自定义，最好给p标签如下的行高，要不输入中文时，会有跳动感
+            //如果自定义，最好给p標簽如下的行高，要不输入中文时，会有跳动感
             //,initialStyle:'p{line-height:1em}'//编辑器层级的基数,可以用来改变字体等
 
             //,iframeJsUrl: '' //给编辑区域的iframe引入一个js文件
@@ -209,7 +209,7 @@
 
             //启用自动保存
             //,enableAutoSave: true
-            //自动保存间隔时间， 单位ms
+            //自动保存间隔時間， 单位ms
             //,saveInterval: 500
 
             //启用拖放上传
@@ -227,7 +227,7 @@
             //,autoSyncData:true //自动同步编辑器要送出的数据
             //,emotionLocalization:false //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
 
-            //粘贴只保留标签，去除标签所有属性
+            //粘贴只保留標簽，去除標簽所有属性
             //,retainOnlyLabelPasted: false
 
             //,pasteplain:false  //是否默认為纯文本粘贴。false為不使用纯文本粘贴，true為使用纯文本粘贴
@@ -292,7 +292,7 @@
             //,listiconpath : 'http://bs.baidu.com/listicon/'//自定义标号的路径
             //,maxListLevel : 3 //限制可以tab的级数, 设置-1為不限制
 
-            //,autoTransWordToList:false  //禁止word中粘贴进来的列表自动变成列表标签
+            //,autoTransWordToList:false  //禁止word中粘贴进来的列表自动变成列表標簽
 
             //fontfamily
             //字体设置 label留空支持多语言自动切换，若配置，则以配置值為准
@@ -333,10 +333,10 @@
             //customstyle
             //自定义样式，不支持国际化，此处配置值即可最后显示值
             //block的元素是依据设置段落的逻辑设置的，inline的元素依据BIU的逻辑设置
-            //尽量使用一些常用的标签
+            //尽量使用一些常用的標簽
             //参数说明
-            //tag 使用的标签名字
-            //label 显示的名字也是用来标识不同类型的标识符，注意这个值每个要不同，
+            //tag 使用的標簽名字
+            //label 显示的名字也是用来标识不同類型的标识符，注意这个值每个要不同，
             //style 添加的样式
             //每一个对象就是一个自定义的样式
             //,'customstyle':[
@@ -346,14 +346,14 @@
             //    {tag:'span',name:'hi', label:'', style:'font-style:italic;font-weight:bold;color:rgb(51, 153, 204)'}
             //]
 
-            //打开右键菜单功能
+            //打开右键選單功能
             //,enableContextMenu: true
-            //右键菜单的内容，可以参考plugins/contextmenu.js里边的默认菜单的例子，label留空支持国际化，否则以此配置為准
+            //右键選單的内容，可以参考plugins/contextmenu.js里边的默认選單的例子，label留空支持国际化，否则以此配置為准
             //,contextMenu:[
             //    {
             //        label:'',       //显示的名称
-            //        cmdName:'selectall',//执行的command命令，当点击这个右键菜单时
-            //        //exec可选，有了exec就会在点击时执行这个function，优先级高于cmdName
+            //        cmdName:'selectall',//執行的command命令，当点击这个右键選單时
+            //        //exec可选，有了exec就会在点击时執行这个function，优先级高于cmdName
             //        exec:function () {
             //            //this是当前编辑器的实例
             //            //this.ui._dialogs['inserttableDialog'].open();
@@ -361,7 +361,7 @@
             //    }
             //]
 
-            //快捷菜单
+            //快捷選單
             //,shortcutMenu:["fontfamily", "fontsize", "bold", "italic", "underline", "forecolor", "backcolor", "insertorderedlist", "insertunorderedlist"]
 
             //elementPathEnabled
@@ -382,8 +382,8 @@
             //,tabNode:'&nbsp;'
 
             //removeFormat
-            //清除格式时可以删除的标签和属性
-            //removeForamtTags标签
+            //清除格式时可以删除的標簽和属性
+            //removeForamtTags標簽
             //,removeFormatTags:'b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,span,strike,strong,sub,sup,tt,u,var'
             //removeFormatAttributes属性
             //,removeFormatAttributes:'class,style,lang,width,height,align,hspace,valign'
@@ -408,7 +408,7 @@
             //autoFloatEnabled
             //是否保持toolbar的位置不动,默认true
             //,autoFloatEnabled:true
-            //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的页面
+            //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的頁面
             //,topOffset:30
             //编辑器底部距离工具栏高度(如果参数大于等于编辑器高度，则设置无效)
             //,toolbarTopOffset:400
@@ -417,7 +417,7 @@
             ,catchRemoteImageEnable: false //设置是否抓取远程图片
 
             //pageBreakTag
-            //分页标识符,默认是_neditor_page_break_tag_
+            //分頁标识符,默认是_neditor_page_break_tag_
             //,pageBreakTag:'_neditor_page_break_tag_'
 
             //autotypeset
@@ -426,14 +426,14 @@
             //    mergeEmptyline: true,           //合并空行
             //    removeClass: true,              //去掉冗余的class
             //    removeEmptyline: false,         //去掉空行
-            //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉这个属性表示不执行排版
-            //    imageBlockLine: 'center',       //图片的浮动方式，独占一行剧中,左右浮动，默认: center,left,right,none 去掉这个属性表示不执行排版
+            //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉这个属性表示不執行排版
+            //    imageBlockLine: 'center',       //图片的浮动方式，独占一行剧中,左右浮动，默认: center,left,right,none 去掉这个属性表示不執行排版
             //    pasteFilter: false,             //根据规则过滤没事粘贴进来的内容
             //    clearFontSize: false,           //去掉所有的内嵌字号，使用编辑器默认的字号
             //    clearFontFamily: false,         //去掉所有的内嵌字体，使用编辑器默认的字体
             //    removeEmptyNode: false,         // 去掉空节点
-            //    //可以去掉的标签
-            //    removeTagNames: {标签名字:1},
+            //    //可以去掉的標簽
+            //    removeTagNames: {標簽名字:1},
             //    indent: false,                  // 行首缩进
             //    indentValue : '2em',            //行首缩进的大小
             //    bdc2sb: false,
@@ -470,7 +470,7 @@
 
             //默认过滤规则相关配置项目
             //,disabledTableInTable:true  //禁止表格嵌套
-            //,allowDivTransToP:true      //允许进入编辑器的div标签自动变成p标签
+            //,allowDivTransToP:true      //允许进入编辑器的div標簽自动变成p標簽
             //,rgb2Hex:true               //默认产出的数据中的color自动从rgb格式变成16进制格式
 
             // xss 过滤是否开启,inserthtml等操作

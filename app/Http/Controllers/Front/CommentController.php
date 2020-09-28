@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 class CommentController extends BaseController
 {
     /**
-     * 发布一条评论
+     * 发布一条評論
      *
      * @param Request $request
      * @param int $entityId 模型ID
@@ -35,13 +35,13 @@ class CommentController extends BaseController
         if ($content === '') {
             return [
                 'code' => 5,
-                'msg' => '评论内容不能為空',
+                'msg' => '評論内容不能為空',
             ];
         }
         if (mb_strlen($content) > 1024) {
             return [
                 'code' => 6,
-                'msg' => '评论内容过长',
+                'msg' => '評論内容过长',
             ];
         }
         $pid = (int) $request->post('pid', 0);
@@ -54,7 +54,7 @@ class CommentController extends BaseController
         if ($pid > 0 && !($parentComment = \App\Repository\Admin\CommentRepository::find($pid))) {
             return [
                 'code' => 8,
-                'msg' => '引用评论不存在',
+                'msg' => '引用評論不存在',
             ];
         }
 
@@ -85,13 +85,13 @@ class CommentController extends BaseController
             Log::error($e);
             return [
                 'code' => 500,
-                'msg' => '评论失败：内部错误',
+                'msg' => '評論失败：内部错误',
             ];
         }
     }
 
     /**
-     * 获取评论
+     * 获取評論
      *
      * @param Request $request
      * @param int $entityId 模型ID
@@ -125,7 +125,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 获取指定用户对评论的操作数据
+     * 获取指定用户对評論的操作数据
      *
      * @param Request $request
      */
@@ -151,7 +151,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 对评论进行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
+     * 对評論进行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
      *
      * @param int $id
      * @param string $action
@@ -174,7 +174,7 @@ class CommentController extends BaseController
         if (!$entity) {
             return [
                 'code' => 1,
-                'msg' => '模型不存在或未启用评论',
+                'msg' => '模型不存在或未启用評論',
             ];
         }
 

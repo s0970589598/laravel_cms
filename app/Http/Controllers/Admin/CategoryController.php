@@ -21,21 +21,21 @@ class CategoryController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '分类列表', 'url' => route('admin::category.index')];
+        $this->breadcrumb[] = ['title' => '分類列表', 'url' => route('admin::category.index')];
     }
 
     /**
-     * 分类管理-分类列表
+     * 分類管理-分類列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '分类列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '分類列表', 'url' => ''];
         return view('admin.category.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 分类管理-分类列表数据接口
+     * 分類管理-分類列表数据接口
      *
      * @param Request $request
      * @return array
@@ -61,17 +61,17 @@ class CategoryController extends Controller
     }
 
     /**
-     * 分类管理-新增分类
+     * 分類管理-新增分類
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增分类', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增分類', 'url' => ''];
         return view('admin.category.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 分类管理-保存分类
+     * 分類管理-保存分類
      *
      * @param CategoryRequest $request
      * @return array
@@ -88,21 +88,21 @@ class CategoryController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分类已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分類已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 分类管理-编辑分类
+     * 分類管理-编辑分類
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑分类', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑分類', 'url' => ''];
 
         $model = CategoryRepository::find($id);
         return view('admin.category.add', [
@@ -115,7 +115,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * 分类管理-更新分类
+     * 分類管理-更新分類
      *
      * @param CategoryRequest $request
      * @param int $id
@@ -134,7 +134,7 @@ class CategoryController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分类已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前分類已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

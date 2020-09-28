@@ -27,7 +27,7 @@
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Log::$listField])
-                    <th lay-data="{field:'created_at'}">添加时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
                 </tr>
                 </thead>
             </table>

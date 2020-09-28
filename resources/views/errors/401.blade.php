@@ -24,7 +24,7 @@
 <div class="layui-container">
     <div class="error_500 tc">
         <p>{{ $exception->getMessage() }}</p>
-        <a href="/" class="btn">返回首页</a> @if(\Auth::guard('admin')->check()) <a href="{{ route('admin::logout') }}" class="btn" style="margin-left: 20px">退出登录</a> @endif
+        <a href="/" class="btn">返回首頁</a> @if(\Auth::guard('admin')->check()) <a href="{{ route('admin::logout') }}" class="btn" style="margin-left: 20px">退出登录</a> @endif
     </div>
 </div>
 </body>

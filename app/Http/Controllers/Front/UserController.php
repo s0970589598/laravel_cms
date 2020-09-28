@@ -34,7 +34,7 @@ class UserController extends BaseController
     }
 
     /**
-     * 用户登录页面
+     * 用户登录頁面
      *
      * @return \Illuminate\View\View
      */
@@ -118,7 +118,7 @@ class UserController extends BaseController
     {
         return [
             'code' => 0,
-            'msg' => '登陆成功',
+            'msg' => '登入成功',
             'redirect' => true
         ];
     }
@@ -202,7 +202,7 @@ class UserController extends BaseController
                 return redirect()->intended('/');
             }
 
-            // 重定向到登录注册页面，关联本站用户
+            // 重定向到登录注册頁面，关联本站用户
             session([self::AUTH_SESSION => $user]);
             return redirect(route('member::login.show'));
         } catch (AuthorizeFailedException $e) {

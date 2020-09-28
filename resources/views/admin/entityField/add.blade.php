@@ -7,7 +7,7 @@
 
         <div class="layui-card-body">
             <form class="layui-form" action="@if(isset($id)){{ route('admin::entityField.update', ['id' => $id]) }}@else{{ route('admin::entityField.save') }}@endif" method="post">
-                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由于字段修改操作具有一定危险性（可能会影响数据完整性），因此暂未实现直接修改模型的数据库表结构<hr class="layui-bg-red">@endif
+                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由于字段修改操作具有一定危险性（可能会影响数据完整性），因此暂未实现直接修改模型的資料庫表结构<hr class="layui-bg-red">@endif
                     <div class="layui-form-item">
                         <label class="layui-form-label">模型</label>
                         <div class="layui-input-block" style="width: 400px">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">字段类型</label>
+                        <label class="layui-form-label">字段類型</label>
                         <div class="layui-input-inline" style="width: 400px">
                             <select name="type" lay-verify="required" lay-filter="type" @if(isset($id)) disabled @endif>
                                 @foreach(config('light.db_table_field_type') as $v)
@@ -34,19 +34,19 @@
                                 @endforeach
                             </select>
                             <div id="str_length" style="display: none">
-                            <input type="number" name="field_length" value="" placeholder="对于char、string类型的字段，请在此输入字段长度" class="layui-input">
+                            <input type="number" name="field_length" value="" placeholder="对于char、string類型的字段，请在此输入字段长度" class="layui-input">
                             </div>
                             <div id="float_length" style="display: none">
-                            <input type="number" name="field_total" value="" placeholder="对于浮点数类型的字段，请在此输入总位数" class="layui-input">
-                            <input type="number" name="field_scale" value="" placeholder="对于浮点数类型的字段，请在此输入小数位数" class="layui-input">
+                            <input type="number" name="field_total" value="" placeholder="对于浮点数類型的字段，请在此输入总位数" class="layui-input">
+                            <input type="number" name="field_scale" value="" placeholder="对于浮点数類型的字段，请在此输入小数位数" class="layui-input">
                             </div>
                         </div>
-                        <div class="layui-form-mid layui-word-aux"><a style="color:#FF5722" target="_blank" href="https://laravel.com/docs/5.5/migrations#columns">以MySQL数据库為例：string类型对应VARCHAR；char类型对应CHAR</a></div>
+                        <div class="layui-form-mid layui-word-aux"><a style="color:#FF5722" target="_blank" href="https://laravel.com/docs/5.5/migrations#columns">以MySQL資料庫為例：string類型对应VARCHAR；char類型对应CHAR</a></div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">字段默认值</label>
                         <div class="layui-input-block">
-                            <input type="text" name="default_value" autocomplete="off" class="layui-input" placeholder="仅对字符串、数值类型的字段类型有效" value="{{ $model->default_value ?? ''  }}" @if(isset($id)) disabled @endif>
+                            <input type="text" name="default_value" autocomplete="off" class="layui-input" placeholder="仅对字符串、数值類型的字段類型有效" value="{{ $model->default_value ?? ''  }}" @if(isset($id)) disabled @endif>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -61,7 +61,7 @@
                         <div class="layui-input-inline" style="width: 50px;">
                             <input type="checkbox" name="is_modify_db" lay-skin="switch" lay-text="是|否" value="1" checked>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">某些情况下可能数据库表结构已经通过其它方式建好，此处无需操作数据库表，添加字段主要是方便利用框架提供的模型增删改查功能</div>
+                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表结构已经通过其它方式建好，此处无需操作資料庫表，添加字段主要是方便利用框架提供的模型增删改查功能</div>
                     </div>
                     @endif
                     <hr>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">表单类型</label>
+                        <label class="layui-form-label">表单類型</label>
                         <div class="layui-input-inline" style="width: 400px">
                             <select name="form_type" lay-verify="required" lay-filter="form_type">
                                 @foreach(config('light.form_type') as $k => $v)
@@ -91,13 +91,13 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">表单参数</label>
                         <div class="layui-input-block">
-                            <textarea name="form_params" class="layui-textarea" placeholder="对于表单类型為单选框、多选框、下拉选择的，需在此配置对应参数。参数格式為：key=value，多个以换行分隔。也可以填写自定义的函数名称，函数名称需以getFormItemsFrom开头，返回值需与前述数据格式一致。对于下拉选择远程搜索表单类型、短文本（input，自动完成）表单类型，需在此填写后端接口URL地址，接口返回数据格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
+                            <textarea name="form_params" class="layui-textarea" placeholder="对于表单類型為单选框、多选框、下拉选择的，需在此配置对应参数。参数格式為：key=value，多个以换行分隔。也可以填写自定义的函数名称，函数名称需以getFormItemsFrom开头，返回值需与前述数据格式一致。对于下拉选择远程搜索表单類型、短文本（input，自动完成）表单類型，需在此填写后端接口URL地址，接口返回数据格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">表单默认值</label>
                         <div class="layui-input-block">
-                            <input type="text" name="form_default_value" autocomplete="off" class="layui-input" value="{{ $model->form_default_value ?? ''  }}" placeholder="新增内容时表单的默认初始值，仅支持简单表单类型">
+                            <input type="text" name="form_default_value" autocomplete="off" class="layui-input" value="{{ $model->form_default_value ?? ''  }}" placeholder="新增内容时表单的默认初始值，仅支持简单表单類型">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -115,7 +115,7 @@
                         </div>
                         </div>
 
-                        <div class="layui-inline" title="仅对部分表单类型（段文本、下拉选择）有效">
+                        <div class="layui-inline" title="仅对部分表单類型（段文本、下拉选择）有效">
                             <label class="layui-form-label">行内展示</label>
                             <div class="layui-input-inline">
                                 <input type="checkbox" name="is_show_inline" lay-skin="switch" lay-text="是|否" value="1" @if(isset($model) && $model->is_show_inline == App\Model\Admin\EntityField::SHOW_INLINE) checked @endif>

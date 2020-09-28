@@ -119,7 +119,7 @@
         <form action="{{ route('member::comment.save', ['entityId' => $entityId, 'contentId' => $content->id]) }}" class="layui-form">
             <div class="layui-form-item">
                 <div>
-                <textarea name="content" rows="7" placeholder="请输入评论内容" class="layui-textarea" id="comment-content"></textarea>
+                <textarea name="content" rows="7" placeholder="请输入評論内容" class="layui-textarea" id="comment-content"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -326,7 +326,7 @@
             method: 'get',
             success: function (data) {
                 if (data.code !== 0) {
-                    layer.msg('评论加载失败', {icon: 2});
+                    layer.msg('評論加载失败', {icon: 2});
                     return;
                 }
 
@@ -396,10 +396,10 @@
                 if (data.data.last_page > 1) {
                     html = html + '<section class="taptap-paginator"><ul class="pagination">';
                     if (data.data.current_page !== 1) {
-                        html = html + '<li><a class="page-target" href="' + data.data.prev_page_url + '">上一页</a></li>';
+                        html = html + '<li><a class="page-target" href="' + data.data.prev_page_url + '">上一頁</a></li>';
                     }
                     if (data.data.next_page_url !== null) {
-                        html = html + '<li><a class="page-target" href="' + data.data.next_page_url + '">下一页</a></li>';
+                        html = html + '<li><a class="page-target" href="' + data.data.next_page_url + '">下一頁</a></li>';
                     }
                     html = html + '</ul></section>';
                 }
@@ -409,11 +409,11 @@
                 emojify.run(document.getElementById('comments'));
 
                 @auth('member')
-                // 获取登录用户对评论的操作数据
+                // 获取登录用户对評論的操作数据
                 commentAction();
                 @endauth
 
-                // 评论回复
+                // 評論回复
                 $('.question-witch-replay').on('click', function () {
                     $('input[name=pid]').remove();
                     layer.open({
@@ -428,7 +428,7 @@
                     });
                 });
 
-                // 评论操作
+                // 評論操作
                 $('div#comments').on('click', 'button.vote-btn', function () {
                     var id = $(this).data('id'),
                         action = $(this).data('value'),
@@ -459,14 +459,14 @@
                     layer.msg('待实现');
                 });
 
-                // 评论翻页
+                // 評論翻頁
                 $('a.page-target').click(function (e) {
                     console.log(commentIds);
                     e.preventDefault();
                     loadComments($(this).attr('href'));
                 });
 
-                // 评论回复翻页
+                // 評論回复翻頁
                 $('div.taptap-comments').on('click', 'a.comment-reply', function (e) {
                     e.preventDefault();
                     commentIds = [];
@@ -481,7 +481,7 @@
                             that.parents('div.taptap-comments').html(loadReplyComments(d.data, rid, uid));
 
                             @auth('member')
-                            // 获取登录用户对评论的操作数据
+                            // 获取登录用户对評論的操作数据
                             commentAction();
                             @endauth
                         }
@@ -489,7 +489,7 @@
                 });
             },
             error: function () {
-                layer.msg('页面错误', {icon: 2});
+                layer.msg('頁面错误', {icon: 2});
             }
         });
     }
@@ -504,7 +504,7 @@
                 data: {comment_ids: commentIdsStr},
                 success: function (d) {
                     if (d.code !== 0) {
-                        layer.msg('获取评论操作数据失败', {icon: 2});
+                        layer.msg('获取評論操作数据失败', {icon: 2});
                         return;
                     }
                     for (var i = d.data.length - 1; i >= 0; i--) {

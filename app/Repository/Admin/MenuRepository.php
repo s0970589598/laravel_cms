@@ -30,7 +30,7 @@ class MenuRepository
             xssFilter($item);
             $item->editUrl = route('admin::menu.edit', ['id' => $item->id]);
             $item->deleteUrl = route('admin::menu.delete', ['id' => $item->id]);
-            $item->parentName = $item->pid == 0 ? '顶级菜单' : $item->parent->name;
+            $item->parentName = $item->pid == 0 ? '顶级選單' : $item->parent->name;
             return $item;
         });
 
@@ -59,9 +59,9 @@ class MenuRepository
 
     public static function delete($id)
     {
-        // 不能删除非空的父菜单
+        // 不能删除非空的父選單
         if (!Menu::query()->where('pid', $id)->get()->isEmpty()) {
-            throw new \RuntimeException('不能直接删除非空的父菜单，请先删除当前菜单的所有子菜单');
+            throw new \RuntimeException('不能直接删除非空的父選單，请先删除当前選單的所有子選單');
         }
         return Menu::destroy($id);
     }
@@ -123,7 +123,7 @@ class MenuRepository
     }
 
     /**
-     * 根据指定路由名获取根菜单
+     * 根据指定路由名获取根選單
      *
      * @param string $route
      * @param null|array $tree

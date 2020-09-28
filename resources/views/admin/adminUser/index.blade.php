@@ -16,13 +16,13 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::adminUser.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::adminUser.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增管理员</a></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::adminUser.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::adminUser.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增管理員</a></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\AdminUser::$listField])
-                    <th lay-data="{field:'created_at'}">添加时间</th>
-                    <th lay-data="{field:'updated_at'}">更新时间</th>
+                    <th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>
@@ -32,7 +32,7 @@
 @endsection
 
 <script type="text/html" id="action">
-    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑管理员"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="<% d.editUrl %>" class="layui-table-link" title="编辑管理員"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="<% d.roleUrl %>" class="layui-table-link" style="margin-left: 10px" title="分配角色"><i class="layui-icon layui-icon-auz"></i></a>
 </script>
 

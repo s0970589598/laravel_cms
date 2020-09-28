@@ -85,7 +85,7 @@ class EntityController extends Controller
         } catch (CreateTableException $e) {
             return [
                 'code' => 2,
-                'msg' => '新增失败：创建数据库表失败，数据表已存在或其它原因',
+                'msg' => '新增失败：创建資料庫表失败，数据表已存在或其它原因',
                 'redirect' => false
             ];
         } catch (QueryException $e) {
@@ -203,7 +203,7 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-添加默认菜单
+     * 模型管理-添加默认選單
      *
      * @param integer $id
      * @return array

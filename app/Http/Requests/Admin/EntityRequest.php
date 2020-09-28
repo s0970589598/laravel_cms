@@ -42,7 +42,7 @@ class EntityRequest extends FormRequest
         return [
             'name.required' => '名称不能為空',
             'name.max' => '名称长度不能大于50',
-            'table_name.regex' => '数据库表名不合规范',
+            'table_name.regex' => '資料庫表名不合规范',
         ];
     }
 }

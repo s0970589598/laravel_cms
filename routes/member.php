@@ -27,16 +27,16 @@ Route::group(
         Route::get('/wechat/callback', 'UserController@wechatCallback')->name('wechat.callback');
         Route::get('/wechat/auth', 'UserController@wechatAuth')->name('wechat.auth');
 
-        // 评论列表
+        // 評論列表
         Route::get('/entity/{entityId}/content/{contentId}/comment', 'CommentController@list')
             ->name('comment.list')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
         Route::middleware('auth:member')->group(function () {
             Route::get('/logout', 'UserController@logout')->name('logout');
 
-            // 发表评论
+            // 发表評論
             Route::post('/entity/{entityId}/content/{contentId}/comment', 'CommentController@save')
                 ->name('comment.save')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
-            // 评论操作
+            // 評論操作
             Route::post('/comment/{id}/operate/{action}', 'CommentController@operate')
                 ->name('comment.operate')->where('action', 'like|dislike|neutral');
             Route::get('/comment/operate/logs', 'CommentController@operateLogs')

@@ -18,7 +18,7 @@ Route::group(
         'as' => 'web::',
     ],
     function () {
-        // 首页
+        // 首頁
         Route::get('/', 'HomeController@index')->name('index');
 
         // 模型内容列表
@@ -28,7 +28,7 @@ Route::group(
         Route::get('/entity/{entityId}/content/{contentId}', 'ContentController@show')
             ->name('content')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
 
-        // 评论列表
+        // 評論列表
         Route::get('/entity/{entityId}/content/{contentId}/comment', 'CommentController@list')
             ->name('comment.list')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
     }

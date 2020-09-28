@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>登陆 - {{ config('app.name') }}</title>
+    <title>登入 - {{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +16,7 @@
 
     <div class="lightcms-user-login-main">
         <div class="lightcms-user-login-box lightcms-user-login-header">
-            <h2>后台登陆</h2>
+            <h2>後台登入</h2>
         </div>
         <form id="form">
         <div class="lightcms-user-login-box lightcms-user-login-body layui-form">

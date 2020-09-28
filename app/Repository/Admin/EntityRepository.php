@@ -67,7 +67,7 @@ class EntityRepository
             }
 
             if (Schema::hasTable($data['table_name'])) {
-                throw new \RuntimeException("数据库表已存在");
+                throw new \RuntimeException("資料庫表已存在");
             }
 
             Schema::create($data['table_name'], function (Blueprint $table) {
@@ -79,7 +79,7 @@ class EntityRepository
             return $entity;
         } catch (\Exception $e) {
             $entity->delete();
-            throw new CreateTableException("创建数据库表异常");
+            throw new CreateTableException("创建資料庫表异常");
         }
     }
 
@@ -87,7 +87,7 @@ class EntityRepository
     {
         $entity = Entity::findOrFail($id);
         if (Schema::hasTable($tableName)) {
-            throw new \RuntimeException("数据库表已存在");
+            throw new \RuntimeException("資料庫表已存在");
         }
 
         try {

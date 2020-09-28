@@ -59,7 +59,7 @@ class ContentController extends Controller
 
         $this->breadcrumb[] = ['title' => $this->entity->name . '内容列表', 'url' => ''];
         Content::$listField = [
-            'title' => '标题'
+            'title' => '標題'
         ];
         return view('admin.content.index', [
             'breadcrumb' => $this->breadcrumb,
@@ -133,7 +133,7 @@ class ContentController extends Controller
                 EntityFieldRepository::getSaveFields($entity)
             ), $this->entity);
 
-            // 标签类型字段另外处理 多对多关联
+            // 標簽類型字段另外处理 多对多关联
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField) {
@@ -212,7 +212,7 @@ class ContentController extends Controller
             DB::beginTransaction();
 
             ContentRepository::update($id, $data, $this->entity);
-            // 标签类型字段另外处理 多对多关联
+            // 標簽類型字段另外处理 多对多关联
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField && intval($inputTagsField->is_edit) === EntityField::EDIT_ENABLE) {

@@ -310,7 +310,7 @@
                                                 layui.use('upload', function(){
                                                     var upload = layui.upload;
 
-                                                    //执行实例
+                                                    //執行实例
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                         ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上传接口
@@ -344,7 +344,7 @@
                                                 layui.use('upload', function(){
                                                     var upload = layui.upload;
 
-                                                    //执行实例
+                                                    //執行实例
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                         ,multiple: true
@@ -519,7 +519,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="">
-                                        <input name="{{ $field->name }}" placeholder="输入标签，按回车键或TAB键可新增标签" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
+                                        <input name="{{ $field->name }}" placeholder="输入標簽，按回车键或TAB键可新增標簽" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
                                     </div>
                                 </div>
                                 <script>
@@ -626,10 +626,10 @@
           e = e || window.event;
           // 兼容IE8和Firefox 4之前的版本
           if (e) {
-            e.returnValue = '确定离开当前页面吗？';
+            e.returnValue = '确定离开当前頁面吗？';
           }
           // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
-          return '确定离开当前页面吗？';
+          return '确定离开当前頁面吗？';
         };
     </script>
     <script src="/public/vendor/zoom/transition.js"></script>

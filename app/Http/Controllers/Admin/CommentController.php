@@ -23,21 +23,21 @@ class CommentController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '评论列表', 'url' => route('admin::comment.index')];
+        $this->breadcrumb[] = ['title' => '評論列表', 'url' => route('admin::comment.index')];
     }
 
     /**
-     * 评论管理-评论列表
+     * 評論管理-評論列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '评论列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '評論列表', 'url' => ''];
         return view('admin.comment.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 评论管理-评论列表数据接口
+     * 評論管理-評論列表数据接口
      *
      * @param Request $request
      * @return array
@@ -53,21 +53,21 @@ class CommentController extends Controller
     }
 
     /**
-     * 评论管理-编辑评论
+     * 評論管理-编辑評論
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑评论', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑評論', 'url' => ''];
 
         $model = CommentRepository::find($id);
         return view('admin.comment.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 评论管理-更新评论
+     * 評論管理-更新評論
      *
      * @param CommentRequest $request
      * @param int $id
@@ -86,14 +86,14 @@ class CommentController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前评论已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前評論已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 评论管理-删除评论
+     * 評論管理-删除評論
      *
      * @param int $id
      * @return array
@@ -105,13 +105,13 @@ class CommentController extends Controller
 
             $comment = CommentRepository::find($id);
             if (!$comment) {
-                throw new \RuntimeException("评论不存在");
+                throw new \RuntimeException("評論不存在");
             }
 
             if (CommentRepository::hasChildren($id)) {
                 return [
                     'code' => 2,
-                    'msg' => '删除失败：只允许删除无回复的评论',
+                    'msg' => '删除失败：只允许删除无回复的評論',
                 ];
             }
 

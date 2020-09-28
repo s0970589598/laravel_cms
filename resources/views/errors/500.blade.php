@@ -23,8 +23,8 @@
 <body>
 <div class="layui-container">
     <div class="error_500 tc">
-        <p>服务器内部错误，请联系管理员</p>
-        <a href="/" class="btn">返回首页</a>
+        <p>服务器内部错误，请联系管理員</p>
+        <a href="/" class="btn">返回首頁</a>
     </div>
 </div>
 </body>

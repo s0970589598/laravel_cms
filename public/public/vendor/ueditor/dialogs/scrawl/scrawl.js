@@ -21,7 +21,7 @@ var scrawl = function (options) {
 
         initOptions:function (options) {
             var me = this;
-            me.originalState(options);//初始页面状态
+            me.originalState(options);//初始頁面状态
             me._buildToolbarColor(options.colorList);//动态生成颜色选择集合
 
             me._addBoardListener(options.saveNum);//添加画板处理
@@ -625,7 +625,7 @@ function addMaskLayer(html) {
     maskLayer.className = "maskLayer";
     maskLayer.innerHTML = html;
 }
-//执行确认按钮方法
+//執行确认按钮方法
 function exec(scrawlObj) {
     if (scrawlObj.isScrawl) {
         addMaskLayer(lang.scrawlUpLoading);

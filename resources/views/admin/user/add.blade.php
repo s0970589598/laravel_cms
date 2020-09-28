@@ -9,7 +9,7 @@
             <form class="layui-form" action="@if(isset($id)){{ route('admin::user.update', ['id' => $id]) }}@else{{ route('admin::user.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">手机号</label>
+                    <label class="layui-form-label">手機號碼</label>
                     <div class="layui-input-block">
                         <input type="text" name="phone" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->phone ?? ''  }}">
                     </div>

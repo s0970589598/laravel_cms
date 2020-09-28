@@ -22,21 +22,21 @@ class UserController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '会员列表', 'url' => route('admin::user.index')];
+        $this->breadcrumb[] = ['title' => '會員列表', 'url' => route('admin::user.index')];
     }
 
     /**
-     * 会员管理-会员列表
+     * 會員管理-會員列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '会员列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '會員列表', 'url' => ''];
         return view('admin.user.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 会员管理-会员列表数据接口
+     * 會員管理-會員列表数据接口
      *
      * @param Request $request
      * @return array
@@ -53,17 +53,17 @@ class UserController extends Controller
     }
 
     /**
-     * 会员管理-新增会员
+     * 會員管理-新增會員
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增会员', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增會員', 'url' => ''];
         return view('admin.user.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 会员管理-保存会员
+     * 會員管理-保存會員
      *
      * @param UserRequest $request
      * @return array
@@ -81,28 +81,28 @@ class UserController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前会员已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前會員已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 会员管理-编辑会员
+     * 會員管理-编辑會員
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑会员', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑會員', 'url' => ''];
 
         $model = UserRepository::find($id);
         return view('admin.user.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 会员管理-更新会员
+     * 會員管理-更新會員
      *
      * @param UserRequest $request
      * @param int $id
@@ -124,14 +124,14 @@ class UserController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前会员已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前會員已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 会员管理-删除会员
+     * 會員管理-删除會員
      *
      * @param int $id
      */

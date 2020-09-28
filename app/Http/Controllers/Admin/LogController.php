@@ -18,21 +18,21 @@ class LogController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '日志列表', 'url' => route('admin::log.index')];
+        $this->breadcrumb[] = ['title' => 'Log列表', 'url' => route('admin::log.index')];
     }
 
     /**
-     * 日志管理-日志列表
+     * Log管理-Log列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '日志列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => 'Log列表', 'url' => ''];
         return view('admin.log.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 日志管理-日志列表数据接口
+     * Log管理-Log列表数据接口
      *
      * @param Request $request
      * @return array
@@ -49,14 +49,14 @@ class LogController extends Controller
     }
 
     /**
-     * 编辑日志
+     * 编辑Log
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑日志', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑Log', 'url' => ''];
 
         $model = LogRepository::find($id);
         return view('admin.log.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);

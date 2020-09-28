@@ -51,7 +51,7 @@ class EntityFieldControllerTest extends TestCase
             'entity_id' => $this->entity->id,
             'name' => $this->filedName,
             'type' => 'string',
-            'form_name' => '修改标题',
+            'form_name' => '修改標題',
             'form_type' => 'input',
             'order' => 77,
             'field_length' => '',
@@ -69,7 +69,7 @@ class EntityFieldControllerTest extends TestCase
             [
                 'entity_id' => $this->entity->id,
                 'name' => 'title',
-                'form_name' => '修改标题'
+                'form_name' => '修改標題'
             ]
         );
     }
@@ -97,7 +97,7 @@ class EntityFieldControllerTest extends TestCase
         // 字段可编辑
         $this->createEntityField(true, true);
         $data = [
-            'title' => '测试标题',
+            'title' => '测试標題',
             'tags' => '[{"value":"tag1"},{"value":"tag2"}]',
             'gender' => 1
         ];
@@ -106,7 +106,7 @@ class EntityFieldControllerTest extends TestCase
         $response->assertJson(['code' => 0]);
 
         $updateData = [
-            'title' => '测试修改标题',
+            'title' => '测试修改標題',
             'tags' => '[{"value":"tag1"},{"value":"tag3"}]',
             'gender' => 0
         ];
@@ -133,14 +133,14 @@ class EntityFieldControllerTest extends TestCase
         // 字段不可编辑
         $this->createEntityField(true, false);
         $data = [
-            'title' => '测试标题'
+            'title' => '测试標題'
         ];
         $response = $this->actingAs($this->user, 'admin')
             ->post('/admin/entity/' . $this->entity->id . '/contents', $data);
         $response->assertJson(['code' => 0]);
 
         $updateData = [
-            'title' => '测试修改标题'
+            'title' => '测试修改標題'
         ];
         $response = $this->actingAs($this->user, 'admin')
             ->put('/admin/entity/' . $this->entity->id . '/contents/1', $updateData);
@@ -185,10 +185,10 @@ class EntityFieldControllerTest extends TestCase
         $response = $this->actingAs($this->user, 'admin')
             ->get(route('admin::content.create', ['entity' => $this->entity->id]));
         $response->assertSee('<option value="1"  selected >女</option>');
-        $response->assertSee('value="默认标题"');
+        $response->assertSee('value="默认標題"');
 
         $data = [
-            'title' => '测试标题',
+            'title' => '测试標題',
             'tags' => '[{"value":"tag1"},{"value":"tag2"}]',
             'gender' => 0
         ];
@@ -197,7 +197,7 @@ class EntityFieldControllerTest extends TestCase
         $response = $this->actingAs($this->user, 'admin')
             ->get(route('admin::content.edit', ['entity' => $this->entity->id, 'id' => 1]));
         $response->assertSee('<option value="0"  selected >男</option>');
-        $response->assertSee('value="测试标题"');
+        $response->assertSee('value="测试標題"');
     }
 
     public function testEntityFieldSelectMultiOfUnsignedIntegerIsOK()
@@ -206,10 +206,10 @@ class EntityFieldControllerTest extends TestCase
         $response = $this->actingAs($this->user, 'admin')
             ->get(route('admin::content.create', ['entity' => $this->entity->id]));
         $response->assertSee('<option value="1"  selected >推荐1</option>');
-        $response->assertSee('value="默认标题"');
+        $response->assertSee('value="默认標題"');
 
         $data = [
-            'title' => '测试标题',
+            'title' => '测试標題',
             'recommend' => '1,2',
             'gender' => 0
         ];
@@ -220,11 +220,11 @@ class EntityFieldControllerTest extends TestCase
             ->get(route('admin::content.edit', ['entity' => $this->entity->id, 'id' => 1]));
         $response->assertSee('<option value="1"  selected >推荐1</option>');
         $response->assertSee('<option value="2"  selected >推荐2</option>');
-        $response->assertSee('value="测试标题"');
+        $response->assertSee('value="测试標題"');
 
         // 不选推荐
         $data = [
-            'title' => '测试标题',
+            'title' => '测试標題',
             'recommend' => '',
             'gender' => 0
         ];
@@ -240,7 +240,7 @@ class EntityFieldControllerTest extends TestCase
             'entity_id' => $this->entity->id,
             'name' => $this->filedName,
             'type' => 'string',
-            'form_name' => '标题',
+            'form_name' => '標題',
             'form_type' => 'input',
             'order' => 77,
             'field_length' => '',
@@ -249,7 +249,7 @@ class EntityFieldControllerTest extends TestCase
             'comment' => '',
             'default_value' => '',
             'is_edit' => $is_edit === true ? EntityField::EDIT_ENABLE : EntityField::EDIT_DISABLE,
-            'form_default_value' => '默认标题',
+            'form_default_value' => '默认標題',
             'is_show' => EntityField::SHOW_ENABLE,
         ];
         if ($modifyDB) {
@@ -258,12 +258,12 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // 标签字段
+        // 標簽字段
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'tags',
             'type' => 'string',
-            'form_name' => '标签',
+            'form_name' => '標簽',
             'form_type' => 'inputTags',
             'order' => 77,
             'field_length' => '',
@@ -277,7 +277,7 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // select类型字段
+        // select類型字段
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'gender',
@@ -299,7 +299,7 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // selectMulti类型字段
+        // selectMulti類型字段
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'recommend',

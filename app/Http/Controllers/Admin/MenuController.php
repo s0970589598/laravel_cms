@@ -29,21 +29,21 @@ class MenuController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '菜单管理', 'url' => route('admin::menu.index')];
+        $this->breadcrumb[] = ['title' => '選單管理', 'url' => route('admin::menu.index')];
     }
 
     /**
-     * 菜单管理-菜单列表
+     * 選單管理-選單列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '菜单列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '選單列表', 'url' => ''];
         return view('admin.menu.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 菜单管理-菜单列表数据
+     * 選單管理-選單列表数据
      *
      * @param Request $request
      * @return array
@@ -69,17 +69,17 @@ class MenuController extends Controller
     }
 
     /**
-     * 菜单管理-新增菜单
+     * 選單管理-新增選單
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增菜单', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增選單', 'url' => ''];
         return view('admin.menu.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 菜单管理-保存菜单
+     * 選單管理-保存選單
      *
      * @param MenuRequest $request
      * @return array
@@ -97,27 +97,27 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前菜单已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前選單已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 菜单管理-编辑菜单
+     * 選單管理-编辑選單
      *
      * @param int $id
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑菜单', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑選單', 'url' => ''];
 
         $model = MenuRepository::find($id);
         return view('admin.menu.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 菜单管理-更新菜单
+     * 選單管理-更新選單
      *
      * @param MenuRequest $request
      * @param int $id
@@ -144,14 +144,14 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前菜单已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前選單已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 菜单管理-删除菜单
+     * 選單管理-删除選單
      *
      * @param int $id
      * @return array
@@ -176,7 +176,7 @@ class MenuController extends Controller
     }
 
     /**
-     * 菜单管理-自动更新菜单
+     * 選單管理-自动更新選單
      *
      * @return array
      * @throws \ReflectionException
@@ -188,7 +188,7 @@ class MenuController extends Controller
 
         foreach (Route::getRoutes()->getRoutesByName() as $k => $v) {
             if (Str::startsWith($k, 'admin::')) {
-                // 取方法的第一行注释作為菜单的名称、分组名。格式：分组名称-菜单名称。未写分组名称，则注释直接作為菜单名称。未写注释则选用uri作為菜单名称。
+                // 取方法的第一行注释作為選單的名称、分组名。格式：分组名称-選單名称。未写分组名称，则注释直接作為選單名称。未写注释则选用uri作為選單名称。
                 $action = explode('@', $v->getActionName());
                 if (!method_exists($action[0], $action[1])) {
                     continue;
@@ -244,7 +244,7 @@ class MenuController extends Controller
                     if ($e->getCode() == 23000) {
                         return [
                             'code' => 1,
-                            'msg' => "唯一性冲突：请检查菜单名称或路由名称。name: {$data['name']} route: {$data['route']}",
+                            'msg' => "唯一性冲突：请检查選單名称或路由名称。name: {$data['name']} route: {$data['route']}",
                         ];
                     } else {
                         return [
@@ -261,13 +261,13 @@ class MenuController extends Controller
         }
         return [
             'code' => 0,
-            'msg' => "更新成功。新增菜单数：{$addNum}，更新菜单数：{$updateNum}。",
+            'msg' => "更新成功。新增選單数：{$addNum}，更新選單数：{$updateNum}。",
             'redirect' => true
         ];
     }
 
     /**
-     * 菜单管理-批量操作
+     * 選單管理-批量操作
      */
     public function batch(Request $request)
     {
@@ -299,7 +299,7 @@ class MenuController extends Controller
                     Menu::query()->whereIn('id', $deleteIds)->delete();
                 }
                 if (!empty($hasChildren)) {
-                    $message = ' 以下菜单ID因有子菜单不能直接删除：' . implode(',', $hasChildren);
+                    $message = ' 以下選單ID因有子選單不能直接删除：' . implode(',', $hasChildren);
                 }
                 break;
             case 'parent':
@@ -307,13 +307,13 @@ class MenuController extends Controller
                 if ($pid < 0 || ($pid > 0 && !MenuRepository::find($pid))) {
                     return [
                         'code' => 2,
-                        'msg' => '父级菜单ID错误'
+                        'msg' => '父级選單ID错误'
                     ];
                 }
                 if (in_array($pid, $ids)) {
                     return [
                         'code' => 3,
-                        'msg' => '不能将父级菜单指定為自身'
+                        'msg' => '不能将父级選單指定為自身'
                     ];
                 }
                 Menu::query()->whereIn('id', $ids)->update(['pid' => $pid]);

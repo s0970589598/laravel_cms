@@ -14,7 +14,7 @@ use App\Repository\Admin\EntityRepository;
 class HomeController extends Controller
 {
     /**
-     * 基础功能-首页
+     * 基础功能-首頁
      */
     public function showIndex()
     {

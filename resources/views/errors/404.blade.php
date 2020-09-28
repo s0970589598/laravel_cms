@@ -23,8 +23,8 @@
 <body>
 <div class="layui-container">
     <div class="error_500 tc">
-        <p>访问的页面不存在</p>
-        <a href="/" class="btn">返回首页</a>
+        <p>访问的頁面不存在</p>
+        <a href="/" class="btn">返回首頁</a>
     </div>
 </div>
 </body>

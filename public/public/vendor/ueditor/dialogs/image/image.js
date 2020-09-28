@@ -18,7 +18,7 @@
         initButtons();
     };
 
-    /* 初始化tab标签 */
+    /* 初始化tab標簽 */
     function initTabs() {
         var tabs = $G('tabhead').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -400,7 +400,7 @@
 
             setState('pedding');
 
-            // 当有文件添加进来时执行，负责view的创建
+            // 当有文件添加进来时執行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +

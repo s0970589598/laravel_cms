@@ -20,7 +20,7 @@ UE.Editor.prototype.getActionUrl = function(action) {
 window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
     return {
         /** 
-         * 触发fileQueued事件时执行
+         * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的数据 (比如: url和自定义参数)
          * @param {Object} file 当前选择的文件对象
          */
@@ -28,7 +28,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
             return file;
         },
         /**
-         * 触发uploadBeforeSend事件时执行
+         * 触发uploadBeforeSend事件时執行
          * 在文件上传之前触发，用来添加附带参数
          * @param {Object} object 当前上传对象
          * @param {Object} data 默认的上传参数，可以扩展此对象来控制上传参数
@@ -39,7 +39,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
             return data;
         },
         /**
-         * 触发startUpload事件时执行
+         * 触发startUpload事件时執行
          * 当开始上传流程时触发，用来设置Uploader配置项
          * @param {Object} uploader
          * @returns uploader
@@ -48,7 +48,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
             return uploader;
         },
         /**
-         * 触发uploadSuccess事件时执行
+         * 触发uploadSuccess事件时執行
          * 当文件上传成功时触发，可以在这里修改上传接口返回的response对象
          * @param {Object} res 上传接口返回的response
          * @returns {Boolean} 上传接口返回的response成功状态条件 (比如: res.code == 200)
@@ -72,7 +72,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
 window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
     return {
         /** 
-         * 触发fileQueued事件时执行
+         * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的数据 (比如: url和自定义参数)
          * @param {Object} file 当前选择的文件对象
          */
@@ -80,7 +80,7 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
             return file;
         },
         /**
-         * 触发uploadBeforeSend事件时执行
+         * 触发uploadBeforeSend事件时執行
          * 在文件上传之前触发，用来添加附带参数
          * @param {Object} object 当前上传对象
          * @param {Object} data 默认的上传参数，可以扩展此对象来控制上传参数
@@ -91,7 +91,7 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
             return data;
         },
         /**
-         * 触发startUpload事件时执行
+         * 触发startUpload事件时執行
          * 当开始上传流程时触发，用来设置Uploader配置项
          * @param {Object} uploader
          * @returns uploader
@@ -100,7 +100,7 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
             return uploader;
         },
         /**
-         * 触发uploadSuccess事件时执行
+         * 触发uploadSuccess事件时執行
          * 当文件上传成功时触发，可以在这里修改上传接口返回的response对象
          * @param {Object} res 上传接口返回的response
          * @returns {Boolean} 上传接口返回的response成功状态条件 (比如: res.code == 200)
@@ -181,7 +181,7 @@ window.UEDITOR_CONFIG['scrawlUploadService'] = function(context, editor) {
 window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
     return {
         /** 
-         * 触发fileQueued事件时执行
+         * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的数据 (比如: url和自定义参数)
          * @param {Object} file 当前选择的文件对象
          */
@@ -189,7 +189,7 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
             return file;
         },
         /**
-         * 触发uploadBeforeSend事件时执行
+         * 触发uploadBeforeSend事件时執行
          * 在文件上传之前触发，用来添加附带参数
          * @param {Object} object 当前上传对象
          * @param {Object} data 默认的上传参数，可以扩展此对象来控制上传参数
@@ -200,7 +200,7 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
             return data;
         },
         /**
-         * 触发startUpload事件时执行
+         * 触发startUpload事件时執行
          * 当开始上传流程时触发，用来设置Uploader配置项
          * @param {Object} uploader
          * @returns uploader
@@ -209,7 +209,7 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
             return uploader;
         },
         /**
-         * 触发uploadSuccess事件时执行
+         * 触发uploadSuccess事件时執行
          * 当文件上传成功时触发，可以在这里修改上传接口返回的response对象
          * @param {Object} res 上传接口返回的response
          * @returns {Boolean} 上传接口返回的response成功状态条件 (比如: res.code == 200)

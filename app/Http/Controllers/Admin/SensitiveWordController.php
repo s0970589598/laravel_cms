@@ -23,16 +23,16 @@ class SensitiveWordController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '敏感词列表', 'url' => route('admin::SensitiveWord.index')];
+        $this->breadcrumb[] = ['title' => '敏感詞列表', 'url' => route('admin::SensitiveWord.index')];
     }
 
     /**
-     * 敏感词管理-敏感词列表
+     * 敏感詞管理-敏感詞列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '敏感词列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '敏感詞列表', 'url' => ''];
         $this->setSearchField();
         SensitiveWord::$listField = [
             'verb' => '动词',
@@ -43,7 +43,7 @@ class SensitiveWordController extends Controller
     }
 
     /**
-     * 敏感词列表数据接口
+     * 敏感詞列表数据接口
      *
      * @param Request $request
      * @return array
@@ -101,17 +101,17 @@ class SensitiveWordController extends Controller
     }
 
     /**
-     * 敏感词管理-新增敏感词
+     * 敏感詞管理-新增敏感詞
      *
      */
     public function create()
     {
-        $this->breadcrumb[] = ['title' => '新增敏感词', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增敏感詞', 'url' => ''];
         return view('admin.SensitiveWord.add', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 敏感词管理-保存敏感词
+     * 敏感詞管理-保存敏感詞
      *
      * @param SensitiveWordRequest $request
      * @return array
@@ -134,28 +134,28 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感词已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 敏感词管理-编辑敏感词
+     * 敏感詞管理-编辑敏感詞
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '编辑敏感词', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '编辑敏感詞', 'url' => ''];
 
         $model = SensitiveWordRepository::find($id);
         return view('admin.SensitiveWord.add', ['id' => $id, 'model' => $model, 'breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 敏感词管理-更新敏感词
+     * 敏感詞管理-更新敏感詞
      *
      * @param SensitiveWordRequest $request
      * @param int $id
@@ -179,14 +179,14 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感词已存在' : '其它错误'),
+                'msg' => '编辑失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 敏感词管理-删除敏感词
+     * 敏感詞管理-删除敏感詞
      *
      * @param int $id
      */
