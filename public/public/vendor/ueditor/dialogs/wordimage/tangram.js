@@ -283,7 +283,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @function
  * @grammar baidu.swf.createHTML(options)
  * 
- * @param {Object} 	options 					创建flash的选项参數
+ * @param {Object} 	options 					创建flash的選项参數
  * @param {string} 	options.id 					要创建的flash的标识
  * @param {string} 	options.url 				flash文件的url
  * @param {String} 	options.errorMessage 		未安装flash player或flash player版本号过低时的提示
@@ -426,7 +426,7 @@ baidu.swf.createHTML = function (options) {
  * @function
  * @grammar baidu.swf.create(options[, container])
  * 
- * @param {Object} 	options 					创建flash的选项参數
+ * @param {Object} 	options 					创建flash的選项参數
  * @param {string} 	options.id 					要创建的flash的标识
  * @param {string} 	options.url 				flash文件的url
  * @param {String} 	options.errorMessage 		未安装flash player或flash player版本号过低时的提示
@@ -867,7 +867,7 @@ baidu.object.extend = function (target, source) {
  * @config {Object} createOptions 创建flash时需要的参數，请参照baidu.swf.create文档
  * @config {String} createOptions.width
  * @config {String} createOptions.height
- * @config {Number} maxNum 最大可选文件數
+ * @config {Number} maxNum 最大可選文件數
  * @config {Function|String} selectFile
  * @config {Function|String} exceedMaxSize
  * @config {Function|String} deleteFile
@@ -998,7 +998,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 设置可选文件的數量限制
+     * 设置可選文件的數量限制
      * @public
      * @param {Number} num
      * @return {Null}
@@ -1008,7 +1008,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 设置可选文件大小限制，以兆M為单位
+     * 设置可選文件大小限制，以兆M為单位
      * @public
      * @param {Number} num,0為無限制
      * @return {Null}
@@ -1091,7 +1091,7 @@ baidu.sio._removeScriptTag = function(scr){
  * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
  * @param {string} url 加载數據的url
  * @param {Function|string} opt_callback 數據加载结束时调用的函數或函數名
- * @param {Object} opt_options 其他可选项
+ * @param {Object} opt_options 其他可選项
  * @config {String} [charset] script的字符集
  * @config {Integer} [timeOut] 超时時間，超过这个時間将不再响应本请求，并触发onfailure函數
  * @config {Function} [onfailure] timeOut设定后才生效，到达超时時間时触发本函數
@@ -1147,7 +1147,7 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
  * @grammar baidu.sio.callByServer(url, callback[, opt_options])
  * @param {string} url 加载數據的url.
  * @param {Function|string} callback 服务器端调用的函數或函數名。如果没有指定本参數，将在URL中寻找options['queryField']做為callback的方法名.
- * @param {Object} opt_options 加载數據时的选项.
+ * @param {Object} opt_options 加载數據时的選项.
  * @config {string} [charset] script的字符集
  * @config {string} [queryField] 服务器端callback请求字段名，默認為callback
  * @config {Integer} [timeOut] 超时時間(单位：ms)，超过这个時間将不再响应本请求，并触发onfailure函數

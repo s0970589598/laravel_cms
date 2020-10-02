@@ -188,7 +188,7 @@ class MenuController extends Controller
 
         foreach (Route::getRoutes()->getRoutesByName() as $k => $v) {
             if (Str::startsWith($k, 'admin::')) {
-                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未写分组名稱，则注譯直接作為選單名稱。未写注譯则选用uri作為選單名稱。
+                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未写分组名稱，则注譯直接作為選單名稱。未写注譯则選用uri作為選單名稱。
                 $action = explode('@', $v->getActionName());
                 if (!method_exists($action[0], $action[1])) {
                     continue;

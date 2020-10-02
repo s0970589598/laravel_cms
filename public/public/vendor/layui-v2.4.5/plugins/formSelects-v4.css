@@ -1,4 +1,4 @@
-/* formSelects多选css */
+/* formSelects多選css */
 select[xm-select]{display: none !important;}
 .xm-select-parent * {margin: 0;padding: 0;font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif; box-sizing: initial;}
 .xm-select-parent {text-align: left;}
@@ -96,7 +96,7 @@ div[xm-select-skin=danger] dl dd.xm-select-this:not(.xm-dis-disabled) i {color: 
 div[xm-select-skin=danger].xm-form-selected .xm-select,div[xm-select-skin=danger].xm-form-selected .xm-select:hover {border-color: #FF5722!important}
 
 
-/* 多选联动  */
+/* 多選联动  */
 .xm-select-parent .layui-form-danger+.xm-select-title .xm-select {border-color: #FF5722 !important;}
 .xm-select-linkage li {padding: 10px 0px;cursor: pointer;}
 .xm-select-linkage li span {padding-left: 20px;padding-right: 30px;display: inline-block;height: 20px;overflow: hidden;text-overflow: ellipsis;}

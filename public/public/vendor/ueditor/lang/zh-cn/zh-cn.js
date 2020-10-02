@@ -10,7 +10,7 @@ UE.I18N['zh-cn'] = {
         'anchor':'锚点', 'undo':'撤销', 'redo':'重做', 'bold':'加粗', 'indent':'首行缩进', 'snapscreen':'截圖',
         'italic':'斜体', 'underline':'下划线', 'strikethrough':'删除线', 'subscript':'下标','fontborder':'字符边框',
         'superscript':'上标', 'formatmatch':'格式刷', 'source':'源代码', 'blockquote':'引用',
-        'pasteplain':'纯文本粘贴模式', 'selectall':'全选', 'print':'打印', 'preview':'预览',
+        'pasteplain':'纯文本粘贴模式', 'selectall':'全選', 'print':'打印', 'preview':'预览',
         'horizontal':'分隔线', 'removeformat':'清除格式', 'time':'時間', 'date':'日期',
         'unlink':'取消链接', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合并单元格', 'mergedown':'下合并单元格',
         'deleterow':'删除行', 'deletecol':'删除列', 'splittorows':'拆分成行',
@@ -129,7 +129,7 @@ UE.I18N['zh-cn'] = {
     'confirmClear':"确定清空当前文档么？",
     'contextMenu':{
         'delete':"删除",
-        'selectall':"全选",
+        'selectall':"全選",
         'deletecode':"删除代码",
         'cleardoc':"清空文档",
         'confirmclear':"确定清空当前文档么？",
@@ -184,8 +184,8 @@ UE.I18N['zh-cn'] = {
         'borderbk':'边框底纹',
         'setcolor':'表格隔行變色',
         'unsetcolor':'取消表格隔行變色',
-        'setbackground':'选区背景隔行',
-        'unsetbackground':'取消选区背景',
+        'setbackground':'選区背景隔行',
+        'unsetbackground':'取消選区背景',
         'redandblue':'红蓝相间',
         'threecolorgradient':'三色渐變',
         'copy':"複製(Ctrl + c)",
@@ -214,7 +214,7 @@ UE.I18N['zh-cn'] = {
     't_row':'行',
     't_col':'列',
     'more':'更多',
-    'pasteOpt':'粘贴选项',
+    'pasteOpt':'粘贴選项',
     'pasteSourceFormat':"保留源格式",
     'tagFormat':'只保留標簽',
     'pasteTextFormat':'只保留文本',
@@ -239,7 +239,7 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_background_normal':'背景设置',
             'lang_background_local':'在线圖片',
-            'lang_background_set':'选项',
+            'lang_background_set':'選项',
             'lang_background_none':'無背景色',
             'lang_background_colored':'有背景色',
             'lang_background_color':'颜色设置',
@@ -250,7 +250,7 @@ UE.I18N['zh-cn'] = {
 
         },
         'noUploadImage':"当前未上传过任何圖片！",
-        'toggleSelect':"单击可切换选中状态\n原圖尺寸: "
+        'toggleSelect':"单击可切换選中状态\n原圖尺寸: "
     },
     //===============dialog i18N=======================
     'insertimage':{
@@ -290,7 +290,7 @@ UE.I18N['zh-cn'] = {
         'uploadTurnRight':'向右旋转',
         'uploadPreview':'预览中',
         'uploadNoPreview':'不能预览',
-        'updateStatusReady': '选中_张圖片，共_KB。',
+        'updateStatusReady': '選中_张圖片，共_KB。',
         'updateStatusConfirm': '已成功上传_张照片，_张照片上传失败',
         'updateStatusFinish': '共_张（_KB），_张上传成功',
         'updateStatusError': '，_张上传失败。',
@@ -315,7 +315,7 @@ UE.I18N['zh-cn'] = {
             'lang_tab_upload': '上传附件',
             'lang_tab_online': '在线附件',
             'lang_start_upload':"开始上传",
-            'lang_drop_remind':"可以将文件拖到这里，单次最多可选100个文件"
+            'lang_drop_remind':"可以将文件拖到这里，单次最多可選100个文件"
         },
         'uploadSelectFile':'点击選擇文件',
         'uploadAddFile':'继续添加',
@@ -327,7 +327,7 @@ UE.I18N['zh-cn'] = {
         'uploadTurnLeft':'向左旋转',
         'uploadTurnRight':'向右旋转',
         'uploadPreview':'预览中',
-        'updateStatusReady': '选中_个文件，共_KB。',
+        'updateStatusReady': '選中_个文件，共_KB。',
         'updateStatusConfirm': '已成功上传_个文件，_个文件上传失败',
         'updateStatusFinish': '共_个（_KB），_个上传成功',
         'updateStatusError': '，_张上传失败。',
@@ -372,7 +372,7 @@ UE.I18N['zh-cn'] = {
         'block':"独占一行",
         'urlError':"输入的视频地址有误，请检查后再试！",
         'loading':" &nbsp;视频加载中，请等待……",
-        'clickToSelect':"点击选中",
+        'clickToSelect':"点击選中",
         'goToSource':'访问源视频',
         'noVideo':" &nbsp; &nbsp;抱歉，找不到对应的视频，请重试！",
 
@@ -413,7 +413,7 @@ UE.I18N['zh-cn'] = {
         'uploadTurnLeft':'向左旋转',
         'uploadTurnRight':'向右旋转',
         'uploadPreview':'预览中',
-        'updateStatusReady': '选中_个文件，共_KB。',
+        'updateStatusReady': '選中_个文件，共_KB。',
         'updateStatusConfirm': '成功上传_个，_个失败',
         'updateStatusFinish': '共_个(_KB)，_个成功上传',
         'updateStatusError': '，_张上传失败。',
@@ -503,7 +503,7 @@ UE.I18N['zh-cn'] = {
     },
     'emotion':{
         'static':{
-            'lang_input_choice':'精选',
+            'lang_input_choice':'精選',
             'lang_input_Tuzki':'兔斯基',
             'lang_input_BOBO':'BOBO',
             'lang_input_lvdouwa':'绿豆蛙',
@@ -527,15 +527,15 @@ UE.I18N['zh-cn'] = {
             'lang_input_introduction':'UEditor是由百度web前端研发部开发的所见即所得副文本web編輯器，具有轻量，可定制，注重用户体验等特点。开源基于BSD协议，允许自由使用和修改代码。',
             'lang_Txt_shortcuts':'快捷键',
             'lang_Txt_func':'功能',
-            'lang_Txt_bold':'给选中字设置為加粗',
-            'lang_Txt_copy':'複製选中内容',
-            'lang_Txt_cut':'剪切选中内容',
+            'lang_Txt_bold':'给選中字设置為加粗',
+            'lang_Txt_copy':'複製選中内容',
+            'lang_Txt_cut':'剪切選中内容',
             'lang_Txt_Paste':'粘贴',
             'lang_Txt_undo':'重新執行上次操作',
             'lang_Txt_redo':'撤销上一次操作',
-            'lang_Txt_italic':'给选中字设置為斜体',
-            'lang_Txt_underline':'给选中字加下划线',
-            'lang_Txt_selectAll':'全部选中',
+            'lang_Txt_italic':'给選中字设置為斜体',
+            'lang_Txt_underline':'给選中字加下划线',
+            'lang_Txt_selectAll':'全部選中',
             'lang_Txt_visualEnter':'软回车',
             'lang_Txt_fullscreen':'全屏'
         }
@@ -559,7 +559,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_title':'標題：',
             'lang_input_target':'是否在新窗口打开：'
         },
-        'validLink':'只支持选中一个链接时生效',
+        'validLink':'只支持選中一个链接时生效',
         'httpPrompt':'您输入的超链接中不包含http等协议名稱，默認将為您添加http://前缀'
     },
     'map':{

@@ -382,7 +382,7 @@
                     height: imageCompressBorder,
                     // 圖片质量，只有type為`image/jpeg`的时候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
+                    // 是否允许放大，如果想要生成小圖的时候不失真，此選项应该设置為false.
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,
@@ -821,7 +821,7 @@
                     _this.getImageData();
                 }
             });
-            /* 选中圖片 */
+            /* 選中圖片 */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode;
@@ -1006,7 +1006,7 @@
                 }
             });
 
-            /* 选中圖片 */
+            /* 選中圖片 */
             domUtils.on($G('searchList'), 'click', function(e){
                 var target = e.target || e.srcElement,
                     li = target.parentNode.parentNode;

@@ -222,7 +222,7 @@ class EntityFieldControllerTest extends TestCase
         $response->assertSee('<option value="2"  selected >推荐2</option>');
         $response->assertSee('value="测试標題"');
 
-        // 不选推荐
+        // 不選推荐
         $data = [
             'title' => '测试標題',
             'recommend' => '',

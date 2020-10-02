@@ -80,7 +80,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="layui-form-mid layui-word-aux"><span style="color:#FF5722">下拉選擇（远程搜索）、下拉選擇（多选，远程搜索）只支持行内展示</span></div>
+                        <div class="layui-form-mid layui-word-aux"><span style="color:#FF5722">下拉選擇（远程搜索）、下拉選擇（多選，远程搜索）只支持行内展示</span></div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">表單备注</label>
@@ -91,7 +91,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">表單参數</label>
                         <div class="layui-input-block">
-                            <textarea name="form_params" class="layui-textarea" placeholder="对于表單類型為单选框、多选框、下拉選擇的，需在此配置对应参數。参數格式為：key=value，多个以换行分隔。也可以填写自定义的函數名稱，函數名稱需以getFormItemsFrom开头，返回值需与前述數據格式一致。对于下拉選擇远程搜索表單類型、短文本（input，自動完成）表單類型，需在此填写編輯接口URL地址，接口返回數據格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
+                            <textarea name="form_params" class="layui-textarea" placeholder="对于表單類型為单選框、多選框、下拉選擇的，需在此配置对应参數。参數格式為：key=value，多个以换行分隔。也可以填写自定义的函數名稱，函數名稱需以getFormItemsFrom开头，返回值需与前述數據格式一致。对于下拉選擇远程搜索表單類型、短文本（input，自動完成）表單類型，需在此填写編輯接口URL地址，接口返回數據格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">

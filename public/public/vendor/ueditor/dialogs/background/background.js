@@ -214,7 +214,7 @@
                     _this.getImageData();
                 }
             });
-            /* 选中圖片 */
+            /* 選中圖片 */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode,

@@ -80,7 +80,7 @@ class SensitiveWordController extends Controller
         if (count($data) > 1) {
             return [
             'code' => 4,
-                'msg' => '專有词、动词、名词不可同时填写，任选一个填写即可',
+                'msg' => '專有词、动词、名词不可同时填写，任選一个填写即可',
                 'redirect' => false
             ];
         }

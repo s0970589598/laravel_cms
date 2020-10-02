@@ -234,7 +234,7 @@
         //    {
         //        label:'',       //显示的名稱
         //        cmdName:'selectall',//執行的command命令，当点击这个右键選單时
-        //        //exec可选，有了exec就会在点击时執行这个function，优先级高于cmdName
+        //        //exec可選，有了exec就会在点击时執行这个function，优先级高于cmdName
         //        exec:function () {
         //            //this是当前編輯器的实例
         //            //this.ui._dialogs['inserttableDialog'].open();

@@ -1615,7 +1615,7 @@ EventBase.prototype = {
      * @example
      * ```javascript
      * editor.addListener('selectionchange',function(){
-     *      console.log("选区已经變化！");
+     *      console.log("選区已经變化！");
      * })
      * editor.addListener('beforegetcontent aftergetcontent',function(type){
      *         if(type == 'beforegetcontent'){
@@ -1678,7 +1678,7 @@ EventBase.prototype = {
      * 触发事件
      * @method fireEvent
      * @param { String } types 触发的事件名稱，同时触发多个事件使用空格分隔
-     * @param { *... } options 可选参數，可以传入一个或多个参數，会传给事件触发的回调函數
+     * @param { *... } options 可選参數，可以传入一个或多个参數，会传给事件触发的回调函數
      * @return { * } 返回触发事件的队列中，最后執行的回调函數的返回值
      * @example
      * ```javascript
@@ -1982,7 +1982,7 @@ var dtd = (dom.dtd = (function() {
     //自闭和元素
     $empty: empty,
 
-    //不是自闭合，但不能让range选中里边
+    //不是自闭合，但不能让range選中里边
     $nonChild: _({ iframe: 1, textarea: 1 }),
     //列表元素列表
     $listItem: _({ dd: 1, dt: 1, li: 1 }),
@@ -2558,7 +2558,7 @@ var domUtils = (dom.domUtils = {
      * @return { Array } 给定节点的祖先节点數组
      * @grammar UE.dom.domUtils.findParents(node)  => Array  //返回一个祖先节点數组集合，不包含自身
      * @grammar UE.dom.domUtils.findParents(node,includeSelf)  => Array  //返回一个祖先节点數组集合，includeSelf指定是否包含自身
-     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn)  => Array  //返回一个祖先节点數组集合，filterFn指定过滤条件，返回true的node将被选取
+     * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn)  => Array  //返回一个祖先节点數组集合，filterFn指定过滤条件，返回true的node将被選取
      * @grammar UE.dom.domUtils.findParents(node,includeSelf,filterFn,closerFirst)  => Array  //返回一个祖先节点數组集合，closerFirst為true的话，node的直接父亲节点是數组的第0个
      */
 
@@ -3576,10 +3576,10 @@ var domUtils = (dom.domUtils = {
   },
 
   /**
-     * 设置节点node及其子节点不会被选中
+     * 设置节点node及其子节点不会被選中
      * @method unSelectable
      * @param { Element } node 需要執行操作的dom元素
-     * @remind 執行该操作后的节点， 将不能被鼠标选中
+     * @remind 執行该操作后的节点， 将不能被鼠标選中
      * @example
      * ```javascript
      * UE.dom.domUtils.unSelectable( document.body );
@@ -4689,11 +4689,11 @@ var domUtils = (dom.domUtils = {
   },
 
   /**
-     * 查询给定的range选区是否在给定的node节点内，且在该节点的最末尾
+     * 查询给定的range選区是否在给定的node节点内，且在该节点的最末尾
      * @method isInNodeEndBoundary
      * @param { UE.dom.Range } rng 需要判断的range对象， 该对象的startContainer不能為NULL
      * @param node 需要检测的节点对象
-     * @return { Number } 如果给定的选取range对象是在node内部的最末端， 则返回1, 否则返回0
+     * @return { Number } 如果给定的選取range对象是在node内部的最末端， 则返回1, 否则返回0
      */
   isInNodeEndBoundary: function(rng, node) {
     var start = rng.startContainer;
@@ -4929,7 +4929,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
   /**
      * 创建一个跟document绑定的空的Range实例
      * @constructor
-     * @param { Document } document 新建的选区所属的文档对象
+     * @param { Document } document 新建的選区所属的文档对象
      */
 
   /**
@@ -5016,17 +5016,17 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
   Range.prototype = {
     /**
-         * 克隆选区的内容到一个DocumentFragment里
+         * 克隆選区的内容到一个DocumentFragment里
          * @method cloneContents
-         * @return { DocumentFragment | NULL } 如果选区是闭合的将返回null， 否则， 返回包含所clone内容的DocumentFragment元素
+         * @return { DocumentFragment | NULL } 如果選区是闭合的将返回null， 否则， 返回包含所clone内容的DocumentFragment元素
          * @example
          * ```html
          * <body>
-         *      <!-- 中括号表示选区 -->
+         *      <!-- 中括号表示選区 -->
          *      <b>x<i>x[x</i>xx]x</b>
          *
          *      <script>
-         *          //range是已选中的选区
+         *          //range是已選中的選区
          *          var fragment = range.cloneContents(),
          *              node = document.createElement("div");
          *
@@ -5044,21 +5044,21 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 删除当前选区范围中的所有内容
+         * 删除当前選区范围中的所有内容
          * @method deleteContents
          * @remind 執行完该操作后， 当前Range对象變成了闭合状态
          * @return { UE.dom.Range } 当前操作的Range对象
          * @example
          * ```html
          * <body>
-         *      <!-- 中括号表示选区 -->
+         *      <!-- 中括号表示選区 -->
          *      <b>x<i>x[x</i>xx]x</b>
          *
          *      <script>
-         *          //range是已选中的选区
+         *          //range是已選中的選区
          *          range.deleteContents();
          *
-         *          //竖线表示闭合后的选区位置
+         *          //竖线表示闭合后的選区位置
          *          //output: <b>x<i>x</i>|x</b>
          *          console.log( document.body.innerHTML );
          *
@@ -5094,25 +5094,25 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 将当前选区的内容提取到一个DocumentFragment里
+         * 将当前選区的内容提取到一个DocumentFragment里
          * @method extractContents
-         * @remind 執行该操作后， 选区将變成闭合状态
-         * @warning 執行该操作后， 原来选区所选中的内容将从dom树上剥离出来
+         * @remind 執行该操作后， 選区将變成闭合状态
+         * @warning 執行该操作后， 原来選区所選中的内容将从dom树上剥离出来
          * @return { DocumentFragment } 返回包含所提取内容的DocumentFragment对象
          * @example
          * ```html
          * <body>
-         *      <!-- 中括号表示选区 -->
+         *      <!-- 中括号表示選区 -->
          *      <b>x<i>x[x</i>xx]x</b>
          *
          *      <script>
-         *          //range是已选中的选区
+         *          //range是已選中的選区
          *          var fragment = range.extractContents(),
          *              node = document.createElement( "div" );
          *
          *          node.appendChild( fragment );
          *
-         *          //竖线表示闭合后的选区位置
+         *          //竖线表示闭合后的選区位置
          *
          *          //output: <b>x<i>x</i>|x</b>
          *          console.log( document.body.innerHTML );
@@ -5143,15 +5143,15 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @method  setStart
          * @remind 如果给定的节点是元素节点，那么offset指的是其子元素中索引為offset的元素，
          *          如果是文本节点，那么offset指的是其文本内容的第offset个字符
-         * @remind 如果提供的容器节点是一个不能包含子元素的节点， 则该选区的开始容器将被设置
+         * @remind 如果提供的容器节点是一个不能包含子元素的节点， 则该選区的开始容器将被设置
          *          為该节点的父节点， 此时， 其距离开始容器的偏移量也變成了该节点在其父节点
          *          中的索引
-         * @param { Node } node 将被设為当前选区开始边界容器的节点对象
-         * @param { int } offset 选区的开始位置偏移量
+         * @param { Node } node 将被设為当前選区开始边界容器的节点对象
+         * @param { int } offset 選区的开始位置偏移量
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
-         * <!-- 选区 -->
+         * <!-- 選区 -->
          * <b>xxx<i>x<span>xx</span>xx<em>xx</em>xxx</i>[xxx]</b>
          *
          * <script>
@@ -5159,14 +5159,14 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.setStart( document.getElementsByTagName("i")[0], 1 );
          *
-         *     //此时， 选区變成了
+         *     //此时， 選区變成了
          *     //<b>xxx<i>x[<span>xx</span>xx<em>xx</em>xxx</i>xxx]</b>
          *
          * </script>
          * ```
          * @example
          * ```html
-         * <!-- 选区 -->
+         * <!-- 選区 -->
          * <b>xxx<img>[xx]x</b>
          *
          * <script>
@@ -5174,7 +5174,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.setStart( document.getElementsByTagName("img")[0], 3 );
          *
-         *     //此时， 选区變成了
+         *     //此时， 選区變成了
          *     //<b>xxx[<img>xx]x</b>
          *
          * </script>
@@ -5187,7 +5187,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 设置Range的结束容器和偏移量
          * @method  setEnd
-         * @param { Node } node 作為当前选区结束边界容器的节点对象
+         * @param { Node } node 作為当前選区结束边界容器的节点对象
          * @param { int } offset 结束边界的偏移量
          * @see UE.dom.Range:setStart(Node,int)
          * @return { UE.dom.Range } 当前range对象
@@ -5200,11 +5200,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 将Range开始位置设置到node节点之后
          * @method  setStartAfter
          * @remind 该操作将会把给定节点的父节点作為range的开始容器， 且偏移量是该节点在其父节点中的位置索引+1
-         * @param { Node } node 选区的开始边界将紧接着该节点之后
+         * @param { Node } node 選区的开始边界将紧接着该节点之后
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>xx[x</span>xxx]</b>
          *
          * <script>
@@ -5212,7 +5212,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.setStartAfter( document.getElementsByTagName("i")[0] );
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>xx<i>xxx</i>[<span>xxx</span>xxx]</b>
          *
          * </script>
@@ -5226,7 +5226,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 将Range开始位置设置到node节点之前
          * @method  setStartBefore
          * @remind 该操作将会把给定节点的父节点作為range的开始容器， 且偏移量是该节点在其父节点中的位置索引
-         * @param { Node } node 新的选区开始位置在该节点之前
+         * @param { Node } node 新的選区开始位置在该节点之前
          * @see UE.dom.Range:setStartAfter(Node)
          * @return { UE.dom.Range } 当前range对象
          */
@@ -5243,7 +5243,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>[xx<i>xxx</i><span>xx]x</span>xxx</b>
          *
          * <script>
@@ -5251,7 +5251,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.setStartAfter( document.getElementsByTagName("span")[0] );
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>[xx<i>xxx</i><span>xxx</span>]xxx</b>
          *
          * </script>
@@ -5276,14 +5276,14 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 设置Range的开始位置到node节点内的第一个子节点之前
          * @method  setStartAtFirst
-         * @remind 选区的开始容器将變成给定的节点， 且偏移量為0
+         * @remind 選区的开始容器将變成给定的节点， 且偏移量為0
          * @remind 如果给定的节点是元素节点， 则该节点必须是允许包含子节点的元素。
          * @param { Node } node 目标节点
          * @see UE.dom.Range:setStartBefore(Node)
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>[xx]x</span>xxx</b>
          *
          * <script>
@@ -5291,7 +5291,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.setStartAtFirst( document.getElementsByTagName("i")[0] );
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>xx<i>[xxx</i><span>xx]x</span>xxx</b>
          *
          * </script>
@@ -5304,7 +5304,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 设置Range的开始位置到node节点内的最后一个节点之后
          * @method setStartAtLast
-         * @remind 选区的开始容器将變成给定的节点， 且偏移量為该节点的子节点數
+         * @remind 選区的开始容器将變成给定的节点， 且偏移量為该节点的子节点數
          * @remind 如果给定的节点是元素节点， 则该节点必须是允许包含子节点的元素。
          * @param { Node } node 目标节点
          * @see UE.dom.Range:setStartAtFirst(Node)
@@ -5321,7 +5321,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 设置Range的结束位置到node节点内的第一个节点之前
          * @method  setEndAtFirst
          * @param { Node } node 目标节点
-         * @remind 选区的结束容器将變成给定的节点， 且偏移量為0
+         * @remind 選区的结束容器将變成给定的节点， 且偏移量為0
          * @remind node必须是一个元素节点， 且必须是允许包含子节点的元素。
          * @see UE.dom.Range:setStartAtFirst(Node)
          * @return { UE.dom.Range } 当前range对象
@@ -5334,7 +5334,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * 设置Range的结束位置到node节点内的最后一个节点之后
          * @method  setEndAtLast
          * @param { Node } node 目标节点
-         * @remind 选区的结束容器将變成给定的节点， 且偏移量為该节点的子节点數量
+         * @remind 選区的结束容器将變成给定的节点， 且偏移量為该节点的子节点數量
          * @remind node必须是一个元素节点， 且必须是允许包含子节点的元素。
          * @see UE.dom.Range:setStartAtFirst(Node)
          * @return { UE.dom.Range } 当前range对象
@@ -5347,15 +5347,15 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 选中给定节点
+         * 選中给定节点
          * @method  selectNode
-         * @remind 此时， 选区的开始容器和结束容器都是该节点的父节点， 其startOffset是该节点在父节点中的位置索引，
+         * @remind 此时， 選区的开始容器和结束容器都是该节点的父节点， 其startOffset是该节点在父节点中的位置索引，
          *          而endOffset為startOffset+1
-         * @param { Node } node 需要选中的节点
+         * @param { Node } node 需要選中的节点
          * @return { UE.dom.Range } 当前range对象，此时的range仅包含当前给定的节点对象
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>[xx]x</span>xxx</b>
          *
          * <script>
@@ -5363,7 +5363,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.selectNode( document.getElementsByTagName("i")[0] );
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>xx[<i>xxx</i>]<span>xxx</span>xxx</b>
          *
          * </script>
@@ -5374,15 +5374,15 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 选中给定节点内部的所有节点
+         * 選中给定节点内部的所有节点
          * @method  selectNodeContents
-         * @remind 此时， 选区的开始容器和结束容器都是该节点， 其startOffset為0，
+         * @remind 此时， 選区的开始容器和结束容器都是该节点， 其startOffset為0，
          *          而endOffset是该节点的子节点數。
          * @param { Node } node 目标节点， 当前range将包含该节点内的所有节点
          * @return { UE.dom.Range } 当前range对象， 此时range仅包含给定节点的所有子节点
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>[xx]x</span>xxx</b>
          *
          * <script>
@@ -5390,7 +5390,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.selectNode( document.getElementsByTagName("b")[0] );
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>[xx<i>xxx</i><span>xxx</span>xxx]</b>
          *
          * </script>
@@ -5414,12 +5414,12 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 向当前选区的结束处闭合选区
+         * 向当前選区的结束处闭合選区
          * @method  collapse
          * @return { UE.dom.Range } 当前range对象
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>[xx]x</span>xxx</b>
          *
          * <script>
@@ -5427,8 +5427,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.collapse();
          *
-         *     //结果选区
-         *     //“|”表示选区已闭合
+         *     //结果選区
+         *     //“|”表示選区已闭合
          *     //<b>xx<i>xxx</i><span>xx|x</span>xxx</b>
          *
          * </script>
@@ -5436,15 +5436,15 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 闭合当前选区，根据给定的toStart参數项决定是向当前选区开始处闭合还是向结束处闭合，
+         * 闭合当前選区，根据给定的toStart参數项决定是向当前選区开始处闭合还是向结束处闭合，
          * 如果toStart的值為true，则向开始位置闭合， 反之，向结束位置闭合。
          * @method  collapse
-         * @param { Boolean } toStart 是否向选区开始处闭合
+         * @param { Boolean } toStart 是否向選区开始处闭合
          * @return { UE.dom.Range } 当前range对象，此时range对象处于闭合状态
          * @see UE.dom.Range:collapse()
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>xx<i>xxx</i><span>[xx]x</span>xxx</b>
          *
          * <script>
@@ -5452,8 +5452,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行操作
          *     range.collapse( true );
          *
-         *     //结果选区
-         *     //“|”表示选区已闭合
+         *     //结果選区
+         *     //“|”表示選区已闭合
          *     //<b>xx<i>xxx</i><span>|xxx</span>xxx</b>
          *
          * </script>
@@ -5483,7 +5483,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *
          * @example
          * ```html
-         * <!-- 选区示例 -->
+         * <!-- 選区示例 -->
          * <b>x[xx</b><i>]xxx</i>
          *
          * <script>
@@ -5491,7 +5491,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     //執行收缩
          *     range.shrinkBoundary();
          *
-         *     //结果选区
+         *     //结果選区
          *     //<b>x[xx]</b><i>xxx</i>
          * </script>
          * ```
@@ -5546,13 +5546,13 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取离当前选区内包含的所有节点最近的公共祖先节点，
+         * 获取离当前選区内包含的所有节点最近的公共祖先节点，
          * @method  getCommonAncestor
          * @remind 返回的公共祖先节点一定不是range自身的容器节点， 但有可能是一个文本节点
          * @return { Node } 当前range对象内所有节点的公共祖先节点
          * @example
          * ```html
-         * //选区示例
+         * //選区示例
          * <span>xxx<b>x[x<em>xx]x</em>xxx</b>xx</span>
          * <script>
          *
@@ -5567,8 +5567,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
-         * 的公共祖先节点是否可以是当前选区的startContainer或endContainer节点， 如果 includeSelf
+         * 获取当前選区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
+         * 的公共祖先节点是否可以是当前選区的startContainer或endContainer节点， 如果 includeSelf
          * 的取值為true， 则返回的节点可以是自身的容器节点， 否则， 则不能是容器节点
          * @method  getCommonAncestor
          * @param { Boolean } includeSelf 是否允许获取到的公共祖先节点是当前range对象的容器节点
@@ -5578,7 +5578,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * ```html
          * <body>
          *
-         *     <!-- 选区示例 -->
+         *     <!-- 選区示例 -->
          *     <b>xxx<i>xxxx<span>xx[x</span>xx]x</i>xxxxxxx</b>
          *
          *     <script>
@@ -5596,8 +5596,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 获取当前选区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
-         * 的公共祖先节点是否可以是当前选区的startContainer或endContainer节点， 如果 includeSelf
+         * 获取当前選区所包含的所有节点的公共祖先节点， 可以根据给定的参數 includeSelf 决定获取到
+         * 的公共祖先节点是否可以是当前選区的startContainer或endContainer节点， 如果 includeSelf
          * 的取值為true， 则返回的节点可以是自身的容器节点， 否则， 则不能是容器节点； 同时可以根据
          * ignoreTextNode 参數的取值决定是否忽略類型為文本节点的祖先节点。
          * @method  getCommonAncestor
@@ -5610,7 +5610,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * ```html
          * <body>
          *
-         *     <!-- 选区示例 -->
+         *     <!-- 選区示例 -->
          *     <b>xxx<i>xxxx<span>x[x]x</span>xxx</i>xxxxxxx</b>
          *
          *     <script>
@@ -5648,11 +5648,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @example
          * ```html
          *
-         * //选区示例
+         * //選区示例
          * <b>xxx<i>[xxxxx]</i>xxx</b>
          *
          * <script>
-         *     //未调整前， 选区的开始容器和结束都是文本节点
+         *     //未调整前， 選区的开始容器和结束都是文本节点
          *     //執行调整
          *     range.trimBoundary();
          *
@@ -5671,11 +5671,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @example
          * ```html
          *
-         * //选区示例
+         * //選区示例
          * <b>xxx<i>[xxxxx]</i>xxx</b>
          *
          * <script>
-         *     //未调整前， 选区的开始容器和结束都是文本节点
+         *     //未调整前， 選区的开始容器和结束都是文本节点
          *     //執行调整
          *     range.trimBoundary( true );
          *
@@ -5728,18 +5728,18 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 如果选区在文本的边界上，就扩展选区到文本的父节点上, 如果当前选区是闭合的， 则什么也不做
+         * 如果選区在文本的边界上，就扩展選区到文本的父节点上, 如果当前選区是闭合的， 则什么也不做
          * @method txtToElmBoundary
          * @remind 该操作不会修改dom节点
          * @return { UE.dom.Range } 当前range对象
          */
 
     /**
-         * 如果选区在文本的边界上，就扩展选区到文本的父节点上, 如果当前选区是闭合的， 则根据参數项
+         * 如果選区在文本的边界上，就扩展選区到文本的父节点上, 如果当前選区是闭合的， 则根据参數项
          * ignoreCollapsed 的值决定是否執行该调整
          * @method txtToElmBoundary
-         * @param { Boolean } ignoreCollapsed 是否忽略选区的闭合状态， 如果该参數取值為true， 则
-         *                      不论选区是否闭合， 都会執行该操作， 反之， 则不会对闭合的选区執行该操作
+         * @param { Boolean } ignoreCollapsed 是否忽略選区的闭合状态， 如果该参數取值為true， 则
+         *                      不论選区是否闭合， 都会執行该操作， 反之， 则不会对闭合的選区執行该操作
          * @return { UE.dom.Range } 当前range对象
          */
     txtToElmBoundary: function(ignoreCollapsed) {
@@ -5775,7 +5775,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 在当前选区的开始位置前插入节点，新插入的节点会被该range包含
+         * 在当前選区的开始位置前插入节点，新插入的节点会被该range包含
          * @method  insertNode
          * @param { Node } node 需要插入的节点
          * @remind 插入的节点可以是一个DocumentFragment依次插入多个节点
@@ -5804,16 +5804,16 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 闭合选区到当前选区的开始位置， 并且定位光标到闭合后的位置
+         * 闭合選区到当前選区的开始位置， 并且定位光标到闭合后的位置
          * @method  setCursor
          * @return { UE.dom.Range } 当前range对象
          * @see UE.dom.Range:collapse()
          */
 
     /**
-         * 闭合选区，可以根据参數toEnd的值控制选区是向前闭合还是向后闭合， 并且定位光标到闭合后的位置。
+         * 闭合選区，可以根据参數toEnd的值控制選区是向前闭合还是向后闭合， 并且定位光标到闭合后的位置。
          * @method  setCursor
-         * @param { Boolean } toEnd 是否向后闭合， 如果為true， 则闭合选区时， 将向结束容器方向闭合，
+         * @param { Boolean } toEnd 是否向后闭合， 如果為true， 则闭合選区时， 将向结束容器方向闭合，
          *                      反之，则向开始容器方向闭合
          * @return { UE.dom.Range } 当前range对象
          * @see UE.dom.Range:collapse(Boolean)
@@ -5823,7 +5823,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 创建当前range的一个书签，记入下当前range的位置，方便当dom树改變时，还能找回原来的选区位置
+         * 创建当前range的一个书签，记入下当前range的位置，方便当dom树改變时，还能找回原来的選区位置
          * @method createBookmark
          * @param { Boolean } serialize 控制返回的标记位置是对当前位置的引用还是ID，如果该值為true，则
          *                              返回标记位置的ID， 反之则返回标记位置节点的引用
@@ -5882,7 +5882,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     /**
          * 调整range的边界，使其"放大"到最近的父节点
          * @method  enlarge
-         * @remind 会引起选区的變化
+         * @remind 会引起選区的變化
          * @return { UE.dom.Range } 当前range对象
          */
 
@@ -6024,7 +6024,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 给range选区中的内容添加给定的inline標簽
+         * 给range選区中的内容添加给定的inline標簽
          * @method applyInlineStyle
          * @param { String } tagName 需要添加的標簽名
          * @example
@@ -6034,11 +6034,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 给range选区中的内容添加给定的inline標簽， 并且為標簽附加上一些初始化属性。
+         * 给range選区中的内容添加给定的inline標簽， 并且為標簽附加上一些初始化属性。
          * @method applyInlineStyle
          * @param { String } tagName 需要添加的標簽名
          * @param { Object } attrs 跟随新添加的標簽的属性
-         * @return { UE.dom.Range } 当前选区
+         * @return { UE.dom.Range } 当前選区
          * @example
          * ```html
          * <p>xxxx[xxxx]x</p>
@@ -6147,7 +6147,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 移除当前选区内指定的inline標簽，但保留其中的内容
+         * 移除当前選区内指定的inline標簽，但保留其中的内容
          * @method removeInlineStyle
          * @param { String } tagName 需要移除的標簽名
          * @return { UE.dom.Range } 当前的range对象
@@ -6158,7 +6158,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          */
 
     /**
-         * 移除当前选区内指定的一组inline標簽，但保留其中的内容
+         * 移除当前選区内指定的一组inline標簽，但保留其中的内容
          * @method removeInlineStyle
          * @param { Array } tagNameArr 需要移除的標簽名的數组
          * @return { UE.dom.Range } 当前的range对象
@@ -6234,9 +6234,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取当前选中的自闭合的节点
+         * 获取当前選中的自闭合的节点
          * @method  getClosedNode
-         * @return { Node | NULL } 如果当前选中的是自闭合节点， 则返回该节点， 否则返回NULL
+         * @return { Node | NULL } 如果当前選中的是自闭合节点， 则返回该节点， 否则返回NULL
          */
     getClosedNode: function() {
       var node;
@@ -6257,7 +6257,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 在頁面上高亮range所表示的选区
+         * 在頁面上高亮range所表示的選区
          * @method select
          * @return { UE.dom.Range } 返回当前Range对象
          */
@@ -6426,7 +6426,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 判断当前选区内容是否占位符
+         * 判断当前選区内容是否占位符
          * @private
          * @method inFillChar
          * @return { Boolean } 如果是占位符返回true，否则返回false
@@ -6457,9 +6457,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     <p>
          *         aaaa
          *         <em>
-         *             <!-- 选区开始 -->
+         *             <!-- 選区开始 -->
          *             bbbb
-         *             <!-- 选区结束 -->
+         *             <!-- 選区结束 -->
          *         </em>
          *     </p>
          *
@@ -6547,9 +6547,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *     <p>
          *         aaaa
          *         <em>
-         *             <!-- 选区开始 -->
+         *             <!-- 選区开始 -->
          *             bbbb
-         *             <!-- 选区结束 -->
+         *             <!-- 選区结束 -->
          *         </em>
          *     </p>
          *
@@ -6598,10 +6598,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 判断给定的Range对象是否和当前Range对象表示的是同一个选区
+         * 判断给定的Range对象是否和当前Range对象表示的是同一个選区
          * @method equals
          * @param { UE.dom.Range } 需要判断的Range对象
-         * @return { Boolean } 如果给定的Range对象与当前Range对象表示的是同一个选区， 则返回true， 否则返回false
+         * @return { Boolean } 如果给定的Range对象与当前Range对象表示的是同一个選区， 则返回true， 否则返回false
          */
     equals: function(rng) {
       for (var p in this) {
@@ -6623,10 +6623,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *
          * <body>
          *
-         *     <!-- 选区开始 -->
+         *     <!-- 選区开始 -->
          *     <span></span>
          *     <a></a>
-         *     <!-- 选区结束 -->
+         *     <!-- 選区结束 -->
          * </body>
          *
          * <script>
@@ -6667,10 +6667,10 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          *
          * <body>
          *
-         *     <!-- 选区开始 -->
+         *     <!-- 選区开始 -->
          *     <span></span>
          *     <a></a>
-         *     <!-- 选区结束 -->
+         *     <!-- 選区结束 -->
          * </body>
          *
          * <script>
@@ -6714,7 +6714,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
 
 // core/Selection.js
 /**
- * 选集
+ * 選集
  * @file
  * @module UE.dom
  * @class Selection
@@ -6722,7 +6722,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
  */
 
 /**
- * 选区集合
+ * 選区集合
  * @unfile
  * @module UE.dom
  * @class Selection
@@ -6915,7 +6915,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 缓存当前选区的range和选区的开始节点
+         * 缓存当前選区的range和選区的开始节点
          * @method cache
          */
     cache: function() {
@@ -6926,7 +6926,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取选区开始位置的父节点到body
+         * 获取選区开始位置的父节点到body
          * @method getStartElementPath
          * @return { Array } 返回父节点集合
          * @example
@@ -6954,7 +6954,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 編輯器是否得到了选区
+         * 編輯器是否得到了選区
          * @method isFocus
          */
     isFocus: function() {
@@ -6971,7 +6971,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 获取选区对应的Range
+         * 获取選区对应的Range
          * @method getRange
          * @return { Object } 得到Range对象
          * @example
@@ -7098,9 +7098,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 得到选区中的文本
+         * 得到選区中的文本
          * @method getText
-         * @return { String } 选区中包含的文本
+         * @return { String } 選区中包含的文本
          * @example
          * ```javascript
          * editor.selection.getText();
@@ -7118,7 +7118,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 清除选区
+         * 清除選区
          * @method clearRange
          * @example
          * ```javascript
@@ -7314,13 +7314,13 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
      * @see UE.Editor:setContent(String)
      */
   /**
-     * 每当編輯器内部选区发生改變时，将触发该事件
+     * 每当編輯器内部選区发生改變时，将触发该事件
      * @event selectionchange
      * @warning 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理
      * @example
      * ```javascript
      * editor.addListener( 'selectionchange', function( editor ) {
-     *     console.log('选区发生改變');
+     *     console.log('選区发生改變');
      * }
      */
   /**
@@ -7472,8 +7472,8 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @method setOpt
          * @warning 三处设置配置项的优先级: 实例化时传入参數 > setOpt()设置 > config文件里设置
          * @warning 该方法仅供編輯器插件内部和編輯器初始化时调用，其他地方不能调用。
-         * @param { String } key 編輯器的可接受的选项名稱
-         * @param { * } val  该选项可接受的值
+         * @param { String } key 編輯器的可接受的選项名稱
+         * @param { * } val  该選项可接受的值
          * @example
          * ```javascript
          * editor.setOpt( 'initContent', '欢迎使用編輯器' );
@@ -7485,7 +7485,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @method setOpt
          * @warning 三处设置配置项的优先级: 实例化时传入参數 > setOpt()设置 > config文件里设置
          * @warning 该方法仅供編輯器插件内部和編輯器初始化时调用，其他地方不能调用。
-         * @param { Object } options 将要设置的选项的键值对对象
+         * @param { Object } options 将要设置的選项的键值对对象
          * @example
          * ```javascript
          * editor.setOpt( {
@@ -7765,7 +7765,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       options.onready && options.onready.call(me);
       if (!browser.ie9below) {
         domUtils.on(me.window, ["blur", "focus"], function(e) {
-          //chrome下会出现alt+tab切换时，导致选区位置不对
+          //chrome下会出现alt+tab切换时，导致選区位置不对
           if (e.type == "blur") {
             me._bakRange = me.selection.getRange();
             try {
@@ -8139,7 +8139,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       me.fireEvent("contentchange");
 
       !notFireSelectionchange && me._selectionChange();
-      //清除保存的选区
+      //清除保存的選区
       me._bakRange = me._bakIERange = me._bakNativeRange = null;
       //trace:1742 setContent后gecko能得到焦点问题
       var geckoSel;
@@ -8286,7 +8286,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       );
     },
     /**
-         * 變化选区
+         * 變化選区
          * @method _selectionChange
          * @private
          */
@@ -8418,7 +8418,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 根据传入的command命令，查选編輯器当前的选区，返回命令的状态
+         * 根据传入的command命令，查選編輯器当前的選区，返回命令的状态
          * @method  queryCommandState
          * @param { String } cmdName 需要查询的命令名稱
          * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
@@ -8434,7 +8434,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
     },
 
     /**
-         * 根据传入的command命令，查选編輯器当前的选区，根据命令返回相关的值
+         * 根据传入的command命令，查選編輯器当前的選区，根据命令返回相关的值
          * @method queryCommandValue
          * @param { String } cmdName 需要查询的命令名稱
          * @remind 具体命令的使用请参考<a href="#COMMAND.LIST">命令列表</a>
@@ -9157,13 +9157,13 @@ UE.ajax = (function() {
          * 成功， 则调用onsuccess回调， 失败则调用 onerror 回调
          * @method request
          * @param { URLString } url ajax请求的url地址
-         * @param { Object } ajaxOptions ajax请求选项的键值对，支持的选项如下：
+         * @param { Object } ajaxOptions ajax请求選项的键值对，支持的選项如下：
          * @example
          * ```javascript
          * //向sayhello.php发起一个异步的Ajax GET请求, 请求超时時間為10s， 请求完成后執行相应的回调。
          * UE.ajax.requeset( 'sayhello.php', {
          *
-         *     //请求方法。可选值： 'GET', 'POST'，默認值是'POST'
+         *     //请求方法。可選值： 'GET', 'POST'，默認值是'POST'
          *     method: 'GET',
          *
          *     //超时時間。 默認為5000， 单位是ms
@@ -9196,7 +9196,7 @@ UE.ajax = (function() {
          * 成功， 则调用onsuccess回调， 失败则调用 onerror 回调。
          * @method request
          * @warning 如果在参數项里未提供一个key為“url”的地址值，则该请求将直接退出。
-         * @param { Object } ajaxOptions ajax请求选项的键值对，支持的选项如下：
+         * @param { Object } ajaxOptions ajax请求選项的键值对，支持的選项如下：
          * @example
          * ```javascript
          *
@@ -11157,17 +11157,17 @@ UE.plugins["defaultfilter"] = function() {
  * @method execCommand
  * @param { String } cmd 命令字符串
  * @param { String } html 插入的html字符串
- * @remaind 插入的標簽内容是在当前的选区位置上插入，如果当前是闭合状态，那直接插入内容， 如果当前是选中状态，将先清除当前选中内容后，再做插入
- * @warning 注意:该命令会对当前选区的位置，对插入的内容进行过滤转换处理。 过滤的规则遵循html语意化的原则。
+ * @remaind 插入的標簽内容是在当前的選区位置上插入，如果当前是闭合状态，那直接插入内容， 如果当前是選中状态，将先清除当前選中内容后，再做插入
+ * @warning 注意:该命令会对当前選区的位置，对插入的内容进行过滤转换处理。 过滤的规则遵循html语意化的原则。
  * @example
  * ```javascript
- * //xxx[BB]xxx 当前选区為非闭合选区，选中BB这两个文本
+ * //xxx[BB]xxx 当前選区為非闭合選区，選中BB这两个文本
  * //執行命令，插入<b>CC</b>
  * //插入后的效果 xxx<b>CC</b>xxx
- * //<p>xx|xxx</p> 当前选区為闭合状态
+ * //<p>xx|xxx</p> 当前選区為闭合状态
  * //插入<p>CC</p>
  * //结果 <p>xx</p><p>CC</p><p>xxx</p>
- * //<p>xxxx</p>|</p>xxx</p> 当前选区在两个p標簽之间
+ * //<p>xxxx</p>|</p>xxx</p> 当前選区在两个p標簽之间
  * //插入 xxxx
  * //结果 <p>xxxx</p><p>xxxx</p></p>xxx</p>
  * ```
@@ -11259,7 +11259,7 @@ UE.commands["inserthtml"] = {
       tmp,
       hadBreak = 0,
       nextNode;
-    //如果当前位置选中了fillchar要干掉，要不会产生空行
+    //如果当前位置選中了fillchar要干掉，要不会产生空行
     if (range.inFillChar()) {
       child = range.startContainer;
       if (domUtils.isFillChar(child)) {
@@ -11431,7 +11431,7 @@ UE.commands["inserthtml"] = {
  */
 
 /**
- * 对当前編輯器的内容執行自動排版， 排版的行為根据config配置文件里的“autotypeset”选项进行控制。
+ * 对当前編輯器的内容執行自動排版， 排版的行為根据config配置文件里的“autotypeset”選项进行控制。
  * @command autotypeset
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -11977,7 +11977,7 @@ UE.plugin.register("background", function() {
  */
 
 /**
- * 如果选区所在位置是圖片区域
+ * 如果選区所在位置是圖片区域
  * @command imagefloat
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12280,7 +12280,7 @@ UE.commands["insertimage"] = {
  * ```
  */
 /**
- * 如果选区所在位置是段落区域，返回当前段落对齐方式
+ * 如果選区所在位置是段落区域，返回当前段落对齐方式
  * @command justify
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12414,7 +12414,7 @@ UE.plugins["justify"] = function() {
  * ```
  */
 /**
- * 返回选区字体颜色
+ * 返回選区字体颜色
  * @command forecolor
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12437,7 +12437,7 @@ UE.plugins["justify"] = function() {
  * ```
  */
 /**
- * 返回选区字体颜色
+ * 返回選区字体颜色
  * @command backcolor
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12460,7 +12460,7 @@ UE.plugins["justify"] = function() {
  * ```
  */
 /**
- * 返回选区字体大小
+ * 返回選区字体大小
  * @command fontsize
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12483,7 +12483,7 @@ UE.plugins["justify"] = function() {
  * ```
  */
 /**
- * 返回选区字体样式
+ * 返回選区字体样式
  * @command fontfamily
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -12977,7 +12977,7 @@ UE.plugins["font"] = function() {
  * ```
  */
 /**
- * 返回当前选中的第一个超链接节点
+ * 返回当前選中的第一个超链接节点
  * @command link
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -13593,7 +13593,7 @@ UE.plugins["blockquote"] = function() {
  */
 
 /**
- * 把选区内文本變大写，与“tolowercase”命令互斥
+ * 把選区内文本變大写，与“tolowercase”命令互斥
  * @command touppercase
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -13604,7 +13604,7 @@ UE.plugins["blockquote"] = function() {
  */
 
 /**
- * 把选区内文本變小写，与“touppercase”命令互斥
+ * 把選区内文本變小写，与“touppercase”命令互斥
  * @command tolowercase
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -13746,13 +13746,13 @@ UE.commands["preview"] = {
 
 // plugins/selectall.js
 /**
- * 全选
+ * 全選
  * @file
  * @since 1.2.6.1
  */
 
 /**
- * 选中所有内容
+ * 選中所有内容
  * @command selectall
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -13812,7 +13812,7 @@ UE.plugins["selectall"] = function() {
  */
 
 /**
- * 返回选区内节点標簽名
+ * 返回選区内节点標簽名
  * @command paragraph
  * @method queryCommandValue
  * @param { String } cmd 命令字符串
@@ -14111,7 +14111,7 @@ UE.plugins["paragraph"] = function () {
      */
 
   /**
-     * 查询当前选区的文字输入方向
+     * 查询当前選区的文字输入方向
      * @command directionality
      * @method queryCommandValue
      * @param { String } cmdName 命令字符串
@@ -14387,7 +14387,7 @@ UE.plugins["lineheight"] = function() {
      * ```
      */
   /**
-     * 查询当前选区内容的行高大小
+     * 查询当前選区内容的行高大小
      * @command lineheight
      * @method queryCommandValue
      * @param { String } cmd 命令字符串
@@ -14477,7 +14477,7 @@ UE.plugins["insertcode"] = function() {
      */
 
   /**
-     * 如果选区所在位置是插入插入代码区域，返回代码的语言
+     * 如果選区所在位置是插入插入代码区域，返回代码的语言
      * @command insertcode
      * @method queryCommandValue
      * @param { String } cmd 命令字符串
@@ -15154,7 +15154,7 @@ UE.plugin.register("anchor", function () {
                         }
                     } else {
                         if (name) {
-                            //只在选区的开始插入
+                            //只在選区的开始插入
                             var anchor = utils.renderTplstr('<img anchorname="${name}" class="anchorclass"></img>', {
                                 name: name
                             });
@@ -17474,18 +17474,18 @@ UE.plugins["list"] = function() {
      * ```
      */
   /**
-     * 查询当前选区内容是否有序列表
+     * 查询当前選区内容是否有序列表
      * @command insertorderedlist
      * @method queryCommandState
      * @param { String } cmd 命令字符串
-     * @return { int } 如果当前选区是有序列表返回1，否则返回0
+     * @return { int } 如果当前選区是有序列表返回1，否则返回0
      * @example
      * ```javascript
      * editor.queryCommandState( 'insertorderedlist' );
      * ```
      */
   /**
-     * 查询当前选区内容是否有序列表
+     * 查询当前選区内容是否有序列表
      * @command insertorderedlist
      * @method queryCommandValue
      * @param { String } cmd 命令字符串
@@ -17512,14 +17512,14 @@ UE.plugins["list"] = function() {
      * @command insertunorderedlist
      * @method insertunorderedlist
      * @param { String } command 命令字符串
-     * @return { int } 如果当前选区是無序列表返回1，否则返回0
+     * @return { int } 如果当前選区是無序列表返回1，否则返回0
      * @example
      * ```javascript
      * editor.queryCommandState( 'insertunorderedlist' );
      * ```
      */
   /**
-     * 查询当前选区内容是否有序列表
+     * 查询当前選区内容是否有序列表
      * @command insertunorderedlist
      * @method queryCommandValue
      * @param { String } command 命令字符串
@@ -17546,7 +17546,7 @@ UE.plugins["list"] = function() {
         },
         tag = command.toLowerCase() == "insertorderedlist" ? "ol" : "ul",
         frag = me.document.createDocumentFragment();
-      //去掉是因為会出现选到末尾，导致adjustmentBoundary缩到ol/ul的位置
+      //去掉是因為会出现選到末尾，导致adjustmentBoundary缩到ol/ul的位置
       //range.shrinkBoundary();//.adjustmentBoundary();
       range.adjustmentBoundary().shrinkBoundary();
       var bko = range.createBookmark(true),
@@ -18407,7 +18407,7 @@ UE.plugins["keystrokes"] = function() {
     var keyCode = evt.keyCode || evt.which,
       rng = me.selection.getRange();
 
-    //处理全选的情况
+    //处理全選的情况
     if (
       !rng.collapsed &&
       !(evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) &&
@@ -18483,7 +18483,7 @@ UE.plugins["keystrokes"] = function() {
         }
       }
 
-      //解决选中control元素不能删除的问题
+      //解决選中control元素不能删除的问题
       if ((start = rng.getClosedNode())) {
         me.fireEvent("saveScene");
         rng.setStartBefore(start);
@@ -18645,7 +18645,7 @@ UE.plugins["keystrokes"] = function() {
         }
       }
 
-      //chrome下如果删除了inline標簽，浏览器会有记忆，在输入文字还是会套上刚才删除的標簽，所以这里再选一次就不会了
+      //chrome下如果删除了inline標簽，浏览器会有记忆，在输入文字还是会套上刚才删除的標簽，所以这里再選一次就不会了
       if (
         !collapsed &&
         (rng.startContainer.nodeType == 3 ||
@@ -19892,13 +19892,13 @@ UE.plugins["video"] = function() {
   };
 
   /**
-     * 根据当前选区获取相关的table信息
+     * 根据当前選区获取相关的table信息
      * @return {Object}
      */
   UETable.getTableItemsByRange = function(editor) {
     var start = editor.selection.getStart();
 
-    //ff下会选中bookmark
+    //ff下会選中bookmark
     if (
       start &&
       start.id &&
@@ -19908,7 +19908,7 @@ UE.plugins["video"] = function() {
       start = start.nextSibling;
     }
 
-    //在table或者td边缘有可能存在选中tr的情况
+    //在table或者td边缘有可能存在選中tr的情况
     var cell = start && domUtils.findParentByTagName(start, ["td", "th"], true),
       tr = cell && cell.parentNode,
       table = tr && domUtils.findParentByTagName(tr, ["table"]),
@@ -20278,7 +20278,7 @@ UE.plugins["video"] = function() {
           }
         }
       }
-      //当框选后删除行或者列后撤销，需要重建选区。
+      //当框選后删除行或者列后撤销，需要重建選区。
       var tds = domUtils.getElementsByTagName(this.table, "td"),
         selectTds = [];
       utils.each(tds, function(td) {
@@ -20347,7 +20347,7 @@ UE.plugins["video"] = function() {
       row.deleteCell(cell.cellIndex);
     },
     /**
-         * 根据始末两个单元格获取被框选的所有单元格范围
+         * 根据始末两个单元格获取被框選的所有单元格范围
          */
     getCellsRange: function(cellA, cellB) {
       function checkRange(
@@ -20403,7 +20403,7 @@ UE.plugins["video"] = function() {
             }
           }
         }
-        //递归调用直至所有完成所有框选单元格的扩展
+        //递归调用直至所有完成所有框選单元格的扩展
         if (
           tmpBeginRowIndex != beginRowIndex ||
           tmpBeginColIndex != beginColIndex ||
@@ -20499,7 +20499,7 @@ UE.plugins["video"] = function() {
       return returnTds;
     },
     /**
-         * 清理已经选中的单元格
+         * 清理已经選中的单元格
          */
     clearSelected: function() {
       UETable.removeSelectedClass(this.selectedTds);
@@ -20507,7 +20507,7 @@ UE.plugins["video"] = function() {
       this.cellsRange = {};
     },
     /**
-         * 根据range设置已经选中的单元格
+         * 根据range设置已经選中的单元格
          */
     setSelected: function(range) {
       var cells = this.getCells(range);
@@ -20782,7 +20782,7 @@ UE.plugins["video"] = function() {
           if (!isInsertTitle) replaceTdToTh(colIndex, cell, row);
         }
       }
-      //框选时插入不触发contentchange，需要手动更新索引。
+      //框選时插入不触发contentchange，需要手动更新索引。
       this.update();
       return row;
     },
@@ -20927,7 +20927,7 @@ UE.plugins["video"] = function() {
           if (!isInsertTitleCol) replaceTdToTh(rowIndex, cell, tableRow);
         }
       }
-      //框选时插入不触发contentchange，需要手动更新索引
+      //框選时插入不触发contentchange，需要手动更新索引
       this.update();
       this.updateWidth(
         backWidth,
@@ -22022,7 +22022,7 @@ UE.plugins["video"] = function() {
       if (!activeMenuCell) {
         return null;
       } else {
-        //获取同时选中的其他单元格
+        //获取同时選中的其他单元格
         var cells = UE.UETable.getUETable(activeMenuCell).selectedTds;
 
         !cells.length && (cells = activeMenuCell);
@@ -22267,7 +22267,7 @@ UE.plugins["table"] = function() {
     };
   });
 
-  //处理拖动及框选相关方法
+  //处理拖动及框選相关方法
   var startTd = null, //鼠标按下时的锚点td
     currentTd = null, //当前鼠标经过时的td
     onDrag = "", //指示当前拖动状态，其值可為"","h","v" ,分别表示未拖动状态，横向拖动状态，纵向拖动状态，用于鼠标移动过程中的判断
@@ -22326,7 +22326,7 @@ UE.plugins["table"] = function() {
   me.ready(function() {
     utils.cssRule(
       "table",
-      //选中的td上的样式
+      //選中的td上的样式
       ".selectTdClass{background-color:#edf5fa !important}" +
         "table.noBorderTable td,table.noBorderTable th,table.noBorderTable caption{border:1px dashed #ddd !important}" +
         //插入的表格的默認样式
@@ -22968,7 +22968,7 @@ UE.plugins["table"] = function() {
       }
     });
 
-    //重写execCommand命令，用于处理框选时的处理
+    //重写execCommand命令，用于处理框選时的处理
     var oldExecCommand = me.execCommand;
     me.execCommand = function(cmd, datatat) {
       var me = this,
@@ -23537,7 +23537,7 @@ UE.plugins["table"] = function() {
   function tableClickHander(evt) {
     removeSelectedClass(domUtils.getElementsByTagName(me.body, "td th"));
     //trace:3113
-    //选中单元格，点击table外部，不会清掉table上挂的ueTable,会引起getUETableBySelected方法返回值
+    //選中单元格，点击table外部，不会清掉table上挂的ueTable,会引起getUETableBySelected方法返回值
     utils.each(me.document.getElementsByTagName("table"), function(t) {
       t.ueTable = null;
     });
@@ -23666,7 +23666,7 @@ UE.plugins["table"] = function() {
 
     if (evt.button == 2) return;
     var me = this;
-    //清除表格上原生跨选问题
+    //清除表格上原生跨選问题
     var range = me.selection.getRange(),
       start = domUtils.findParentByTagName(range.startContainer, "table", true),
       end = domUtils.findParentByTagName(range.endContainer, "table", true);
@@ -25066,7 +25066,7 @@ UE.plugins["basestyle"] = function() {
      * @example
      * ```javascript
      * //editor是編輯器实例
-     * //对当前选中的文本内容執行加粗操作
+     * //对当前選中的文本内容執行加粗操作
      * //第一次執行， 文本内容加粗
      * editor.execCommand( 'bold' );
      *
@@ -25084,7 +25084,7 @@ UE.plugins["basestyle"] = function() {
      * @example
      * ```javascript
      * //editor是編輯器实例
-     * //对当前选中的文本内容執行斜体操作
+     * //对当前選中的文本内容執行斜体操作
      * //第一次操作， 文本内容将變成斜体
      * editor.execCommand( 'italic' );
      *
@@ -25097,12 +25097,12 @@ UE.plugins["basestyle"] = function() {
      * 下标文本，与“superscript”命令互斥
      * @command subscript
      * @method execCommand
-     * @remind  把选中的文本内容切换成下标文本， 如果当前选中的文本已经是下标， 则该操作会把文本内容还原成正常文本
+     * @remind  把選中的文本内容切换成下标文本， 如果当前選中的文本已经是下标， 则该操作会把文本内容还原成正常文本
      * @param { String } cmd 命令字符串
      * @example
      * ```javascript
      * //editor是編輯器实例
-     * //对当前选中的文本内容執行下标操作
+     * //对当前選中的文本内容執行下标操作
      * //第一次操作， 文本内容将變成下标文本
      * editor.execCommand( 'subscript' );
      *
@@ -25115,12 +25115,12 @@ UE.plugins["basestyle"] = function() {
      * 上标文本，与“subscript”命令互斥
      * @command superscript
      * @method execCommand
-     * @remind 把选中的文本内容切换成上标文本， 如果当前选中的文本已经是上标， 则该操作会把文本内容还原成正常文本
+     * @remind 把選中的文本内容切换成上标文本， 如果当前選中的文本已经是上标， 则该操作会把文本内容还原成正常文本
      * @param { String } cmd 命令字符串
      * @example
      * ```javascript
      * //editor是編輯器实例
-     * //对当前选中的文本内容執行上标操作
+     * //对当前選中的文本内容執行上标操作
      * //第一次操作， 文本内容将變成上标文本
      * editor.execCommand( 'superscript' );
      *
@@ -25206,7 +25206,7 @@ UE.plugins["basestyle"] = function() {
 
 // plugins/elementpath.js
 /**
- * 选取路径命令
+ * 選取路径命令
  * @file
  */
 UE.plugins["elementpath"] = function() {
@@ -25500,7 +25500,7 @@ UE.plugin.register("searchreplace", function() {
 
     rng.shrinkBoundary(true);
 
-    //判断是不是第一次选中
+    //判断是不是第一次選中
     if (!rng.collapsed) {
       rng.select();
       var rngText = me.selection.getText();
@@ -25625,7 +25625,7 @@ UE.plugin.register("searchreplace", function() {
  */
 
 /**
- * 根据config配置文件里“customstyle”选项的值对匹配的標簽執行样式替换。
+ * 根据config配置文件里“customstyle”選项的值对匹配的標簽執行样式替换。
  * @command customstyle
  * @method execCommand
  * @param { String } cmd 命令字符串
@@ -26461,7 +26461,7 @@ UE.plugin.register("music", function() {
              * @command music
              * @method execCommand
              * @param { Object } musicOptions 插入音乐的参數项， 支持的key有： url=>音乐地址；
-             * width=>音乐容器宽度；height=>音乐容器高度；align=>音乐文件的对齐方式， 可选值有: left, center, right, none
+             * width=>音乐容器宽度；height=>音乐容器高度；align=>音乐文件的对齐方式， 可選值有: left, center, right, none
              * @example
              * ```javascript
              * //editor是編輯器实例
@@ -26501,8 +26501,8 @@ UE.plugin.register("music", function() {
 // plugins/autoupload.js
 /**
  * @description
- * 1.拖放文件到編輯区域，自動上传并插入到选区
- * 2.插入粘贴板的圖片，自動上传并插入到选区
+ * 1.拖放文件到編輯区域，自動上传并插入到選区
+ * 2.插入粘贴板的圖片，自動上传并插入到選区
  * @author Jinqn
  * @date 2013-10-14
  */
@@ -29438,7 +29438,7 @@ UE.ui = baidu.editor.ui = {};
                 }
               }
             }
-            // 点击radio,选中对应的checkbox
+            // 点击radio,選中对应的checkbox
             if (
               target.name == "imageBlockLineValue" + editorId ||
               target.name == "textAlignValue" + editorId ||
@@ -29483,7 +29483,7 @@ UE.ui = baidu.editor.ui = {};
     this.initCellAlignPicker();
   });
   CellAlignPicker.prototype = {
-    //初始化选中状态， 该方法将根据传递进来的参數获取到应该选中的对齐方式圖标的索引
+    //初始化選中状态， 该方法将根据传递进来的参數获取到应该選中的对齐方式圖标的索引
     initSelected: function() {
       var status = {
         valign: {
@@ -30346,7 +30346,7 @@ UE.ui = baidu.editor.ui = {};
       );
     },
     postRender: function() {
-      // todo: 保持居中/记住上次关闭位置选项
+      // todo: 保持居中/记住上次关闭位置選项
       if (!this.modalMask.getDom()) {
         this.modalMask.render();
         this.modalMask.hide();
@@ -32944,7 +32944,7 @@ UE.ui = baidu.editor.ui = {};
      * @desc 提供一个全局的方法得到編輯器实例
      *
      * * ''id''  放置編輯器的容器id, 如果容器下的編輯器已经存在，就直接返回
-     * * ''opt'' 編輯器的可选参數
+     * * ''opt'' 編輯器的可選参數
      * @example
      *  UE.getEditor('containerId',{onready:function(){//创建一个編輯器实例
      *      this.setContent('hello')

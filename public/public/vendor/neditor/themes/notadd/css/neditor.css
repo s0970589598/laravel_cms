@@ -295,7 +295,7 @@ div.edui-box {
 .edui-notadd  .edui-editor-imagescale {
 
 }
-/*可选中選單按钮*/
+/*可選中選單按钮*/
 .edui-notadd .edui-list .edui-bordereraser {
     display: none;
 }
@@ -365,7 +365,7 @@ div.edui-box {
     width: 200px !important;
     padding: 2px 5px;
 }
-/* 可选中按钮弹出選單*/
+/* 可選中按钮弹出選單*/
 .edui-notadd .edui-menu {
     z-index: 3000;
 }
@@ -415,7 +415,7 @@ div.edui-box {
 }
 
 
-/*不可选中選單按钮 */
+/*不可選中選單按钮 */
 .edui-notadd .edui-toolbar .edui-combox-body .edui-button-body {
     width: 60px;
     font-size: 12px;

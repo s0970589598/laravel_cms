@@ -27,7 +27,7 @@ INSERT INTO `sensitive_words` VALUES ('26', '涉枪', '', '支持验货', '', '2
 INSERT INTO `sensitive_words` VALUES ('27', '涉枪', '', '供应', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
 INSERT INTO `sensitive_words` VALUES ('28', '涉枪', '', '担保交易', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
 INSERT INTO `sensitive_words` VALUES ('29', '涉枪', '', '联系', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
-INSERT INTO `sensitive_words` VALUES ('30', '涉枪', '', '精选', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
+INSERT INTO `sensitive_words` VALUES ('30', '涉枪', '', '精選', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
 INSERT INTO `sensitive_words` VALUES ('31', '涉枪', '', '抢购', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
 INSERT INTO `sensitive_words` VALUES ('32', '涉枪', '', '推荐', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');
 INSERT INTO `sensitive_words` VALUES ('33', '涉枪', '', '试货付款', '', '2019-04-08 15:58:05', '2019-04-08 15:58:05');

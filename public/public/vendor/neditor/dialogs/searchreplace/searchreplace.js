@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-//清空上次查选的痕迹
+//清空上次查選的痕迹
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
 //给tab註冊切换事件

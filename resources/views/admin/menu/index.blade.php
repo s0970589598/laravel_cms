@@ -207,7 +207,7 @@
                 ids = [];
 
             if (checkStatus.data.length === 0) {
-                layer.msg('未选中待操作的行數據');
+                layer.msg('未選中待操作的行數據');
                 return false;
             }
             checkStatus.data.forEach(function (item) {

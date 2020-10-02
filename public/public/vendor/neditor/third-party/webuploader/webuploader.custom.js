@@ -1660,7 +1660,7 @@
             });
         }
     
-        // 默認选项。
+        // 默認選项。
         Image.options = {
     
             // 默認的圖片处理质量
@@ -1775,7 +1775,7 @@
              * @property {Object} [thumb]
              * @namespace options
              * @for Uploader
-             * @description 配置生成缩略圖的选项。
+             * @description 配置生成缩略圖的選项。
              *
              * 默認為：
              *
@@ -1787,7 +1787,7 @@
              *     // 圖片质量，只有type為`image/jpeg`的时候才有效。
              *     quality: 70,
              *
-             *     // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
+             *     // 是否允许放大，如果想要生成小圖的时候不失真，此選项应该设置為false.
              *     allowMagnify: true,
              *
              *     // 是否允许裁剪。
@@ -1821,7 +1821,7 @@
              * @property {Object} [compress]
              * @namespace options
              * @for Uploader
-             * @description 配置压缩的圖片的选项。如果此选项為`false`, 则圖片在上传前不进行压缩。
+             * @description 配置压缩的圖片的選项。如果此選项為`false`, 则圖片在上传前不进行压缩。
              *
              * 默認為：
              *
@@ -1833,7 +1833,7 @@
              *     // 圖片质量，只有type為`image/jpeg`的时候才有效。
              *     quality: 90,
              *
-             *     // 是否允许放大，如果想要生成小圖的时候不失真，此选项应该设置為false.
+             *     // 是否允许放大，如果想要生成小圖的时候不失真，此選项应该设置為false.
              *     allowMagnify: false,
              *
              *     // 是否允许裁剪。
