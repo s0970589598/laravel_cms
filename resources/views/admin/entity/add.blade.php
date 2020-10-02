@@ -9,7 +9,7 @@
             <form class="layui-form" action="@if(isset($id)){{ route('admin::entity.update', ['id' => $id]) }}@else{{ route('admin::entity.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">名称</label>
+                    <label class="layui-form-label">名稱</label>
                     <div class="layui-input-block">
                         <input type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}">
                     </div>
@@ -17,7 +17,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">資料庫表名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="table_name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->table_name ?? ''  }}" placeholder="模型对应的資料庫表名称，保存后不能修改" @isset($model->table_name) disabled @endisset>
+                            <input type="text" name="table_name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->table_name ?? ''  }}" placeholder="模型对应的資料庫表名稱，保存后不能修改" @isset($model->table_name) disabled @endisset>
                         </div>
                     </div>
                     @if(!isset($id))
@@ -26,7 +26,7 @@
                         <div class="layui-input-inline" style="width: 50px;">
                             <input type="checkbox" name="is_modify_db" lay-skin="switch" lay-text="是|否" value="1" checked>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表已经通过其它方式建好，此处无需新建資料庫表，添加模型主要是方便利用框架提供的模型增删改查功能</div>
+                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表已经通过其它方式建好，此处無需新建資料庫表，添加模型主要是方便利用框架提供的模型增删改查功能</div>
                     </div>
                     @endif
                     <div class="layui-form-item">

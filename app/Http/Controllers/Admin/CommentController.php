@@ -111,7 +111,7 @@ class CommentController extends Controller
             if (CommentRepository::hasChildren($id)) {
                 return [
                     'code' => 2,
-                    'msg' => '删除失败：只允许删除无回复的評論',
+                    'msg' => '删除失败：只允许删除無回复的評論',
                 ];
             }
 

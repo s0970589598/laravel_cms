@@ -38,9 +38,9 @@
             maxImageSideLength:900
         });
 
-            //全局变量
+            //全局變量
         var imageUrls = [],          //用于保存从服务器返回的圖片信息數组
-            selectedImageCount = 0,  //当前已选择的但未上传的圖片數量
+            selectedImageCount = 0,  //当前已選擇的但未上传的圖片數量
             optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
             optImageFieldName = editor.getOpt('imageFieldName'),
             optImageCompressBorder = editor.getOpt('imageCompressEnable') ? editor.getOpt('imageCompressBorder'):null,
@@ -75,7 +75,7 @@
             };
             //回调函數集合，支持传递函數名的字符串、函數句柄以及函數本身三种類型
             var callbacks={
-                selectFileCallback: function(selectFiles){                // 选择文件的回调
+                selectFileCallback: function(selectFiles){                // 選擇文件的回调
                     selectedImageCount += selectFiles.length;
                     if(selectedImageCount) baidu.g("upload").style.display = "";
                     dialog.buttons[0].setDisabled(true); //初始化时置灰确定按钮
@@ -84,7 +84,7 @@
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";
-                        dialog.buttons[0].setDisabled(false);         //没有选择圖片时重新点亮按钮
+                        dialog.buttons[0].setDisabled(false);         //没有選擇圖片时重新点亮按钮
                     }
                 },
                 uploadCompleteCallback: function(data){               // 单个文件上传完成的回调

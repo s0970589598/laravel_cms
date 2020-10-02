@@ -42,9 +42,9 @@ class EntityFieldRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '字段名称不能為空',
-            'name.max' => '字段名称长度不能大于64',
-            'name.regex' => '字段名称格式有误',
+            'name.required' => '字段名稱不能為空',
+            'name.max' => '字段名稱长度不能大于64',
+            'name.regex' => '字段名稱格式有误',
         ];
     }
 }

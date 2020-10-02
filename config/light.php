@@ -67,23 +67,25 @@ return [
     'form_type' => [
         'input' => '短文本（input）',
         'inputAutoComplete' => '短文本（input，自動完成）',
-        'textArea' => '长文本（textarea）',
+        'textArea' => '長文本（textarea）',
         'richText' => '副文本',
         'markdown' => '副文本（markdown）',
-        'password' => '密码字符',
-        'option' => '单选框',
-        'checkbox' => '复选框',
-        'select' => '下拉选择',
-        'selectSingleSearch' => '下拉选择（远程搜索）',
-        'selectMulti' => '下拉选择（多选）',
-        'selectMultiSearch' => '下拉选择（多选，远程搜索）',
-        'inputTags' => '標簽输入框',
-        'upload' => '圖片上传（单圖）',
-        'uploadMulti' => '圖片上传（多圖）',
+        'password' => '密碼字符',
+        'option' => '單選框',
+        'checkbox' => '複選框',
+        'select' => '下拉選擇',
+        'selectSingleSearch' => '下拉選擇（遠程搜索）',
+        'selectMulti' => '下拉選擇（多選）',
+        'selectMultiSearch' => '下拉選擇（多選，搜索）',
+        'inputTags' => 'tag输入框',
+        'upload' => '圖片上傳（單圖）',
+        'uploadMulti' => '圖片上傳（多圖）',
         'datetime' => '日期時間',
         'date' => '日期',
         'reference_category' => '引用分類數據',
-        'reference_admin_user' => '引用管理員數據'
+        'reference_admin_user' => '引用管理員數據',
+        'reference_beacon_title' => '引用beacon標題',
+        'reference_beacon_location' => '引用beacon使用單位'
     ],
 
     // NEditor相关
@@ -95,7 +97,7 @@ return [
         ]
     ],
     'image_upload' => [
-        'driver' => 'local', // local 表示上传到本地服务器。上传到其它服务器请设置自定义名称
+        'driver' => 'local', // local 表示上传到本地服务器。上传到其它服务器请设置自定义名稱
         'class' => '', // 自定义 driver 需要填写对应包括命名空间的完整类名，该类需要实现 App\Contracts\ImageUpload 接口
     ],
 

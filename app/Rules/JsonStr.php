@@ -35,6 +35,6 @@ class JsonStr implements Rule
      */
     public function message()
     {
-        return '无效的JSON字符串';
+        return '無效的JSON字符串';
     }
 }

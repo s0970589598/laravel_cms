@@ -10,11 +10,11 @@ class Template extends Model
     protected $guarded = [];
 
     public static $searchField = [
-        'name' => '名称'
+        'name' => '名稱'
     ];
 
     public static $listField = [
-        'name' => '名称',
+        'name' => '名稱',
         'group' => '分组'
     ];
 }

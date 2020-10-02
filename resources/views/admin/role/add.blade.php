@@ -9,7 +9,7 @@
             <form class="layui-form" action="@if(isset($id)){{ route('admin::role.update', ['id' => $id]) }}@else{{ route('admin::role.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">名称</label>
+                    <label class="layui-form-label">名稱</label>
                     <div class="layui-input-block">
                         <input type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}">
                     </div>

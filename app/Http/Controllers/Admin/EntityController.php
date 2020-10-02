@@ -181,9 +181,9 @@ class EntityController extends Controller
         $this->validate($request, [
             'table_name' => ['required', 'max:64', 'regex:/^[0-9a-zA-Z$_]+$/'],
         ], [
-            'table_name.required' => '表名称不能為空',
-            'table_name.max' => '表名称长度不能超过64',
-            'table_name.regex' => '表名称格式有误',
+            'table_name.required' => '表名稱不能為空',
+            'table_name.max' => '表名稱长度不能超过64',
+            'table_name.regex' => '表名稱格式有误',
         ]);
 
         try {

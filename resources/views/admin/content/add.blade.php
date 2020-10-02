@@ -247,7 +247,7 @@
                                     var inlineAttachmentConfig = {
                                         uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上传圖片地址
                                         uploadFieldName: 'file',          //上传的文件名
-                                        jsonFieldName: 'url',              //返回结果中圖片地址对应的字段名称
+                                        jsonFieldName: 'url',              //返回结果中圖片地址对应的字段名稱
                                         progressText: '![圖片上传中...]()',    //上传过程中用户看到的文案
                                         errorText: '圖片上传失败',
                                         urlText:'![圖片描述]({filename})',    //上传成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
@@ -401,52 +401,76 @@
                                         </select>
                                     </div>
                                 </div>
-                                @break
-                            @case('reference_admin_user')
+                            @break
+                            @case('reference_beacon_title')
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
                                         <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                            @foreach(App\Model\Admin\AdminUser::query()->where('status', App\Model\Admin\AdminUser::STATUS_ENABLE)->orderBy('name')->get(['id', 'name']) as $v)
-                                                <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->name}) selected @endif>{{ $v->name }}</option>
+                                            @foreach(App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name) as $v)
+                                                <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->title}) selected @endif>{{ $v->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                @break
-                                        @case('datetime')
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label">{{ $field->form_name }}</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="{{ $field->name }}" class="layui-input" id="{{ $field->name }}" value="{{ $model->{$field->name} ?? $field->form_default_value }}">
-                                            </div>
-                                        </div>
-                                        <script>
-                                            addLoadEvent(function () {
-                                                var laydate = layui.laydate;
-                                                laydate.render({
-                                                    elem: '#{{ $field->name }}',
-                                                    type: 'datetime'
-                                                });
-                                            });
-                                        </script>
-                                        @break
-                                        @case('date')
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label">{{ $field->form_name }}</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="{{ $field->name }}" class="layui-input" id="{{ $field->name }}" value="{{ $model->{$field->name} ?? $field->form_default_value }}">
-                                            </div>
-                                        </div>
-                                        <script>
-                                            addLoadEvent(function () {
-                                                var laydate = layui.laydate;
-                                                laydate.render({
-                                                    elem: '#{{ $field->name }}',
-                                                });
-                                            });
-                                        </script>
-                                        @break
+                            @break
+                            @case('reference_beacon_location')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{{ $field->form_name }}</label>
+                                <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
+                                    <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
+                                        @foreach(App\Repository\Admin\EntityFieldRepository::getBeaconLocationFields($entityModel->name) as $v)
+                                            <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->name}) selected @endif>{{ $v->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            @break
+                            @case('reference_admin_user')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{{ $field->form_name }}</label>
+                                <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
+                                    <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
+                                        @foreach(App\Model\Admin\AdminUser::query()->where('status', App\Model\Admin\AdminUser::STATUS_ENABLE)->orderBy('name')->get(['id', 'name']) as $v)
+                                            <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->name}) selected @endif>{{ $v->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            @break                             
+                            @case('datetime')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{{ $field->form_name }}</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="{{ $field->name }}" class="layui-input" id="{{ $field->name }}" value="{{ $model->{$field->name} ?? $field->form_default_value }}">
+                                </div>
+                            </div>
+                            <script>
+                                addLoadEvent(function () {
+                                    var laydate = layui.laydate;
+                                    laydate.render({
+                                        elem: '#{{ $field->name }}',
+                                        type: 'datetime'
+                                    });
+                                });
+                            </script>
+                            @break
+                            @case('date')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">{{ $field->form_name }}</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="{{ $field->name }}" class="layui-input" id="{{ $field->name }}" value="{{ $model->{$field->name} ?? $field->form_default_value }}">
+                                </div>
+                            </div>
+                            <script>
+                                addLoadEvent(function () {
+                                    var laydate = layui.laydate;
+                                    laydate.render({
+                                        elem: '#{{ $field->name }}',
+                                    });
+                                });
+                            </script>
+                            @break
                             @case('checkbox')
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>

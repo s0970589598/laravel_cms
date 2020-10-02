@@ -22,11 +22,11 @@ var scrawl = function (options) {
         initOptions:function (options) {
             var me = this;
             me.originalState(options);//初始頁面状态
-            me._buildToolbarColor(options.colorList);//动态生成颜色选择集合
+            me._buildToolbarColor(options.colorList);//动态生成颜色選擇集合
 
             me._addBoardListener(options.saveNum);//添加画板处理
             me._addOPerateListener(options.saveNum);//添加undo redo clearBoard处理
-            me._addColorBarListener();//添加颜色选择处理
+            me._addColorBarListener();//添加颜色選擇处理
             me._addBrushBarListener();//添加画笔大小处理
             me._addEraserBarListener();//添加橡皮大小处理
             me._addAddImgListener();//添加增添背景圖片处理

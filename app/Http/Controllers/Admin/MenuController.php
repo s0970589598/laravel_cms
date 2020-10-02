@@ -188,7 +188,7 @@ class MenuController extends Controller
 
         foreach (Route::getRoutes()->getRoutesByName() as $k => $v) {
             if (Str::startsWith($k, 'admin::')) {
-                // 取方法的第一行注释作為選單的名称、分组名。格式：分组名称-選單名称。未写分组名称，则注释直接作為選單名称。未写注释则选用uri作為選單名称。
+                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未写分组名稱，则注譯直接作為選單名稱。未写注譯则选用uri作為選單名稱。
                 $action = explode('@', $v->getActionName());
                 if (!method_exists($action[0], $action[1])) {
                     continue;
@@ -244,7 +244,7 @@ class MenuController extends Controller
                     if ($e->getCode() == 23000) {
                         return [
                             'code' => 1,
-                            'msg' => "唯一性冲突：请检查選單名称或路由名称。name: {$data['name']} route: {$data['route']}",
+                            'msg' => "唯一性冲突：请检查選單名稱或路由名稱。name: {$data['name']} route: {$data['route']}",
                         ];
                     } else {
                         return [

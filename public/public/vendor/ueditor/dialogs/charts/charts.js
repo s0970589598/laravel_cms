@@ -20,7 +20,7 @@ window.onload = function () {
         return;
     }
 
-    //初始化圖表類型选择
+    //初始化圖表類型選擇
     initChartsTypeView();
     renderTable( editorTable );
     initEvent();
@@ -65,7 +65,7 @@ function renderTable ( table ) {
 
     var tableHtml = [];
 
-    //构造數據
+    //構造數據
     for ( var i = 0, row; row = table.rows[ i ]; i++ ) {
 
         tableData[ i ] = [];
@@ -171,7 +171,7 @@ function initEvent () {
 
     } );
 
-    //圖表類型变化
+    //圖表類型變化
     $( '#scrollBed' ).delegate( ".view-box", "click", function (e) {
 
         var index = $( this ).attr( "data-chart-type" );

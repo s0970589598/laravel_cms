@@ -9,7 +9,7 @@
                 <input type="hidden" name="action" value="search">
                 @include('admin.searchField', ['data' => App\Model\Admin\Menu::$searchField])
             <div class="layui-inline">
-                <label class="layui-form-label">名称</label>
+                <label class="layui-form-label">名稱</label>
                 <div class="layui-input-inline">
                     <input type="text" name="name" autocomplete="off" class="layui-input" value="{{ request()->get('name') }}">
                 </div>
@@ -39,7 +39,7 @@
                 <tr>
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
-                    <th lay-data="{templet:'#menuName'}">名称</th>
+                    <th lay-data="{templet:'#menuName'}">名稱</th>
                     <th lay-data="{field: 'group'}">分组</th>
                     <th lay-data="{field:'parentName'}">上级選單</th>
                     <th lay-data="{field:'route'}">路由</th>
@@ -60,7 +60,7 @@
                             <select name="type" lay-filter="action-type">
                                 <option value="disable">禁用</option>
                                 <option value="enable">启用</option>
-                                <option value="lock_name">锁定名称</option>
+                                <option value="lock_name">锁定名稱</option>
                                 <option value="parent">设置父级選單</option>
                                 <option value="order">设置排序</option>
                                 <option value="group">设置分组</option>
@@ -246,7 +246,7 @@
             } else if (data.value === 'order') {
                 $('input[name=params]').attr('placeholder', '请填写排序值');
             } else if (data.value === 'group') {
-                $('input[name=params]').attr('placeholder', '请填写分组名称');
+                $('input[name=params]').attr('placeholder', '请填写分组名稱');
             } else {
                 $('input[name=params]').attr('placeholder', '');
             }

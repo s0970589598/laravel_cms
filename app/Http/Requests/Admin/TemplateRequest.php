@@ -39,8 +39,8 @@ class TemplateRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名称不能為空',
-            'name.max' => '名称长度不能大于50',
+            'name.required' => '名稱不能為空',
+            'name.max' => '名稱长度不能大于50',
         ];
     }
 }

@@ -58,9 +58,69 @@ class ContentController extends Controller
         }
 
         $this->breadcrumb[] = ['title' => $this->entity->name . '内容列表', 'url' => ''];
-        Content::$listField = [
-            'title' => '標題'
-        ];
+        switch ($this->entity->name) {
+            case '文章':
+                Content::$listField = [
+                    'title' => '標題'
+                ];
+                break;
+            case 'beacon資訊管理':
+                Content::$listField = [
+                    'beacon_uid' => 'beacon_uid',
+                    'beacon_dm' => 'beacon_dm',
+                    'location_id' => 'location_id'
+                ];
+                break;
+            case '使用單位資訊管理':
+                Content::$listField = [
+                    'name' => '單位名稱',
+                    'address' => '住址',
+                    'latitude' => '緯度',
+                    'longitude' => '經度'
+                ];
+                break;         
+            case 'beacon標題管理':
+                Content::$listField = [
+                    'location_id' => 'location_id',
+                    'title' => '訊息主題',
+                    'can_repeat' => '是否可重覆(1=可重覆)',
+                    'start_datetime' => '開始時間',
+                    'end_datetime' => '結束時間',
+                    'status' => '狀態(0=刪除)'
+                ];
+                break;
+            case 'beacon訊息管理':
+                Content::$listField = [
+                    'broadcast_id' => 'broadcast_id',
+                    'message_type' => '訊息類型',
+                    'rank' => 'rank',
+                    'image_url' => '圖片',
+                    'preview_image_url' => '縮圖',
+                    'message_text' => '文字訊息',                    
+                    'json_data' => 'json_data'                    
+                ];
+                break;
+            case 'log_beacon_event':
+                Content::$listField = [
+                    'beacon_id' => 'beacon_id',
+                    'event_type' => 'enter',
+                    'line_user_id' => 'line_user_id',
+                    'enter_datetime' => 'enter_datetime'
+                ];
+                break;
+            case 'log_broadcast':
+                Content::$listField = [
+                    'broadcast_id	' => 'broadcast_id',
+                    'line_user_id' => 'line_user_id',
+                    'broadcast_datetime' => 'broadcast_datetime'
+                ];
+                break;          
+            default:
+                Content::$listField = [
+                    'title' => '標題'
+                ];
+        }
+        
         return view('admin.content.index', [
             'breadcrumb' => $this->breadcrumb,
             'entity' => $entity,

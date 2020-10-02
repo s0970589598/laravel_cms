@@ -10,7 +10,7 @@ class Category extends Model
     protected $guarded = [];
 
     public static $searchField = [
-        'name' => '名称',
+        'name' => '名稱',
     ];
 
     public static $listField = [

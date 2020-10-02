@@ -31,7 +31,7 @@
                         <div style="margin-right: 10px">
                     <form class="layui-form" action="{{ route('admin::tag.save') }}" method="post">
                         <div class="layui-form-item">
-                            <label>名称</label>
+                            <label>名稱</label>
                             <input type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="">
                         </div>
                         <div class="layui-form-item">

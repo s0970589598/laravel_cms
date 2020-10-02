@@ -7,7 +7,7 @@
 
         <div class="layui-card-body">
             <form class="layui-form" action="@if(isset($id)){{ route('admin::entityField.update', ['id' => $id]) }}@else{{ route('admin::entityField.save') }}@endif" method="post">
-                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由于字段修改操作具有一定危险性（可能会影响數據完整性），因此暂未实现直接修改模型的資料庫表结构<hr class="layui-bg-red">@endif
+                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由于字段修改操作具有一定危险性（可能会影响數據完整性），因此暂未实现直接修改模型的資料庫表结構<hr class="layui-bg-red">@endif
                     <div class="layui-form-item">
                         <label class="layui-form-label">模型</label>
                         <div class="layui-input-block" style="width: 400px">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">字段名称</label>
+                    <label class="layui-form-label">字段名稱</label>
                     <div class="layui-input-block">
                         <input @if(isset($id)) disabled @endif type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}" placeholder="只能包含英文字母和數字，长度不超过64">
                     </div>
@@ -50,23 +50,23 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">字段注释</label>
+                        <label class="layui-form-label">字段注譯</label>
                         <div class="layui-input-block">
                             <input type="text" name="comment" autocomplete="off" class="layui-input" value="{{ $model->comment ?? ''  }}">
                         </div>
                     </div>
                     @if(!isset($id))
                     <div class="layui-form-item">
-                        <label class="layui-form-label">变更表结构</label>
+                        <label class="layui-form-label">變更表结構</label>
                         <div class="layui-input-inline" style="width: 50px;">
                             <input type="checkbox" name="is_modify_db" lay-skin="switch" lay-text="是|否" value="1" checked>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表结构已经通过其它方式建好，此处无需操作資料庫表，添加字段主要是方便利用框架提供的模型增删改查功能</div>
+                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表结構已经通过其它方式建好，此处無需操作資料庫表，添加字段主要是方便利用框架提供的模型增删改查功能</div>
                     </div>
                     @endif
                     <hr>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">表單名称</label>
+                        <label class="layui-form-label">表單名稱</label>
                         <div class="layui-input-block">
                             <input type="text" name="form_name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->form_name ?? ''  }}">
                         </div>
@@ -80,7 +80,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="layui-form-mid layui-word-aux"><span style="color:#FF5722">下拉选择（远程搜索）、下拉选择（多选，远程搜索）只支持行内展示</span></div>
+                        <div class="layui-form-mid layui-word-aux"><span style="color:#FF5722">下拉選擇（远程搜索）、下拉選擇（多选，远程搜索）只支持行内展示</span></div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">表單备注</label>
@@ -91,7 +91,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">表單参數</label>
                         <div class="layui-input-block">
-                            <textarea name="form_params" class="layui-textarea" placeholder="对于表單類型為单选框、多选框、下拉选择的，需在此配置对应参數。参數格式為：key=value，多个以换行分隔。也可以填写自定义的函數名称，函數名称需以getFormItemsFrom开头，返回值需与前述數據格式一致。对于下拉选择远程搜索表單類型、短文本（input，自動完成）表單類型，需在此填写編輯接口URL地址，接口返回數據格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
+                            <textarea name="form_params" class="layui-textarea" placeholder="对于表單類型為单选框、多选框、下拉選擇的，需在此配置对应参數。参數格式為：key=value，多个以换行分隔。也可以填写自定义的函數名稱，函數名稱需以getFormItemsFrom开头，返回值需与前述數據格式一致。对于下拉選擇远程搜索表單類型、短文本（input，自動完成）表單類型，需在此填写編輯接口URL地址，接口返回數據格式可参考文档说明。">{{ $model->form_params ?? ''  }}</textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -115,7 +115,7 @@
                         </div>
                         </div>
 
-                        <div class="layui-inline" title="仅对部分表單類型（段文本、下拉选择）有效">
+                        <div class="layui-inline" title="仅对部分表單類型（段文本、下拉選擇）有效">
                             <label class="layui-form-label">行内展示</label>
                             <div class="layui-input-inline">
                                 <input type="checkbox" name="is_show_inline" lay-skin="switch" lay-text="是|否" value="1" @if(isset($model) && $model->is_show_inline == App\Model\Admin\EntityField::SHOW_INLINE) checked @endif>

@@ -26,7 +26,7 @@
                     <label class="layui-form-label">{{ $v['title'] }}</label>
                     <div class="layui-input-inline">
                         <select name="{{ $k }}">
-                            <option value="" @if(!request()->has($k)) selected @endif>请选择</option>
+                            <option value="" @if(!request()->has($k)) selected @endif>请選擇</option>
                             @foreach($v['enums'] as $ik => $iv)
                                 <option value="{{ $ik }}" @if(request()->has($k) && request()->get($k) !== "" && request()->get($k) == $ik) selected @endif>{{ $iv }}</option>
                             @endforeach

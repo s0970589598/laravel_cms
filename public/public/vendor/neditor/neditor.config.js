@@ -3,9 +3,9 @@
  * 可以在这里配置整个編輯器的特性
  */
 /**************************提示********************************
- * 所有被注释的配置项均為UEditor默認值。
+ * 所有被注譯的配置项均為UEditor默認值。
  * 修改默認配置请首先确保已经完全明确该参數的真实用途。
- * 主要有两种修改方案，一种是取消此处注释，然后修改成对应参數；另一种是在实例化編輯器时传入对应参數。
+ * 主要有两种修改方案，一种是取消此处注譯，然后修改成对应参數；另一种是在实例化編輯器时传入对应参數。
  * 当升级編輯器时，可直接使用旧版配置文件替换新版配置文件,不用担心旧版配置文件中因缺少新功能所需的参數而导致脚本报错。
  **************************提示********************************/
 
@@ -21,10 +21,10 @@
     var URL = window.UEDITOR_HOME_URL || getUEBasePath();
 
     /**
-     * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
+     * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL變量。
      */
     window.UEDITOR_CONFIG = {
-        //為編輯器实例添加一个路径，这个不能被注释
+        //為編輯器实例添加一个路径，这个不能被注譯
         UEDITOR_HOME_URL: URL,
 
         // 服务器统一请求接口路径
@@ -34,7 +34,7 @@
         scrawlActionName: "uploadscrawl",
         videoActionName: "uploadvideo",
         fileActionName: "uploadfile",
-        imageFieldName: "file", // 送出的圖片表單名称
+        imageFieldName: "file", // 送出的圖片表單名稱
         imageMaxSize: 2048000, // 上传大小限制，单位B
         imageUrlPrefix: "",
         scrawlUrlPrefix: "",
@@ -43,14 +43,14 @@
 
          /* 抓取远程圖片配置 */
         catcherLocalDomain : ["127.0.0.1", "localhost", "img.baidu.com"],
-        catcherActionName : "catchimage", /* 執行抓取远程圖片的action名称 */
-        catcherFieldName : "file", /* 送出的圖片列表表單名称 */
+        catcherActionName : "catchimage", /* 執行抓取远程圖片的action名稱 */
+        catcherFieldName : "file", /* 送出的圖片列表表單名稱 */
         catcherPathFormat : "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
         catcherUrlPrefix : "", /* 圖片访问路径前缀 */
         catcherMaxSize : 2048000, /* 上传大小限制，单位B */
         catcherAllowFiles : [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 抓取圖片格式显示 */
 
-        //工具栏上的所有的功能按钮和下拉框，可以在new編輯器的实例时选择自己需要的重新定义
+        //工具栏上的所有的功能按钮和下拉框，可以在new編輯器的实例时選擇自己需要的重新定义
         toolbars: [
                 [
                     "fullscreen",
@@ -191,7 +191,7 @@
             //,focus:false //初始化时，是否让編輯器获得焦点true或false
 
             //如果自定义，最好给p標簽如下的行高，要不输入中文时，会有跳动感
-            //,initialStyle:'p{line-height:1em}'//編輯器层级的基數,可以用来改变字体等
+            //,initialStyle:'p{line-height:1em}'//編輯器层级的基數,可以用来改變字体等
 
             //,iframeJsUrl: '' //给編輯区域的iframe引入一个js文件
             //,iframeCssUrl: URL + '/themes/iframe.css' //给編輯区域的iframe引入一个css文件
@@ -280,7 +280,7 @@
             //}
 
             //insertunorderedlist
-            //无序列表的下拉配置，值留空时支持多语言自動识别，若配置值，则以此值為准
+            //無序列表的下拉配置，值留空时支持多语言自動识别，若配置值，则以此值為准
             //,insertunorderedlist : { //自定的样式
             //    'dash' :'— 破折号', //-破折号
             //    'dot':' 。 小圆圈', //系统自带
@@ -292,7 +292,7 @@
             //,listiconpath : 'http://bs.baidu.com/listicon/'//自定义标号的路径
             //,maxListLevel : 3 //限制可以tab的级數, 设置-1為不限制
 
-            //,autoTransWordToList:false  //禁止word中粘贴进来的列表自動变成列表標簽
+            //,autoTransWordToList:false  //禁止word中粘贴进来的列表自動變成列表標簽
 
             //fontfamily
             //字体设置 label留空支持多语言自動切换，若配置，则以配置值為准
@@ -351,7 +351,7 @@
             //右键選單的内容，可以参考plugins/contextmenu.js里边的默認選單的例子，label留空支持国际化，否则以此配置為准
             //,contextMenu:[
             //    {
-            //        label:'',       //显示的名称
+            //        label:'',       //显示的名稱
             //        cmdName:'selectall',//執行的command命令，当点击这个右键選單时
             //        //exec可选，有了exec就会在点击时執行这个function，优先级高于cmdName
             //        exec:function () {
@@ -410,7 +410,7 @@
             //,autoFloatEnabled:true
             //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的頁面
             //,topOffset:30
-            //編輯器底部距离工具栏高度(如果参數大于等于編輯器高度，则设置无效)
+            //編輯器底部距离工具栏高度(如果参數大于等于編輯器高度，则设置無效)
             //,toolbarTopOffset:400
 
             //设置远程圖片是否抓取到本地保存
@@ -470,8 +470,8 @@
 
             //默認过滤规则相关配置项目
             //,disabledTableInTable:true  //禁止表格嵌套
-            //,allowDivTransToP:true      //允许进入編輯器的div標簽自動变成p標簽
-            //,rgb2Hex:true               //默認产出的數據中的color自動从rgb格式变成16进制格式
+            //,allowDivTransToP:true      //允许进入編輯器的div標簽自動變成p標簽
+            //,rgb2Hex:true               //默認产出的數據中的color自動从rgb格式變成16进制格式
 
             // xss 过滤是否开启,inserthtml等操作
             ,

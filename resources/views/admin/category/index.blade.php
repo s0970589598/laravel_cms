@@ -26,7 +26,7 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
-                    <th lay-data="{templet:'#categoryName'}">名称</th>
+                    <th lay-data="{templet:'#categoryName'}">名稱</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Category::$listField])
                     <th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>

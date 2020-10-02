@@ -162,7 +162,7 @@ baidu.browser = baidu.browser || {};
 /**
  * opera 从10开始不是用opera后面的字符串进行版本的判断
  * 在Browser identification最后添加Version + 數字进行版本标识
- * opera后面的數字保持在9.80不变
+ * opera后面的數字保持在9.80不變
  */
 baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.test(navigator.userAgent) ?  + ( RegExp["\x246"] || RegExp["\x242"] ) : undefined;
 
@@ -303,7 +303,7 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信權限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置執行无缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置執行無缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参數，支持JSON或string類型。
@@ -446,7 +446,7 @@ baidu.swf.createHTML = function (options) {
  * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信權限。允许值：always/never/sameDomain
  * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置執行无缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许设置執行無缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
  * @param {boolean} options.devicefont 			设置静态文本对象是否以设备字体呈现。允许值：true/false
  * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
  * @param {Object} 	options.vars 				要传递给flash的参數，支持JSON或string類型。
@@ -516,11 +516,11 @@ baidu.lang.isArray = function (source) {
 
 
 /**
- * 将一个变量转换成array
+ * 将一个變量转换成array
  * @name baidu.lang.toArray
  * @function
  * @grammar baidu.lang.toArray(source)
- * @param {mix} source 需要转换成array的变量
+ * @param {mix} source 需要转换成array的變量
  * @version 1.3
  * @meta standard
  * @returns {array} 转换后的array
@@ -548,7 +548,7 @@ baidu.lang.toArray = function (source) {
  * @name baidu.swf.getMovie
  * @function
  * @grammar baidu.swf.getMovie(name)
- * @param {string} name flash对象的名称
+ * @param {string} name flash对象的名稱
  * @see baidu.swf.create
  * @meta standard
  * @returns {HTMLElement} flash对象的实例
@@ -687,7 +687,7 @@ baidu.flash._Base = (function(){
          * 调用flash接口的统一入口
          * @param {String} fnName 调用的函數名
          * @param {Array} params 传入的参數组成的數组,若不许要参數，需传入空數组
-         * @param {Function} [callBack] 异步调用后将返回值作為参數的调用回调函數，如无返回值，可以不传入此参數
+         * @param {Function} [callBack] 异步调用后将返回值作為参數的调用回调函數，如無返回值，可以不传入此参數
          * @return {Null}
         */
         me.call = function(fnName, params, callBack){
@@ -773,14 +773,14 @@ baidu.flash._Base = (function(){
  * @param {String} backgroundUrl 背景圖片路径
  * @param {String} listBacgroundkUrl 布局控件背景
  * @param {String} buttonUrl 按钮圖片不背景
- * @param {String|Function} selectFileCallback 选择文件的回调
+ * @param {String|Function} selectFileCallback 選擇文件的回调
  * @param {String|Function} exceedFileCallback文件超出限制的最大体积时的回调
  * @param {String|Function} deleteFileCallback 删除文件的回调
  * @param {String|Function} startUploadCallback 开始上传某个文件时的回调
  * @param {String|Function} uploadCompleteCallback 某个文件上传完成的回调
  * @param {String|Function} uploadErrorCallback 某个文件上传失败的回调
  * @param {String|Function} allCompleteCallback 全部上传完成时的回调
- * @param {String|Function} changeFlashHeight 改变Flash的高度，mode==1的时候才有用
+ * @param {String|Function} changeFlashHeight 改變Flash的高度，mode==1的时候才有用
  */ 
 baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
    
@@ -897,7 +897,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     _flash.call('setMaxNum', options.maxNum ? [options.maxNum] : [1]);
 
     /**
-     * 设置当鼠标移动到flash上时，是否变成手型
+     * 设置当鼠标移动到flash上时，是否變成手型
      * @public
      * @param {Boolean} isCursor
      * @return {Null}
@@ -1010,7 +1010,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     /**
      * 设置可选文件大小限制，以兆M為单位
      * @public
-     * @param {Number} num,0為无限制
+     * @param {Number} num,0為無限制
      * @return {Null}
      */
     me.setMaxSize = function(num){

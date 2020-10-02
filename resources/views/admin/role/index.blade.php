@@ -8,7 +8,7 @@
             <form>
                 <input type="hidden" name="action" value="search">
             <div class="layui-inline">
-                <label class="layui-form-label">名称</label>
+                <label class="layui-form-label">名稱</label>
                 <div class="layui-input-inline">
                     <input type="text" name="name" autocomplete="off" class="layui-input" value="{{ request()->get('name') }}">
                 </div>
@@ -31,7 +31,7 @@
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
-                    <th lay-data="{field:'name'}">名称</th>
+                    <th lay-data="{field:'name'}">名稱</th>
                     <th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>

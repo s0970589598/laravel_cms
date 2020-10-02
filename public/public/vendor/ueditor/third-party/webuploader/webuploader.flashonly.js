@@ -166,7 +166,7 @@
      */
     
     /**
-     * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个变量中访问到。
+     * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个變量中访问到。
      *
      * As you know, Web Uploader的每个文件都是用过[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
      * 默認module id该文件的路径，而此路径将会转化成名字空间存放在WebUploader中。如：
@@ -301,7 +301,7 @@
              * @grammar Base.inherits( super, protos, statics ) => child
              * @param  {Class} super 父类
              * @param  {Object | Function} [protos] 子类或者对象。如果对象中包含constructor，子类将是用此属性值。
-             * @param  {Function} [protos.constructor] 子类构造器，不指定的话将创建个临时的直接執行父类构造器的方法。
+             * @param  {Function} [protos.constructor] 子类構造器，不指定的话将创建个临时的直接執行父类構造器的方法。
              * @param  {Object} [statics] 静态属性或方法。
              * @return {Class} 返回子类。
              * @example
@@ -318,7 +318,7 @@
              *     }
              * });
              *
-             * // 因為没有指定构造器，父类的构造器将会執行。
+             * // 因為没有指定構造器，父类的構造器将会執行。
              * var instance = new Manager();    // => Super
              *
              * // 继承子父类的方法
@@ -350,7 +350,7 @@
                 // 让子类的__super__属性指向父类。
                 child.__super__ = Super.prototype;
     
-                // 构建原型，添加原型方法或属性。
+                // 構建原型，添加原型方法或属性。
                 // 暂时用Object.create实现。
                 child.prototype = createObject( Super.prototype );
                 protos && $.extend( true, child.prototype, protos );
@@ -808,7 +808,7 @@
              * * `successNum` 上传成功的文件數
              * * `uploadFailNum` 上传失败的文件數
              * * `cancelNum` 被删除的文件數
-             * * `invalidNum` 无效的文件數
+             * * `invalidNum` 無效的文件數
              * * `queueNum` 还在队列中的文件數
              * @method getStats
              * @grammar getStats() => Object
@@ -879,7 +879,7 @@
         return Uploader;
     });
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/runtime',[
         'base',
@@ -990,7 +990,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/client',[
         'base',
@@ -1382,7 +1382,7 @@
             init: Base.noop,
     
             // 类Backbone的事件监听声明，监听uploader实例上的事件
-            // widget直接无法监听事件，事件只能通过uploader来传递
+            // widget直接無法监听事件，事件只能通过uploader来传递
             invoke: function( apiName, args ) {
     
                 /*
@@ -1392,7 +1392,7 @@
                  */
                 var map = this.responseMap;
     
-                // 如果无API响应声明则忽略
+                // 如果無API响应声明则忽略
                 if ( !map || !(apiName in map) || !(map[ apiName ] in this) ||
                         !$.isFunction( this[ map[ apiName ] ] ) ) {
     
@@ -1480,8 +1480,8 @@
     
         /**
          * 添加组件
-         * @param  {object} widgetProto 组件原型，构造函數通过constructor属性定义
-         * @param  {object} responseMap API名称与函數实现的映射
+         * @param  {object} widgetProto 组件原型，構造函數通过constructor属性定义
+         * @param  {object} responseMap API名稱与函數实现的映射
          * @example
          *     Uploader.register( {
          *         init: function( options ) {},
@@ -1510,7 +1510,7 @@
         return Widget;
     });
     /**
-     * @fileOverview 文件选择相关
+     * @fileOverview 文件選擇相关
      */
     define('widgets/filepicker',[
         'base',
@@ -1526,12 +1526,12 @@
              * @property {Selector | Object} [pick=undefined]
              * @namespace options
              * @for Uploader
-             * @description 指定选择文件的按钮容器，不指定则不创建按钮。
+             * @description 指定選擇文件的按钮容器，不指定则不创建按钮。
              *
-             * * `id` {Seletor} 指定选择文件的按钮容器，不指定则不创建按钮。
+             * * `id` {Seletor} 指定選擇文件的按钮容器，不指定则不创建按钮。
              * * `label` {String} 请采用 `innerHTML` 代替
              * * `innerHTML` {String} 指定按钮文字。不指定时优先从指定的容器中看是否自带文字。
-             * * `multiple` {Boolean} 是否开起同时选择多个文件能力。
+             * * `multiple` {Boolean} 是否开起同时選擇多个文件能力。
              */
             pick: null,
     
@@ -1585,11 +1585,11 @@
              * @for Uploader
              * @grammar addButton( pick ) => Promise
              * @description
-             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参數跟[options.pick](#WebUploader:Uploader:options)一致。
+             * 添加文件選擇按钮，如果一个按钮不够，需要调用此方法来添加。参數跟[options.pick](#WebUploader:Uploader:options)一致。
              * @example
              * uploader.addButton({
              *     id: '#btnContainer',
-             *     innerHTML: '选择文件'
+             *     innerHTML: '選擇文件'
              * });
              */
             addButton: function( pick ) {
@@ -1649,7 +1649,7 @@
     ], function( Base, RuntimeClient, Blob ) {
         var $ = Base.$;
     
-        // 构造器。
+        // 構造器。
         function Image( opts ) {
             this.options = $.extend({}, Image.options, opts );
             RuntimeClient.call( this, 'Image' );
@@ -1971,7 +1971,7 @@
                 image.once( 'complete', function() {
                     var blob, size;
     
-                    // 移动端 UC / qq 浏览器的无圖模式下
+                    // 移动端 UC / qq 浏览器的無圖模式下
                     // ctx.getImageData 处理大圖的时候会报 Exception
                     // INDEX_SIZE_ERR: DOM Exception 1
                     try {
@@ -2026,7 +2026,7 @@
         /**
          * 文件类
          * @class File
-         * @constructor 构造函數
+         * @constructor 構造函數
          * @grammar new File( source ) => File
          * @param {Lib.File} source [lib.File](#Lib.File)实例, 此source对象是带有Runtime信息的。
          */
@@ -2064,7 +2064,7 @@
             this.lastModifiedDate = source.lastModifiedDate || (new Date() * 1);
     
             /**
-             * 文件ID，每个对象具有唯一ID，与文件名无关
+             * 文件ID，每个对象具有唯一ID，与文件名無关
              * @property id
              * @type {string}
              */
@@ -2099,7 +2099,7 @@
         $.extend( WUFile.prototype, {
     
             /**
-             * 设置状态，状态变化时会触发`change`事件。
+             * 设置状态，状态變化时会触发`change`事件。
              * @method setStatus
              * @grammar setStatus( status[, statusText] );
              * @param {File.Status|String} status [文件状态值](#WebUploader:File:File.Status)
@@ -2114,7 +2114,7 @@
                 if ( status !== prevStatus ) {
                     statusMap[ this.id ] = status;
                     /**
-                     * 文件状态变化
+                     * 文件状态變化
                      * @event statuschange
                      */
                     this.trigger( 'statuschange', status, prevStatus );
@@ -2216,7 +2216,7 @@
              * * `numOfCancel` 被移除的文件數
              * * `numOfProgress` 正在上传中的文件數
              * * `numOfUploadFailed` 上传错误的文件數。
-             * * `numOfInvalid` 无效的文件數。
+             * * `numOfInvalid` 無效的文件數。
              * @property {Object} stats
              */
             this.stats = {
@@ -3754,7 +3754,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器，负责Runtime的選擇, 连接
      */
     define('runtime/compbase',[],function() {
     
@@ -3975,7 +3975,7 @@
                 var copy = $.extend({}, opts ),
                     len, i;
     
-                // 修复Flash再没有设置title的情况下无法弹出flash文件选择框的bug.
+                // 修复Flash再没有设置title的情况下無法弹出flash文件選擇框的bug.
                 len = copy.accept && copy.accept.length;
                 for (  i = 0; i < len; i++ ) {
                     if ( !copy.accept[ i ].title ) {

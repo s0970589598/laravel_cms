@@ -153,7 +153,7 @@ function mapTypeToVerbOfSensitiveWords()
 function checkSensitiveWords(string $text, $type = 'join', $mode = null)
 {
     if (!is_null($mode) && !in_array($mode, ['noun', 'verb', 'exclusive'])) {
-        throw new \InvalidArgumentException('mode参數无效，只能為null值、noun、exclusive');
+        throw new \InvalidArgumentException('mode参數無效，只能為null值、noun、exclusive');
     }
 
     if ($type === 'join') {

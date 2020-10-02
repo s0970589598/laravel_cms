@@ -5,7 +5,7 @@ namespace App\Foundation;
 /**
  * 代码基于 https://github.com/whiteCcinn/tire-php 修改而来
  *
- * 修复了首个敏感字连接在一起无法查出敏感詞的bug
+ * 修复了首个敏感字连接在一起無法查出敏感詞的bug
  * 修复了还原字符串时未能正确处理ascii字符的bug
  */
 class Tire

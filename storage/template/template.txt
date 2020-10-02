@@ -1,9 +1,9 @@
 /**
- * 替换变量说明
+ * 替换變量说明
  *
- * $model               模型名称                user
- * $model_plural        模型名称复數              users
- * $model_uc_first      模型名称首字母大写       User
+ * $model               模型名稱                user
+ * $model_plural        模型名稱复數              users
+ * $model_uc_first      模型名稱首字母大写       User
  * $model_chinese_name  模型中文名               用户
  */
 
@@ -118,7 +118,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
             <form class="layui-form" action="@if(isset($id)){{ route('admin::{{-$model-}}.update', ['id' => $id]) }}@else{{ route('admin::{{-$model-}}.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">名称</label>
+                    <label class="layui-form-label">名稱</label>
                     <div class="layui-input-block">
                         <input type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}">
                     </div>
@@ -277,8 +277,8 @@ class {{-$model_uc_first-}}Request extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '名称不能為空',
-            'name.max' => '名称长度不能大于50',
+            'name.required' => '名稱不能為空',
+            'name.max' => '名稱长度不能大于50',
         ];
     }
 }

@@ -8,13 +8,13 @@ namespace App\Model\Admin;
 class Config extends Model
 {
     public static $searchField = [
-        'name' => '名称',
+        'name' => '名稱',
         'key' => '标志符',
     ];
 
     public static $listField = [
         'group' => '分组',
-        'name' => '名称',
+        'name' => '名稱',
         'key' => '标志符',
         'type' => '類型',
         'value' => '值',

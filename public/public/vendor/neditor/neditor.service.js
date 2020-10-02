@@ -22,7 +22,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
         /** 
          * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的數據 (比如: url和自定义参數)
-         * @param {Object} file 当前选择的文件对象
+         * @param {Object} file 当前選擇的文件对象
          */
         setUploadData: function(file) {
             return file;
@@ -74,7 +74,7 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
         /** 
          * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的數據 (比如: url和自定义参數)
-         * @param {Object} file 当前选择的文件对象
+         * @param {Object} file 当前選擇的文件对象
          */
         setUploadData: function(file) {
             return file;
@@ -183,7 +183,7 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
         /** 
          * 触发fileQueued事件时執行
          * 当文件被加入队列以后触发，用来设置上传相关的數據 (比如: url和自定义参數)
-         * @param {Object} file 当前选择的文件对象
+         * @param {Object} file 当前選擇的文件对象
          */
         setUploadData: function(file) {
             return file;

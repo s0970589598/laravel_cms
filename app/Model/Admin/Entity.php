@@ -19,7 +19,7 @@ class Entity extends Model
     protected $guarded = [];
 
     public static $listField = [
-        'name' => '名称',
+        'name' => '名稱',
         'table_name' => '資料庫表名',
         'description' => '描述',
     ];

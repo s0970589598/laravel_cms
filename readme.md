@@ -12,7 +12,7 @@
 
 版本库分支说明：
 
-分支名称 | Laravel版本 | 备注
+分支名稱 | Laravel版本 | 备注
 :-: | :-: | :-:
 master    |   6.x | 建议使用
 8.x    |   8.x |
@@ -57,7 +57,7 @@ master    |   6.x | 建议使用
 **注意事项**
 
 * 如果缓存、队列、session用的是 redis 驱动，那还需要安装 redis 和 php redis 扩展
-* 如果`PHP`安装了`opcache`扩展，请启用`opcache.save_comments`和`opcache.load_comments`配置（默認是启用的），否则无法正常使用[選單自動获取](#選單自動获取)功能
+* 如果`PHP`安装了`opcache`扩展，请启用`opcache.save_comments`和`opcache.load_comments`配置（默認是启用的），否则無法正常使用[選單自動获取](#選單自動获取)功能
 
 ## 系统部署
 
@@ -116,14 +116,14 @@ server {
 基于角色的權限管理。只需新建好角色，给对应的角色分配好相应的權限，最后给用户指定角色即可。`lightCMS`中權限的概念其实就是選單，一条選單对应一个`laravel`的路由，也就是一个具体的操作。
 
 ### 選單自動获取
-只需要按约定方式写好指定路由的控制器注释，则可在[選單管理](/admin/menus)頁面自動添加/更新对应的選單信息。例如：
+只需要按约定方式写好指定路由的控制器注譯，则可在[選單管理](/admin/menus)頁面自動添加/更新对应的選單信息。例如：
 ```php
 /**
  * 角色管理-角色列表
  *
- * 取方法的第一行注释作為選單的名称、分组名。注释格式：分组名称-選單名称。
- * 未写分组名称，则直接作為選單名称，分组名為空。
- * 未写注释则选用uri作為選單名，分组名為空。
+ * 取方法的第一行注譯作為選單的名稱、分组名。注譯格式：分组名稱-選單名稱。
+ * 未写分组名稱，则直接作為選單名稱，分组名為空。
+ * 未写注譯则选用uri作為選單名，分组名為空。
  */
 public function index()
 {
@@ -145,7 +145,7 @@ $siteName = config('light_config.SITE_NAME');
 也可以直接调用全局函數`function getConfig($key, $default = null)`获取配置。
 
 ## 標簽管理
-模型内容**打標簽**是站点的一项常用功能，`lightCMS`内置了打標簽功能。添加模型字段时选择表單類型為`標簽输入框`即可。
+模型内容**打標簽**是站点的一项常用功能，`lightCMS`内置了打標簽功能。添加模型字段时選擇表單類型為`標簽输入框`即可。
 
 `lightCMS`采用中间表（content_tags）来实现標簽和模型内容的多对多关联关系。
 
@@ -199,20 +199,20 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
         "cm是什么",
         "cm是什么意思啊",
         "cm是什么意思单位",
-        "cm是什么单位的名称"
+        "cm是什么单位的名稱"
     ]
 }
 ```
 
-对于`select`多选類型表單，默認資料庫保存值為半角逗号分隔的多个选择值。当你设置字段類型為无符号整型时，資料庫会保存多个选择值的求和值（当然前提是选择值都是整型數據）。
+对于`select`多选類型表單，默認資料庫保存值為半角逗号分隔的多个選擇值。当你设置字段類型為無符号整型时，資料庫会保存多个選擇值的求和值（当然前提是選擇值都是整型數據）。
 
 ### 搜索字段（$searchField）配置说明
 通过配置搜索字段，可以很方便的在模型的列表頁展示搜索项。如下是一个示例配置：
 ```php
     public static $searchField = [
-        'name' => '用户名', // input搜索類型。key 為字段名称，value 為標題
-        'status' => [ // key 為字段名称，value 為相关配置
-            'showType' => 'select', // 下拉框选择搜索類型
+        'name' => '用户名', // input搜索類型。key 為字段名稱，value 為標題
+        'status' => [ // key 為字段名稱，value 為相关配置
+            'showType' => 'select', // 下拉框選擇搜索類型
             'searchType' => '=', // 说明字段在資料庫的搜索匹配方式，默認為like查询
             'title' => '状态', // 標題
             'enums' => [ // select下拉搜索项
@@ -220,9 +220,9 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
                 1 => '启用',
             ],
         ],
-        'recommend' => [ // key 為字段名称，value 為相关配置
-            'showType' => 'select', // 下拉框选择搜索類型
-            'searchType' => 'whereRaw', // 对于一些特殊的查询条件，无法通过上述普通的搜索匹配值来实现时，可将此值设置為 whereRaw
+        'recommend' => [ // key 為字段名稱，value 為相关配置
+            'showType' => 'select', // 下拉框選擇搜索類型
+            'searchType' => 'whereRaw', // 对于一些特殊的查询条件，無法通过上述普通的搜索匹配值来实现时，可将此值设置為 whereRaw
             'searchCondition' => 'recommend & ? = ?', // 与 whereRaw 配合使用，? 表示查询条件值参數绑定。例：如果用户输入的查询值為 2，则最终生成的 sql 查询条件是： recommend & 2 = 2
             'title' => '推荐位', // 標題
             'enums' => [ // select下拉搜索项
@@ -231,7 +231,7 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
                 4 => '推荐位3',
             ],
         ],
-        'created_at' => [ // key 為字段名称，value 為相关配置
+        'created_at' => [ // key 為字段名稱，value 為相关配置
             'showType' => 'datetime', // 日期時間搜索類型
             'title' => '创建時間' // 標題
         ]
@@ -266,7 +266,7 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
 通过配置排序字段，可以很方便的在模型的列表頁自定义數據的排序规则。如下是一个示例配置：
 ```php
     public static $actionField = [
-        // 數组的键為排序字段名和升序/降序配置（半角逗号分隔），值為前台展示名称
+        // 數组的键為排序字段名和升序/降序配置（半角逗号分隔），值為前台展示名稱
         'updated_at,desc' => '更新時間（降序）',
         'id,asc' => 'id（升序）',
     ];
@@ -288,9 +288,9 @@ php artisan queue:work
 ```
 
 ## 代码一键生成
-对于一个普通的模型，管理後台通常有增删改查相关的业务需求。如果系统模型管理自带的增删改查功能无法满足你的个性化需求，你可以使用一键生成代码功能。`lightCMS`拥有一键生成相关代码的能力，在建好模型的資料庫表结构后，可以使用如下`artisan`命令生成相关代码：
+对于一个普通的模型，管理後台通常有增删改查相关的业务需求。如果系统模型管理自带的增删改查功能無法满足你的个性化需求，你可以使用一键生成代码功能。`lightCMS`拥有一键生成相关代码的能力，在建好模型的資料庫表结構后，可以使用如下`artisan`命令生成相关代码：
 ```bash
-# config 為模型名称 配置 為模型中文名称
+# config 為模型名稱 配置 為模型中文名稱
 php artisan light:basic config 配置
 ```
 成功執行完成后，会创建如下文件（注意：相关目入需要有写入權限）：
@@ -308,7 +308,7 @@ php artisan light:basic config 配置
 * resources/views/admin/config/index.blade.php
 列表视圖：列表數據、搜索表單。
 * resources/views/admin/config/index.blade.php
-新增/編輯视圖：只列出了基本架构，需要自定义相关字段的表單展示。参考 [layui form](https://www.layui.com/doc/element/form.html)
+新增/編輯视圖：只列出了基本架構，需要自定义相关字段的表單展示。参考 [layui form](https://www.layui.com/doc/element/form.html)
 
 最后，如果想让生成的路由展示在選單中，只需在[選單管理](/admin/menus)頁面点击**自動更新選單**即可。
 
@@ -326,7 +326,7 @@ print_r($result);
 ```
 
 ## 圖片上传
-LightCMS中圖片默認上传到本地服务器。如果有自定义需求，比如上传到三方云服务器，可参考`config/light.php`配置文件中的`image_upload`配置项说明，自定义处理类需要实现`App\Contracts\ImageUpload`接口，方法的返回值數據结构和系统原方法保持一致即可。
+LightCMS中圖片默認上传到本地服务器。如果有自定义需求，比如上传到三方云服务器，可参考`config/light.php`配置文件中的`image_upload`配置项说明，自定义处理类需要实现`App\Contracts\ImageUpload`接口，方法的返回值數據结構和系统原方法保持一致即可。
 ```json
 {
     "code": 200,
@@ -339,15 +339,15 @@ LightCMS中圖片默認上传到本地服务器。如果有自定义需求，比
 ## 系统核心函數、方法说明
 做这个说明的主要目的是让开发者了解一些核心功能，方便自定义各类功能开发。毕竟框架是不可能代劳所有事情滴^_
 
-方法名称：App\Repository\Admin\CategoryRepository::tree()
+方法名稱：App\Repository\Admin\CategoryRepository::tree()
 
 功能说明：
 
-返回分類的树结构信息。數據结构可以参考下圖所示：
+返回分類的树结構信息。數據结構可以参考下圖所示：
 
 ![tree](https://user-images.githubusercontent.com/2555476/62991339-d7acde80-be81-11e9-9811-9d4d27e01f07.png)
 
-此數據结构基本包含了分類的所有结构化信息。相关字段的含义也比较清楚，此处只对`path`字段做下说明：该字段是指当前分類的所有上级分類链，这样可以很方便的知道某个分類的所有父级分類。比如圖中的`test`分類的path字段值為`[1, 2]`，那么很容易的知道它的父级分類是：游戏 射击
+此數據结構基本包含了分類的所有结構化信息。相关字段的含义也比较清楚，此处只对`path`字段做下说明：该字段是指当前分類的所有上级分類链，这样可以很方便的知道某个分類的所有父级分類。比如圖中的`test`分類的path字段值為`[1, 2]`，那么很容易的知道它的父级分類是：游戏 射击
 
 ## 前台相关
 ### 用户註冊登入

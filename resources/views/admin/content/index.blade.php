@@ -19,7 +19,7 @@
                 <label class="layui-form-label">排序</label>
                 <div class="layui-input-inline">
                     <select name="light_sort_fields">
-                        <option value="" @if(!request()->has('light_sort_fields')) selected @endif>请选择</option>
+                        <option value="" @if(!request()->has('light_sort_fields')) selected @endif>请選擇</option>
                         @foreach(App\Model\Admin\Content::$sortFields as $ik => $iv)
                             <option value="{{ $ik }}" @if(request()->has('light_sort_fields') && request()->get('light_sort_fields') !== "" && request()->get('light_sort_fields') == $ik) selected @endif>{{ $iv }}</option>
                         @endforeach

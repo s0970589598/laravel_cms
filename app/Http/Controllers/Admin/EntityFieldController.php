@@ -106,7 +106,7 @@ class EntityFieldController extends Controller
             if (!in_array($data['type'], config('light.db_table_field_type'))) {
                 return [
                     'code' => 3,
-                    'msg' => '新增失败：无效字段類型',
+                    'msg' => '新增失败：無效字段類型',
                 ];
             }
             // 一个模型只能有一个 inputTags 表單類型

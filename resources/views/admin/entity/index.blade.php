@@ -75,10 +75,10 @@
         }
 
         function copyEntity (url) {
-            layer.confirm('複製模型将新建一个和当前模型一样的模型（資料庫表结构、表單定义等信息一致），确定要複製？', function(index){
+            layer.confirm('複製模型将新建一个和当前模型一样的模型（資料庫表结構、表單定义等信息一致），确定要複製？', function(index){
                 layer.prompt({
                     formType: 0,
-                    title: '请输入新模型的資料庫表名称',
+                    title: '请输入新模型的資料庫表名稱',
                 }, function(value, index, elem){
                     $.ajax({
                         url: url,

@@ -73,12 +73,12 @@
         initColorPicker();
     }
 
-    /* 初始化颜色选择器 */
+    /* 初始化颜色選擇器 */
     function initColorPicker() {
         var me = editor,
             cp = $G("colorPicker");
 
-        /* 生成颜色选择器ui对象 */
+        /* 生成颜色選擇器ui对象 */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),
@@ -99,7 +99,7 @@
             }
         });
 
-        /* 设置颜色选择器 */
+        /* 设置颜色選擇器 */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -320,7 +320,7 @@
                 }
             }
         },
-        /* 改变圖片大小 */
+        /* 改變圖片大小 */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;

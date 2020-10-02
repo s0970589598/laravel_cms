@@ -20,7 +20,7 @@ UE.I18N['zh-cn'] = {
         'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查询替换', 'map':'Baidu地圖', 'gmap':'Google地圖',
         'insertvideo':'视频', 'help':'帮助', 'justifyleft':'居左对齐', 'justifyright':'居右对齐', 'justifycenter':'居中对齐',
         'justifyjustify':'两端对齐', 'forecolor':'字体颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
-        'insertunorderedlist':'无序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
+        'insertunorderedlist':'無序列表', 'fullscreen':'全屏', 'directionalityltr':'从左向右输入', 'directionalityrtl':'从右向左输入',
         'rowspacingtop':'段前距', 'rowspacingbottom':'段后距',  'pagebreak':'分頁', 'insertframe':'插入Iframe', 'imagenone':'默認',
         'imageleft':'左浮动', 'imageright':'右浮动', 'attachment':'附件', 'imagecenter':'居中', 'wordimage':'圖片转存',
         'lineheight':'行间距','edittip' :'編輯提示','customstyle':'自定义標題', 'autotypeset':'自動排版',
@@ -158,8 +158,8 @@ UE.I18N['zh-cn'] = {
         'insertcol':"左插入列",
         'insertrownext':'后插入行',
         'insertcolnext':'右插入列',
-        'insertcaption':'插入表格名称',
-        'deletecaption':'删除表格名称',
+        'insertcaption':'插入表格名稱',
+        'deletecaption':'删除表格名稱',
         'inserttitle':'插入表格標題行',
         'deletetitle':'删除表格標題行',
         'inserttitlecol':'插入表格標題列',
@@ -182,12 +182,12 @@ UE.I18N['zh-cn'] = {
         'orderbynum':'按數值大小升序',
         'reversebynum':'按數值大小降序',
         'borderbk':'边框底纹',
-        'setcolor':'表格隔行变色',
-        'unsetcolor':'取消表格隔行变色',
+        'setcolor':'表格隔行變色',
+        'unsetcolor':'取消表格隔行變色',
         'setbackground':'选区背景隔行',
         'unsetbackground':'取消选区背景',
         'redandblue':'红蓝相间',
-        'threecolorgradient':'三色渐变',
+        'threecolorgradient':'三色渐變',
         'copy':"複製(Ctrl + c)",
         'copymsg': "浏览器不支持,请使用 'Ctrl + c'",
         'paste':"粘贴(Ctrl + v)",
@@ -240,7 +240,7 @@ UE.I18N['zh-cn'] = {
             'lang_background_normal':'背景设置',
             'lang_background_local':'在线圖片',
             'lang_background_set':'选项',
-            'lang_background_none':'无背景色',
+            'lang_background_none':'無背景色',
             'lang_background_colored':'有背景色',
             'lang_background_color':'颜色设置',
             'lang_background_netimg':'网络圖片',
@@ -274,12 +274,12 @@ UE.I18N['zh-cn'] = {
             'searchTxt':{'value':"请输入搜索關鍵词"},
             'searchBtn':{'value':"百度一下"},
             'searchReset':{'value':"清空搜索"},
-            'noneAlign':{'title':'无浮动'},
+            'noneAlign':{'title':'無浮动'},
             'leftAlign':{'title':'左浮动'},
             'rightAlign':{'title':'右浮动'},
             'centerAlign':{'title':'居中独占一行'}
         },
-        'uploadSelectFile':'点击选择圖片',
+        'uploadSelectFile':'点击選擇圖片',
         'uploadAddFile':'继续添加',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -317,7 +317,7 @@ UE.I18N['zh-cn'] = {
             'lang_start_upload':"开始上传",
             'lang_drop_remind':"可以将文件拖到这里，单次最多可选100个文件"
         },
-        'uploadSelectFile':'点击选择文件',
+        'uploadSelectFile':'点击選擇文件',
         'uploadAddFile':'继续添加',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -385,11 +385,11 @@ UE.I18N['zh-cn'] = {
         'flashLoadingError':'Flash加载失败!请检查路径或网络状态',
         'fileUploadReady':'等待上传……',
         'delUploadQueue':'从上传队列中移除',
-        'limitPrompt1':'单次不能选择超过',
-        'limitPrompt2':'个文件！请重新选择！',
+        'limitPrompt1':'单次不能選擇超过',
+        'limitPrompt2':'个文件！请重新選擇！',
         'delFailFile':'移除失败文件',
         'fileSizeLimit':'文件大小超出限制！',
-        'emptyFile':'空文件无法上传！',
+        'emptyFile':'空文件無法上传！',
         'fileTypeError':'文件類型不允许！',
         'unknownError':'未知错误！',
         'fileUploading':'上传中，请等待……',
@@ -397,13 +397,13 @@ UE.I18N['zh-cn'] = {
         'netError':'网络错误',
         'failUpload':'上传失败!',
         'serverIOError':'服务器IO错误！',
-        'noAuthority':'无權限！',
+        'noAuthority':'無權限！',
         'fileNumLimit':'上传个數限制',
         'failCheck':'验证失败，本次上传被跳过！',
         'fileCanceling':'取消中，请等待……',
         'stopUploading':'上传已停止……',
 
-        'uploadSelectFile':'点击选择文件',
+        'uploadSelectFile':'点击選擇文件',
         'uploadAddFile':'继续添加',
         'uploadStart':'开始上传',
         'uploadPause':'暂停上传',
@@ -436,7 +436,7 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_template_bkcolor':'背景颜色',
             'lang_template_clear' : '保留原有内容',
-            'lang_template_select' : '选择模板'
+            'lang_template_select' : '選擇模板'
         },
         'blank':"空白文档",
         'blog':"博客文章",
@@ -518,7 +518,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_search':'搜索',
             'address':{value:"北京"}
         },
-        searchError:'无法定位到该地址!'
+        searchError:'無法定位到该地址!'
     },
     'help':{
         'static':{
@@ -560,7 +560,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_target':'是否在新窗口打开：'
         },
         'validLink':'只支持选中一个链接时生效',
-        'httpPrompt':'您输入的超链接中不包含http等协议名称，默認将為您添加http://前缀'
+        'httpPrompt':'您输入的超链接中不包含http等协议名稱，默認将為您添加http://前缀'
     },
     'map':{
         'static':{
@@ -570,7 +570,7 @@ UE.I18N['zh-cn'] = {
             lang_search:"搜索",
             lang_dynamicmap:"插入动态地圖"
         },
-        cityMsg:"请选择城市",
+        cityMsg:"请選擇城市",
         errorMsg:"抱歉，找不到该位置！"
     },
     'searchreplace':{
@@ -618,7 +618,7 @@ UE.I18N['zh-cn'] = {
     'edittable':{
         'static':{
             'lang_tableStyle':'表格样式',
-            'lang_insertCaption':'添加表格名称行',
+            'lang_insertCaption':'添加表格名稱行',
             'lang_insertTitle':'添加表格標題行',
             'lang_insertTitleCol':'添加表格標題列',
             'lang_orderbycontent':"使表格内容可排序",
@@ -629,7 +629,7 @@ UE.I18N['zh-cn'] = {
             'lang_borderStyle':'表格边框',
             'lang_color':'颜色:'
         },
-        captionName:'表格名称',
+        captionName:'表格名稱',
         titleName:'標題',
         cellsName:'内容',
         errorMsg:'有合并单元格，不可排序'
@@ -654,7 +654,7 @@ UE.I18N['zh-cn'] = {
             lang_resave:"转存步骤",
             uploadBtn:{src:"upload.png",alt:"上传"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、点击顶部複製按钮，将地址複製到剪贴板；2、点击添加照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后选择圖片上传流程。"
+            lang_step:"1、点击顶部複製按钮，将地址複製到剪贴板；2、点击添加照片按钮，在弹出的对话框中使用Ctrl+V粘贴地址；3、点击打开后選擇圖片上传流程。"
         },
         'fileType':"圖片",
         'flashError':"FLASH初始化失败，请检查FLASH插件是否正确安装！",

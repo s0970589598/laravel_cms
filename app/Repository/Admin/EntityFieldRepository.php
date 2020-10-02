@@ -7,6 +7,8 @@ namespace App\Repository\Admin;
 
 use App\Model\Admin\EntityField;
 use App\Repository\Searchable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class EntityFieldRepository
 {
@@ -96,4 +98,22 @@ class EntityFieldRepository
     {
         return in_array($formType, ['inputTags'], true);
     }
+
+    public static function getBeaconTitleFields($entityName)
+    {
+        return DB::table('app_official_location_broadcast')
+                ->select('id', 'title')
+                ->orderBy('id','DESC')
+                ->skip(0)
+                ->take(5)
+                ->get()->toArray();
+        }
+
+    public static function getBeaconLocationFields($entityName)
+    {
+        return DB::table('app_official_location')
+                ->select('id', 'name')
+                ->orderBy('id','DESC')
+                ->get()->toArray();
+        }
 }
