@@ -10,6 +10,7 @@ use App\Model\Admin\ContentTag;
 use App\Model\Admin\Entity;
 use App\Model\Admin\EntityField;
 use App\Repository\Searchable;
+use Illuminate\Support\Facades\Log;
 
 /**
  * 使用当前类时必须先调用 setTable 方法设置所要操作的資料庫表
@@ -24,7 +25,7 @@ class ContentRepository
      */
     protected static $model = null;
 
-    public static function list($entity, $perPage, $condition = [])
+    public static function list($entity, $perPage, $condition = [], $user_id)
     {
         $sortField = 'id';
         $sortType = 'desc';
@@ -34,13 +35,99 @@ class ContentRepository
             $sortType = isset($tmp[1]) && in_array($tmp[1], ['asc', 'desc'], true) ? $tmp[1] : $sortType;
             unset($condition['light_sort_fields']);
         }
+        log::info($entity);
 
-        $data = self::$model->newQuery()
+        if ($user_id <> 1) {
+            
+            switch ($entity) {
+                case 7:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select('app_beacon.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 9:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select('app_official_location_broadcast.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 10:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select('app_official_location_broadcast_message.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 11:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_beacon', 'app_beacon.id', '=', 'log_beacon_event.beacon_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select('log_beacon_event.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 12:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'log_broadcast.broadcast_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_beacon.location_id', '=', 'app_official_location.id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select('log_broadcast.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                default:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+            }
+
+        } else {
+            $data = self::$model->newQuery()
             ->where(function ($query) use ($condition) {
                 Searchable::buildQuery($query, $condition);
             })
             ->orderBy($sortField, $sortType)
             ->paginate($perPage);
+        }
+
+        
+
         $data->transform(function ($item) use ($entity) {
             xssFilter($item);
             $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);

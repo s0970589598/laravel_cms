@@ -26,6 +26,7 @@ use App\Model\Admin\Tag;
 use App\Model\Admin\ContentTag;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Auth;
 
 class ContentController extends Controller
 {
@@ -120,7 +121,7 @@ class ContentController extends Controller
                     'title' => '標題'
                 ];
         }
-        
+       
         return view('admin.content.index', [
             'breadcrumb' => $this->breadcrumb,
             'entity' => $entity,
@@ -147,7 +148,8 @@ class ContentController extends Controller
         $this->formNames = array_merge(['created_at', 'light_sort_fields'], EntityFieldRepository::getFields($entity));
         $condition = $request->only($this->formNames);
 
-        $data = ContentRepository::list($entity, $perPage, $condition);
+        $user = \Auth::guard('admin')->user();
+        $data = ContentRepository::list($entity, $perPage, $condition, $user->id);
 
         return $data;
     }

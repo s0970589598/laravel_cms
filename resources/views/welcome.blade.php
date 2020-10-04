@@ -78,7 +78,7 @@
                 </div>
                 <div class="m-b-md">
                     @if($user)
-                        <span style="margin-right: 20px">欢迎 {{ $user->name }} !</span><a href="{{ route('member::logout') }}">退出登入</a>
+                        <span style="margin-right: 20px">歡迎 {{ $user->name }} !</span><a href="{{ route('member::logout') }}">退出登入</a>
                     @else
                         <a href="{{ route('member::login.show') }}">用户登入</a>
                         <a href="{{ route('admin::login.show') }}">後台登入</a>

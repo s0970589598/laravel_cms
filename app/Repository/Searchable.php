@@ -10,6 +10,7 @@ namespace App\Repository;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Log;
 
 trait Searchable
 {

@@ -7476,7 +7476,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @param { * } val  该選项可接受的值
          * @example
          * ```javascript
-         * editor.setOpt( 'initContent', '欢迎使用編輯器' );
+         * editor.setOpt( 'initContent', '歡迎使用編輯器' );
          * ```
          */
 
@@ -7489,7 +7489,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * @example
          * ```javascript
          * editor.setOpt( {
-         *     'initContent': '欢迎使用編輯器'
+         *     'initContent': '歡迎使用編輯器'
          * } );
          * ```
          */
@@ -7944,7 +7944,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
          * ```javascript
          * // editor 是一个編輯器的实例
          * var content = editor.getContent( function ( editor ) {
-         *      return editor.body.innerHTML === '欢迎使用UEditor'; //返回空字符串
+         *      return editor.body.innerHTML === '歡迎使用UEditor'; //返回空字符串
          * } );
          * ```
          */

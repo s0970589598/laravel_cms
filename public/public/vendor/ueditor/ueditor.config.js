@@ -74,7 +74,7 @@
 
         //,textarea:'editorValue' // 送出表單时，服务器获取編輯器送出内容的所用的参數，多实例时可以给容器name属性，会将name给定的值最為每个实例的键值，不用每次实例化的时候都设置这个值
 
-        //,initialContent:'欢迎使用ueditor!'    //初始化編輯器的内容,也可以通过textarea/script给值，看官网例子
+        //,initialContent:'歡迎使用ueditor!'    //初始化編輯器的内容,也可以通过textarea/script给值，看官网例子
 
         //,autoClearinitialContent:true //是否自動清除編輯器初始内容，注意：如果focus属性设置為true,这个也為真，那么編輯器一上来就会触发导致初始化的内容看不到了
 
