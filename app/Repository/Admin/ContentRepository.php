@@ -11,6 +11,7 @@ use App\Model\Admin\Entity;
 use App\Model\Admin\EntityField;
 use App\Repository\Searchable;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 /**
  * 使用当前类时必须先调用 setTable 方法设置所要操作的資料庫表
@@ -35,7 +36,6 @@ class ContentRepository
             $sortType = isset($tmp[1]) && in_array($tmp[1], ['asc', 'desc'], true) ? $tmp[1] : $sortType;
             unset($condition['light_sort_fields']);
         }
-        log::info($entity);
 
         if ($user_id <> 1) {
             
@@ -106,35 +106,110 @@ class ContentRepository
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
+                case 'log_beacon_event':
+                    /**SELECT app_beacon.id,count(log_beacon_event.beacon_id) FROM `app_beacon`
+                    left join log_beacon_event on log_beacon_event.beacon_id = app_beacon.id
+                    left join app_official_location on app_official_location.id = app_beacon.location_id
+                    where app_official_location.admin_id = 8 or app_official_location.editor_id = 8
+                    group by app_beacon.id**/
+                    $data = DB::table('app_beacon')   
+                    ->leftjoin('log_beacon_event', function ($leftjoin) {
+                        $leftjoin->on('app_beacon.id', '=', 'log_beacon_event.beacon_id')
+                        ->whereRaw('DATE(log_beacon_event.enter_datetime) >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
+                    })
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select(DB::raw('count(*) as beacon_id, app_beacon.id, app_official_location.name as line_user_id'))
+                    ->orderBy($sortField, $sortType)
+                    ->groupBy('app_beacon.id')
+                    ->paginate($perPage);
+                    log::info($data);
+                    break;
+                case 'log_broadcast':
+                    /*
+                    SELECT app_beacon.id,count(log_broadcast.broadcast_id),app_beacon.location_id,app_official_location.name FROM `app_beacon`
+                    left join app_official_location_broadcast on app_official_location_broadcast.location_id = app_beacon.location_id
+                    left join log_broadcast on log_broadcast.broadcast_id = app_official_location_broadcast.id
+                    left join app_official_location on app_official_location.id = app_beacon.location_id
+                    where app_official_location.admin_id = 8 or app_official_location.editor_id = 8
+                    group by app_beacon.id
+                    */
+                    $data = DB::table('app_beacon')   
+                    ->leftjoin('app_official_location_broadcast', 'app_official_location_broadcast.location_id', '=', 'app_beacon.location_id')
+                    ->leftjoin('log_broadcast', function ($leftjoin) {
+                        $leftjoin->on('app_official_location_broadcast.id', '=', 'log_broadcast.broadcast_id')
+                        ->whereRaw('DATE(log_broadcast.broadcast_datetime) >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
+                    })
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->where('admin_id', $user_id)
+                    ->orwhere('editor_id', $user_id)
+                    ->select(DB::raw('count(app_official_location_broadcast.id) as broadcast_datetime, app_beacon.id, app_official_location.name as name'))
+                    ->orderBy($sortField, $sortType)
+                    ->groupBy('app_beacon.id')
+                    ->paginate($perPage);
+                    log::info($data);
+                    break;
+                    
                 default:
                     $data = self::$model->newQuery()
                     ->where(function ($query) use ($condition) {
                         Searchable::buildQuery($query, $condition);
                     })
-                    ->where('admin_id', $user_id)
-                    ->orwhere('editor_id', $user_id)
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
             }
 
         } else {
-            $data = self::$model->newQuery()
-            ->where(function ($query) use ($condition) {
-                Searchable::buildQuery($query, $condition);
-            })
-            ->orderBy($sortField, $sortType)
-            ->paginate($perPage);
+            switch ($entity) {
+                case 'log_beacon_event':
+                    $data = DB::table('app_beacon')   
+                    ->leftjoin('log_beacon_event', function ($leftjoin) {
+                        $leftjoin->on('app_beacon.id', '=', 'log_beacon_event.beacon_id')
+                        ->whereRaw('DATE(log_beacon_event.enter_datetime) >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
+                    })
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select(DB::raw('count(log_beacon_event.beacon_id) as beacon_id, app_beacon.id, app_official_location.name as line_user_id'))
+                    ->orderBy($sortField, $sortType)
+                    ->groupBy('app_beacon.id')
+                    ->paginate($perPage);
+                    log::info($data);
+                break;
+                case 'log_broadcast':
+                    $data = DB::table('app_beacon')   
+                    ->leftjoin('app_official_location_broadcast', 'app_official_location_broadcast.location_id', '=', 'app_beacon.location_id')
+                    ->leftjoin('log_broadcast', function ($leftjoin) {
+                        $leftjoin->on('app_official_location_broadcast.id', '=', 'log_broadcast.broadcast_id')
+                        ->whereRaw('DATE(log_broadcast.broadcast_datetime) >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
+                    })
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select(DB::raw('count(app_official_location_broadcast.id) as broadcast_datetime, app_beacon.id, app_official_location.name as name'))
+                    ->orderBy($sortField, $sortType)
+                    ->groupBy('app_beacon.id')
+                    ->paginate($perPage);
+                    log::info($data);
+                break;
+                default:
+                $data = self::$model->newQuery()
+                ->where(function ($query) use ($condition) {
+                    Searchable::buildQuery($query, $condition);
+                })
+                ->orderBy($sortField, $sortType)
+                ->paginate($perPage);
+    
+            }
         }
 
-        
-
-        $data->transform(function ($item) use ($entity) {
-            xssFilter($item);
-            $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
-            $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
-            $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
-            return $item;
-        });
+        if ($entity <> 'log_beacon_event' and $entity <> 'log_broadcast') {
+            $data->transform(function ($item) use ($entity) {
+                xssFilter($item);
+                $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
+                $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
+                return $item;
+            });
+    
+        }
 
         return [
             'code' => 0,

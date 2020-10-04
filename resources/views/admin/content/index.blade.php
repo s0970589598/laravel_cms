@@ -34,6 +34,18 @@
             </div>
             </form>
         </div>
+        @switch($entity) 
+        @case('12')
+        @case('log_broadcast')
+            <a  class="layui-btn layuiadmin-btn-list" href="/admin/entity/log_broadcast/contents">近七日收到訊息人數</a>
+            <a  class="layui-btn layuiadmin-btn-list" href="/admin/entity/12/contents">log_broadcast列表</a>
+        @break
+        @case('11')
+        @case('log_beacon_event')
+            <a class="layui-btn layuiadmin-btn-list" href="/admin/entity/log_beacon_event/contents">近七日場域偵測人數</a>
+            <a class="layui-btn layuiadmin-btn-list" href="/admin/entity/11/contents">log_beacon_event列表</a>
+        @break
+        @endswitch
         <div class="layui-card-body">
             <table class="layui-table" lay-data="{url:'{{ route('admin::content.list', ['entity' => $entity]) }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::content.create', ['entity' => $entity]) }}\'><i class=\'layui-icon layui-icon-add-1\'></i><span class=\'layui-badge\'>新增{{ $entityModel->name }}内容</span></a></div>'}" lay-filter="test">
                 <thead>
@@ -41,8 +53,8 @@
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Content::$listField])
-                    <th lay-data="{field:'created_at'}">添加時間</th>
-                    <th lay-data="{field:'updated_at'}">更新時間</th>
+                    <!--<th lay-data="{field:'created_at'}">添加時間</th>
+                    <th lay-data="{field:'updated_at'}">更新時間</th>-->
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
                 </tr>
                 </thead>
@@ -68,9 +80,11 @@
     </div>
 @endsection
 <script type="text/html" id="action">
+    @if($entity <>'log_broadcast' and  $entity <>'log_beacon_event')
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
     <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>
+    @endif
     @foreach(App\Model\Admin\Content::$actionField as $k => $v)
     <a href="<% d.{{$k}} %>" class="layui-table-link" title="{{ $v['description'] }}" style="margin-left: 5px">{{ $v['title'] }}</a>
     @endforeach

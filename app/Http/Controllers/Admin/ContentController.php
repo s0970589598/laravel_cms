@@ -34,6 +34,8 @@ class ContentController extends Controller
 
     protected $entity = null;
 
+    protected $orentity = null;
+
     public function __construct()
     {
         parent::__construct();
@@ -42,7 +44,23 @@ class ContentController extends Controller
             return;
         }
         $entity = $route->parameter('entity');
-        $this->entity = Entity::query()->findOrFail($entity);
+
+        switch ($entity) {
+            case 'log_beacon_event':
+                $this->entity = Entity::query()->findOrFail(11);
+                $entity = 11;
+                $this->orentity = 'log_beacon_event';
+            break;
+            case 'log_broadcast':
+                $this->entity = Entity::query()->findOrFail(12);
+                $entity = 12;
+                $this->orentity = 'log_broadcast';
+            break;
+            default:
+                $this->entity = Entity::query()->findOrFail($entity);
+                $this->orentity = $entity;
+        }
+        
         ContentRepository::setTable($this->entity->table_name);
         $this->breadcrumb[] = ['title' => '内容列表', 'url' => route('admin::content.index', ['entity' => $entity])];
     }
@@ -102,19 +120,38 @@ class ContentController extends Controller
                 ];
                 break;
             case 'log_beacon_event':
-                Content::$listField = [
-                    'beacon_id' => 'beacon_id',
-                    'event_type' => 'enter',
-                    'line_user_id' => 'line_user_id',
-                    'enter_datetime' => 'enter_datetime'
-                ];
+                if ($this->orentity == $this->entity->name) {
+                    Content::$listField = [
+                        'line_user_id' => '地點',
+                        'beacon_id' => '近七日場域偵測人數',
+                    ];
+                } else {
+                    Content::$listField = [
+                        'beacon_id' => 'beacon_id',
+                        'event_type' => 'enter',
+                        'line_user_id' => 'line_user_id',
+                        'enter_datetime' => 'enter_datetime'
+                    ];
+                }
+                
                 break;
             case 'log_broadcast':
-                Content::$listField = [
-                    'broadcast_id	' => 'broadcast_id',
-                    'line_user_id' => 'line_user_id',
-                    'broadcast_datetime' => 'broadcast_datetime'
-                ];
+                if ($this->orentity == $this->entity->name) {
+                    Content::$listField = [
+                        'id' => 'beacon_id',
+                        'name' => 'name',
+                        'broadcast_datetime' => '近七日收到訊息人數',
+                        
+                    ];
+                } else {
+                    Content::$listField = [
+                        'broadcast_id' => 'broadcast_id',
+                        'line_user_id' => 'line_user_id',
+                        'broadcast_datetime' => 'broadcast_datetime',
+                        
+                    ];
+                }
+                
                 break;          
             default:
                 Content::$listField = [
