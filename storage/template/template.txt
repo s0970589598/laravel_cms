@@ -79,7 +79,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
         });
 
         function deleteMenu (url) {
-            layer.confirm('确定删除？', function(index){
+            layer.confirm('確定删除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -366,7 +366,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前{{-$model_chinese_name-}}已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -406,7 +406,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前{{-$model_chinese_name-}}已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

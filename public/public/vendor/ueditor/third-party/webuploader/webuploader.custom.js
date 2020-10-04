@@ -4,7 +4,7 @@
 /**
  * @fileOverview 让内部各个部件的代码可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模块定义方式组织起来。
  *
- * AMD API 内部的简单不完全实现，请忽略。只有当WebUploader被合并成一个文件的时候才会引入。
+ * AMD API 内部的简单不完全实现，请忽略。只有當WebUploader被合并成一个文件的时候才会引入。
  */
 (function( root, factory ) {
     var modules = {},
@@ -223,7 +223,7 @@
         return {
     
             /**
-             * @property {String} version 当前版本号。
+             * @property {String} version 當前版本号。
              */
             version: '0.1.2',
     
@@ -400,7 +400,7 @@
                     setTimeout( cb, 1 );
                 };
     
-                // @bug 当浏览器不在当前窗口时就停了。
+                // @bug 當浏览器不在當前窗口时就停了。
                 // var next = window.requestAnimationFrame ||
                 //     window.webkitRequestAnimationFrame ||
                 //     window.mozRequestAnimationFrame ||
@@ -503,7 +503,7 @@
         }
     
         function eachEvent( events, callback, iterator ) {
-            // 不支持对象，只支持多个event用空格隔开
+            // 不支持对象，只支持多个event用空格隔開
             $.each( (events || '').split( separator ), function( _, key ) {
                 iterator( key, callback );
             });
@@ -550,7 +550,7 @@
              * 切会影响到`trigger`方法的返回值，為`false`。
              *
              * `on`还可以用来添加一个特殊事件`all`, 这样所有的事件触发都会响应到。同时此类`callback`中的arguments有一个不同处，
-             * 就是第一个参數為`type`，记入当前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`執行完后触发。
+             * 就是第一个参數為`type`，记入當前是什么事件在触发。此类`callback`的优先级比脚低，会再正常`callback`執行完后触发。
              * ```javascript
              * obj.on( 'all', function( type, arg1, arg2 ) {
              *     console.log( type, arg1, arg2 ); // => 'testa', 'arg1', 'arg2'
@@ -559,7 +559,7 @@
              *
              * @method on
              * @grammar on( name, callback[, context] ) => self
-             * @param  {String}   name     事件名，支持多个事件用空格隔开
+             * @param  {String}   name     事件名，支持多个事件用空格隔開
              * @param  {Function} callback 事件处理器
              * @param  {Object}   [context]  事件处理器的上下文。
              * @return {self} 返回自身，方便链式
@@ -591,7 +591,7 @@
             },
     
             /**
-             * 绑定事件，且当handler執行完后，自動解除绑定。
+             * 绑定事件，且當handler執行完后，自動解除绑定。
              * @method once
              * @grammar once( name, callback[, context] ) => self
              * @param  {String}   name     事件名
@@ -696,7 +696,7 @@
         }, protos );
     });
     /**
-     * @fileOverview Uploader上传类
+     * @fileOverview Uploader上傳类
      */
     define('uploader',[
         'base',
@@ -706,7 +706,7 @@
         var $ = Base.$;
     
         /**
-         * 上传入口类。
+         * 上傳入口类。
          * @class Uploader
          * @constructor
          * @grammar new Uploader( opts ) => Uploader
@@ -714,7 +714,7 @@
          * var uploader = WebUploader.Uploader({
          *     swf: 'path_of_swf/Uploader.swf',
          *
-         *     // 开起分片上传。
+         *     // 開起分片上傳。
          *     chunked: true
          * });
          */
@@ -774,12 +774,12 @@
              * @grammar option( key, val ) => self
              * @example
              *
-             * // 初始状态圖片上传前不会压缩
+             * // 初始状态圖片上傳前不会压缩
              * var uploader = new WebUploader.Uploader({
              *     resize: null;
              * });
              *
-             * // 修改后圖片上传前，尝试将圖片压缩到1600 * 1600
+             * // 修改后圖片上傳前，尝试将圖片压缩到1600 * 1600
              * uploader.options( 'resize', {
              *     width: 1600,
              *     height: 1600
@@ -805,8 +805,8 @@
     
             /**
              * 获取文件统计信息。返回一个包含一下信息的对象。
-             * * `successNum` 上传成功的文件數
-             * * `uploadFailNum` 上传失败的文件數
+             * * `successNum` 上傳成功的文件數
+             * * `uploadFailNum` 上傳失败的文件數
              * * `cancelNum` 被删除的文件數
              * * `invalidNum` 無效的文件數
              * * `queueNum` 还在队列中的文件數
@@ -1382,7 +1382,7 @@
             init: Base.noop,
     
             // 类Backbone的事件监听声明，监听uploader实例上的事件
-            // widget直接無法监听事件，事件只能通过uploader来传递
+            // widget直接無法监听事件，事件只能通过uploader来傳递
             invoke: function( apiName, args ) {
     
                 /*
@@ -1404,7 +1404,7 @@
             },
     
             /**
-             * 发送命令。当传入`callback`或者`handler`中返回`promise`时。返回一个当所有`handler`中的promise都完成后完成的新`promise`。
+             * 发送命令。當傳入`callback`或者`handler`中返回`promise`时。返回一个當所有`handler`中的promise都完成后完成的新`promise`。
              * @method request
              * @grammar request( command, args ) => * | Promise
              * @grammar request( command, args, callback ) => Promise
@@ -1531,7 +1531,7 @@
              * * `id` {Seletor} 指定選擇文件的按钮容器，不指定则不创建按钮。
              * * `label` {String} 请采用 `innerHTML` 代替
              * * `innerHTML` {String} 指定按钮文字。不指定时优先从指定的容器中看是否自带文字。
-             * * `multiple` {Boolean} 是否开起同时選擇多个文件能力。
+             * * `multiple` {Boolean} 是否開起同时選擇多个文件能力。
              */
             pick: null,
     
@@ -1539,7 +1539,7 @@
              * @property {Arroy} [accept=null]
              * @namespace options
              * @for Uploader
-             * @description 指定接受哪些類型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。
+             * @description 指定接受哪些類型的文件。 由于目前还有ext转mimeType表，所以这里需要分開指定。
              *
              * * `title` {String} 文字描述
              * * `extensions` {String} 允许的文件后缀，不带点，多个用逗号分割。
@@ -1733,7 +1733,7 @@
         return Image;
     });
     /**
-     * @fileOverview 圖片操作, 负责预览圖片和上传前压缩圖片
+     * @fileOverview 圖片操作, 负责预览圖片和上傳前压缩圖片
      */
     define('widgets/image',[
         'base',
@@ -1821,7 +1821,7 @@
              * @property {Object} [compress]
              * @namespace options
              * @for Uploader
-             * @description 配置压缩的圖片的選项。如果此選项為`false`, 则圖片在上传前不进行压缩。
+             * @description 配置压缩的圖片的選项。如果此選项為`false`, 则圖片在上傳前不进行压缩。
              *
              * 默認為：
              *
@@ -1861,7 +1861,7 @@
     
     
             /**
-             * 生成缩略圖，此过程為异步，所以需要传入`callback`。
+             * 生成缩略圖，此过程為异步，所以需要傳入`callback`。
              * 通常情况在圖片加入队里后调用此方法来生成预览圖以增强交互效果。
              *
              * `callback`中可以接收到两个参數。
@@ -1904,7 +1904,7 @@
     
                 opts = $.extend({}, this.options.thumb );
     
-                // 如果传入的是object.
+                // 如果傳入的是object.
                 if ( $.isPlainObject( width ) ) {
                     opts = $.extend( opts, width );
                     width = null;
@@ -1992,7 +1992,7 @@
                         file._compressed = true;
                         deferred.resolve();
                     } catch ( e ) {
-                        // 出错了直接继续，让其上传原始圖片
+                        // 出错了直接继续，让其上傳原始圖片
                         deferred.resolve();
                     }
                 });
@@ -2059,7 +2059,7 @@
              * 文件最后修改日期
              * @property lastModifiedDate
              * @type {int}
-             * @default 当前時間戳
+             * @default 當前時間戳
              */
             this.lastModifiedDate = source.lastModifiedDate || (new Date() * 1);
     
@@ -2132,13 +2132,13 @@
                         INITED:     0,
                         // 已入队列
                         QUEUED:     1,
-                        // 正在上传
+                        // 正在上傳
                         PROGRESS:     2,
-                        // 上传出错
+                        // 上傳出错
                         ERROR:         3,
-                        // 上传成功
+                        // 上傳成功
                         COMPLETE:     4,
-                        // 上传取消
+                        // 上傳取消
                         CANCELLED:     5
                     }
              */
@@ -2164,12 +2164,12 @@
         /**
          * 文件状态值，具体包括以下几种類型：
          * * `inited` 初始状态
-         * * `queued` 已经进入队列, 等待上传
-         * * `progress` 上传中
-         * * `complete` 上传完成。
-         * * `error` 上传出错，可重试
-         * * `interrupt` 上传中断，可续传。
-         * * `invalid` 文件不合格，不能重试上传。会自動从队列中移除。
+         * * `queued` 已经进入队列, 等待上傳
+         * * `progress` 上傳中
+         * * `complete` 上傳完成。
+         * * `error` 上傳出错，可重试
+         * * `interrupt` 上傳中断，可续傳。
+         * * `invalid` 文件不合格，不能重试上傳。会自動从队列中移除。
          * * `cancelled` 文件被移除。
          * @property {Object} Status
          * @namespace File
@@ -2178,13 +2178,13 @@
          */
         WUFile.Status = {
             INITED:     'inited',    // 初始状态
-            QUEUED:     'queued',    // 已经进入队列, 等待上传
-            PROGRESS:   'progress',    // 上传中
-            ERROR:      'error',    // 上传出错，可重试
-            COMPLETE:   'complete',    // 上传完成。
-            CANCELLED:  'cancelled',    // 上传取消。
-            INTERRUPT:  'interrupt',    // 上传中断，可续传。
-            INVALID:    'invalid'    // 文件不合格，不能重试上传。
+            QUEUED:     'queued',    // 已经进入队列, 等待上傳
+            PROGRESS:   'progress',    // 上傳中
+            ERROR:      'error',    // 上傳出错，可重试
+            COMPLETE:   'complete',    // 上傳完成。
+            CANCELLED:  'cancelled',    // 上傳取消。
+            INTERRUPT:  'interrupt',    // 上傳中断，可续傳。
+            INVALID:    'invalid'    // 文件不合格，不能重试上傳。
         };
     
         return WUFile;
@@ -2212,10 +2212,10 @@
             /**
              * 统计文件數。
              * * `numOfQueue` 队列中的文件數。
-             * * `numOfSuccess` 上传成功的文件數
+             * * `numOfSuccess` 上傳成功的文件數
              * * `numOfCancel` 被移除的文件數
-             * * `numOfProgress` 正在上传中的文件數
-             * * `numOfUploadFailed` 上传错误的文件數。
+             * * `numOfProgress` 正在上傳中的文件數
+             * * `numOfUploadFailed` 上傳错误的文件數。
              * * `numOfInvalid` 無效的文件數。
              * @property {Object} stats
              */
@@ -2228,7 +2228,7 @@
                 numOfInvalid: 0
             };
     
-            // 上传队列，仅包括等待上传的文件
+            // 上傳队列，仅包括等待上傳的文件
             this._queue = [];
     
             // 存储所有文件
@@ -2300,7 +2300,7 @@
             },
     
             /**
-             * 对队列进行排序，能够控制文件上传顺序。
+             * 对队列进行排序，能够控制文件上傳顺序。
              * @grammar sort( fn ) => undefined
              * @method sort
              * @param {Function} fn 排序方法
@@ -2465,7 +2465,7 @@
                 me.queue = new Queue();
                 me.stats = me.queue.stats;
     
-                // 如果当前不是html5运行时，那就算了。
+                // 如果當前不是html5运行时，那就算了。
                 // 不執行后续操作
                 if ( this.request('predict-runtime-type') !== 'html5' ) {
                     return;
@@ -2516,14 +2516,14 @@
             /**
              * @event beforeFileQueued
              * @param {File} file File对象
-             * @description 当文件被加入队列之前触发，此事件的handler返回值為`false`，则此文件不会被添加进入队列。
+             * @description 當文件被加入队列之前触发，此事件的handler返回值為`false`，则此文件不会被添加进入队列。
              * @for  Uploader
              */
     
             /**
              * @event fileQueued
              * @param {File} file File对象
-             * @description 当文件被加入队列以后触发。
+             * @description 當文件被加入队列以后触发。
              * @for  Uploader
              */
     
@@ -2555,7 +2555,7 @@
             /**
              * @event filesQueued
              * @param {File} files 數组，内容為原始File(lib/File）对象。
-             * @description 当一批文件添加进队列以后触发。
+             * @description 當一批文件添加进队列以后触发。
              * @for  Uploader
              */
     
@@ -2592,7 +2592,7 @@
             /**
              * @event fileDequeued
              * @param {File} file File对象
-             * @description 当文件被移除队列后触发。
+             * @description 當文件被移除队列后触发。
              * @for  Uploader
              */
     
@@ -2622,7 +2622,7 @@
              * @method getFiles
              * @grammar getFiles() => Array
              * @grammar getFiles( status1, status2, status... ) => Array
-             * @description 返回指定状态的文件集合，不传参數将返回所有状态的文件。
+             * @description 返回指定状态的文件集合，不傳参數将返回所有状态的文件。
              * @for  Uploader
              * @example
              * console.log( uploader.getFiles() );    // => all files
@@ -2640,7 +2640,7 @@
              * @method retry
              * @grammar retry() => undefined
              * @grammar retry( file ) => undefined
-             * @description 重试上传，重试指定文件，或者从出错的文件开始重新上传。
+             * @description 重试上傳，重试指定文件，或者从出错的文件開始重新上傳。
              * @for  Uploader
              * @example
              * function retry() {
@@ -2673,7 +2673,7 @@
             /**
              * @method sort
              * @grammar sort( fn ) => undefined
-             * @description 排序队列中的文件，在上传之前调整可以控制上传顺序。
+             * @description 排序队列中的文件，在上傳之前调整可以控制上傳顺序。
              * @for  Uploader
              */
             sortFiles: function() {
@@ -2875,7 +2875,7 @@
         return Transport;
     });
     /**
-     * @fileOverview 负责文件上传相关。
+     * @fileOverview 负责文件上傳相关。
      */
     define('widgets/upload',[
         'base',
@@ -2897,9 +2897,9 @@
              * @property {Boolean} [prepareNextFile=false]
              * @namespace options
              * @for Uploader
-             * @description 是否允许在文件传输时提前把下一个文件准备好。
+             * @description 是否允许在文件傳输时提前把下一个文件准备好。
              * 对于一个文件的准备工作比较耗时，比如圖片压缩，md5序列化。
-             * 如果能提前在当前文件传输期处理，可以节省总体耗时。
+             * 如果能提前在當前文件傳输期处理，可以节省总体耗时。
              */
             prepareNextFile: false,
     
@@ -2907,7 +2907,7 @@
              * @property {Boolean} [chunked=false]
              * @namespace options
              * @for Uploader
-             * @description 是否要分片处理大文件上传。
+             * @description 是否要分片处理大文件上傳。
              */
             chunked: false,
     
@@ -2923,7 +2923,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自動重传多少次？
+             * @description 如果某个分片由于网络问题出错，允许自動重傳多少次？
              */
             chunkRetry: 2,
     
@@ -2931,7 +2931,7 @@
              * @property {Boolean} [threads=3]
              * @namespace options
              * @for Uploader
-             * @description 上传并发數。允许同时最大上传进程數。
+             * @description 上傳并发數。允许同时最大上傳进程數。
              */
             threads: 3,
     
@@ -2940,7 +2940,7 @@
              * @property {Object} [formData]
              * @namespace options
              * @for Uploader
-             * @description 文件上传请求的参數表，每次发送都会发送此对象中的参數。
+             * @description 文件上傳请求的参數表，每次发送都会发送此对象中的参數。
              */
             formData: null
     
@@ -2948,21 +2948,21 @@
              * @property {Object} [fileVal='file']
              * @namespace options
              * @for Uploader
-             * @description 设置文件上传域的name。
+             * @description 设置文件上傳域的name。
              */
     
             /**
              * @property {Object} [method='POST']
              * @namespace options
              * @for Uploader
-             * @description 文件上传方式，`POST`或者`GET`。
+             * @description 文件上傳方式，`POST`或者`GET`。
              */
     
             /**
              * @property {Object} [sendAsBinary=false]
              * @namespace options
              * @for Uploader
-             * @description 是否已二进制的流的方式发送文件，这样整个上传内容`php://input`都為文件内容，
+             * @description 是否已二进制的流的方式发送文件，这样整个上傳内容`php://input`都為文件内容，
              * 其他参數在$_GET數组中。
              */
         });
@@ -3019,13 +3019,13 @@
     
                 this.runing = false;
     
-                // 记入当前正在传的數據，跟threads相关
+                // 记入當前正在傳的數據，跟threads相关
                 this.pool = [];
     
-                // 缓存即将上传的文件。
+                // 缓存即将上傳的文件。
                 this.pending = [];
     
-                // 跟踪还有多少分片没有完成上传。
+                // 跟踪还有多少分片没有完成上傳。
                 this.remaning = 0;
                 this.__tick = Base.bindFn( this._tick, this );
     
@@ -3043,12 +3043,12 @@
     
             /**
              * @event startUpload
-             * @description 当开始上传流程时触发。
+             * @description 當開始上傳流程时触发。
              * @for  Uploader
              */
     
             /**
-             * 开始上传。此方法可以从初始状态调用开始上传流程，也可以从暂停状态调用，继续上传流程。
+             * 開始上傳。此方法可以从初始状态调用開始上傳流程，也可以从暂停状态调用，继续上傳流程。
              * @grammar upload() => undefined
              * @method upload
              * @for  Uploader
@@ -3067,7 +3067,7 @@
     
                 me.runing = true;
     
-                // 如果有暂停的，则续传
+                // 如果有暂停的，则续傳
                 $.each( me.pool, function( _, v ) {
                     var file = v.file;
     
@@ -3085,12 +3085,12 @@
     
             /**
              * @event stopUpload
-             * @description 当开始上传流程暂停时触发。
+             * @description 當開始上傳流程暂停时触发。
              * @for  Uploader
              */
     
             /**
-             * 暂停上传。第一个参數為是否中断上传当前正在上传的文件。
+             * 暂停上傳。第一个参數為是否中断上傳當前正在上傳的文件。
              * @grammar stop() => undefined
              * @grammar stop( true ) => undefined
              * @method stop
@@ -3114,7 +3114,7 @@
             },
     
             /**
-             * 判断`Uplaode`r是否正在上传中。
+             * 判断`Uplaode`r是否正在上傳中。
              * @grammar isInProgress() => Boolean
              * @method isInProgress
              * @for  Uploader
@@ -3128,7 +3128,7 @@
             },
     
             /**
-             * 掉过一个文件上传，直接标记指定文件為已上传状态。
+             * 掉过一个文件上傳，直接标记指定文件為已上傳状态。
              * @grammar skipFile( file ) => undefined
              * @method skipFile
              * @for  Uploader
@@ -3139,7 +3139,7 @@
                 file.setStatus( status || Status.COMPLETE );
                 file.skipped = true;
     
-                // 如果正在上传。
+                // 如果正在上傳。
                 file.blocks && $.each( file.blocks, function( _, v ) {
                     var _tr = v.transport;
     
@@ -3155,7 +3155,7 @@
     
             /**
              * @event uploadFinished
-             * @description 当所有文件上传结束时触发。
+             * @description 當所有文件上傳结束时触发。
              * @for  Uploader
              */
             _tick: function() {
@@ -3182,7 +3182,7 @@
     
                     me._promise = isPromise( val ) ? val.always( fn ) : fn( val );
     
-                // 没有要上传的了，且没有正在传输的了。
+                // 没有要上傳的了，且没有正在傳输的了。
                 } else if ( !me.remaning && !me.getStats().numOfQueue ) {
                     me.runing = false;
     
@@ -3199,7 +3199,7 @@
                     opts = me.options,
                     next, done;
     
-                // 如果当前文件还有没有需要传输的，则直接返回剩下的。
+                // 如果當前文件还有没有需要傳输的，则直接返回剩下的。
                 if ( act && act.has() &&
                         act.file.getStatus() === Status.PROGRESS ) {
     
@@ -3240,7 +3240,7 @@
             /**
              * @event uploadStart
              * @param {File} file File对象
-             * @description 某个文件开始上传前触发，一个文件只会触发一次。
+             * @description 某个文件開始上傳前触发，一个文件只会触发一次。
              * @for  Uploader
              */
             _prepareNextFile: function() {
@@ -3280,7 +3280,7 @@
                 }
             },
     
-            // 让出位置了，可以让其他分片开始上传
+            // 让出位置了，可以让其他分片開始上傳
             _popBlock: function( block ) {
                 var idx = $.inArray( block, this.pool );
     
@@ -3289,7 +3289,7 @@
                 this.remaning--;
             },
     
-            // 开始上传，可以被掉过。如果promise被reject了，则表示跳过此分片。
+            // 開始上傳，可以被掉过。如果promise被reject了，则表示跳过此分片。
             _startSend: function( block ) {
                 var me = this,
                     file = block.file,
@@ -3306,7 +3306,7 @@
                 // hook, 每个分片发送之前可能要做些异步的事情。
                 promise = me.request( 'before-send', block, function() {
     
-                    // 有可能文件已经上传出错了，所以不需要再传输了。
+                    // 有可能文件已经上傳出错了，所以不需要再傳输了。
                     if ( file.getStatus() === Status.PROGRESS ) {
                         me._doSend( block );
                     } else {
@@ -3336,8 +3336,8 @@
             /**
              * @event uploadBeforeSend
              * @param {Object} object
-             * @param {Object} data 默認的上传参數，可以扩展此对象来控制上传参數。
-             * @description 当某个文件的分块在发送前触发，主要用来询问是否要添加附带参數，大文件在开起分片上传的前提下此事件可能会触发多次。
+             * @param {Object} data 默認的上傳参數，可以扩展此对象来控制上傳参數。
+             * @description 當某个文件的分块在发送前触发，主要用来询问是否要添加附带参數，大文件在開起分片上傳的前提下此事件可能会触发多次。
              * @for  Uploader
              */
     
@@ -3345,15 +3345,15 @@
              * @event uploadAccept
              * @param {Object} object
              * @param {Object} ret 服务端的返回數據，json格式，如果服务端不是json格式，从ret._raw中取數據，自行解析。
-             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值為`false`, 则此文件将派送`server`類型的`uploadError`事件。
+             * @description 當某个文件上傳到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值為`false`, 则此文件将派送`server`類型的`uploadError`事件。
              * @for  Uploader
              */
     
             /**
              * @event uploadProgress
              * @param {File} file File对象
-             * @param {Number} percentage 上传进度
-             * @description 上传过程中触发，携带上传进度。
+             * @param {Number} percentage 上傳进度
+             * @description 上傳过程中触发，携带上傳进度。
              * @for  Uploader
              */
     
@@ -3362,7 +3362,7 @@
              * @event uploadError
              * @param {File} file File对象
              * @param {String} reason 出错的code
-             * @description 当文件上传出错时触发。
+             * @description 當文件上傳出错时触发。
              * @for  Uploader
              */
     
@@ -3370,18 +3370,18 @@
              * @event uploadSuccess
              * @param {File} file File对象
              * @param {Object} response 服务端返回的數據
-             * @description 当文件上传成功时触发。
+             * @description 當文件上傳成功时触发。
              * @for  Uploader
              */
     
             /**
              * @event uploadComplete
              * @param {File} [file] File对象
-             * @description 不管成功或者失败，文件上传完成时触发。
+             * @description 不管成功或者失败，文件上傳完成时触发。
              * @for  Uploader
              */
     
-            // 做上传操作。
+            // 做上傳操作。
             _doSend: function( block ) {
                 var me = this,
                     owner = me.owner,
@@ -3400,7 +3400,7 @@
                     Base.nextTick( me.__tick );
                 });
     
-                // 广播上传进度。以文件為单位。
+                // 广播上傳进度。以文件為单位。
                 tr.on( 'progress', function( percentage ) {
                     var totalPercent = 0,
                         uploaded = 0;
@@ -3441,7 +3441,7 @@
                     return reject;
                 };
     
-                // 尝试重试，然后广播文件上传出错。
+                // 尝试重试，然后广播文件上傳出错。
                 tr.on( 'error', function( type, flag ) {
                     block.retried = block.retried || 0;
     
@@ -3465,17 +3465,17 @@
                     }
                 });
     
-                // 上传成功
+                // 上傳成功
                 tr.on( 'load', function() {
                     var reason;
     
-                    // 如果非预期，转向上传出错。
+                    // 如果非预期，转向上傳出错。
                     if ( (reason = requestAccept()) ) {
                         tr.trigger( 'error', reason, true );
                         return;
                     }
     
-                    // 全部上传完成。
+                    // 全部上傳完成。
                     if ( file.remaning === 1 ) {
                         me._finishFile( file, ret );
                     } else {
@@ -3483,7 +3483,7 @@
                     }
                 });
     
-                // 配置默認的上传字段。
+                // 配置默認的上傳字段。
                 data = $.extend( data, {
                     id: file.id,
                     name: file.name,
@@ -3501,14 +3501,14 @@
                 // 如果默認的字段不够使用，可以通过监听此事件来扩展
                 owner.trigger( 'uploadBeforeSend', block, data, headers );
     
-                // 开始发送。
+                // 開始发送。
                 tr.appendBlob( opts.fileVal, block.blob, file.name );
                 tr.append( data );
                 tr.setRequestHeader( headers );
                 tr.send();
             },
     
-            // 完成上传。
+            // 完成上傳。
             _finishFile: function( file, ret, hds ) {
                 var owner = this.owner;
     
@@ -5482,9 +5482,9 @@
     });
     /**
      * @fileOverview Transport
-     * @todo 支持chunked传输，优势：
-     * 可以将大文件分成小块，挨个传输，可以提高大文件成功率，当失败的时候，也只需要重传那小部分，
-     * 而不需要重头再传一次。另外断点续传也需要用chunked方式。
+     * @todo 支持chunked傳输，优势：
+     * 可以将大文件分成小块，挨个傳输，可以提高大文件成功率，當失败的时候，也只需要重傳那小部分，
+     * 而不需要重头再傳一次。另外断点续傳也需要用chunked方式。
      */
     define('runtime/html5/transport',[
         'base',

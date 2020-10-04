@@ -5,17 +5,17 @@
 /**************************提示********************************
  * 所有被注譯的配置项均為UEditor默認值。
  * 修改默認配置请首先确保已经完全明确该参數的真实用途。
- * 主要有两种修改方案，一种是取消此处注譯，然后修改成对应参數；另一种是在实例化編輯器时传入对应参數。
- * 当升级編輯器时，可直接使用旧版配置文件替换新版配置文件,不用担心旧版配置文件中因缺少新功能所需的参數而导致脚本报错。
+ * 主要有两种修改方案，一种是取消此处注譯，然后修改成对应参數；另一种是在实例化編輯器时傳入对应参數。
+ * 當升级編輯器时，可直接使用旧版配置文件替换新版配置文件,不用担心旧版配置文件中因缺少新功能所需的参數而导致脚本报错。
  **************************提示********************************/
 
 (function () {
     /**
-     * 編輯器资源文件根路径。它所表示的含义是：以編輯器实例化頁面為当前路径，指向編輯器资源文件（即dialog等文件夹）的路径。
+     * 編輯器资源文件根路径。它所表示的含义是：以編輯器实例化頁面為當前路径，指向編輯器资源文件（即dialog等文件夹）的路径。
      * 鉴于很多同学在使用編輯器的时候出现的种种路径问题，此处强烈建议大家使用"相对于网站根目入的相对路径"进行配置。
-     * "相对于网站根目入的相对路径"也就是以斜杠开头的形如"/myProject/neditor/"这样的路径。
+     * "相对于网站根目入的相对路径"也就是以斜杠開头的形如"/myProject/neditor/"这样的路径。
      * 如果站点中有多个不在同一层级的頁面需要实例化編輯器，且引用了同一UEditor的时候，此处的URL可能不适用于每个頁面的編輯器。
-     * 因此，UEditor提供了针对不同頁面的編輯器可单独配置的根路径，具体来说，在需要实例化編輯器的頁面最顶部写上如下代码即可。当然，需要令此处的URL等于对应的配置。
+     * 因此，UEditor提供了针对不同頁面的編輯器可单独配置的根路径，具体来说，在需要实例化編輯器的頁面最顶部写上如下代码即可。當然，需要令此处的URL等于对应的配置。
      * window.UEDITOR_HOME_URL = "/xxxx/xxxx/";
      */
     var URL = window.UEDITOR_HOME_URL || getUEBasePath();
@@ -35,7 +35,7 @@
         videoActionName: "uploadvideo",
         fileActionName: "uploadfile",
         imageFieldName: "file", // 送出的圖片表單名稱
-        imageMaxSize: 2048000, // 上传大小限制，单位B
+        imageMaxSize: 2048000, // 上傳大小限制，单位B
         imageUrlPrefix: "",
         scrawlUrlPrefix: "",
         videoUrlPrefix: "",
@@ -45,9 +45,9 @@
         catcherLocalDomain : ["127.0.0.1", "localhost", "img.baidu.com"],
         catcherActionName : "catchimage", /* 執行抓取远程圖片的action名稱 */
         catcherFieldName : "file", /* 送出的圖片列表表單名稱 */
-        catcherPathFormat : "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+        catcherPathFormat : "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
         catcherUrlPrefix : "", /* 圖片访问路径前缀 */
-        catcherMaxSize : 2048000, /* 上传大小限制，单位B */
+        catcherMaxSize : 2048000, /* 上傳大小限制，单位B */
         catcherAllowFiles : [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 抓取圖片格式显示 */
 
         //工具栏上的所有的功能按钮和下拉框，可以在new編輯器的实例时選擇自己需要的重新定义
@@ -154,17 +154,17 @@
                     "help"
                 ]
             ]
-            //当鼠标放在工具栏上时显示的tooltip提示,留空支持自動多语言配置，否则以配置值為准
+            //當鼠标放在工具栏上时显示的tooltip提示,留空支持自動多语言配置，否则以配置值為准
             //,labelMap:{
             //    'anchor':'', 'undo':''
             //}
 
-            //语言配置项,默認是zh-cn。有需要的话也可以使用如下这样的方式来自動多语言切换，当然，前提条件是lang文件夹下存在对应的语言文件：
+            //语言配置项,默認是zh-cn。有需要的话也可以使用如下这样的方式来自動多语言切换，當然，前提条件是lang文件夹下存在对应的语言文件：
             //lang值也可以通过自動获取 (navigator.language||navigator.browserLanguage ||navigator.userLanguage).toLowerCase()
             //,lang:"zh-cn"
             //,langPath:URL +"i18n/"
 
-            //主题配置项,默認是default。有需要的话也可以使用如下这样的方式来自動多主题切换，当然，前提条件是themes文件夹下存在对应的主题文件：
+            //主题配置项,默認是default。有需要的话也可以使用如下这样的方式来自動多主题切换，當然，前提条件是themes文件夹下存在对应的主题文件：
             //现有如下皮肤:default
             ,
         theme: 'notadd'
@@ -212,20 +212,20 @@
             //自動保存间隔時間， 单位ms
             //,saveInterval: 500
 
-            //启用拖放上传
+            //启用拖放上傳
             //,enableDragUpload: true
-            //启用粘贴上传
+            //启用粘贴上傳
             //,enablePasteUpload: true
 
             //启用圖片拉伸缩放
             //,imageScaleEnabled: true
 
-            //,fullscreen : false //是否开启初始化时即全屏，默認关闭
+            //,fullscreen : false //是否開启初始化时即全屏，默認关闭
 
-            //,imagePopup:true      //圖片操作的浮层开关，默認打开
+            //,imagePopup:true      //圖片操作的浮层開关，默認打開
 
             //,autoSyncData:true //自動同步編輯器要送出的數據
-            //,emotionLocalization:false //是否开启表情本地化，默認关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
+            //,emotionLocalization:false //是否開启表情本地化，默認关闭。若要開启请确保emotion文件夹下包含官网提供的images表情文件夹
 
             //粘贴只保留標簽，去除標簽所有属性
             //,retainOnlyLabelPasted: false
@@ -346,16 +346,16 @@
             //    {tag:'span',name:'hi', label:'', style:'font-style:italic;font-weight:bold;color:rgb(51, 153, 204)'}
             //]
 
-            //打开右键選單功能
+            //打開右键選單功能
             //,enableContextMenu: true
             //右键選單的内容，可以参考plugins/contextmenu.js里边的默認選單的例子，label留空支持国际化，否则以此配置為准
             //,contextMenu:[
             //    {
             //        label:'',       //显示的名稱
-            //        cmdName:'selectall',//執行的command命令，当点击这个右键選單时
+            //        cmdName:'selectall',//執行的command命令，當点击这个右键選單时
             //        //exec可選，有了exec就会在点击时執行这个function，优先级高于cmdName
             //        exec:function () {
-            //            //this是当前編輯器的实例
+            //            //this是當前編輯器的实例
             //            //this.ui._dialogs['inserttableDialog'].open();
             //        }
             //    }
@@ -369,10 +369,10 @@
             //,elementPathEnabled : true
 
             //wordCount
-            //,wordCount:true          //是否开启字數统计
+            //,wordCount:true          //是否開启字數统计
             //,maximumWords:10000       //允许的最大字符數
-            //字數统计提示，{#count}代表当前字數，{#leave}代表还可以输入多少字符數,留空支持多语言自動切换，否则按此配置显示
-            //,wordCountMsg:''   //当前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
+            //字數统计提示，{#count}代表當前字數，{#leave}代表还可以输入多少字符數,留空支持多语言自動切换，否则按此配置显示
+            //,wordCountMsg:''   //當前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
             //超出字數限制提示  留空支持多语言自動切换，否则按此配置显示
             //,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符个數已经超出最大允许值，服务器可能会拒绝保存！</span>
 
@@ -391,7 +391,7 @@
             //undo
             //可以最多回退的次數,默認20
             //,maxUndoCount:20
-            //当输入的字符數超过该值时，保存一次现场
+            //當输入的字符數超过该值时，保存一次现场
             //,maxInputCount:1
 
             //autoHeightEnabled
@@ -400,7 +400,7 @@
         autoHeightEnabled: false
 
             //scaleEnabled
-            //是否可以拉伸长高,默認true(当开启时，自動长高失效)
+            //是否可以拉伸长高,默認true(當開启时，自動长高失效)
             //,scaleEnabled:false
             //,minFrameWidth:800    //編輯器拖动时最小宽度,默認800
             //,minFrameHeight:220  //編輯器拖动时最小高度,默認220
@@ -457,7 +457,7 @@
             //,sourceEditorFirst:false
 
             //iframeUrlMap
-            //dialog内容的路径 ～会被替换成URL,垓属性一旦打开，将覆盖所有的dialog的默認路径
+            //dialog内容的路径 ～会被替换成URL,垓属性一旦打開，将覆盖所有的dialog的默認路径
             //,iframeUrlMap:{
             //    'anchor':'~/dialogs/anchor/anchor.html',
             //}
@@ -473,7 +473,7 @@
             //,allowDivTransToP:true      //允许进入編輯器的div標簽自動變成p標簽
             //,rgb2Hex:true               //默認产出的數據中的color自動从rgb格式變成16进制格式
 
-            // xss 过滤是否开启,inserthtml等操作
+            // xss 过滤是否開启,inserthtml等操作
             ,
         xssFilterRules: true
             //input xss过滤

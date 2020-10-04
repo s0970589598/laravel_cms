@@ -61,7 +61,7 @@ class MenuRepository
     {
         // 不能删除非空的父選單
         if (!Menu::query()->where('pid', $id)->get()->isEmpty()) {
-            throw new \RuntimeException('不能直接删除非空的父選單，请先删除当前選單的所有子選單');
+            throw new \RuntimeException('不能直接删除非空的父選單，请先删除當前選單的所有子選單');
         }
         return Menu::destroy($id);
     }

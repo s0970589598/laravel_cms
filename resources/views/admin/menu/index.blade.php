@@ -173,7 +173,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('确定删除？', function(index){
+            layer.confirm('確定删除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -200,7 +200,7 @@
         var form = layui.form,
             table = layui.table;
         form.on('submit(form-batch)', function(data){
-            if(!confirm('确定執行批量操作？')){
+            if(!confirm('確定執行批量操作？')){
                 return false;
             }
             var checkStatus = table.checkStatus('test'),

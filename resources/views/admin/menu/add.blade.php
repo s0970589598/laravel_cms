@@ -20,7 +20,7 @@
                         <div class="layui-input-inline">
                             <input type="checkbox" name="is_lock_name" lay-skin="switch" lay-text="锁定|不锁定" value="1" @if(isset($model) && $model->is_lock_name == App\Model\Admin\Menu::LOCK_NAME) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">锁定名稱则選單自動更新时不会更新当前選單的名稱和分组等信息</div>
+                        <div class="layui-form-mid layui-word-aux">锁定名稱则選單自動更新时不会更新當前選單的名稱和分组等信息</div>
                     </div>
                 </div>
                     <div class="layui-form-item">

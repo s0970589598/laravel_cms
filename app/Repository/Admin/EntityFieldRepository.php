@@ -99,15 +99,26 @@ class EntityFieldRepository
         return in_array($formType, ['inputTags'], true);
     }
 
-    public static function getBeaconTitleFields($entityName)
+    public static function getBeaconTitleFields($entityName, $brocastId = null)
     {
-        return DB::table('app_official_location_broadcast')
-                ->select('id', 'title')
-                ->orderBy('id','DESC')
-                ->skip(0)
-                ->take(5)
-                ->get()->toArray();
-        }
+        if (!is_null($brocastId)) {
+            return DB::table('app_official_location_broadcast')
+            ->select('id', 'title')
+            ->where('id',$brocastId)
+            ->orderBy('id','DESC')
+            ->skip(0)
+            ->take(5)
+            ->get()->toArray();
+        } else {
+            return DB::table('app_official_location_broadcast')
+            ->select('id', 'title')
+            ->orderBy('id','DESC')
+            ->skip(0)
+            ->take(5)
+            ->get()->toArray();
+         }
+
+    }
 
     public static function getBeaconLocationFields($entityName)
     {

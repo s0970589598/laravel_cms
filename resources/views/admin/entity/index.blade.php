@@ -44,7 +44,7 @@
         });
 
         function deleteEntity (url) {
-            layer.confirm('删除模型将删除模型相关的所有數據（模型、模型字段、模型分類、模型内容等），请谨慎操作！确定要删除？', function(index){
+            layer.confirm('删除模型将删除模型相关的所有數據（模型、模型字段、模型分類、模型内容等），请谨慎操作！確定要删除？', function(index){
                 layer.prompt({
                     formType: 1,
                     title: '请输入登入密码',
@@ -75,7 +75,7 @@
         }
 
         function copyEntity (url) {
-            layer.confirm('複製模型将新建一个和当前模型一样的模型（資料庫表结構、表單定义等信息一致），确定要複製？', function(index){
+            layer.confirm('複製模型将新建一个和當前模型一样的模型（資料庫表结構、表單定义等信息一致），確定要複製？', function(index){
                 layer.prompt({
                     formType: 0,
                     title: '请输入新模型的資料庫表名稱',
@@ -106,7 +106,7 @@
         }
 
         function addEntityMenus (url) {
-            layer.confirm('添加模型的默認選單是為了对指定模型进行单独的權限控制，添加選單时如遇到同名的選單将略过不处理，确定要添加？', function(index){
+            layer.confirm('添加模型的默認選單是為了对指定模型进行单独的權限控制，添加選單时如遇到同名的選單将略过不处理，確定要添加？', function(index){
                 $.ajax({
                     url: url,
                     success: function (result) {

@@ -490,7 +490,7 @@ UE.I18N['en'] = {
             'lang_chart_y_title': 'Y-axis title:',
             'lang_chart_tip': 'Prompt',
             'lang_cahrt_tip_prefix': 'prefix:',
-            'lang_cahrt_tip_description': '仅饼圖有效， 当鼠标移动到饼圖中相应的块上时，提示框内的文字的前缀',
+            'lang_cahrt_tip_description': '仅饼圖有效， 當鼠标移动到饼圖中相应的块上时，提示框内的文字的前缀',
             'lang_chart_data_unit': 'Unit',
             'lang_chart_data_unit_title': 'unit:',
             'lang_chart_data_unit_description': '显示在每个數據点上的數據的单位， 比如： 温度的单位 ℃',

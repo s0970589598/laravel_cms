@@ -6,7 +6,7 @@
         @include('admin.breadcrumb')
 
         <div class="layui-card-body">
-            <div>当前角色：<span class="layui-badge layui-bg-green">{{ $role->name }}</span></div>
+            <div>當前角色：<span class="layui-badge layui-bg-green">{{ $role->name }}</span></div>
             <form class="layui-form" action="{{ route('admin::role.permission.update', ['id' => $id]) }}" method="post">
                 {{ method_field('PUT') }}
                         @foreach(App\Repository\Admin\MenuRepository::group() as $k => $v)

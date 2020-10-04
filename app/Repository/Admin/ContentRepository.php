@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
 /**
- * 使用当前类时必须先调用 setTable 方法设置所要操作的資料庫表
+ * 使用當前类时必须先调用 setTable 方法设置所要操作的資料庫表
  * @package App\Repository\Admin
  */
 class ContentRepository
@@ -48,7 +48,7 @@ class ContentRepository
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('app_beacon.*')
+                    ->select('app_beacon.*' , 'app_official_location.name')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -61,7 +61,7 @@ class ContentRepository
                     ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('app_official_location_broadcast.*')
+                    ->select('app_official_location_broadcast.*' ,'app_official_location.name')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -75,7 +75,7 @@ class ContentRepository
                     ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('app_official_location_broadcast_message.*')
+                    ->select('app_official_location_broadcast_message.*', 'app_official_location.name', 'app_official_location_broadcast.title')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -102,7 +102,7 @@ class ContentRepository
                     ->join('app_beacon', 'app_beacon.location_id', '=', 'app_official_location.id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('log_broadcast.*')
+                    ->select('log_broadcast.*', 'app_official_location_broadcast.title')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -162,6 +162,62 @@ class ContentRepository
 
         } else {
             switch ($entity) {
+                case 7:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select('app_beacon.*' , 'app_official_location.name')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 9:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select('app_official_location_broadcast.*' ,'app_official_location.name')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 10:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select('app_official_location_broadcast_message.*', 'app_official_location.name', 'app_official_location_broadcast.title')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 11:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_beacon', 'app_beacon.id', '=', 'log_beacon_event.beacon_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select('log_beacon_event.*')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 12:
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'log_broadcast.broadcast_id')
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_beacon.location_id', '=', 'app_official_location.id')
+                    ->select('log_broadcast.*', 'app_official_location_broadcast.title')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
                 case 'log_beacon_event':
                     $data = DB::table('app_beacon')   
                     ->leftjoin('log_beacon_event', function ($leftjoin) {
@@ -201,13 +257,26 @@ class ContentRepository
         }
 
         if ($entity <> 'log_beacon_event' and $entity <> 'log_broadcast') {
-            $data->transform(function ($item) use ($entity) {
-                xssFilter($item);
-                $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
-                $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
-                $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
-                return $item;
-            });
+            if ($entity == 9) {
+                $data->transform(function ($item) use ($entity) {
+                    log::info($item);
+                    xssFilter($item);
+                    $item->addUrl =  '/admin/entity/10/contents/create/' . $item->id . '/text';
+                    $item->addImgUrl = '/admin/entity/10/contents/create/' . $item->id . '/image';
+                    $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                    $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
+                    $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
+                    return $item;
+                });
+            } else {
+                $data->transform(function ($item) use ($entity) {
+                    xssFilter($item);
+                    $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                    $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
+                    $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
+                    return $item;
+                });
+            }
     
         }
 

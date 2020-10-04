@@ -81,9 +81,15 @@
 @endsection
 <script type="text/html" id="action">
     @if($entity <>'log_broadcast' and  $entity <>'log_beacon_event')
+    @if($entity =='9' )
+    <a href="<% d.addUrl %>" class="layui-table-link" title="新增文字訊息"><i class="layui-icon layui-icon-add-1"></i>文字</a>
+    <a href="<% d.addImgUrl %>" class="layui-table-link" title="新增圖片訊息"><i class="layui-icon layui-icon-add-1"></i>圖片</a>
+    @endif
+
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
     <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
-    <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>
+    <!--<a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>-->
+    
     @endif
     @foreach(App\Model\Admin\Content::$actionField as $k => $v)
     <a href="<% d.{{$k}} %>" class="layui-table-link" title="{{ $v['description'] }}" style="margin-left: 5px">{{ $v['title'] }}</a>
@@ -105,7 +111,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('确定删除？', function(index){
+            layer.confirm('確定删除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -132,7 +138,7 @@
         var form = layui.form,
             table = layui.table;
         form.on('submit(form-batch)', function(data){
-            if(!confirm('确定執行批量操作？')){
+            if(!confirm('確定執行批量操作？')){
                 return false;
             }
             var checkStatus = table.checkStatus('test'),

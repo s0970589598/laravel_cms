@@ -640,7 +640,7 @@ function exec(scrawlObj) {
         addMaskLayer(lang.scrawlUpLoading);
         var base64 = scrawlObj.getCanvasData();
         var file = scrawlObj.dataURLtoFile(base64, 'scrawl-image.png');
-        /* 上传涂鸦圖片 */
+        /* 上傳涂鸦圖片 */
         editor.getOpt("scrawlUploadService")(scrawlObj, editor).uploadScraw(file, base64, function(data) {
             if (!scrawlObj.isCancelScrawl) {
                 if (data.responseSuccess) {

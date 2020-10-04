@@ -78,7 +78,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('确定删除？', function(index){
+            layer.confirm('確定删除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

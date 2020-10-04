@@ -145,7 +145,7 @@
                 <div class="px-8">
                     <h3 class="font-bold text-black">关于</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一个基于Laravel开发的轻量级CMS系统，也可以作為一个通用的后台管理框架使用。
+                        lightCMS是一个基于Laravel開发的轻量级CMS系统，也可以作為一个通用的后台管理框架使用。
                     </p>
                 </div>
             </div>

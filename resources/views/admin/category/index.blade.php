@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::category.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::category.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增分類</a><div class=\'layui-input-inline\'><input type=\'text\' name=\'word\' class=\'layui-input\' id=\'word\' placeholder=\'当前表格内搜索\'></div></div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::category.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::category.create') }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增分類</a><div class=\'layui-input-inline\'><input type=\'text\' name=\'word\' class=\'layui-input\' id=\'word\' placeholder=\'當前表格内搜索\'></div></div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>

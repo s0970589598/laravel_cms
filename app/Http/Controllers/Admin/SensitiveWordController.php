@@ -93,7 +93,7 @@ class SensitiveWordController extends Controller
             if ($m && ($m->id != $id)) {
                 return [
                 'code' => 4,
-                    'msg' => '当前词已存在',
+                    'msg' => '當前词已存在',
                     'redirect' => false
                 ];
             }
@@ -134,7 +134,7 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -179,7 +179,7 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前敏感詞已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

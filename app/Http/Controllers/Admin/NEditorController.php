@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class NEditorController extends Controller
 {
     /**
-     * 基础功能-圖片上传
+     * 基础功能-圖片上傳
      *
      * @param Request $request
      * @param string $type
@@ -59,7 +59,7 @@ class NEditorController extends Controller
         if (!$result) {
             return [
                 'code' => 3,
-                'msg' => '上传失败'
+                'msg' => '上傳失败'
             ];
         }
 

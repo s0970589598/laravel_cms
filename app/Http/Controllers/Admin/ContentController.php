@@ -87,7 +87,8 @@ class ContentController extends Controller
                 Content::$listField = [
                     'beacon_uid' => 'beacon_uid',
                     'beacon_dm' => 'beacon_dm',
-                    'location_id' => 'location_id'
+                    'location_id' => 'location_id',
+                    'name' => '單位名稱'
                 ];
                 break;
             case '使用單位資訊管理':
@@ -101,6 +102,7 @@ class ContentController extends Controller
             case 'beacon標題管理':
                 Content::$listField = [
                     'location_id' => 'location_id',
+                    'name' => '單位名稱',
                     'title' => '訊息主題',
                     'can_repeat' => '是否可重覆(1=可重覆)',
                     'start_datetime' => '開始時間',
@@ -110,13 +112,14 @@ class ContentController extends Controller
                 break;
             case 'beacon訊息管理':
                 Content::$listField = [
-                    'broadcast_id' => 'broadcast_id',
+                    'title' => 'title',
+                    'name' => '單位名稱',
                     'message_type' => '訊息類型',
                     'rank' => 'rank',
                     'image_url' => '圖片',
                     'preview_image_url' => '縮圖',
-                    'message_text' => '文字訊息',                    
-                    'json_data' => 'json_data'                    
+                    'message_text' => '文字訊息'                  
+                    //'json_data' => 'json_data'                    
                 ];
                 break;
             case 'log_beacon_event':
@@ -139,13 +142,14 @@ class ContentController extends Controller
                 if ($this->orentity == $this->entity->name) {
                     Content::$listField = [
                         'id' => 'beacon_id',
-                        'name' => 'name',
+                        'name' => '單位名稱',
                         'broadcast_datetime' => '近七日收到訊息人數',
                         
                     ];
                 } else {
                     Content::$listField = [
                         'broadcast_id' => 'broadcast_id',
+                        'title' => 'title',
                         'line_user_id' => 'line_user_id',
                         'broadcast_datetime' => 'broadcast_datetime',
                         
@@ -195,7 +199,7 @@ class ContentController extends Controller
      * 内容管理-新增内容
      *
      */
-    public function create($entity)
+    public function create($entity, $brocast = null, $message = null)
     {
         $this->breadcrumb[] = ['title' => "新增{$this->entity->name}内容", 'url' => ''];
         $view = $this->getAddOrEditViewPath();
@@ -205,7 +209,9 @@ class ContentController extends Controller
             'entity' => $entity,
             'entityModel' => $this->entity,
             'entityFields' => EntityFieldRepository::getByEntityId($entity),
-            'autoMenu' => EntityRepository::systemMenu()
+            'autoMenu' => EntityRepository::systemMenu(),
+            'brocast' => $brocast,
+            'messageType' => $message
         ]);
     }
 
@@ -260,7 +266,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前内容已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它错误'),
                 'redirect' => false
             ];
         }
@@ -342,7 +348,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '当前内容已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它错误'),
                 'redirect' => false
             ];
         }

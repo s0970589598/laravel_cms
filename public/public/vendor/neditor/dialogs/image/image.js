@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上传圖片对话框逻辑代码,包括tab: 远程圖片/上传圖片/在线圖片/搜索圖片
+ * 上傳圖片对话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
  */
 
 (function () {
@@ -90,7 +90,7 @@
                     list = uploadImage.getInsertList();
                     var count = uploadImage.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上传文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -285,7 +285,7 @@
 
 
 
-    /* 上传圖片 */
+    /* 上傳圖片 */
     function UploadImage(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
@@ -310,11 +310,11 @@
                 $statusBar = $wrap.find('.statusBar'),
             // 文件总体選擇信息。
                 $info = $statusBar.find('.info'),
-            // 上传按钮
+            // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-            // 上传按钮
+            // 上傳按钮
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
@@ -357,7 +357,7 @@
                 return;
             }
 
-            /* 上传插件 */
+            /* 上傳插件 */
             uploader = _this.uploader = WebUploader.create({
                 pick: {
                     id: '#filePickerReady',
@@ -385,7 +385,7 @@
 
             setState('pedding');
 
-            // 当有文件添加进来时執行，负责view的创建
+            // 當有文件添加进来时執行，负责view的创建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
@@ -559,7 +559,7 @@
                             uploader.refresh();
                             break;
 
-                        /* 可以开始上传 */
+                        /* 可以開始上傳 */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -569,13 +569,13 @@
                             uploader.refresh();
                             break;
 
-                        /* 上传中 */
+                        /* 上傳中 */
                         case 'uploading':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* 暂停上传 */
+                        /* 暂停上傳 */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -640,7 +640,7 @@
             }
 
             uploader.on('fileQueued', function (file) {
-                /* 選擇文件后设置上传相关的url和自定义参數 */
+                /* 選擇文件后设置上傳相关的url和自定义参數 */
                 editor.getOpt("imageUploadService")(_this, editor).setUploadData(file);
 
                 fileCount++;
@@ -724,7 +724,7 @@
             uploader.on('uploadComplete', function (file, ret) {
             });
 
-            /* 上传按钮 */
+            /* 上傳按钮 */
             $upload.on('click', function () {
                 if ($(this).hasClass('disabled')) {
                     return false;

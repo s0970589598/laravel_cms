@@ -31,9 +31,9 @@ npm install
 npm run build
 ```
 
-### 第二步：在浏览器打开 index.html ###
+### 第二步：在浏览器打開 index.html ###
 
-进入到目入 `dist` , 使用浏览器打开文件 `index.html` 。
+进入到目入 `dist` , 使用浏览器打開文件 `index.html` 。
 
 如果看到了下面这样的編輯器，恭喜你，初次部署成功！
 
@@ -47,7 +47,7 @@ npm run build
 
 ## 技术支持
 
-该项目基于 MIT 协议开源，任何组织/企业以及个人都可以免费使用（保留版权）。    
+该项目基于 MIT 协议開源，任何组织/企业以及个人都可以免费使用（保留版权）。    
 如果您需要额外商业技术支持或者定制編輯器，请联系 QQ：1256985886
 
 
@@ -56,7 +56,7 @@ npm run build
 
 ### 自定义的参數
 
-編輯器有很多可自定义的参數项，在实例化的时候可以传入给編輯器：
+編輯器有很多可自定义的参數项，在实例化的时候可以傳入给編輯器：
 
 ```javascript
 var ue = UE.getEditor('container', {
@@ -66,9 +66,9 @@ var ue = UE.getEditor('container', {
 
 配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项说明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项说明.md)、[編輯配置项说明](http://fex.baidu.com/ueditor/#server-config)
 
-### 編輯器圖片、视频、涂鸦、附件上传service
+### 編輯器圖片、视频、涂鸦、附件上傳service
 
-編輯器上传逻辑单独在 `neditor.service.js` 文件配置，具体的配置方法见注譯
+編輯器上傳逻辑单独在 `neditor.service.js` 文件配置，具体的配置方法见注譯
 
 ### 设置和读取編輯器的内容
 
@@ -131,17 +131,17 @@ QQ 群： 321735506
 
 ### 2.1
 
-- [x] 将上传封装為 service ，支持非 GraphQL 接口。
+- [x] 将上傳封装為 service ，支持非 GraphQL 接口。
 - [x] 细节样式修改(美化)
 
 ### 2.2
 
-- [ ] word 内圖片自動上传
+- [ ] word 内圖片自動上傳
 - [x] 粘贴圖片转為本地圖片（圖片本地化）
 
 ### 2.3
 
-- [ ] 上传文件/圖片無需編輯
+- [ ] 上傳文件/圖片無需編輯
 
 ### 3.0
 

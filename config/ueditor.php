@@ -3,16 +3,16 @@
 
 /* 前編輯通信相关的配置,注譯只允许使用多行方式 */
 return [
-    /* 上传圖片配置项 */
-    "imageActionName" => "uploadimage", /* 執行上传圖片的action名稱 */
+    /* 上傳圖片配置项 */
+    "imageActionName" => "uploadimage", /* 執行上傳圖片的action名稱 */
     "imageFieldName" => "file", /* 送出的圖片表單名稱 */
-    "imageMaxSize" => 2048000, /* 上传大小限制，单位B */
-    "imageAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 上传圖片格式显示 */
+    "imageMaxSize" => 2048000, /* 上傳大小限制，单位B */
+    "imageAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 上傳圖片格式显示 */
     "imageCompressEnable" => true, /* 是否压缩圖片,默認是true */
     "imageCompressBorder" => 1600, /* 圖片压缩最长边限制 */
     "imageInsertAlign" => "none", /* 插入的圖片浮动方式 */
     "imageUrlPrefix" => "", /* 圖片访问路径前缀 */
-    "imagePathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "imagePathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
                                 /* {filename} 会替换成原文件名,配置这项需要注意中文乱码问题 */
                                 /* {rand =>6} 会替换成随机數,后面的數字是随机數的位數 */
                                 /* {time} 会替换成時間戳 */
@@ -26,17 +26,17 @@ return [
                                 /* 非法字符 \  => * ? " < > | */
                                 /* 具请体看线上文档 => fex.baidu.com/ueditor/#use-format_upload_filename */
 
-    /* 涂鸦圖片上传配置项 */
-    "scrawlActionName" => "uploadscrawl", /* 執行上传涂鸦的action名稱 */
+    /* 涂鸦圖片上傳配置项 */
+    "scrawlActionName" => "uploadscrawl", /* 執行上傳涂鸦的action名稱 */
     "scrawlFieldName" => "upfile", /* 送出的圖片表單名稱 */
-    "scrawlPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
-    "scrawlMaxSize" => 2048000, /* 上传大小限制，单位B */
+    "scrawlPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
+    "scrawlMaxSize" => 2048000, /* 上傳大小限制，单位B */
     "scrawlUrlPrefix" => "", /* 圖片访问路径前缀 */
     "scrawlInsertAlign" => "none",
 
-    /* 截圖工具上传 */
-    "snapscreenActionName" => "uploadimage", /* 執行上传截圖的action名稱 */
-    "snapscreenPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    /* 截圖工具上傳 */
+    "snapscreenActionName" => "uploadimage", /* 執行上傳截圖的action名稱 */
+    "snapscreenPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
     "snapscreenUrlPrefix" => "", /* 圖片访问路径前缀 */
     "snapscreenInsertAlign" => "none", /* 插入的圖片浮动方式 */
 
@@ -44,34 +44,34 @@ return [
     "catcherLocalDomain" => ["127.0.0.1", "localhost", "img.baidu.com"],
     "catcherActionName" => "catchimage", /* 執行抓取远程圖片的action名稱 */
     "catcherFieldName" => "source", /* 送出的圖片列表表單名稱 */
-    "catcherPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "catcherPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
     "catcherUrlPrefix" => "", /* 圖片访问路径前缀 */
-    "catcherMaxSize" => 2048000, /* 上传大小限制，单位B */
+    "catcherMaxSize" => 2048000, /* 上傳大小限制，单位B */
     "catcherAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 抓取圖片格式显示 */
 
-    /* 上传视频配置 */
-    "videoActionName" => "uploadvideo", /* 執行上传视频的action名稱 */
+    /* 上傳视频配置 */
+    "videoActionName" => "uploadvideo", /* 執行上傳视频的action名稱 */
     "videoFieldName" => "upfile", /* 送出的视频表單名稱 */
-    "videoPathFormat" => "/ueditor/php/upload/video/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "videoPathFormat" => "/ueditor/php/upload/video/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
     "videoUrlPrefix" => "", /* 视频访问路径前缀 */
-    "videoMaxSize" => 102400000, /* 上传大小限制，单位B，默認100MB */
+    "videoMaxSize" => 102400000, /* 上傳大小限制，单位B，默認100MB */
     "videoAllowFiles" => [
         ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
-        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"], /* 上传视频格式显示 */
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"], /* 上傳视频格式显示 */
 
-    /* 上传文件配置 */
-    "fileActionName" => "uploadfile", /* controller里,執行上传视频的action名稱 */
+    /* 上傳文件配置 */
+    "fileActionName" => "uploadfile", /* controller里,執行上傳视频的action名稱 */
     "fileFieldName" => "upfile", /* 送出的文件表單名稱 */
-    "filePathFormat" => "/ueditor/php/upload/file/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "filePathFormat" => "/ueditor/php/upload/file/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定义保存路径和文件名格式 */
     "fileUrlPrefix" => "", /* 文件访问路径前缀 */
-    "fileMaxSize" => 51200000, /* 上传大小限制，单位B，默認50MB */
+    "fileMaxSize" => 51200000, /* 上傳大小限制，单位B，默認50MB */
     "fileAllowFiles" => [
         ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp",
         ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
         ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
         ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
         ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
-    ], /* 上传文件格式显示 */
+    ], /* 上傳文件格式显示 */
 
     /* 列出指定目入下的圖片 */
     "imageManagerActionName" => "listimage", /* 執行圖片管理的action名稱 */

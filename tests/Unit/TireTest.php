@@ -14,7 +14,7 @@ class TireTest extends TestCase
             '激情床戏',
             '主席'
         ];
-        $str = '小明很激动，看了一个不错的主激情视频，你那有高清AV视频吗？';
+        $str = '小明很激动，看了一个不错的主激情视频，你那有高清AV视频嗎？';
 
         $tire = new \App\Foundation\Tire();
         foreach ($sensitiveWords as $v) {

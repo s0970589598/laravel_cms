@@ -99,7 +99,7 @@ function renderTable ( table ) {
 }
 
 /*
- * 根据表格已有的圖表属性初始化当前圖表属性
+ * 根据表格已有的圖表属性初始化當前圖表属性
  */
 function initUserConfig ( config ) {
 

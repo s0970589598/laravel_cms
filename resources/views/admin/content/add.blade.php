@@ -99,7 +99,7 @@
                                             <div class="layui-inline">
                                                 <label class="layui-form-label">{{ $inlineField->form_name }}</label>
                                                 <div class="layui-input-inline" style="z-index: {{99999 - ($inlineField->order + $inlineField->id)}}">
-                                                    <select name="{{ $inlineField->name }}" @if($inlineField->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $inlineField->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
+                                                    <select name="{{ $inlineField->name }}" @if($inlineField->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $inlineField->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif >
                                                         @foreach(parseEntityFieldParams($inlineField->form_params) as $v)
                                                             <option value="{{ $v[0] }}" @if((isset($model) && $v[0] == $model->{$inlineField->name}) || (!isset($model) && $v[0] == $inlineField->form_default_value)) selected @endif>{{ $v[1] }}</option>
                                                         @endforeach
@@ -207,12 +207,15 @@
                                 </script>
                                 @break
                             @case('textArea')
+                            @if($messageType <> 'image')  
+
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
                                         <textarea name="{{ $field->name }}" placeholder="请输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
                                     </div>
                                 </div>
+                            @endif
                                 @break
                             @case('markdown')
                                 @if(!isset($markdown_init))
@@ -228,7 +231,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
-                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="请使用 Markdown 编写。圖片上传直接拖拽圖片至此即可~" ></textarea>
+                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="请使用 Markdown 编写。圖片上傳直接拖拽圖片至此即可~" ></textarea>
                                     </div></div>
                                 <script>
                                     var simplemde_{{ $field->name }} = new SimpleMDE({
@@ -245,12 +248,12 @@
                                     });
                                     simplemde_{{ $field->name }}.value(`{!! $model->{$field->name} ?? $field->form_default_value !!}`);
                                     var inlineAttachmentConfig = {
-                                        uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上传圖片地址
-                                        uploadFieldName: 'file',          //上传的文件名
+                                        uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上傳圖片地址
+                                        uploadFieldName: 'file',          //上傳的文件名
                                         jsonFieldName: 'url',              //返回结果中圖片地址对应的字段名稱
-                                        progressText: '![圖片上传中...]()',    //上传过程中用户看到的文案
-                                        errorText: '圖片上传失败',
-                                        urlText:'![圖片描述]({filename})',    //上传成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
+                                        progressText: '![圖片上傳中...]()',    //上傳过程中用户看到的文案
+                                        errorText: '圖片上傳失败',
+                                        urlText:'![圖片描述]({filename})',    //上傳成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
                                     };
                                     inlineAttachment.editors.codemirror4.attach(simplemde_{{ $field->name }}.codemirror, inlineAttachmentConfig);
                                 </script>
@@ -299,11 +302,13 @@
                                 </div>
                                 @break
                             @case('upload')
+                                @if($messageType <> 'text')  
+                                                 
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn" id="file-upload-{{ $field->name }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled style="background-color: gray" @endif>
-                                            <i class="layui-icon">&#xe67c;</i>上传圖片
+                                            <i class="layui-icon">&#xe67c;</i>上傳圖片
                                         </button>
                                         <script type="text/javascript">
                                             addLoadEvent(function () {
@@ -313,13 +318,13 @@
                                                     //執行实例
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
-                                                        ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上传接口
+                                                        ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上傳接口
                                                         ,done: function(res){
                                                             $('input[name={{ $field->name }}]').val(res.url);
                                                             $('#img-'+'{{ $field->name }}').attr('src', res.url);
                                                         }
                                                         ,error: function(){
-                                                            layer.msg('上传失败')
+                                                            layer.msg('上傳失败')
                                                         }
                                                     });
                                                 });
@@ -330,13 +335,15 @@
                                         <div><img data-action="zoom" style="max-width: 200px;height: auto" src="{{ $model->{$field->name} ?? $field->form_default_value  }}" id="img-{{ $field->name }}"></div>
                                     </div>
                                 </div>
+                            
+                                @endif
                                 @break
                                 @case('uploadMulti')
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn" id="file-upload-{{ $field->name }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled style="background-color: gray" @endif>
-                                            <i class="layui-icon">&#xe67c;</i>上传圖片
+                                            <i class="layui-icon">&#xe67c;</i>上傳圖片
                                         </button>
                                         <script type="text/javascript">
 
@@ -348,7 +355,7 @@
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                         ,multiple: true
-                                                        ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上传接口
+                                                        ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上傳接口
                                                         ,done: function(res){
                                                             var obj = $('input[name={{ $field->name }}]');
                                                             if (obj.val() === '') {
@@ -370,7 +377,7 @@
                                                             });
                                                         }
                                                         ,error: function(){
-                                                            layer.msg('上传失败')
+                                                            layer.msg('上傳失败')
                                                         }
                                                     });
                                                 });
@@ -407,8 +414,14 @@
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
                                         <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                            @foreach(App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name) as $v)
-                                                <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->title}) selected @endif>{{ $v->title }}</option>
+                                            @if(!is_null($brocast)) 
+                                                <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name, $brocast); ?>
+                                            @else
+                                                <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name); ?>
+                                            @endif
+                                            
+                                            @foreach($getBeaconTitleFields as $v)
+                                            <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->title}) selected @endif>{{ $v->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -495,10 +508,17 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
-                                        <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                        @foreach(parseEntityFieldParams($field->form_params) as $v)
-                                            <option value="{{ $v[0] }}" @if((isset($model) && $v[0] == $model->{$field->name}) || (!isset($model) && $v[0] == $field->form_default_value)) selected @endif>{{ $v[1] }}</option>
-                                        @endforeach
+                                        <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif >
+                                        @if($messageType == 'text')  
+                                            <option value="text" )="">text</option>
+                                        @elseif($messageType == 'image') 
+                                            <option value="image" )="">image</option>
+                                        @else
+                                            @foreach(parseEntityFieldParams($field->form_params) as $v)
+                                                <option value="{{ $v[0] }}" @if((isset($model) && $v[0] == $model->{$field->name}) || (!isset($model) && $v[0] == $field->form_default_value))  @endif>{{ $v[1] }}</option>
+                                            @endforeach
+                                        @endif
+                                        
                                         </select>
                                     </div>
                                 </div>
@@ -650,11 +670,13 @@
           e = e || window.event;
           // 兼容IE8和Firefox 4之前的版本
           if (e) {
-            e.returnValue = '确定离开当前頁面吗？';
+            e.returnValue = '確定離開當前頁面嗎？';
           }
           // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
-          return '确定离开当前頁面吗？';
+          return '確定離開當前頁面嗎？';
         };
+
+       
     </script>
     <script src="/public/vendor/zoom/transition.js"></script>
     <script src="/public/vendor/zoom/zoom.min.js"></script>

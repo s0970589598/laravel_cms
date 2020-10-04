@@ -54,7 +54,7 @@ function addOkListener() {
 }
 
 /**
- * 绑定开始上传事件
+ * 绑定開始上傳事件
  */
 function addUploadListener() {
 	g("upload").onclick = function () {

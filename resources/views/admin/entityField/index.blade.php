@@ -111,7 +111,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('确定删除？删除字段将同时删除資料庫表字段，请谨慎操作！', function(index){
+            layer.confirm('確定删除？删除字段将同时删除資料庫表字段，请谨慎操作！', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

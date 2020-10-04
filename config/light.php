@@ -92,12 +92,12 @@ return [
     'neditor' => [
         'disk' => 'admin_img',
         'upload' => [
-            'imageMaxSize' => 8 * 1024 * 1024, /* 上传大小限制，单位B */
-            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上传圖片格式显示 */
+            'imageMaxSize' => 8 * 1024 * 1024, /* 上傳大小限制，单位B */
+            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上傳圖片格式显示 */
         ]
     ],
     'image_upload' => [
-        'driver' => 'local', // local 表示上传到本地服务器。上传到其它服务器请设置自定义名稱
+        'driver' => 'local', // local 表示上傳到本地服务器。上傳到其它服务器请设置自定义名稱
         'class' => '', // 自定义 driver 需要填写对应包括命名空间的完整类名，该类需要实现 App\Contracts\ImageUpload 接口
     ],
 
