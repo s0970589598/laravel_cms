@@ -207,8 +207,17 @@
                                 </script>
                                 @break
                             @case('textArea')
-                            @if($messageType <> 'image')  
+                            @if(isset($messageType))
+                                @if($messageType <> 'image')  
 
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">{{ $field->form_name }}</label>
+                                        <div class="layui-input-block">
+                                            <textarea name="{{ $field->name }}" placeholder="请输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
+                                        </div>
+                                    </div>
+                                @endif
+                            @else
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
@@ -302,6 +311,7 @@
                                 </div>
                                 @break
                             @case('upload')
+                            @if(isset($messageType))
                                 @if($messageType <> 'text')  
                                                  
                                 <div class="layui-form-item">
@@ -335,8 +345,40 @@
                                         <div><img data-action="zoom" style="max-width: 200px;height: auto" src="{{ $model->{$field->name} ?? $field->form_default_value  }}" id="img-{{ $field->name }}"></div>
                                     </div>
                                 </div>
-                            
                                 @endif
+                            @else
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">{{ $field->form_name }}</label>
+                                        <div class="layui-input-block">
+                                            <button type="button" class="layui-btn" id="file-upload-{{ $field->name }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled style="background-color: gray" @endif>
+                                                <i class="layui-icon">&#xe67c;</i>上傳圖片
+                                            </button>
+                                            <script type="text/javascript">
+                                                addLoadEvent(function () {
+                                                    layui.use('upload', function(){
+                                                        var upload = layui.upload;
+
+                                                        //執行实例
+                                                        var uploadInst = upload.render({
+                                                            elem: '#file-upload-{{ $field->name }}' //绑定元素
+                                                            ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上傳接口
+                                                            ,done: function(res){
+                                                                $('input[name={{ $field->name }}]').val(res.url);
+                                                                $('#img-'+'{{ $field->name }}').attr('src', res.url);
+                                                            }
+                                                            ,error: function(){
+                                                                layer.msg('上傳失败')
+                                                            }
+                                                        });
+                                                    });
+                                                });
+                                            </script>
+                                            <div style="float: left;width: 50%">
+                                            <input type="input" name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif autocomplete="off" class="layui-input" value="{{ $model->{$field->name} ?? $field->form_default_value  }}" @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif></div>
+                                            <div><img data-action="zoom" style="max-width: 200px;height: auto" src="{{ $model->{$field->name} ?? $field->form_default_value  }}" id="img-{{ $field->name }}"></div>
+                                        </div>
+                                    </div>
+                            @endif
                                 @break
                                 @case('uploadMulti')
                                 <div class="layui-form-item">
@@ -414,7 +456,7 @@
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
                                         <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                            @if(!is_null($brocast)) 
+                                            @if(isset($brocast)) 
                                                 <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name, $brocast); ?>
                                             @else
                                                 <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name); ?>
@@ -509,16 +551,18 @@
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
                                         <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif >
-                                        @if($messageType == 'text')  
-                                            <option value="text" )="">text</option>
-                                        @elseif($messageType == 'image') 
-                                            <option value="image" )="">image</option>
+                                        @if(isset($messageType))
+                                            @if($messageType == 'text')  
+                                                <option value="text" )="">text</option>
+                                            @elseif($messageType == 'image') 
+                                                <option value="image" )="">image</option>
+                                          
+                                            @endif
                                         @else
-                                            @foreach(parseEntityFieldParams($field->form_params) as $v)
-                                                <option value="{{ $v[0] }}" @if((isset($model) && $v[0] == $model->{$field->name}) || (!isset($model) && $v[0] == $field->form_default_value))  @endif>{{ $v[1] }}</option>
-                                            @endforeach
+                                        @foreach(parseEntityFieldParams($field->form_params) as $v)
+                                            <option value="{{ $v[0] }}" @if((isset($model) && $v[0] == $model->{$field->name}) || (!isset($model) && $v[0] == $field->form_default_value))  @endif>{{ $v[1] }}</option>
+                                        @endforeach
                                         @endif
-                                        
                                         </select>
                                     </div>
                                 </div>

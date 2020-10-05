@@ -116,8 +116,6 @@ class ContentController extends Controller
                     'name' => '單位名稱',
                     'message_type' => '訊息類型',
                     'rank' => 'rank',
-                    'image_url' => '圖片',
-                    'preview_image_url' => '縮圖',
                     'message_text' => '文字訊息'                  
                     //'json_data' => 'json_data'                    
                 ];

@@ -53,6 +53,7 @@
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Content::$listField])
+                    <th lay-data="{field:'image_url',width:200,templet:'#imgTpl'}">缩圖</th>
                     <!--<th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>-->
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
@@ -79,6 +80,11 @@
         </div>
     </div>
 @endsection
+
+<script type="text/html" id="imgTpl">
+    <div><img src="<% d.image_url %>" alt='暫無缩圖'></div>
+</script>
+
 <script type="text/html" id="action">
     @if($entity <>'log_broadcast' and  $entity <>'log_beacon_event')
     @if($entity =='9' )
