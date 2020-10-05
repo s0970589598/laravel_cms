@@ -53,7 +53,9 @@
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Content::$listField])
+                    @if($entity == '10')
                     <th lay-data="{field:'image_url',width:200,templet:'#imgTpl'}">缩圖</th>
+                    @endif
                     <!--<th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>-->
                     <th lay-data="{width:200, templet:'#action'}">操作</th>

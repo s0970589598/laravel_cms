@@ -246,12 +246,12 @@ class ContentRepository
                     log::info($data);
                 break;
                 default:
-                $data = self::$model->newQuery()
-                ->where(function ($query) use ($condition) {
-                    Searchable::buildQuery($query, $condition);
-                })
-                ->orderBy($sortField, $sortType)
-                ->paginate($perPage);
+                    $data = self::$model->newQuery()
+                    ->where(function ($query) use ($condition) {
+                        Searchable::buildQuery($query, $condition);
+                    })
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
     
             }
         }
