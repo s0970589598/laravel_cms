@@ -21,9 +21,9 @@
 @endsection
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteEntity('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteEntity('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
     <a href="javascript:;" class="layui-table-link" title="複製" style="margin-left: 10px" onclick="copyEntity('<% d.copyUrl %>')"><i class="layui-icon layui-icon-file"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="添加默認選單，用于精细化權限控制" style="margin-left: 10px" onclick="addEntityMenus('<% d.menuUrl %>')"><i class="layui-icon layui-icon-menu-fill"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="添加默認選單，用於精细化權限控制" style="margin-left: 10px" onclick="addEntityMenus('<% d.menuUrl %>')"><i class="layui-icon layui-icon-menu-fill"></i></a>
     <%#  if(d.enable_comment == {{ App\Model\Admin\Entity::COMMENT_ENABLE }}){ %> <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 5px"><i class="layui-icon layui-icon-reply-fill"></i></a> <%#  } %>
     <a href="<% d.fieldUrl %>" class="layui-table-link" title="字段管理" style="margin-left: 5px">字段管理</a>
     <a href="<% d.contentUrl %>" class="layui-table-link" title="字段管理" style="margin-left: 5px">内容管理</a>
@@ -44,10 +44,10 @@
         });
 
         function deleteEntity (url) {
-            layer.confirm('删除模型将删除模型相關的所有數據（模型、模型字段、模型分類、模型内容等），请谨慎操作！確定要删除？', function(index){
+            layer.confirm('刪除模型將刪除模型相關的所有數據（模型、模型字段、模型分類、模型内容等），請谨慎操作！確定要刪除？', function(index){
                 layer.prompt({
                     formType: 1,
-                    title: '请输入登入密码',
+                    title: '請输入登入密碼',
                 }, function(value, index, elem){
                     $.ajax({
                         url: url,
@@ -75,10 +75,10 @@
         }
 
         function copyEntity (url) {
-            layer.confirm('複製模型将新建一個和當前模型一樣的模型（資料庫表结構、表單定義等信息一致），確定要複製？', function(index){
+            layer.confirm('複製模型將新建一個和當前模型一樣的模型（資料庫表结構、表單定義等信息一致），確定要複製？', function(index){
                 layer.prompt({
                     formType: 0,
-                    title: '请输入新模型的資料庫表名稱',
+                    title: '請输入新模型的資料庫表名稱',
                 }, function(value, index, elem){
                     $.ajax({
                         url: url,
@@ -106,7 +106,7 @@
         }
 
         function addEntityMenus (url) {
-            layer.confirm('添加模型的默認選單是為了對指定模型进行單独的權限控制，添加選單时如遇到同名的選單将略过不處理，確定要添加？', function(index){
+            layer.confirm('添加模型的默認選單是為了對指定模型進行單獨的權限控制，添加選單時如遇到同名的選單將略過不處理，確定要添加？', function(index){
                 $.ajax({
                     url: url,
                     success: function (result) {

@@ -9,13 +9,13 @@ class Config extends Model
 {
     public static $searchField = [
         'name' => '名稱',
-        'key' => '标志符',
+        'key' => '標誌符',
     ];
 
     public static $listField = [
         'group' => '分组',
         'name' => '名稱',
-        'key' => '标志符',
+        'key' => '標誌符',
         'type' => '類型',
         'value' => '值',
     ];

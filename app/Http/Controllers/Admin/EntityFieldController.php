@@ -222,14 +222,14 @@ class EntityFieldController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型字段已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型字段已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 模型字段管理-删除模型字段
+     * 模型字段管理-刪除模型字段
      *
      * @param int $id
      * @return array
@@ -245,19 +245,19 @@ class EntityFieldController extends Controller
             EntityFieldRepository::delete($id);
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => true
             ];
         } catch (ModelNotFoundException $e) {
             return [
                 'code' => 2,
-                'msg' => '删除失败：字段不存在',
+                'msg' => '刪除失败：字段不存在',
                 'redirect' => false
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

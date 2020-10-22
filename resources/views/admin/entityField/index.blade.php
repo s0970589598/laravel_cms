@@ -38,7 +38,7 @@
 @endsection
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 <script type="text/html" id="isShowTemplet">
     <input data-id="<% d.id %>" type="checkbox" name="is_show" lay-skin="switch" lay-text="是|否"
@@ -70,7 +70,7 @@
         });
 
         var table = layui.table;
-        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="對应的值"
+        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的屬性 lay-filter="對應的值"
             $.ajax({
                 url: '{{ route('admin::entityField.listUpdate', ['id' => '__replace_id']) }}'.replace('__replace_id', obj.data.id),
                 method: 'put',
@@ -111,7 +111,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？删除字段将同时删除資料庫表字段，请谨慎操作！', function(index){
+            layer.confirm('確定刪除？刪除字段將同時刪除資料庫表字段，請谨慎操作！', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

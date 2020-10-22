@@ -9,19 +9,19 @@
             <form class="layui-form" action="@if(isset($id)){{ route('admin::SensitiveWord.update', ['id' => $id]) }}@else{{ route('admin::SensitiveWord.save') }}@endif" method="post">
                 @if(isset($id)) {{ method_field('PUT') }} @endif
                 <div class="layui-form-item">
-                    <label class="layui-form-label">專有词</label>
+                    <label class="layui-form-label">專有詞</label>
                     <div class="layui-input-block">
-                        <input type="text" name="exclusive" autocomplete="off" class="layui-input" value="{{ $model->exclusive ?? ''  }}" placeholder="一般情况只需添加自定義的專有词即可，名词、动词可以不用管">
+                        <input type="text" name="exclusive" autocomplete="off" class="layui-input" value="{{ $model->exclusive ?? ''  }}" placeholder="一般情况只需添加自定義的專有詞即可，名詞、動詞可以不用管">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">动词</label>
+                    <label class="layui-form-label">動詞</label>
                     <div class="layui-input-block">
                         <input type="text" name="verb" autocomplete="off" class="layui-input" value="{{ $model->verb ?? ''  }}">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">名词</label>
+                    <label class="layui-form-label">名詞</label>
                     <div class="layui-input-block">
                         <input type="text" name="noun" autocomplete="off" class="layui-input" value="{{ $model->noun ?? ''  }}">
                     </div>
@@ -41,7 +41,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

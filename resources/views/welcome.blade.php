@@ -85,7 +85,7 @@
                     @endif
                 </div>
                 <div class="m-b-md">
-                    前台功能僅供参考，無需使用可以删除相關路由（routes/web.php、routes/member.php）
+                    前台功能僅供参考，無需使用可以刪除相關路由（routes/web.php、routes/member.php）
                 </div>
             </div>
         </div>

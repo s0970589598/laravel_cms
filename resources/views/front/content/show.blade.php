@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/public/vendor/layui-v2.4.5/css/layui.css" media="all">
     <link rel="stylesheet" href="/public/css/member.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.css" />
-    <!-- 樣式文件来自 www.taptap.com 侵删~~~ -->
+    <!-- 樣式文件来自 www.taptap.com 侵刪~~~ -->
     <link rel="stylesheet" href="/public/css/app-2adb6bab87.css">
     <style>
         .pagination {
@@ -76,7 +76,7 @@
         <!--Title-->
         <div class="font-sans">
                         <h1 class="font-sans break-normal text-black pt-6 pb-2 text-3xl md:text-4xl">{{ $content->title }}</h1>
-				<p class="text-sm md:text-base font-normal text-grey-dark">發佈于：{{ $content->created_at }} 最后更新：{{ $content->updated_at }}</p>
+				<p class="text-sm md:text-base font-normal text-grey-dark">發佈於：{{ $content->created_at }} 最後更新：{{ $content->updated_at }}</p>
         </div>
         <div class="mt-6">
             <!--Post Content-->
@@ -119,7 +119,7 @@
         <form action="{{ route('member::comment.save', ['entityId' => $entityId, 'contentId' => $content->id]) }}" class="layui-form">
             <div class="layui-form-item">
                 <div>
-                <textarea name="content" rows="7" placeholder="请输入評論内容" class="layui-textarea" id="comment-content"></textarea>
+                <textarea name="content" rows="7" placeholder="請输入評論内容" class="layui-textarea" id="comment-content"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -143,9 +143,9 @@
         <div class="w-full mx-auto flex flex-wrap">
             <div class="flex w-full md:w-1/2 ">
                 <div class="px-8">
-                    <h3 class="font-bold text-black">關于</h3>
+                    <h3 class="font-bold text-black">關於</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一個基于Laravel開發的轻量级CMS系统，也可以作為一個通用的后台管理框架使用。
+                        lightCMS是一個基於Laravel開發的輕量級CMS係统，也可以作為一個通用的後台管理框架使用。
                     </p>
                 </div>
             </div>
@@ -166,8 +166,8 @@
 
     </div>
 </footer>
-<script src="/public/vendor/layui-v2.4.5/layui.all.js"></script>
-<script type="text/javascript" src="/public/js/member.js"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script type="text/javascript" src="/public/js/member.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js"></script>
 <script>
     var info = {
@@ -192,7 +192,7 @@
         $("#comment-content").val($("#comment-content").val() + ' ' + $(this).attr('title'));
     });
 
-    //监听送出
+    //監聽送出
     form.on('submit(comment)', function(data){
         window.form_submit = $('#submitBtn');
         form_submit.prop('disabled', true);
@@ -259,7 +259,7 @@
                                 <li class="open"> \
                                     <a href="#" data-taptap-comment="button" data-obj="comment" data-obj-id="' + reply.data[j].id + '" data-reply-id="10486096" class="btn btn-sm taptap-button-opinion comment question-witch-replay"> \
                                         <i class="icon-font icon-reply"></i> \
-                                        <span>回复</span> \
+                                        <span>回複</span> \
                                     </a> \
                                 </li> \
                                 <li> \
@@ -276,7 +276,7 @@
                                 </li> \
                                 <li> \
                                     <button type="button" data-id="' + reply.data[j].id + '" class="btn btn-sm taptap-button-opinion report"> \
-                                        <span>举报</span> \
+                                        <span>举報</span> \
                                     </button> \
                                 </li> \
                             </ul> \
@@ -326,7 +326,7 @@
             method: 'get',
             success: function (data) {
                 if (data.code !== 0) {
-                    layer.msg('評論加载失败', {icon: 2});
+                    layer.msg('評論加戴失败', {icon: 2});
                     return;
                 }
 
@@ -349,12 +349,12 @@
             </span> \
             <a href="#" class="text-header-time"> \
                 <span data-toggle="tooltip" data-placement="top" title="' + listData[i].created_at + '" \
-                        <span>發佈于 </span> \
+                        <span>發佈於 </span> \
                         <span>' + getDateDiff(getDateTimeStamp(listData[i].created_at)) + '</span> \
                 </span> \
             </a> \
             <button type="button" data-obj="review" data-id="' + listData[i].id + '" class="btn btn-sm taptap-button-opinion report"> \
-                <span>举报</span> \
+                <span>举報</span> \
             </button> \
         </div> \
         <div class="item-text-body" data-review-' + listData[i].id + '="contents"> \
@@ -377,7 +377,7 @@
                 <li> \
                     <button id="review-' + listData[i].id + '-reply-button" class="btn btn-sm taptap-button-opinion comment question-witch-replay" data-taptap-comment="button" data-obj-id="' + listData[i].id + '" data-modalid="#commentModal"> \
                         <i class="icon-font icon-reply"></i> \
-                        <span class="normal-text">回复 ' + listData[i].reply_count + '</span> \
+                        <span class="normal-text">回複 ' + listData[i].reply_count + '</span> \
                     </button> \
                 </li> \
             </ul> \
@@ -409,17 +409,17 @@
                 emojify.run(document.getElementById('comments'));
 
                 @auth('member')
-                // 获取登入用户對評論的操作數據
+                // 獲取登入用户對評論的操作數據
                 commentAction();
                 @endauth
 
-                // 評論回复
+                // 評論回複
                 $('.question-witch-replay').on('click', function () {
                     $('input[name=pid]').remove();
                     layer.open({
                         type: 1,
                         area: '500px',
-                        title: '回复',
+                        title: '回複',
                         content: $('form.layui-form').append('<input type="hidden" name="pid" value="' + $(this).data('obj-id') + '">'),
                         cancel: function (index, layero) {
                             $('input[name=pid]').remove();
@@ -454,9 +454,9 @@
                     })
                 });
 
-                // 举报
+                // 举報
                 $('div#comments').on('click', 'button.report', function () {
-                    layer.msg('待实现');
+                    layer.msg('待實现');
                 });
 
                 // 評論翻頁
@@ -466,7 +466,7 @@
                     loadComments($(this).attr('href'));
                 });
 
-                // 評論回复翻頁
+                // 評論回複翻頁
                 $('div.taptap-comments').on('click', 'a.comment-reply', function (e) {
                     e.preventDefault();
                     commentIds = [];
@@ -481,7 +481,7 @@
                             that.parents('div.taptap-comments').html(loadReplyComments(d.data, rid, uid));
 
                             @auth('member')
-                            // 获取登入用户對評論的操作數據
+                            // 獲取登入用户對評論的操作數據
                             commentAction();
                             @endauth
                         }
@@ -489,7 +489,7 @@
                 });
             },
             error: function () {
-                layer.msg('頁面错误', {icon: 2});
+                layer.msg('頁面錯誤', {icon: 2});
             }
         });
     }
@@ -504,7 +504,7 @@
                 data: {comment_ids: commentIdsStr},
                 success: function (d) {
                     if (d.code !== 0) {
-                        layer.msg('获取評論操作數據失败', {icon: 2});
+                        layer.msg('獲取評論操作數據失败', {icon: 2});
                         return;
                     }
                     for (var i = d.data.length - 1; i >= 0; i--) {

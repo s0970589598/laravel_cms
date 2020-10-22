@@ -60,7 +60,7 @@
 @endsection
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 
 @section('js')
@@ -78,7 +78,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？', function(index){
+            layer.confirm('確定刪除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -104,7 +104,7 @@
 
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAddTag)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

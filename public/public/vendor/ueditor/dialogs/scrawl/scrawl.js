@@ -11,7 +11,7 @@ var scrawl = function (options) {
 (function () {
     var canvas = $G("J_brushBoard"),
         context = canvas.getContext('2d'),
-        drawStep = [], //undo redo存储
+        drawStep = [], //undo redo存儲
         drawStepIndex = 0; //undo redo指针
 
     scrawl.prototype = {
@@ -22,7 +22,7 @@ var scrawl = function (options) {
         initOptions:function (options) {
             var me = this;
             me.originalState(options);//初始頁面狀態
-            me._buildToolbarColor(options.colorList);//动态生成颜色選擇集合
+            me._buildToolbarColor(options.colorList);//動態生成颜色選擇集合
 
             me._addBoardListener(options.saveNum);//添加画板處理
             me._addOPerateListener(options.saveNum);//添加undo redo clearBoard處理
@@ -30,7 +30,7 @@ var scrawl = function (options) {
             me._addBrushBarListener();//添加画笔大小處理
             me._addEraserBarListener();//添加橡皮大小處理
             me._addAddImgListener();//添加增添背景圖片處理
-            me._addRemoveImgListenter();//删除背景圖片處理
+            me._addRemoveImgListenter();//刪除背景圖片處理
             me._addScalePicListenter();//添加缩放處理
             me._addClearSelectionListenter();//添加清楚選中狀態處理
 
@@ -92,7 +92,7 @@ var scrawl = function (options) {
                         isMouseUp = false;
                         isMouseMove = false;
                         me.isScrawl = true;
-                        startX = e.clientX - margin;//10為外边距总和
+                        startX = e.clientX - margin;//10為外边距總和
                         startY = e.clientY - margin;
                         context.beginPath();
                         break;
@@ -101,7 +101,7 @@ var scrawl = function (options) {
                             return;
                         }
                         if (!flag && button) {
-                            startX = e.clientX - margin;//10為外边距总和
+                            startX = e.clientX - margin;//10為外边距總和
                             startY = e.clientY - margin;
                             context.beginPath();
                             flag = 1;
@@ -566,7 +566,7 @@ var ScaleBoy = function () {
     };
 })();
 
-//后台回调
+//後台回调
 function ue_callback(url, state) {
     var doc = document,
         picBorard = $G("J_picBoard"),
@@ -592,9 +592,9 @@ function ue_callback(url, state) {
         }
     }
 
-    //移除遮罩层
+    //移除遮罩層
     removeMaskLayer();
-    //狀態响应
+    //狀態嚮應
     if (state == "SUCCESS") {
         picBorard.innerHTML = "";
         img.onload = function () {
@@ -611,21 +611,21 @@ function ue_callback(url, state) {
         alert(state);
     }
 }
-//去掉遮罩层
+//去掉遮罩層
 function removeMaskLayer() {
     var maskLayer = $G("J_maskLayer");
     maskLayer.className = "maskLayerNull";
     maskLayer.innerHTML = "";
     dialog.buttons[0].setDisabled(false);
 }
-//添加遮罩层
+//添加遮罩層
 function addMaskLayer(html) {
     var maskLayer = $G("J_maskLayer");
     dialog.buttons[0].setDisabled(true);
     maskLayer.className = "maskLayer";
     maskLayer.innerHTML = html;
 }
-//執行确认按钮方法
+//執行確认按钮方法
 function exec(scrawlObj) {
     if (scrawlObj.isScrawl) {
         addMaskLayer(lang.scrawlUpLoading);

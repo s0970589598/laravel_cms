@@ -16,7 +16,7 @@ trait Searchable
 {
     public static function buildQuery(Builder $query, array $condition)
     {
-        // 获取模型定義的搜索域
+        // 獲取模型定義的搜索域
         $model = $query->getModel();
         $searchField = [];
         if (property_exists($model, 'searchField')) {
@@ -36,7 +36,7 @@ trait Searchable
                 list($type, $value) = $v;
             }
             $value = trim($value);
-            // 搜索值為空字符串则忽略该条件
+            // 搜索值為空字符串則忽略该條件
             if ($value === '') {
                 continue;
             }

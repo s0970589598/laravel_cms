@@ -24,7 +24,7 @@ Route::group(
         // 模型内容列表
         Route::get('/entity/{entityId}/content/', 'HomeController@content')
             ->name('entity.content.list')->where(['entityId' => Regexp::RESOURCE_ID]);
-        // 模型内容详情
+        // 模型内容詳情
         Route::get('/entity/{entityId}/content/{contentId}', 'ContentController@show')
             ->name('content')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
 

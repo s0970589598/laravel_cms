@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
 /**
- * 使用當前類时必须先调用 setTable 方法设置所要操作的資料庫表
+ * 使用當前類時必须先调用 setTable 方法設置所要操作的資料庫表
  * @package App\Repository\Admin
  */
 class ContentRepository
@@ -331,7 +331,7 @@ class ContentRepository
             if (is_array($item)) {
                 return implode(',', $item);
             } elseif ($item === '' || preg_match('/^\d+(,\d+)*/', $item)) {
-                // select多選類型表單，數據類型為 unsignedInteger 的求和保存，查询时可以利用 AND 运算查找對应值
+                // select多選類型表單，數據類型為 unsignedInteger 的求和保存，查尋時可以利用 AND 運算查找對應值
                 $fieldType = EntityField::where('entity_id', $entity->id)
                     ->where('form_type', 'selectMulti')
                     ->where('name', $key)->value('type');

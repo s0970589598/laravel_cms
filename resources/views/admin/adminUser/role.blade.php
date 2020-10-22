@@ -30,7 +30,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

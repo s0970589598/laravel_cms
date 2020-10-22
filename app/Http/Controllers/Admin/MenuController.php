@@ -97,7 +97,7 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -144,14 +144,14 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 選單管理-删除選單
+     * 選單管理-刪除選單
      *
      * @param int $id
      * @return array
@@ -163,13 +163,13 @@ class MenuController extends Controller
             event(new MenuUpdated());
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => true
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }
@@ -188,7 +188,7 @@ class MenuController extends Controller
 
         foreach (Route::getRoutes()->getRoutesByName() as $k => $v) {
             if (Str::startsWith($k, 'admin::')) {
-                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未写分组名稱，则注譯直接作為選單名稱。未写注譯则選用uri作為選單名稱。
+                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未寫分组名稱，則注譯直接作為選單名稱。未寫注譯則選用uri作為選單名稱。
                 $action = explode('@', $v->getActionName());
                 if (!method_exists($action[0], $action[1])) {
                     continue;
@@ -244,7 +244,7 @@ class MenuController extends Controller
                     if ($e->getCode() == 23000) {
                         return [
                             'code' => 1,
-                            'msg' => "唯一性冲突：请检查選單名稱或路由名稱。name: {$data['name']} route: {$data['route']}",
+                            'msg' => "唯一性冲突：請检查選單名稱或路由名稱。name: {$data['name']} route: {$data['route']}",
                         ];
                     } else {
                         return [
@@ -276,7 +276,7 @@ class MenuController extends Controller
         if (!is_array($ids)) {
             return [
                 'code' => 1,
-                'msg' => '参數错误'
+                'msg' => '参數錯誤'
             ];
         }
         $ids = array_map(function ($item) {
@@ -292,14 +292,14 @@ class MenuController extends Controller
                 Menu::query()->whereIn('id', $ids)->update(['status' => Menu::STATUS_ENABLE]);
                 break;
             case 'delete':
-                // 过滤掉有子项目的
+                // 過濾掉有子项目的
                 $hasChildren = array_unique(Menu::query()->whereIn('pid', $ids)->pluck('pid')->toArray());
                 $deleteIds = array_diff($ids, $hasChildren);
                 if (!empty($deleteIds)) {
                     Menu::query()->whereIn('id', $deleteIds)->delete();
                 }
                 if (!empty($hasChildren)) {
-                    $message = ' 以下選單ID因有子選單不能直接删除：' . implode(',', $hasChildren);
+                    $message = ' 以下選單ID因有子選單不能直接刪除：' . implode(',', $hasChildren);
                 }
                 break;
             case 'parent':
@@ -307,13 +307,13 @@ class MenuController extends Controller
                 if ($pid < 0 || ($pid > 0 && !MenuRepository::find($pid))) {
                     return [
                         'code' => 2,
-                        'msg' => '父级選單ID错误'
+                        'msg' => '父級選單ID錯誤'
                     ];
                 }
                 if (in_array($pid, $ids)) {
                     return [
                         'code' => 3,
-                        'msg' => '不能将父级選單指定為自身'
+                        'msg' => '不能將父級選單指定為自身'
                     ];
                 }
                 Menu::query()->whereIn('id', $ids)->update(['pid' => $pid]);
@@ -323,7 +323,7 @@ class MenuController extends Controller
                 if ($order < 0) {
                     return [
                         'code' => 4,
-                        'msg' => '排序值不能小于0'
+                        'msg' => '排序值不能小於0'
                     ];
                 }
                 Menu::query()->whereIn('id', $ids)->update(['order' => $order]);

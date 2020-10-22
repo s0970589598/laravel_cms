@@ -23,7 +23,7 @@ class CategoryRepository
         $data->transform(function ($item) {
             xssFilter($item);
             $item->editUrl = route('admin::category.edit', ['id' => $item->id]);
-            $item->parentName = $item->pid == 0 ? '顶级選單' : $item->parent->name;
+            $item->parentName = $item->pid == 0 ? '顶級選單' : $item->parent->name;
             $item->entityName = $item->entity ? $item->entity->name : '';
             unset($item->entity);
             return $item;
@@ -49,7 +49,7 @@ class CategoryRepository
         $data->each(function ($item, $key) use (&$list) {
             xssFilter($item);
             $item->editUrl = route('admin::category.edit', ['id' => $item->id]);
-            $item->parentName = $item->pid == 0 ? '顶级選單' : $item->parent->name;
+            $item->parentName = $item->pid == 0 ? '顶級選單' : $item->parent->name;
             $item->entityName = $item->entity ? $item->entity->name : '';
             unset($item->entity);
 
@@ -57,7 +57,7 @@ class CategoryRepository
 
             $item->children->each(function ($v, $k) use (&$list) {
                 $v->editUrl = route('admin::category.edit', ['id' => $v->id]);
-                //$v->parentName = $v->pid == 0 ? '顶级選單' : $v->parent->name;
+                //$v->parentName = $v->pid == 0 ? '顶級選單' : $v->parent->name;
                 //$v->entityName = $v->entity ? $v->entity->name : '';
                 $v->name = '|--------' . $v->name;
                 array_push($list, $v);

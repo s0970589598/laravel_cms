@@ -19,7 +19,7 @@
                 <label class="layui-form-label">排序</label>
                 <div class="layui-input-inline">
                     <select name="light_sort_fields">
-                        <option value="" @if(!request()->has('light_sort_fields')) selected @endif>请選擇</option>
+                        <option value="" @if(!request()->has('light_sort_fields')) selected @endif>請選擇</option>
                         @foreach(App\Model\Admin\Content::$sortFields as $ik => $iv)
                             <option value="{{ $ik }}" @if(request()->has('light_sort_fields') && request()->get('light_sort_fields') !== "" && request()->get('light_sort_fields') == $ik) selected @endif>{{ $iv }}</option>
                         @endforeach
@@ -68,7 +68,7 @@
                         <label class="layui-form-label">操作類型</label>
                         <div class="layui-input-inline">
                             <select name="type" lay-filter="action-type">
-                                <option value="delete">删除</option>
+                                <option value="delete">刪除</option>
                             </select>
                         </div>
                         <div class="layui-inline">
@@ -95,7 +95,7 @@
     @endif
 
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
     <!--<a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 10px"><i class="layui-icon layui-icon-reply-fill"></i></a>-->
     
     @endif
@@ -119,7 +119,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？', function(index){
+            layer.confirm('確定刪除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

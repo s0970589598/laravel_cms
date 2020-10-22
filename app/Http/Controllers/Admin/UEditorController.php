@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class UEditorController extends NEditorController
 {
     /**
-     * ueditor-ueditor編輯服务
+     * ueditor-ueditor編輯服務
      *
      * @param Request $request
      * @return array|mixed

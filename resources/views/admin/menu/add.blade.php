@@ -20,14 +20,14 @@
                         <div class="layui-input-inline">
                             <input type="checkbox" name="is_lock_name" lay-skin="switch" lay-text="锁定|不锁定" value="1" @if(isset($model) && $model->is_lock_name == App\Model\Admin\Menu::LOCK_NAME) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">锁定名稱则選單自動更新时不会更新當前選單的名稱和分组等信息</div>
+                        <div class="layui-form-mid layui-word-aux">锁定名稱則選單自動更新時不會更新當前選單的名稱和分组等信息</div>
                     </div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级選單</label>
+                        <label class="layui-form-label">上級選單</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="pid" lay-verify="required">
-                                <option value="0">顶级選單</option>
+                                <option value="0">顶級選單</option>
                                 @foreach(App\Repository\Admin\MenuRepository::getTree() as $v)
                                     @include('admin.menu', $v)
                                 @endforeach
@@ -45,7 +45,7 @@
                         <div class="layui-input-inline">
                             <input type="text" name="route_params" autocomplete="off" class="layui-input" value="{{ $model->route_params ?? ''  }}">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">用于精确控制同一路由下不同路由参數值的访問權限。填写格式：参數名稱:参數值</div>
+                        <div class="layui-form-mid layui-word-aux">用於精確控制同一路由下不同路由参數值的訪問權限。填寫格式：参數名稱:参數值</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">URL</label>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">备注</label>
+                        <label class="layui-form-label">備註</label>
                         <div class="layui-input-block">
                             <input type="text" name="remark" autocomplete="off" class="layui-input" value="{{ $model->remark ?? ''  }}">
                         </div>
@@ -76,7 +76,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">是否啟用</label>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" value="1" @if(isset($model) && $model->status == App\Model\Admin\Menu::STATUS_ENABLE) checked @endif>
+                        <input type="checkbox" name="status" lay-skin="switch" lay-text="啟用|禁用" value="1" @if(isset($model) && $model->status == App\Model\Admin\Menu::STATUS_ENABLE) checked @endif>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -94,7 +94,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

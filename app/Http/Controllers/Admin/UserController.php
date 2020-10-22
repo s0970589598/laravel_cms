@@ -81,7 +81,7 @@ class UserController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前會員已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前會員已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -124,14 +124,14 @@ class UserController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前會員已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前會員已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 會員管理-删除會員
+     * 會員管理-刪除會員
      *
      * @param int $id
      */
@@ -141,13 +141,13 @@ class UserController extends Controller
             UserRepository::delete($id);
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => route('admin::user.index')
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

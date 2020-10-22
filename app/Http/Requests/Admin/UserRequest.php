@@ -55,8 +55,8 @@ class UserRequest extends FormRequest
     {
         return [
             'phone.required' => '手機號碼不能為空',
-            'phone.regex' => '手機號碼格式有误',
-            'password.regex' => '密码格式有误',
+            'phone.regex' => '手機號碼格式有誤',
+            'password.regex' => '密碼格式有誤',
         ];
     }
 }

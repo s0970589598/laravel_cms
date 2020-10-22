@@ -31,7 +31,7 @@ class AdminUserRepository
             $item->editUrl = route('admin::adminUser.edit', ['id' => $item->id]);
             $item->roleUrl = route('admin::adminUser.role.edit', ['id' => $item->id]);
             $item->statusText = $item->status == AdminUser::STATUS_ENABLE ?
-                    '<span class="layui-badge layui-bg-green">启用</span>' :
+                    '<span class="layui-badge layui-bg-green">啟用</span>' :
                     '<span class="layui-badge">禁用</span>';
             $item->roleNames = xssFilter($item->getRoleNames()->join(','));
             unset($item->roles);

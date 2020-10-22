@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => '用户名或密码错误',
-    'throttle' => '登入尝试次數过多，请在 :seconds 秒后重试',
+    'failed' => '用户名或密碼錯誤',
+    'throttle' => '登入嘗试次數過多，請在 :seconds 秒後重试',
 
 ];

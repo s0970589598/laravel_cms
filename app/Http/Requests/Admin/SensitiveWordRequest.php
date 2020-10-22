@@ -40,9 +40,9 @@ class SensitiveWordRequest extends FormRequest
     public function messages()
     {
         return [
-            'verb.required_without_all' => '动词、名词、專有词三者必填一個',
-            'noun.required_without_all' => '动词、名词、專有词三者必填一個',
-            'exclusive.required_without_all' => '动词、名词、專有词三者必填一個',
+            'verb.required_without_all' => '動詞、名詞、專有詞三者必填一個',
+            'noun.required_without_all' => '動詞、名詞、專有詞三者必填一個',
+            'exclusive.required_without_all' => '動詞、名詞、專有詞三者必填一個',
         ];
     }
 }

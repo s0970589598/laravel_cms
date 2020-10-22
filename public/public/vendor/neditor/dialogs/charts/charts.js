@@ -1,5 +1,5 @@
 /*
- * 圖片转换對话框脚本
+ * 圖片轉换對话框脚本
  **/
 
 var tableData = [],
@@ -14,7 +14,7 @@ window.onload = function () {
 
     editorTable = domUtils.findParentByTagName( editor.selection.getRange().startContainer, 'table', true);
 
-    //未找到表格， 显示错误頁面
+    //未找到表格， 顯示錯誤頁面
     if ( !editorTable ) {
         document.body.innerHTML = "<div class='edui-charts-not-data'>未找到數據</div>";
         return;
@@ -99,7 +99,7 @@ function renderTable ( table ) {
 }
 
 /*
- * 根据表格已有的圖表属性初始化當前圖表属性
+ * 根據表格已有的圖表屬性初始化當前圖表屬性
  */
 function initUserConfig ( config ) {
 
@@ -185,7 +185,7 @@ function initEvent () {
 
             disableNotPieConfig();
 
-        //启用完整配置
+        //啟用完整配置
         } else {
 
             enableNotPieConfig();
@@ -278,7 +278,7 @@ function collectData () {
 }
 
 /**
- * 获取用户配置信息
+ * 獲取用户配置信息
  */
 function getUserConfig () {
 
@@ -322,7 +322,7 @@ function getSeriesAndCategories () {
         tmp = [],
         tableData = getTableData();
 
-    //反转數據
+    //反轉數據
     if ( getTableDataFormat() === "-1" ) {
 
         for ( var i = 0, len = tableData.length; i < len; i++ ) {
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 获取數據源數據對齐方式
+ * 獲取數據源數據對齐方式
  */
 function getTableDataFormat () {
 
@@ -383,7 +383,7 @@ function disableNotPieConfig() {
 }
 
 /*
- * 启用非饼圖類型的配置项
+ * 啟用非饼圖類型的配置项
  */
 function enableNotPieConfig() {
 
@@ -414,7 +414,7 @@ function updateConfigItem ( value ) {
 }
 
 /*
- * 获取饼圖數據
+ * 獲取饼圖數據
  * 饼圖的數據只取第一行的
  **/
 function getSeriesForPieChart () {
@@ -481,7 +481,7 @@ function getCellValue ( cell ) {
 }
 
 
-//dialog确认事件
+//dialog確认事件
 dialog.onok = function () {
 
     //收集信息
@@ -500,7 +500,7 @@ dialog.onok = function () {
 };
 
 /*
- * 同步圖表編輯视圖的表格數據到編輯器里的原始表格
+ * 同步圖表編輯視圖的表格數據到編輯器里的原始表格
  */
 function syncTableData () {
 

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class NEditorController extends Controller
 {
     /**
-     * 基础功能-圖片上傳
+     * 基礎功能-圖片上傳
      *
      * @param Request $request
      * @param string $type
@@ -44,7 +44,7 @@ class NEditorController extends Controller
         if (!$request->hasFile('file')) {
             return [
                 'code' => 2,
-                'msg' => '非法请求'
+                'msg' => '非法請求'
             ];
         }
         $file = $request->file('file');

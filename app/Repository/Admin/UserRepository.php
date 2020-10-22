@@ -24,7 +24,7 @@ class UserRepository
             $item->editUrl = route('admin::user.edit', ['id' => $item->id]);
             $item->deleteUrl = route('admin::user.delete', ['id' => $item->id]);
             $item->statusText = $item->status == User::STATUS_ENABLE ?
-                '<span class="layui-badge layui-bg-green">启用</span>' :
+                '<span class="layui-badge layui-bg-green">啟用</span>' :
                 '<span class="layui-badge">禁用</span>';
             return $item;
         });

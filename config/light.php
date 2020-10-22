@@ -1,19 +1,19 @@
 <?php
 return [
-    // 超级管理員。不受權限控制
+    // 超級管理員。不受權限控制
     'superAdmin' => [1],
 
     // 各類缓存KEY
     'cache_key' => [
         'config' => 'config'
     ],
-    // 加载資料庫自定義配置
+    // 加戴資料庫自定義配置
     'light_config' => false,
 
-    // 系统Log保留時間。單位：天
+    // 係统Log保留時間。單位：天
     'log_reserve_days' => 180,
 
-    // 異步写入系统Log
+    // 異步寫入係统Log
     'log_async_write' => false,
 
     // 資料庫表字段類型 参考：https://laravel.com/docs/5.5/migrations#columns
@@ -93,12 +93,12 @@ return [
         'disk' => 'admin_img',
         'upload' => [
             'imageMaxSize' => 8 * 1024 * 1024, /* 上傳大小限制，單位B */
-            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上傳圖片格式显示 */
+            'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上傳圖片格式顯示 */
         ]
     ],
     'image_upload' => [
-        'driver' => 'local', // local 表示上傳到本地服务器。上傳到其它服务器请设置自定義名稱
-        'class' => '', // 自定義 driver 需要填写對应包括命名空间的完整類名，该類需要实现 App\Contracts\ImageUpload 接口
+        'driver' => 'local', // local 表示上傳到本地服務器。上傳到其它服務器請設置自定義名稱
+        'class' => '', // 自定義 driver 需要填寫對應包括命名空間的完整類名，该類需要實现 App\Contracts\ImageUpload 接口
     ],
 
     // 三方登入

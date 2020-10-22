@@ -40,7 +40,7 @@ baidu.dom = baidu.dom || {};
 
 
 /**
- * 从文档中获取指定的DOM元素
+ * 從文档中獲取指定的DOM元素
  * @name baidu.dom.g
  * @function
  * @grammar baidu.dom.g(id)
@@ -49,7 +49,7 @@ baidu.dom = baidu.dom || {};
  * @meta standard
  * @see baidu.dom.q
  *
- * @return {HTMLElement|null} 获取的元素，查找不到时返回null,如果参數不合法，直接返回参數.
+ * @return {HTMLElement|null} 獲取的元素，查找不到時返回null,如果参數不合法，直接返回参數.
  */
 baidu.dom.g = function(id) {
     if (!id) return null;
@@ -77,8 +77,8 @@ baidu.array = baidu.array || {};
  * @function
  * @grammar baidu.array.each(source, iterator[, thisObject])
  * @param {Array} source 需要遍历的數组
- * @param {Function} iterator 對每個數组元素进行调用的函數，该函數有两個参數，第一個為數组元素，第二個為數组索引值，function (item, index)。
- * @param {Object} [thisObject] 函數调用时的this指针，如果没有此参數，默認是當前遍历的數组
+ * @param {Function} iterator 對每個數组元素進行调用的函數，该函數有兩個参數，第一個為數组元素，第二個為數组索引值，function (item, index)。
+ * @param {Object} [thisObject] 函數调用時的this指针，如果没有此参數，默認是當前遍历的數组
  * @remark
  * each方法不支持對Object的遍历,對Object的遍历使用baidu.object.each 。
  * @shortcut each
@@ -104,18 +104,18 @@ baidu.each = baidu.array.forEach = baidu.array.each = function (source, iterator
 };
 
 /**
- * 對语言层面的封装，包括類型判断、模块扩展、继承基類以及對象自定義事件的支持。
+ * 對語言層面的封装，包括類型判断、模塊擴展、繼承基類以及對象自定義事件的支持。
  * @namespace baidu.lang
  */
 baidu.lang = baidu.lang || {};
 
 
 /**
- * 判断目标参數是否為function或Function实例
+ * 判断目標参數是否為function或Function實例
  * @name baidu.lang.isFunction
  * @function
  * @grammar baidu.lang.isFunction(source)
- * @param {Any} source 目标参數
+ * @param {Any} source 目標参數
  * @version 1.2
  * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  * @meta standard
@@ -126,11 +126,11 @@ baidu.lang.isFunction = function (source) {
 };
 
 /**
- * 判断目标参數是否string類型或String對象
+ * 判断目標参數是否string類型或String對象
  * @name baidu.lang.isString
  * @function
  * @grammar baidu.lang.isString(source)
- * @param {Any} source 目标参數
+ * @param {Any} source 目標参數
  * @shortcut isString
  * @meta standard
  * @see baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
@@ -144,47 +144,47 @@ baidu.isString = baidu.lang.isString;
 
 
 /**
- * 判断浏览器類型和特性的属性
+ * 判断浏覽器類型和特性的屬性
  * @namespace baidu.browser
  */
 baidu.browser = baidu.browser || {};
 
 
 /**
- * 判断是否為opera浏览器
- * @property opera opera版本号
+ * 判断是否為opera浏覽器
+ * @property opera opera版本號
  * @grammar baidu.browser.opera
  * @meta standard
  * @see baidu.browser.ie,baidu.browser.firefox,baidu.browser.safari,baidu.browser.chrome
- * @returns {Number} opera版本号
+ * @returns {Number} opera版本號
  */
 
 /**
- * opera 从10開始不是用opera后面的字符串进行版本的判断
- * 在Browser identification最后添加Version + 數字进行版本标识
- * opera后面的數字保持在9.80不變
+ * opera 從10開始不是用opera後面的字符串進行版本的判断
+ * 在Browser identification最後添加Version + 數字進行版本標识
+ * opera後面的數字保持在9.80不變
  */
 baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.test(navigator.userAgent) ?  + ( RegExp["\x246"] || RegExp["\x242"] ) : undefined;
 
 
 /**
- * 在目标元素的指定位置插入HTML代码
+ * 在目標元素的指定位置插入HTML代碼
  * @name baidu.dom.insertHTML
  * @function
  * @grammar baidu.dom.insertHTML(element, position, html)
- * @param {HTMLElement|string} element 目标元素或目标元素的id
+ * @param {HTMLElement|string} element 目標元素或目標元素的id
  * @param {string} position 插入html的位置信息，取值為beforeBegin,afterBegin,beforeEnd,afterEnd
  * @param {string} html 要插入的html
  * @remark
  * 
- * 對于position参數，大小写不敏感<br>
+ * 對於position参數，大小寫不敏感<br>
  * 参數的意思：beforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
- * 此外，如果使用本函數插入带有script標簽的HTML字符串，script標簽對应的脚本将不会被執行。
+ * 此外，如果使用本函數插入带有script標簽的HTML字符串，script標簽對應的脚本將不會被執行。
  * 
  * @shortcut insertHTML
  * @meta standard
  *             
- * @returns {HTMLElement} 目标元素
+ * @returns {HTMLElement} 目標元素
  */
 baidu.dom.insertHTML = function (element, position, html) {
     element = baidu.dom.g(element);
@@ -210,17 +210,17 @@ baidu.dom.insertHTML = function (element, position, html) {
 baidu.insertHTML = baidu.dom.insertHTML;
 
 /**
- * 操作flash對象的方法，包括創建flash對象、获取flash對象以及判断flash插件的版本号
+ * 操作flash對象的方法，包括創建flash對象、獲取flash對象以及判断flash插件的版本號
  * @namespace baidu.swf
  */
 baidu.swf = baidu.swf || {};
 
 
 /**
- * 浏览器支持的flash插件版本
- * @property version 浏览器支持的flash插件版本
+ * 浏覽器支持的flash插件版本
+ * @property version 浏覽器支持的flash插件版本
  * @grammar baidu.swf.version
- * @return {String} 版本号
+ * @return {String} 版本號
  * @meta standard
  */
 baidu.swf.version = (function () {
@@ -253,18 +253,18 @@ baidu.string = baidu.string || {};
 
 
 /**
- * 對目标字符串进行html编码
+ * 對目標字符串進行html编碼
  * @name baidu.string.encodeHTML
  * @function
  * @grammar baidu.string.encodeHTML(source)
- * @param {string} source 目标字符串
+ * @param {string} source 目標字符串
  * @remark
- * 编码字符有5個：&<>"'
+ * 编碼字符有5個：&<>"'
  * @shortcut encodeHTML
  * @meta standard
  * @see baidu.string.decodeHTML
  *             
- * @returns {string} html编码后的字符串
+ * @returns {string} html编碼後的字符串
  */
 baidu.string.encodeHTML = function (source) {
     return String(source)
@@ -284,28 +284,28 @@ baidu.encodeHTML = baidu.string.encodeHTML;
  * @grammar baidu.swf.createHTML(options)
  * 
  * @param {Object} 	options 					創建flash的選项参數
- * @param {string} 	options.id 					要創建的flash的标识
+ * @param {string} 	options.id 					要創建的flash的標识
  * @param {string} 	options.url 				flash文件的url
- * @param {String} 	options.errorMessage 		未安装flash player或flash player版本号过低时的提示
- * @param {string} 	options.ver 				最低需要的flash player版本号
+ * @param {String} 	options.errorMessage 		未安装flash player或flash player版本號過低時的提示
+ * @param {string} 	options.ver 				最低需要的flash player版本號
  * @param {string} 	options.width 				flash的宽度
  * @param {string} 	options.height 				flash的高度
  * @param {string} 	options.align 				flash的對齐方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				设置用于解析swf文件中的所有相對路径语句的基本目入或URL
+ * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路径語句的基本目入或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
- * @param {string} 	options.salign 				设置缩放的swf文件在由width和height设置定義的区域内的位置。允许值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否显示右键選單，允许值：true/false
- * @param {boolean} options.loop 				播放到最后一帧时是否重新播放，允许值： true/false
- * @param {boolean} options.play 				flash是否在浏览器加载时就開始播放。允许值：true/false
- * @param {string} 	options.quality 			设置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				设置flash内容如何缩放来适应设置的宽高。允许值：showall/noborder/exactfit
- * @param {string} 	options.wmode 				设置flash的显示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信權限。允许值：always/never/sameDomain
- * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
+ * @param {string} 	options.salign 				設置缩放的swf文件在由width和height設置定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				是否顯示右鍵選單，允许值：true/false
+ * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允许值： true/false
+ * @param {boolean} options.play 				flash是否在浏覽器加戴時就開始播放。允许值：true/false
+ * @param {string} 	options.quality 			設置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				設置flash内容如何缩放来适應設置的宽高。允许值：showall/noborder/exactfit
+ * @param {string} 	options.wmode 				設置flash的顯示模式。允许值：window/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	設置flash与頁面的通信權限。允许值：always/never/sameDomain
+ * @param {string} 	options.allownetworking 	設置swf文件中允许使用的網路API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置執行無缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
- * @param {boolean} options.devicefont 			设置静态文本對象是否以设备字体呈现。允许值：true/false
- * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许設置執行無缝跳格，從而使用户能跳出flash應用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.devicefont 			設置静態文本對象是否以設備字體呈现。允许值：true/false
+ * @param {boolean} options.swliveconnect 		第一次加戴flash時浏覽器是否應啟動Java。允许值：true/false
  * @param {Object} 	options.vars 				要傳递给flash的参數，支持JSON或string類型。
  * 
  * @see baidu.swf.create
@@ -427,31 +427,31 @@ baidu.swf.createHTML = function (options) {
  * @grammar baidu.swf.create(options[, container])
  * 
  * @param {Object} 	options 					創建flash的選项参數
- * @param {string} 	options.id 					要創建的flash的标识
+ * @param {string} 	options.id 					要創建的flash的標识
  * @param {string} 	options.url 				flash文件的url
- * @param {String} 	options.errorMessage 		未安装flash player或flash player版本号过低时的提示
- * @param {string} 	options.ver 				最低需要的flash player版本号
+ * @param {String} 	options.errorMessage 		未安装flash player或flash player版本號過低時的提示
+ * @param {string} 	options.ver 				最低需要的flash player版本號
  * @param {string} 	options.width 				flash的宽度
  * @param {string} 	options.height 				flash的高度
  * @param {string} 	options.align 				flash的對齐方式，允许值：middle/left/right/top/bottom
- * @param {string} 	options.base 				设置用于解析swf文件中的所有相對路径语句的基本目入或URL
+ * @param {string} 	options.base 				設置用於解析swf文件中的所有相對路径語句的基本目入或URL
  * @param {string} 	options.bgcolor 			swf文件的背景色
- * @param {string} 	options.salign 				设置缩放的swf文件在由width和height设置定義的区域内的位置。允许值：l/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				是否显示右键選單，允许值：true/false
- * @param {boolean} options.loop 				播放到最后一帧时是否重新播放，允许值： true/false
- * @param {boolean} options.play 				flash是否在浏览器加载时就開始播放。允许值：true/false
- * @param {string} 	options.quality 			设置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				设置flash内容如何缩放来适应设置的宽高。允许值：showall/noborder/exactfit
- * @param {string} 	options.wmode 				设置flash的显示模式。允许值：window/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	设置flash与頁面的通信權限。允许值：always/never/sameDomain
- * @param {string} 	options.allownetworking 	设置swf文件中允许使用的网络API。允许值：all/internal/none
+ * @param {string} 	options.salign 				設置缩放的swf文件在由width和height設置定義的區域内的位置。允许值：l/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				是否顯示右鍵選單，允许值：true/false
+ * @param {boolean} options.loop 				播放到最後一帧時是否重新播放，允许值： true/false
+ * @param {boolean} options.play 				flash是否在浏覽器加戴時就開始播放。允许值：true/false
+ * @param {string} 	options.quality 			設置flash播放的画质，允许值：low/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				設置flash内容如何缩放来适應設置的宽高。允许值：showall/noborder/exactfit
+ * @param {string} 	options.wmode 				設置flash的顯示模式。允许值：window/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	設置flash与頁面的通信權限。允许值：always/never/sameDomain
+ * @param {string} 	options.allownetworking 	設置swf文件中允许使用的網路API。允许值：all/internal/none
  * @param {boolean} options.allowfullscreen 	是否允许flash全屏。允许值：true/false
- * @param {boolean} options.seamlesstabbing 	允许设置執行無缝跳格，从而使用户能跳出flash应用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
- * @param {boolean} options.devicefont 			设置静态文本對象是否以设备字体呈现。允许值：true/false
- * @param {boolean} options.swliveconnect 		第一次加载flash时浏览器是否应启动Java。允许值：true/false
+ * @param {boolean} options.seamlesstabbing 	允许設置執行無缝跳格，從而使用户能跳出flash應用程序。该参數只能在安装Flash7及更高版本的Windows中使用。允许值：true/false
+ * @param {boolean} options.devicefont 			設置静態文本對象是否以設備字體呈现。允许值：true/false
+ * @param {boolean} options.swliveconnect 		第一次加戴flash時浏覽器是否應啟動Java。允许值：true/false
  * @param {Object} 	options.vars 				要傳递给flash的参數，支持JSON或string類型。
  * 
- * @param {HTMLElement|string} [container] 		flash對象的父容器元素，不傳递该参數时在當前代码位置創建flash對象。
+ * @param {HTMLElement|string} [container] 		flash對象的父容器元素，不傳递该参數時在當前代碼位置創建flash對象。
  * @meta standard
  * @see baidu.swf.createHTML,baidu.swf.getMovie
  */
@@ -467,11 +467,11 @@ baidu.swf.create = function (options, target) {
     baidu.dom.insertHTML( target || document.body ,'beforeEnd',html );
 };
 /**
- * 判断是否為ie浏览器
+ * 判断是否為ie浏覽器
  * @name baidu.browser.ie
  * @field
  * @grammar baidu.browser.ie
- * @returns {Number} IE版本号
+ * @returns {Number} IE版本號
  */
 baidu.browser.ie = baidu.ie = /msie (\d+\.\d+)/i.test(navigator.userAgent) ? (document.documentMode || + RegExp['\x241']) : undefined;
 
@@ -485,7 +485,7 @@ baidu.browser.ie = baidu.ie = /msie (\d+\.\d+)/i.test(navigator.userAgent) ? (do
  * @meta standard
  * @see baidu.array.removeAt
  *             
- * @returns {Array} 移除后的數组
+ * @returns {Array} 移除後的數组
  */
 baidu.array.remove = function (source, match) {
     var len = source.length;
@@ -499,11 +499,11 @@ baidu.array.remove = function (source, match) {
 };
 
 /**
- * 判断目标参數是否Array對象
+ * 判断目標参數是否Array對象
  * @name baidu.lang.isArray
  * @function
  * @grammar baidu.lang.isArray(source)
- * @param {Any} source 目标参數
+ * @param {Any} source 目標参數
  * @meta standard
  * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  *             
@@ -516,14 +516,14 @@ baidu.lang.isArray = function (source) {
 
 
 /**
- * 将一個變量转换成array
+ * 將一個變量轉换成array
  * @name baidu.lang.toArray
  * @function
  * @grammar baidu.lang.toArray(source)
- * @param {mix} source 需要转换成array的變量
+ * @param {mix} source 需要轉换成array的變量
  * @version 1.3
  * @meta standard
- * @returns {array} 转换后的array
+ * @returns {array} 轉换後的array
  */
 baidu.lang.toArray = function (source) {
     if (source === null || source === undefined)
@@ -544,14 +544,14 @@ baidu.lang.toArray = function (source) {
 };
 
 /**
- * 获得flash對象的实例
+ * 獲得flash對象的實例
  * @name baidu.swf.getMovie
  * @function
  * @grammar baidu.swf.getMovie(name)
  * @param {string} name flash對象的名稱
  * @see baidu.swf.create
  * @meta standard
- * @returns {HTMLElement} flash對象的实例
+ * @returns {HTMLElement} flash對象的實例
  */
 baidu.swf.getMovie = function (name) {
 	var movie = document[name], ret;
@@ -593,9 +593,9 @@ baidu.flash._Base = (function(){
     };
 
     /**
-     * 调用之前进行压栈的函數
+     * 调用之前進行壓栈的函數
      * @private
-     * @param {Array} callQueue 调用队列
+     * @param {Array} callQueue 调用隊列
      * @param {Object} target flash對象
      * @return {Null}
      */
@@ -660,7 +660,7 @@ baidu.flash._Base = (function(){
             callBack = callBack || [];
 
         /**
-         * 将flash文件绘制到頁面上
+         * 將flash文件绘制到頁面上
          * @public
          * @return {Null}
          */
@@ -687,7 +687,7 @@ baidu.flash._Base = (function(){
          * 调用flash接口的统一入口
          * @param {String} fnName 调用的函數名
          * @param {Array} params 傳入的参數组成的數组,若不许要参數，需傳入空數组
-         * @param {Function} [callBack] 異步调用后将返回值作為参數的调用回调函數，如無返回值，可以不傳入此参數
+         * @param {Function} [callBack] 異步调用後將返回值作為参數的调用回调函數，如無返回值，可以不傳入此参數
          * @return {Null}
         */
         me.call = function(fnName, params, callBack){
@@ -721,7 +721,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * 检查flash是否ready， 并进行调用
+         * 检查flash是否ready， 並進行调用
          * @private
          * @return {Null}
          */
@@ -736,7 +736,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * 调用之前进行压栈的函數
+         * 调用之前進行壓栈的函數
          * @private
          * @return {Null}
          */
@@ -755,32 +755,32 @@ baidu.flash._Base = (function(){
  * 創建flash based imageUploader
  * @class
  * @grammar baidu.flash.imageUploader(options)
- * @param {Object} createOptions 創建flash时需要的参數，请参照baidu.swf.create文档
- * @config {Object} vars 創建imageUploader时所需要的参數
- * @config {Number} vars.gridWidth 每一個预览圖片所占的宽度，应该為flash寛的整除
- * @config {Number} vars.gridHeight 每一個预览圖片所占的高度，应该為flash高的整除
- * @config {Number} vars.picWidth 單张预览圖片的宽度
- * @config {Number} vars.picHeight 單张预览圖片的高度
- * @config {String} vars.uploadDataFieldName POST请求中圖片數據的key,默認值'picdata'
- * @config {String} vars.picDescFieldName POST请求中圖片描述的key,默認值'picDesc'
- * @config {Number} vars.maxSize 文件的最大体积,單位'MB'
- * @config {Number} vars.compressSize 上傳前如果圖片体积超过该值，会先压缩
+ * @param {Object} createOptions 創建flash時需要的参數，請参照baidu.swf.create文档
+ * @config {Object} vars 創建imageUploader時所需要的参數
+ * @config {Number} vars.gridWidth 每一個预覽圖片所占的宽度，應该為flash寛的整除
+ * @config {Number} vars.gridHeight 每一個预覽圖片所占的高度，應该為flash高的整除
+ * @config {Number} vars.picWidth 單张预覽圖片的宽度
+ * @config {Number} vars.picHeight 單张预覽圖片的高度
+ * @config {String} vars.uploadDataFieldName POST請求中圖片數據的key,默認值'picdata'
+ * @config {String} vars.picDescFieldName POST請求中圖片描述的key,默認值'picDesc'
+ * @config {Number} vars.maxSize 文件的最大體积,單位'MB'
+ * @config {Number} vars.compressSize 上傳前如果圖片體积超過该值，會先壓缩
  * @config {Number} vars.maxNum:32 最大上傳多少個文件
- * @config {Number} vars.compressLength 能接受的最大边长，超过该值会等比压缩
+ * @config {Number} vars.compressLength 能接受的最大边长，超過该值會等比壓缩
  * @config {String} vars.url 上傳的url地址
- * @config {Number} vars.mode mode == 0时，是使用滚动条，mode == 1时，拉伸flash, 默認值為0
+ * @config {Number} vars.mode mode == 0時，是使用滚動條，mode == 1時，拉伸flash, 默認值為0
  * @see baidu.swf.createHTML
  * @param {String} backgroundUrl 背景圖片路径
  * @param {String} listBacgroundkUrl 布局控件背景
  * @param {String} buttonUrl 按钮圖片不背景
  * @param {String|Function} selectFileCallback 選擇文件的回调
- * @param {String|Function} exceedFileCallback文件超出限制的最大体积时的回调
- * @param {String|Function} deleteFileCallback 删除文件的回调
- * @param {String|Function} startUploadCallback 開始上傳某個文件时的回调
+ * @param {String|Function} exceedFileCallback文件超出限制的最大體积時的回调
+ * @param {String|Function} deleteFileCallback 刪除文件的回调
+ * @param {String|Function} startUploadCallback 開始上傳某個文件時的回调
  * @param {String|Function} uploadCompleteCallback 某個文件上傳完成的回调
  * @param {String|Function} uploadErrorCallback 某個文件上傳失败的回调
- * @param {String|Function} allCompleteCallback 全部上傳完成时的回调
- * @param {String|Function} changeFlashHeight 改變Flash的高度，mode==1的时候才有用
+ * @param {String|Function} allCompleteCallback 全部上傳完成時的回调
+ * @param {String|Function} changeFlashHeight 改變Flash的高度，mode==1的時候才有用
  */ 
 baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
    
@@ -797,7 +797,7 @@ baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
             'changeFlashHeight'
         ]);
     /**
-     * 開始或回复上傳圖片
+     * 開始或回複上傳圖片
      * @public
      * @return {Null}
      */
@@ -826,23 +826,23 @@ baidu.object = baidu.object || {};
 
 
 /**
- * 将源對象的所有属性拷贝到目标對象中
+ * 將源對象的所有屬性拷贝到目標對象中
  * @author erik
  * @name baidu.object.extend
  * @function
  * @grammar baidu.object.extend(target, source)
- * @param {Object} target 目标對象
+ * @param {Object} target 目標對象
  * @param {Object} source 源對象
  * @see baidu.array.merge
  * @remark
  * 
-1.目标對象中，与源對象key相同的成员将会被覆盖。<br>
-2.源對象的prototype成员不会拷贝。
+1.目標對象中，与源對象key相同的成员將會被覆盖。<br>
+2.源對象的prototype成员不會拷贝。
 		
  * @shortcut extend
  * @meta standard
  *             
- * @returns {Object} 目标對象
+ * @returns {Object} 目標對象
  */
 baidu.extend =
 baidu.object.extend = function (target, source) {
@@ -864,7 +864,7 @@ baidu.object.extend = function (target, source) {
  * @class
  * @grammar baidu.flash.fileUploader(options)
  * @param {Object} options
- * @config {Object} createOptions 創建flash时需要的参數，请参照baidu.swf.create文档
+ * @config {Object} createOptions 創建flash時需要的参數，請参照baidu.swf.create文档
  * @config {String} createOptions.width
  * @config {String} createOptions.height
  * @config {Number} maxNum 最大可選文件數
@@ -897,7 +897,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     _flash.call('setMaxNum', options.maxNum ? [options.maxNum] : [1]);
 
     /**
-     * 设置當鼠标移动到flash上时，是否變成手型
+     * 設置當鼠標移動到flash上時，是否變成手型
      * @public
      * @param {Boolean} isCursor
      * @return {Null}
@@ -907,7 +907,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 设置鼠标相应函數名
+     * 設置鼠標相應函數名
      * @param {String|Function} fun
      */
     me.setMSFunName = function(fun){
@@ -918,7 +918,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
      * 執行上傳操作
      * @param {String} url 上傳的url
      * @param {String} fieldName 上傳的表單字段名
-     * @param {Object} postData 键值對，上傳的POST數據
+     * @param {Object} postData 鍵值對，上傳的POST數據
      * @param {Number|Array|null|-1} [index]上傳的文件序列
      *                            Int值上傳该文件
      *                            Array一次串行上傳该序列文件
@@ -944,9 +944,9 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 删除文件
+     * 刪除文件
      * @public
-     * @param {Number|Array} [index] 要删除的index，不傳则全部删除
+     * @param {Number|Array} [index] 要刪除的index，不傳則全部刪除
      * @param {Function} callBack
      * */
     me.deleteFile = function(index, callBack){
@@ -984,7 +984,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
     
     /**
-     * 设置文件類型，支持macType
+     * 設置文件類型，支持macType
      * @public
      * @param {Object|Array[Object]} type {description:String, extention:String}
      * @return {Null};
@@ -998,7 +998,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 设置可選文件的數量限制
+     * 設置可選文件的數量限制
      * @public
      * @param {Number} num
      * @return {Null}
@@ -1008,7 +1008,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * 设置可選文件大小限制，以兆M為單位
+     * 設置可選文件大小限制，以兆M為單位
      * @public
      * @param {Number} num,0為無限制
      * @return {Null}
@@ -1044,16 +1044,16 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
 };
 
 /**
- * 使用动态script標簽请求服务器资源，包括由服务器端的回调和浏览器端的回调
+ * 使用動態script標簽請求服務器资源，包括由服務器端的回调和浏覽器端的回调
  * @namespace baidu.sio
  */
 baidu.sio = baidu.sio || {};
 
 /**
  * 
- * @param {HTMLElement} src script节点
- * @param {String} url script节点的地址
- * @param {String} [charset] 编码
+ * @param {HTMLElement} src script節點
+ * @param {String} url script節點的地址
+ * @param {String} [charset] 编碼
  */
 baidu.sio._createScriptTag = function(scr, url, charset){
     scr.setAttribute('type', 'text/javascript');
@@ -1063,9 +1063,9 @@ baidu.sio._createScriptTag = function(scr, url, charset){
 };
 
 /**
- * 删除script的属性，再删除script標簽，以解决修复内存泄漏的問题
+ * 刪除script的屬性，再刪除script標簽，以解决修複内存泄漏的問题
  * 
- * @param {HTMLElement} src script节点
+ * @param {HTMLElement} src script節點
  */
 baidu.sio._removeScriptTag = function(scr){
     if (scr.clearAttributes) {
@@ -1085,19 +1085,19 @@ baidu.sio._removeScriptTag = function(scr){
 
 
 /**
- * 通过script標簽加载數據，加载完成由浏览器端触發回调
+ * 通過script標簽加戴數據，加戴完成由浏覽器端觸發回调
  * @name baidu.sio.callByBrowser
  * @function
  * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
- * @param {string} url 加载數據的url
- * @param {Function|string} opt_callback 數據加载结束时调用的函數或函數名
+ * @param {string} url 加戴數據的url
+ * @param {Function|string} opt_callback 數據加戴结束時调用的函數或函數名
  * @param {Object} opt_options 其他可選项
  * @config {String} [charset] script的字符集
- * @config {Integer} [timeOut] 超时時間，超过這個時間将不再响应本请求，并触發onfailure函數
- * @config {Function} [onfailure] timeOut设定后才生效，到达超时時間时触發本函數
+ * @config {Integer} [timeOut] 超時時間，超過這個時間將不再嚮應本請求，並觸發onfailure函數
+ * @config {Function} [onfailure] timeOut設定後才生效，到达超時時間時觸發本函數
  * @remark
  * 1、与callByServer不同，callback参數只支持Function類型，不支持string。
- * 2、如果请求了一個不存在的頁面，callback函數在IE/opera下也会被调用，因此使用者需要在onsuccess函數中判断數據是否正确加载。
+ * 2、如果請求了一個不存在的頁面，callback函數在IE/opera下也會被调用，因此使用者需要在onsuccess函數中判断數據是否正確加戴。
  * @meta standard
  * @see baidu.sio.callByServer
  */
@@ -1141,19 +1141,19 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
 };
 
 /**
- * 通过script標簽加载數據，加载完成由服务器端触發回调
+ * 通過script標簽加戴數據，加戴完成由服務器端觸發回调
  * @name baidu.sio.callByServer
  * @function
  * @grammar baidu.sio.callByServer(url, callback[, opt_options])
- * @param {string} url 加载數據的url.
- * @param {Function|string} callback 服务器端调用的函數或函數名。如果没有指定本参數，将在URL中寻找options['queryField']做為callback的方法名.
- * @param {Object} opt_options 加载數據时的選项.
+ * @param {string} url 加戴數據的url.
+ * @param {Function|string} callback 服務器端调用的函數或函數名。如果没有指定本参數，將在URL中寻找options['queryField']做為callback的方法名.
+ * @param {Object} opt_options 加戴數據時的選项.
  * @config {string} [charset] script的字符集
- * @config {string} [queryField] 服务器端callback请求字段名，默認為callback
- * @config {Integer} [timeOut] 超时時間(單位：ms)，超过這個時間将不再响应本请求，并触發onfailure函數
- * @config {Function} [onfailure] timeOut设定后才生效，到达超时時間时触發本函數
+ * @config {string} [queryField] 服務器端callback請求字段名，默認為callback
+ * @config {Integer} [timeOut] 超時時間(單位：ms)，超過這個時間將不再嚮應本請求，並觸發onfailure函數
+ * @config {Function} [onfailure] timeOut設定後才生效，到达超時時間時觸發本函數
  * @remark
- * 如果url中已经包含key為“options['queryField']”的query项，将会被替换成callback中参數傳递或自動生成的函數名。
+ * 如果url中已經包含key為“options['queryField']”的query项，將會被替换成callback中参數傳递或自動生成的函數名。
  * @meta standard
  * @see baidu.sio.callByBrowser
  */
@@ -1192,7 +1192,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
     baidu.sio._createScriptTag(scr, url, charset);
 
     /*
-     * 返回一個函數，用于立即（挂在window上）或者超时（挂在setTimeout中）时執行
+     * 返回一個函數，用於立即（挂在window上）或者超時（挂在setTimeout中）時執行
      */
     function getCallBack(onTimeOut){
         /*global callbackName, callback, scr, options;*/
@@ -1215,7 +1215,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
 };
 
 /**
- * 通过请求一個圖片的方式令服务器存储一条Log
+ * 通過請求一個圖片的方式令服務器存儲一條Log
  * @function
  * @grammar baidu.sio.log(url)
  * @param {string} url 要發送的地址.
@@ -1267,20 +1267,20 @@ baidu.json = baidu.json || {};
 
 
 /**
- * 将字符串解析成json對象。注：不会自動祛除空格
+ * 將字符串解析成json對象。注：不會自動祛除空格
  * @name baidu.json.parse
  * @function
  * @grammar baidu.json.parse(data)
  * @param {string} source 需要解析的字符串
  * @remark
- * 该方法的实现与ecma-262第五版中规定的JSON.parse不同，暂时只支持傳入一個参數。后续会进行功能丰富。
+ * 该方法的實现与ecma-262第五版中规定的JSON.parse不同，暂時只支持傳入一個参數。後續會進行功能丰富。
  * @meta standard
  * @see baidu.json.stringify,baidu.json.decode
  *             
  * @returns {JSON} 解析结果json對象
  */
 baidu.json.parse = function (data) {
-    //2010/12/09：更新至不使用原生parse，不检测用户输入是否正确
+    //2010/12/09：更新至不使用原生parse，不检测用户输入是否正確
     return (new Function("return (" + data + ")"))();
 };
 /*
@@ -1296,7 +1296,7 @@ baidu.json.parse = function (data) {
 
 
 /**
- * 将字符串解析成json對象，為过时接口，今后会被baidu.json.parse代替
+ * 將字符串解析成json對象，為過時接口，今後會被baidu.json.parse代替
  * @name baidu.json.decode
  * @function
  * @grammar baidu.json.decode(source)
@@ -1320,21 +1320,21 @@ baidu.json.decode = baidu.json.parse;
 
 
 /**
- * 将json對象序列化
+ * 將json對象序列化
  * @name baidu.json.stringify
  * @function
  * @grammar baidu.json.stringify(value)
  * @param {JSON} value 需要序列化的json對象
  * @remark
- * 该方法的实现与ecma-262第五版中规定的JSON.stringify不同，暂时只支持傳入一個参數。后续会进行功能丰富。
+ * 该方法的實现与ecma-262第五版中规定的JSON.stringify不同，暂時只支持傳入一個参數。後續會進行功能丰富。
  * @meta standard
  * @see baidu.json.parse,baidu.json.encode
  *             
- * @returns {string} 序列化后的字符串
+ * @returns {string} 序列化後的字符串
  */
 baidu.json.stringify = (function () {
     /**
-     * 字符串處理时需要转義的字符表
+     * 字符串處理時需要轉義的字符表
      * @private
      */
     var escapeMap = {
@@ -1399,7 +1399,7 @@ baidu.json.stringify = (function () {
     }
     
     /**
-     * 處理日期序列化时的补零
+     * 處理日期序列化時的补零
      * @private
      */
     function pad(source) {
@@ -1482,7 +1482,7 @@ baidu.json.stringify = (function () {
 
 
 /**
- * 将json對象序列化，為过时接口，今后会被baidu.json.stringify代替
+ * 將json對象序列化，為過時接口，今後會被baidu.json.stringify代替
  * @name baidu.json.encode
  * @function
  * @grammar baidu.json.encode(value)
@@ -1490,6 +1490,6 @@ baidu.json.stringify = (function () {
  * @meta out
  * @see baidu.json.decode,baidu.json.stringify
  *             
- * @returns {string} 序列化后的字符串
+ * @returns {string} 序列化後的字符串
  */
 baidu.json.encode = baidu.json.stringify;

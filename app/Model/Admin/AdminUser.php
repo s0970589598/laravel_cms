@@ -30,7 +30,7 @@ class AdminUser extends Authenticatable
             'title' => '狀態',
             'enums' => [
                 0 => '禁用',
-                1 => '启用',
+                1 => '啟用',
             ],
         ],
         'created_at' => [

@@ -41,7 +41,7 @@ class EntityRequest extends FormRequest
     {
         return [
             'name.required' => '名稱不能為空',
-            'name.max' => '名稱长度不能大于50',
+            'name.max' => '名稱长度不能大於50',
             'table_name.regex' => '資料庫表名不合规范',
         ];
     }

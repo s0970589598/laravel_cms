@@ -91,7 +91,7 @@ class EntityRepository
         }
 
         try {
-            // 仅在 Mysql 下测试通过，不支持 Sqlite
+            // 僅在 Mysql 下测试通過，不支持 Sqlite
             DB::statement("CREATE TABLE {$tableName} LIKE {$entity->table_name}");
 
             DB::beginTransaction();
@@ -177,7 +177,7 @@ class EntityRepository
             '内容列表數據接口' => 'admin::content.list',
             '内容列表' => 'admin::content.index',
             '編輯内容' => 'admin::content.edit',
-            '删除内容' => 'admin::content.delete',
+            '刪除内容' => 'admin::content.delete',
             '新增内容' => 'admin::content.create',
             '内容批量操作' => 'admin::content.batch',
         ];

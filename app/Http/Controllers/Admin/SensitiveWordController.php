@@ -35,9 +35,9 @@ class SensitiveWordController extends Controller
         $this->breadcrumb[] = ['title' => '敏感詞列表', 'url' => ''];
         $this->setSearchField();
         SensitiveWord::$listField = [
-            'verb' => '动词',
-            'noun' => '名词',
-            'exclusive' => '專有词',
+            'verb' => '動詞',
+            'noun' => '名詞',
+            'exclusive' => '專有詞',
         ];
         return view('admin.SensitiveWord.index', ['breadcrumb' => $this->breadcrumb]);
     }
@@ -61,9 +61,9 @@ class SensitiveWordController extends Controller
     private function setSearchField()
     {
         SensitiveWord::$searchField = [
-            'verb' => '动词',
-            'noun' => '名词',
-            'exclusive' => '專有词',
+            'verb' => '動詞',
+            'noun' => '名詞',
+            'exclusive' => '專有詞',
         ];
     }
 
@@ -80,7 +80,7 @@ class SensitiveWordController extends Controller
         if (count($data) > 1) {
             return [
             'code' => 4,
-                'msg' => '專有词、动词、名词不可同时填写，任選一個填写即可',
+                'msg' => '專有詞、動詞、名詞不可同時填寫，任選一個填寫即可',
                 'redirect' => false
             ];
         }
@@ -93,7 +93,7 @@ class SensitiveWordController extends Controller
             if ($m && ($m->id != $id)) {
                 return [
                 'code' => 4,
-                    'msg' => '當前词已存在',
+                    'msg' => '當前詞已存在',
                     'redirect' => false
                 ];
             }
@@ -134,7 +134,7 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -179,14 +179,14 @@ class SensitiveWordController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前敏感詞已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 敏感詞管理-删除敏感詞
+     * 敏感詞管理-刪除敏感詞
      *
      * @param int $id
      */
@@ -197,13 +197,13 @@ class SensitiveWordController extends Controller
             $this->flushCache();
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => route('admin::SensitiveWord.index')
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

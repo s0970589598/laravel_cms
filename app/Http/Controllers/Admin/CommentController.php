@@ -86,14 +86,14 @@ class CommentController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前評論已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前評論已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 評論管理-删除評論
+     * 評論管理-刪除評論
      *
      * @param int $id
      * @return array
@@ -111,13 +111,13 @@ class CommentController extends Controller
             if (CommentRepository::hasChildren($id)) {
                 return [
                     'code' => 2,
-                    'msg' => '删除失败：只允许删除無回复的評論',
+                    'msg' => '刪除失败：只允许刪除無回複的評論',
                 ];
             }
 
             DB::transaction(function () use ($id, $comment) {
                 CommentRepository::delete($id);
-                // 回复數-1
+                // 回複數-1
                 CommentRepository::decrementReplyCount($comment->rid);
                 // 清除缓存
                 Cache::forget('comment_replay:' . $comment->rid);
@@ -125,13 +125,13 @@ class CommentController extends Controller
 
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => route('admin::comment.index')
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

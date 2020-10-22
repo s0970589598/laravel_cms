@@ -17,7 +17,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">資料庫表名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="table_name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->table_name ?? ''  }}" placeholder="模型對应的資料庫表名稱，保存后不能修改" @isset($model->table_name) disabled @endisset>
+                            <input type="text" name="table_name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->table_name ?? ''  }}" placeholder="模型對應的資料庫表名稱，保存後不能修改" @isset($model->table_name) disabled @endisset>
                         </div>
                     </div>
                     @if(!isset($id))
@@ -26,7 +26,7 @@
                         <div class="layui-input-inline" style="width: 50px;">
                             <input type="checkbox" name="is_modify_db" lay-skin="switch" lay-text="是|否" value="1" checked>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表已经通过其它方式建好，此處無需新建資料庫表，添加模型主要是方便利用框架提供的模型增删改查功能</div>
+                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表已經通過其它方式建好，此處無需新建資料庫表，添加模型主要是方便利用框架提供的模型增刪改查功能</div>
                     </div>
                     @endif
                     <div class="layui-form-item">
@@ -41,20 +41,20 @@
                             <input type="radio" name="is_internal" value="1" title="是"  @if(!isset($model) || isset($model) && $model->is_internal == App\Model\Admin\Entity::INTERNAL_YES) checked @endif>
                             <input type="radio" name="is_internal" value="0" title="否"  @if(isset($model) && $model->is_internal == App\Model\Admin\Entity::INTERNAL_NO) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">内部模型前台不可直接访問</div>
+                        <div class="layui-form-mid layui-word-aux">内部模型前台不可直接訪問</div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">列表显示</label>
+                        <label class="layui-form-label">列表顯示</label>
                         <div class="layui-input-inline">
                             <input type="radio" name="is_show_content_manage" value="1" title="是"  @if(!isset($model) || isset($model) && $model->is_show_content_manage == App\Model\Admin\Entity::CONTENT_MANAGE_YES) checked @endif>
                             <input type="radio" name="is_show_content_manage" value="0" title="否"  @if(isset($model) && $model->is_show_content_manage == App\Model\Admin\Entity::CONTENT_MANAGE_NO) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">是否显示在内容管理列表中</div>
+                        <div class="layui-form-mid layui-word-aux">是否顯示在内容管理列表中</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">評論</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="enable_comment" value="1" title="启用"  @if(!isset($model) || isset($model) && $model->enable_comment == App\Model\Admin\Entity::COMMENT_ENABLE) checked @endif>
+                            <input type="radio" name="enable_comment" value="1" title="啟用"  @if(!isset($model) || isset($model) && $model->enable_comment == App\Model\Admin\Entity::COMMENT_ENABLE) checked @endif>
                             <input type="radio" name="enable_comment" value="0" title="禁用"  @if(isset($model) && $model->enable_comment == App\Model\Admin\Entity::COMMENT_DISABLE) checked @endif>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

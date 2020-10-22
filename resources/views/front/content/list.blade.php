@@ -60,9 +60,9 @@
         <div class="w-full mx-auto flex flex-wrap">
             <div class="flex w-full md:w-1/2 ">
                 <div class="px-8">
-                    <h3 class="font-bold text-black">關于</h3>
+                    <h3 class="font-bold text-black">關於</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一個基于Laravel開發的轻量级CMS系统，也可以作為一個通用的后台管理框架使用。
+                        lightCMS是一個基於Laravel開發的輕量級CMS係统，也可以作為一個通用的後台管理框架使用。
                     </p>
                 </div>
             </div>

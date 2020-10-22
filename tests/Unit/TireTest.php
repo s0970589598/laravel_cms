@@ -9,12 +9,12 @@ class TireTest extends TestCase
     public function testCheckSensitiveWord()
     {
         $sensitiveWords = [
-            '激情视频',
+            '激情視频',
             '高清AV',
             '激情床戲',
             '主席'
         ];
-        $str = '小明很激动，看了一個不错的主激情视频，你那有高清AV视频嗎？';
+        $str = '小明很激動，看了一個不錯的主激情視频，你那有高清AV視频嗎？';
 
         $tire = new \App\Foundation\Tire();
         foreach ($sensitiveWords as $v) {
@@ -22,6 +22,6 @@ class TireTest extends TestCase
         }
         $result = $tire->seek($str);
 
-        $this->assertEquals(['激情视频', '高清AV'], $result);
+        $this->assertEquals(['激情視频', '高清AV'], $result);
     }
 }

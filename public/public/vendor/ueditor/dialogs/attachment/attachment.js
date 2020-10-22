@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上傳圖片對话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
+ * 上傳圖片對话框逻辑代碼,包括tab: 遠程圖片/上傳圖片/在線圖片/搜索圖片
  */
 
 (function () {
@@ -69,7 +69,7 @@
                     list = uploadFile.getInsertList();
                     var count = uploadFile.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '還有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -104,9 +104,9 @@
                 $wrap = _this.$wrap,
             // 圖片容器
                 $queue = $wrap.find('.filelist'),
-            // 狀態栏，包括进度和控制按钮
+            // 狀態栏，包括進度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件总体選擇信息。
+            // 文件總體選擇信息。
                 $info = $statusBar.find('.info'),
             // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
@@ -116,11 +116,11 @@
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-            // 总体进度条
+            // 總體進度條
                 $progress = $statusBar.find('.progress').hide(),
             // 添加的文件數量
                 fileCount = 0,
-            // 添加的文件总大小
+            // 添加的文件總大小
                 fileSize = 0,
             // 优化retina, 在retina下這個值是2
                 ratio = window.devicePixelRatio || 1,
@@ -129,7 +129,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度信息，key為file id
+            // 所有文件的進度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -141,7 +141,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploader实例
+            // WebUploader實例
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('fileActionName')),
                 fileMaxSize = editor.getOpt('fileMaxSize'),
@@ -177,7 +177,7 @@
 
             setState('pedding');
 
-            // 當有文件添加进来时執行，负责view的創建
+            // 當有文件添加進来時執行，负责view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -484,7 +484,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這里可以通过data對象添加POST参數
+                //這里可以通過data對象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -564,7 +564,7 @@
     };
 
 
-    /* 在线附件 */
+    /* 在線附件 */
     function OnlineFile(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -587,11 +587,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自動拉取數據 */
+        /* 初始化滚動事件,滚動到地步自動拉取數據 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取圖片 */
+            /* 滚動拉取圖片 */
             domUtils.on($G('fileList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
@@ -624,7 +624,7 @@
             /* 第一次拉取數據 */
             this.getFileData();
         },
-        /* 向后台拉取圖片列表數據 */
+        /* 向後台拉取圖片列表數據 */
         getFileData: function () {
             var _this = this;
 

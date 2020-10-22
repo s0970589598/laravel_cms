@@ -15,9 +15,9 @@
                     </div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">标志符</label>
+                        <label class="layui-form-label">標誌符</label>
                         <div class="layui-input-block">
-                            <input type="text" name="key" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->key ?? ''  }}" placeholder="數字、字母或下划线组成，长度不超过100">
+                            <input type="text" name="key" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->key ?? ''  }}" placeholder="數字、字母或下底線组成，长度不超過100">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">备注</label>
+                        <label class="layui-form-label">備註</label>
                         <div class="layui-input-block">
                             <textarea name="remark" class="layui-textarea">{{ $model->remark ?? ''  }}</textarea>
                         </div>
@@ -63,7 +63,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
                     $value = is_numeric($replace) ? $replace : "'" . $replace . "'";
                     $sqlStr = preg_replace('/\?/', $value, $sqlStr, 1);
                 }
-                \Log::debug(PHP_EOL . 'SQL：' . $sqlStr . PHP_EOL . '用时：' . $sql->time . 'ms');
+                \Log::debug(PHP_EOL . 'SQL：' . $sqlStr . PHP_EOL . '用時：' . $sql->time . 'ms');
                 return true;
             });
         }

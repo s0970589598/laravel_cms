@@ -21,16 +21,16 @@ var ajax_options = {
             layer.msg('资源不存在', {icon: 5});
             return false;
         } else if (resp.status === 401) {
-            layer.msg('请先登入', {shift: 6});
+            layer.msg('請先登入', {shift: 6});
             return false;
         } else if (resp.status === 429) {
-            layer.msg('访問过于频繁，请稍后再试', {shift: 6});
+            layer.msg('訪問過於频繁，請稍後再试', {shift: 6});
             return false;
         } else if (resp.status === 419) {
-            layer.msg('非法请求。请刷新頁面后重试。', {shift: 6});
+            layer.msg('非法請求。請刷新頁面後重试。', {shift: 6});
             return false;
         } else if (resp.status === 500) {
-            layer.msg('内部错误，请联系管理員', {shift: 6});
+            layer.msg('内部錯誤，請聯係管理員', {shift: 6});
             return false;
         } else {
             var parse = $.parseJSON(resp.responseText);

@@ -46,7 +46,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'name.required' => '名稱不能為空',
-            'name.max' => '名稱长度不能大于50',
+            'name.max' => '名稱长度不能大於50',
         ];
     }
 }

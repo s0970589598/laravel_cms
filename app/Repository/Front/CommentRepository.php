@@ -21,12 +21,12 @@ class CommentRepository
             ->paginate($perPage);
 
         if ($condition['rid'][1] > 0) {
-            // 接口直接请求評論的回复數據，则直接返回
+            // 接口直接請求評論的回複數據，則直接返回
             return $data;
         }
 
         $data->transform(function ($item) use ($perPage) {
-            // 获取評論回复
+            // 獲取評論回複
             $reply = self::reply($item->id, $perPage);
             $item->reply = $reply;
             return $item;
@@ -60,7 +60,7 @@ class CommentRepository
             $logs = CommentOperateLog::query()->select('operate')->
                 where('user_id', $uid)->where('comment_id', $id)->get();
             if ($logs->isEmpty()) {
-                // 未操作则直接返回
+                // 未操作則直接返回
                 return true;
             }
 
@@ -84,7 +84,7 @@ class CommentRepository
             $log = CommentOperateLog::query()->where('user_id', $uid)->where('comment_id', $id)
                 ->where('operate', $operate)->lockForUpdate()->first();
             if ($log) {
-                // 已操作则直接返回
+                // 已操作則直接返回
                 return true;
             }
 
@@ -92,7 +92,7 @@ class CommentRepository
             $log = CommentOperateLog::query()->where('user_id', $uid)->where('comment_id', $id)
                 ->where('operate', $oppositeOperate)->lockForUpdate()->first();
             if ($log) {
-                // 存在反操作则递减數量并更新操作類型
+                // 存在反操作則递减數量並更新操作類型
                 Comment::query()->where('id', $id)->decrement($oppositeOperate);
                 $log->operate = $operate;
                 $log->save();

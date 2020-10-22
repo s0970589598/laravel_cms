@@ -236,7 +236,7 @@ class ContentController extends Controller
                 EntityFieldRepository::getSaveFields($entity)
             ), $this->entity);
 
-            // 標簽類型字段另外處理 多對多關联
+            // 標簽類型字段另外處理 多對多關聯
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField) {
@@ -264,7 +264,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
                 'redirect' => false
             ];
         }
@@ -315,7 +315,7 @@ class ContentController extends Controller
             DB::beginTransaction();
 
             ContentRepository::update($id, $data, $this->entity);
-            // 標簽類型字段另外處理 多對多關联
+            // 標簽類型字段另外處理 多對多關聯
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField && intval($inputTagsField->is_edit) === EntityField::EDIT_ENABLE) {
@@ -346,14 +346,14 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 内容管理-删除内容
+     * 内容管理-刪除内容
      *
      * @param int $id
      */
@@ -366,13 +366,13 @@ class ContentController extends Controller
 
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'reload' => true
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }
@@ -391,7 +391,7 @@ class ContentController extends Controller
         if (!is_array($ids)) {
             return [
                 'code' => 1,
-                'msg' => '参數错误'
+                'msg' => '参數錯误'
             ];
         }
         $ids = array_map(function ($item) {

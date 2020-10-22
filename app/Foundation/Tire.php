@@ -3,10 +3,10 @@
 namespace App\Foundation;
 
 /**
- * 代码基于 https://github.com/whiteCcinn/tire-php 修改而来
+ * 代碼基於 https://github.com/whiteCcinn/tire-php 修改而来
  *
- * 修复了首個敏感字连接在一起無法查出敏感詞的bug
- * 修复了还原字符串时未能正确處理ascii字符的bug
+ * 修複了首個敏感字連接在一起無法查出敏感詞的bug
+ * 修複了還原字符串時未能正確處理ascii字符的bug
  */
 class Tire
 {
@@ -50,7 +50,7 @@ class Tire
             $code = $this->utf8TransformAscii($word);
             $tree = &$this->beginFind($tree, $code, $sensitive);
             if (isset($tree['end'])) {
-                // 匹配到了词
+                // 匹配到了詞
                 !$this->exist($sensitive, $statistics) && $match[] = $this->asciiTransformUtf8($sensitive);
             }
         }
@@ -104,7 +104,7 @@ class Tire
     }
 
     /**
-     * 單字符转换编码
+     * 單字符轉换编碼
      *
      * @param $utf8_str
      * @return string
@@ -123,7 +123,7 @@ class Tire
     }
 
     /**
-     * 编码转單字符
+     * 编碼轉單字符
      *
      * @param $ascii
      * @return string

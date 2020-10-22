@@ -6,14 +6,14 @@
 
 ## 新版發佈
 
-2.1 發佈，此次版本移除了編輯相關代码，纯 ajax 送出，请配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者云存储。
+2.1 發佈，此次版本移除了編輯相關代碼，纯 ajax 送出，請配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者雲存儲。
 
 ## 捐赠
 
 该项目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此项目的發展。
 
 
-## 第一步：下载編輯器
+## 第一步：下戴編輯器
 
 **方式一：完整安装包 （推荐）**
 
@@ -31,9 +31,9 @@ npm install
 npm run build
 ```
 
-### 第二步：在浏览器打開 index.html ###
+### 第二步：在浏覽器打開 index.html ###
 
-进入到目入 `dist` , 使用浏览器打開文件 `index.html` 。
+進入到目入 `dist` , 使用浏覽器打開文件 `index.html` 。
 
 如果看到了下面這樣的編輯器，恭喜你，初次部署成功！
 
@@ -47,8 +47,8 @@ npm run build
 
 ## 技术支持
 
-该项目基于 MIT 协议開源，任何组织/企业以及個人都可以免费使用（保留版权）。    
-如果您需要额外商业技术支持或者定制編輯器，请联系 QQ：1256985886
+该项目基於 MIT 协議開源，任何组织/企業以及個人都可以免费使用（保留版权）。    
+如果您需要额外商業技术支持或者定制編輯器，請聯係 QQ：1256985886
 
 
 
@@ -56,7 +56,7 @@ npm run build
 
 ### 自定義的参數
 
-編輯器有很多可自定義的参數项，在实例化的时候可以傳入给編輯器：
+編輯器有很多可自定義的参數项，在實例化的時候可以傳入给編輯器：
 
 ```javascript
 var ue = UE.getEditor('container', {
@@ -64,33 +64,33 @@ var ue = UE.getEditor('container', {
 });
 ```
 
-配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项說明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项說明.md)、[編輯配置项說明](http://fex.baidu.com/ueditor/#server-config)
+配置项也可以通過 `neditor.config.js` 文件修改，具體的配置方法請看 [前端配置项說明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项說明.md)、[編輯配置项說明](http://fex.baidu.com/ueditor/#server-config)
 
-### 編輯器圖片、视频、涂鸦、附件上傳service
+### 編輯器圖片、視频、涂鸦、附件上傳service
 
-編輯器上傳逻辑單独在 `neditor.service.js` 文件配置，具体的配置方法见注譯
+編輯器上傳逻辑單獨在 `neditor.service.js` 文件配置，具體的配置方法见注譯
 
-### 设置和读取編輯器的内容
+### 設置和讀取編輯器的内容
 
-通 getContent 和 setContent 方法可以设置和读取編輯器的内容
+通 getContent 和 setContent 方法可以設置和讀取編輯器的内容
 
 ```javascript
 var ue = UE.getContent();
 ue.ready(function(){
-    //设置編輯器的内容
+    //設置編輯器的内容
     ue.setContent('hello');
-    //获取html内容，返回: <p>hello</p>
+    //獲取html内容，返回: <p>hello</p>
     var html = ue.getContent();
-    //获取纯文本内容，返回: hello
+    //獲取纯文本内容，返回: hello
     var txt = ue.getContentTxt();
 });
 ```
 
-Ueditor 的更多API请看[API 文档](http://ueditor.baidu.com/doc "ueditor API 文档")
+Ueditor 的更多API請看[API 文档](http://ueditor.baidu.com/doc "ueditor API 文档")
 
-##  下载地址
+##  下戴地址
 
-Neditor 码云： [http://gitee.com/notadd/neditor](http://gitee.com/notadd/neditor "Neditor github 地址")
+Neditor 碼雲： [http://gitee.com/notadd/neditor](http://gitee.com/notadd/neditor "Neditor github 地址")
 
 Neditor github 地址：[http://github.com/notadd/neditor](http://github.com/notadd/neditor "Neditor github 地址")
 
@@ -100,24 +100,24 @@ Ueditor 官网：[http://ueditor.baidu.com](http://ueditor.baidu.com "ueditor �
 
 Ueditor API 文档：[http://ueditor.baidu.com/doc](http://ueditor.baidu.com/doc "ueditor API 文档")
 
-## 详细文档
+## 詳细文档
 
 Ueditor 文档：[http://fex.baidu.com/ueditor/](http://fex.baidu.com/ueditor/)
 
 注: 對IE8以下版本不再承诺兼容
 
 
-### 關于 HTTPS
+### 關於 HTTPS
 
-使用了 [又拍云CDN](https://console.upyun.com/register/?invite=r17EYO3BW) 服务，支持跨域 和 https。
+使用了 [又拍雲CDN](https://console.upyun.com/register/?invite=r17EYO3BW) 服務，支持跨域 和 https。
 
-如果有需要，也可将下面域名改成自己的。
+如果有需要，也可將下面域名改成自己的。
 ```
 imgbaidu.b0.upaiyun.com
 tingapi.b0.upaiyun.com
 ```
 
-## 联系我们 ##
+## 聯係我们 ##
 
 Neditor官方交流群：257753500
 
@@ -131,13 +131,13 @@ QQ 群： 321735506
 
 ### 2.1
 
-- [x] 将上傳封装為 service ，支持非 GraphQL 接口。
-- [x] 细节樣式修改(美化)
+- [x] 將上傳封装為 service ，支持非 GraphQL 接口。
+- [x] 细節樣式修改(美化)
 
 ### 2.2
 
 - [ ] word 内圖片自動上傳
-- [x] 粘贴圖片转為本地圖片（圖片本地化）
+- [x] 粘贴圖片轉為本地圖片（圖片本地化）
 
 ### 2.3
 
@@ -146,9 +146,9 @@ QQ 群： 321735506
 ### 3.0
 
 - [ ] 使用 Typescript 重構
-- [ ] 草稿箱功能与离线保存
+- [ ] 草稿箱功能与离線保存
 - [ ] service worker 特性
-- [ ] 实现 2.0 的大部分功能
+- [ ] 實现 2.0 的大部分功能
 
 ## 其他项目：Notadd
 
@@ -160,9 +160,9 @@ https://github.com/notadd/notadd
  
  <a href="https://www.ucloud.cn/site/active/gift.html?ytag=notadd"><img src="https://www.notadd.com/src/ucloud_logo.svg" width="150" /></a> &nbsp;
 
-**UCloud 云服务器限时优惠 — Notadd 项目用户福利**
+**UCloud 雲服務器限時优惠 — Notadd 项目用户福利**
 
-[【基础型】1核2G 1M带宽 50GB SSD數據盘 低至250元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )    
+[【基礎型】1核2G 1M带宽 50GB SSD數據盘 低至250元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )    
 
-[【标准型】2核4G 1M带宽 50GB SSD數據盘 低至550元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )
+[【標準型】2核4G 1M带宽 50GB SSD數據盘 低至550元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )
 

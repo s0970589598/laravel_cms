@@ -45,7 +45,7 @@
         addUrlChangeListener($G("videoUrl"));
         addOkListener();
 
-        //編輯视频时初始化相關信息
+        //編輯視频時初始化相關信息
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
@@ -68,7 +68,7 @@
     }
 
     /**
-     * 监听确认和取消两個按钮事件，用户執行插入或者清空正在播放的视频实例操作
+     * 監聽確认和取消兩個按钮事件，用户執行插入或者清空正在播放的視频實例操作
      */
     function addOkListener(){
         dialog.onok = function(){
@@ -92,7 +92,7 @@
     }
 
     /**
-     * 依据傳入的align值更新按钮信息
+     * 依據傳入的align值更新按钮信息
      * @param align
      */
     function updateAlignButton( align ) {
@@ -111,7 +111,7 @@
     }
 
     /**
-     * 将單個视频信息插入編輯器中
+     * 將單個視频信息插入編輯器中
      */
     function insertSingle(){
         var width = $G("videoWidth"),
@@ -129,7 +129,7 @@
     }
 
     /**
-     * 将元素id下的所有代表视频的圖片插入編輯器中
+     * 將元素id下的所有代表視频的圖片插入編輯器中
      * @param id
      */
     function insertSearch(id){
@@ -149,7 +149,7 @@
     }
 
     /**
-     * 找到id下具有focus類的节点并返回该节点下的某個属性
+     * 找到id下具有focus類的節點並返回该節點下的某個屬性
      * @param id
      * @param returnProperty
      */
@@ -209,7 +209,7 @@
     }
 
     /**
-      * 創建圖片浮动選擇按钮
+      * 創建圖片浮動選擇按钮
       * @param ids
       */
      function createAlignButton( ids ) {
@@ -246,7 +246,7 @@
     }
 
     /**
-     * 监听url改變事件
+     * 監聽url改變事件
      * @param url
      */
     function addUrlChangeListener(url){
@@ -262,7 +262,7 @@
     }
 
     /**
-     * 根据url生成视频预览
+     * 根據url生成視频预覽
      * @param url
      */
     function createPreviewVideo(url){
@@ -282,7 +282,7 @@
     }
 
 
-    /* 插入上傳视频 */
+    /* 插入上傳視频 */
     function insertUpload(){
         var videoObjs=[],
             uploadDir = editor.getOpt('videoUrlPrefix'),
@@ -301,7 +301,7 @@
 
         var count = uploadFile.getQueueCount();
         if (count) {
-            $('.info', '#queueList').html('<span style="color:red;">' + '还有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
+            $('.info', '#queueList').html('<span style="color:red;">' + '還有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
             return false;
         } else {
             editor.execCommand('insertvideo', videoObjs, 'upload');
@@ -335,9 +335,9 @@
                 $wrap = _this.$wrap,
             // 圖片容器
                 $queue = $wrap.find('.filelist'),
-            // 狀態栏，包括进度和控制按钮
+            // 狀態栏，包括進度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件总体選擇信息。
+            // 文件總體選擇信息。
                 $info = $statusBar.find('.info'),
             // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
@@ -347,11 +347,11 @@
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-            // 总体进度条
+            // 總體進度條
                 $progress = $statusBar.find('.progress').hide(),
             // 添加的文件數量
                 fileCount = 0,
-            // 添加的文件总大小
+            // 添加的文件總大小
                 fileSize = 0,
             // 优化retina, 在retina下這個值是2
                 ratio = window.devicePixelRatio || 1,
@@ -360,7 +360,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度信息，key為file id
+            // 所有文件的進度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -372,7 +372,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploader实例
+            // WebUploader實例
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('videoActionName')),
                 fileMaxSize = editor.getOpt('videoMaxSize'),
@@ -408,7 +408,7 @@
 
             setState('pedding');
 
-            // 當有文件添加进来时執行，负责view的創建
+            // 當有文件添加進来時執行，负责view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -715,7 +715,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這里可以通过data對象添加POST参數
+                //這里可以通過data對象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 

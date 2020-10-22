@@ -26,17 +26,17 @@
             </div>
             <div class="layui-form-item">
                 <label class="lightcms-user-login-icon layui-icon layui-icon-password" for="login-password"></label>
-                <input type="password" name="password" id="login-password" lay-verify="required" placeholder="密码" class="layui-input">
+                <input type="password" name="password" id="login-password" lay-verify="required" placeholder="密碼" class="layui-input">
             </div>
             <!--<div class="layui-form-item">
                 <div class="layui-row">
                     <div class="layui-col-xs7">
                         <label class="lightcms-user-login-icon layui-icon layui-icon-vercode" for="login-vercode"></label>
-                        <input type="text" name="captcha" id="login-vercode" lay-verify="required" placeholder="圖形验证码" class="layui-input">
+                        <input type="text" name="captcha" id="login-vercode" lay-verify="required" placeholder="圖形驗證碼" class="layui-input">
                     </div>
                     <div class="layui-col-xs5">
                         <div style="margin-left: 10px;">
-                            <img src="{{ captcha_src() }}" class="lightcms-user-login-codeimg" id="get-vercode" title="点擊刷新验证码" onclick="$(this).prop('src', $(this).prop('src').split('?')[0] + '?' + Math.random())">
+                            <img src="{{ captcha_src() }}" class="lightcms-user-login-codeimg" id="get-vercode" title="點擊刷新驗證碼" onclick="$(this).prop('src', $(this).prop('src').split('?')[0] + '?' + Math.random())">
                         </div>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
 
 </div>
 
-<script src="/public/vendor/layui-v2.4.5/layui.all.js"></script>
-<script src="/public/admin/js/admin.js"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script src="/public/admin/js/admin.js?v=1"></script>
 <script>
     $('#form').submit(function () {
         window.form_submit = $('#form').find('[type=submit]');

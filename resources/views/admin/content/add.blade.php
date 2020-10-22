@@ -213,7 +213,7 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">{{ $field->form_name }}</label>
                                         <div class="layui-input-block">
-                                            <textarea name="{{ $field->name }}" placeholder="请输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
+                                            <textarea name="{{ $field->name }}" placeholder="請输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
                                         </div>
                                     </div>
                                 @endif
@@ -221,7 +221,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
-                                        <textarea name="{{ $field->name }}" placeholder="请输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
+                                        <textarea name="{{ $field->name }}" placeholder="請输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
                                     </div>
                                 </div>
                             @endif
@@ -240,7 +240,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
-                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="请使用 Markdown 编写。圖片上傳直接拖拽圖片至此即可~" ></textarea>
+                                        <textarea name="{{ $field->name }}" id="simplemde-{{ $field->name }}" placeholder="請使用 Markdown 编寫。圖片上傳直接拖拽圖片至此即可~" ></textarea>
                                     </div></div>
                                 <script>
                                     var simplemde_{{ $field->name }} = new SimpleMDE({
@@ -259,10 +259,10 @@
                                     var inlineAttachmentConfig = {
                                         uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上傳圖片地址
                                         uploadFieldName: 'file',          //上傳的文件名
-                                        jsonFieldName: 'url',              //返回结果中圖片地址對应的字段名稱
-                                        progressText: '![圖片上傳中...]()',    //上傳过程中用户看到的文案
+                                        jsonFieldName: 'url',              //返回结果中圖片地址對應的字段名稱
+                                        progressText: '![圖片上傳中...]()',    //上傳過程中用户看到的文案
                                         errorText: '圖片上傳失败',
-                                        urlText:'![圖片描述]({filename})',    //上傳成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
+                                        urlText:'![圖片描述]({filename})',    //上傳成功後插入編輯器中的文案，{filename} 會被替换成圖片地址
                                     };
                                     inlineAttachment.editors.codemirror4.attach(simplemde_{{ $field->name }}.codemirror, inlineAttachmentConfig);
                                 </script>
@@ -291,8 +291,8 @@
                                     <script name="{{ $field->name }}" id="editor-{{ $field->name }}" type="text/plain" style="height:600px;">{!! $model->{$field->name} ?? $field->form_default_value !!}</script>
                                     </div></div>
                                 <script>
-                                    //实例化編輯器
-                                    //建议使用工厂方法getEditor創建和引用編輯器实例，如果在某個闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相關的实例
+                                    //實例化編輯器
+                                    //建議使用工厂方法getEditor創建和引用編輯器實例，如果在某個闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相關的實例
                                     var ue_{{ $field->name }} = UE.getEditor('editor-{{ $field->name }}', {autoFloatEnabled:false});
                                     ue_{{ $field->name }}.ready(function(){
                                         ue_{{ $field->name }}.focus();
@@ -325,7 +325,7 @@
                                                 layui.use('upload', function(){
                                                     var upload = layui.upload;
 
-                                                    //執行实例
+                                                    //執行實例
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                         ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上傳接口
@@ -358,7 +358,7 @@
                                                     layui.use('upload', function(){
                                                         var upload = layui.upload;
 
-                                                        //執行实例
+                                                        //執行實例
                                                         var uploadInst = upload.render({
                                                             elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                             ,url: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}" //上傳接口
@@ -393,7 +393,7 @@
                                                 layui.use('upload', function(){
                                                     var upload = layui.upload;
 
-                                                    //執行实例
+                                                    //執行實例
                                                     var uploadInst = upload.render({
                                                         elem: '#file-upload-{{ $field->name }}' //绑定元素
                                                         ,multiple: true
@@ -607,7 +607,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="">
-                                        <input name="{{ $field->name }}" placeholder="输入標簽，按回车键或TAB键可新增標簽" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
+                                        <input name="{{ $field->name }}" placeholder="输入標簽，按回车鍵或TAB鍵可新增標簽" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
                                     </div>
                                 </div>
                                 <script>
@@ -669,7 +669,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.onbeforeunload = null;
             window.form_submit = $('#submitBtn');

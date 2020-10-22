@@ -91,7 +91,7 @@ class EntityController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -133,14 +133,14 @@ class EntityController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 模型管理-删除模型
+     * 模型管理-刪除模型
      *
      * @param Request $request
      * @param integer $id
@@ -152,19 +152,19 @@ class EntityController extends Controller
         if (!$password) {
             return [
                 'code' => 1,
-                'msg' => '密码不能為空',
+                'msg' => '密碼不能為空',
             ];
         }
         if (!Auth::guard('admin')->attempt(['id' => $request->user()->id, 'password' => $password])) {
             return [
                 'code' => 2,
-                'msg' => '密码错误',
+                'msg' => '密碼錯誤',
             ];
         }
         EntityRepository::delete($id);
         return [
             'code' => 0,
-            'msg' => '删除成功',
+            'msg' => '刪除成功',
             'reload' => true
         ];
     }
@@ -182,8 +182,8 @@ class EntityController extends Controller
             'table_name' => ['required', 'max:64', 'regex:/^[0-9a-zA-Z$_]+$/'],
         ], [
             'table_name.required' => '表名稱不能為空',
-            'table_name.max' => '表名稱长度不能超过64',
-            'table_name.regex' => '表名稱格式有误',
+            'table_name.max' => '表名稱长度不能超過64',
+            'table_name.regex' => '表名稱格式有誤',
         ]);
 
         try {

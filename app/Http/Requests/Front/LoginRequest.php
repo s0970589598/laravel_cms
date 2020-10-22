@@ -48,8 +48,8 @@ class LoginRequest extends FormRequest
     {
         return [
             'phone.required' => '手機號碼不能為空',
-            'phone.regex' => '手機號碼格式有误',
-            'password.required' => '密码不能為空',
+            'phone.regex' => '手機號碼格式有誤',
+            'password.required' => '密碼不能為空',
         ];
     }
 }

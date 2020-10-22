@@ -1,4 +1,4 @@
-/*基础UI構建
+/*基礎UI構建
 */
 /* common layer */
 .edui-default .edui-box {
@@ -119,7 +119,7 @@ div.edui-box {
     -webkit-user-select: none;
     -moz-user-select: none;
     padding: 1px;
-    overflow: hidden; /*全屏下單独一行不占位*/
+    overflow: hidden; /*全屏下單獨一行不占位*/
     zoom: 1;
     width:auto;
     height:auto;
@@ -131,7 +131,7 @@ div.edui-box {
 .edui-default .edui-toolbar .edui-combox {
     margin: 1px;
 }
-/*UI工具栏、編輯区域、底部*/
+/*UI工具栏、編輯區域、底部*/
 .edui-default .edui-editor {
     border: 1px solid #d4d4d4;
     background-color: white;
@@ -253,7 +253,7 @@ div.edui-box {
     background-color: #fff6d9;
     padding: 5px;
     font-size: 10pt;
-    font-family: "宋体";
+    font-family: "宋體";
 }
 
 .edui-default .edui-bubble .edui-shadow {
@@ -1017,7 +1017,7 @@ div.edui-box {
     background-color: white;
 }
 
-/* 解决嵌套导致的圖标問题 */
+/* 解决嵌套导致的圖標問题 */
 .edui-default .edui-for-insertorderedlist .edui-popup-body .edui-icon,
 .edui-default .edui-for-lineheight .edui-popup-body .edui-icon,
 .edui-default .edui-for-rowspacingtop .edui-popup-body .edui-icon,
@@ -1602,7 +1602,7 @@ div.edui-box {
 .arrow_up{
     background: white url('../images/arrow_up.png') no-repeat center;
 }
-/*高级的樣式*/
+/*高級的樣式*/
 .edui-colorpicker-adv{
     position: relative;
     overflow: hidden;
@@ -1743,7 +1743,7 @@ div.edui-box {
 .edui-default .edui-cellalignpicker-body td.edui-cellalign-selected .edui-right {
     background-position: -271px 0;
 }
-/*分隔线*/
+/*分隔線*/
 .edui-default .edui-toolbar .edui-separator {
     width: 2px;
     height: 20px;
@@ -1762,7 +1762,7 @@ div.edui-box {
     height: 4px;
 }
 /*表情按钮及弹出選單*/
-/*去除了表情的下拉箭头*/
+/*去除了表情的下拉箭頭*/
 .edui-default .edui-for-emotion .edui-icon {
     background-position: -60px -20px;
 }

@@ -15,7 +15,7 @@
 <div class="container h-full flex justify-center items-center">
     <div class="layui-tab w-1/3" >
         @if(session()->has(\App\Http\Controllers\Front\UserController::AUTH_SESSION))
-            <span style="margin-bottom: 20px;" class="text-purple-light block">登入或註冊进行帐号關联</span>
+            <span style="margin-bottom: 20px;" class="text-purple-light block">登入或註冊進行帐號關聯</span>
         @endif
             <span style="margin-bottom: 20px;" class="text-red-light block">
             @foreach($errors->all() as $message)
@@ -42,7 +42,7 @@
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
                             <label for="password" class="block font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                密码
+                                密碼
                             </label>
                         </div>
                         <div class="md:w-2/3">
@@ -92,7 +92,7 @@
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
                             <label for="password" class="block font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                密码
+                                密碼
                             </label>
                         </div>
                         <div class="md:w-2/3">
@@ -102,7 +102,7 @@
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
                             <label for="repeat_password" class="block font-bold md:text-right mb-1 md:mb-0 pr-4">
-                                确认密码
+                                確认密碼
                             </label>
                         </div>
                         <div class="md:w-2/3">
@@ -124,8 +124,8 @@
 
 
 </div>
-<script src="/public/vendor/layui-v2.4.5/layui.all.js"></script>
-<script type="text/javascript" src="/public/js/member.js"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script type="text/javascript" src="/public/js/member.js?v=1"></script>
 <script>
     $(function () {
         $('button').click(function () {

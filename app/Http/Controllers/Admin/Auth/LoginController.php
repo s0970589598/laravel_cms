@@ -43,7 +43,7 @@ class LoginController extends Controller
     }
 
     /**
-     * 基础功能-用户登入頁面
+     * 基礎功能-用户登入頁面
      */
     public function showLogin()
     {
@@ -51,7 +51,7 @@ class LoginController extends Controller
     }
 
     /**
-     * 基础功能-用户登入
+     * 基礎功能-用户登入
      */
     public function login(AdminLoginRequest $request)
     {
@@ -86,7 +86,7 @@ class LoginController extends Controller
     }
 
     /**
-     * 基础功能-退出登入
+     * 基礎功能-退出登入
      */
     public function logout(Request $request)
     {

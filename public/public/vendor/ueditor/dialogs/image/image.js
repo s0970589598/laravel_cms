@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上傳圖片對话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
+ * 上傳圖片對话框逻辑代碼,包括tab: 遠程圖片/上傳圖片/在線圖片/搜索圖片
  */
 
 (function () {
@@ -90,7 +90,7 @@
                     list = uploadImage.getInsertList();
                     var count = uploadImage.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '還有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -111,9 +111,9 @@
     }
 
 
-    /* 初始化對其方式的点擊事件 */
+    /* 初始化對其方式的點擊事件 */
     function initAlign(){
-        /* 点擊align圖标 */
+        /* 點擊align圖標 */
         domUtils.on($G("alignIcon"), 'click', function(e){
             var target = e.target || e.srcElement;
             if(target.className && target.className.indexOf('-align') != -1) {
@@ -122,7 +122,7 @@
         });
     }
 
-    /* 设置對齐方式 */
+    /* 設置對齐方式 */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,14 +135,14 @@
             }
         }
     }
-    /* 获取對齐方式 */
+    /* 獲取對齐方式 */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
     }
 
 
-    /* 在线圖片 */
+    /* 在線圖片 */
     function RemoteImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -224,10 +224,10 @@
                 src = wordImgFlag ? wordImgFlag.replace("&amp;", "&") : (img.getAttribute('_src') || img.getAttribute("src", 2).replace("&amp;", "&")),
                 align = editor.queryCommandValue("imageFloat");
 
-            /* 防止onchange事件循环调用 */
+            /* 防止onchange事件循環调用 */
             if (src !== $G("url").value) $G("url").value = src;
             if(src) {
-                /* 设置表單内容 */
+                /* 設置表單内容 */
                 $G("width").value = img.width || '';
                 $G("height").value = img.height || '';
                 $G("border").value = img.getAttribute("border") || '0';
@@ -310,9 +310,9 @@
                 $wrap = _this.$wrap,
             // 圖片容器
                 $queue = $wrap.find('.filelist'),
-            // 狀態栏，包括进度和控制按钮
+            // 狀態栏，包括進度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
-            // 文件总体選擇信息。
+            // 文件總體選擇信息。
                 $info = $statusBar.find('.info'),
             // 上傳按钮
                 $upload = $wrap.find('.uploadBtn'),
@@ -322,11 +322,11 @@
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
             // 没選擇文件之前的内容。
                 $placeHolder = $wrap.find('.placeholder'),
-            // 总体进度条
+            // 總體進度條
                 $progress = $statusBar.find('.progress').hide(),
             // 添加的文件數量
                 fileCount = 0,
-            // 添加的文件总大小
+            // 添加的文件總大小
                 fileSize = 0,
             // 优化retina, 在retina下這個值是2
                 ratio = window.devicePixelRatio || 1,
@@ -335,7 +335,7 @@
                 thumbnailHeight = 113 * ratio,
             // 可能有pedding, ready, uploading, confirm, done.
                 state = '',
-            // 所有文件的进度信息，key為file id
+            // 所有文件的進度信息，key為file id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -347,7 +347,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploader实例
+            // WebUploader實例
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
                 acceptExtensions = (editor.getOpt('imageAllowFiles') || []).join('').replace(/\./g, ',').replace(/^[,]/, ''),
@@ -380,13 +380,13 @@
                 compress: editor.getOpt('imageCompressEnable') ? {
                     width: imageCompressBorder,
                     height: imageCompressBorder,
-                    // 圖片质量，只有type為`image/jpeg`的时候才有效。
+                    // 圖片质量，只有type為`image/jpeg`的時候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小圖的时候不失真，此選项应该设置為false.
+                    // 是否允许放大，如果想要生成小圖的時候不失真，此選项應该設置為false.
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,
-                    // 是否保留头部meta信息。
+                    // 是否保留頭部meta信息。
                     preserveHeaders: true
                 }:false
             });
@@ -400,7 +400,7 @@
 
             setState('pedding');
 
-            // 當有文件添加进来时執行，负责view的創建
+            // 當有文件添加進来時執行，负责view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -702,7 +702,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //這里可以通过data對象添加POST参數
+                //這里可以通過data對象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -788,7 +788,7 @@
     };
 
 
-    /* 在线圖片 */
+    /* 在線圖片 */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -810,11 +810,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自動拉取數據 */
+        /* 初始化滚動事件,滚動到地步自動拉取數據 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取圖片 */
+            /* 滚動拉取圖片 */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
@@ -852,7 +852,7 @@
             this.initContainer();
             this.initData();
         },
-        /* 向后台拉取圖片列表數據 */
+        /* 向後台拉取圖片列表數據 */
         getImageData: function () {
             var _this = this;
 
@@ -978,14 +978,14 @@
         initEvents: function(){
             var _this = this;
 
-            /* 点擊搜索按钮 */
+            /* 點擊搜索按钮 */
             domUtils.on($G('searchBtn'), 'click', function(){
                 var key = $G('searchTxt').value;
                 if(key && key != lang.searchRemind) {
                     _this.getImageData();
                 }
             });
-            /* 点擊清除妞 */
+            /* 點擊清除妞 */
             domUtils.on($G('searchReset'), 'click', function(){
                 $G('searchTxt').value = lang.searchRemind;
                 $G('searchListUl').innerHTML = '';
@@ -998,7 +998,7 @@
                     $G('searchTxt').value = '';
                 }
             });
-            /* 搜索框回车键搜索 */
+            /* 搜索框回车鍵搜索 */
             domUtils.on($G('searchTxt'), 'keydown', function(e){
                 var keyCode = e.keyCode || e.which;
                 if (keyCode == 13) {

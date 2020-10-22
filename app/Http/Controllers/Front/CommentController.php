@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 class CommentController extends BaseController
 {
     /**
-     * 發佈一条評論
+     * 發佈一條評論
      *
      * @param Request $request
      * @param int $entityId 模型ID
@@ -41,7 +41,7 @@ class CommentController extends BaseController
         if (mb_strlen($content) > 1024) {
             return [
                 'code' => 6,
-                'msg' => '評論内容过长',
+                'msg' => '評論内容過长',
             ];
         }
         $pid = (int) $request->post('pid', 0);
@@ -73,7 +73,7 @@ class CommentController extends BaseController
                 // 清除缓存
                 Cache::forget('comment_replay:' . $rid);
 
-                // 回复數+1
+                // 回複數+1
                 CommentRepository::addReplyCount($rid);
             }
             return [
@@ -85,13 +85,13 @@ class CommentController extends BaseController
             Log::error($e);
             return [
                 'code' => 500,
-                'msg' => '評論失败：内部错误',
+                'msg' => '評論失败：内部錯誤',
             ];
         }
     }
 
     /**
-     * 获取評論
+     * 獲取評論
      *
      * @param Request $request
      * @param int $entityId 模型ID
@@ -125,7 +125,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 获取指定用户對評論的操作數據
+     * 獲取指定用户對評論的操作數據
      *
      * @param Request $request
      */
@@ -135,7 +135,7 @@ class CommentController extends BaseController
         if (!preg_match('%^[1-9]\d*(,[1-9]\d*)*%', $commentIds)) {
             return [
                 'code' => 1,
-                'msg' => '参數错误'
+                'msg' => '参數錯誤'
             ];
         }
 
@@ -151,7 +151,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 對評論进行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
+     * 對評論進行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
      *
      * @param int $id
      * @param string $action
@@ -174,7 +174,7 @@ class CommentController extends BaseController
         if (!$entity) {
             return [
                 'code' => 1,
-                'msg' => '模型不存在或未启用評論',
+                'msg' => '模型不存在或未啟用評論',
             ];
         }
 

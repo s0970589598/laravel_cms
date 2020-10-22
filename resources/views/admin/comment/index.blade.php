@@ -43,7 +43,7 @@
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Comment::$listField])
-                    <th lay-data="{templet:'#vist'}">访問</th>
+                    <th lay-data="{templet:'#vist'}">訪問</th>
                     <th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
@@ -55,12 +55,12 @@
 @endsection
 <script type="text/html" id="action">
     <!--<a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>-->
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 <script type="text/html" id="vist">
-    <a target="_blank" href="<% d.contentEditUrl %>" class="layui-table-link" title="后台編輯">后台</a>
-    <a target="_blank" href="<% d.vistUrl %>" class="layui-table-link" title="前台访問">前台</a>
-    <a href="<% d.replyUrl %>" class="layui-table-link" title="该評論所有回复">回复</a>
+    <a target="_blank" href="<% d.contentEditUrl %>" class="layui-table-link" title="後台編輯">後台</a>
+    <a target="_blank" href="<% d.vistUrl %>" class="layui-table-link" title="前台訪問">前台</a>
+    <a href="<% d.replyUrl %>" class="layui-table-link" title="该評論所有回複">回複</a>
 </script>
 
 @section('js')
@@ -78,7 +78,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？', function(index){
+            layer.confirm('確定刪除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

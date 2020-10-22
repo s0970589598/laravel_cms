@@ -41,11 +41,11 @@
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     <th lay-data="{templet:'#menuName'}">名稱</th>
                     <th lay-data="{field: 'group'}">分组</th>
-                    <th lay-data="{field:'parentName'}">上级選單</th>
+                    <th lay-data="{field:'parentName'}">上級選單</th>
                     <th lay-data="{field:'route'}">路由</th>
                     <th lay-data="{field:'url'}">URL</th>
                     <th lay-data="{field:'order', sort: true, edit: true}">排序</th>
-                    <th lay-data="{field:'status', sort: true, templet: '#statusTemplet', event: 'statusEvent'}">显示</th>
+                    <th lay-data="{field:'status', sort: true, templet: '#statusTemplet', event: 'statusEvent'}">顯示</th>
                     <th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:100, templet:'#action'}">操作</th>
@@ -59,12 +59,12 @@
                         <div class="layui-input-inline">
                             <select name="type" lay-filter="action-type">
                                 <option value="disable">禁用</option>
-                                <option value="enable">启用</option>
+                                <option value="enable">啟用</option>
                                 <option value="lock_name">锁定名稱</option>
-                                <option value="parent">设置父级選單</option>
-                                <option value="order">设置排序</option>
-                                <option value="group">设置分组</option>
-                                <option value="delete">删除</option>
+                                <option value="parent">設置父級選單</option>
+                                <option value="order">設置排序</option>
+                                <option value="group">設置分组</option>
+                                <option value="delete">刪除</option>
                             </select>
                         </div>
                         <div class="layui-input-inline">
@@ -87,7 +87,7 @@
 </script>
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 <script type="text/html" id="statusTemplet">
     <input type="checkbox" name="status" lay-skin="switch" lay-text="是|否"
@@ -106,7 +106,7 @@
         });
 
         var table = layui.table;
-        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="對应的值"
+        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的屬性 lay-filter="對應的值"
             $.ajax({
                 url: '{{ route('admin::menu.batch') }}',
                 method: 'post',
@@ -173,7 +173,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？', function(index){
+            layer.confirm('確定刪除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -242,11 +242,11 @@
 
         form.on('select(action-type)', function(data){
             if (data.value === 'parent') {
-                $('input[name=params]').attr('placeholder', '请填写父级選單的ID');
+                $('input[name=params]').attr('placeholder', '請填寫父級選單的ID');
             } else if (data.value === 'order') {
-                $('input[name=params]').attr('placeholder', '请填写排序值');
+                $('input[name=params]').attr('placeholder', '請填寫排序值');
             } else if (data.value === 'group') {
-                $('input[name=params]').attr('placeholder', '请填写分组名稱');
+                $('input[name=params]').attr('placeholder', '請填寫分组名稱');
             } else {
                 $('input[name=params]').attr('placeholder', '');
             }

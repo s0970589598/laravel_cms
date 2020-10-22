@@ -35,7 +35,7 @@ class EntityField extends Model
         'is_show_inline' => [
             'title' => '行内展示', 'sort' => true, 'templet' => '#isShowInlineTemplet', 'event' => 'showInlineEvent'
         ],
-        'is_show' => ['title' => '显示', 'templet' => '#isShowTemplet', 'event' => 'showEvent'],
+        'is_show' => ['title' => '顯示', 'templet' => '#isShowTemplet', 'event' => 'showEvent'],
         'order' => ['title' => '排序', 'sort' => true, 'edit' => true, 'width' => 80],
     ];
 

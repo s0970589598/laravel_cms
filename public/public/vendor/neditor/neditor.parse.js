@@ -498,7 +498,7 @@ UE.parse.register("table", function(utils) {
       }
     });
 
-    //按照標簽名查找父节点
+    //按照標簽名查找父節點
     function findParentByTagName(target, tagNames) {
       var i,
         current = target;
@@ -556,7 +556,7 @@ UE.parse.register("table", function(utils) {
         }
       };
 
-      //對表格设置排序的标记data-sort-type
+      //對表格設置排序的標记data-sort-type
       table.setAttribute(
         "data-sort-type",
         compareFn && typeof compareFn === "string" && Fn[compareFn]
@@ -629,7 +629,7 @@ UE.parse.register("table", function(utils) {
     }
     //更新表格
     function updateTable(table) {
-      //给第一行设置firstRow的樣式名稱,在排序圖标的樣式上使用到
+      //给第一行設置firstRow的樣式名稱,在排序圖標的樣式上使用到
       if (!utils.hasClass(table.rows[0], "firstRow")) {
         for (var i = 1; i < table.rows.length; i++) {
           utils.removeClass(table.rows[i], "firstRow");
@@ -651,7 +651,7 @@ UE.parse.register("charts", function(utils) {
     containers = this.root,
     sources = null;
 
-  //不存在指定的根路径， 则直接退出
+  //不存在指定的根路径， 則直接退出
   if (!resourceRoot) {
     return;
   }
@@ -715,13 +715,13 @@ UE.parse.register("charts", function(utils) {
     };
   }
 
-  //加载资源
+  //加戴资源
   function loadResources() {
     loadJQuery();
   }
 
   function loadJQuery() {
-    //不存在jquery， 则加载jquery
+    //不存在jquery， 則加戴jquery
     if (!window.jQuery) {
       utils.loadFile(
         document,
@@ -741,7 +741,7 @@ UE.parse.register("charts", function(utils) {
   }
 
   function loadHighcharts() {
-    //不存在Highcharts， 则加载Highcharts
+    //不存在Highcharts， 則加戴Highcharts
     if (!window.Highcharts) {
       utils.loadFile(
         document,
@@ -760,7 +760,7 @@ UE.parse.register("charts", function(utils) {
     }
   }
 
-  //加载圖表差異化配置文件
+  //加戴圖表差異化配置文件
   function loadTypeConfig() {
     utils.loadFile(
       document,
@@ -795,7 +795,7 @@ UE.parse.register("charts", function(utils) {
 
   /**
      * 渲染圖表
-     * @param container 圖表容器节点對象
+     * @param container 圖表容器節點對象
      * @param typeConfig 圖表類型配置
      * @param config 圖表通用配置
      * */
@@ -851,7 +851,7 @@ UE.parse.register("charts", function(utils) {
 
   /**
      * 創建圖表的容器
-     * 新創建的容器会替换掉對应的table對象
+     * 新創建的容器會替换掉對應的table對象
      * */
   function createContainer(tableNode) {
     var container = document.createElement("div");
@@ -862,7 +862,7 @@ UE.parse.register("charts", function(utils) {
     return container;
   }
 
-  //根据config解析出正确的類别和圖表數據信息
+  //根據config解析出正確的類别和圖表數據信息
   function analysisConfig(config) {
     var series = [],
       //數據類别
@@ -871,7 +871,7 @@ UE.parse.register("charts", function(utils) {
       data = config.data,
       meta = config.meta;
 
-    //數據對齐方式為相反的方式， 需要反转數據
+    //數據對齐方式為相反的方式， 需要反轉數據
     if (meta.dataFormat != "1") {
       for (var i = 0, len = data.length; i < len; i++) {
         for (var j = 0, jlen = data[i].length; j < jlen; j++) {

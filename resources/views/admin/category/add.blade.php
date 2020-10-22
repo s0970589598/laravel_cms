@@ -16,10 +16,10 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级分類</label>
+                        <label class="layui-form-label">上級分類</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="pid" lay-verify="required">
-                                <option value="0">顶级分類</option>
+                                <option value="0">顶級分類</option>
                                 @foreach(App\Repository\Admin\CategoryRepository::tree($model->model_id ?? null) as $v)
                                     @include('admin.menu', $v)
                                 @endforeach
@@ -28,15 +28,15 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">關联模型</label>
+                        <label class="layui-form-label">關聯模型</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="model_id" lay-verify="required">
-                                <option value="0">不關联</option>
+                                <option value="0">不關聯</option>
                                 @foreach(App\Model\Admin\Entity::all(['id', 'name']) as $v)
                                     <option value="{{ $v->id }}" @if(isset($model) && $model->model_id == $v->id) selected @endif>{{ $v->name }}</option>
                                 @endforeach
                             </select>
-                            <div class="layui-form-mid light-danger">修改分類關联的模型可能会破坏數據一致性，请谨慎操作</div>
+                            <div class="layui-form-mid light-danger">修改分類關聯的模型可能會破坏數據一致性，請谨慎操作</div>
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);

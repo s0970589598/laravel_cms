@@ -39,9 +39,9 @@ class AdminLoginRequest extends FormRequest
     {
         return [
             'name.required' => '用户名不能為空',
-            'password.required' => '密码不能為空',
-           // 'captcha.required' => '圖形验证码不能為空',
-           // 'captcha.captcha' => '圖形验证码错误',
+            'password.required' => '密碼不能為空',
+           // 'captcha.required' => '圖形驗證碼不能為空',
+           // 'captcha.captcha' => '圖形驗證碼錯誤',
         ];
     }
 }

@@ -2,8 +2,8 @@
  * 替换變量說明
  *
  * $model               模型名稱                user
- * $model_plural        模型名稱复數              users
- * $model_uc_first      模型名稱首字母大写       User
+ * $model_plural        模型名稱複數              users
+ * $model_uc_first      模型名稱首字母大寫       User
  * $model_chinese_name  模型中文名               用户
  */
 
@@ -61,7 +61,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
 @endsection
 <script type="text/html" id="action">
     <a href="<% d.editUrl %>" class="layui-table-link" title="編輯"><i class="layui-icon layui-icon-edit"></i></a>
-    <a href="javascript:;" class="layui-table-link" title="删除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
+    <a href="javascript:;" class="layui-table-link" title="刪除" style="margin-left: 10px" onclick="deleteMenu('<% d.deleteUrl %>')"><i class="layui-icon layui-icon-delete"></i></a>
 </script>
 
 @section('js')
@@ -79,7 +79,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定删除？', function(index){
+            layer.confirm('確定刪除？', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},
@@ -138,7 +138,7 @@ Route::delete('/{{-$model_plural-}}/{id}', '{{-$model_uc_first-}}Controller@dele
     <script>
         var form = layui.form;
 
-        //监听送出
+        //監聽送出
         form.on('submit(formAdminUser)', function(data){
             window.form_submit = $('#submitBtn');
             form_submit.prop('disabled', true);
@@ -278,7 +278,7 @@ class {{-$model_uc_first-}}Request extends FormRequest
     {
         return [
             'name.required' => '名稱不能為空',
-            'name.max' => '名稱长度不能大于50',
+            'name.max' => '名稱长度不能大於50',
         ];
     }
 }
@@ -366,7 +366,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -406,14 +406,14 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * {{-$model_chinese_name-}}管理-删除{{-$model_chinese_name-}}
+     * {{-$model_chinese_name-}}管理-刪除{{-$model_chinese_name-}}
      *
      * @param int $id
      */
@@ -423,13 +423,13 @@ class {{-$model_uc_first-}}Controller extends Controller
             {{-$model_uc_first-}}Repository::delete($id);
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => route('admin::{{-$model-}}.index')
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

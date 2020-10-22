@@ -3,7 +3,7 @@
 UE.I18N['ja-jp'] = {
     'labelMap':{
         'anchor':'アンカー', 'undo':'アンドゥー', 'redo':'リドゥー', 'bold':'太字', 'indent':'インデント', 'snapscreen':'スクリーンショット',
-        'italic':'斜体', 'underline':'下線', 'strikethrough':'取り消し線', 'subscript':'下付き','fontborder':'囲み線',
+        'italic':'斜體', 'underline':'下線', 'strikethrough':'取り消し線', 'subscript':'下付き','fontborder':'囲み線',
         'superscript':'上付き', 'formatmatch':'書式のコピー/貼り付け', 'source':'ソースコード', 'blockquote':'参考資料',
         'pasteplain':'テキストのみ保持', 'selectall':'すべて選択','print':'印刷', 'preview':'プレビュー',
         'horizontal':'セパレーター', 'removeformat':'フォーマットをクリア', 'time':'タイム', 'date':'デート',
@@ -11,12 +11,12 @@ UE.I18N['ja-jp'] = {
         'deleterow':'行を削除', 'deletecol':'列を削除', 'splittorows':'行に分割',
         'splittocols':'列に分割', 'splittocells':'セルを分割','deletecaption':'テーブルのヘッダを削除する','inserttitle':'タイトルを挿入する',
         'mergecells':'複數のセルをマージする', 'deletetable':'テーブルを削除する', 'cleardoc':'ドキュメントをクリアする','insertparagraphbeforetable':"テーブルの前に行を挿入する",'insertcode':'コード言語',
-        'fontfamily':'フォント', 'fontsize':'フォントサイズ', 'paragraph':'段落書式', 'simpleupload':'単一画像アップロード', 'insertimage':'複數画像アップロード','edittable':'表属性','edittd':'セル属性', 'link':'ハイパーリンク',
+        'fontfamily':'フォント', 'fontsize':'フォントサイズ', 'paragraph':'段落書式', 'simpleupload':'単一画像アップロード', 'insertimage':'複數画像アップロード','edittable':'表屬性','edittd':'セル屬性', 'link':'ハイパーリンク',
         'emotion':'絵文字', 'spechars':'特殊文字', 'searchreplace':'置換', 'map':'Baiduマップ', 'gmap':'Googleマップ',
         'insertvideo':'ビデオ', 'help':'ヘルプ','justifyleft':'左揃え', 'justifyright':'右揃え', 'justifycenter':'中央揃え',
         'justifyjustify':'両端揃え', 'forecolor':'フォントの色', 'backcolor':'背景色', 'insertorderedlist':'順序付きリスト',
         'insertunorderedlist':'順序付けられていないリスト', 'fullscreen':'フルスクリーン', 'directionalityltr':'左から右へ', 'directionalityrtl':'右から左へ',
-        'rowspacingtop':'段落前の間隔', 'rowspacingbottom':'段落後の間隔',  'pagebreak':'ページ区切り', 'insertframe':'Iframeの挿入', 'imagenone':'デフォルト',
+        'rowspacingtop':'段落前の間隔', 'rowspacingbottom':'段落後の間隔',  'pagebreak':'ページ區切り', 'insertframe':'Iframeの挿入', 'imagenone':'デフォルト',
         'imageleft':'左フロート', 'imageright':'右フロート', 'attachment':'添付ファイル', 'imagecenter':'中央揃え', 'wordimage':'画像ダンプ',
         'lineheight':'行間隔','edittip' :'編集チップ','customstyle':'カスタムタイトル', 'autotypeset':'自動レイアウト',
         'webapp':'baiduapp','touppercase':'大文字', 'tolowercase':'小文字','background':'背景','template':'テンプレート','scrawl':'绘画',
@@ -44,9 +44,9 @@ UE.I18N['ja-jp'] = {
     },
     'paragraph':{'p':'段落', 'h1':'見出し1', 'h2':'見出し2', 'h3':'見出し3', 'h4':'見出し4', 'h5':'見出し5', 'h6':'見出し6'},
     'fontfamily':{
-        'songti':'明朝体',
-        'kaiti':'楷書体',
-        'heiti':'ゴチック体',
+        'songti':'明朝體',
+        'kaiti':'楷書體',
+        'heiti':'ゴチック體',
         'lishu':'隷書',
         'yahei':'Msyh',
         'andaleMono':'andale mono',
@@ -60,7 +60,7 @@ UE.I18N['ja-jp'] = {
         'tc':'タイトル中央揃え',
         'tl':'タイトル左揃え',
         'im':'強調',
-        'hi':'強調斜体'
+        'hi':'強調斜體'
     },
     'autoupload': {
         'exceedSizeError': 'ファイルサイズが上限を超えています',
@@ -130,13 +130,13 @@ UE.I18N['ja-jp'] = {
         'confirmclear':"現在のドキュメントをクリアしてもよろしいですか？",
         'unlink':"ハイパーリンクを削除",
         'paragraph':"段落書式",
-        'edittable':"表属性",
+        'edittable':"表屬性",
         'aligntd':"セルの配置",
         'aligntable':'表の配置',
         'tableleft':'左フロート',
         'tablecenter':'中央表示',
         'tableright':'右フロート',
-        'edittd':"セル属性",
+        'edittd':"セル屬性",
         'setbordervisible':'表エッジ表示の設定',
         'justifyleft':'左揃え',
         'justifyright':'右揃え',
@@ -194,7 +194,7 @@ UE.I18N['ja-jp'] = {
     'clearColor':'色をクリア',
     'standardColor':'標準色',
     'themeColor':'テーマの色',
-    'property':'属性',
+    'property':'屬性',
     'default':'デフォルト',
     'modify':'変更',
     'justifyleft':'左揃え',
@@ -264,7 +264,7 @@ UE.I18N['ja-jp'] = {
             'lang_input_align':'画像フロート形式：',
             'lang_imgLoading':"　画像読み込み中...",
             'lang_start_upload':"アップロード",
-            'lock':{'title':"アスペクト比をロック"}, //属性
+            'lock':{'title':"アスペクト比をロック"}, //屬性
             'searchType':{'title':"イメージタイプ", 'options':["ニュース", "壁紙", "エモーション", "胸像"]}, //select的option 　　　　　　
             'searchTxt':{'value':"検索キーワードを入力してください"},
             'searchBtn':{'value':"Baidu"},
@@ -300,10 +300,10 @@ UE.I18N['ja-jp'] = {
         'remoteLockError':"幅と高さは正しくないため、設定できません",
         'numError':"正しい長さまたは幅の値を入力してください！たとえば、123,400",
         'imageUrlError':"許可されない画像形式または画像フィールド！",
-        'imageLoadError':"イメージロードは失敗しました。リンクアドレス、ネット状態をチャックしてください！",
+        'imageLoadError':"イメージロードは失敗しました。リンクアドレス、ネット狀態をチャックしてください！",
         'searchRemind':"検索キーワードを入力してください",
         'searchLoading':"イメージ読み込み中、お待ちください...",
-        'searchRetry':" :( 申し訳ございません、写真が見つかりません！もう一度お試しください！"
+        'searchRetry':" :( 申し訳ございません、寫真が見つかりません！もう一度お試しください！"
     },
     'attachment':{
         'static':{
@@ -346,7 +346,7 @@ UE.I18N['ja-jp'] = {
             'lang_videoH':"高さ",
             'lang_alignment':"配置",
             'videoSearchTxt':{'value':"検索キーワードを入力してください！"},
-            'videoType':{'options':["すべて", "人気", "娯楽", "お笑い", "スポーツ", "科学技術", "バラエティ"]},
+            'videoType':{'options':["すべて", "人気", "娯楽", "お笑い", "スポーツ", "科學技術", "バラエティ"]},
             'videoSearchBtn':{'value':"baidu"},
             'videoSearchReset':{'value':"結果をクリア"},
 
@@ -377,7 +377,7 @@ UE.I18N['ja-jp'] = {
         'delFailSaveFile':'アップロード失敗ファイルを削除する',
         'statusPrompt':'のファイルがアップロードされました！ ',
         'flashVersionError':'現在のFlashバージョンは低すぎます。FlashPlayerを更新してもう一度お試しください！',
-        'flashLoadingError':'Flashロードに失敗しました！パスまたはネットワーク状態を確認してください',
+        'flashLoadingError':'Flashロードに失敗しました！パスまたはネットワーク狀態を確認してください',
         'fileUploadReady':'アップロード待ち……',
         'delUploadQueue':'アップロード中のファイルから削除',
         'limitPrompt1':'　までのファイルを選択できません',
@@ -462,7 +462,7 @@ UE.I18N['ja-jp'] = {
             'lang_input_tips':"歌手/音楽/アルバムを入力し、興味のある音楽を検索してください！",
             'J_searchBtn':{value:'音楽を検索'}
         },
-        'emptyTxt':'検索条件と一致する結果がありません。別のキーワードを変更してみてください。',
+        'emptyTxt':'検索條件と一致する結果がありません。別のキーワードを変更してみてください。',
         'chapter':'音楽',
         'singer':'歌手',
         'special':'アルバム',
@@ -529,7 +529,7 @@ UE.I18N['ja-jp'] = {
             'lang_Txt_Paste':'貼り付け',
             'lang_Txt_undo':'最後の操作を再実行する',
             'lang_Txt_redo':'最後の操作を元に戻す',
-            'lang_Txt_italic':'選択された文字列を斜体にします',
+            'lang_Txt_italic':'選択された文字列を斜體にします',
             'lang_Txt_underline':'選択された文字列に下線を引きます',
             'lang_Txt_selectAll':'すべて選択',
             'lang_Txt_visualEnter':'ソフトリターン',
@@ -578,8 +578,8 @@ UE.I18N['ja-jp'] = {
             lang_replace:"置換",
             lang_searchReg:'正規表現をサポートします。前後方スラッシュを追加する場合は正規表現です。例えば、“/expression/”',
             lang_searchReg1:'正規表現をサポートします。前後方スラッシュを追加する場合は正規表現です。例えば、“/expression/”',
-            lang_case_sensitive1:"大文字と小文字を区別",
-            lang_case_sensitive2:"大文字と小文字を区別",
+            lang_case_sensitive1:"大文字と小文字を區別",
+            lang_case_sensitive2:"大文字と小文字を區別",
             nextFindBtn:{value:"次へ"},
             preFindBtn:{value:"前"},
             nextReplaceBtn:{value:"次へ"},
@@ -632,8 +632,8 @@ UE.I18N['ja-jp'] = {
     },
     'edittip':{
         'static':{
-            lang_delRow:'行全体を削除する',
-            lang_delCol:'列全体を削除する'
+            lang_delRow:'行全體を削除する',
+            lang_delCol:'列全體を削除する'
         }
     },
     'edittd':{
@@ -650,13 +650,13 @@ UE.I18N['ja-jp'] = {
             lang_resave:"保存ステップ",
             uploadBtn:{src:"upload.png",alt:"アップロード"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、トップのコピーボタンをクリックしてアドレスをクリップボードにコピーする; 2.写真の追加ボタンをクリックしてダイアログボックスで「Ctrl+V」を押してください3.開いてて画像アップロードプロセスを選択してください。"
+            lang_step:"1、トップのコピーボタンをクリックしてアドレスをクリップボードにコピーする; 2.寫真の追加ボタンをクリックしてダイアログボックスで「Ctrl+V」を押してください3.開いてて画像アップロードプロセスを選択してください。"
         },
         'fileType':"イメージ",
         'flashError':"初期化に失敗しました。プラグインが正しくインストールされているか確認してください！",
         'netError':"ネットエラー、もう一度お試しください！",
         'copySuccess':"イメージURLがコピーされました！",
-        'flashI18n':{} //ブランクがある場合、中国語を表示
+        'flashI18n':{} //ブランクがある場合、中國語を表示
     },
     'autosave': {
         'saving':'保存中...',

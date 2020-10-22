@@ -80,7 +80,7 @@ class TagController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前標簽已存在' : '其它错误'),
+                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前標簽已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -120,14 +120,14 @@ class TagController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前標簽已存在' : '其它错误'),
+                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前標簽已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 標簽管理-删除標簽
+     * 標簽管理-刪除標簽
      *
      * @param int $id
      * @return array
@@ -143,14 +143,14 @@ class TagController extends Controller
             DB::commit();
             return [
                 'code' => 0,
-                'msg' => '删除成功',
+                'msg' => '刪除成功',
                 'redirect' => route('admin::tag.index')
             ];
         } catch (\RuntimeException $e) {
             DB::rollBack();
             return [
                 'code' => 1,
-                'msg' => '删除失败：' . $e->getMessage(),
+                'msg' => '刪除失败：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

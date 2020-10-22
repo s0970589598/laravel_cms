@@ -31,7 +31,7 @@
         }
     }
 
-    /* 初始化颜色设置 */
+    /* 初始化颜色設置 */
     function initColorSelector () {
         var obj = editor.queryCommandValue('background');
         if (obj) {
@@ -99,7 +99,7 @@
             }
         });
 
-        /* 设置颜色選擇器 */
+        /* 設置颜色選擇器 */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -112,12 +112,12 @@
         });
     }
 
-    /* 初始化在线圖片列表 */
+    /* 初始化在線圖片列表 */
     function initImagePanel() {
         onlineImage = onlineImage || new OnlineImage('imageList');
     }
 
-    /* 更新背景色设置面板 */
+    /* 更新背景色設置面板 */
     function updateFormState (radio, color, url, align, x, y) {
         var nocolorRadio = $G('nocolorRadio'),
             coloredRadio = $G('coloredRadio');
@@ -180,7 +180,7 @@
     }
 
 
-    /* 在线圖片 */
+    /* 在線圖片 */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -203,11 +203,11 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* 初始化滚动事件,滚动到地步自動拉取數據 */
+        /* 初始化滚動事件,滚動到地步自動拉取數據 */
         initEvents: function () {
             var _this = this;
 
-            /* 滚动拉取圖片 */
+            /* 滚動拉取圖片 */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
@@ -251,7 +251,7 @@
             this.initContainer();
             this.initData();
         },
-        /* 向后台拉取圖片列表數據 */
+        /* 向後台拉取圖片列表數據 */
         getImageData: function () {
             var _this = this;
 

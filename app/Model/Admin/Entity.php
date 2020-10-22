@@ -30,7 +30,7 @@ class Entity extends Model
     }
 
     /**
-     * 限制查询外部模型
+     * 限制查尋外部模型
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

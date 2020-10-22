@@ -7,11 +7,11 @@ use App\Model\Admin\SensitiveWord;
 use App\Model\Admin\Config as SiteConfig;
 
 /**
- * 直接从資料庫获取系统后台配置
+ * 直接從資料庫獲取係统後台配置
  *
  * @param string $key key
- * @param mixed $default key不存在时的默認值
- * @return mixed key對应的value
+ * @param mixed $default key不存在時的默認值
+ * @return mixed key對應的value
  */
 function getConfig($key, $default = null)
 {
@@ -20,7 +20,7 @@ function getConfig($key, $default = null)
 }
 
 /**
- * 后台配置嵌套解析。支持配置值中包含其它配置：{{CONFIG_KEY}}
+ * 後台配置嵌套解析。支持配置值中包含其它配置：{{CONFIG_KEY}}
  *
  * @param string $value
  * @return string
@@ -146,8 +146,8 @@ function mapTypeToVerbOfSensitiveWords()
  * 敏感詞检查
  *
  * @param string $text 待检查文本
- * @param string $type 名词、动词的检测方法。默認為 join 。join：名词和动词相连组合在一起视為违规 all：名词和动词只要同时出现即為违规
- * @param mixed $mode 检查模式。仅 $type 為 all 时有效。默認名词、动词、專用词都检查，显示可指定為 noun verb exclusive
+ * @param string $type 名詞、動詞的检测方法。默認為 join 。join：名詞和動詞相連组合在一起視為违规 all：名詞和動詞只要同時出现即為违规
+ * @param mixed $mode 检查模式。僅 $type 為 all 時有效。默認名詞、動詞、專用詞都检查，顯示可指定為 noun verb exclusive
  * @return array
  */
 function checkSensitiveWords(string $text, $type = 'join', $mode = null)
