@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上傳圖片对话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
+ * 上傳圖片對话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
  */
 
 (function () {
@@ -69,7 +69,7 @@
                     list = uploadFile.getInsertList();
                     var count = uploadFile.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上傳文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -104,7 +104,7 @@
                 $wrap = _this.$wrap,
             // 圖片容器
                 $queue = $wrap.find('.filelist'),
-            // 状态栏，包括进度和控制按钮
+            // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
             // 文件总体選擇信息。
                 $info = $statusBar.find('.info'),
@@ -122,7 +122,7 @@
                 fileCount = 0,
             // 添加的文件总大小
                 fileSize = 0,
-            // 优化retina, 在retina下这个值是2
+            // 优化retina, 在retina下這個值是2
                 ratio = window.devicePixelRatio || 1,
             // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
@@ -177,7 +177,7 @@
 
             setState('pedding');
 
-            // 當有文件添加进来时執行，负责view的创建
+            // 當有文件添加进来时執行，负责view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -484,7 +484,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //这里可以通过data对象添加POST参數
+                //這里可以通过data對象添加POST参數
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 

@@ -65,7 +65,7 @@ select[xm-select]{display: none !important;}
 .xm-select-hide {display: none !important;}
 div[xm-hg] .xm-select-label{white-space: nowrap; overflow: hidden; position: absolute; right: 30px; left: 0; padding-left: 10px;}
 
-/* 颜色相关 */
+/* 颜色相關 */
 div[xm-select-skin] .xm-select-title div.xm-select-label>span {border: 1px solid #009688}
 div[xm-select-skin] .xm-select-title div.xm-select-label>span i:hover {opacity: .8;filter: alpha(opacity=80);cursor: pointer}
 div[xm-select-skin=default] .xm-select-title div.xm-select-label>span {background-color: #F0F2F5;color: #909399;border: 1px solid #F0F2F5}

@@ -45,7 +45,7 @@
                         <div class="layui-input-inline">
                             <input type="text" name="route_params" autocomplete="off" class="layui-input" value="{{ $model->route_params ?? ''  }}">
                         </div>
-                        <div class="layui-form-mid layui-word-aux">用于精确控制同一路由下不同路由参數值的访问權限。填写格式：参數名稱:参數值</div>
+                        <div class="layui-form-mid layui-word-aux">用于精确控制同一路由下不同路由参數值的访問權限。填写格式：参數名稱:参數值</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">URL</label>

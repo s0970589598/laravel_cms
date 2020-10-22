@@ -79,7 +79,7 @@ class EntityRepository
             return $entity;
         } catch (\Exception $e) {
             $entity->delete();
-            throw new CreateTableException("创建資料庫表异常");
+            throw new CreateTableException("創建資料庫表異常");
         }
     }
 

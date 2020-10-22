@@ -27,7 +27,7 @@ class AdminUser extends Authenticatable
         'status' => [
             'showType' => 'select',
             'searchType' => '=',
-            'title' => '状态',
+            'title' => '狀態',
             'enums' => [
                 0 => '禁用',
                 1 => '启用',
@@ -35,13 +35,13 @@ class AdminUser extends Authenticatable
         ],
         'created_at' => [
             'showType' => 'datetime',
-            'title' => '创建時間'
+            'title' => '創建時間'
         ]
     ];
 
     public static $listField = [
         'name' => '用户名',
-        'statusText' => '状态',
+        'statusText' => '狀態',
         'roleNames' => '角色',
     ];
 

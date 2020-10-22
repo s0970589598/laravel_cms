@@ -21,22 +21,22 @@ var scrawl = function (options) {
 
         initOptions:function (options) {
             var me = this;
-            me.originalState(options);//初始頁面状态
+            me.originalState(options);//初始頁面狀態
             me._buildToolbarColor(options.colorList);//动态生成颜色選擇集合
 
-            me._addBoardListener(options.saveNum);//添加画板处理
-            me._addOPerateListener(options.saveNum);//添加undo redo clearBoard处理
-            me._addColorBarListener();//添加颜色選擇处理
-            me._addBrushBarListener();//添加画笔大小处理
-            me._addEraserBarListener();//添加橡皮大小处理
-            me._addAddImgListener();//添加增添背景圖片处理
-            me._addRemoveImgListenter();//删除背景圖片处理
-            me._addScalePicListenter();//添加缩放处理
-            me._addClearSelectionListenter();//添加清楚選中状态处理
+            me._addBoardListener(options.saveNum);//添加画板處理
+            me._addOPerateListener(options.saveNum);//添加undo redo clearBoard處理
+            me._addColorBarListener();//添加颜色選擇處理
+            me._addBrushBarListener();//添加画笔大小處理
+            me._addEraserBarListener();//添加橡皮大小處理
+            me._addAddImgListener();//添加增添背景圖片處理
+            me._addRemoveImgListenter();//删除背景圖片處理
+            me._addScalePicListenter();//添加缩放處理
+            me._addClearSelectionListenter();//添加清楚選中狀態處理
 
             me._originalColorSelect(options.drawBrushColor);//初始化颜色選中
             me._originalBrushSelect(options.drawBrushSize);//初始化画笔選中
-            me._clearSelection();//清楚選中状态
+            me._clearSelection();//清楚選中狀態
         },
 
         originalState:function (options) {
@@ -603,7 +603,7 @@ function ue_callback(url, state) {
 
     //移除遮罩层
     removeMaskLayer();
-    //状态响应
+    //狀態响应
     if (state == "SUCCESS") {
         picBorard.innerHTML = "";
         img.onload = function () {

@@ -110,7 +110,7 @@ class CommentRepository
     }
 
     /**
-     * 返回指定用户对評論的操作情况及評論操作數據
+     * 返回指定用户對評論的操作情况及評論操作數據
      *
      * @param int $id
      * @param int $uid

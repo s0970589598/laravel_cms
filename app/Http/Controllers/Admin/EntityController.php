@@ -85,7 +85,7 @@ class EntityController extends Controller
         } catch (CreateTableException $e) {
             return [
                 'code' => 2,
-                'msg' => '新增失败：创建資料庫表失败，數據表已存在或其它原因',
+                'msg' => '新增失败：創建資料庫表失败，數據表已存在或其它原因',
                 'redirect' => false
             ];
         } catch (QueryException $e) {

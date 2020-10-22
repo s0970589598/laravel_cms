@@ -9,7 +9,7 @@
 (function() {
   UE = window.UE || {};
   var isIE = !!window.ActiveXObject;
-  //定义utils工具
+  //定義utils工具
   var utils = {
     removeLastbs: function(url) {
       return url.replace(/\/$/, "");
@@ -428,7 +428,7 @@ UE.parse.register("table", function(utils) {
     tables = root.getElementsByTagName("table");
   if (tables.length) {
     var selector = this.selector;
-    //追加默認的表格样式
+    //追加默認的表格樣式
     utils.cssRule(
       "table",
       selector +
@@ -468,7 +468,7 @@ UE.parse.register("table", function(utils) {
         " td p{margin:0;padding:0;width:auto;height:auto;}",
       document
     );
-    //填充空的单元格
+    //填充空的單元格
 
     utils.each("td th caption".split(" "), function(tag) {
       var cells = root.getElementsByTagName(tag);
@@ -556,7 +556,7 @@ UE.parse.register("table", function(utils) {
         }
       };
 
-      //对表格设置排序的标记data-sort-type
+      //對表格设置排序的标记data-sort-type
       table.setAttribute(
         "data-sort-type",
         compareFn && typeof compareFn === "string" && Fn[compareFn]
@@ -629,7 +629,7 @@ UE.parse.register("table", function(utils) {
     }
     //更新表格
     function updateTable(table) {
-      //给第一行设置firstRow的样式名稱,在排序圖标的样式上使用到
+      //给第一行设置firstRow的樣式名稱,在排序圖标的樣式上使用到
       if (!utils.hasClass(table.rows[0], "firstRow")) {
         for (var i = 1; i < table.rows.length; i++) {
           utils.removeClass(table.rows[i], "firstRow");
@@ -760,7 +760,7 @@ UE.parse.register("charts", function(utils) {
     }
   }
 
-  //加载圖表差异化配置文件
+  //加载圖表差異化配置文件
   function loadTypeConfig() {
     utils.loadFile(
       document,
@@ -795,7 +795,7 @@ UE.parse.register("charts", function(utils) {
 
   /**
      * 渲染圖表
-     * @param container 圖表容器节点对象
+     * @param container 圖表容器节点對象
      * @param typeConfig 圖表類型配置
      * @param config 圖表通用配置
      * */
@@ -850,8 +850,8 @@ UE.parse.register("charts", function(utils) {
   }
 
   /**
-     * 创建圖表的容器
-     * 新创建的容器会替换掉对应的table对象
+     * 創建圖表的容器
+     * 新創建的容器会替换掉對应的table對象
      * */
   function createContainer(tableNode) {
     var container = document.createElement("div");
@@ -862,16 +862,16 @@ UE.parse.register("charts", function(utils) {
     return container;
   }
 
-  //根据config解析出正确的类别和圖表數據信息
+  //根据config解析出正确的類别和圖表數據信息
   function analysisConfig(config) {
     var series = [],
-      //數據类别
+      //數據類别
       categories = [],
       result = [],
       data = config.data,
       meta = config.meta;
 
-    //數據对齐方式為相反的方式， 需要反转數據
+    //數據對齐方式為相反的方式， 需要反转數據
     if (meta.dataFormat != "1") {
       for (var i = 0, len = data.length; i < len; i++) {
         for (var j = 0, jlen = data[i].length; j < jlen; j++) {
@@ -942,7 +942,7 @@ UE.parse.register("background", function(utils) {
     }
   }
 
-  //追加默認的表格样式
+  //追加默認的表格樣式
   styles &&
     utils.cssRule(
       "ueditor_background",

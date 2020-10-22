@@ -2,7 +2,7 @@
  * User: Jinqn
  * Date: 14-04-08
  * Time: 下午16:34
- * 上傳圖片对话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
+ * 上傳圖片對话框逻辑代码,包括tab: 远程圖片/上傳圖片/在线圖片/搜索圖片
  */
 
 (function () {
@@ -90,7 +90,7 @@
                     list = uploadImage.getInsertList();
                     var count = uploadImage.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2个未上傳文件'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + '还有2個未上傳文件'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -111,9 +111,9 @@
     }
 
 
-    /* 初始化对其方式的点击事件 */
+    /* 初始化對其方式的点擊事件 */
     function initAlign(){
-        /* 点击align圖标 */
+        /* 点擊align圖标 */
         domUtils.on($G("alignIcon"), 'click', function(e){
             var target = e.target || e.srcElement;
             if(target.className && target.className.indexOf('-align') != -1) {
@@ -122,7 +122,7 @@
         });
     }
 
-    /* 设置对齐方式 */
+    /* 设置對齐方式 */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,7 +135,7 @@
             }
         }
     }
-    /* 获取对齐方式 */
+    /* 获取對齐方式 */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
@@ -306,7 +306,7 @@
                 $wrap = _this.$wrap,
             // 圖片容器
                 $queue = $wrap.find('.filelist'),
-            // 状态栏，包括进度和控制按钮
+            // 狀態栏，包括进度和控制按钮
                 $statusBar = $wrap.find('.statusBar'),
             // 文件总体選擇信息。
                 $info = $statusBar.find('.info'),
@@ -324,7 +324,7 @@
                 fileCount = 0,
             // 添加的文件总大小
                 fileSize = 0,
-            // 优化retina, 在retina下这个值是2
+            // 优化retina, 在retina下這個值是2
                 ratio = window.devicePixelRatio || 1,
             // 缩略圖大小
                 thumbnailWidth = 113 * ratio,
@@ -385,7 +385,7 @@
 
             setState('pedding');
 
-            // 當有文件添加进来时執行，负责view的创建
+            // 當有文件添加进来时執行，负责view的創建
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
@@ -640,7 +640,7 @@
             }
 
             uploader.on('fileQueued', function (file) {
-                /* 選擇文件后设置上傳相关的url和自定义参數 */
+                /* 選擇文件后设置上傳相關的url和自定義参數 */
                 editor.getOpt("imageUploadService")(_this, editor).setUploadData(file);
 
                 fileCount++;
@@ -687,7 +687,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (object, data, headers) {
-                //这里可以通过data对象添加POST参數
+                //這里可以通过data對象添加POST参數
                 editor.getOpt("imageUploadService")(_this, editor).setFormData(object, data, headers);
             });
 
@@ -985,14 +985,14 @@
         initEvents: function(){
             var _this = this;
 
-            /* 点击搜索按钮 */
+            /* 点擊搜索按钮 */
             domUtils.on($G('searchBtn'), 'click', function(){
                 var key = $G('searchTxt').value;
                 if(key && key != lang.searchRemind) {
                     _this.getImageData();
                 }
             });
-            /* 点击清除妞 */
+            /* 点擊清除妞 */
             domUtils.on($G('searchReset'), 'click', function(){
                 $G('searchTxt').value = lang.searchRemind;
                 $G('searchListUl').innerHTML = '';

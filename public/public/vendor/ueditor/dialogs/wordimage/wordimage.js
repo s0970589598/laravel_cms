@@ -64,7 +64,7 @@ function addUploadListener() {
 }
 
 function showLocalPath(id) {
-    //单张編輯
+    //單张編輯
     var img = editor.selection.getRange().getClosedNode();
     var images = editor.execCommand('wordimage');
     if(images.length==1 || img && img.tagName == 'IMG'){
@@ -72,7 +72,7 @@ function showLocalPath(id) {
         return;
     }
 	var path = images[0];
-    var leftSlashIndex  = path.lastIndexOf("/")||0,  //不同版本的doc和浏览器都可能影响到这个符号，故直接判断两种
+    var leftSlashIndex  = path.lastIndexOf("/")||0,  //不同版本的doc和浏览器都可能影响到這個符号，故直接判断两种
         rightSlashIndex = path.lastIndexOf("\\")||0,
         separater = leftSlashIndex > rightSlashIndex ? "/":"\\" ;
 
@@ -83,7 +83,7 @@ function showLocalPath(id) {
 function createFlashUploader(opt, callbacks) {
     //由于lang.flashI18n是静态属性，不可以直接进行修改，否则会影响到后续内容
     var i18n = utils.extend({},lang.flashI18n);
-    //处理圖片资源地址的编码，补全等问题
+    //處理圖片资源地址的编码，补全等問题
     for(var i in i18n){
         if(!(i in {"lang":1,"uploadingTF":1,"imageTF":1,"textEncoding":1}) && i18n[i]){
             i18n[i] = encodeURIComponent(editor.options.langPath + editor.options.lang + "/images/" + i18n[i]);

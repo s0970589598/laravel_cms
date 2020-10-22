@@ -109,12 +109,12 @@ class EntityFieldController extends Controller
                     'msg' => '新增失败：無效字段類型',
                 ];
             }
-            // 一个模型只能有一个 inputTags 表單類型
+            // 一個模型只能有一個 inputTags 表單類型
             if (EntityFieldRepository::formTypeBeUnique($data['form_type'])
                 && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
                 return [
                     'code' => 4,
-                    'msg' => '新增失败：一个模型只能有一个標簽输入框表單類型',
+                    'msg' => '新增失败：一個模型只能有一個標簽输入框表單類型',
                 ];
             }
 
@@ -203,11 +203,11 @@ class EntityFieldController extends Controller
         $data['is_edit'] = $data['is_edit'] ?? EntityField::EDIT_DISABLE;
         $data['is_required'] = $data['is_required'] ?? EntityField::REQUIRED_DISABLE;
         $data['is_show_inline'] = $data['is_show_inline'] ?? EntityField::SHOW_NOT_INLINE;
-        // 一个模型只能有一个 inputTags 表單類型
+        // 一個模型只能有一個 inputTags 表單類型
         if (EntityFieldRepository::formTypeBeUnique($data['form_type']) && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
             return [
                 'code' => 4,
-                'msg' => '編輯失败：一个模型只能有一个標簽输入框表單類型',
+                'msg' => '編輯失败：一個模型只能有一個標簽输入框表單類型',
             ];
         }
         try {

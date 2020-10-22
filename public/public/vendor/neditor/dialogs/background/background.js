@@ -78,7 +78,7 @@
         var me = editor,
             cp = $G("colorPicker");
 
-        /* 生成颜色選擇器ui对象 */
+        /* 生成颜色選擇器ui對象 */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),

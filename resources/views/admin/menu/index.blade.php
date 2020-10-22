@@ -21,7 +21,7 @@
                     </div>
                 </div>
             <div class="layui-inline">
-                <label class="layui-form-label">创建日期</label>
+                <label class="layui-form-label">創建日期</label>
                 <div class="layui-input-inline">
                     <input type="text" name="created_at" class="layui-input" id="created_at" value="{{ request()->get('created_at') }}">
                 </div>
@@ -68,7 +68,7 @@
                             </select>
                         </div>
                         <div class="layui-input-inline">
-                            <input type="text" name="params" value="" placeholder="操作相关参數" class="layui-input">
+                            <input type="text" name="params" value="" placeholder="操作相關参數" class="layui-input">
                         </div>
                         <div class="layui-inline">
                             <button class="layui-btn layuiadmin-btn-list" lay-filter="form-batch" id="batchBtn" lay-submit>
@@ -106,7 +106,7 @@
         });
 
         var table = layui.table;
-        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="對应的值"
             $.ajax({
                 url: '{{ route('admin::menu.batch') }}',
                 method: 'post',

@@ -12,7 +12,7 @@
                 <input type="hidden" name="action" value="search">
             @include('admin.searchField', ['data' => App\Model\Admin\Comment::$searchField])
             <div class="layui-inline">
-                <label class="layui-form-label">创建日期</label>
+                <label class="layui-form-label">創建日期</label>
                 <div class="layui-input-inline">
                     <input type="text" name="created_at" class="layui-input" id="created_at" value="{{ request()->get('created_at') }}">
                 </div>
@@ -43,7 +43,7 @@
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     @include('admin.listHead', ['data' => App\Model\Admin\Comment::$listField])
-                    <th lay-data="{templet:'#vist'}">访问</th>
+                    <th lay-data="{templet:'#vist'}">访問</th>
                     <th lay-data="{field:'created_at'}">添加時間</th>
                     <th lay-data="{field:'updated_at'}">更新時間</th>
                     <th lay-data="{width:200, templet:'#action'}">操作</th>
@@ -59,7 +59,7 @@
 </script>
 <script type="text/html" id="vist">
     <a target="_blank" href="<% d.contentEditUrl %>" class="layui-table-link" title="后台編輯">后台</a>
-    <a target="_blank" href="<% d.vistUrl %>" class="layui-table-link" title="前台访问">前台</a>
+    <a target="_blank" href="<% d.vistUrl %>" class="layui-table-link" title="前台访問">前台</a>
     <a href="<% d.replyUrl %>" class="layui-table-link" title="该評論所有回复">回复</a>
 </script>
 

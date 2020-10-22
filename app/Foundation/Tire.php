@@ -5,8 +5,8 @@ namespace App\Foundation;
 /**
  * 代码基于 https://github.com/whiteCcinn/tire-php 修改而来
  *
- * 修复了首个敏感字连接在一起無法查出敏感詞的bug
- * 修复了还原字符串时未能正确处理ascii字符的bug
+ * 修复了首個敏感字连接在一起無法查出敏感詞的bug
+ * 修复了还原字符串时未能正确處理ascii字符的bug
  */
 class Tire
 {
@@ -104,7 +104,7 @@ class Tire
     }
 
     /**
-     * 单字符转换编码
+     * 單字符转换编码
      *
      * @param $utf8_str
      * @return string
@@ -123,7 +123,7 @@ class Tire
     }
 
     /**
-     * 编码转单字符
+     * 编码转單字符
      *
      * @param $ascii
      * @return string

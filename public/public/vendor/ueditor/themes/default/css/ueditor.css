@@ -119,7 +119,7 @@ div.edui-box {
     -webkit-user-select: none;
     -moz-user-select: none;
     padding: 1px;
-    overflow: hidden; /*全屏下单独一行不占位*/
+    overflow: hidden; /*全屏下單独一行不占位*/
     zoom: 1;
     width:auto;
     height:auto;
@@ -480,7 +480,7 @@ div.edui-box {
     background-color: white;
     border: 1px solid gray;
 }
-/*普通按钮样式及状态*/
+/*普通按钮樣式及狀態*/
 .edui-default .edui-toolbar .edui-button .edui-icon,
 .edui-default .edui-toolbar .edui-menubutton .edui-icon,
 .edui-default .edui-toolbar .edui-splitbutton .edui-icon {
@@ -1017,7 +1017,7 @@ div.edui-box {
     background-color: white;
 }
 
-/* 解决嵌套导致的圖标问题 */
+/* 解决嵌套导致的圖标問题 */
 .edui-default .edui-for-insertorderedlist .edui-popup-body .edui-icon,
 .edui-default .edui-for-lineheight .edui-popup-body .edui-icon,
 .edui-default .edui-for-rowspacingtop .edui-popup-body .edui-icon,
@@ -1166,7 +1166,7 @@ div.edui-box {
     word-wrap: break-word;
     word-break: normal;
 }
-/* 弹出对话框按钮和对话框大小 */
+/* 弹出對话框按钮和對话框大小 */
 .edui-default .edui-dialog {
     z-index: 2000;
     position: absolute;
@@ -1602,7 +1602,7 @@ div.edui-box {
 .arrow_up{
     background: white url('../images/arrow_up.png') no-repeat center;
 }
-/*高级的样式*/
+/*高级的樣式*/
 .edui-colorpicker-adv{
     position: relative;
     overflow: hidden;

@@ -76,7 +76,7 @@ class UserController extends BaseController
         }
 
         if ($this->attemptLogin($request)) {
-            // 如果存在三方登入关联，则关联之
+            // 如果存在三方登入關联，则關联之
             $this->associateAuth($user);
 
             return $this->sendLoginResponse($request);
@@ -202,7 +202,7 @@ class UserController extends BaseController
                 return redirect()->intended('/');
             }
 
-            // 重定向到登入註冊頁面，关联本站用户
+            // 重定向到登入註冊頁面，關联本站用户
             session([self::AUTH_SESSION => $user]);
             return redirect(route('member::login.show'));
         } catch (AuthorizeFailedException $e) {

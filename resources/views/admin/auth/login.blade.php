@@ -36,7 +36,7 @@
                     </div>
                     <div class="layui-col-xs5">
                         <div style="margin-left: 10px;">
-                            <img src="{{ captcha_src() }}" class="lightcms-user-login-codeimg" id="get-vercode" title="点击刷新验证码" onclick="$(this).prop('src', $(this).prop('src').split('?')[0] + '?' + Math.random())">
+                            <img src="{{ captcha_src() }}" class="lightcms-user-login-codeimg" id="get-vercode" title="点擊刷新验证码" onclick="$(this).prop('src', $(this).prop('src').split('?')[0] + '?' + Math.random())">
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ class User extends \App\Model\Front\User
 {
     public static $listField = [
         'phone' => '手機號碼',
-        'statusText' => '状态'
+        'statusText' => '狀態'
     ];
 
     public static $searchField = [

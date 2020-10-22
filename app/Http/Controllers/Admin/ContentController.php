@@ -236,7 +236,7 @@ class ContentController extends Controller
                 EntityFieldRepository::getSaveFields($entity)
             ), $this->entity);
 
-            // 標簽類型字段另外处理 多对多关联
+            // 標簽類型字段另外處理 多對多關联
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField) {
@@ -315,7 +315,7 @@ class ContentController extends Controller
             DB::beginTransaction();
 
             ContentRepository::update($id, $data, $this->entity);
-            // 標簽類型字段另外处理 多对多关联
+            // 標簽類型字段另外處理 多對多關联
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField && intval($inputTagsField->is_edit) === EntityField::EDIT_ENABLE) {
@@ -462,10 +462,10 @@ class ContentController extends Controller
     }
 
     /**
-     * 判断自定义的处理方法是否存在
+     * 判断自定義的處理方法是否存在
      *
      * @param string $method 方法名
-     * @return string|boolean 存在返回控制器类名，不存在返回false
+     * @return string|boolean 存在返回控制器類名，不存在返回false
      */
     protected function userDefinedHandlerExists($method)
     {
@@ -481,7 +481,7 @@ class ContentController extends Controller
     protected function getAddOrEditViewPath()
     {
         $view = 'admin.content.add';
-        // 自定义模板
+        // 自定義模板
         $modelName = Str::singular($this->entity->table_name);
         $path = resource_path('views/admin/content/' . $modelName . '_add.blade.php');
         if (file_exists($path)) {

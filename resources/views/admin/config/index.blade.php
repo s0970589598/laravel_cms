@@ -9,7 +9,7 @@
                 <input type="hidden" name="action" value="search">
                 @include('admin.searchField', ['data' => App\Model\Admin\Config::$searchField])
             <div class="layui-inline">
-                <label class="layui-form-label">创建日期</label>
+                <label class="layui-form-label">創建日期</label>
                 <div class="layui-input-inline">
                     <input type="text" name="created_at" class="layui-input" id="created_at" value="{{ request()->get('created_at') }}">
                 </div>

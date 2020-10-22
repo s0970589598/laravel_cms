@@ -16,7 +16,7 @@ trait Searchable
 {
     public static function buildQuery(Builder $query, array $condition)
     {
-        // 获取模型定义的搜索域
+        // 获取模型定義的搜索域
         $model = $query->getModel();
         $searchField = [];
         if (property_exists($model, 'searchField')) {

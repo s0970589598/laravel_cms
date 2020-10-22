@@ -259,7 +259,7 @@
                                     var inlineAttachmentConfig = {
                                         uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上傳圖片地址
                                         uploadFieldName: 'file',          //上傳的文件名
-                                        jsonFieldName: 'url',              //返回结果中圖片地址对应的字段名稱
+                                        jsonFieldName: 'url',              //返回结果中圖片地址對应的字段名稱
                                         progressText: '![圖片上傳中...]()',    //上傳过程中用户看到的文案
                                         errorText: '圖片上傳失败',
                                         urlText:'![圖片描述]({filename})',    //上傳成功后插入編輯器中的文案，{filename} 会被替换成圖片地址
@@ -292,7 +292,7 @@
                                     </div></div>
                                 <script>
                                     //实例化編輯器
-                                    //建议使用工厂方法getEditor创建和引用編輯器实例，如果在某个闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                                    //建议使用工厂方法getEditor創建和引用編輯器实例，如果在某個闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相關的实例
                                     var ue_{{ $field->name }} = UE.getEditor('editor-{{ $field->name }}', {autoFloatEnabled:false});
                                     ue_{{ $field->name }}.ready(function(){
                                         ue_{{ $field->name }}.focus();

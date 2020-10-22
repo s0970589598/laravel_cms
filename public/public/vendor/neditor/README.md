@@ -6,11 +6,11 @@
 
 ## 新版發佈
 
-2.1 發佈，此次版本移除了編輯相关代码，纯 ajax 送出，请配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者云存储。
+2.1 發佈，此次版本移除了編輯相關代码，纯 ajax 送出，请配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者云存储。
 
 ## 捐赠
 
-该项目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此项目的发展。
+该项目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此项目的發展。
 
 
 ## 第一步：下载編輯器
@@ -35,11 +35,11 @@ npm run build
 
 进入到目入 `dist` , 使用浏览器打開文件 `index.html` 。
 
-如果看到了下面这样的編輯器，恭喜你，初次部署成功！
+如果看到了下面這樣的編輯器，恭喜你，初次部署成功！
 
 ![部署成功](https://www.notadd.com/src/neditor-demo.webp)
 
-## 相关版本
+## 相關版本
 
 [Angular 版 Neditor](https://github.com/notadd/ngx-neditor)    
 
@@ -47,16 +47,16 @@ npm run build
 
 ## 技术支持
 
-该项目基于 MIT 协议開源，任何组织/企业以及个人都可以免费使用（保留版权）。    
+该项目基于 MIT 协议開源，任何组织/企业以及個人都可以免费使用（保留版权）。    
 如果您需要额外商业技术支持或者定制編輯器，请联系 QQ：1256985886
 
 
 
 其他版本待添加
 
-### 自定义的参數
+### 自定義的参數
 
-編輯器有很多可自定义的参數项，在实例化的时候可以傳入给編輯器：
+編輯器有很多可自定義的参數项，在实例化的时候可以傳入给編輯器：
 
 ```javascript
 var ue = UE.getEditor('container', {
@@ -64,11 +64,11 @@ var ue = UE.getEditor('container', {
 });
 ```
 
-配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项说明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项说明.md)、[編輯配置项说明](http://fex.baidu.com/ueditor/#server-config)
+配置项也可以通过 `neditor.config.js` 文件修改，具体的配置方法请看 [前端配置项說明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项說明.md)、[編輯配置项說明](http://fex.baidu.com/ueditor/#server-config)
 
 ### 編輯器圖片、视频、涂鸦、附件上傳service
 
-編輯器上傳逻辑单独在 `neditor.service.js` 文件配置，具体的配置方法见注譯
+編輯器上傳逻辑單独在 `neditor.service.js` 文件配置，具体的配置方法见注譯
 
 ### 设置和读取編輯器的内容
 
@@ -94,7 +94,7 @@ Neditor 码云： [http://gitee.com/notadd/neditor](http://gitee.com/notadd/nedi
 
 Neditor github 地址：[http://github.com/notadd/neditor](http://github.com/notadd/neditor "Neditor github 地址")
 
-## 相关链接
+## 相關連接
 
 Ueditor 官网：[http://ueditor.baidu.com](http://ueditor.baidu.com "ueditor 官网")
 
@@ -104,10 +104,10 @@ Ueditor API 文档：[http://ueditor.baidu.com/doc](http://ueditor.baidu.com/doc
 
 Ueditor 文档：[http://fex.baidu.com/ueditor/](http://fex.baidu.com/ueditor/)
 
-注: 对IE8以下版本不再承诺兼容
+注: 對IE8以下版本不再承诺兼容
 
 
-### 关于 HTTPS
+### 關于 HTTPS
 
 使用了 [又拍云CDN](https://console.upyun.com/register/?invite=r17EYO3BW) 服务，支持跨域 和 https。
 
@@ -132,7 +132,7 @@ QQ 群： 321735506
 ### 2.1
 
 - [x] 将上傳封装為 service ，支持非 GraphQL 接口。
-- [x] 细节样式修改(美化)
+- [x] 细节樣式修改(美化)
 
 ### 2.2
 

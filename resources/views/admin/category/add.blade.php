@@ -28,15 +28,15 @@
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">关联模型</label>
+                        <label class="layui-form-label">關联模型</label>
                         <div class="layui-input-block" style="width: 400px">
                             <select name="model_id" lay-verify="required">
-                                <option value="0">不关联</option>
+                                <option value="0">不關联</option>
                                 @foreach(App\Model\Admin\Entity::all(['id', 'name']) as $v)
                                     <option value="{{ $v->id }}" @if(isset($model) && $model->model_id == $v->id) selected @endif>{{ $v->name }}</option>
                                 @endforeach
                             </select>
-                            <div class="layui-form-mid light-danger">修改分類关联的模型可能会破坏數據一致性，请谨慎操作</div>
+                            <div class="layui-form-mid light-danger">修改分類關联的模型可能会破坏數據一致性，请谨慎操作</div>
                         </div>
                     </div>
 

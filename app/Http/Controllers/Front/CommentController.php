@@ -125,7 +125,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 获取指定用户对評論的操作數據
+     * 获取指定用户對評論的操作數據
      *
      * @param Request $request
      */
@@ -151,7 +151,7 @@ class CommentController extends BaseController
     }
 
     /**
-     * 对評論进行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
+     * 對評論进行操作。喜欢、不喜欢、中性（取消喜欢、取消不喜欢）
      *
      * @param int $id
      * @param string $action

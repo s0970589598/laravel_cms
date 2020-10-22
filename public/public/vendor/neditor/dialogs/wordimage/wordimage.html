@@ -52,24 +52,24 @@
             urlWidthParams = optImageUrl + (optImageUrl.indexOf('?') == -1 ? '?':'&') + params;
 
         utils.domReady(function(){
-            //创建Flash相关的参數集合
+            //創建Flash相關的参數集合
             var flashOptions = {
                 container:"flashContainer",                                                    //flash容器id
-                url:urlWidthParams,                                           // 上傳处理頁面的url地址
-                ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自定义参數列表
+                url:urlWidthParams,                                           // 上傳處理頁面的url地址
+                ext:editor.queryCommandValue('serverParam') || {},                                 //可向服务器送出的自定義参數列表
                 fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //上傳文件格式限制
                 flashUrl:'imageUploader.swf',                                                  //上傳用的flash组件地址
                 width:600,          //flash的宽度
                 height:272,         //flash的高度
-                gridWidth:120,     // 每一个预览圖片所占的宽度
-                gridHeight:120,    // 每一个预览圖片所占的高度
-                picWidth:100,      // 单张预览圖片的宽度
-                picHeight:100,     // 单张预览圖片的高度
+                gridWidth:120,     // 每一個预览圖片所占的宽度
+                gridHeight:120,    // 每一個预览圖片所占的高度
+                picWidth:100,      // 單张预览圖片的宽度
+                picHeight:100,     // 單张预览圖片的高度
                 uploadDataFieldName: optImageFieldName,    // POST请求中圖片數據的key
                 picDescFieldName:'pictitle',      // POST请求中圖片描述的key
-                maxSize: maxSize,                         // 文件的最大体积,单位M
-                compressSize:1,                   // 上傳前如果圖片体积超过该值，会先压缩,单位M
-                maxNum:32,                         // 单次最大可上傳多少个文件
+                maxSize: maxSize,                         // 文件的最大体积,單位M
+                compressSize:1,                   // 上傳前如果圖片体积超过该值，会先压缩,單位M
+                maxNum:32,                         // 單次最大可上傳多少個文件
                 compressSide: 0,                 //等比压缩的基准，0為按照最长边，1為按照宽度，2為按照高度
                 compressLength: optImageCompressBorder        //能接受的最大边长，超过该值Flash会自動等比压缩
             };
@@ -87,20 +87,20 @@
                         dialog.buttons[0].setDisabled(false);         //没有選擇圖片时重新点亮按钮
                     }
                 },
-                uploadCompleteCallback: function(data){               // 单个文件上傳完成的回调
+                uploadCompleteCallback: function(data){               // 單個文件上傳完成的回调
                     try{var info = eval("(" + data.info + ")");
                     info && imageUrls.push(info);
                     selectedImageCount--;
                     }catch(e){}
                 },
-                uploadErrorCallback: function (data){         // 单个文件上傳失败的回调,
+                uploadErrorCallback: function (data){         // 單個文件上傳失败的回调,
                     console && console.log(data);
                 },
                 allCompleteCallback: function(){              // 全部上傳完成时的回调
-                    dialog.buttons[0].setDisabled(false);    //上傳完毕后点亮按钮
+                    dialog.buttons[0].setDisabled(false);    //上傳完畢后点亮按钮
                 }
                 //exceedFileCallback: 'exceedFileCallback',   // 文件超出限制的最大体积时的回调
-                //startUploadCallback: startUploadCallback    // 開始上傳某个文件时的回调
+                //startUploadCallback: startUploadCallback    // 開始上傳某個文件时的回调
             };
             wordImage.init(flashOptions,callbacks);
         });

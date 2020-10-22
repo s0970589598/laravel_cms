@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/public/vendor/layui-v2.4.5/css/layui.css" media="all">
     <link rel="stylesheet" href="/public/css/member.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.css" />
-    <!-- 样式文件来自 www.taptap.com 侵删~~~ -->
+    <!-- 樣式文件来自 www.taptap.com 侵删~~~ -->
     <link rel="stylesheet" href="/public/css/app-2adb6bab87.css">
     <style>
         .pagination {
@@ -143,16 +143,16 @@
         <div class="w-full mx-auto flex flex-wrap">
             <div class="flex w-full md:w-1/2 ">
                 <div class="px-8">
-                    <h3 class="font-bold text-black">关于</h3>
+                    <h3 class="font-bold text-black">關于</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一个基于Laravel開发的轻量级CMS系统，也可以作為一个通用的后台管理框架使用。
+                        lightCMS是一個基于Laravel開發的轻量级CMS系统，也可以作為一個通用的后台管理框架使用。
                     </p>
                 </div>
             </div>
 
             <div class="flex w-full md:w-1/2">
                 <div class="px-8">
-                    <h3 class="font-bold text-black">链接</h3>
+                    <h3 class="font-bold text-black">連接</h3>
                     <ul class="list-reset items-center text-sm pt-3">
                         <li>
                             <a class="inline-block text-grey-dark no-underline hover:text-black hover:text-underline py-1" href="https://github.com/eddy8/lightCMS" target="_blank">GitHub</a>
@@ -409,7 +409,7 @@
                 emojify.run(document.getElementById('comments'));
 
                 @auth('member')
-                // 获取登入用户对評論的操作數據
+                // 获取登入用户對評論的操作數據
                 commentAction();
                 @endauth
 
@@ -481,7 +481,7 @@
                             that.parents('div.taptap-comments').html(loadReplyComments(d.data, rid, uid));
 
                             @auth('member')
-                            // 获取登入用户对評論的操作數據
+                            // 获取登入用户對評論的操作數據
                             commentAction();
                             @endauth
                         }

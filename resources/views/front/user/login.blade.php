@@ -15,7 +15,7 @@
 <div class="container h-full flex justify-center items-center">
     <div class="layui-tab w-1/3" >
         @if(session()->has(\App\Http\Controllers\Front\UserController::AUTH_SESSION))
-            <span style="margin-bottom: 20px;" class="text-purple-light block">登入或註冊进行帐号关联</span>
+            <span style="margin-bottom: 20px;" class="text-purple-light block">登入或註冊进行帐号關联</span>
         @endif
             <span style="margin-bottom: 20px;" class="text-red-light block">
             @foreach($errors->all() as $message)

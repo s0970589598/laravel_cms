@@ -71,7 +71,7 @@ function switchTab( index ) {
         tabHeads[i].className = "";
         tabBodys[i].style.display = "none";
     }
-    //显示对应呈现元素
+    //显示對应呈现元素
     tabHeads[index].className = "focus";
     tabBodys[index].style.display = "block";
 }

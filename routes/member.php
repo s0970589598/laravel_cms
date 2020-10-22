@@ -33,7 +33,7 @@ Route::group(
         Route::middleware('auth:member')->group(function () {
             Route::get('/logout', 'UserController@logout')->name('logout');
 
-            // 发表評論
+            // 發表評論
             Route::post('/entity/{entityId}/content/{contentId}/comment', 'CommentController@save')
                 ->name('comment.save')->where(['entityId' => Regexp::RESOURCE_ID, 'contentId' => Regexp::RESOURCE_ID]);
             // 評論操作

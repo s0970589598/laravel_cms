@@ -15,7 +15,7 @@ class Category extends Model
 
     public static $listField = [
         'parentName' => '上级分類',
-        'entityName' => '关联模型',
+        'entityName' => '關联模型',
         'order' => '排序',
     ];
 

@@ -9,7 +9,7 @@
                 <input type="hidden" name="action" value="search">
             @include('admin.searchField', ['data' => App\Model\Admin\EntityField::$searchField])
             <div class="layui-inline">
-                <label class="layui-form-label">创建日期</label>
+                <label class="layui-form-label">創建日期</label>
                 <div class="layui-input-inline">
                     <input type="text" name="created_at" class="layui-input" id="created_at" value="{{ request()->get('created_at') }}">
                 </div>
@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::entityField.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::entityField.create') }}?{{ request()->getQueryString() }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增模型字段</a> | 单击排序值可直接編輯</div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::entityField.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::entityField.create') }}?{{ request()->getQueryString() }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增模型字段</a> | 單擊排序值可直接編輯</div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
@@ -70,7 +70,7 @@
         });
 
         var table = layui.table;
-        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="对应的值"
+        table.on('edit(test)', function(obj){ //注：edit是固定事件名，test是table原始容器的属性 lay-filter="對应的值"
             $.ajax({
                 url: '{{ route('admin::entityField.listUpdate', ['id' => '__replace_id']) }}'.replace('__replace_id', obj.data.id),
                 method: 'put',

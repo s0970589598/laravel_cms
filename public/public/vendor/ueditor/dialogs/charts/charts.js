@@ -1,5 +1,5 @@
 /*
- * 圖片转换对话框脚本
+ * 圖片转换對话框脚本
  **/
 
 var tableData = [],
@@ -289,7 +289,7 @@ function getUserConfig () {
             xTitle: form[ 'x-title' ].value,
             yTitle: form[ 'y-title' ].value,
             suffix: form[ 'unit' ].value,
-            //數據对齐方式
+            //數據對齐方式
             tableDataFormat: getTableDataFormat (),
             //饼圖提示文字
             tip: $( "#tipInput" ).val()
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 获取數據源數據对齐方式
+ * 获取數據源數據對齐方式
  */
 function getTableDataFormat () {
 
@@ -396,7 +396,7 @@ function updateConfigItem ( value ) {
     var table = $( "#showTable" )[ 0 ],
         isDisable = value === 'disable' ? true : false;
 
-    //table中的input处理
+    //table中的input處理
     for ( var i = 2 , row; row = table.rows[ i ]; i++ ) {
 
         for ( var j = 1, cell; cell = row.cells[ j ]; j++ ) {
@@ -407,7 +407,7 @@ function updateConfigItem ( value ) {
 
     }
 
-    //其他项处理
+    //其他项處理
     $( "input.not-pie-item" ).attr( "disabled", isDisable );
     $( "#tipInput" ).attr( "disabled", !isDisable )
 

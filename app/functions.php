@@ -11,7 +11,7 @@ use App\Model\Admin\Config as SiteConfig;
  *
  * @param string $key key
  * @param mixed $default key不存在时的默認值
- * @return mixed key对应的value
+ * @return mixed key對应的value
  */
 function getConfig($key, $default = null)
 {

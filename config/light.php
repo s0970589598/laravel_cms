@@ -3,17 +3,17 @@ return [
     // 超级管理員。不受權限控制
     'superAdmin' => [1],
 
-    // 各类缓存KEY
+    // 各類缓存KEY
     'cache_key' => [
         'config' => 'config'
     ],
-    // 加载資料庫自定义配置
+    // 加载資料庫自定義配置
     'light_config' => false,
 
-    // 系统Log保留時間。单位：天
+    // 系统Log保留時間。單位：天
     'log_reserve_days' => 180,
 
-    // 异步写入系统Log
+    // 異步写入系统Log
     'log_async_write' => false,
 
     // 資料庫表字段類型 参考：https://laravel.com/docs/5.5/migrations#columns
@@ -88,17 +88,17 @@ return [
         'reference_beacon_location' => '引用beacon使用單位'
     ],
 
-    // NEditor相关
+    // NEditor相關
     'neditor' => [
         'disk' => 'admin_img',
         'upload' => [
-            'imageMaxSize' => 8 * 1024 * 1024, /* 上傳大小限制，单位B */
+            'imageMaxSize' => 8 * 1024 * 1024, /* 上傳大小限制，單位B */
             'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ".webp"], /* 上傳圖片格式显示 */
         ]
     ],
     'image_upload' => [
-        'driver' => 'local', // local 表示上傳到本地服务器。上傳到其它服务器请设置自定义名稱
-        'class' => '', // 自定义 driver 需要填写对应包括命名空间的完整类名，该类需要实现 App\Contracts\ImageUpload 接口
+        'driver' => 'local', // local 表示上傳到本地服务器。上傳到其它服务器请设置自定義名稱
+        'class' => '', // 自定義 driver 需要填写對应包括命名空间的完整類名，该類需要实现 App\Contracts\ImageUpload 接口
     ],
 
     // 三方登入
