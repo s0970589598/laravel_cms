@@ -10,6 +10,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Repository\Admin\EntityRepository;
+use App\Repository\Admin\ContentRepository;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -22,7 +24,18 @@ class HomeController extends Controller
         if (function_exists('opcache_get_status') && opcache_get_status() !== false) {
             $opcache = 'true';
         }
-        return view('admin.home.index', ['opcache' => $opcache]);
+
+        $user = \Auth::guard('admin')->user();
+        $data = ContentRepository::list('log_beacon_event', 50, [], $user->id);
+        $data2 = ContentRepository::list('log_broadcast', 50, [], $user->id);
+
+        return view('admin.home.index', 
+                        [
+                            'data' => $data,
+                            'data2' => $data2,                            
+                        
+                        ]
+                    );
     }
 
     /**

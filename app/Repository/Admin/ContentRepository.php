@@ -29,7 +29,7 @@ class ContentRepository
     public static function list($entity, $perPage, $condition = [], $user_id)
     {
         $sortField = 'id';
-        $sortType = 'desc';
+        $sortType = 'asc';
         if (isset($condition['light_sort_fields'])) {
             $tmp = explode(',', $condition['light_sort_fields']);
             $sortField = isset($tmp[0]) && ($tmp[0] != '') ? $tmp[0] : $sortField;
