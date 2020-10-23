@@ -273,7 +273,7 @@
             })( navigator.userAgent ),
     
             /**
-             * @description  操作係统检查结果。
+             * @description  操作系统检查结果。
              *
              * * `android`  如果在android浏覽器環境下，此值為對應的android版本號，否則為`undefined`。
              * * `ios` 如果在ios浏覽器環境下，此值為對應的ios版本號，否則為`undefined`。
@@ -342,7 +342,7 @@
                     };
                 }
     
-                // 複製静態方法
+                // 覆製静態方法
                 $.extend( true, child, Super, staticProtos || {} );
     
                 /* jshint camelcase: false */
@@ -1876,7 +1876,7 @@
             this.size = source.size || 0;
     
             /**
-             * 文件MIMETYPE類型，与文件類型的對應關係請参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
+             * 文件MIMETYPE類型，与文件類型的對應關系請参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
              * @property type
              * @type {string}
              * @default 'application'
@@ -1931,7 +1931,7 @@
              * @method setStatus
              * @grammar setStatus( status[, statusText] );
              * @param {File.Status|String} status [文件狀態值](#WebUploader:File:File.Status)
-             * @param {String} [statusText=''] 狀態說明，常在error時使用，用http, abort,server等来標记是由於什麼原因导致文件錯誤。
+             * @param {String} [statusText=''] 狀態說明，常在error時使用，用http, abort,server等来標记是由於什麼原因導致文件錯誤。
              */
             setStatus: function( status, text ) {
     
@@ -3362,7 +3362,7 @@
         });
     });
     /**
-     * @fileOverview 各种驗證，包括文件總大小是否超出、單文件是否超出和文件是否重複。
+     * @fileOverview 各种驗證，包括文件總大小是否超出、單文件是否超出和文件是否重覆。
      */
     
     define('widgets/validator',[
@@ -3558,7 +3558,7 @@
                 var hash = file.__hash || (file.__hash = hashString( file.name +
                         file.size + file.lastModifiedDate ));
     
-                // 已經重複了
+                // 已經重覆了
                 if ( mapping[ hash ] ) {
                     this.trigger( 'error', 'F_DUPLICATE', file );
                     return false;
@@ -4101,7 +4101,7 @@
                 if ( binary ) {
                     xhr.overrideMimeType('application/octet-stream');
     
-                    // android直接發送blob會导致服務端接收到的是空文件。
+                    // android直接發送blob會導致服務端接收到的是空文件。
                     // bug詳情。
                     // https://code.google.com/p/android/issues/detail?id=39882
                     // 所以先用fileReader讀取出来再通過arraybuffer的方式發送。
@@ -4413,7 +4413,7 @@
                 var copy = $.extend({}, opts ),
                     len, i;
     
-                // 修複Flash再没有設置title的情况下無法弹出flash文件選擇框的bug.
+                // 修覆Flash再没有設置title的情况下無法弹出flash文件選擇框的bug.
                 len = copy.accept && copy.accept.length;
                 for (  i = 0; i < len; i++ ) {
                     if ( !copy.accept[ i ].title ) {

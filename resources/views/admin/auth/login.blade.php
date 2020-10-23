@@ -16,7 +16,7 @@
 
     <div class="lightcms-user-login-main">
         <div class="lightcms-user-login-box lightcms-user-login-header">
-            <h2>後台登入</h2>
+            <h2>Beacon 後台登入</h2>
         </div>
         <form id="form">
         <div class="lightcms-user-login-box lightcms-user-login-body layui-form">
@@ -50,7 +50,7 @@
 
     <div class="layui-trans lightcms-user-login-footer">
 
-        <p>© 2019 <a href="/" target="_blank">{{ config('app.name') }}</a></p>
+        <p>© 2020 <a href="/" target="_blank">{{ config('app.name') }}</a></p>
     </div>
 
 </div>

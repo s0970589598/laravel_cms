@@ -253,9 +253,9 @@ var browser = (UE.browser = (function() {
      * @property { Number } version 检测當前浏覽器版本號
      * @remind
      * <ul>
-     *     <li>IE係列返回值為5,6,7,8,9,10等</li>
-     *     <li>gecko係列會返回10900，158900等</li>
-     *     <li>webkit係列會返回其build號 (如 522等)</li>
+     *     <li>IE系列返回值為5,6,7,8,9,10等</li>
+     *     <li>gecko系列會返回10900，158900等</li>
+     *     <li>webkit系列會返回其build號 (如 522等)</li>
      * </ul>
      * @example
      * ```javascript
@@ -385,7 +385,7 @@ var utils = (UE.utils = {
   /**
      * 將source對象中的屬性擴展到target對象上
      * @method extend
-     * @remind 该方法將强制把source對象上的屬性複製到target對象上
+     * @remind 该方法將强制把source對象上的屬性覆製到target對象上
      * @see UE.utils.extend(Object,Object,Boolean)
      * @param { Object } target 目標對象， 新的屬性將附加到该對象上
      * @param { Object } source 源對象， 该對象的屬性會被附加到target對象上
@@ -437,10 +437,10 @@ var utils = (UE.utils = {
   },
 
   /**
-     * 將给定的多個對象的屬性複製到目標對象target上
+     * 將给定的多個對象的屬性覆製到目標對象target上
      * @method extend2
-     * @remind 该方法將强制把源對象上的屬性複製到target對象上
-     * @remind 该方法支持兩個及以上的参數， 從第二個参數開始， 其屬性都會被複製到第一個参數上。 如果遇到同名的屬性，
+     * @remind 该方法將强制把源對象上的屬性覆製到target對象上
+     * @remind 该方法支持兩個及以上的参數， 從第二個参數開始， 其屬性都會被覆製到第一個参數上。 如果遇到同名的屬性，
      *          將會覆盖掉之前的值。
      * @param { Object } target 目標對象， 新的屬性將附加到该對象上
      * @param { Object... } source 源對象， 支持多個對象， 该對象的屬性會被附加到target對象上
@@ -2251,7 +2251,7 @@ var domUtils = (dom.domUtils = {
   NODE_COMMENT: 8,
   NODE_DOCUMENT_FRAGMENT: 11,
 
-  //位置關係
+  //位置關系
   POSITION_IDENTICAL: 0,
   POSITION_DISCONNECTED: 1,
   POSITION_FOLLOWING: 2,
@@ -2274,11 +2274,11 @@ var domUtils = (dom.domUtils = {
     13: 1 /*enter*/
   },
   /**
-     * 獲取節點A相對於節點B的位置關係
+     * 獲取節點A相對於節點B的位置關系
      * @method getPosition
-     * @param { Node } nodeA 需要查尋位置關係的節點A
-     * @param { Node } nodeB 需要查尋位置關係的節點B
-     * @return { Number } 節點A与節點B的關係
+     * @param { Node } nodeA 需要查尋位置關系的節點A
+     * @param { Node } nodeB 需要查尋位置關系的節點B
+     * @return { Number } 節點A与節點B的關系
      * @example
      * ```javascript
      * //output: 20
@@ -3874,7 +3874,7 @@ var domUtils = (dom.domUtils = {
      * @method addClass
      * @param { Node } ele 需要增加className的元素
      * @param { String } classNames 需要添加的className， 多個className之間以空格分割
-     * @remind 相同的類名不會被重複添加
+     * @remind 相同的類名不會被重覆添加
      * @example
      * ```html
      * <span id="test" class="cls1 cls2"></span>
@@ -3896,7 +3896,7 @@ var domUtils = (dom.domUtils = {
      * @method addClass
      * @param { Node } ele 需要增加className的元素
      * @param { Array } classNames 需要添加的className的數组
-     * @remind 相同的類名不會被重複添加
+     * @remind 相同的類名不會被重覆添加
      * @example
      * ```html
      * <span id="test" class="cls1 cls2"></span>
@@ -7639,7 +7639,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
             width: "100%",
             height: "100%",
             frameborder: "0",
-            //先注譯掉了，加的原因忘记了，但開啟會直接导致全屏模式下内容多時不會出现滚動條
+            //先注譯掉了，加的原因忘记了，但開啟會直接導致全屏模式下内容多時不會出现滚動條
             //                    scrolling :'no',
             src:
               "javascript:void(function(){document.open();" +
@@ -7652,12 +7652,12 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
           })
         );
         container.style.overflow = "hidden";
-        //解决如果是给定的百分比，會导致高度算不對的問题
+        //解决如果是给定的百分比，會導致高度算不對的問题
         setTimeout(function() {
           if (/%$/.test(options.initialFrameWidth)) {
             options.minFrameWidth = options.initialFrameWidth =
               container.offsetWidth;
-            //如果這里给定宽度，會导致ie在拖動窗口大小時，編輯區域不随着變化
+            //如果這里给定宽度，會導致ie在拖動窗口大小時，編輯區域不随着變化
             //                        container.style.width = options.initialFrameWidth + 'px';
           }
           if (/%$/.test(options.initialFrameHeight)) {
@@ -7765,7 +7765,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       options.onready && options.onready.call(me);
       if (!browser.ie9below) {
         domUtils.on(me.window, ["blur", "focus"], function(e) {
-          //chrome下會出现alt+tab切换時，导致選區位置不對
+          //chrome下會出现alt+tab切换時，導致選區位置不對
           if (e.type == "blur") {
             me._bakRange = me.selection.getRange();
             try {
@@ -7781,9 +7781,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
           }
         });
       }
-      //trace:1518 ff3.6body不夠寛，會导致點擊空白處無法獲得焦點
+      //trace:1518 ff3.6body不夠寛，會導致點擊空白處無法獲得焦點
       if (browser.gecko && browser.version <= 10902) {
-        //修複ff3.6初始化進来，不能點擊獲得焦點
+        //修覆ff3.6初始化進来，不能點擊獲得焦點
         me.body.contentEditable = false;
         setTimeout(function() {
           me.body.contentEditable = true;
@@ -8312,7 +8312,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
         if (!me.selection || !me.selection.getNative()) {
           return;
         }
-        //修複一個IE下的bug: 鼠標點擊一段已選擇的文本中間時，可能在mouseup後的一段時間内取到的range是在selection的type為None下的錯誤值.
+        //修覆一個IE下的bug: 鼠標點擊一段已選擇的文本中間時，可能在mouseup後的一段時間内取到的range是在selection的type為None下的錯誤值.
         //IE下如果用户是拖拽一段已選擇文本，則不會觸發mouseup事件，所以這里的特殊處理不會對其有影嚮
         var ieRange;
         if (hackForMouseUp && me.selection.getNative().type == "None") {
@@ -12140,7 +12140,7 @@ UE.commands["imagefloat"] = {
  * @command insertimage
  * @method execCommand
  * @param { String } cmd 命令字符串
- * @param { Object } opt 屬性鍵值對，這些屬性都將被複製到當前插入圖片
+ * @param { Object } opt 屬性鍵值對，這些屬性都將被覆製到當前插入圖片
  * @remind 该命令第二個参數可接受一個圖片配置项對象的數组，可以插入多张圖片，
  * 此時數组的每一個元素都是一個Object類型的圖片屬性集合。
  * @example
@@ -12854,7 +12854,7 @@ UE.plugins["font"] = function() {
                 span.style.cssText = style + ":" + value;
 
                 text.parentNode.insertBefore(span, text);
-                //修複，span套span 但樣式不繼承的問题
+                //修覆，span套span 但樣式不繼承的問题
                 if (!browser.ie || (browser.ie && browser.version == 9)) {
                   var spanParent = span.parentNode;
                   while (!domUtils.isBlockElm(spanParent)) {
@@ -13082,7 +13082,7 @@ UE.plugins["link"] = function() {
       opt.href && (opt.href = utils.unhtml(opt.href, /[<">]/g));
       opt.textValue && (opt.textValue = utils.unhtml(opt.textValue, /[<">]/g));
       doLink((range = this.selection.getRange()), opt, this);
-      //闭合都不加占位符，如果加了會在a後边多個占位符節點，导致a是圖片背景组成的列表，出现空白問题
+      //闭合都不加占位符，如果加了會在a後边多個占位符節點，導致a是圖片背景组成的列表，出现空白問题
       range.collapse().select(true);
     },
     queryCommandValue: function() {
@@ -13568,7 +13568,7 @@ UE.plugins["blockquote"] = function() {
         domUtils.setAttributes(node, attrs);
         node.appendChild(tmpRange.extractContents());
         tmpRange.insertNode(node);
-        //去除重複的
+        //去除重覆的
         var childs = domUtils.getElementsByTagName(node, "blockquote");
         for (var i = 0, ci; (ci = childs[i++]); ) {
           if (ci.parentNode) {
@@ -15394,9 +15394,9 @@ UE.plugins["pagebreak"] = function() {
 
 // plugins/wordimage.js
 ///import core
-///commands 本地圖片引导上傳
+///commands 本地圖片引導上傳
 ///commandsName  WordImage
-///commandsTitle  本地圖片引导上傳
+///commandsTitle  本地圖片引導上傳
 ///commandsDialog  dialogs\wordimage
 
 UE.plugin.register("wordimage", function() {
@@ -15669,7 +15669,7 @@ UE.plugins["undo"] = function() {
       me.options.autoClearEmptyNode = orgState;
       var cont = root.toHtml();
       //trace:3461
-      //這個會引起回退時导致空格丢失的情况
+      //這個會引起回退時導致空格丢失的情况
       //            browser.ie && (cont = cont.replace(/>&nbsp;</g, '><').replace(/\s*</g, '<').replace(/>\s*/g, '>'));
       me.fireEvent("aftergetscene");
 
@@ -15870,7 +15870,7 @@ UE.plugin.register("copy", function() {
 
     var client = (me.zeroclipboard = new ZeroClipboard());
 
-    // 複製内容
+    // 覆製内容
     client.on("copy", function(e) {
       var client = e.client,
         rng = me.selection.getRange(),
@@ -16657,7 +16657,7 @@ UE.plugins["list"] = function() {
 
     html.html = root.toHtml();
   });
-  //导出時，去掉p標簽
+  //導出時，去掉p標簽
   me.getOpt("disablePInList") === true &&
     me.addOutputRule(function(root) {
       utils.each(root.getNodesByTagName("li"), function(li) {
@@ -17546,7 +17546,7 @@ UE.plugins["list"] = function() {
         },
         tag = command.toLowerCase() == "insertorderedlist" ? "ol" : "ul",
         frag = me.document.createDocumentFragment();
-      //去掉是因為會出现選到末尾，导致adjustmentBoundary缩到ol/ul的位置
+      //去掉是因為會出现選到末尾，導致adjustmentBoundary缩到ol/ul的位置
       //range.shrinkBoundary();//.adjustmentBoundary();
       range.adjustmentBoundary().shrinkBoundary();
       var bko = range.createBookmark(true),
@@ -18589,7 +18589,7 @@ UE.plugins["keystrokes"] = function() {
       }
     }
 
-    /* 修複在編輯區域快捷鍵 (Mac:meta+alt+I; Win:ctrl+shift+I) 打不開 chrome 控制台的問题 */
+    /* 修覆在編輯區域快捷鍵 (Mac:meta+alt+I; Win:ctrl+shift+I) 打不開 chrome 控制台的問题 */
     browser.chrome &&
       me.on("keydown", function(type, e) {
         var keyCode = e.keyCode || e.which;
@@ -18668,10 +18668,10 @@ UE.plugins["keystrokes"] = function() {
 
 // plugins/fiximgclick.js
 ///import core
-///commands 修複chrome下圖片不能點擊的問题，出现八個角可改變大小
+///commands 修覆chrome下圖片不能點擊的問题，出现八個角可改變大小
 ///commandsName  FixImgClick
-///commandsTitle  修複chrome下圖片不能點擊的問题，出现八個角可改變大小
-//修複chrome下圖片不能點擊的問题，出现八個角可改變大小
+///commandsTitle  修覆chrome下圖片不能點擊的問题，出现八個角可改變大小
+//修覆chrome下圖片不能點擊的問题，出现八個角可改變大小
 
 UE.plugins["fiximgclick"] = (function() {
   var elementUpdated = false;
@@ -18796,7 +18796,7 @@ UE.plugins["fiximgclick"] = (function() {
               me.dragId = -1;
             }
             domUtils.un(me.doc, "mousemove", me.proxy(me._eventHandler, me));
-            //修複只是點擊挪動點，但没有改變大小，不應该觸發contentchange
+            //修覆只是點擊挪動點，但没有改變大小，不應该觸發contentchange
             if (elementUpdated) {
               elementUpdated = false;
               me.editor.fireEvent("contentchange");
@@ -19381,7 +19381,7 @@ UE.plugins["autoheight"] = function() {
         }, 100);
       }
     );
-    //修複内容過多時，回到顶部，顶部内容被工具栏遮挡問题
+    //修覆内容過多時，回到顶部，顶部内容被工具栏遮挡問题
     domUtils.on(me.window, "scroll", fixedScrollTop);
   });
 
@@ -19515,7 +19515,7 @@ UE.plugins["autofloat"] = function() {
 
   me.addListener("ready", function() {
     if (checkHasUI(me)) {
-      //加戴了ui组件，但在new時，没有加戴ui，导致編輯器實例上没有ui類，所以這里做判断
+      //加戴了ui组件，但在new時，没有加戴ui，導致編輯器實例上没有ui類，所以這里做判断
       if (!me.ui) {
         return;
       }
@@ -20233,7 +20233,7 @@ UE.plugins["video"] = function() {
           (cell = cells[cellIndex]);
           cellIndex++
         ) {
-          //修正整行被rowSpan時导致的行數计算錯誤
+          //修正整行被rowSpan時導致的行數计算錯誤
           if (cell.rowSpan > rowsNum) {
             cell.rowSpan = rowsNum;
           }
@@ -20255,7 +20255,7 @@ UE.plugins["video"] = function() {
           }
         }
       }
-      //修複残缺td
+      //修覆残缺td
       for (j = 0; j < rowsNum; j++) {
         for (k = 0; k < colsNum; k++) {
           if (this.indexTable[j][k] === undefined) {
@@ -20660,7 +20660,7 @@ UE.plugins["video"] = function() {
           this.indexTable[range.beginRowIndex][range.beginColIndex].cellIndex
         );
 
-      // 這段關於行表頭或者列表頭的特殊處理會导致表頭合並范围錯誤
+      // 這段關於行表頭或者列表頭的特殊處理會導致表頭合並范围錯誤
       // 為什麼有這段代碼的原因未明，暂且注譯掉，希望原作者看到後出面說明下
       // if (
       //   leftTopCell.tagName == "TH" &&
@@ -24959,7 +24959,7 @@ UE.plugins["contextmenu"] = function() {
     }
   });
 
-  // 添加複製的flash按钮
+  // 添加覆製的flash按钮
   me.addListener("aftershowcontextmenu", function(type, menu) {
     if (me.zeroclipboard) {
       var items = menu.items;
@@ -25088,7 +25088,7 @@ UE.plugins["basestyle"] = function() {
      * //第一次操作， 文本内容將變成斜體
      * editor.execCommand( 'italic' );
      *
-     * //再次對同一文本内容執行， 則文本内容將恢複正常
+     * //再次對同一文本内容執行， 則文本内容將恢覆正常
      * editor.execCommand( 'italic' );
      * ```
      */
@@ -25106,7 +25106,7 @@ UE.plugins["basestyle"] = function() {
      * //第一次操作， 文本内容將變成下標文本
      * editor.execCommand( 'subscript' );
      *
-     * //再次對同一文本内容執行， 則文本内容將恢複正常
+     * //再次對同一文本内容執行， 則文本内容將恢覆正常
      * editor.execCommand( 'subscript' );
      * ```
      */
@@ -25124,7 +25124,7 @@ UE.plugins["basestyle"] = function() {
      * //第一次操作， 文本内容將變成上標文本
      * editor.execCommand( 'superscript' );
      *
-     * //再次對同一文本内容執行， 則文本内容將恢複正常
+     * //再次對同一文本内容執行， 則文本内容將恢覆正常
      * editor.execCommand( 'superscript' );
      * ```
      */
@@ -25260,7 +25260,7 @@ UE.plugins["elementpath"] = function() {
  * 格式刷
  * @command formatmatch
  * @method execCommand
- * @remind 该操作不能複製段落格式
+ * @remind 该操作不能覆製段落格式
  * @param { String } cmd 命令字符串
  * @example
  * ```javascript
@@ -27198,7 +27198,7 @@ UE.plugin.register("section", function() {
 
           me.fireEvent("updateSections");
 
-          /* 獲取地址的包含關係 */
+          /* 獲取地址的包含關系 */
           function isContainsAddress(startAddress, endAddress, addressTarget) {
             var isAfterStartAddress = false,
               isBeforeEndAddress = false;
@@ -32535,7 +32535,7 @@ UE.ui = baidu.editor.ui = {};
           }
 
           document.documentElement.style.overflow = "hidden";
-          //修複，滚動條不收起的問题
+          //修覆，滚動條不收起的問题
 
           window.scrollTo(0, window.scrollY);
           this._bakCssText = this.getDom().style.cssText;
@@ -32605,7 +32605,7 @@ UE.ui = baidu.editor.ui = {};
             (this.editor.options.topOffset || 0),
           true
         );
-        //不手動调一下，會导致全屏失效
+        //不手動调一下，會導致全屏失效
         if (browser.gecko) {
           try {
             window.onresize();
@@ -32914,7 +32914,7 @@ UE.ui = baidu.editor.ui = {};
           for (var i = 0, ci; (ci = parents[i]); i++) {
             ci.style.display = displays[i];
           }
-          //編輯器最外容器設置了高度，會导致，編輯器不占位
+          //編輯器最外容器設置了高度，會導致，編輯器不占位
           //todo 先去掉，没有找到原因
           if (holder.style.height) {
             holder.style.height = "";

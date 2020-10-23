@@ -24,7 +24,7 @@ class Controller extends BaseController
             return;
         }
 
-        // 面包屑导航
+        // 面包屑導航
         $this->breadcrumb[] = ['title' => '首頁', 'url' => route('admin::index')];
         View::share('breadcrumb', $this->breadcrumb);
 

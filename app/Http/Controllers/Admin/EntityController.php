@@ -170,7 +170,7 @@ class EntityController extends Controller
     }
 
     /**
-     * 模型管理-複製模型
+     * 模型管理-覆製模型
      *
      * @param Request $request
      * @param integer $id
@@ -191,7 +191,7 @@ class EntityController extends Controller
             EntityRepository::copy($tableName, $id);
             return [
                 'code' => 0,
-                'msg' => '複製成功',
+                'msg' => '覆製成功',
                 'reload' => true
             ];
         } catch (\RuntimeException $e) {

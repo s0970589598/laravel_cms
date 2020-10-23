@@ -2,7 +2,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/eddy8/lightCMS/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/eddy8/lightCMS/?branch=master)    [![StyleCI](https://github.styleci.io/repos/175428969/shield?branch=master)](https://github.styleci.io/repos/175428969)    [![Build Status](https://www.travis-ci.org/eddy8/lightCMS.svg?branch=master)](https://www.travis-ci.org/eddy8/lightCMS)    [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.2-8892BF.svg)](http://www.php.net/)
 
 ## 项目簡介
-`lightCMS`是一個輕量級的`CMS`係统，也可以作為一個通用的後台管理框架使用。`lightCMS`集成了用户管理、權限管理、Log管理、選單管理等後台管理框架的通用功能，同時也提供模型管理、分類管理等`CMS`係统中常用的功能。`lightCMS`的**代碼一鍵生成**功能可以快速對特定模型生成增刪改查代碼，極大提高開發效率。
+`lightCMS`是一個輕量級的`CMS`系统，也可以作為一個通用的後台管理框架使用。`lightCMS`集成了用户管理、權限管理、Log管理、選單管理等後台管理框架的通用功能，同時也提供模型管理、分類管理等`CMS`系统中常用的功能。`lightCMS`的**代碼一鍵生成**功能可以快速對特定模型生成增刪改查代碼，極大提高開發效率。
 
 `lightCMS`基於`Laravel 6.x`開發，前端框架基於`layui`。
 
@@ -29,7 +29,7 @@ master    |   6.x | 建議使用
 * 模型、模型字段、模型内容管理（後台可自定義業務模型，方便垂直行業快速開發）
 * 會員管理
 * 評論管理
-* 基於Tire算法的敏感詞過濾係统
+* 基於Tire算法的敏感詞過濾系统
 * 普通模型增刪改查代碼一鍵生成
 
 前台：
@@ -42,9 +42,9 @@ master    |   6.x | 建議使用
 ## 後台预覽
 ![首頁](https://user-images.githubusercontent.com/2555476/54804611-16fa4900-4caf-11e9-885e-7f5c0dac7ce4.png)
 
-![係统管理](https://user-images.githubusercontent.com/2555476/54804599-0ea20e00-4caf-11e9-8d10-526aca358916.png)
+![系统管理](https://user-images.githubusercontent.com/2555476/54804599-0ea20e00-4caf-11e9-8d10-526aca358916.png)
 
-## 係统環境
+## 系统環境
 `linux/windows & nginx/apache/iis & mysql 5.5+ & php 7.2+`
 
 * PHP >= 7.2.0
@@ -59,17 +59,17 @@ master    |   6.x | 建議使用
 * 如果缓存、隊列、session用的是 redis 驅動，那還需要安装 redis 和 php redis 擴展
 * 如果`PHP`安装了`opcache`擴展，請啟用`opcache.save_comments`和`opcache.load_comments`配置（默認是啟用的），否則無法正常使用[選單自動獲取](#選單自動獲取)功能
 
-## 係统部署
+## 系统部署
 
 ### 獲取代碼並安装依赖
-首先請確保係统已安装好[composer](https://getcomposer.org/)。國内用户建議先[設置 composer 鏡像](https://developer.aliyun.com/composer)，避免安装過程缓慢。
+首先請確保系统已安装好[composer](https://getcomposer.org/)。國内用户建議先[設置 composer 鏡像](https://developer.aliyun.com/composer)，避免安装過程缓慢。
 ```bash
 cd /data/www
 git clone git_repository_url
 cd lightCMS
 composer install
 ```
-### 係统配置並初始化
+### 系统配置並初始化
 設置目入權限：`storage/`和`bootstrap/cache/`目入需要寫入權限。
 ```bash
 # 此處權限設置為777只是為了演示操作方便，實際只需要给Web服務器寫入權限即可
@@ -79,7 +79,7 @@ sudo chmod 777 -R storage/ bootstrap/cache/
 ```base
 cp .env.example .env
 ```
-初始化係统：
+初始化系统：
 ```base
 php artisan migrate --seed
 ```
@@ -132,7 +132,7 @@ public function index()
 }
 ```
 
-需要注意的是，程序可以自動獲取選單，但是選單的層級關係還是需要在後台手動配置的。
+需要注意的是，程序可以自動獲取選單，但是選單的層級關系還是需要在後台手動配置的。
 
 ## 配置管理
 首先需要將`config/light.php`配置文件中的`light_config`設置為`true`：
@@ -147,12 +147,12 @@ $siteName = config('light_config.SITE_NAME');
 ## 標簽管理
 模型内容**打標簽**是站點的一项常用功能，`lightCMS`内置了打標簽功能。添加模型字段時選擇表單類型為`標簽输入框`即可。
 
-`lightCMS`採用中間表（content_tags）来實现標簽和模型内容的多對多關聯關係。
+`lightCMS`採用中間表（content_tags）来實现標簽和模型内容的多對多關聯關系。
 
 ## 模型管理
-`lightCMS`支持在後台直接創建模型，並可對模型的表字段進行自定義設置。設置完模型字段後，就不需要做其它工作了，模型的增刪改查功能係统已經内置。
+`lightCMS`支持在後台直接創建模型，並可對模型的表字段進行自定義設置。設置完模型字段後，就不需要做其它工作了，模型的增刪改查功能系统已經内置。
 
-> 小提示：如果需要對單獨的模型進行權限控制，可以在模型管理頁面點擊`添加默認選單`，係统會自動建立好相應模型的相關選單项。
+> 小提示：如果需要對單獨的模型進行權限控制，可以在模型管理頁面點擊`添加默認選單`，系统會自動建立好相應模型的相關選單项。
 
 這里說明下模型的表單驗證及編輯的保存和更新處理。如果有自定義表單驗證需求，只需在`app/Http/Request/Admin/Entity`目入下創建模型的表單請求驗證類即可。類名的命名规則：**模型名+Request**。例如`User`模型對應的表單請求驗證類為`UserRequest`。
 
@@ -160,7 +160,7 @@ $siteName = config('light_config.SITE_NAME');
 
 如果想自定義模型的保存和更新處理逻辑，只需在`app/Http/Controllers/Admin/Entity`目入下創建模型的控制器類即可，`save`和`update`方法實现可参考`app/Http/Controllers/Admin/ContentController`。類名的命名规則：**模型名+Controller**。例如`User`模型對應的控制器類為`UserController`。同理，如果想自定義列表頁，按上述规則定義`index`和`list`方法即可。
 
-另外，模型内容在新增、更新、刪除時係统會觸發相應的事件，你可以監聽這些事件做相應的業務處理。下表所示為相應的事件說明：
+另外，模型内容在新增、更新、刪除時系统會觸發相應的事件，你可以監聽這些事件做相應的業務處理。下表所示為相應的事件說明：
 
 事件名 | 事件参數 | 觸發時間 | 備註
 :-: | :-: | :-: | :-:
@@ -247,7 +247,7 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
         'entityName' => ['title' => '模型', 'width' => 100],
         'userName' => ['title' => '用户名', 'width' => 100],
         'content' => ['title' => '内容', 'width' => 400],
-        'reply_count' => ['title' => '回複數', 'width' => 80, 'sort' => true],
+        'reply_count' => ['title' => '回覆數', 'width' => 80, 'sort' => true],
         'like' => ['title' => '喜欢', 'width' => 80, 'sort' => true],
         'dislike' => ['title' => '不喜欢', 'width' => 80, 'sort' => true],
     ];
@@ -274,10 +274,10 @@ App\Events\ContentDeleted    |   Illuminate\Support\Collection $contents, App\Mo
 
 > 小提示：如果你是自定義模型，建議自定義模型繼承`App\Model\Admin\Model`模型，方便對上述配置项進行自定義。
 
-## 係统Log
-`lightCMS`集成了一套簡單的Log係统，默認情况下记入後台的所有操作相關信息，具體實现可以参考`Log`中間件。
+## 系统Log
+`lightCMS`集成了一套簡單的Log系统，默認情况下记入後台的所有操作相關信息，具體實现可以参考`Log`中間件。
 
-可以利用`Laravel`的[任務调度](https://laravel.com/docs/5.8/scheduling#introduction)来自動清理係统Log。啟用任務调度需要在係统的计畫任務中添加如下内容：
+可以利用`Laravel`的[任務调度](https://laravel.com/docs/5.8/scheduling#introduction)来自動清理系统Log。啟用任務调度需要在系统的计畫任務中添加如下内容：
 ```
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 ```
@@ -288,7 +288,7 @@ php artisan queue:work
 ```
 
 ## 代碼一鍵生成
-對於一個普通的模型，管理後台通常有增刪改查相關的業務需求。如果係统模型管理自带的增刪改查功能無法满足你的個性化需求，你可以使用一鍵生成代碼功能。`lightCMS`擁有一鍵生成相關代碼的能力，在建好模型的資料庫表结構後，可以使用如下`artisan`命令生成相關代碼：
+對於一個普通的模型，管理後台通常有增刪改查相關的業務需求。如果系统模型管理自带的增刪改查功能無法满足你的個性化需求，你可以使用一鍵生成代碼功能。`lightCMS`擁有一鍵生成相關代碼的能力，在建好模型的資料庫表结構後，可以使用如下`artisan`命令生成相關代碼：
 ```bash
 # config 為模型名稱 配置 為模型中文名稱
 php artisan light:basic config 配置
@@ -326,7 +326,7 @@ print_r($result);
 ```
 
 ## 圖片上傳
-LightCMS中圖片默認上傳到本地服務器。如果有自定義需求，比如上傳到三方雲服務器，可参考`config/light.php`配置文件中的`image_upload`配置项說明，自定義處理類需要實现`App\Contracts\ImageUpload`接口，方法的返回值數據结構和係统原方法保持一致即可。
+LightCMS中圖片默認上傳到本地服務器。如果有自定義需求，比如上傳到三方雲服務器，可参考`config/light.php`配置文件中的`image_upload`配置项說明，自定義處理類需要實现`App\Contracts\ImageUpload`接口，方法的返回值數據结構和系统原方法保持一致即可。
 ```json
 {
     "code": 200,
@@ -336,7 +336,7 @@ LightCMS中圖片默認上傳到本地服務器。如果有自定義需求，比
 }
 ```
 
-## 係统核心函數、方法說明
+## 系统核心函數、方法說明
 做這個說明的主要目的是讓開發者了解一些核心功能，方便自定義各類功能開發。畢竟框架是不可能代勞所有事情^_
 
 方法名稱：App\Repository\Admin\CategoryRepository::tree()
@@ -351,7 +351,7 @@ LightCMS中圖片默認上傳到本地服務器。如果有自定義需求，比
 
 ## 前台相關
 ### 用户註冊登入
-`LightCMS`集成了一套簡單的用户註冊登入係统，支持微信、QQ、微博三方登入。三方登入相關配置請参考`config/light.php`。
+`LightCMS`集成了一套簡單的用户註冊登入系统，支持微信、QQ、微博三方登入。三方登入相關配置請参考`config/light.php`。
 
 ## TODO
 * 模版管理+模版標簽

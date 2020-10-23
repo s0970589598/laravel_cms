@@ -30,7 +30,7 @@ var ajax_options = {
             layer.msg('非法請求。請刷新頁面後重试。', {shift: 6});
             return false;
         } else if (resp.status === 500) {
-            layer.msg('内部錯誤，請聯係管理員', {shift: 6});
+            layer.msg('内部錯誤，請聯系管理員', {shift: 6});
             return false;
         } else {
             var parse = $.parseJSON(resp.responseText);

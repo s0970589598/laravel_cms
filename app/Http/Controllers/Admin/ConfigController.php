@@ -26,7 +26,7 @@ class ConfigController extends Controller
     }
 
     /**
-     * 係统管理
+     * 系统管理
      *
      */
     public function index()

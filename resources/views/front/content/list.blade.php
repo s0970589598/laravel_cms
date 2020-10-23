@@ -62,7 +62,7 @@
                 <div class="px-8">
                     <h3 class="font-bold text-black">關於</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一個基於Laravel開發的輕量級CMS係统，也可以作為一個通用的後台管理框架使用。
+                        Beacon 後台是一個基於Laravel開發的輕量級CMS系统，也可以作為一個通用的後台管理框架使用。
                     </p>
                 </div>
             </div>

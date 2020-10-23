@@ -10,10 +10,10 @@ return [
     // 加戴資料庫自定義配置
     'light_config' => false,
 
-    // 係统Log保留時間。單位：天
+    // 系统Log保留時間。單位：天
     'log_reserve_days' => 180,
 
-    // 異步寫入係统Log
+    // 異步寫入系统Log
     'log_async_write' => false,
 
     // 資料庫表字段類型 参考：https://laravel.com/docs/5.5/migrations#columns
@@ -72,7 +72,7 @@ return [
         'markdown' => '副文本（markdown）',
         'password' => '密碼字符',
         'option' => '單選框',
-        'checkbox' => '複選框',
+        'checkbox' => '覆選框',
         'select' => '下拉選擇',
         'selectSingleSearch' => '下拉選擇（遠程搜索）',
         'selectMulti' => '下拉選擇（多選）',

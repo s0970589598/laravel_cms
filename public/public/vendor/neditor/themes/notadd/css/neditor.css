@@ -1362,7 +1362,7 @@ div.edui-box {
     background-color: white;
 }
 
-/* 解决嵌套导致的圖標問题 */
+/* 解决嵌套導致的圖標問题 */
 .edui-notadd .edui-for-insertorderedlist .edui-popup-body .edui-icon,
 .edui-notadd .edui-for-lineheight .edui-popup-body .edui-icon,
 .edui-notadd .edui-for-rowspacingtop .edui-popup-body .edui-icon,

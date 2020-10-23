@@ -7,7 +7,7 @@ use App\Model\Admin\SensitiveWord;
 use App\Model\Admin\Config as SiteConfig;
 
 /**
- * 直接從資料庫獲取係统後台配置
+ * 直接從資料庫獲取系统後台配置
  *
  * @param string $key key
  * @param mixed $default key不存在時的默認值

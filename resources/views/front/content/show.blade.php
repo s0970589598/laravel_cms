@@ -145,7 +145,7 @@
                 <div class="px-8">
                     <h3 class="font-bold text-black">關於</h3>
                     <p class="py-4 text-grey-dark text-sm">
-                        lightCMS是一個基於Laravel開發的輕量級CMS係统，也可以作為一個通用的後台管理框架使用。
+                       Beacon 後台是一個基於Laravel開發的輕量級CMS系统，也可以作為一個通用的後台管理框架使用。
                     </p>
                 </div>
             </div>
@@ -259,7 +259,7 @@
                                 <li class="open"> \
                                     <a href="#" data-taptap-comment="button" data-obj="comment" data-obj-id="' + reply.data[j].id + '" data-reply-id="10486096" class="btn btn-sm taptap-button-opinion comment question-witch-replay"> \
                                         <i class="icon-font icon-reply"></i> \
-                                        <span>回複</span> \
+                                        <span>回覆</span> \
                                     </a> \
                                 </li> \
                                 <li> \
@@ -377,7 +377,7 @@
                 <li> \
                     <button id="review-' + listData[i].id + '-reply-button" class="btn btn-sm taptap-button-opinion comment question-witch-replay" data-taptap-comment="button" data-obj-id="' + listData[i].id + '" data-modalid="#commentModal"> \
                         <i class="icon-font icon-reply"></i> \
-                        <span class="normal-text">回複 ' + listData[i].reply_count + '</span> \
+                        <span class="normal-text">回覆 ' + listData[i].reply_count + '</span> \
                     </button> \
                 </li> \
             </ul> \
@@ -413,13 +413,13 @@
                 commentAction();
                 @endauth
 
-                // 評論回複
+                // 評論回覆
                 $('.question-witch-replay').on('click', function () {
                     $('input[name=pid]').remove();
                     layer.open({
                         type: 1,
                         area: '500px',
-                        title: '回複',
+                        title: '回覆',
                         content: $('form.layui-form').append('<input type="hidden" name="pid" value="' + $(this).data('obj-id') + '">'),
                         cancel: function (index, layero) {
                             $('input[name=pid]').remove();
@@ -466,7 +466,7 @@
                     loadComments($(this).attr('href'));
                 });
 
-                // 評論回複翻頁
+                // 評論回覆翻頁
                 $('div.taptap-comments').on('click', 'a.comment-reply', function (e) {
                     e.preventDefault();
                     commentIds = [];

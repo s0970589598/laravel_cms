@@ -1,6 +1,6 @@
 /**
  * 自定義上傳接口
- * 由於所有Neditor請求都通過editor對象的getActionUrl方法獲取上傳接口，可以直接通過複寫這個方法實现自定義上傳接口
+ * 由於所有Neditor請求都通過editor對象的getActionUrl方法獲取上傳接口，可以直接通過覆寫這個方法實现自定義上傳接口
  * @param {String} action 匹配neditor.config.js中配置的xxxActionName
  * @returns 返回自定義的上傳接口
  */

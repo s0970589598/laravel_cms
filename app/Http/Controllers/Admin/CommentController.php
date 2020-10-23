@@ -111,13 +111,13 @@ class CommentController extends Controller
             if (CommentRepository::hasChildren($id)) {
                 return [
                     'code' => 2,
-                    'msg' => '刪除失败：只允许刪除無回複的評論',
+                    'msg' => '刪除失败：只允许刪除無回覆的評論',
                 ];
             }
 
             DB::transaction(function () use ($id, $comment) {
                 CommentRepository::delete($id);
-                // 回複數-1
+                // 回覆數-1
                 CommentRepository::decrementReplyCount($comment->rid);
                 // 清除缓存
                 Cache::forget('comment_replay:' . $comment->rid);

@@ -797,7 +797,7 @@ baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
             'changeFlashHeight'
         ]);
     /**
-     * 開始或回複上傳圖片
+     * 開始或回覆上傳圖片
      * @public
      * @return {Null}
      */
@@ -1063,7 +1063,7 @@ baidu.sio._createScriptTag = function(scr, url, charset){
 };
 
 /**
- * 刪除script的屬性，再刪除script標簽，以解决修複内存泄漏的問题
+ * 刪除script的屬性，再刪除script標簽，以解决修覆内存泄漏的問题
  * 
  * @param {HTMLElement} src script節點
  */

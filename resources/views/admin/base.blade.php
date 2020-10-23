@@ -16,8 +16,8 @@
 @endphp
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">{{ config('app.name') }} 管理後台</div>
-        <!-- 頭部區域（可配合layui已有的水平导航） -->
+        <div class="layui-logo">{{ 'Beacon' }} 管理後台</div>
+        <!-- 頭部區域（可配合layui已有的水平導航） -->
         <ul class="layui-nav layui-layout-left">
             @foreach(App\Repository\Admin\MenuRepository::allRoot() as $v)
                 @if($isSuperAdmin || $user->can($v->name))
@@ -41,7 +41,7 @@
 
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <!-- 左侧导航區域（可配合layui已有的垂直导航） -->
+            <!-- 左侧導航區域（可配合layui已有的垂直導航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 @isset($light_menu['children'])
                 @foreach($light_menu['children']->groupBy('group') as $k => $menu)
@@ -67,7 +67,7 @@
                 @endisset
                     @isset($autoMenu)
                         <li class="layui-nav-item layui-nav-itemed">
-                            <a class="" href="javascript:;">係統選單</a>
+                            <a class="" href="javascript:;">系統選單</a>
                             <dl class="layui-nav-child">
                                 @foreach($autoMenu as $v)
                                     <dd @if(isset($entity) && $v['id'] == intval($entity)) class="layui-this" @endif><a href="{{ $v['url'] }}">{{ $v['name'] }}</a></dd>
@@ -88,7 +88,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定區域 -->
-        © {{ config('app.name') }}
+        © 2020 {{ config('app.name') }}
     </div>
 </div>
 <script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>

@@ -23,7 +23,7 @@
 <body>
 <div class="layui-container">
     <div class="error_500 tc">
-        <p>服務器内部錯誤，請聯係管理員</p>
+        <p>服務器内部錯誤，請聯系管理員</p>
         <a href="/" class="btn">返回首頁</a>
     </div>
 </div>

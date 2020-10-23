@@ -73,7 +73,7 @@ class CommentController extends BaseController
                 // 清除缓存
                 Cache::forget('comment_replay:' . $rid);
 
-                // 回複數+1
+                // 回覆數+1
                 CommentRepository::addReplyCount($rid);
             }
             return [

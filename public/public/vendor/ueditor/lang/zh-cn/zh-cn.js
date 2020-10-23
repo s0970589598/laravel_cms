@@ -188,7 +188,7 @@ UE.I18N['zh-cn'] = {
         'unsetbackground':'取消選區背景',
         'redandblue':'红蓝相間',
         'threecolorgradient':'三色渐變',
-        'copy':"複製(Ctrl + c)",
+        'copy':"覆製(Ctrl + c)",
         'copymsg': "浏覽器不支持,請使用 'Ctrl + c'",
         'paste':"粘贴(Ctrl + v)",
          'pastemsg': "浏覽器不支持,請使用 'Ctrl + v'"
@@ -246,7 +246,7 @@ UE.I18N['zh-cn'] = {
             'lang_background_netimg':'網路圖片',
             'lang_background_align':'對齐方式',
             'lang_background_position':'精確定位',
-            'repeatType':{'options':["居中", "横向重複", "纵向重複", "平铺","自定義"]}
+            'repeatType':{'options':["居中", "横向重覆", "纵向重覆", "平铺","自定義"]}
 
         },
         'noUploadImage':"當前未上傳過任何圖片！",
@@ -528,7 +528,7 @@ UE.I18N['zh-cn'] = {
             'lang_Txt_shortcuts':'快捷鍵',
             'lang_Txt_func':'功能',
             'lang_Txt_bold':'给選中字設置為加粗',
-            'lang_Txt_copy':'複製選中内容',
+            'lang_Txt_copy':'覆製選中内容',
             'lang_Txt_cut':'剪切選中内容',
             'lang_Txt_Paste':'粘贴',
             'lang_Txt_undo':'重新執行上次操作',
@@ -654,12 +654,12 @@ UE.I18N['zh-cn'] = {
             lang_resave:"轉存步骤",
             uploadBtn:{src:"upload.png",alt:"上傳"},
             clipboard:{style:"background: url(copy.png) -153px -1px no-repeat;"},
-            lang_step:"1、點擊顶部複製按钮，將地址複製到剪贴板；2、點擊添加照片按钮，在弹出的對话框中使用Ctrl+V粘贴地址；3、點擊打開後選擇圖片上傳流程。"
+            lang_step:"1、點擊顶部覆製按钮，將地址覆製到剪贴板；2、點擊添加照片按钮，在弹出的對话框中使用Ctrl+V粘贴地址；3、點擊打開後選擇圖片上傳流程。"
         },
         'fileType':"圖片",
         'flashError':"FLASH初始化失败，請检查FLASH插件是否正確安装！",
         'netError':"網路連接錯誤，請重试！",
-        'copySuccess':"圖片地址已經複製！",
+        'copySuccess':"圖片地址已經覆製！",
         'flashI18n':{} //留空默認中文
     },
     'autosave': {

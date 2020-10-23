@@ -21,12 +21,12 @@ class CommentRepository
             ->paginate($perPage);
 
         if ($condition['rid'][1] > 0) {
-            // 接口直接請求評論的回複數據，則直接返回
+            // 接口直接請求評論的回覆數據，則直接返回
             return $data;
         }
 
         $data->transform(function ($item) use ($perPage) {
-            // 獲取評論回複
+            // 獲取評論回覆
             $reply = self::reply($item->id, $perPage);
             $item->reply = $reply;
             return $item;
