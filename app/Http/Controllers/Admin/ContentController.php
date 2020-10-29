@@ -95,27 +95,23 @@ class ContentController extends Controller
                 Content::$listField = [
                     'name' => '單位名稱',
                     'address' => '住址',
-                    'latitude' => '緯度',
-                    'longitude' => '經度'
                 ];
                 break;         
             case 'beacon標題管理':
                 Content::$listField = [
-                    'location_id' => 'location_id',
                     'name' => '單位名稱',
                     'title' => '訊息主題',
-                    'can_repeat' => '是否可重覆(1=可重覆)',
+                    'can_repeat' => '是否可重覆',
                     'start_datetime' => '開始時間',
                     'end_datetime' => '結束時間',
-                    'status' => '狀態(0=刪除)'
+                    'status' => '狀態'
                 ];
                 break;
             case 'beacon訊息管理':
                 Content::$listField = [
-                    'title' => 'title',
+                    'title' => '標題',
                     'name' => '單位名稱',
                     'message_type' => '訊息類型',
-                    'rank' => 'rank',
                     'message_text' => '文字訊息'                  
                     //'json_data' => 'json_data'                    
                 ];
@@ -128,7 +124,7 @@ class ContentController extends Controller
                     ];
                 } else {
                     Content::$listField = [
-                        'beacon_id' => 'beacon_id',
+                        'beacon_uid' => 'beacon_uid',
                         'event_type' => 'enter',
                         'line_user_id' => 'line_user_id',
                         'enter_datetime' => 'enter_datetime'
@@ -147,6 +143,7 @@ class ContentController extends Controller
                 } else {
                     Content::$listField = [
                         'broadcast_id' => 'broadcast_id',
+                        'name' => '單位名稱',
                         'title' => 'title',
                         'line_user_id' => 'line_user_id',
                         'broadcast_datetime' => 'broadcast_datetime',
@@ -178,18 +175,18 @@ class ContentController extends Controller
      */
     public function list(Request $request, $entity)
     {
+
         $result = $this->useUserDefinedListHandler($request, $entity);
         if (!is_null($result)) {
             return $result;
         }
 
         $perPage = (int) $request->get('limit', 50);
-        $this->formNames = array_merge(['created_at', 'light_sort_fields'], EntityFieldRepository::getFields($entity));
+        $this->formNames = array_merge(['title','created_at', 'light_sort_fields'], EntityFieldRepository::getFields($entity));
         $condition = $request->only($this->formNames);
-
+        
         $user = \Auth::guard('admin')->user();
-        $data = ContentRepository::list($entity, $perPage, $condition, $user->id);
-
+        $data = ContentRepository::list($entity, $perPage, $condition, $user->id);        
         return $data;
     }
 
@@ -202,6 +199,15 @@ class ContentController extends Controller
         $this->breadcrumb[] = ['title' => "新增{$this->entity->name}内容", 'url' => ''];
         $view = $this->getAddOrEditViewPath();
 
+        $select = null;
+        $user = \Auth::guard('admin')->user();
+
+        if ($entity == 10) {
+            $select = ContentRepository::list('title_select_create', 50, ['id' => $brocast], $user->id);        
+        } else if ($entity == 9) {
+            $select = ContentRepository::list('location_select', 50, [], $user->id);        
+        }
+       
         return view($view, [
             'breadcrumb' => $this->breadcrumb,
             'entity' => $entity,
@@ -209,7 +215,8 @@ class ContentController extends Controller
             'entityFields' => EntityFieldRepository::getByEntityId($entity),
             'autoMenu' => EntityRepository::systemMenu(),
             'brocast' => $brocast,
-            'messageType' => $message
+            'messageType' => $message,
+            'selectOption' => $select
         ]);
     }
 
@@ -236,7 +243,7 @@ class ContentController extends Controller
                 EntityFieldRepository::getSaveFields($entity)
             ), $this->entity);
 
-            // 標簽類型字段另外處理 多對多關聯
+            // 標簽類型欄位另外處理 多對多關聯
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField) {
@@ -264,7 +271,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
+                'msg' => '新增失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
                 'redirect' => false
             ];
         }
@@ -276,11 +283,20 @@ class ContentController extends Controller
      * @param int $id
      * @return View
      */
-    public function edit($entity, $id)
+    public function edit($entity, $id, $message = null)
     {
         $this->breadcrumb[] = ['title' => "編輯{$this->entity->name}内容", 'url' => ''];
         $view = $this->getAddOrEditViewPath();
         $model = ContentRepository::find($id);
+
+        $select = null;
+        $user = \Auth::guard('admin')->user();
+
+        if ($entity == 10) {
+            $select = ContentRepository::list('title_select', 50, ['id'=>$id], $user->id);        
+        } else if ($entity == 9) {
+            $select = ContentRepository::list('location_select', 50, [], $user->id);        
+        }
 
         return view($view, [
             'id' => $id,
@@ -289,7 +305,9 @@ class ContentController extends Controller
             'entity' => $entity,
             'entityModel' => $this->entity,
             'entityFields' => EntityFieldRepository::getByEntityId($entity),
-            'autoMenu' => EntityRepository::systemMenu()
+            'autoMenu' => EntityRepository::systemMenu(),
+            'messageType' => $message,
+            'selectOption' => $select
         ]);
     }
 
@@ -315,7 +333,7 @@ class ContentController extends Controller
             DB::beginTransaction();
 
             ContentRepository::update($id, $data, $this->entity);
-            // 標簽類型字段另外處理 多對多關聯
+            // 標簽類型欄位另外處理 多對多關聯
             $inputTagsField = EntityFieldRepository::getInputTagsField($entity);
             $tags = null;
             if ($inputTagsField && intval($inputTagsField->is_edit) === EntityField::EDIT_ENABLE) {
@@ -346,7 +364,7 @@ class ContentController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前内容已存在' : '其它錯误'),
                 'redirect' => false
             ];
         }
@@ -372,7 +390,7 @@ class ContentController extends Controller
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '刪除失败：' . $e->getMessage(),
+                'msg' => '刪除失敗：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

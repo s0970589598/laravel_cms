@@ -25,8 +25,8 @@
     <a href="javascript:;" class="layui-table-link" title="覆製" style="margin-left: 10px" onclick="copyEntity('<% d.copyUrl %>')"><i class="layui-icon layui-icon-file"></i></a>
     <a href="javascript:;" class="layui-table-link" title="添加默認選單，用於精细化權限控制" style="margin-left: 10px" onclick="addEntityMenus('<% d.menuUrl %>')"><i class="layui-icon layui-icon-menu-fill"></i></a>
     <%#  if(d.enable_comment == {{ App\Model\Admin\Entity::COMMENT_ENABLE }}){ %> <a href="<% d.commentListUrl %>" class="layui-table-link" title="評論列表" style="margin-left: 5px"><i class="layui-icon layui-icon-reply-fill"></i></a> <%#  } %>
-    <a href="<% d.fieldUrl %>" class="layui-table-link" title="字段管理" style="margin-left: 5px">字段管理</a>
-    <a href="<% d.contentUrl %>" class="layui-table-link" title="字段管理" style="margin-left: 5px">内容管理</a>
+    <a href="<% d.fieldUrl %>" class="layui-table-link" title="欄位管理" style="margin-left: 5px">欄位管理</a>
+    <a href="<% d.contentUrl %>" class="layui-table-link" title="欄位管理" style="margin-left: 5px">内容管理</a>
 </script>
 
 @section('js')
@@ -44,10 +44,10 @@
         });
 
         function deleteEntity (url) {
-            layer.confirm('刪除模型將刪除模型相關的所有數據（模型、模型字段、模型分類、模型内容等），請谨慎操作！確定要刪除？', function(index){
+            layer.confirm('刪除模型將刪除模型相關的所有數據（模型、模型欄位、模型分類、模型内容等），請谨慎操作！確定要刪除？', function(index){
                 layer.prompt({
                     formType: 1,
-                    title: '請输入登入密碼',
+                    title: '請輸入登入密碼',
                 }, function(value, index, elem){
                     $.ajax({
                         url: url,
@@ -75,10 +75,10 @@
         }
 
         function copyEntity (url) {
-            layer.confirm('覆製模型將新建一個和當前模型一樣的模型（資料庫表结構、表單定義等信息一致），確定要覆製？', function(index){
+            layer.confirm('覆製模型將新建一個和當前模型一樣的模型（資料庫表結構、表單定義等信息一致），確定要覆製？', function(index){
                 layer.prompt({
                     formType: 0,
-                    title: '請输入新模型的資料庫表名稱',
+                    title: '請輸入新模型的資料庫表名稱',
                 }, function(value, index, elem){
                     $.ajax({
                         url: url,

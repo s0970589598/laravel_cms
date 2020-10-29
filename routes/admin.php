@@ -75,7 +75,7 @@ Route::group(
             Route::get('/logs/list', 'LogController@list')->name('log.list');
             Route::get('/logs/create', 'LogController@create')->name('log.create');
 
-            // 模型字段
+            // 模型欄位
             Route::put('/entityFields/list/{id}', 'EntityFieldController@listUpdate')->name('entityField.listUpdate');
 
             // 内容

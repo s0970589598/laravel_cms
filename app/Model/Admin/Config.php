@@ -13,7 +13,7 @@ class Config extends Model
     ];
 
     public static $listField = [
-        'group' => '分组',
+        'group' => '分組',
         'name' => '名稱',
         'key' => '標誌符',
         'type' => '類型',

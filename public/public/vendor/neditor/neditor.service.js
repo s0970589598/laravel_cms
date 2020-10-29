@@ -1,6 +1,6 @@
 /**
  * 自定義上傳接口
- * 由於所有Neditor請求都通過editor對象的getActionUrl方法獲取上傳接口，可以直接通過覆寫這個方法實现自定義上傳接口
+ * 由於所有Neditor請求都通過editor對象的getActionUrl方法獲取上傳接口，可以直接通過覆寫這個方法實現自定義上傳接口
  * @param {String} action 匹配neditor.config.js中配置的xxxActionName
  * @returns 返回自定義的上傳接口
  */
@@ -40,7 +40,7 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
         },
         /**
          * 觸發startUpload事件時執行
-         * 當開始上傳流程時觸發，用来設置Uploader配置项
+         * 當開始上傳流程時觸發，用来設置Uploader配置項
          * @param {Object} uploader
          * @returns uploader
          */
@@ -56,8 +56,8 @@ window.UEDITOR_CONFIG['imageUploadService'] = function(context, editor) {
         getResponseSuccess: function(res) {
             return res.code == 200;
         },
-        /* 指定上傳接口返回的response中圖片路径的字段，默認為 url
-         * 如果圖片路径字段不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
+        /* 指定上傳接口返回的response中圖片路径的欄位，默認為 url
+         * 如果圖片路径欄位不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
          * */
         imageSrcField: 'url'
     }
@@ -92,7 +92,7 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
         },
         /**
          * 觸發startUpload事件時執行
-         * 當開始上傳流程時觸發，用来設置Uploader配置项
+         * 當開始上傳流程時觸發，用来設置Uploader配置項
          * @param {Object} uploader
          * @returns uploader
          */
@@ -108,8 +108,8 @@ window.UEDITOR_CONFIG['videoUploadService'] = function(context, editor) {
         getResponseSuccess: function(res) {
             return res.code == 200;
         },
-        /* 指定上傳接口返回的response中視频路径的字段，默認為 url
-         * 如果視频路径字段不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
+        /* 指定上傳接口返回的response中視频路径的欄位，默認為 url
+         * 如果視频路径欄位不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
          * */
         videoSrcField: 'url'
     }
@@ -129,7 +129,7 @@ window.UEDITOR_CONFIG['scrawlUploadService'] = function(context, editor) {
          * @param {Object} file 涂鸦canvas生成的圖片
          * @param {Object} base64 涂鸦canvas生成的base64
          * @param {Function} success 上傳成功回调函數,回傳上傳成功的response對象
-         * @param {Function} fail 上傳失败回调函數,回傳上傳失败的response對象
+         * @param {Function} fail 上傳失敗回调函數,回傳上傳失敗的response對象
          */
 
         /**
@@ -138,7 +138,7 @@ window.UEDITOR_CONFIG['scrawlUploadService'] = function(context, editor) {
          * 上傳接口返回的response成功狀態條件 {Boolean} (比如: res.code == 200)
          * res.responseSuccess = res.code == 200;
          * 
-         * 指定上傳接口返回的response中涂鸦圖片路径的字段，默認為 url 
+         * 指定上傳接口返回的response中涂鸦圖片路径的欄位，默認為 url 
          * res.videoSrcField = 'url';
          */
         uploadScraw: function(file, base64, success, fail) {
@@ -157,15 +157,15 @@ window.UEDITOR_CONFIG['scrawlUploadService'] = function(context, editor) {
                 /* 上傳接口返回的response成功狀態條件 (比如: res.code == 200) */
                 res.responseSuccess = res.code == 200;
 
-                /* 指定上傳接口返回的response中涂鸦圖片路径的字段，默認為 url 
-                 * 如果涂鸦圖片路径字段不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url
+                /* 指定上傳接口返回的response中涂鸦圖片路径的欄位，默認為 url 
+                 * 如果涂鸦圖片路径欄位不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url
                  */
                 res.scrawlSrcField = 'url';
 
                 /* 上傳成功 */
                 success.call(context, res);
             }).fail(function(err) {
-                /* 上傳失败 */
+                /* 上傳失敗 */
                 fail.call(context, err);
             });
         }
@@ -201,7 +201,7 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
         },
         /**
          * 觸發startUpload事件時執行
-         * 當開始上傳流程時觸發，用来設置Uploader配置项
+         * 當開始上傳流程時觸發，用来設置Uploader配置項
          * @param {Object} uploader
          * @returns uploader
          */
@@ -217,8 +217,8 @@ window.UEDITOR_CONFIG['fileUploadService'] = function(context, editor) {
         getResponseSuccess: function(res) {
             return res.code == 200;
         },
-        /* 指定上傳接口返回的response中附件路径的字段，默認為 url
-         * 如果附件路径字段不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
+        /* 指定上傳接口返回的response中附件路径的欄位，默認為 url
+         * 如果附件路径欄位不是res的屬性，可以寫成 對象.屬性 的方式，例如：data.url 
          * */
         fileSrcField: 'url'
     }

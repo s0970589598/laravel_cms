@@ -20,7 +20,7 @@
                         <div class="layui-input-inline">
                             <input type="checkbox" name="is_lock_name" lay-skin="switch" lay-text="锁定|不锁定" value="1" @if(isset($model) && $model->is_lock_name == App\Model\Admin\Menu::LOCK_NAME) checked @endif>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">锁定名稱則選單自動更新時不會更新當前選單的名稱和分组等信息</div>
+                        <div class="layui-form-mid layui-word-aux">锁定名稱則選單自動更新時不會更新當前選單的名稱和分組等信息</div>
                     </div>
                 </div>
                     <div class="layui-form-item">
@@ -62,7 +62,7 @@
                     <div class="layui-form-mid layui-word-aux">值越小排序越靠前</div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">分组</label>
+                        <label class="layui-form-label">分組</label>
                         <div class="layui-input-block">
                             <input type="text" name="group" autocomplete="off" class="layui-input" value="{{ $model->group ?? ''  }}">
                         </div>

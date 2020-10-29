@@ -122,7 +122,7 @@
         });
     }
 
-    /* 設置對齐方式 */
+    /* 設置對齊方式 */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,7 +135,7 @@
             }
         }
     }
-    /* 獲取對齐方式 */
+    /* 獲取對齊方式 */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
@@ -382,7 +382,7 @@
                     height: imageCompressBorder,
                     // 圖片质量，只有type為`image/jpeg`的時候才有效。
                     quality: 90,
-                    // 是否允许放大，如果想要生成小圖的時候不失真，此選项應该設置為false.
+                    // 是否允许放大，如果想要生成小圖的時候不失真，此選項應該設置為false.
                     allowMagnify: false,
                     // 是否允许裁剪。
                     crop: false,

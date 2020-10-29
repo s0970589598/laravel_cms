@@ -13,21 +13,21 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
 class Model extends BaseModel
 {
     /**
-     * 搜索字段
+     * 搜索欄位
      *
      * @var array
      */
     public static $searchField = [];
 
     /**
-     * 列表字段
+     * 列表欄位
      *
      * @var array
      */
     public static $listField = [];
 
     /**
-     * 列表操作项
+     * 列表操作項
      *
      * @var array
      */

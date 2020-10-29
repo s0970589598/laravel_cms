@@ -6,7 +6,7 @@ use App\Repository\Admin\ConfigRepository;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 use Schema;
-
+use Illuminate\Support\Facades\URL;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         if (config('light.light_config') === true && !App::environment('testing')) {
             $this->loadConfig();
+        }
+
+        //redirect http to https
+        if (App::environment('production')) {
+            Url::forceScheme('https');
         }
 
         /*

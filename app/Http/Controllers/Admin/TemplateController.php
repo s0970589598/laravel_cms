@@ -79,7 +79,7 @@ class TemplateController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模板已存在' : '其它錯誤'),
+                'msg' => '新增失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模板已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -119,7 +119,7 @@ class TemplateController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模板已存在' : '其它錯誤'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模板已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -142,7 +142,7 @@ class TemplateController extends Controller
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '刪除失败：' . $e->getMessage(),
+                'msg' => '刪除失敗：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

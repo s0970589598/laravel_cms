@@ -32,7 +32,7 @@
                     {{ \Auth::guard('admin')->user()->name }}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="{{ route('admin::adminUser.edit', ['id' => \Auth::guard('admin')->user()->id]) }}">编輯用户</a></dd>
+                    <dd><a href="{{ route('admin::adminUser.edit', ['id' => \Auth::guard('admin')->user()->id]) }}">編輯用户</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item"><a href="{{ route('admin::logout') }}">登出</a></li>
@@ -91,7 +91,7 @@
         © 2020 {{ config('app.name') }}
     </div>
 </div>
-<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=4"></script>
 <script src="/public/admin/js/admin.js?v=1"></script>
 @yield('js')
 </body>

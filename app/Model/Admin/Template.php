@@ -15,6 +15,6 @@ class Template extends Model
 
     public static $listField = [
         'name' => '名稱',
-        'group' => '分组'
+        'group' => '分組'
     ];
 }

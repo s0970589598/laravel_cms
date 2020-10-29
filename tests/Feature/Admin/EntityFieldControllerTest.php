@@ -94,7 +94,7 @@ class EntityFieldControllerTest extends TestCase
 
     public function testEntityContentCanBeCreatedAndEditedAndListedAndDeleted()
     {
-        // 字段可編輯
+        // 欄位可編輯
         $this->createEntityField(true, true);
         $data = [
             'title' => '测试標題',
@@ -130,7 +130,7 @@ class EntityFieldControllerTest extends TestCase
 
     public function testEntityContentCanNotBeEditedWhenFieldIsNotEditable()
     {
-        // 字段不可編輯
+        // 欄位不可編輯
         $this->createEntityField(true, false);
         $data = [
             'title' => '测试標題'
@@ -158,7 +158,7 @@ class EntityFieldControllerTest extends TestCase
             'entity_id' => $this->entity->id,
             'name' => 'exist_db_field',
             'type' => 'string',
-            'form_name' => '已存在字段',
+            'form_name' => '已存在欄位',
             'form_type' => 'input',
             'order' => 77,
             'field_length' => '',
@@ -258,7 +258,7 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // 標簽字段
+        // 標簽欄位
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'tags',
@@ -277,7 +277,7 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // select類型字段
+        // select類型欄位
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'gender',
@@ -299,7 +299,7 @@ class EntityFieldControllerTest extends TestCase
         $this->actingAs($this->user, 'admin')
             ->post('/admin/entityFields', $data);
 
-        // selectMulti類型字段
+        // selectMulti類型欄位
         $data = [
             'entity_id' => $this->entity->id,
             'name' => 'recommend',

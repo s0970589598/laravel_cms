@@ -26,16 +26,23 @@ class HomeController extends Controller
         }
 
         $user = \Auth::guard('admin')->user();
-        $data = ContentRepository::list('log_beacon_event', 50, [], $user->id);
-        $data2 = ContentRepository::list('log_broadcast', 50, [], $user->id);
 
-        return view('admin.home.index', 
-                        [
-                            'data' => $data,
-                            'data2' => $data2,                            
-                        
-                        ]
-                    );
+        if ($user->id <> '1' and $user->id <> '8') {
+            return redirect('admin/entity/9/contents');
+
+        } else {
+             $log_beacon_event = ContentRepository::list('log_beacon_event', 50, [], $user->id);
+            $log_broadcast = ContentRepository::list('log_broadcast', 50, [], $user->id);
+            $app_official_location_broadcast = ContentRepository::list('app_official_location_broadcast', 50, [], $user->id);
+
+            return view('admin.home.index', 
+                            [
+                                'log_beacon_event' => $log_beacon_event,
+                                'log_broadcast' => $log_broadcast,                            
+                                'app_official_location_broadcast' => $app_official_location_broadcast
+                            ]
+            );
+        }
     }
 
     /**

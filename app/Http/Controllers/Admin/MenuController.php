@@ -97,7 +97,7 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
+                'msg' => '新增失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -144,7 +144,7 @@ class MenuController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前選單已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -169,7 +169,7 @@ class MenuController extends Controller
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '刪除失败：' . $e->getMessage(),
+                'msg' => '刪除失敗：' . $e->getMessage(),
                 'redirect' => false
             ];
         }
@@ -188,7 +188,7 @@ class MenuController extends Controller
 
         foreach (Route::getRoutes()->getRoutesByName() as $k => $v) {
             if (Str::startsWith($k, 'admin::')) {
-                // 取方法的第一行注譯作為選單的名稱、分组名。格式：分组名稱-選單名稱。未寫分组名稱，則注譯直接作為選單名稱。未寫注譯則選用uri作為選單名稱。
+                // 取方法的第一行注譯作為選單的名稱、分組名。格式：分組名稱-選單名稱。未寫分組名稱，則注譯直接作為選單名稱。未寫注譯則選用uri作為選單名稱。
                 $action = explode('@', $v->getActionName());
                 if (!method_exists($action[0], $action[1])) {
                     continue;
@@ -292,7 +292,7 @@ class MenuController extends Controller
                 Menu::query()->whereIn('id', $ids)->update(['status' => Menu::STATUS_ENABLE]);
                 break;
             case 'delete':
-                // 過濾掉有子项目的
+                // 過濾掉有子項目的
                 $hasChildren = array_unique(Menu::query()->whereIn('pid', $ids)->pluck('pid')->toArray());
                 $deleteIds = array_diff($ids, $hasChildren);
                 if (!empty($deleteIds)) {

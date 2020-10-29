@@ -55,7 +55,7 @@
 
 </div>
 
-<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=4"></script>
 <script src="/public/admin/js/admin.js?v=1"></script>
 <script>
     $('#form').submit(function () {

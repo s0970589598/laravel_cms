@@ -124,7 +124,7 @@
 
 
 </div>
-<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=4"></script>
 <script type="text/javascript" src="/public/js/member.js?v=1"></script>
 <script>
     $(function () {

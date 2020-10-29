@@ -1,10 +1,10 @@
 /**
- * neditor完整配置项
+ * neditor完整配置項
  * 可以在這里配置整個編輯器的特性
  */
 /**************************提示********************************
- * 所有被注譯的配置项均為UEditor默認值。
- * 修改默認配置請首先確保已經完全明確该参數的真實用途。
+ * 所有被注譯的配置項均為UEditor默認值。
+ * 修改默認配置請首先確保已經完全明確該参數的真實用途。
  * 主要有兩种修改方案，一种是取消此處注譯，然後修改成對應参數；另一种是在實例化編輯器時傳入對應参數。
  * 當升級編輯器時，可直接使用旧版配置文件替换新版配置文件,不用担心旧版配置文件中因缺少新功能所需的参數而導致脚本報錯。
  **************************提示********************************/
@@ -12,7 +12,7 @@
 (function () {
     /**
      * 編輯器资源文件根路径。它所表示的含義是：以編輯器實例化頁面為當前路径，指向編輯器资源文件（即dialog等文件夹）的路径。
-     * 鉴於很多同學在使用編輯器的時候出现的种种路径問题，此處强烈建議大家使用"相對於网站根目入的相對路径"進行配置。
+     * 鉴於很多同學在使用編輯器的時候出現的种种路径問题，此處强烈建議大家使用"相對於网站根目入的相對路径"進行配置。
      * "相對於网站根目入的相對路径"也就是以斜杠開頭的形如"/myProject/neditor/"這樣的路径。
      * 如果站點中有多個不在同一層級的頁面需要實例化編輯器，且引用了同一UEditor的時候，此處的URL可能不适用於每個頁面的編輯器。
      * 因此，UEditor提供了针對不同頁面的編輯器可單獨配置的根路径，具體来說，在需要實例化編輯器的頁面最顶部寫上如下代碼即可。當然，需要令此處的URL等於對應的配置。
@@ -21,7 +21,7 @@
     var URL = window.UEDITOR_HOME_URL || getUEBasePath();
 
     /**
-     * 配置项主體。注意，此處所有涉及到路径的配置别遗漏URL變量。
+     * 配置項主體。注意，此處所有涉及到路径的配置别遗漏URL變量。
      */
     window.UEDITOR_CONFIG = {
         //為編輯器實例添加一個路径，這個不能被注譯
@@ -159,13 +159,13 @@
             //    'anchor':'', 'undo':''
             //}
 
-            //語言配置项,默認是zh-cn。有需要的话也可以使用如下這樣的方式来自動多語言切换，當然，前提條件是lang文件夹下存在對應的語言文件：
+            //語言配置項,默認是zh-cn。有需要的话也可以使用如下這樣的方式来自動多語言切换，當然，前提條件是lang文件夹下存在對應的語言文件：
             //lang值也可以通過自動獲取 (navigator.language||navigator.browserLanguage ||navigator.userLanguage).toLowerCase()
             //,lang:"zh-cn"
             //,langPath:URL +"i18n/"
 
-            //主题配置项,默認是default。有需要的话也可以使用如下這樣的方式来自動多主题切换，當然，前提條件是themes文件夹下存在對應的主题文件：
-            //现有如下皮肤:default
+            //主题配置項,默認是default。有需要的话也可以使用如下這樣的方式来自動多主题切换，當然，前提條件是themes文件夹下存在對應的主题文件：
+            //現有如下皮肤:default
             ,
         theme: 'notadd'
             //,themePath:URL +"themes/"
@@ -173,37 +173,37 @@
             ,
         zIndex: 1100 //編輯器層級的基數,默認是900
 
-            //针對getAllHtml方法，會在對應的head標簽中增加该编碼設置。
+            //针對getAllHtml方法，會在對應的head標簽中增加該编碼設置。
             //,charset:"utf-8"
 
             //若實例化編輯器的頁面手動修改的domain，此處需要設置為true
             //,customDomain:false
 
-            //常用配置项目
+            //常用配置項目
             //,isShow : true    //默認顯示編輯器
 
-            //,textarea:'editorValue' // 送出表單時，服務器獲取編輯器送出内容的所用的参數，多實例時可以给容器name屬性，會將name给定的值最為每個實例的鍵值，不用每次實例化的時候都設置這個值
+            //,textarea:'editorValue' // 送出表單時，服務器獲取編輯器送出内容的所用的参數，多實例時可以給容器name屬性，會將name給定的值最為每個實例的鍵值，不用每次實例化的時候都設置這個值
 
-            //,initialContent:'歡迎使用neditor!'    //初始化編輯器的内容,也可以通過textarea/script给值，看官网例子
+            //,initialContent:'歡迎使用neditor!'    //初始化編輯器的内容,也可以通過textarea/script給值，看官网例子
 
             //,autoClearinitialContent:true //是否自動清除編輯器初始内容，注意：如果focus屬性設置為true,這個也為真，那麼編輯器一上来就會觸發導致初始化的内容看不到了
 
             //,focus:false //初始化時，是否讓編輯器獲得焦點true或false
 
-            //如果自定義，最好给p標簽如下的行高，要不输入中文時，會有跳動感
+            //如果自定義，最好給p標簽如下的行高，要不輸入中文時，會有跳動感
             //,initialStyle:'p{line-height:1em}'//編輯器層級的基數,可以用来改變字體等
 
-            //,iframeJsUrl: '' //给編輯區域的iframe引入一個js文件
-            //,iframeCssUrl: URL + '/themes/iframe.css' //给編輯區域的iframe引入一個css文件
+            //,iframeJsUrl: '' //給編輯區域的iframe引入一個js文件
+            //,iframeCssUrl: URL + '/themes/iframe.css' //給編輯區域的iframe引入一個css文件
 
             //indentValue
-            //首行缩進距离,默認是2em
+            //首行缩進距離,默認是2em
             //,indentValue:'2em'
 
             //,initialFrameWidth:1000  //初始化編輯器宽度,默認1000
             //,initialFrameHeight:320  //初始化編輯器高度,默認320
 
-            //,readonly : false //編輯器初始化结束後,編輯區域是否是只讀的，默認是false
+            //,readonly : false //編輯器初始化結束後,編輯區域是否是只讀的，默認是false
 
             //,autoClearEmptyNode : true //getContent時，是否刪除空的inlineElement節點（包括嵌套的情况）
 
@@ -220,18 +220,18 @@
             //啟用圖片拉伸缩放
             //,imageScaleEnabled: true
 
-            //,fullscreen : false //是否開啟初始化時即全屏，默認關闭
+            //,fullscreen : false //是否開啟初始化時即全屏，默認關閉
 
             //,imagePopup:true      //圖片操作的浮層開關，默認打開
 
             //,autoSyncData:true //自動同步編輯器要送出的數據
-            //,emotionLocalization:false //是否開啟表情本地化，默認關闭。若要開啟請確保emotion文件夹下包含官网提供的images表情文件夹
+            //,emotionLocalization:false //是否開啟表情本地化，默認關閉。若要開啟請確保emotion文件夹下包含官网提供的images表情文件夹
 
             //粘贴只保留標簽，去除標簽所有屬性
             //,retainOnlyLabelPasted: false
 
-            //,pasteplain:false  //是否默認為纯文本粘贴。false為不使用纯文本粘贴，true為使用纯文本粘贴
-            //纯文本粘贴模式下的過濾规則
+            //,pasteplain:false  //是否默認為純文本粘贴。false為不使用純文本粘贴，true為使用純文本粘贴
+            //純文本粘贴模式下的過濾規則
             //'filterTxtRules' : function(){
             //    function transP(node){
             //        node.tagName = 'p';
@@ -288,7 +288,7 @@
             //    'disc' : '',    // '● 小圆點'
             //    'square' : ''   //'■ 小方塊'
             //}
-            //,listDefaultPaddingLeft : '30'//默認的左边缩進的基數倍
+            //,listDefaultPaddingLeft : '30'//默認的左邊缩進的基數倍
             //,listiconpath : 'http://bs.baidu.com/listicon/'//自定義標號的路径
             //,maxListLevel : 3 //限制可以tab的級數, 設置-1為不限制
 
@@ -348,7 +348,7 @@
 
             //打開右鍵選單功能
             //,enableContextMenu: true
-            //右鍵選單的内容，可以参考plugins/contextmenu.js里边的默認選單的例子，label留空支持國際化，否則以此配置為準
+            //右鍵選單的内容，可以参考plugins/contextmenu.js里邊的默認選單的例子，label留空支持國際化，否則以此配置為準
             //,contextMenu:[
             //    {
             //        label:'',       //顯示的名稱
@@ -371,13 +371,13 @@
             //wordCount
             //,wordCount:true          //是否開啟字數统计
             //,maximumWords:10000       //允许的最大字符數
-            //字數统计提示，{#count}代表當前字數，{#leave}代表還可以输入多少字符數,留空支持多語言自動切换，否則按此配置顯示
-            //,wordCountMsg:''   //當前已输入 {#count} 個字符，您還可以输入{#leave} 個字符
+            //字數统计提示，{#count}代表當前字數，{#leave}代表還可以輸入多少字符數,留空支持多語言自動切换，否則按此配置顯示
+            //,wordCountMsg:''   //當前已輸入 {#count} 個字符，您還可以輸入{#leave} 個字符
             //超出字數限制提示  留空支持多語言自動切换，否則按此配置顯示
-            //,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符個數已經超出最大允许值，服務器可能會拒绝保存！</span>
+            //,wordOverFlowMsg:''    //<span style="color:red;">你輸入的字符個數已經超出最大允许值，服務器可能會拒绝保存！</span>
 
             //tab
-            //點擊tab鍵時移動的距离,tabSize倍數，tabNode什麼字符做為單位
+            //點擊tab鍵時移動的距離,tabSize倍數，tabNode什麼字符做為單位
             //,tabSize:4
             //,tabNode:'&nbsp;'
 
@@ -391,16 +391,16 @@
             //undo
             //可以最多回退的次數,默認20
             //,maxUndoCount:20
-            //當输入的字符數超過该值時，保存一次现场
+            //當輸入的字符數超過該值時，保存一次現场
             //,maxInputCount:1
 
             //autoHeightEnabled
-            // 是否自動长高,默認true
+            // 是否自動長高,默認true
             ,
         autoHeightEnabled: false
 
             //scaleEnabled
-            //是否可以拉伸长高,默認true(當開啟時，自動长高失效)
+            //是否可以拉伸長高,默認true(當開啟時，自動長高失效)
             //,scaleEnabled:false
             //,minFrameWidth:800    //編輯器拖動時最小宽度,默認800
             //,minFrameHeight:220  //編輯器拖動時最小高度,默認220
@@ -408,9 +408,9 @@
             //autoFloatEnabled
             //是否保持toolbar的位置不動,默認true
             //,autoFloatEnabled:true
-            //浮動時工具栏距离浏覽器顶部的高度，用於某些具有固定頭部的頁面
+            //浮動時工具栏距離瀏覽器顶部的高度，用於某些具有固定頭部的頁面
             //,topOffset:30
-            //編輯器底部距离工具栏高度(如果参數大於等於編輯器高度，則設置無效)
+            //編輯器底部距離工具栏高度(如果参數大於等於編輯器高度，則設置無效)
             //,toolbarTopOffset:400
 
             //設置遠程圖片是否抓取到本地保存
@@ -428,7 +428,7 @@
             //    removeEmptyline: false,         //去掉空行
             //    textAlign:"left",               //段落的排版方式，可以是 left,right,center,justify 去掉這個屬性表示不執行排版
             //    imageBlockLine: 'center',       //圖片的浮動方式，獨占一行剧中,左右浮動，默認: center,left,right,none 去掉這個屬性表示不執行排版
-            //    pasteFilter: false,             //根據规則過濾没事粘贴進来的内容
+            //    pasteFilter: false,             //根據規則過濾没事粘贴進来的内容
             //    clearFontSize: false,           //去掉所有的内嵌字號，使用編輯器默認的字號
             //    clearFontFamily: false,         //去掉所有的内嵌字體，使用編輯器默認的字體
             //    removeEmptyNode: false,         // 去掉空節點
@@ -465,10 +465,10 @@
             //allowLinkProtocol 允许的連接地址，有這些前缀的連接地址不會自動添加http
             //, allowLinkProtocols: ['http:', 'https:', '#', '/', 'ftp:', 'mailto:', 'tel:', 'git:', 'svn:']
 
-            //webAppKey 百度應用的APIkey，每個站长必须首先去百度官网註冊一個key後方能正常使用app功能，註冊介绍，http://app.baidu.com/static/cms/getapikey.html
+            //webAppKey 百度應用的APIkey，每個站長必须首先去百度官网註冊一個key後方能正常使用app功能，註冊介绍，http://app.baidu.com/static/cms/getapikey.html
             //, webAppKey: ""
 
-            //默認過濾规則相關配置项目
+            //默認過濾規則相關配置項目
             //,disabledTableInTable:true  //禁止表格嵌套
             //,allowDivTransToP:true      //允许進入編輯器的div標簽自動變成p標簽
             //,rgb2Hex:true               //默認产出的數據中的color自動從rgb格式變成16進制格式

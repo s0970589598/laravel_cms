@@ -1,19 +1,19 @@
 <?php
-/*注意：此配置来自 ueditor 官方包中，僅供参考。LightCMS 編輯並未完全實现其相關功能，有需要可自行擴展實现*/
+/*注意：此配置来自 ueditor 官方包中，僅供参考。LightCMS 編輯並未完全實現其相關功能，有需要可自行擴展實現*/
 
 /* 前編輯通信相關的配置,注譯只允许使用多行方式 */
 return [
-    /* 上傳圖片配置项 */
+    /* 上傳圖片配置項 */
     "imageActionName" => "uploadimage", /* 執行上傳圖片的action名稱 */
     "imageFieldName" => "file", /* 送出的圖片表單名稱 */
     "imageMaxSize" => 2048000, /* 上傳大小限制，單位B */
     "imageAllowFiles" => [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"], /* 上傳圖片格式顯示 */
     "imageCompressEnable" => true, /* 是否壓缩圖片,默認是true */
-    "imageCompressBorder" => 1600, /* 圖片壓缩最长边限制 */
+    "imageCompressBorder" => 1600, /* 圖片壓缩最長邊限制 */
     "imageInsertAlign" => "none", /* 插入的圖片浮動方式 */
     "imageUrlPrefix" => "", /* 圖片訪問路径前缀 */
     "imagePathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定義保存路径和文件名格式 */
-                                /* {filename} 會替换成原文件名,配置這项需要注意中文乱碼問题 */
+                                /* {filename} 會替换成原文件名,配置這項需要注意中文乱碼問题 */
                                 /* {rand =>6} 會替换成随机數,後面的數字是随机數的位數 */
                                 /* {time} 會替换成時間戳 */
                                 /* {yyyy} 會替换成四位年份 */
@@ -21,12 +21,12 @@ return [
                                 /* {mm} 會替换成兩位月份 */
                                 /* {dd} 會替换成兩位日期 */
                                 /* {hh} 會替换成兩位小時 */
-                                /* {ii} 會替换成兩位分钟 */
+                                /* {ii} 會替换成兩位分鐘 */
                                 /* {ss} 會替换成兩位秒 */
                                 /* 非法字符 \  => * ? " < > | */
                                 /* 具請體看線上文档 => fex.baidu.com/ueditor/#use-format_upload_filename */
 
-    /* 涂鸦圖片上傳配置项 */
+    /* 涂鸦圖片上傳配置項 */
     "scrawlActionName" => "uploadscrawl", /* 執行上傳涂鸦的action名稱 */
     "scrawlFieldName" => "upfile", /* 送出的圖片表單名稱 */
     "scrawlPathFormat" => "/ueditor/php/upload/image/{yyyy}{mm}{dd}/{time}{rand =>6}", /* 上傳保存路径,可以自定義保存路径和文件名格式 */

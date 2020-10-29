@@ -7,7 +7,7 @@
 
         <div class="layui-card-body">
             <form class="layui-form" action="@if(isset($id)){{ route('admin::entityField.update', ['id' => $id]) }}@else{{ route('admin::entityField.save') }}@endif" method="post">
-                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由於字段修改操作具有一定危险性（可能會影嚮數據完整性），因此暂未實现直接修改模型的資料庫表结構<hr class="layui-bg-red">@endif
+                @if(isset($id)) {{ method_field('PUT') }} <i class="layui-icon layui-icon-tips" style="color: red; margin-right: 10px"></i>由於欄位修改操作具有一定危险性（可能會影嚮數據完整性），因此暂未實現直接修改模型的資料庫表結構<hr class="layui-bg-red">@endif
                     <div class="layui-form-item">
                         <label class="layui-form-label">模型</label>
                         <div class="layui-input-block" style="width: 400px">
@@ -20,13 +20,13 @@
                         </div>
                     </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">字段名稱</label>
+                    <label class="layui-form-label">欄位名稱</label>
                     <div class="layui-input-block">
-                        <input @if(isset($id)) disabled @endif type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}" placeholder="只能包含英文字母和數字，长度不超過64">
+                        <input @if(isset($id)) disabled @endif type="text" name="name" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->name ?? ''  }}" placeholder="只能包含英文字母和數字，長度不超過64">
                     </div>
                 </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">字段類型</label>
+                        <label class="layui-form-label">欄位類型</label>
                         <div class="layui-input-inline" style="width: 400px">
                             <select name="type" lay-verify="required" lay-filter="type" @if(isset($id)) disabled @endif>
                                 @foreach(config('light.db_table_field_type') as $v)
@@ -34,34 +34,34 @@
                                 @endforeach
                             </select>
                             <div id="str_length" style="display: none">
-                            <input type="number" name="field_length" value="" placeholder="對於char、string類型的字段，請在此输入字段长度" class="layui-input">
+                            <input type="number" name="field_length" value="" placeholder="對於char、string類型的欄位，請在此輸入欄位長度" class="layui-input">
                             </div>
                             <div id="float_length" style="display: none">
-                            <input type="number" name="field_total" value="" placeholder="對於浮點數類型的字段，請在此输入總位數" class="layui-input">
-                            <input type="number" name="field_scale" value="" placeholder="對於浮點數類型的字段，請在此输入小數位數" class="layui-input">
+                            <input type="number" name="field_total" value="" placeholder="對於浮點數類型的欄位，請在此輸入總位數" class="layui-input">
+                            <input type="number" name="field_scale" value="" placeholder="對於浮點數類型的欄位，請在此輸入小數位數" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-mid layui-word-aux"><a style="color:#FF5722" target="_blank" href="https://laravel.com/docs/5.5/migrations#columns">以MySQL資料庫為例：string類型對應VARCHAR；char類型對應CHAR</a></div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">字段默認值</label>
+                        <label class="layui-form-label">欄位默認值</label>
                         <div class="layui-input-block">
-                            <input type="text" name="default_value" autocomplete="off" class="layui-input" placeholder="僅對字符串、數值類型的字段類型有效" value="{{ $model->default_value ?? ''  }}" @if(isset($id)) disabled @endif>
+                            <input type="text" name="default_value" autocomplete="off" class="layui-input" placeholder="僅對字符串、數值類型的欄位類型有效" value="{{ $model->default_value ?? ''  }}" @if(isset($id)) disabled @endif>
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">字段注譯</label>
+                        <label class="layui-form-label">欄位注譯</label>
                         <div class="layui-input-block">
                             <input type="text" name="comment" autocomplete="off" class="layui-input" value="{{ $model->comment ?? ''  }}">
                         </div>
                     </div>
                     @if(!isset($id))
                     <div class="layui-form-item">
-                        <label class="layui-form-label">變更表结構</label>
+                        <label class="layui-form-label">變更表結構</label>
                         <div class="layui-input-inline" style="width: 50px;">
                             <input type="checkbox" name="is_modify_db" lay-skin="switch" lay-text="是|否" value="1" checked>
                         </div>
-                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表结構已經通過其它方式建好，此處無需操作資料庫表，添加字段主要是方便利用框架提供的模型增刪改查功能</div>
+                        <div class="layui-form-mid layui-word-aux">某些情况下可能資料庫表結構已經通過其它方式建好，此處無需操作資料庫表，添加欄位主要是方便利用框架提供的模型增刪改查功能</div>
                     </div>
                     @endif
                     <hr>

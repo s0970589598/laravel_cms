@@ -122,7 +122,7 @@
         });
     }
 
-    /* 設置對齐方式 */
+    /* 設置對齊方式 */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,7 +135,7 @@
             }
         }
     }
-    /* 獲取對齐方式 */
+    /* 獲取對齊方式 */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
@@ -676,7 +676,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 設置Uploader配置项 */
+                        /* 設置Uploader配置項 */
                         editor.getOpt("imageUploadService")(_this, editor).setUploaderOptions(uploader);
                         setState('uploading', files);
                         break;

@@ -1,6 +1,6 @@
 @if(!isset($selects_init))
     @php
-        // select多選组件使用可参考 https://github.com/hnzzmsf/layui-formSelects
+        // select多選組件使用可参考 https://github.com/hnzzmsf/layui-formSelects
         $selects_init = true
     @endphp
     <link rel="stylesheet" type="text/css" href="/public/vendor/layui-v2.4.5/plugins/formSelects-v4.css"/>

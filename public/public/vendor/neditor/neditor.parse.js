@@ -629,7 +629,7 @@ UE.parse.register("table", function(utils) {
     }
     //更新表格
     function updateTable(table) {
-      //给第一行設置firstRow的樣式名稱,在排序圖標的樣式上使用到
+      //給第一行設置firstRow的樣式名稱,在排序圖標的樣式上使用到
       if (!utils.hasClass(table.rows[0], "firstRow")) {
         for (var i = 1; i < table.rows.length; i++) {
           utils.removeClass(table.rows[i], "firstRow");
@@ -871,7 +871,7 @@ UE.parse.register("charts", function(utils) {
       data = config.data,
       meta = config.meta;
 
-    //數據對齐方式為相反的方式， 需要反轉數據
+    //數據對齊方式為相反的方式， 需要反轉數據
     if (meta.dataFormat != "1") {
       for (var i = 0, len = data.length; i < len; i++) {
         for (var j = 0, jlen = data[i].length; j < jlen; j++) {

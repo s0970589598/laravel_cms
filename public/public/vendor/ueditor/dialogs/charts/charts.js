@@ -289,7 +289,7 @@ function getUserConfig () {
             xTitle: form[ 'x-title' ].value,
             yTitle: form[ 'y-title' ].value,
             suffix: form[ 'unit' ].value,
-            //數據對齐方式
+            //數據對齊方式
             tableDataFormat: getTableDataFormat (),
             //饼圖提示文字
             tip: $( "#tipInput" ).val()
@@ -362,7 +362,7 @@ function getSeriesAndCategories () {
 }
 
 /*
- * 獲取數據源數據對齐方式
+ * 獲取數據源數據對齊方式
  */
 function getTableDataFormat () {
 
@@ -374,7 +374,7 @@ function getTableDataFormat () {
 }
 
 /*
- * 禁用非饼圖類型的配置项
+ * 禁用非饼圖類型的配置項
  */
 function disableNotPieConfig() {
 
@@ -383,7 +383,7 @@ function disableNotPieConfig() {
 }
 
 /*
- * 啟用非饼圖類型的配置项
+ * 啟用非饼圖類型的配置項
  */
 function enableNotPieConfig() {
 
@@ -407,7 +407,7 @@ function updateConfigItem ( value ) {
 
     }
 
-    //其他项處理
+    //其他項處理
     $( "input.not-pie-item" ).attr( "disabled", isDisable );
     $( "#tipInput" ).attr( "disabled", !isDisable )
 

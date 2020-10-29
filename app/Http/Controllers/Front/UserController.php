@@ -206,7 +206,7 @@ class UserController extends BaseController
             session([self::AUTH_SESSION => $user]);
             return redirect(route('member::login.show'));
         } catch (AuthorizeFailedException $e) {
-            return redirect(route('member::login.show'))->withErrors('授權失败');
+            return redirect(route('member::login.show'))->withErrors('授權失敗');
         } catch (InvalidStateException $e) {
             return redirect(route('member::login.show'))->withErrors('invalid state');
         }

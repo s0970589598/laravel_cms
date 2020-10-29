@@ -37,7 +37,7 @@ class ContentRepository
             unset($condition['light_sort_fields']);
         }
 
-        if ($user_id <> 1) {
+        if ($user_id <> 1 and $user_id <> 8) {
             
             switch ($entity) {
                 case 7:
@@ -61,7 +61,7 @@ class ContentRepository
                     ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('app_official_location_broadcast.*' ,'app_official_location.name')
+                    ->select(DB::raw('app_official_location_broadcast.id,IF(app_official_location_broadcast.status,"啟用","停用") as status,IF(app_official_location_broadcast.can_repeat,"是","否") as can_repeat,app_official_location_broadcast.location_id, app_official_location_broadcast.title,app_official_location_broadcast.start_datetime,app_official_location_broadcast.end_datetime,app_official_location.name'))
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -72,7 +72,7 @@ class ContentRepository
                     })
                     ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
-                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
                     ->select('app_official_location_broadcast_message.*', 'app_official_location.name', 'app_official_location_broadcast.title')
@@ -88,7 +88,7 @@ class ContentRepository
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->where('admin_id', $user_id)
                     ->orwhere('editor_id', $user_id)
-                    ->select('log_beacon_event.*')
+                    ->select('log_beacon_event.*','app_beacon.beacon_uid')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -150,8 +150,72 @@ class ContentRepository
                     ->paginate($perPage);
                     log::info($data);
                     break;
-                    
-                default:
+                    case 'app_official_location_broadcast':
+                        $data = self::$model->newQuery()
+                        ->where(function ($query) use ($condition) {
+                            Searchable::buildQuery($query, $condition);
+                        })
+                        ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                        ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->where('admin_id', $user_id)
+                        ->orwhere('editor_id', $user_id)
+                        ->select('app_official_location_broadcast.title','app_official_location_broadcast.id')
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                    break;  
+                    case 'location_select':
+                        $data = DB::table('app_official_location')
+                        ->select('app_official_location.id','app_official_location.name')
+                        ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->where('admin_id', $user_id)
+                        ->orwhere('editor_id', $user_id)
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                    break;   
+                    case 'title_select':
+                        if (isset($condition['id'])) {
+                            $data = DB::table('app_official_location_broadcast_message')
+                            ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                            ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                            ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                            ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                            ->where('app_official_location_broadcast_message.id', $condition['id'])
+                            ->orderBy($sortField, $sortType)
+                            ->paginate($perPage);
+                        } else {
+                            $data = DB::table('app_official_location_broadcast_message')
+                            ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                            ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                            ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                            ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                            ->orderBy($sortField, $sortType)
+                            ->paginate($perPage);
+                        }
+                        
+
+                        break;
+                        case 'title_select_create':
+                            if (isset($condition['id'])) {
+                                $data = DB::table('app_official_location_broadcast')
+                                ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                                ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                                ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                                ->where('app_official_location_broadcast.id', $condition['id'])
+                                ->orderBy($sortField, $sortType)
+                                ->paginate($perPage);
+                                dd($data);
+                            } else {
+                                $data = DB::table('app_official_location_broadcast')
+                                ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                                ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                                ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                                ->where('admin_id', $user_id)
+                                ->orwhere('editor_id', $user_id)
+                                ->orderBy($sortField, $sortType)
+                                ->paginate($perPage);
+                            }
+                        break;
+                    default:
                     $data = self::$model->newQuery()
                     ->where(function ($query) use ($condition) {
                         Searchable::buildQuery($query, $condition);
@@ -167,7 +231,7 @@ class ContentRepository
                     ->where(function ($query) use ($condition) {
                         Searchable::buildQuery($query, $condition);
                     })
-                    ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->select('app_beacon.*' , 'app_official_location.name')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
@@ -178,8 +242,8 @@ class ContentRepository
                         Searchable::buildQuery($query, $condition);
                     })
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
-                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
-                    ->select('app_official_location_broadcast.*' ,'app_official_location.name')
+                    ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->select(DB::raw('app_official_location_broadcast.id,IF(app_official_location_broadcast.status,"啟用","停用") as status,IF(app_official_location_broadcast.can_repeat,"是","否") as can_repeat,app_official_location_broadcast.location_id, app_official_location_broadcast.title,app_official_location_broadcast.start_datetime,app_official_location_broadcast.end_datetime,app_official_location.name'))
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -188,9 +252,9 @@ class ContentRepository
                     ->where(function ($query) use ($condition) {
                         Searchable::buildQuery($query, $condition);
                     })
-                    ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
-                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
-                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->leftjoin('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                    ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    //->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
                     ->select('app_official_location_broadcast_message.*', 'app_official_location.name', 'app_official_location_broadcast.title')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
@@ -202,7 +266,7 @@ class ContentRepository
                     })
                     ->join('app_beacon', 'app_beacon.id', '=', 'log_beacon_event.beacon_id')
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
-                    ->select('log_beacon_event.*')
+                    ->select('log_beacon_event.*','app_beacon.beacon_uid')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -213,8 +277,16 @@ class ContentRepository
                     })
                     ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'log_broadcast.broadcast_id')
                     ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
-                    ->join('app_beacon', 'app_beacon.location_id', '=', 'app_official_location.id')
-                    ->select('log_broadcast.*', 'app_official_location_broadcast.title')
+                    ->leftjoin('app_beacon', 'app_beacon.location_id', '=', 'app_official_location.id')
+                    ->select('log_broadcast.*', 'app_official_location_broadcast.title','app_official_location.name')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                    break;
+                case 'app_official_location_broadcast':
+                    $data = DB::table('app_official_location_broadcast')  
+                    ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                   ->select('app_official_location_broadcast.*' ,'app_official_location.name')
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
                     break;
@@ -239,11 +311,57 @@ class ContentRepository
                         ->whereRaw('DATE(log_broadcast.broadcast_datetime) >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)');
                     })
                     ->leftjoin('app_official_location', 'app_official_location.id', '=', 'app_beacon.location_id')
-                    ->select(DB::raw('count(app_official_location_broadcast.id) as broadcast_datetime, app_beacon.id, app_official_location.name as name'))
+                    ->select(DB::raw('count(log_broadcast.id) as broadcast_datetime, app_beacon.id, app_official_location.name as name'))
                     ->orderBy($sortField, $sortType)
                     ->groupBy('app_beacon.id')
                     ->paginate($perPage);
                     log::info($data);
+                break;
+                case 'location_select':
+                    $data = DB::table('app_official_location')
+                    ->select('app_official_location.id','app_official_location.name')
+                    ->join('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                    ->orderBy($sortField, $sortType)
+                    ->paginate($perPage);
+                break;   
+                case 'title_select':
+                    if (isset($condition['id'])) {
+                        $data = DB::table('app_official_location_broadcast_message')
+                        ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                        ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                        ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                        ->where('app_official_location_broadcast_message.id', $condition['id'])
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                    } else {
+                        $data = DB::table('app_official_location_broadcast_message')
+                        ->join('app_official_location_broadcast', 'app_official_location_broadcast.id', '=', 'app_official_location_broadcast_message.broadcast_id')
+                        ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                        ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                    }
+                break;
+                case 'title_select_create':
+                    if (isset($condition['id'])) {
+                        $data = DB::table('app_official_location_broadcast')
+                        ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                        ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                        ->where('app_official_location_broadcast.id', $condition['id'])
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                        dd($data);
+                    } else {
+                        $data = DB::table('app_official_location_broadcast')
+                        ->join('app_official_location', 'app_official_location.id', '=', 'app_official_location_broadcast.location_id')
+                        ->leftjoin('app_beacon', 'app_official_location.id', '=', 'app_beacon.location_id')
+                        ->select('app_official_location_broadcast.id', 'app_official_location_broadcast.title')
+                        ->orderBy($sortField, $sortType)
+                        ->paginate($perPage);
+                    }
                 break;
                 default:
                     $data = self::$model->newQuery()
@@ -252,14 +370,13 @@ class ContentRepository
                     })
                     ->orderBy($sortField, $sortType)
                     ->paginate($perPage);
-    
+                break;
             }
         }
-
-        if ($entity <> 'log_beacon_event' and $entity <> 'log_broadcast') {
+        
+        if ($entity <> 'log_beacon_event' and $entity <> 'log_broadcast' and  $entity <> 'app_official_location_broadcast' and $entity <> 'location_select' and $entity <> 'title_select' and $entity <> 'title_select_create') {
             if ($entity == 9) {
                 $data->transform(function ($item) use ($entity) {
-                    log::info($item);
                     xssFilter($item);
                     $item->addUrl =  '/admin/entity/10/contents/create/' . $item->id . '/text';
                     $item->addImgUrl = '/admin/entity/10/contents/create/' . $item->id . '/image';
@@ -268,10 +385,27 @@ class ContentRepository
                     $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
                     return $item;
                 });
+
             } else {
+                
                 $data->transform(function ($item) use ($entity) {
                     xssFilter($item);
-                    $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                    if ($entity == 10) {
+                        if ($item->message_type == 'text') {
+                            // $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity, 'message_type' => 'text']);
+                            $item->editUrl = '/admin/entity/10/contents/' . $item->id . '/edit/text';
+                        } else if ($item->message_type == 'image'){
+                            // $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity, 'message_type' => 'image']);
+                            $item->editUrl = '/admin/entity/10/contents/' . $item->id . '/edit/image';
+
+                        } else {
+                            $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                        }
+
+                    } else {
+                        $item->editUrl = route('admin::content.edit', ['id' => $item->id, 'entity' => $entity]);
+                    }
+
                     $item->deleteUrl = route('admin::content.delete', ['id' => $item->id, 'entity' => $entity]);
                     $item->commentListUrl = route('admin::comment.index', ['content_id' => $item->id, 'entity_id' => $entity]);
                     return $item;

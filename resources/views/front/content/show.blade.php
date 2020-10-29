@@ -119,7 +119,7 @@
         <form action="{{ route('member::comment.save', ['entityId' => $entityId, 'contentId' => $content->id]) }}" class="layui-form">
             <div class="layui-form-item">
                 <div>
-                <textarea name="content" rows="7" placeholder="請输入評論内容" class="layui-textarea" id="comment-content"></textarea>
+                <textarea name="content" rows="7" placeholder="請輸入評論内容" class="layui-textarea" id="comment-content"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -166,7 +166,7 @@
 
     </div>
 </footer>
-<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=3"></script>
+<script src="/public/vendor/layui-v2.4.5/layui.all.js?v=4"></script>
 <script type="text/javascript" src="/public/js/member.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js"></script>
 <script>
@@ -326,7 +326,7 @@
             method: 'get',
             success: function (data) {
                 if (data.code !== 0) {
-                    layer.msg('評論加戴失败', {icon: 2});
+                    layer.msg('評論加戴失敗', {icon: 2});
                     return;
                 }
 
@@ -440,7 +440,7 @@
                         url: '/member/comment/' + id + '/operate/' + action,
                         success: function (d) {
                             if (d.code !== 0) {
-                                layer.msg('操作失败', {icon: 2});
+                                layer.msg('操作失敗', {icon: 2});
                                 return;
                             }
                             var btn = $('button.vote-btn[data-id=' + id + ']');
@@ -456,7 +456,7 @@
 
                 // 举報
                 $('div#comments').on('click', 'button.report', function () {
-                    layer.msg('待實现');
+                    layer.msg('待實現');
                 });
 
                 // 評論翻頁
@@ -504,7 +504,7 @@
                 data: {comment_ids: commentIdsStr},
                 success: function (d) {
                     if (d.code !== 0) {
-                        layer.msg('獲取評論操作數據失败', {icon: 2});
+                        layer.msg('獲取評論操作數據失敗', {icon: 2});
                         return;
                     }
                     for (var i = d.data.length - 1; i >= 0; i--) {

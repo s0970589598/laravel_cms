@@ -119,7 +119,7 @@
                                         @case('selectMulti')
                                             @if(!isset($selects_init))
                                                 @php
-                                                    // select多選组件使用可参考 https://github.com/hnzzmsf/layui-formSelects
+                                                    // select多選組件使用可参考 https://github.com/hnzzmsf/layui-formSelects
                                                     $selects_init = true
                                                 @endphp
                                                 <link rel="stylesheet" type="text/css" href="/public/vendor/layui-v2.4.5/plugins/formSelects-v4.css"/>
@@ -213,7 +213,7 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">{{ $field->form_name }}</label>
                                         <div class="layui-input-block">
-                                            <textarea name="{{ $field->name }}" placeholder="請输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
+                                            <textarea name="{{ $field->name }}" placeholder="請輸入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
                                         </div>
                                     </div>
                                 @endif
@@ -221,7 +221,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block">
-                                        <textarea name="{{ $field->name }}" placeholder="請输入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
+                                        <textarea name="{{ $field->name }}" placeholder="請輸入内容" class="layui-textarea" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>{{ $model->{$field->name} ?? $field->form_default_value  }}</textarea>
                                     </div>
                                 </div>
                             @endif
@@ -259,9 +259,9 @@
                                     var inlineAttachmentConfig = {
                                         uploadUrl: "{{ route('admin::neditor.serve', ['type' => 'uploadimage']) }}",//編輯上傳圖片地址
                                         uploadFieldName: 'file',          //上傳的文件名
-                                        jsonFieldName: 'url',              //返回结果中圖片地址對應的字段名稱
+                                        jsonFieldName: 'url',              //返回結果中圖片地址對應的欄位名稱
                                         progressText: '![圖片上傳中...]()',    //上傳過程中用户看到的文案
-                                        errorText: '圖片上傳失败',
+                                        errorText: '圖片上傳失敗',
                                         urlText:'![圖片描述]({filename})',    //上傳成功後插入編輯器中的文案，{filename} 會被替换成圖片地址
                                     };
                                     inlineAttachment.editors.codemirror4.attach(simplemde_{{ $field->name }}.codemirror, inlineAttachmentConfig);
@@ -292,7 +292,7 @@
                                     </div></div>
                                 <script>
                                     //實例化編輯器
-                                    //建議使用工厂方法getEditor創建和引用編輯器實例，如果在某個闭包下引用该編輯器，直接调用UE.getEditor('editor')就能拿到相關的實例
+                                    //建議使用工厂方法getEditor創建和引用編輯器實例，如果在某個閉包下引用該編輯器，直接调用UE.getEditor('editor')就能拿到相關的實例
                                     var ue_{{ $field->name }} = UE.getEditor('editor-{{ $field->name }}', {autoFloatEnabled:false});
                                     ue_{{ $field->name }}.ready(function(){
                                         ue_{{ $field->name }}.focus();
@@ -334,7 +334,7 @@
                                                             $('#img-'+'{{ $field->name }}').attr('src', res.url);
                                                         }
                                                         ,error: function(){
-                                                            layer.msg('上傳失败')
+                                                            layer.msg('上傳失敗')
                                                         }
                                                     });
                                                 });
@@ -367,7 +367,7 @@
                                                                 $('#img-'+'{{ $field->name }}').attr('src', res.url);
                                                             }
                                                             ,error: function(){
-                                                                layer.msg('上傳失败')
+                                                                layer.msg('上傳失敗')
                                                             }
                                                         });
                                                     });
@@ -419,7 +419,7 @@
                                                             });
                                                         }
                                                         ,error: function(){
-                                                            layer.msg('上傳失败')
+                                                            layer.msg('上傳失敗')
                                                         }
                                                     });
                                                 });
@@ -452,34 +452,62 @@
                                 </div>
                             @break
                             @case('reference_beacon_title')
+                                @if(is_null($selectOption))
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">{{ $field->form_name }}</label>
+                                        <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
+                                            <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
+                                                @if(isset($brocast)) 
+                                                    <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name, $brocast); ?>
+                                                @else
+                                                    <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name); ?>
+                                                @endif
+                                                
+                                                @foreach($getBeaconTitleFields as $v)
+                                                <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->title}) selected @endif>{{ $v->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">{{ $field->form_name }}</label>
+                                        <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
+                                            <select name="{{ $field->name }}" required  lay-verify="required" >
+                                                @foreach($selectOption['data'] as $v)
+                                                    <option value="{{ $v->id }}"  selected >{{ $v->id.$v->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                @endif
+                            @break
+                            @case('reference_beacon_location')
+                               
+                            @if(is_null($selectOption))
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
                                         <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                            @if(isset($brocast)) 
-                                                <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name, $brocast); ?>
-                                            @else
-                                                <?php $getBeaconTitleFields = App\Repository\Admin\EntityFieldRepository::getBeaconTitleFields($entityModel->name); ?>
-                                            @endif
-                                            
-                                            @foreach($getBeaconTitleFields as $v)
-                                            <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->title}) selected @endif>{{ $v->title }}</option>
+                                            @foreach(App\Repository\Admin\EntityFieldRepository::getBeaconLocationFields($entityModel->name) as $v)
+                                                <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->name}) selected @endif>{{ $v->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
-                            @break
-                            @case('reference_beacon_location')
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">{{ $field->form_name }}</label>
-                                <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
-                                    <select name="{{ $field->name }}" @if($field->is_required == \App\Model\Admin\EntityField::REQUIRED_ENABLE) required  lay-verify="required" @endif @if(isset($model) && $field->is_edit == \App\Model\Admin\EntityField::EDIT_DISABLE) disabled @endif>
-                                        @foreach(App\Repository\Admin\EntityFieldRepository::getBeaconLocationFields($entityModel->name) as $v)
-                                            <option value="{{ $v->id }}" @if(isset($model) && $v->id == $model->{$field->name}) selected @endif>{{ $v->name }}</option>
-                                        @endforeach
-                                    </select>
+                            @else
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">{{ $field->form_name }}</label>
+                                    <div class="layui-input-block" style="width: 400px;z-index: {{99999 - ($field->order + $field->id)}}">
+                                        <select name="{{ $field->name }}" required  lay-verify="required" >
+                                            @foreach($selectOption['data'] as $v)
+                                                <option value="{{ $v->id }}"> {{ $v->id .$v->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
+
                             @break
                             @case('reference_admin_user')
                             <div class="layui-form-item">
@@ -570,7 +598,7 @@
                                 @case('selectMulti')
                                     @if(!isset($selects_init))
                                         @php
-                                            // select多選组件使用可参考 https://github.com/hnzzmsf/layui-formSelects
+                                            // select多選組件使用可参考 https://github.com/hnzzmsf/layui-formSelects
                                             $selects_init = true
                                         @endphp
                                         <link rel="stylesheet" type="text/css" href="/public/vendor/layui-v2.4.5/plugins/formSelects-v4.css"/>
@@ -607,7 +635,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">{{ $field->form_name }}</label>
                                     <div class="layui-input-block" style="">
-                                        <input name="{{ $field->name }}" placeholder="输入標簽，按回车鍵或TAB鍵可新增標簽" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
+                                        <input name="{{ $field->name }}" placeholder="輸入標簽，按回车鍵或TAB鍵可新增標簽" value="@if(isset($model)){{ \App\Repository\Admin\ContentRepository::tagNames($entity, $model->id) }},@endif">
                                     </div>
                                 </div>
                                 <script>

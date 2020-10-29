@@ -41,7 +41,7 @@ class CommentController extends BaseController
         if (mb_strlen($content) > 1024) {
             return [
                 'code' => 6,
-                'msg' => '評論内容過长',
+                'msg' => '評論内容過長',
             ];
         }
         $pid = (int) $request->post('pid', 0);
@@ -85,7 +85,7 @@ class CommentController extends BaseController
             Log::error($e);
             return [
                 'code' => 500,
-                'msg' => '評論失败：内部錯誤',
+                'msg' => '評論失敗：内部錯誤',
             ];
         }
     }

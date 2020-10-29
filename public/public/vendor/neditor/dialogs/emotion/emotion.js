@@ -62,16 +62,16 @@ function switchTab( index ) {
         emotion.tabExist[index] = 1;
         createTab( 'tab' + index );
     }
-    //獲取呈现元素句柄數组
+    //獲取呈現元素句柄數組
     var tabHeads = $G( "tabHeads" ).getElementsByTagName( "span" ),
             tabBodys = $G( "tabBodys" ).getElementsByTagName( "div" ),
             i = 0, L = tabHeads.length;
-    //隐藏所有呈现元素
+    //隐藏所有呈現元素
     for ( ; i < L; i++ ) {
         tabHeads[i].className = "";
         tabBodys[i].style.display = "none";
     }
-    //顯示對應呈现元素
+    //顯示對應呈現元素
     tabHeads[index].className = "focus";
     tabBodys[index].style.display = "block";
 }
@@ -119,7 +119,7 @@ function createTab( tabName ) {
             tab = $G( tabName ), //獲取將要生成的Div句柄
             imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //獲取顯示表情和预覽表情的路径
             positionLine = 11 / 2, //中間數
-            iWidth = iHeight = 35, //圖片长宽
+            iWidth = iHeight = 35, //圖片長宽
             iColWidth = 3, //表格剩余空間的顯示比例
             tableCss = emotion.imageCss[tabName],
             cssOffset = emotion.imageCssOffset[tabName],

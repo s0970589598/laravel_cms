@@ -39,7 +39,7 @@ class TagRequest extends FormRequest
     {
         return [
             'name.required' => '名稱不能為空',
-            'name.max' => '名稱长度不能大於20',
+            'name.max' => '名稱長度不能大於20',
         ];
     }
 }

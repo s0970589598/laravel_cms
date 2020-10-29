@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">分组</label>
+                        <label class="layui-form-label">分組</label>
                         <div class="layui-input-block">
                             <input type="text" name="group" autocomplete="off" class="layui-input" value="{{ $model->group ?? ''  }}">
                         </div>

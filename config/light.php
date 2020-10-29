@@ -16,7 +16,7 @@ return [
     // 異步寫入系统Log
     'log_async_write' => false,
 
-    // 資料庫表字段類型 参考：https://laravel.com/docs/5.5/migrations#columns
+    // 資料庫表欄位類型 参考：https://laravel.com/docs/5.5/migrations#columns
     'db_table_field_type' => [
         'string',
         'char',
@@ -77,7 +77,7 @@ return [
         'selectSingleSearch' => '下拉選擇（遠程搜索）',
         'selectMulti' => '下拉選擇（多選）',
         'selectMultiSearch' => '下拉選擇（多選，搜索）',
-        'inputTags' => 'tag输入框',
+        'inputTags' => 'tag輸入框',
         'upload' => '圖片上傳（單圖）',
         'uploadMulti' => '圖片上傳（多圖）',
         'datetime' => '日期時間',
@@ -98,7 +98,7 @@ return [
     ],
     'image_upload' => [
         'driver' => 'local', // local 表示上傳到本地服務器。上傳到其它服務器請設置自定義名稱
-        'class' => '', // 自定義 driver 需要填寫對應包括命名空間的完整類名，该類需要實现 App\Contracts\ImageUpload 接口
+        'class' => '', // 自定義 driver 需要填寫對應包括命名空間的完整類名，該類需要實現 App\Contracts\ImageUpload 接口
     ],
 
     // 三方登入

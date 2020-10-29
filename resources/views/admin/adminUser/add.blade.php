@@ -11,15 +11,15 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="name" required  lay-verify="required" placeholder="請输入用户名" autocomplete="off" class="layui-input" value="{{ $user->name ?? ''  }}">
+                        <input type="text" name="name" required  lay-verify="required" placeholder="請輸入用户名" autocomplete="off" class="layui-input" value="{{ $user->name ?? ''  }}">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">密碼</label>
                     <div class="layui-input-inline">
-                        <input type="password" name="password" @if(!isset($id)) required lay-verify="required" @endif placeholder="請输入密碼" autocomplete="off" class="layui-input">
+                        <input type="password" name="password" @if(!isset($id)) required lay-verify="required" @endif placeholder="請輸入密碼" autocomplete="off" class="layui-input">
                     </div>
-                    <div class="layui-form-mid layui-word-aux">密碼6到18位，不能為纯數字或纯字母。@if(isset($id))留空則不修改密碼@endif</div>
+                    <div class="layui-form-mid layui-word-aux">密碼6到18位，不能為純數字或純字母。@if(isset($id))留空則不修改密碼@endif</div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">是否啟用</label>

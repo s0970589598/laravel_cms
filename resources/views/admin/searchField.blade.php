@@ -11,6 +11,7 @@
         }
     }
 </script>
+
 @foreach($data as $k => $v)
     @if(is_string($v))
         <div class="layui-inline">

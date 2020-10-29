@@ -40,7 +40,7 @@
                     <th lay-data="{width:50, type:'checkbox'}"></th>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
                     <th lay-data="{templet:'#menuName'}">名稱</th>
-                    <th lay-data="{field: 'group'}">分组</th>
+                    <th lay-data="{field: 'group'}">分組</th>
                     <th lay-data="{field:'parentName'}">上級選單</th>
                     <th lay-data="{field:'route'}">路由</th>
                     <th lay-data="{field:'url'}">URL</th>
@@ -63,7 +63,7 @@
                                 <option value="lock_name">锁定名稱</option>
                                 <option value="parent">設置父級選單</option>
                                 <option value="order">設置排序</option>
-                                <option value="group">設置分组</option>
+                                <option value="group">設置分組</option>
                                 <option value="delete">刪除</option>
                             </select>
                         </div>
@@ -246,7 +246,7 @@
             } else if (data.value === 'order') {
                 $('input[name=params]').attr('placeholder', '請填寫排序值');
             } else if (data.value === 'group') {
-                $('input[name=params]').attr('placeholder', '請填寫分组名稱');
+                $('input[name=params]').attr('placeholder', '請填寫分組名稱');
             } else {
                 $('input[name=params]').attr('placeholder', '');
             }

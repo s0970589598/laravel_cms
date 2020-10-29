@@ -59,7 +59,7 @@ class NEditorController extends Controller
         if (!$result) {
             return [
                 'code' => 3,
-                'msg' => '上傳失败'
+                'msg' => '上傳失敗'
             ];
         }
 

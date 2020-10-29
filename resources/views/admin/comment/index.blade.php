@@ -60,7 +60,7 @@
 <script type="text/html" id="vist">
     <a target="_blank" href="<% d.contentEditUrl %>" class="layui-table-link" title="後台編輯">後台</a>
     <a target="_blank" href="<% d.vistUrl %>" class="layui-table-link" title="前台訪問">前台</a>
-    <a href="<% d.replyUrl %>" class="layui-table-link" title="该評論所有回覆">回覆</a>
+    <a href="<% d.replyUrl %>" class="layui-table-link" title="該評論所有回覆">回覆</a>
 </script>
 
 @section('js')

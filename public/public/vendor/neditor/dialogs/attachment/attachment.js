@@ -478,7 +478,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 設置Uploader配置项 */
+                        /* 設置Uploader配置項 */
                         editor.getOpt("fileUploadService")(_this, editor).setUploaderOptions(uploader);
                         setState('uploading', files);
                         break;

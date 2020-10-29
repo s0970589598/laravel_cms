@@ -76,8 +76,8 @@ function getDateDiff(dateTimeStamp)
         result=""+ parseInt(hourC) +"小時前";
     }
     else if(minC>=1){
-        result=""+ parseInt(minC) +"分钟前";
+        result=""+ parseInt(minC) +"分鐘前";
     }else
-        result="刚刚";
+        result="剛剛";
     return result;
 }

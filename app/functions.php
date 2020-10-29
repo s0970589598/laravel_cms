@@ -146,7 +146,7 @@ function mapTypeToVerbOfSensitiveWords()
  * 敏感詞检查
  *
  * @param string $text 待检查文本
- * @param string $type 名詞、動詞的检测方法。默認為 join 。join：名詞和動詞相連组合在一起視為违规 all：名詞和動詞只要同時出现即為违规
+ * @param string $type 名詞、動詞的检测方法。默認為 join 。join：名詞和動詞相連組合在一起視為违規 all：名詞和動詞只要同時出現即為违規
  * @param mixed $mode 检查模式。僅 $type 為 all 時有效。默認名詞、動詞、專用詞都检查，顯示可指定為 noun verb exclusive
  * @return array
  */

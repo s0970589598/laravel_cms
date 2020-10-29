@@ -278,7 +278,7 @@ class {{-$model_uc_first-}}Request extends FormRequest
     {
         return [
             'name.required' => '名稱不能為空',
-            'name.max' => '名稱长度不能大於50',
+            'name.max' => '名稱長度不能大於50',
         ];
     }
 }
@@ -366,7 +366,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
+                'msg' => '新增失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -406,7 +406,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前{{-$model_chinese_name-}}已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -429,7 +429,7 @@ class {{-$model_uc_first-}}Controller extends Controller
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '刪除失败：' . $e->getMessage(),
+                'msg' => '刪除失敗：' . $e->getMessage(),
                 'redirect' => false
             ];
         }

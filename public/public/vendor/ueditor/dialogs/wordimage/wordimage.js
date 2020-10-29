@@ -72,7 +72,7 @@ function showLocalPath(id) {
         return;
     }
 	var path = images[0];
-    var leftSlashIndex  = path.lastIndexOf("/")||0,  //不同版本的doc和浏覽器都可能影嚮到這個符號，故直接判断兩种
+    var leftSlashIndex  = path.lastIndexOf("/")||0,  //不同版本的doc和瀏覽器都可能影嚮到這個符號，故直接判断兩种
         rightSlashIndex = path.lastIndexOf("\\")||0,
         separater = leftSlashIndex > rightSlashIndex ? "/":"\\" ;
 

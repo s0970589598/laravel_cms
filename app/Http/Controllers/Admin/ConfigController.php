@@ -87,7 +87,7 @@ class ConfigController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前配置已存在' : '其它錯誤'),
+                'msg' => '新增失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前配置已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
@@ -128,7 +128,7 @@ class ConfigController extends Controller
         } catch (QueryException $e) {
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前配置已存在' : '其它錯誤'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前配置已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }

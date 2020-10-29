@@ -17,7 +17,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">標誌符</label>
                         <div class="layui-input-block">
-                            <input type="text" name="key" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->key ?? ''  }}" placeholder="數字、字母或下底線组成，长度不超過100">
+                            <input type="text" name="key" required  lay-verify="required" autocomplete="off" class="layui-input" value="{{ $model->key ?? ''  }}" placeholder="數字、字母或下底線組成，長度不超過100">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">分组</label>
+                        <label class="layui-form-label">分組</label>
                         <div class="layui-input-block">
                             <input type="text" name="group" autocomplete="off" class="layui-input" value="{{ $model->group ?? ''  }}">
                         </div>

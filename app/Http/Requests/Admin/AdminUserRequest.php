@@ -57,7 +57,7 @@ class AdminUserRequest extends FormRequest
         return [
             'name.required' => '用户名不能為空',
             'password.required' => '密碼不能為空',
-            'regex' => '密碼不符合规則'
+            'regex' => '密碼不符合規則'
         ];
     }
 }

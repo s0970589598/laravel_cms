@@ -9,7 +9,7 @@
 //清空上次查選的痕迹
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//给tab註冊切换事件
+//給tab註冊切换事件
 /**
  * tab點擊處理事件
  * @param tabHeads

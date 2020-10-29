@@ -92,7 +92,7 @@ var scrawl = function (options) {
                         isMouseUp = false;
                         isMouseMove = false;
                         me.isScrawl = true;
-                        startX = e.clientX - margin;//10為外边距總和
+                        startX = e.clientX - margin;//10為外邊距總和
                         startY = e.clientY - margin;
                         context.beginPath();
                         break;
@@ -101,7 +101,7 @@ var scrawl = function (options) {
                             return;
                         }
                         if (!flag && button) {
-                            startX = e.clientX - margin;//10為外边距總和
+                            startX = e.clientX - margin;//10為外邊距總和
                             startY = e.clientY - margin;
                             context.beginPath();
                             flag = 1;

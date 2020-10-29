@@ -2,19 +2,19 @@
 
 
 /**
- * @fileOverview 讓内部各個部件的代碼可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模塊定義方式组织起来。
+ * @fileOverview 讓内部各個部件的代碼可以用[amd](https://github.com/amdjs/amdjs-api/wiki/AMD)模塊定義方式組织起来。
  *
- * AMD API 内部的簡單不完全實现，請忽略。只有當WebUploader被合並成一個文件的時候才會引入。
+ * AMD API 内部的簡單不完全實現，請忽略。只有當WebUploader被合並成一個文件的時候才會引入。
  */
 (function( root, factory ) {
     var modules = {},
 
-        // 内部require, 簡單不完全實现。
+        // 内部require, 簡單不完全實現。
         // https://github.com/amdjs/amdjs-api/wiki/require
         _require = function( deps, callback ) {
             var args, len, i;
 
-            // 如果deps不是數组，則直接返回指定module
+            // 如果deps不是數組，則直接返回指定module
             if ( typeof deps === 'string' ) {
                 return getModule( deps );
             } else {
@@ -168,8 +168,8 @@
     /**
      * Web Uploader内部類的詳细說明，以下提及的功能類，都可以在`WebUploader`這個變量中訪問到。
      *
-     * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每個Module都會有個module id.
-     * 默認module id该文件的路径，而此路径將會轉化成名字空間存放在WebUploader中。如：
+     * As you know, Web Uploader的每個文件都是用過[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)規範中的`define`組织起来的, 每個Module都會有個module id.
+     * 默認module id該文件的路径，而此路径將會轉化成名字空間存放在WebUploader中。如：
      *
      * * module `base`：WebUploader.Base
      * * module `file`: WebUploader.File
@@ -239,14 +239,14 @@
             when: promise.when,
     
             /**
-             * @description  簡單的浏覽器检查结果。
+             * @description  簡單的瀏覽器检查結果。
              *
-             * * `webkit`  webkit版本號，如果浏覽器為非webkit内核，此屬性為`undefined`。
-             * * `chrome`  chrome浏覽器版本號，如果浏覽器為chrome，此屬性為`undefined`。
-             * * `ie`  ie浏覽器版本號，如果浏覽器為非ie，此屬性為`undefined`。**暂不支持ie10+**
-             * * `firefox`  firefox浏覽器版本號，如果浏覽器為非firefox，此屬性為`undefined`。
-             * * `safari`  safari浏覽器版本號，如果浏覽器為非safari，此屬性為`undefined`。
-             * * `opera`  opera浏覽器版本號，如果浏覽器為非opera，此屬性為`undefined`。
+             * * `webkit`  webkit版本號，如果瀏覽器為非webkit内核，此屬性為`undefined`。
+             * * `chrome`  chrome瀏覽器版本號，如果瀏覽器為chrome，此屬性為`undefined`。
+             * * `ie`  ie瀏覽器版本號，如果瀏覽器為非ie，此屬性為`undefined`。**暂不支持ie10+**
+             * * `firefox`  firefox瀏覽器版本號，如果瀏覽器為非firefox，此屬性為`undefined`。
+             * * `safari`  safari瀏覽器版本號，如果瀏覽器為非safari，此屬性為`undefined`。
+             * * `opera`  opera瀏覽器版本號，如果瀏覽器為非opera，此屬性為`undefined`。
              *
              * @property {Object} [browser]
              */
@@ -273,10 +273,10 @@
             })( navigator.userAgent ),
     
             /**
-             * @description  操作系统检查结果。
+             * @description  操作系统检查結果。
              *
-             * * `android`  如果在android浏覽器環境下，此值為對應的android版本號，否則為`undefined`。
-             * * `ios` 如果在ios浏覽器環境下，此值為對應的ios版本號，否則為`undefined`。
+             * * `android`  如果在android瀏覽器環境下，此值為對應的android版本號，否則為`undefined`。
+             * * `ios` 如果在ios瀏覽器環境下，此值為對應的ios版本號，否則為`undefined`。
              * @property {Object} [os]
              */
             os: (function( ua ) {
@@ -294,7 +294,7 @@
             })( navigator.userAgent ),
     
             /**
-             * 實现類与類之間的繼承。
+             * 實現類与類之間的繼承。
              * @method inherits
              * @grammar Base.inherits( super ) => child
              * @grammar Base.inherits( super, protos ) => child
@@ -351,7 +351,7 @@
                 child.__super__ = Super.prototype;
     
                 // 構建原型，添加原型方法或屬性。
-                // 暂時用Object.create實现。
+                // 暂時用Object.create實現。
                 child.prototype = createObject( Super.prototype );
                 protos && $.extend( true, child.prototype, protos );
     
@@ -359,7 +359,7 @@
             },
     
             /**
-             * 一個不做任何事情的方法。可以用来赋值给默認的callback.
+             * 一個不做任何事情的方法。可以用来赋值給默認的callback.
              * @method noop
              */
             noop: noop,
@@ -400,7 +400,7 @@
                     setTimeout( cb, 1 );
                 };
     
-                // @bug 當浏覽器不在當前窗口時就停了。
+                // @bug 當瀏覽器不在當前窗口時就停了。
                 // var next = window.requestAnimationFrame ||
                 //     window.webkitRequestAnimationFrame ||
                 //     window.mozRequestAnimationFrame ||
@@ -413,8 +413,8 @@
             })(),
     
             /**
-             * 被[uncurrythis](http://www.2ality.com/2011/11/uncurrying-this.html)的數组slice方法。
-             * 將用来將非數组對象轉化成數组對象。
+             * 被[uncurrythis](http://www.2ality.com/2011/11/uncurrying-this.html)的數組slice方法。
+             * 將用来將非數組對象轉化成數組對象。
              * @grammar Base.slice( target, start[, end] ) => Array
              * @method slice
              * @example
@@ -449,14 +449,14 @@
             })(),
     
             /**
-             * 格式化文件大小, 输出成带單位的字符串
+             * 格式化文件大小, 輸出成带單位的字符串
              * @method formatSize
              * @grammar Base.formatSize( size ) => String
              * @grammar Base.formatSize( size, pointLength ) => String
              * @grammar Base.formatSize( size, pointLength, units ) => String
              * @param {Number} size 文件大小
              * @param {Number} [pointLength=2] 精確到的小數點數。
-             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 單位數组。從字節，到千字節，一直往上指定。如果單位數组里面只指定了到了K(千字節)，同時文件大小大於M, 此方法的输出將還是顯示成多少K.
+             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 單位數組。從字節，到千字節，一直往上指定。如果單位數組里面只指定了到了K(千字節)，同時文件大小大於M, 此方法的輸出將還是顯示成多少K.
              * @example
              * console.log( Base.formatSize( 100 ) );    // => 100B
              * console.log( Base.formatSize( 1024 ) );    // => 1.00K
@@ -480,7 +480,7 @@
         };
     });
     /**
-     * 事件處理類，可以獨立使用，也可以擴展给對象使用。
+     * 事件處理類，可以獨立使用，也可以擴展給對象使用。
      * @fileOverview Mediator
      */
     define('mediator',[
@@ -728,7 +728,7 @@
         Uploader.options = {};
         Mediator.installTo( Uploader.prototype );
     
-        // 批量添加纯命令式方法。
+        // 批量添加純命令式方法。
         $.each({
             upload: 'start-upload',
             stop: 'stop-upload',
@@ -768,7 +768,7 @@
             },
     
             /**
-             * 獲取或者設置Uploader配置项。
+             * 獲取或者設置Uploader配置項。
              * @method option
              * @grammar option( key ) => *
              * @grammar option( key, val ) => self
@@ -806,7 +806,7 @@
             /**
              * 獲取文件统计信息。返回一個包含一下信息的對象。
              * * `successNum` 上傳成功的文件數
-             * * `uploadFailNum` 上傳失败的文件數
+             * * `uploadFailNum` 上傳失敗的文件數
              * * `cancelNum` 被刪除的文件數
              * * `invalidNum` 無效的文件數
              * * `queueNum` 還在隊列中的文件數
@@ -952,9 +952,9 @@
     
     
         /**
-         * 添加Runtime實现。
+         * 添加Runtime實現。
          * @param {String} type    類型
-         * @param {Runtime} factory 具體Runtime實现。
+         * @param {Runtime} factory 具體Runtime實現。
          */
         Runtime.addRuntime = function( type, factory ) {
             factories[ type ] = factory;
@@ -1178,7 +1178,7 @@
         return DragAndDrop;
     });
     /**
-     * @fileOverview 组件基類。
+     * @fileOverview 組件基類。
      */
     define('widgets/widget',[
         'base',
@@ -1314,9 +1314,9 @@
         });
     
         /**
-         * 添加组件
-         * @param  {object} widgetProto 组件原型，構造函數通過constructor屬性定義
-         * @param  {object} responseMap API名稱与函數實现的映射
+         * 添加組件
+         * @param  {object} widgetProto 組件原型，構造函數通過constructor屬性定義
+         * @param  {object} responseMap API名稱与函數實現的映射
          * @example
          *     Uploader.register( {
          *         init: function( options ) {},
@@ -1446,7 +1446,7 @@
         return FilePaste;
     });
     /**
-     * @fileOverview 组件基類。
+     * @fileOverview 組件基類。
      */
     define('widgets/filepaste',[
         'base',
@@ -1550,7 +1550,7 @@
     
             // todo 支持其他類型文件的轉换。
     
-            // 如果有mimetype, 但是文件名里面没有找出後缀规律
+            // 如果有mimetype, 但是文件名里面没有找出後缀規律
             if ( !ext && this.type ) {
                 ext = /\/(jpg|jpeg|png|gif|bmp)$/i.exec( this.type ) ?
                         RegExp.$1.toLowerCase() : '';
@@ -2382,7 +2382,7 @@
     
             /**
              * @event filesQueued
-             * @param {File} files 數组，内容為原始File(lib/File）對象。
+             * @param {File} files 數組，内容為原始File(lib/File）對象。
              * @description 當一批文件添加進隊列以後觸發。
              * @for  Uploader
              */
@@ -2391,7 +2391,7 @@
              * @method addFiles
              * @grammar addFiles( file ) => undefined
              * @grammar addFiles( [file1, file2 ...] ) => undefined
-             * @param {Array of File or File} [files] Files 對象 數组
+             * @param {Array of File or File} [files] Files 對象 數組
              * @description 添加文件到隊列
              * @for  Uploader
              */
@@ -2607,7 +2607,7 @@
             // 跨域時，是否允许攜带cookie, 只有html5 runtime才有效
             withCredentials: false,
             fileVal: 'file',
-            timeout: 2 * 60 * 1000,    // 2分钟
+            timeout: 2 * 60 * 1000,    // 2分鐘
             formData: {},
             headers: {},
             sendAsBinary: false
@@ -2634,7 +2634,7 @@
                 opts.filename = filename || opts.filename;
             },
     
-            // 添加其他字段
+            // 添加其他欄位
             append: function( key, value ) {
                 if ( typeof key === 'object' ) {
                     $.extend( this._formData, key );
@@ -2717,7 +2717,7 @@
             isPromise = Base.isPromise,
             Status = WUFile.Status;
     
-        // 添加默認配置项
+        // 添加默認配置項
         $.extend( Uploader.options, {
     
     
@@ -2725,9 +2725,9 @@
              * @property {Boolean} [prepareNextFile=false]
              * @namespace options
              * @for Uploader
-             * @description 是否允许在文件傳输時提前把下一個文件準備好。
+             * @description 是否允许在文件傳輸時提前把下一個文件準備好。
              * 對於一個文件的準備工作比较耗時，比如圖片壓缩，md5序列化。
-             * 如果能提前在當前文件傳输期處理，可以節省總體耗時。
+             * 如果能提前在當前文件傳輸期處理，可以節省總體耗時。
              */
             prepareNextFile: false,
     
@@ -2791,7 +2791,7 @@
              * @namespace options
              * @for Uploader
              * @description 是否已二進制的流的方式發送文件，這樣整個上傳内容`php://input`都為文件内容，
-             * 其他参數在$_GET數组中。
+             * 其他参數在$_GET數組中。
              */
         });
     
@@ -2983,7 +2983,7 @@
     
             /**
              * @event uploadFinished
-             * @description 當所有文件上傳结束時觸發。
+             * @description 當所有文件上傳結束時觸發。
              * @for  Uploader
              */
             _tick: function() {
@@ -2991,7 +2991,7 @@
                     opts = me.options,
                     fn, val;
     
-                // 上一個promise還没有结束，則等待完成後再執行。
+                // 上一個promise還没有結束，則等待完成後再執行。
                 if ( me._promise ) {
                     return me._promise.always( me.__tick );
                 }
@@ -3010,7 +3010,7 @@
     
                     me._promise = isPromise( val ) ? val.always( fn ) : fn( val );
     
-                // 没有要上傳的了，且没有正在傳输的了。
+                // 没有要上傳的了，且没有正在傳輸的了。
                 } else if ( !me.remaning && !me.getStats().numOfQueue ) {
                     me.runing = false;
     
@@ -3027,7 +3027,7 @@
                     opts = me.options,
                     next, done;
     
-                // 如果當前文件還有没有需要傳输的，則直接返回剩下的。
+                // 如果當前文件還有没有需要傳輸的，則直接返回剩下的。
                 if ( act && act.has() &&
                         act.file.getStatus() === Status.PROGRESS ) {
     
@@ -3134,7 +3134,7 @@
                 // hook, 每個分片發送之前可能要做些異步的事情。
                 promise = me.request( 'before-send', block, function() {
     
-                    // 有可能文件已經上傳出錯了，所以不需要再傳输了。
+                    // 有可能文件已經上傳出錯了，所以不需要再傳輸了。
                     if ( file.getStatus() === Status.PROGRESS ) {
                         me._doSend( block );
                     } else {
@@ -3205,7 +3205,7 @@
             /**
              * @event uploadComplete
              * @param {File} [file] File對象
-             * @description 不管成功或者失败，文件上傳完成時觸發。
+             * @description 不管成功或者失敗，文件上傳完成時觸發。
              * @for  Uploader
              */
     
@@ -3251,7 +3251,7 @@
                     owner.trigger( 'uploadProgress', file, totalPercent || 0 );
                 });
     
-                // 用来尋問，是否返回的结果是有錯誤的。
+                // 用来尋問，是否返回的結果是有錯誤的。
                 requestAccept = function( reject ) {
                     var fn;
     
@@ -3311,7 +3311,7 @@
                     }
                 });
     
-                // 配置默認的上傳字段。
+                // 配置默認的上傳欄位。
                 data = $.extend( data, {
                     id: file.id,
                     name: file.name,
@@ -3325,8 +3325,8 @@
                     chunk: block.chunk
                 });
     
-                // 在發送之間可以添加字段什麼的。。。
-                // 如果默認的字段不夠使用，可以通過監聽此事件来擴展
+                // 在發送之間可以添加欄位什麼的。。。
+                // 如果默認的欄位不夠使用，可以通過監聽此事件来擴展
                 owner.trigger( 'uploadBeforeSend', block, data, headers );
     
                 // 開始發送。
@@ -3381,12 +3381,12 @@
          * @param {String} type 錯誤類型。
          * @description 當validate不通過時，會以派送錯誤事件的形式通知调用者。通過`upload.on('error', handler)`可以捕獲到此類錯誤，目前有以下錯誤會在特定的情况下派送錯来。
          *
-         * * `Q_EXCEED_NUM_LIMIT` 在設置了`fileNumLimit`且嘗试给`uploader`添加的文件數量超出這個值時派送。
-         * * `Q_EXCEED_SIZE_LIMIT` 在設置了`Q_EXCEED_SIZE_LIMIT`且嘗试给`uploader`添加的文件總大小超出這個值時派送。
+         * * `Q_EXCEED_NUM_LIMIT` 在設置了`fileNumLimit`且嘗试給`uploader`添加的文件數量超出這個值時派送。
+         * * `Q_EXCEED_SIZE_LIMIT` 在設置了`Q_EXCEED_SIZE_LIMIT`且嘗试給`uploader`添加的文件總大小超出這個值時派送。
          * @for  Uploader
          */
     
-        // 暴露给外面的api
+        // 暴露給外面的api
         api = {
     
             // 添加驗證器
@@ -3678,7 +3678,7 @@
         return Html5Runtime;
     });
     /**
-     * @fileOverview Blob Html實现
+     * @fileOverview Blob Html實現
      */
     define('runtime/html5/blob',[
         'runtime/html5/runtime',
@@ -4048,8 +4048,8 @@
     });
     /**
      * @fileOverview Transport
-     * @todo 支持chunked傳输，优势：
-     * 可以將大文件分成小塊，挨個傳输，可以提高大文件成功率，當失败的時候，也只需要重傳那小部分，
+     * @todo 支持chunked傳輸，优势：
+     * 可以將大文件分成小塊，挨個傳輸，可以提高大文件成功率，當失敗的時候，也只需要重傳那小部分，
      * 而不需要重頭再傳一次。另外断點續傳也需要用chunked方式。
      */
     define('runtime/html5/transport',[
@@ -4433,7 +4433,7 @@
         });
     });
     /**
-     * @fileOverview  Transport flash實现
+     * @fileOverview  Transport flash實現
      */
     define('runtime/flash/transport',[
         'base',

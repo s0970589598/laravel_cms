@@ -36,7 +36,7 @@ trait Searchable
                 list($type, $value) = $v;
             }
             $value = trim($value);
-            // 搜索值為空字符串則忽略该條件
+            // 搜索值為空字符串則忽略該條件
             if ($value === '') {
                 continue;
             }

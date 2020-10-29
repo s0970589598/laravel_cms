@@ -12,7 +12,7 @@
                         @foreach(App\Repository\Admin\MenuRepository::group() as $k => $v)
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <input type="checkbox" name="" title="{{ $k ? $k : '未分组' }}" value="{{ $loop->iteration }}" lay-skin="primary" lay-filter="group">
+                            <input type="checkbox" name="" title="{{ $k ? $k : '未分組' }}" value="{{ $loop->iteration }}" lay-skin="primary" lay-filter="group">
                         </div>
                     </div>
                             <div class="layui-form-item" style="margin-left: 50px" data-group="{{ $loop->iteration }}">

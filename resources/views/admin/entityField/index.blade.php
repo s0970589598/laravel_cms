@@ -22,7 +22,7 @@
             </form>
         </div>
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'{{ route('admin::entityField.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::entityField.create') }}?{{ request()->getQueryString() }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增模型字段</a> | 單擊排序值可直接編輯</div>'}" lay-filter="test">
+            <table class="layui-table" lay-data="{url:'{{ route('admin::entityField.list') }}?{{ request()->getQueryString() }}', page:true, limit:50, id:'test', toolbar:'<div><a href=\'{{ route('admin::entityField.create') }}?{{ request()->getQueryString() }}\'><i class=\'layui-icon layui-icon-add-1\'></i>新增模型欄位</a> | 單擊排序值可直接編輯</div>'}" lay-filter="test">
                 <thead>
                 <tr>
                     <th lay-data="{field:'id', width:80, sort: true}">ID</th>
@@ -111,7 +111,7 @@
         });
 
         function deleteMenu (url) {
-            layer.confirm('確定刪除？刪除字段將同時刪除資料庫表字段，請谨慎操作！', function(index){
+            layer.confirm('確定刪除？刪除欄位將同時刪除資料庫表欄位，請谨慎操作！', function(index){
                 $.ajax({
                     url: url,
                     data: {'_method': 'DELETE'},

@@ -113,7 +113,7 @@ class MenuRepository
     }
 
     /**
-     * 根據分组名稱進行數據分组
+     * 根據分組名稱進行數據分組
      *
      * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
      */

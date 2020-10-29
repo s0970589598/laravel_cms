@@ -6,11 +6,11 @@
 
 ## 新版發佈
 
-2.1 發佈，此次版本移除了編輯相關代碼，纯 ajax 送出，請配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者雲存儲。
+2.1 發佈，此次版本移除了編輯相關代碼，純 ajax 送出，請配置 `neditor.config.js` `neditor.service.js`，支持各种編輯或者雲存儲。
 
 ## 捐赠
 
-该项目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此项目的發展。
+該項目需要您的支持， [捐赠](https://gitee.com/notadd/neditor?donate=true)  以支持此項目的發展。
 
 
 ## 第一步：下戴編輯器
@@ -31,9 +31,9 @@ npm install
 npm run build
 ```
 
-### 第二步：在浏覽器打開 index.html ###
+### 第二步：在瀏覽器打開 index.html ###
 
-進入到目入 `dist` , 使用浏覽器打開文件 `index.html` 。
+進入到目入 `dist` , 使用瀏覽器打開文件 `index.html` 。
 
 如果看到了下面這樣的編輯器，恭喜你，初次部署成功！
 
@@ -47,7 +47,7 @@ npm run build
 
 ## 技术支持
 
-该项目基於 MIT 协議開源，任何组织/企業以及個人都可以免费使用（保留版权）。    
+該項目基於 MIT 协議開源，任何組织/企業以及個人都可以免费使用（保留版权）。    
 如果您需要额外商業技术支持或者定制編輯器，請聯系 QQ：1256985886
 
 
@@ -56,7 +56,7 @@ npm run build
 
 ### 自定義的参數
 
-編輯器有很多可自定義的参數项，在實例化的時候可以傳入给編輯器：
+編輯器有很多可自定義的参數項，在實例化的時候可以傳入給編輯器：
 
 ```javascript
 var ue = UE.getEditor('container', {
@@ -64,7 +64,7 @@ var ue = UE.getEditor('container', {
 });
 ```
 
-配置项也可以通過 `neditor.config.js` 文件修改，具體的配置方法請看 [前端配置项說明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置项說明.md)、[編輯配置项說明](http://fex.baidu.com/ueditor/#server-config)
+配置項也可以通過 `neditor.config.js` 文件修改，具體的配置方法請看 [前端配置項說明](http://fex.baidu.com/ueditor/#start-config1.4 前端配置項說明.md)、[編輯配置項說明](http://fex.baidu.com/ueditor/#server-config)
 
 ### 編輯器圖片、視频、涂鸦、附件上傳service
 
@@ -81,7 +81,7 @@ ue.ready(function(){
     ue.setContent('hello');
     //獲取html内容，返回: <p>hello</p>
     var html = ue.getContent();
-    //獲取纯文本内容，返回: hello
+    //獲取純文本内容，返回: hello
     var txt = ue.getContentTxt();
 });
 ```
@@ -146,11 +146,11 @@ QQ 群： 321735506
 ### 3.0
 
 - [ ] 使用 Typescript 重構
-- [ ] 草稿箱功能与离線保存
+- [ ] 草稿箱功能与離線保存
 - [ ] service worker 特性
-- [ ] 實现 2.0 的大部分功能
+- [ ] 實現 2.0 的大部分功能
 
-## 其他项目：Notadd
+## 其他項目：Notadd
 
 https://github.com/notadd/notadd
 
@@ -160,7 +160,7 @@ https://github.com/notadd/notadd
  
  <a href="https://www.ucloud.cn/site/active/gift.html?ytag=notadd"><img src="https://www.notadd.com/src/ucloud_logo.svg" width="150" /></a> &nbsp;
 
-**UCloud 雲服務器限時优惠 — Notadd 项目用户福利**
+**UCloud 雲服務器限時优惠 — Notadd 項目用户福利**
 
 [【基礎型】1核2G 1M带宽 50GB SSD數據盘 低至250元/年](https://www.ucloud.cn/site/active/gift.html?ytag=notadd )    
 

@@ -171,7 +171,7 @@
     }
 
     /**
-     * 找到id下具有focus類的節點並返回该節點下的某個屬性
+     * 找到id下具有focus類的節點並返回該節點下的某個屬性
      * @param id
      * @param returnProperty
      */
@@ -206,7 +206,7 @@
     }
 
     /**
-      * 检测傳入的所有input框中输入的长宽是否是正數
+      * 检测傳入的所有input框中輸入的長宽是否是正數
       * @param nodes input框集合，
       */
      function checkNum( nodes ) {
@@ -729,7 +729,7 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* 設置Uploader配置项 */
+                        /* 設置Uploader配置項 */
                         editor.getOpt("videoUploadService")(_this, editor).setUploaderOptions(uploader);
                         setState('uploading', files);
                         break;

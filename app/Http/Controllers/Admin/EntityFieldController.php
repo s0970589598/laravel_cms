@@ -32,22 +32,22 @@ class EntityFieldController extends Controller
     {
         parent::__construct();
 
-        $this->breadcrumb[] = ['title' => '模型字段列表', 'url' => route('admin::entityField.index')];
+        $this->breadcrumb[] = ['title' => '模型欄位列表', 'url' => route('admin::entityField.index')];
     }
 
     /**
-     * 模型字段管理-模型字段列表
+     * 模型欄位管理-模型欄位列表
      *
      */
     public function index()
     {
-        $this->breadcrumb[] = ['title' => '模型字段列表', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '模型欄位列表', 'url' => ''];
         EntityField::$searchField['entity_id']['enums'] = EntityRepository::all()->pluck('name', 'id');
         return view('admin.entityField.index', ['breadcrumb' => $this->breadcrumb]);
     }
 
     /**
-     * 模型字段管理-模型字段列表數據接口
+     * 模型欄位管理-模型欄位列表數據接口
      *
      * @param Request $request
      * @return array
@@ -64,18 +64,18 @@ class EntityFieldController extends Controller
     }
 
     /**
-     * 模型字段管理-新增模型字段
+     * 模型欄位管理-新增模型欄位
      *
      */
     public function create()
     {
         $entity = Entity::query()->pluck('name', 'id')->all();
-        $this->breadcrumb[] = ['title' => '新增模型字段', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '新增模型欄位', 'url' => ''];
         return view('admin.entityField.add', ['breadcrumb' => $this->breadcrumb, 'entity' => $entity]);
     }
 
     /**
-     * 模型字段管理-保存模型字段
+     * 模型欄位管理-保存模型欄位
      *
      * @param EntityFieldRequest $request
      * @return array
@@ -94,19 +94,19 @@ class EntityFieldController extends Controller
             if (!$table) {
                 return [
                     'code' => 1,
-                    'msg' => '新增失败：模型不存在',
+                    'msg' => '新增失敗：模型不存在',
                 ];
             }
             if ($modifyDB && Schema::hasColumn($table->table_name, $data['name'])) {
                 return [
                     'code' => 2,
-                    'msg' => '新增失败：字段已存在',
+                    'msg' => '新增失敗：欄位已存在',
                 ];
             }
             if (!in_array($data['type'], config('light.db_table_field_type'))) {
                 return [
                     'code' => 3,
-                    'msg' => '新增失败：無效字段類型',
+                    'msg' => '新增失敗：無效欄位類型',
                 ];
             }
             // 一個模型只能有一個 inputTags 表單類型
@@ -114,11 +114,11 @@ class EntityFieldController extends Controller
                 && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
                 return [
                     'code' => 4,
-                    'msg' => '新增失败：一個模型只能有一個標簽输入框表單類型',
+                    'msg' => '新增失敗：一個模型只能有一個標簽輸入框表單類型',
                 ];
             }
 
-            // inputTags類型表單不需要添加資料庫字段
+            // inputTags類型表單不需要添加資料庫欄位
             if (in_array($data['form_type'], ['inputTags'], true)) {
                 $modifyDB = false;
             }
@@ -164,20 +164,20 @@ class EntityFieldController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '新增失败：' . $e->getMessage(),
+                'msg' => '新增失敗：' . $e->getMessage(),
             ];
         }
     }
 
     /**
-     * 模型字段管理-編輯模型字段
+     * 模型欄位管理-編輯模型欄位
      *
      * @param int $id
      * @return View
      */
     public function edit($id)
     {
-        $this->breadcrumb[] = ['title' => '編輯模型字段', 'url' => ''];
+        $this->breadcrumb[] = ['title' => '編輯模型欄位', 'url' => ''];
 
         $model = EntityFieldRepository::find($id);
         $entity = Entity::query()->pluck('name', 'id')->all();
@@ -190,7 +190,7 @@ class EntityFieldController extends Controller
     }
 
     /**
-     * 模型字段管理-更新模型字段
+     * 模型欄位管理-更新模型欄位
      *
      * @param EntityFieldRequest $request
      * @param int $id
@@ -207,7 +207,7 @@ class EntityFieldController extends Controller
         if (EntityFieldRepository::formTypeBeUnique($data['form_type']) && EntityFieldRepository::getInputTagsField($data['entity_id'])) {
             return [
                 'code' => 4,
-                'msg' => '編輯失败：一個模型只能有一個標簽输入框表單類型',
+                'msg' => '編輯失敗：一個模型只能有一個標簽輸入框表單類型',
             ];
         }
         try {
@@ -222,14 +222,14 @@ class EntityFieldController extends Controller
             Log::error($e);
             return [
                 'code' => 1,
-                'msg' => '編輯失败：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型字段已存在' : '其它錯誤'),
+                'msg' => '編輯失敗：' . (Str::contains($e->getMessage(), 'Duplicate entry') ? '當前模型欄位已存在' : '其它錯誤'),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 模型字段管理-刪除模型字段
+     * 模型欄位管理-刪除模型欄位
      *
      * @param int $id
      * @return array
@@ -251,20 +251,20 @@ class EntityFieldController extends Controller
         } catch (ModelNotFoundException $e) {
             return [
                 'code' => 2,
-                'msg' => '刪除失败：字段不存在',
+                'msg' => '刪除失敗：欄位不存在',
                 'redirect' => false
             ];
         } catch (\RuntimeException $e) {
             return [
                 'code' => 1,
-                'msg' => '刪除失败：' . $e->getMessage(),
+                'msg' => '刪除失敗：' . $e->getMessage(),
                 'redirect' => false
             ];
         }
     }
 
     /**
-     * 模型字段管理-字段快捷更新接口
+     * 模型欄位管理-欄位快捷更新接口
      *
      * @param Request $request
      * @param int $id
@@ -288,7 +288,7 @@ class EntityFieldController extends Controller
         } catch (ModelNotFoundException $e) {
             return [
                 'code' => 2,
-                'msg' => '保存失败：记入不存在',
+                'msg' => '保存失敗：记入不存在',
                 'redirect' => false
             ];
         }

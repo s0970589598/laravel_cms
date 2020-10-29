@@ -8,9 +8,9 @@
 UE.I18N['zh-cn'] = {
     'labelMap':{
         'anchor':'锚點', 'undo':'撤销', 'redo':'重做', 'bold':'加粗', 'indent':'首行缩進', 'snapscreen':'截圖',
-        'italic':'斜體', 'underline':'下底線', 'strikethrough':'刪除線', 'subscript':'下標','fontborder':'字符边框',
+        'italic':'斜體', 'underline':'下底線', 'strikethrough':'刪除線', 'subscript':'下標','fontborder':'字符邊框',
         'superscript':'上標', 'formatmatch':'格式刷', 'source':'源代碼', 'blockquote':'引用',
-        'pasteplain':'纯文本粘贴模式', 'selectall':'全選', 'print':'打印', 'preview':'预覽',
+        'pasteplain':'純文本粘贴模式', 'selectall':'全選', 'print':'列印', 'preview':'预覽',
         'horizontal':'分隔線', 'removeformat':'清除格式', 'time':'時間', 'date':'日期',
         'unlink':'取消連接', 'insertrow':'前插入行', 'insertcol':'前插入列', 'mergeright':'右合並單元格', 'mergedown':'下合並單元格',
         'deleterow':'刪除行', 'deletecol':'刪除列', 'splittorows':'拆分成行',
@@ -18,9 +18,9 @@ UE.I18N['zh-cn'] = {
         'mergecells':'合並多個單元格', 'deletetable':'刪除表格', 'cleardoc':'清空文档','insertparagraphbeforetable':"表格前插入行",'insertcode':'代碼語言',
         'fontfamily':'字體', 'fontsize':'字號', 'paragraph':'段落格式', 'simpleupload':'單圖上傳', 'insertimage':'多圖上傳','edittable':'表格屬性','edittd':'單元格屬性', 'link':'超連接',
         'emotion':'表情', 'spechars':'特殊字符', 'searchreplace':'查尋替换', 'map':'Baidu地圖', 'gmap':'Google地圖',
-        'insertvideo':'視频', 'help':'帮助', 'justifyleft':'居左對齐', 'justifyright':'居右對齐', 'justifycenter':'居中對齐',
-        'justifyjustify':'兩端對齐', 'forecolor':'字體颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
-        'insertunorderedlist':'無序列表', 'fullscreen':'全屏', 'directionalityltr':'從左向右输入', 'directionalityrtl':'從右向左输入',
+        'insertvideo':'視频', 'help':'帮助', 'justifyleft':'居左對齊', 'justifyright':'居右對齊', 'justifycenter':'居中對齊',
+        'justifyjustify':'兩端對齊', 'forecolor':'字體颜色', 'backcolor':'背景色', 'insertorderedlist':'有序列表',
+        'insertunorderedlist':'無序列表', 'fullscreen':'全屏', 'directionalityltr':'從左向右輸入', 'directionalityrtl':'從右向左輸入',
         'rowspacingtop':'段前距', 'rowspacingbottom':'段後距',  'pagebreak':'分頁', 'insertframe':'插入Iframe', 'imagenone':'默認',
         'imageleft':'左浮動', 'imageright':'右浮動', 'attachment':'附件', 'imagecenter':'居中', 'wordimage':'圖片轉存',
         'lineheight':'行間距','edittip' :'編輯提示','customstyle':'自定義標題', 'autotypeset':'自動排版',
@@ -73,7 +73,7 @@ UE.I18N['zh-cn'] = {
         'jsonEncodeError': '服務器返回格式錯誤',
         'loading':"正在上傳...",
         'loadError':"上傳錯誤",
-        'errorLoadConfig': '編輯配置项没有正常加戴，上傳插件不能正常使用！'
+        'errorLoadConfig': '編輯配置項没有正常加戴，上傳插件不能正常使用！'
     },
     'simpleupload':{
         'exceedSizeError': '文件大小超出限制',
@@ -81,24 +81,24 @@ UE.I18N['zh-cn'] = {
         'jsonEncodeError': '服務器返回格式錯誤',
         'loading':"正在上傳...",
         'loadError':"上傳錯誤",
-        'errorLoadConfig': '編輯配置项没有正常加戴，上傳插件不能正常使用！'
+        'errorLoadConfig': '編輯配置項没有正常加戴，上傳插件不能正常使用！'
     },
     'elementPathTip':"元素路径",
     'wordCountTip':"字數统计",
-    'wordCountMsg':'當前已输入{#count}個字符, 您還可以输入{#leave}個字符。 ',
+    'wordCountMsg':'當前已輸入{#count}個字符, 您還可以輸入{#leave}個字符。 ',
     'wordOverFlowMsg':'<span style="color:red;">字數超出最大允许值，服務器可能拒绝保存！</span>',
     'ok':"確认",
     'cancel':"取消",
-    'closeDialog':"關闭對话框",
+    'closeDialog':"關閉對话框",
     'tableDrag':"表格拖動必须引入uiUtils.js文件！",
     'autofloatMsg':"工具栏浮動依赖編輯器UI，您首先需要引入UI文件!",
-    'loadconfigError': '獲取後台配置项請求出錯，上傳功能將不能正常使用！',
-    'loadconfigFormatError': '後台配置项返回格式出錯，上傳功能將不能正常使用！',
-    'loadconfigHttpError': '請求後台配置项http錯誤，上傳功能將不能正常使用！',
+    'loadconfigError': '獲取後台配置項請求出錯，上傳功能將不能正常使用！',
+    'loadconfigFormatError': '後台配置項返回格式出錯，上傳功能將不能正常使用！',
+    'loadconfigHttpError': '請求後台配置項http錯誤，上傳功能將不能正常使用！',
     'snapScreen_plugin':{
-        'browserMsg':"僅支持IE浏覽器！",
-        'callBackErrorMsg':"服務器返回數據有誤，請检查配置项之後重试。",
-        'uploadErrorMsg':"截圖上傳失败，請检查服務器端環境! "
+        'browserMsg':"僅支持IE瀏覽器！",
+        'callBackErrorMsg':"服務器返回數據有誤，請检查配置項之後重试。",
+        'uploadErrorMsg':"截圖上傳失敗，請检查服務器端環境! "
     },
     'insertcode':{
         'as3':'ActionScript 3',
@@ -136,17 +136,17 @@ UE.I18N['zh-cn'] = {
         'unlink':"刪除超連接",
         'paragraph':"段落格式",
         'edittable':"表格屬性",
-        'aligntd':"單元格對齐方式",
-        'aligntable':'表格對齐方式',
+        'aligntd':"單元格對齊方式",
+        'aligntable':'表格對齊方式',
         'tableleft':'左浮動',
         'tablecenter':'居中顯示',
         'tableright':'右浮動',
         'edittd':"單元格屬性",
-        'setbordervisible':'設置表格边線可见',
-        'justifyleft':'左對齐',
-        'justifyright':'右對齐',
-        'justifycenter':'居中對齐',
-        'justifyjustify':'兩端對齐',
+        'setbordervisible':'設置表格邊線可见',
+        'justifyleft':'左對齊',
+        'justifyright':'右對齊',
+        'justifycenter':'居中對齊',
+        'justifyjustify':'兩端對齊',
         'table':"表格",
         'inserttable':'插入表格',
         'deletetable':"刪除表格",
@@ -181,7 +181,7 @@ UE.I18N['zh-cn'] = {
         'reversebyasc':'按ASCII字符降序',
         'orderbynum':'按數值大小升序',
         'reversebynum':'按數值大小降序',
-        'borderbk':'边框底纹',
+        'borderbk':'邊框底纹',
         'setcolor':'表格隔行變色',
         'unsetcolor':'取消表格隔行變色',
         'setbackground':'選區背景隔行',
@@ -189,12 +189,12 @@ UE.I18N['zh-cn'] = {
         'redandblue':'红蓝相間',
         'threecolorgradient':'三色渐變',
         'copy':"覆製(Ctrl + c)",
-        'copymsg': "浏覽器不支持,請使用 'Ctrl + c'",
+        'copymsg': "瀏覽器不支持,請使用 'Ctrl + c'",
         'paste':"粘贴(Ctrl + v)",
-         'pastemsg': "浏覽器不支持,請使用 'Ctrl + v'"
+         'pastemsg': "瀏覽器不支持,請使用 'Ctrl + v'"
     },
-    'copymsg': "浏覽器不支持,請使用 'Ctrl + c'",
-    'pastemsg': "浏覽器不支持,請使用 'Ctrl + v'",
+    'copymsg': "瀏覽器不支持,請使用 'Ctrl + c'",
+    'pastemsg': "瀏覽器不支持,請使用 'Ctrl + v'",
     'anthorMsg':"連接",
     'clearColor':'清空颜色',
     'standardColor':'標準颜色',
@@ -202,8 +202,8 @@ UE.I18N['zh-cn'] = {
     'property':'屬性',
     'default':'默認',
     'modify':'修改',
-    'justifyleft':'左對齐',
-    'justifyright':'右對齐',
+    'justifyleft':'左對齊',
+    'justifyright':'右對齊',
     'justifycenter':'居中',
     'justify':'默認',
     'clear':'清除',
@@ -214,7 +214,7 @@ UE.I18N['zh-cn'] = {
     't_row':'行',
     't_col':'列',
     'more':'更多',
-    'pasteOpt':'粘贴選项',
+    'pasteOpt':'粘贴選項',
     'pasteSourceFormat':"保留源格式",
     'tagFormat':'只保留標簽',
     'pasteTextFormat':'只保留文本',
@@ -223,7 +223,7 @@ UE.I18N['zh-cn'] = {
         'delLine':"清除空行",
         'removeFormat':"清除格式",
         'indent':"首行缩進",
-        'alignment':"對齐方式",
+        'alignment':"對齊方式",
         'imageFloat':"圖片浮動",
         'removeFontsize':"清除字號",
         'removeFontFamily':"清除字體",
@@ -239,12 +239,12 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_background_normal':'背景設置',
             'lang_background_local':'在線圖片',
-            'lang_background_set':'選项',
+            'lang_background_set':'選項',
             'lang_background_none':'無背景色',
             'lang_background_colored':'有背景色',
             'lang_background_color':'颜色設置',
             'lang_background_netimg':'網路圖片',
-            'lang_background_align':'對齐方式',
+            'lang_background_align':'對齊方式',
             'lang_background_position':'精確定位',
             'repeatType':{'options':["居中", "横向重覆", "纵向重覆", "平铺","自定義"]}
 
@@ -263,15 +263,15 @@ UE.I18N['zh-cn'] = {
             'lang_input_size':"大 小：",
             'lang_input_width':"宽度",
             'lang_input_height':"高度",
-            'lang_input_border':"边 框：",
-            'lang_input_vhspace':"边 距：",
+            'lang_input_border':"邊 框：",
+            'lang_input_vhspace':"邊 距：",
             'lang_input_title':"描 述：",
             'lang_input_align':'圖片浮動方式：',
             'lang_imgLoading':"　圖片加戴中……",
             'lang_start_upload':"開始上傳",
             'lock':{'title':"锁定宽高比例"}, //屬性
             'searchType':{'title':"圖片類型", 'options':["全部類型", "頭像圖片", "面部特寫", "卡通画", "簡笔画", "動態圖片", "静態圖片"]}, //select的option
-            'searchTxt':{'value':"請输入搜索關鍵詞"},
+            'searchTxt':{'value':"請輸入搜索關鍵詞"},
             'searchBtn':{'value':"百度一下"},
             'searchReset':{'value':"清空搜索"},
             'noneAlign':{'title':'無浮動'},
@@ -291,22 +291,22 @@ UE.I18N['zh-cn'] = {
         'uploadPreview':'预覽中',
         'uploadNoPreview':'不能预覽',
         'updateStatusReady': '選中_张圖片，共_KB。',
-        'updateStatusConfirm': '已成功上傳_张照片，_张照片上傳失败',
+        'updateStatusConfirm': '已成功上傳_张照片，_张照片上傳失敗',
         'updateStatusFinish': '共_张（_KB），_张上傳成功',
-        'updateStatusError': '，_张上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的浏覽器！如果你使用的是IE浏覽器，請嘗试升級 flash 播放器。',
-        'errorLoadConfig': '編輯配置项没有正常加戴，上傳插件不能正常使用！',
+        'updateStatusError': '，_张上傳失敗。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗试升級 flash 播放器。',
+        'errorLoadConfig': '編輯配置項没有正常加戴，上傳插件不能正常使用！',
         'errorExceedSize':'文件大小超出',
         'errorFileType':'文件格式不允许',
-        'errorInterrupt':'文件傳输中断',
-        'errorUploadRetry':'上傳失败，請重试',
+        'errorInterrupt':'文件傳輸中断',
+        'errorUploadRetry':'上傳失敗，請重试',
         'errorHttp':'http請求錯誤',
         'errorServerUpload':'服務器返回出錯',
         'remoteLockError':"宽高不正確,不能所定比例",
-        'numError':"請输入正確的长度或者宽度值！例如：123，400",
+        'numError':"請輸入正確的長度或者宽度值！例如：123，400",
         'imageUrlError':"不允许的圖片格式或者圖片域！",
-        'imageLoadError':"圖片加戴失败！請检查連接地址或網路狀態！",
-        'searchRemind':"請输入搜索關鍵詞",
+        'imageLoadError':"圖片加戴失敗！請检查連接地址或網路狀態！",
+        'searchRemind':"請輸入搜索關鍵詞",
         'searchLoading':"圖片加戴中，請稍後……",
         'searchRetry':" :( ，抱歉，没有找到圖片！請重试一次！"
     },
@@ -328,15 +328,15 @@ UE.I18N['zh-cn'] = {
         'uploadTurnRight':'向右旋轉',
         'uploadPreview':'预覽中',
         'updateStatusReady': '選中_個文件，共_KB。',
-        'updateStatusConfirm': '已成功上傳_個文件，_個文件上傳失败',
+        'updateStatusConfirm': '已成功上傳_個文件，_個文件上傳失敗',
         'updateStatusFinish': '共_個（_KB），_個上傳成功',
-        'updateStatusError': '，_张上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的浏覽器！如果你使用的是IE浏覽器，請嘗试升級 flash 播放器。',
-        'errorLoadConfig': '編輯配置项没有正常加戴，上傳插件不能正常使用！',
+        'updateStatusError': '，_张上傳失敗。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗试升級 flash 播放器。',
+        'errorLoadConfig': '編輯配置項没有正常加戴，上傳插件不能正常使用！',
         'errorExceedSize':'文件大小超出',
         'errorFileType':'文件格式不允许',
-        'errorInterrupt':'文件傳输中断',
-        'errorUploadRetry':'上傳失败，請重试',
+        'errorInterrupt':'文件傳輸中断',
+        'errorUploadRetry':'上傳失敗，請重试',
         'errorHttp':'http請求錯誤',
         'errorServerUpload':'服務器返回出錯'
     },
@@ -349,11 +349,11 @@ UE.I18N['zh-cn'] = {
             'lang_video_size':"視频尺寸",
             'lang_videoW':"宽度",
             'lang_videoH':"高度",
-            'lang_alignment':"對齐方式",
-            'videoSearchTxt':{'value':"請输入搜索關鍵字！"},
+            'lang_alignment':"對齊方式",
+            'videoSearchTxt':{'value':"請輸入搜索關鍵字！"},
             'videoType':{'options':["全部", "热门", "娱乐", "搞笑", "體育", "科技", "综艺"]},
             'videoSearchBtn':{'value':"百度一下"},
-            'videoSearchReset':{'value':"清空结果"},
+            'videoSearchReset':{'value':"清空結果"},
 
             'lang_input_fileStatus':' 當前未上傳文件',
             'startUpload':{'style':"background:url(upload.png) no-repeat;"},
@@ -361,33 +361,33 @@ UE.I18N['zh-cn'] = {
             'lang_upload_size':"視频尺寸",
             'lang_upload_width':"宽度",
             'lang_upload_height':"高度",
-            'lang_upload_alignment':"對齐方式",
+            'lang_upload_alignment':"對齊方式",
             'lang_format_advice':"建議使用mp4格式."
 
         },
-        'numError':"請输入正確的數值，如123,400",
+        'numError':"請輸入正確的數值，如123,400",
         'floatLeft':"左浮動",
         'floatRight':"右浮動",
         'default':"默認",
         'block':"獨占一行",
-        'urlError':"输入的視频地址有誤，請检查後再试！",
+        'urlError':"輸入的視频地址有誤，請检查後再试！",
         'loading':" &nbsp;視频加戴中，請等待……",
         'clickToSelect':"點擊選中",
         'goToSource':'訪問源視频',
         'noVideo':" &nbsp; &nbsp;抱歉，找不到對應的視频，請重试！",
 
-        'browseFiles':'浏覽文件',
+        'browseFiles':'瀏覽文件',
         'uploadSuccess':'上傳成功!',
         'delSuccessFile':'從成功隊列中移除',
-        'delFailSaveFile':'移除保存失败文件',
+        'delFailSaveFile':'移除保存失敗文件',
         'statusPrompt':' 個文件已上傳！ ',
         'flashVersionError':'當前Flash版本過低，請更新FlashPlayer後重试！',
-        'flashLoadingError':'Flash加戴失败!請检查路径或網路狀態',
+        'flashLoadingError':'Flash加戴失敗!請检查路径或網路狀態',
         'fileUploadReady':'等待上傳……',
         'delUploadQueue':'從上傳隊列中移除',
         'limitPrompt1':'單次不能選擇超過',
         'limitPrompt2':'個文件！請重新選擇！',
-        'delFailFile':'移除失败文件',
+        'delFailFile':'移除失敗文件',
         'fileSizeLimit':'文件大小超出限制！',
         'emptyFile':'空文件無法上傳！',
         'fileTypeError':'文件類型不允许！',
@@ -395,11 +395,11 @@ UE.I18N['zh-cn'] = {
         'fileUploading':'上傳中，請等待……',
         'cancelUpload':'取消上傳',
         'netError':'網路錯誤',
-        'failUpload':'上傳失败!',
+        'failUpload':'上傳失敗!',
         'serverIOError':'服務器IO錯誤！',
         'noAuthority':'無權限！',
         'fileNumLimit':'上傳個數限制',
-        'failCheck':'驗證失败，本次上傳被跳過！',
+        'failCheck':'驗證失敗，本次上傳被跳過！',
         'fileCanceling':'取消中，請等待……',
         'stopUploading':'上傳已停止……',
 
@@ -414,20 +414,20 @@ UE.I18N['zh-cn'] = {
         'uploadTurnRight':'向右旋轉',
         'uploadPreview':'预覽中',
         'updateStatusReady': '選中_個文件，共_KB。',
-        'updateStatusConfirm': '成功上傳_個，_個失败',
+        'updateStatusConfirm': '成功上傳_個，_個失敗',
         'updateStatusFinish': '共_個(_KB)，_個成功上傳',
-        'updateStatusError': '，_张上傳失败。',
-        'errorNotSupport': 'WebUploader 不支持您的浏覽器！如果你使用的是IE浏覽器，請嘗试升級 flash 播放器。',
-        'errorLoadConfig': '編輯配置项没有正常加戴，上傳插件不能正常使用！',
+        'updateStatusError': '，_张上傳失敗。',
+        'errorNotSupport': 'WebUploader 不支持您的瀏覽器！如果你使用的是IE瀏覽器，請嘗试升級 flash 播放器。',
+        'errorLoadConfig': '編輯配置項没有正常加戴，上傳插件不能正常使用！',
         'errorExceedSize':'文件大小超出',
         'errorFileType':'文件格式不允许',
-        'errorInterrupt':'文件傳输中断',
-        'errorUploadRetry':'上傳失败，請重试',
+        'errorInterrupt':'文件傳輸中断',
+        'errorUploadRetry':'上傳失敗，請重试',
         'errorHttp':'http請求錯誤',
         'errorServerUpload':'服務器返回出錯'
     },
     'webapp':{
-        'tip1':"本功能由百度APP提供，如看到此頁面，請各位站长首先申請百度APPKey!",
+        'tip1':"本功能由百度APP提供，如看到此頁面，請各位站長首先申請百度APPKey!",
         'tip2':"申請完成之後請至neditor.config.js中配置獲得的appkey! ",
         'applyFor':"點此申請",
         'anthorApi':"百度API"
@@ -459,15 +459,15 @@ UE.I18N['zh-cn'] = {
         'noScarwl':"尚未作画，白纸一张~",
         'scrawlUpLoading':"涂鸦上傳中,别急哦~",
         'continueBtn':"繼續",
-        'imageError':"糟糕，圖片讀取失败了！",
+        'imageError':"糟糕，圖片讀取失敗了！",
         'backgroundUploading':'背景圖片上傳中,别急哦~'
     },
     'music':{
         'static':{
-            'lang_input_tips':"输入歌手/歌曲/專辑，搜索您感兴趣的音乐！",
+            'lang_input_tips':"輸入歌手/歌曲/專辑，搜索您感兴趣的音乐！",
             'J_searchBtn':{value:'搜索歌曲'}
         },
-        'emptyTxt':'未搜索到相關音乐结果，請换一個關鍵詞试试。',
+        'emptyTxt':'未搜索到相關音乐結果，請换一個關鍵詞试试。',
         'chapter':'歌曲',
         'singer':'歌手',
         'special':'專辑',
@@ -482,7 +482,7 @@ UE.I18N['zh-cn'] = {
         'static':{
             'lang_data_source':'數據源：',
             'lang_chart_format': '圖表格式：',
-            'lang_data_align': '數據對齐方式',
+            'lang_data_align': '數據對齊方式',
             'lang_chart_align_same': '數據源与圖表X轴Y轴一致',
             'lang_chart_align_reverse': '數據源与圖表X轴Y轴相反',
             'lang_chart_title': '圖表標題',
@@ -518,7 +518,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_search':'搜索',
             'address':{value:"北京"}
         },
-        searchError:'無法定位到该地址!'
+        searchError:'無法定位到該地址!'
     },
     'help':{
         'static':{
@@ -527,14 +527,14 @@ UE.I18N['zh-cn'] = {
             'lang_input_introduction':'UEditor是由百度web前端研發部開發的所见即所得副文本web編輯器，具有輕量，可定制，注重用户體驗等特點。開源基於BSD协議，允许自由使用和修改代碼。',
             'lang_Txt_shortcuts':'快捷鍵',
             'lang_Txt_func':'功能',
-            'lang_Txt_bold':'给選中字設置為加粗',
+            'lang_Txt_bold':'給選中字設置為加粗',
             'lang_Txt_copy':'覆製選中内容',
             'lang_Txt_cut':'剪切選中内容',
             'lang_Txt_Paste':'粘贴',
             'lang_Txt_undo':'重新執行上次操作',
             'lang_Txt_redo':'撤销上一次操作',
-            'lang_Txt_italic':'给選中字設置為斜體',
-            'lang_Txt_underline':'给選中字加下底線',
+            'lang_Txt_italic':'給選中字設置為斜體',
+            'lang_Txt_underline':'給選中字加下底線',
             'lang_Txt_selectAll':'全部選中',
             'lang_Txt_visualEnter':'软回车',
             'lang_Txt_fullscreen':'全屏'
@@ -546,11 +546,11 @@ UE.I18N['zh-cn'] = {
             'lang_input_width':'宽度：',
             'lang_input_height':'高度：',
             'lang_input_isScroll':'允许滚動條：',
-            'lang_input_frameborder':'顯示框架边框：',
-            'lang_input_alignMode':'對齐方式：',
-            'align':{title:"對齐方式", options:["默認", "左對齐", "右對齐", "居中"]}
+            'lang_input_frameborder':'顯示框架邊框：',
+            'lang_input_alignMode':'對齊方式：',
+            'align':{title:"對齊方式", options:["默認", "左對齊", "右對齊", "居中"]}
         },
-        'enterAddress':'請输入地址!'
+        'enterAddress':'請輸入地址!'
     },
     'link':{
         'static':{
@@ -560,7 +560,7 @@ UE.I18N['zh-cn'] = {
             'lang_input_target':'是否在新窗口打開：'
         },
         'validLink':'只支持選中一個連接時生效',
-        'httpPrompt':'您输入的超連接中不包含http等协議名稱，默認將為您添加http://前缀'
+        'httpPrompt':'您輸入的超連接中不包含http等协議名稱，默認將為您添加http://前缀'
     },
     'map':{
         'static':{
@@ -571,7 +571,7 @@ UE.I18N['zh-cn'] = {
             lang_dynamicmap:"插入動態地圖"
         },
         cityMsg:"請選擇城市",
-        errorMsg:"抱歉，找不到该位置！"
+        errorMsg:"抱歉，找不到該位置！"
     },
     'searchreplace':{
         'static':{
@@ -600,7 +600,7 @@ UE.I18N['zh-cn'] = {
             lang_showMsg:"截圖功能需要首先安装UEditor截圖插件！ ",
             lang_download:"點此下戴",
             lang_step1:"第一步，下戴UEditor截圖插件並運行安装。",
-            lang_step2:"第二步，插件安装完成後即可使用，如不生效，請重啟浏覽器後再试！"
+            lang_step2:"第二步，插件安装完成後即可使用，如不生效，請重啟瀏覽器後再试！"
         }
     },
     'spechars':{
@@ -626,7 +626,7 @@ UE.I18N['zh-cn'] = {
             'lang_autoSizeContent':'按表格文字自适應',
             'lang_autoSizePage':'按頁面宽度自适應',
             'lang_example':'示例',
-            'lang_borderStyle':'表格边框',
+            'lang_borderStyle':'表格邊框',
             'lang_color':'颜色:'
         },
         captionName:'表格名稱',
@@ -657,7 +657,7 @@ UE.I18N['zh-cn'] = {
             lang_step:"1、點擊顶部覆製按钮，將地址覆製到剪贴板；2、點擊添加照片按钮，在弹出的對话框中使用Ctrl+V粘贴地址；3、點擊打開後選擇圖片上傳流程。"
         },
         'fileType':"圖片",
-        'flashError':"FLASH初始化失败，請检查FLASH插件是否正確安装！",
+        'flashError':"FLASH初始化失敗，請检查FLASH插件是否正確安装！",
         'netError':"網路連接錯誤，請重试！",
         'copySuccess':"圖片地址已經覆製！",
         'flashI18n':{} //留空默認中文

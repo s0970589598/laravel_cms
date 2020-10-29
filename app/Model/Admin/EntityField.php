@@ -28,8 +28,8 @@ class EntityField extends Model
 
     public static $listField = [
         'entityName' => '模型',
-        'name' => '字段名稱',
-        'type' => '字段類型',
+        'name' => '欄位名稱',
+        'type' => '欄位類型',
         'form_name' => '表單名稱',
         'form_type' => ['title' => '表單類型', 'sort' => true],
         'is_show_inline' => [
@@ -40,7 +40,7 @@ class EntityField extends Model
     ];
 
     public static $searchField = [
-        'name' => '字段名稱',
+        'name' => '欄位名稱',
         'entity_id' => [
             'title' => '模型',
             'searchType' => '=',
